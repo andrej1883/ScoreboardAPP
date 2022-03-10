@@ -381,10 +381,10 @@ namespace Scoreboard.Forms
         {
             for (int i = 0; i < 3; i++)
             {
-                _penalty[position][i] = 0;
+                _penalty[position-1][i] = 0;
             }
-            _formScoreBoard.SetPenalty(position,_penalty[position][0],_penalty[position][1],_penalty[position][2]);
-            UpdatePenaltyGf(position,_penalty[position][0],_penalty[position][1], _penalty[position][2]);
+            _formScoreBoard.SetPenalty(position,_penalty[position-1][0],_penalty[position-1][1],_penalty[position-1][2]);
+            UpdatePenaltyGf(position,_penalty[position-1][0],_penalty[position-1][1], _penalty[position-1][2]);
         }
 
         private void resetT1P1_Click(object sender, EventArgs e)

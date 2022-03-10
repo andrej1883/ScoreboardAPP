@@ -142,9 +142,9 @@
             // 
             this.timeMinutesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeMinutesLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeMinutesLbl.Location = new System.Drawing.Point(323, 237);
+            this.timeMinutesLbl.Location = new System.Drawing.Point(257, 237);
             this.timeMinutesLbl.Name = "timeMinutesLbl";
-            this.timeMinutesLbl.Size = new System.Drawing.Size(106, 76);
+            this.timeMinutesLbl.Size = new System.Drawing.Size(172, 76);
             this.timeMinutesLbl.TabIndex = 8;
             this.timeMinutesLbl.Text = "00";
             this.timeMinutesLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -166,7 +166,7 @@
             this.timeSecondsLbl.ForeColor = System.Drawing.Color.Black;
             this.timeSecondsLbl.Location = new System.Drawing.Point(492, 237);
             this.timeSecondsLbl.Name = "timeSecondsLbl";
-            this.timeSecondsLbl.Size = new System.Drawing.Size(106, 76);
+            this.timeSecondsLbl.Size = new System.Drawing.Size(185, 76);
             this.timeSecondsLbl.TabIndex = 10;
             this.timeSecondsLbl.Text = "00";
             this.timeSecondsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
