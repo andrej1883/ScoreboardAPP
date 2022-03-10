@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Scoreboard.Forms;
 
-namespace Scoreboard
+namespace Scoreboard.Classes
 {
     internal static class Program
     {

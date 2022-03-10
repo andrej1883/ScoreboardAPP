@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace Scoreboard
+namespace Scoreboard.Forms
 {
     public partial class ScoreboardForm : Form
     {
@@ -117,8 +109,6 @@ namespace Scoreboard
             }
         }
 
-        
-
         public Font ScoLFont
         {
             get => t1Lbl.Font;
@@ -127,8 +117,6 @@ namespace Scoreboard
                 t2Lbl.Font = value;
             }
         }
-
-        
 
         public Font TimeCFont
         {
@@ -139,8 +127,6 @@ namespace Scoreboard
                 timeSecondsLbl.Font = value;
             }
         }
-
-        
 
         public Font TimeLFont
         {
@@ -154,14 +140,11 @@ namespace Scoreboard
             set => actualPeriodLbl.Font = value;
         }
 
-
         public Font PeriodLFont
         {
             get => periodLbl.Font;
             set => periodLbl.Font = value;
         }
-
-        
 
         public Font PenaltyDFont
         {
@@ -187,8 +170,6 @@ namespace Scoreboard
             }
         }
 
-       
-
         public Font PenaltyLFont
         {
             get =>  penaltyT1Lbl.Font;
@@ -201,8 +182,6 @@ namespace Scoreboard
                 penaltyT2TimeLbl.Font = value;
             }
         }
-
-        
 
         private static ScoreboardForm _instance;
         internal static ScoreboardForm GetInstance()
@@ -221,11 +200,6 @@ namespace Scoreboard
             return _instance;
         }
 
-        private void ScoreboardForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         public ScoreboardForm()
         {
             InitializeComponent();
@@ -242,26 +216,17 @@ namespace Scoreboard
             _instance.Width = width;
         }
 
-        public Font SetFontSize(int varSize)
+        public Font SetFontSize(float varSize)
         {
             return new Font("Microsoft Sans Serif",varSize);
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         public void SetGoal(string val, bool team1)
         {
             if (team1)
-            {
                 scoreT1Lbl.Text = val;
-            }
             else
-            {
                 scoreT2Lbl.Text = val;
-            }
         }
 
         public void HidePenalty(int position)
@@ -335,22 +300,14 @@ namespace Scoreboard
             string sMinutes;
             string sSeconds;
             if (minutes < 10)
-            {
-                 sMinutes = "0" + minutes;
-            }
+                sMinutes = "0" + minutes;
             else
-            {
                 sMinutes = minutes.ToString();
-            }
 
             if (seconds < 10)
-            {
                 sSeconds = "0" + seconds;
-            }
             else
-            {
                 sSeconds = seconds.ToString();
-            }
 
             switch (position)
             {
@@ -387,79 +344,55 @@ namespace Scoreboard
         public void SetTeamName(bool team1, string val)
         {
             if (team1)
-            {
                 t1Lbl.Text = val;
-            }
             else
-            {
                 t2Lbl.Text = val;
-            }
         }
 
         public void SetLogo(bool team1, Image var)
         {
             if (team1)
-            {
                 team1Logo.Image = var;
-            }
             else
-            {
                 team2Logo.Image = var;
-            }
         }
 
         public void HideLogo(bool team1)
         {
             if (team1)
-            {
                 team1Logo.Hide();
-            }
             else
-            {
                 team2Logo.Hide();
-            }
         }
 
         public void ShowLogo(bool team1)
         {
             if (team1)
-            {
                 team1Logo.Show();
-            }
             else
-            {
                 team2Logo.Show();
-            }
         }
 
         public void SetTime(int minutes, int seconds)
         {
             if (minutes < 10)
-            {
                 timeMinutesLbl.Text = "0" + minutes;
-            }
             else
-            {
-                timeMinutesLbl.Text =  minutes.ToString();
-            }
+                timeMinutesLbl.Text = minutes.ToString();
 
             if (seconds < 10)
-            {
                 timeSecondsLbl.Text = "0" + seconds;
-            }
             else
-            {
-                timeSecondsLbl.Text =  seconds.ToString();
-            }
+                timeSecondsLbl.Text = seconds.ToString();
         }
         public override string ToString()
         {
-            return $"{BackgrColor.Name},{PenaltyDColor.Name},{PenaltyLColor.Name},{PeriodColor.Name},{PeriodLColor.Name},{TimeLColor.Name}," +
-                   $"{ScoLColor.Name},{ScoSColor.Name},{TimeCColor.Name}," +
+            return $"{BackgrColor.ToArgb()}|{PenaltyDColor.ToArgb()}|{PenaltyLColor.ToArgb()}|{PeriodColor.ToArgb()}|{PeriodLColor.ToArgb()}|{TimeLColor.ToArgb()}|" +
+                   $"{ScoLColor.ToArgb()}|{ScoSColor.ToArgb()}|{TimeCColor.ToArgb()}|" +
 
-                   $"{PenaltyDFont.Size},{PenaltyLFont.Size},{PeriodLFont.Size},{PeriodPFont.Size}," +
-                   $"{TimeLFont.Size},{ScoLFont.Size},{ScoSFont.Size},{TimeCFont.Size}," +
-                   $"{Width},{Height}";
+                   $"{PenaltyDFont.Size}|{PenaltyLFont.Size}|{PeriodLFont.Size}|{PeriodPFont.Size}|" +
+                   $"{TimeLFont.Size}|{ScoLFont.Size}|{ScoSFont.Size}|{TimeCFont.Size}|" +
+                   $"{Width}|{Height}";
         }
     }
 }

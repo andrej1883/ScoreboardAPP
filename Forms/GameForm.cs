@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
-namespace Scoreboard
+namespace Scoreboard.Forms
 {
     public partial class GameForm : Form
     {
-        private ScoreboardForm formScoreBoard;
+        private ScoreboardForm _formScoreBoard;
         private int _team1Goals = 0;
         private int _team2Goals =0;
         private int _period = 1;
@@ -23,19 +15,19 @@ namespace Scoreboard
         private string _team2Name;
         private int _secondsT = 0;
         private int _minutesT = 0;
-        private int[][] penalty;
+        private int[][] _penalty;
         private Timer _timer = null;
         private bool _timerRunning = false;
         private bool _penaltyRunning = false;
         private Timer _timerPenalty = null;
         private bool _periodEnd = false;
-        private int penaltyCount = 4;
+        private int _penaltyCount = 4;
 
 
         public GameForm(ScoreboardForm parFormScoreBoard)
         {
             InitializeComponent();
-            formScoreBoard = parFormScoreBoard;
+            _formScoreBoard = parFormScoreBoard;
         }
 
         private void minusGoal1_Click(object sender, EventArgs e)
@@ -43,7 +35,7 @@ namespace Scoreboard
             if (_team1Goals > 0)
             {
                 _team1Goals --;
-                formScoreBoard.SetGoal(_team1Goals.ToString(), true);
+                _formScoreBoard.SetGoal(_team1Goals.ToString(), true);
                 goalsTeam1.Text = _team1Goals.ToString();
             }
         }
@@ -51,7 +43,7 @@ namespace Scoreboard
         private void plusGoal1_Click(object sender, EventArgs e)
         {
             _team1Goals ++;
-            formScoreBoard.SetGoal(_team1Goals.ToString(), true);
+            _formScoreBoard.SetGoal(_team1Goals.ToString(), true);
             goalsTeam1.Text = _team1Goals.ToString();
         }
 
@@ -64,7 +56,7 @@ namespace Scoreboard
             if (_team2Goals > 0)
             {
                 _team2Goals --;
-                formScoreBoard.SetGoal(_team2Goals.ToString(), false);
+                _formScoreBoard.SetGoal(_team2Goals.ToString(), false);
                 goalsTeam2.Text = _team2Goals.ToString();
             }
         }
@@ -72,52 +64,52 @@ namespace Scoreboard
         private void plusGoal2_Click(object sender, EventArgs e)
         {
             _team2Goals ++;
-            formScoreBoard.SetGoal(_team2Goals.ToString(), false);
+            _formScoreBoard.SetGoal(_team2Goals.ToString(), false);
             goalsTeam2.Text = _team2Goals.ToString();
         }
 
         private void p1T1ShowPenalty_Click(object sender, EventArgs e)
         {
-            formScoreBoard.SetPenalty(1,(int)p1T1Number.Value,(int)p1T1Minutes.Value,(int)p1T1Seconds.Value);
-            formScoreBoard.ShowPenalty(1);
+            _formScoreBoard.SetPenalty(1,(int)p1T1Number.Value,(int)p1T1Minutes.Value,(int)p1T1Seconds.Value);
+            _formScoreBoard.ShowPenalty(1);
         }
 
         private void p2T1ShowPenalty_Click(object sender, EventArgs e)
         {
-            formScoreBoard.SetPenalty(2,(int)p2T1Number.Value,(int)p2T1Minutes.Value,(int)p2T1Seconds.Value);
-            formScoreBoard.ShowPenalty(2);
+            _formScoreBoard.SetPenalty(2,(int)p2T1Number.Value,(int)p2T1Minutes.Value,(int)p2T1Seconds.Value);
+            _formScoreBoard.ShowPenalty(2);
         }
 
         private void p1T1HidePenalty_Click(object sender, EventArgs e)
         {
-            formScoreBoard.HidePenalty(1);
+            _formScoreBoard.HidePenalty(1);
         }
 
         private void p2T1HidePenalty_Click(object sender, EventArgs e)
         {
-            formScoreBoard.HidePenalty(2);
+            _formScoreBoard.HidePenalty(2);
         }
 
         private void p1T2ShowPenalty_Click(object sender, EventArgs e)
         {
-            formScoreBoard.SetPenalty(3,(int)p1T2Number.Value,(int)p1T2Minutes.Value,(int)p1T2Seconds.Value);
-            formScoreBoard.ShowPenalty(3);
+            _formScoreBoard.SetPenalty(3,(int)p1T2Number.Value,(int)p1T2Minutes.Value,(int)p1T2Seconds.Value);
+            _formScoreBoard.ShowPenalty(3);
         }
 
         private void p2T2ShowPenalty_Click(object sender, EventArgs e)
         {
-            formScoreBoard.SetPenalty(4,(int)p2T2Number.Value,(int)p2T2Minutes.Value,(int)p2T2Seconds.Value);
-            formScoreBoard.ShowPenalty(4);
+            _formScoreBoard.SetPenalty(4,(int)p2T2Number.Value,(int)p2T2Minutes.Value,(int)p2T2Seconds.Value);
+            _formScoreBoard.ShowPenalty(4);
         }
 
         private void p1T2HidePenalty_Click(object sender, EventArgs e)
         {
-            formScoreBoard.HidePenalty(3);
+            _formScoreBoard.HidePenalty(3);
         }
 
         private void p2T2HidePenalty_Click(object sender, EventArgs e)
         {
-            formScoreBoard.HidePenalty(4);
+            _formScoreBoard.HidePenalty(4);
         }
 
         private void periodMinus_Click(object sender, EventArgs e)
@@ -126,7 +118,7 @@ namespace Scoreboard
             {
                 _period--;
                 period.Text = _period.ToString();
-                formScoreBoard.SetPeriod(_period.ToString());
+                _formScoreBoard.SetPeriod(_period.ToString());
             }
         }
 
@@ -136,7 +128,7 @@ namespace Scoreboard
             {
                 _period++;
                 period.Text = _period.ToString();
-                formScoreBoard.SetPeriod(_period.ToString());
+                _formScoreBoard.SetPeriod(_period.ToString());
             }
         }
 
@@ -150,95 +142,77 @@ namespace Scoreboard
             {
                 _team1Name = "Team 1";
             }
-            formScoreBoard.SetTeamName(true,_team1Name);
+            _formScoreBoard.SetTeamName(true,_team1Name);
         }
 
+        private void UploadLogo(bool team1)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";  
+            if (open.ShowDialog() == DialogResult.OK) {
+                logo1.Image = new Bitmap(open.FileName);
+                logo1Path.Text = open.FileName;
+
+                if (team1)
+                    _formScoreBoard.SetLogo(true, logo1.Image);
+                else
+                    _formScoreBoard.SetLogo(false, logo2.Image);
+            }
+        }
 
         private void uploadLogoT1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();  
-            // image filters  
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";  
-            if (open.ShowDialog() == DialogResult.OK) {  
-                // display image in picture box  
-                logo1.Image = new Bitmap(open.FileName);  
-                // image file path  
-                logo1Path.Text = open.FileName;
-                formScoreBoard.SetLogo(true,logo1.Image);
-            }
+            UploadLogo(true);
         }
 
         private void hideT1Logo_Click(object sender, EventArgs e)
         {
-            formScoreBoard.HideLogo(true);
+            _formScoreBoard.HideLogo(true);
         }
 
         private void showT1Logo_Click(object sender, EventArgs e)
         {
-            formScoreBoard.ShowLogo(true);
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void team2NameBox_TextChanged(object sender, EventArgs e)
-        {
-
+            _formScoreBoard.ShowLogo(true);
         }
 
         private void setTeam2Name_Click_1(object sender, EventArgs e)
         {
             if (team2NameBox.Text.Length > 0)
-            {
                 _team2Name = team2NameBox.Text;
-            }
             else
-            {
                 _team2Name = "Team 2";
-            }
-            formScoreBoard.SetTeamName(false,_team2Name);
+            _formScoreBoard.SetTeamName(false,_team2Name);
         }
 
         private void uploadLogoT2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();  
-            // image filters  
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";  
-            if (open.ShowDialog() == DialogResult.OK) {  
-                // display image in picture box  
-                logo2.Image = new Bitmap(open.FileName);  
-                // image file path  
-                logo2Path.Text = open.FileName;
-                formScoreBoard.SetLogo(false,logo2.Image);
-            }
+           UploadLogo(false);
         }
 
         private void hideT2Logo_Click(object sender, EventArgs e)
         {
-            formScoreBoard.HideLogo(false);
+            _formScoreBoard.HideLogo(false);
         }
 
         private void showT2Logo_Click(object sender, EventArgs e)
         {
-            formScoreBoard.ShowLogo(false);
+            _formScoreBoard.ShowLogo(false);
         }
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-            formScoreBoard.SetTime(_minutesT, _secondsT);
+            _formScoreBoard.SetTime(_minutesT, _secondsT);
             UpdateTime(_minutesT,_secondsT);
-            penalty = new int[penaltyCount][];
-            for (int i = 0; i < penaltyCount; i++)
+            _penalty = new int[_penaltyCount][];
+            for (int i = 0; i < _penaltyCount; i++)
             {
-                penalty[i] = new int[3];
-                penalty[i][1] = 2;
+                _penalty[i] = new int[3];
+                _penalty[i][1] = 2;
             }
 
-            for (int i = 0; i < penalty.Length; i++)
+            for (int i = 0; i < _penalty.Length; i++)
             {
-                UpdatePenaltyGF(i+1,penalty[i][0],penalty[i][1],penalty[i][2]);
+                UpdatePenaltyGf(i+1,_penalty[i][0],_penalty[i][1],_penalty[i][2]);
             }
         }
 
@@ -247,16 +221,16 @@ namespace Scoreboard
             if (!_timerRunning && !_periodEnd)
             {
                 _timer = new Timer();
-                _timer.Tick += new EventHandler(DisplayTimeTimer);
+                _timer.Tick += DisplayTimeTimer;
                 _timer.Enabled = true;
-                _timer.Interval = 1000; // 1000 ms is one second
+                _timer.Interval = 1000;
                 _timer.Start();
                 _timerRunning = true;
                 StartPenalty();
             }
         }
 
-        public void DisplayTimeTimer(Object myObject, EventArgs myEventArgs)
+        private void DisplayTimeTimer(Object myObject, EventArgs myEventArgs)
         {
             if (_secondsT == 0)
             {
@@ -271,8 +245,9 @@ namespace Scoreboard
             {
                 _secondsT--;
             }
-            formScoreBoard.SetTime(_minutesT,_secondsT);
-            UpdateTime(_minutesT,_secondsT);
+
+            _formScoreBoard.SetTime(_minutesT, _secondsT);
+            UpdateTime(_minutesT, _secondsT);
 
             if (_minutesT == 0 && _secondsT == 0)
             {
@@ -293,13 +268,10 @@ namespace Scoreboard
 
         private void resetTime_Click(object sender, EventArgs e)
         {
-            if (_timerRunning)
-            {
-                _timer.Stop();
-            }
+            if (_timerRunning) _timer.Stop();
             _minutesT = 15;
             _secondsT = 0;
-            formScoreBoard.SetTime(_minutesT,_secondsT);
+            _formScoreBoard.SetTime(_minutesT,_secondsT);
             UpdateTime(_minutesT,_secondsT);
             _timerRunning = false;
             _periodEnd = false;
@@ -308,75 +280,59 @@ namespace Scoreboard
         private void UpdateTime(int minutes, int seconds)
         {
             if (minutes < 10)
-            {
-                minutesTime.Text = "0" + minutes.ToString();
-            }
+                minutesTime.Text = "0" + minutes;
             else
-            {
                 minutesTime.Text = minutes.ToString();
-            }
 
             if (seconds < 10)
-            {
-                secondsTime.Text = "0" + seconds.ToString();
-            }
+                secondsTime.Text = "0" + seconds;
             else
-            {
                 secondsTime.Text = seconds.ToString();
-            }
         }
 
         private void p1T1Minutes_ValueChanged(object sender, EventArgs e)
         {
-            penalty[0][1] = (int) p1T1Minutes.Value;
+            _penalty[0][1] = (int) p1T1Minutes.Value;
         }
 
         private void p1T1Seconds_ValueChanged(object sender, EventArgs e)
         {
-            penalty[0][2] = (int) p1T1Seconds.Value;
+            _penalty[0][2] = (int) p1T1Seconds.Value;
         }
 
-        public void UpdatePenaltyGF(int position, int number, int minutes, int seconds)
+        private void UpdatePenaltyGf(int position, int number, int minutes, int seconds)
         {
             string sMinutes;
             string sSeconds;
             if (minutes < 10)
-            {
                 sMinutes = "0" + minutes;
-            }
             else
-            {
                 sMinutes = minutes.ToString();
-            }
 
             if (seconds < 10)
-            {
                 sSeconds = "0" + seconds;
-            }
             else
-            {
                 sSeconds = seconds.ToString();
-            }
 
             switch (position)
             {
               case 1:
-                  p1T1Number.Text = penalty[0][0].ToString();
+                  p1T1Number.Text = _penalty[0][0].ToString();
                   p1T1Seconds.Text = sSeconds;
                   p1T1Minutes.Text = sMinutes;
                   break;
               case 2:
-                  p2T1Number.Text = penalty[1][0].ToString();
+                  p2T1Number.Text = _penalty[1][0].ToString();
                   p2T1Seconds.Text = sSeconds;
                   p2T1Minutes.Text = sMinutes;
                   break;
               case 3:
-                  p1T2Number.Text = penalty[2][0].ToString();
+                  p1T2Number.Text = _penalty[2][0].ToString();
                   p1T2Seconds.Text = sSeconds;
                   p1T2Minutes.Text = sMinutes;
                   break;
               case 4:
-                  p2T2Number.Text = penalty[3][0].ToString();
+                  p2T2Number.Text = _penalty[3][0].ToString();
                   p2T2Seconds.Text = sSeconds;
                   p2T2Minutes.Text = sMinutes;
                   break;
@@ -385,96 +341,80 @@ namespace Scoreboard
             }
         }
 
+        private void ResetPenalty(int position)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                _penalty[position][i] = 0;
+            }
+            _formScoreBoard.SetPenalty(position,_penalty[position][0],_penalty[position][1],_penalty[position][2]);
+            UpdatePenaltyGf(position,_penalty[position][0],_penalty[position][1], _penalty[position][2]);
+        }
+
         private void resetT1P1_Click(object sender, EventArgs e)
         {
-            penalty[0][0] = 0;
-            penalty[0][1] = 0;
-            penalty[0][2] = 0;
-            formScoreBoard.SetPenalty(1,penalty[0][0],penalty[0][1],penalty[0][2]);
-            UpdatePenaltyGF(1,penalty[0][0],penalty[0][1], penalty[0][2] );
-
+            ResetPenalty(1);
         }
 
         private void resetT1P2_Click(object sender, EventArgs e)
         {
-            penalty[1][0] = 0;
-            penalty[1][1] = 0;
-            penalty[1][2] = 0;
-            formScoreBoard.SetPenalty(2,penalty[1][0],penalty[1][1],penalty[1][2]);
-            UpdatePenaltyGF(2,penalty[1][0],penalty[1][1],penalty[1][2]);
+            ResetPenalty(2);
         }
 
         private void resetT2P1_Click(object sender, EventArgs e)
         {
-            penalty[2][0] = 0;
-            penalty[2][1] = 0;
-            penalty[2][2] = 0;
-            formScoreBoard.SetPenalty(3,penalty[2][0],penalty[2][1],penalty[2][2]);
-            UpdatePenaltyGF(3,penalty[2][0],penalty[2][1],penalty[2][2]);
+            ResetPenalty(3);
         }
 
         private void resetT2P2_Click(object sender, EventArgs e)
         {
-            penalty[3][0] = 0;
-            penalty[3][1] = 0;
-            penalty[3][2] = 0;
-            formScoreBoard.SetPenalty(4,penalty[3][0],penalty[3][1],penalty[3][2]);
-            UpdatePenaltyGF(4,penalty[3][0],penalty[3][1],penalty[3][2]);
+            ResetPenalty(4);
         }
 
-        private void penaltyStart_Click(object sender, EventArgs e)
-        {
-            StartPenalty();
-        }
-
-        public void StartPenalty()
+        private void StartPenalty()
         {
             if (!_penaltyRunning && !_periodEnd && _timerRunning)
             {
                 _timerPenalty = new Timer();
                 _timerPenalty.Tick += new EventHandler(DisplayTimePenalty);
                 _timerPenalty.Enabled = true;
-                _timerPenalty.Interval = 1000; // 1000 ms is one second
+                _timerPenalty.Interval = 1000;
                 _timerPenalty.Start();
                 _penaltyRunning = true;
             }
         }
 
-        public void DisplayTimePenalty(Object myObject, EventArgs myEventArgs)
+        private void DisplayTimePenalty(Object myObject, EventArgs myEventArgs)
         {
-            for (int i = 0; i < penalty.Length; i++)
+            for (int i = 0; i < _penalty.Length; i++)
             {
-                if (penalty[i][1] > 0 || penalty[i][2] > 0)
+                if (_penalty[i][1] > 0 || _penalty[i][2] > 0)
                 {
-                    if (penalty[i][2] == 0)
+                    if (_penalty[i][2] == 0)
                     {
-                        if (penalty[i][1] > 0)
+                        if (_penalty[i][1] > 0)
                         {
-                            penalty[i][1]--;
-                            penalty[i][2] = 60;
-                            penalty[i][2]--;
+                            _penalty[i][1]--;
+                            _penalty[i][2] = 60;
+                            _penalty[i][2]--;
                         }
                     }
                     else
                     {
-                        penalty[i][2]--;
+                        _penalty[i][2]--;
                     }
-                    UpdatePenaltyGF(i+1,penalty[i][0],penalty[i][1],penalty[i][2]);
-                    formScoreBoard.SetPenalty(i+1,penalty[i][0],penalty[i][1],penalty[i][2]);
+
+                    UpdatePenaltyGf(i + 1, _penalty[i][0], _penalty[i][1], _penalty[i][2]);
+                    _formScoreBoard.SetPenalty(i + 1, _penalty[i][0], _penalty[i][1], _penalty[i][2]);
                 }
                 else
                 {
-                    formScoreBoard.HidePenalty(i+1);
+                    _formScoreBoard.HidePenalty(i + 1);
                 }
             }
         }
 
-        private void penaltyStop_Click(object sender, EventArgs e)
-        {
-            StopPenalty();
-        }
-
-        public void StopPenalty()
+        private void StopPenalty()
         {
             if (_penaltyRunning && !_timerRunning)
             {
@@ -485,94 +425,90 @@ namespace Scoreboard
 
         private void p1T1Number_ValueChanged(object sender, EventArgs e)
         {
-            penalty[0][0] = (int) p1T1Number.Value;
+            _penalty[0][0] = (int) p1T1Number.Value;
         }
 
         private void p2T1Number_ValueChanged(object sender, EventArgs e)
         {
-            penalty[1][0] = (int) p2T1Number.Value;
+            _penalty[1][0] = (int) p2T1Number.Value;
         }
 
         private void p1T2Number_ValueChanged(object sender, EventArgs e)
         {
-            penalty[2][0] = (int) p1T2Number.Value;
+            _penalty[2][0] = (int) p1T2Number.Value;
         }
 
         private void p2T2Number_ValueChanged(object sender, EventArgs e)
         {
-            penalty[3][0] = (int) p2T2Number.Value;
+            _penalty[3][0] = (int) p2T2Number.Value;
         }
 
         private void p2T1Seconds_ValueChanged(object sender, EventArgs e)
         {
-            penalty[1][2] = (int) p2T1Seconds.Value;
+            _penalty[1][2] = (int) p2T1Seconds.Value;
         }
 
         private void p2T1Minutes_ValueChanged(object sender, EventArgs e)
         {
-            penalty[1][1] = (int)  p2T1Minutes.Value;
+            _penalty[1][1] = (int)  p2T1Minutes.Value;
         }
 
         private void p1T2Minutes_ValueChanged(object sender, EventArgs e)
         {
-            penalty[2][1] = (int) p1T2Minutes.Value;
+            _penalty[2][1] = (int) p1T2Minutes.Value;
         }
 
         private void p1T2Seconds_ValueChanged(object sender, EventArgs e)
         {
-            penalty[2][2] = (int) p1T2Seconds.Value;
+            _penalty[2][2] = (int) p1T2Seconds.Value;
         }
 
         private void p2T2Minutes_ValueChanged(object sender, EventArgs e)
         {
-            penalty[3][1] = (int) p2T2Minutes.Value;
+            _penalty[3][1] = (int) p2T2Minutes.Value;
         }
 
         private void p2T2Seconds_ValueChanged(object sender, EventArgs e)
         {
-            penalty[3][2] = (int) p2T2Seconds.Value;
+            _penalty[3][2] = (int) p2T2Seconds.Value;
         }
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-            formScoreBoard = ScoreboardForm.GetInstance();
+            _formScoreBoard = ScoreboardForm.GetInstance();
             var area = Screen.AllScreens[1].Bounds;
-            formScoreBoard.SetSize(area.Width,area.Height);
+            _formScoreBoard.SetSize(area.Width,area.Height);
             var location = area.Location;
-            location.Offset((area.Width - formScoreBoard.Width) / 2, (area.Height - formScoreBoard.Height) / 2);
-            formScoreBoard.Location = location;
+            location.Offset((area.Width - _formScoreBoard.Width) / 2, (area.Height - _formScoreBoard.Height) / 2);
+            _formScoreBoard.Location = location;
 
-            if (!formScoreBoard.IsActive)
+            if (!_formScoreBoard.IsActive)
             {
-                formScoreBoard.Show();
-                formScoreBoard.IsActive = true;
+                _formScoreBoard.Show();
+                _formScoreBoard.IsActive = true;
             }
-            else if (!formScoreBoard.IsDisposed)
+            else if (!_formScoreBoard.IsDisposed)
             {
-                formScoreBoard.BringToFront();
+                _formScoreBoard.BringToFront();
             }
 
-            for (int i = 1; i <= penaltyCount; i++)
-            {
-                formScoreBoard.HidePenalty(i);
-            }
+            for (var i = 1; i <= _penaltyCount; i++) _formScoreBoard.HidePenalty(i);
         }
 
         private void closeScoreboardBtn_Click(object sender, EventArgs e)
         {
-            if (formScoreBoard != null)
+            if (_formScoreBoard != null)
             {
-                formScoreBoard.Dispose();
-                formScoreBoard.ResetInstance();
-                formScoreBoard.IsActive = false;
+                _formScoreBoard.Dispose();
+                _formScoreBoard.ResetInstance();
+                _formScoreBoard.IsActive = false;
             }
         }
 
         private void appearanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var control = new ControlForm(formScoreBoard);
+            var control = new ControlForm(_formScoreBoard);
             control.ShowDialog();
-            
         }
     }
 }

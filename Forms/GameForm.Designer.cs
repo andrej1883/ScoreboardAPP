@@ -1,4 +1,4 @@
-﻿namespace Scoreboard
+﻿namespace Scoreboard.Forms
 {
     partial class GameForm
     {
@@ -502,7 +502,6 @@
             this.logo1.Size = new System.Drawing.Size(100, 50);
             this.logo1.TabIndex = 53;
             this.logo1.TabStop = false;
-            this.logo1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // logo1Path
             // 
@@ -601,7 +600,6 @@
             this.team2NameBox.Name = "team2NameBox";
             this.team2NameBox.Size = new System.Drawing.Size(100, 20);
             this.team2NameBox.TabIndex = 59;
-            this.team2NameBox.TextChanged += new System.EventHandler(this.team2NameBox_TextChanged);
             // 
             // label7
             // 

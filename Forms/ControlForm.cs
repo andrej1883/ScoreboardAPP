@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Scoreboard
+namespace Scoreboard.Forms
 {
     public partial class ControlForm : Form
     {
@@ -54,7 +45,7 @@ namespace Scoreboard
             }
 
             
-            _formScoreBoard.Width = Decimal.ToInt32(scoreBWidth.Value);
+            _formScoreBoard.Width = decimal.ToInt32(scoreBWidth.Value);
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
@@ -65,7 +56,7 @@ namespace Scoreboard
                 _fOpen = true;
             }
             
-            _formScoreBoard.Height = Decimal.ToInt32(scoreBHeight.Value);
+            _formScoreBoard.Height = decimal.ToInt32(scoreBHeight.Value);
         }
 
         private void blackBcgrBtn_Click(object sender, EventArgs e)
@@ -86,7 +77,6 @@ namespace Scoreboard
                 _blacForm.StartPosition = FormStartPosition.Manual;
                 _blacForm.Show();
                 _blackActive = true;
-
             }
             else
             {
@@ -168,26 +158,26 @@ namespace Scoreboard
                 string line;
                 while ((line = reader.ReadLine()) != null) 
                 {
-                    settings = line.Split(',');
-                    _formScoreBoard.BackgrColor = Color.FromName(settings[0]);
-                    _formScoreBoard.PenaltyDColor = Color.FromName(settings[1]);
-                    _formScoreBoard.PenaltyLColor = Color.FromName(settings[2]);
-                    _formScoreBoard.PeriodColor = Color.FromName(settings[3]);
-                    _formScoreBoard.PeriodLColor = Color.FromName(settings[4]);
-                    _formScoreBoard.TimeLColor = Color.FromName(settings[5]);
-                    _formScoreBoard.ScoLColor = Color.FromName(settings[6]);
-                    _formScoreBoard.ScoSColor = Color.FromName(settings[7]);
-                    _formScoreBoard.TimeCColor = Color.FromName(settings[8]);
-                    _formScoreBoard.PenaltyDFont = _formScoreBoard.SetFontSize(Int32.Parse(settings[9]));
-                    _formScoreBoard.PenaltyLFont = _formScoreBoard.SetFontSize(Int32.Parse(settings[10]));
-                    _formScoreBoard.PeriodLFont = _formScoreBoard.SetFontSize(Int32.Parse(settings[11]));
-                    _formScoreBoard.PeriodPFont = _formScoreBoard.SetFontSize(Int32.Parse(settings[12]));
-                    _formScoreBoard.TimeLFont = _formScoreBoard.SetFontSize(Int32.Parse(settings[13]));
-                    _formScoreBoard.ScoLFont = _formScoreBoard.SetFontSize(Int32.Parse(settings[14]));
-                    _formScoreBoard.ScoSFont =_formScoreBoard.SetFontSize( Int32.Parse(settings[15]));
-                    _formScoreBoard.TimeCFont = _formScoreBoard.SetFontSize(Int32.Parse(settings[16]));
-                    _formScoreBoard.Width = Int32.Parse(settings[17]);
-                    _formScoreBoard.Height = Int32.Parse(settings[18]);
+                    settings = line.Split('|');
+                    _formScoreBoard.BackgrColor = Color.FromArgb(int.Parse(settings[0]));
+                    _formScoreBoard.PenaltyDColor = Color.FromArgb(int.Parse(settings[1]));
+                    _formScoreBoard.PenaltyLColor = Color.FromArgb(int.Parse(settings[2]));
+                    _formScoreBoard.PeriodColor = Color.FromArgb(int.Parse(settings[3]));
+                    _formScoreBoard.PeriodLColor = Color.FromArgb(int.Parse(settings[4]));
+                    _formScoreBoard.TimeLColor = Color.FromArgb(int.Parse(settings[5]));
+                    _formScoreBoard.ScoLColor = Color.FromArgb(int.Parse(settings[6]));
+                    _formScoreBoard.ScoSColor = Color.FromArgb(int.Parse(settings[7]));
+                    _formScoreBoard.TimeCColor = Color.FromArgb(int.Parse(settings[8]));
+                    _formScoreBoard.PenaltyDFont = _formScoreBoard.SetFontSize(float.Parse(settings[9]));
+                    _formScoreBoard.PenaltyLFont = _formScoreBoard.SetFontSize(float.Parse(settings[10]));
+                    _formScoreBoard.PeriodLFont = _formScoreBoard.SetFontSize(float.Parse(settings[11]));
+                    _formScoreBoard.PeriodPFont = _formScoreBoard.SetFontSize(float.Parse(settings[12]));
+                    _formScoreBoard.TimeLFont = _formScoreBoard.SetFontSize(float.Parse(settings[13]));
+                    _formScoreBoard.ScoLFont = _formScoreBoard.SetFontSize(float.Parse(settings[14]));
+                    _formScoreBoard.ScoSFont =_formScoreBoard.SetFontSize( float.Parse(settings[15]));
+                    _formScoreBoard.TimeCFont = _formScoreBoard.SetFontSize(float.Parse(settings[16]));
+                    _formScoreBoard.Width = int.Parse(settings[17]);
+                    _formScoreBoard.Height = int.Parse(settings[18]);
                     InitDropdowns();
                 }
             }
@@ -206,11 +196,6 @@ namespace Scoreboard
                 string text = _formScoreBoard.ToString();
                 File.WriteAllText(saveFileDialog1.FileName, text);
             }
-        }
-
-        private void scoreBoardSettingsBox_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void backgrColor_Click(object sender, EventArgs e)

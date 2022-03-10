@@ -1,4 +1,4 @@
-﻿namespace Scoreboard
+﻿namespace Scoreboard.Forms
 {
     partial class ControlForm
     {
@@ -699,7 +699,6 @@
             this.scoreBoardSettingsBox.TabIndex = 18;
             this.scoreBoardSettingsBox.TabStop = false;
             this.scoreBoardSettingsBox.Text = "ScoreBoard Settings";
-            this.scoreBoardSettingsBox.Enter += new System.EventHandler(this.scoreBoardSettingsBox_Enter);
             // 
             // backgrColor
             // 

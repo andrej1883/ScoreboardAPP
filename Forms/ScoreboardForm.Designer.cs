@@ -1,4 +1,4 @@
-﻿namespace Scoreboard
+﻿namespace Scoreboard.Forms
 {
     partial class ScoreboardForm
     {
@@ -98,7 +98,6 @@
             this.scoreT1Lbl.TabIndex = 4;
             this.scoreT1Lbl.Text = "00";
             this.scoreT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.scoreT1Lbl.Click += new System.EventHandler(this.label3_Click);
             // 
             // scoreT2Lbl
             // 
@@ -483,7 +482,6 @@
             this.Controls.Add(this.t1Lbl);
             this.Name = "ScoreboardForm";
             this.Text = "ScoreboardForm";
-            this.Load += new System.EventHandler(this.ScoreboardForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.team1Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.team2Logo)).EndInit();
             this.ResumeLayout(false);
