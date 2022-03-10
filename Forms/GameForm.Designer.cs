@@ -99,6 +99,31 @@
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.createBtn = new System.Windows.Forms.Button();
             this.closeScoreboardBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.timeoutT2S = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.timeoutT2M = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.timeoutT1S = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.timeoutT1M = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -115,6 +140,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -122,17 +153,17 @@
             this.groupBox1.Controls.Add(this.secondsTime);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.minutesTime);
-            this.groupBox1.Location = new System.Drawing.Point(725, 282);
+            this.groupBox1.Location = new System.Drawing.Point(693, 180);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(314, 164);
+            this.groupBox1.Size = new System.Drawing.Size(397, 232);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Timer";
             // 
             // secondsTime
             // 
             this.secondsTime.AutoSize = true;
-            this.secondsTime.Location = new System.Drawing.Point(199, 78);
+            this.secondsTime.Location = new System.Drawing.Point(252, 118);
             this.secondsTime.Name = "secondsTime";
             this.secondsTime.Size = new System.Drawing.Size(19, 13);
             this.secondsTime.TabIndex = 2;
@@ -141,7 +172,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(151, 78);
+            this.label5.Location = new System.Drawing.Point(186, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(10, 13);
             this.label5.TabIndex = 1;
@@ -150,11 +181,11 @@
             // minutesTime
             // 
             this.minutesTime.AutoSize = true;
-            this.minutesTime.Location = new System.Drawing.Point(78, 78);
+            this.minutesTime.Location = new System.Drawing.Point(103, 118);
             this.minutesTime.Name = "minutesTime";
             this.minutesTime.Size = new System.Drawing.Size(19, 13);
             this.minutesTime.TabIndex = 0;
-            this.minutesTime.Text = "15";
+            this.minutesTime.Text = "00";
             // 
             // startTime
             // 
@@ -189,7 +220,7 @@
             // goalsTeam2
             // 
             this.goalsTeam2.AutoSize = true;
-            this.goalsTeam2.Location = new System.Drawing.Point(1459, 504);
+            this.goalsTeam2.Location = new System.Drawing.Point(250, 325);
             this.goalsTeam2.Name = "goalsTeam2";
             this.goalsTeam2.Size = new System.Drawing.Size(13, 13);
             this.goalsTeam2.TabIndex = 4;
@@ -197,7 +228,7 @@
             // 
             // minusGoal2
             // 
-            this.minusGoal2.Location = new System.Drawing.Point(1359, 551);
+            this.minusGoal2.Location = new System.Drawing.Point(151, 338);
             this.minusGoal2.Name = "minusGoal2";
             this.minusGoal2.Size = new System.Drawing.Size(75, 23);
             this.minusGoal2.TabIndex = 5;
@@ -207,7 +238,7 @@
             // 
             // plusGoal2
             // 
-            this.plusGoal2.Location = new System.Drawing.Point(1497, 551);
+            this.plusGoal2.Location = new System.Drawing.Point(284, 338);
             this.plusGoal2.Name = "plusGoal2";
             this.plusGoal2.Size = new System.Drawing.Size(75, 23);
             this.plusGoal2.TabIndex = 6;
@@ -217,7 +248,7 @@
             // 
             // plusGoal1
             // 
-            this.plusGoal1.Location = new System.Drawing.Point(293, 551);
+            this.plusGoal1.Location = new System.Drawing.Point(279, 338);
             this.plusGoal1.Name = "plusGoal1";
             this.plusGoal1.Size = new System.Drawing.Size(75, 23);
             this.plusGoal1.TabIndex = 9;
@@ -227,7 +258,7 @@
             // 
             // minusGoal1
             // 
-            this.minusGoal1.Location = new System.Drawing.Point(155, 551);
+            this.minusGoal1.Location = new System.Drawing.Point(137, 338);
             this.minusGoal1.Name = "minusGoal1";
             this.minusGoal1.Size = new System.Drawing.Size(75, 23);
             this.minusGoal1.TabIndex = 8;
@@ -238,12 +269,11 @@
             // goalsTeam1
             // 
             this.goalsTeam1.AutoSize = true;
-            this.goalsTeam1.Location = new System.Drawing.Point(255, 504);
+            this.goalsTeam1.Location = new System.Drawing.Point(238, 325);
             this.goalsTeam1.Name = "goalsTeam1";
             this.goalsTeam1.Size = new System.Drawing.Size(13, 13);
             this.goalsTeam1.TabIndex = 7;
             this.goalsTeam1.Text = "0";
-            this.goalsTeam1.Click += new System.EventHandler(this.goalsTeam1_Click);
             // 
             // period
             // 
@@ -252,7 +282,7 @@
             this.period.Name = "period";
             this.period.Size = new System.Drawing.Size(13, 13);
             this.period.TabIndex = 10;
-            this.period.Text = "1";
+            this.period.Text = "0";
             // 
             // periodMinus
             // 
@@ -276,7 +306,7 @@
             // 
             // p1T1Number
             // 
-            this.p1T1Number.Location = new System.Drawing.Point(78, 807);
+            this.p1T1Number.Location = new System.Drawing.Point(36, 64);
             this.p1T1Number.Name = "p1T1Number";
             this.p1T1Number.Size = new System.Drawing.Size(87, 20);
             this.p1T1Number.TabIndex = 13;
@@ -284,7 +314,7 @@
             // 
             // p1T1Minutes
             // 
-            this.p1T1Minutes.Location = new System.Drawing.Point(220, 807);
+            this.p1T1Minutes.Location = new System.Drawing.Point(178, 64);
             this.p1T1Minutes.Name = "p1T1Minutes";
             this.p1T1Minutes.Size = new System.Drawing.Size(87, 20);
             this.p1T1Minutes.TabIndex = 14;
@@ -292,7 +322,7 @@
             // 
             // p1T1Seconds
             // 
-            this.p1T1Seconds.Location = new System.Drawing.Point(327, 807);
+            this.p1T1Seconds.Location = new System.Drawing.Point(285, 64);
             this.p1T1Seconds.Name = "p1T1Seconds";
             this.p1T1Seconds.Size = new System.Drawing.Size(87, 20);
             this.p1T1Seconds.TabIndex = 15;
@@ -300,7 +330,7 @@
             // 
             // p1T1ShowPenalty
             // 
-            this.p1T1ShowPenalty.Location = new System.Drawing.Point(446, 803);
+            this.p1T1ShowPenalty.Location = new System.Drawing.Point(404, 60);
             this.p1T1ShowPenalty.Name = "p1T1ShowPenalty";
             this.p1T1ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T1ShowPenalty.TabIndex = 16;
@@ -310,7 +340,7 @@
             // 
             // p1T1HidePenalty
             // 
-            this.p1T1HidePenalty.Location = new System.Drawing.Point(538, 803);
+            this.p1T1HidePenalty.Location = new System.Drawing.Point(496, 60);
             this.p1T1HidePenalty.Name = "p1T1HidePenalty";
             this.p1T1HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T1HidePenalty.TabIndex = 17;
@@ -320,7 +350,7 @@
             // 
             // p2T1Seconds
             // 
-            this.p2T1Seconds.Location = new System.Drawing.Point(327, 864);
+            this.p2T1Seconds.Location = new System.Drawing.Point(285, 121);
             this.p2T1Seconds.Name = "p2T1Seconds";
             this.p2T1Seconds.Size = new System.Drawing.Size(87, 20);
             this.p2T1Seconds.TabIndex = 20;
@@ -328,7 +358,7 @@
             // 
             // p2T1Minutes
             // 
-            this.p2T1Minutes.Location = new System.Drawing.Point(220, 864);
+            this.p2T1Minutes.Location = new System.Drawing.Point(178, 121);
             this.p2T1Minutes.Name = "p2T1Minutes";
             this.p2T1Minutes.Size = new System.Drawing.Size(87, 20);
             this.p2T1Minutes.TabIndex = 19;
@@ -336,7 +366,7 @@
             // 
             // p2T1Number
             // 
-            this.p2T1Number.Location = new System.Drawing.Point(78, 864);
+            this.p2T1Number.Location = new System.Drawing.Point(36, 121);
             this.p2T1Number.Name = "p2T1Number";
             this.p2T1Number.Size = new System.Drawing.Size(87, 20);
             this.p2T1Number.TabIndex = 18;
@@ -344,7 +374,7 @@
             // 
             // p1T2Seconds
             // 
-            this.p1T2Seconds.Location = new System.Drawing.Point(1346, 807);
+            this.p1T2Seconds.Location = new System.Drawing.Point(287, 60);
             this.p1T2Seconds.Name = "p1T2Seconds";
             this.p1T2Seconds.Size = new System.Drawing.Size(87, 20);
             this.p1T2Seconds.TabIndex = 25;
@@ -352,7 +382,7 @@
             // 
             // p1T2Minutes
             // 
-            this.p1T2Minutes.Location = new System.Drawing.Point(1239, 807);
+            this.p1T2Minutes.Location = new System.Drawing.Point(180, 60);
             this.p1T2Minutes.Name = "p1T2Minutes";
             this.p1T2Minutes.Size = new System.Drawing.Size(87, 20);
             this.p1T2Minutes.TabIndex = 24;
@@ -360,7 +390,7 @@
             // 
             // p1T2Number
             // 
-            this.p1T2Number.Location = new System.Drawing.Point(1097, 807);
+            this.p1T2Number.Location = new System.Drawing.Point(38, 60);
             this.p1T2Number.Name = "p1T2Number";
             this.p1T2Number.Size = new System.Drawing.Size(87, 20);
             this.p1T2Number.TabIndex = 23;
@@ -368,7 +398,7 @@
             // 
             // p2T2Seconds
             // 
-            this.p2T2Seconds.Location = new System.Drawing.Point(1346, 860);
+            this.p2T2Seconds.Location = new System.Drawing.Point(287, 113);
             this.p2T2Seconds.Name = "p2T2Seconds";
             this.p2T2Seconds.Size = new System.Drawing.Size(87, 20);
             this.p2T2Seconds.TabIndex = 30;
@@ -376,7 +406,7 @@
             // 
             // p2T2Minutes
             // 
-            this.p2T2Minutes.Location = new System.Drawing.Point(1239, 860);
+            this.p2T2Minutes.Location = new System.Drawing.Point(180, 113);
             this.p2T2Minutes.Name = "p2T2Minutes";
             this.p2T2Minutes.Size = new System.Drawing.Size(87, 20);
             this.p2T2Minutes.TabIndex = 29;
@@ -384,7 +414,7 @@
             // 
             // p2T2Number
             // 
-            this.p2T2Number.Location = new System.Drawing.Point(1097, 860);
+            this.p2T2Number.Location = new System.Drawing.Point(38, 113);
             this.p2T2Number.Name = "p2T2Number";
             this.p2T2Number.Size = new System.Drawing.Size(87, 20);
             this.p2T2Number.TabIndex = 28;
@@ -392,7 +422,7 @@
             // 
             // p2T1HidePenalty
             // 
-            this.p2T1HidePenalty.Location = new System.Drawing.Point(538, 864);
+            this.p2T1HidePenalty.Location = new System.Drawing.Point(496, 121);
             this.p2T1HidePenalty.Name = "p2T1HidePenalty";
             this.p2T1HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T1HidePenalty.TabIndex = 37;
@@ -402,7 +432,7 @@
             // 
             // p2T1ShowPenalty
             // 
-            this.p2T1ShowPenalty.Location = new System.Drawing.Point(446, 864);
+            this.p2T1ShowPenalty.Location = new System.Drawing.Point(404, 121);
             this.p2T1ShowPenalty.Name = "p2T1ShowPenalty";
             this.p2T1ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T1ShowPenalty.TabIndex = 36;
@@ -412,7 +442,7 @@
             // 
             // p1T2HidePenalty
             // 
-            this.p1T2HidePenalty.Location = new System.Drawing.Point(1557, 803);
+            this.p1T2HidePenalty.Location = new System.Drawing.Point(498, 56);
             this.p1T2HidePenalty.Name = "p1T2HidePenalty";
             this.p1T2HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T2HidePenalty.TabIndex = 39;
@@ -422,7 +452,7 @@
             // 
             // p1T2ShowPenalty
             // 
-            this.p1T2ShowPenalty.Location = new System.Drawing.Point(1465, 803);
+            this.p1T2ShowPenalty.Location = new System.Drawing.Point(406, 56);
             this.p1T2ShowPenalty.Name = "p1T2ShowPenalty";
             this.p1T2ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T2ShowPenalty.TabIndex = 38;
@@ -432,7 +462,7 @@
             // 
             // p2T2HidePenalty
             // 
-            this.p2T2HidePenalty.Location = new System.Drawing.Point(1557, 853);
+            this.p2T2HidePenalty.Location = new System.Drawing.Point(498, 106);
             this.p2T2HidePenalty.Name = "p2T2HidePenalty";
             this.p2T2HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T2HidePenalty.TabIndex = 41;
@@ -442,7 +472,7 @@
             // 
             // p2T2ShowPenalty
             // 
-            this.p2T2ShowPenalty.Location = new System.Drawing.Point(1465, 853);
+            this.p2T2ShowPenalty.Location = new System.Drawing.Point(406, 106);
             this.p2T2ShowPenalty.Name = "p2T2ShowPenalty";
             this.p2T2ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T2ShowPenalty.TabIndex = 40;
@@ -453,7 +483,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 345);
+            this.label2.Location = new System.Drawing.Point(64, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 42;
@@ -461,14 +491,14 @@
             // 
             // team1NameBox
             // 
-            this.team1NameBox.Location = new System.Drawing.Point(187, 342);
+            this.team1NameBox.Location = new System.Drawing.Point(163, 164);
             this.team1NameBox.Name = "team1NameBox";
             this.team1NameBox.Size = new System.Drawing.Size(100, 20);
             this.team1NameBox.TabIndex = 44;
             // 
             // setTeam1Name
             // 
-            this.setTeam1Name.Location = new System.Drawing.Point(293, 340);
+            this.setTeam1Name.Location = new System.Drawing.Point(272, 165);
             this.setTeam1Name.Name = "setTeam1Name";
             this.setTeam1Name.Size = new System.Drawing.Size(75, 23);
             this.setTeam1Name.TabIndex = 46;
@@ -479,7 +509,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(88, 392);
+            this.label4.Location = new System.Drawing.Point(64, 218);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 49;
@@ -487,7 +517,7 @@
             // 
             // uploadLogoT1
             // 
-            this.uploadLogoT1.Location = new System.Drawing.Point(293, 387);
+            this.uploadLogoT1.Location = new System.Drawing.Point(272, 210);
             this.uploadLogoT1.Name = "uploadLogoT1";
             this.uploadLogoT1.Size = new System.Drawing.Size(75, 23);
             this.uploadLogoT1.TabIndex = 51;
@@ -497,22 +527,22 @@
             // 
             // logo1
             // 
-            this.logo1.Location = new System.Drawing.Point(168, 240);
+            this.logo1.Location = new System.Drawing.Point(187, 22);
             this.logo1.Name = "logo1";
-            this.logo1.Size = new System.Drawing.Size(100, 50);
+            this.logo1.Size = new System.Drawing.Size(160, 120);
             this.logo1.TabIndex = 53;
             this.logo1.TabStop = false;
             // 
             // logo1Path
             // 
-            this.logo1Path.Location = new System.Drawing.Point(187, 387);
+            this.logo1Path.Location = new System.Drawing.Point(163, 213);
             this.logo1Path.Name = "logo1Path";
             this.logo1Path.Size = new System.Drawing.Size(100, 20);
             this.logo1Path.TabIndex = 55;
             // 
             // hideT1Logo
             // 
-            this.hideT1Logo.Location = new System.Drawing.Point(374, 387);
+            this.hideT1Logo.Location = new System.Drawing.Point(350, 210);
             this.hideT1Logo.Name = "hideT1Logo";
             this.hideT1Logo.Size = new System.Drawing.Size(75, 23);
             this.hideT1Logo.TabIndex = 56;
@@ -522,7 +552,7 @@
             // 
             // showT1Logo
             // 
-            this.showT1Logo.Location = new System.Drawing.Point(455, 387);
+            this.showT1Logo.Location = new System.Drawing.Point(431, 210);
             this.showT1Logo.Name = "showT1Logo";
             this.showT1Logo.Size = new System.Drawing.Size(75, 23);
             this.showT1Logo.TabIndex = 57;
@@ -532,7 +562,7 @@
             // 
             // showT2Logo
             // 
-            this.showT2Logo.Location = new System.Drawing.Point(1659, 387);
+            this.showT2Logo.Location = new System.Drawing.Point(446, 208);
             this.showT2Logo.Name = "showT2Logo";
             this.showT2Logo.Size = new System.Drawing.Size(75, 23);
             this.showT2Logo.TabIndex = 66;
@@ -542,7 +572,7 @@
             // 
             // hideT2Logo
             // 
-            this.hideT2Logo.Location = new System.Drawing.Point(1578, 387);
+            this.hideT2Logo.Location = new System.Drawing.Point(365, 208);
             this.hideT2Logo.Name = "hideT2Logo";
             this.hideT2Logo.Size = new System.Drawing.Size(75, 23);
             this.hideT2Logo.TabIndex = 65;
@@ -552,22 +582,22 @@
             // 
             // logo2Path
             // 
-            this.logo2Path.Location = new System.Drawing.Point(1391, 387);
+            this.logo2Path.Location = new System.Drawing.Point(178, 208);
             this.logo2Path.Name = "logo2Path";
             this.logo2Path.Size = new System.Drawing.Size(100, 20);
             this.logo2Path.TabIndex = 64;
             // 
             // logo2
             // 
-            this.logo2.Location = new System.Drawing.Point(1372, 240);
+            this.logo2.Location = new System.Drawing.Point(199, 22);
             this.logo2.Name = "logo2";
-            this.logo2.Size = new System.Drawing.Size(100, 50);
+            this.logo2.Size = new System.Drawing.Size(160, 120);
             this.logo2.TabIndex = 63;
             this.logo2.TabStop = false;
             // 
             // uploadLogoT2
             // 
-            this.uploadLogoT2.Location = new System.Drawing.Point(1497, 387);
+            this.uploadLogoT2.Location = new System.Drawing.Point(284, 208);
             this.uploadLogoT2.Name = "uploadLogoT2";
             this.uploadLogoT2.Size = new System.Drawing.Size(75, 23);
             this.uploadLogoT2.TabIndex = 62;
@@ -578,7 +608,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1292, 392);
+            this.label3.Location = new System.Drawing.Point(79, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 61;
@@ -586,7 +616,7 @@
             // 
             // setTeam2Name
             // 
-            this.setTeam2Name.Location = new System.Drawing.Point(1497, 340);
+            this.setTeam2Name.Location = new System.Drawing.Point(284, 160);
             this.setTeam2Name.Name = "setTeam2Name";
             this.setTeam2Name.Size = new System.Drawing.Size(75, 23);
             this.setTeam2Name.TabIndex = 60;
@@ -596,7 +626,7 @@
             // 
             // team2NameBox
             // 
-            this.team2NameBox.Location = new System.Drawing.Point(1391, 342);
+            this.team2NameBox.Location = new System.Drawing.Point(178, 163);
             this.team2NameBox.Name = "team2NameBox";
             this.team2NameBox.Size = new System.Drawing.Size(100, 20);
             this.team2NameBox.TabIndex = 59;
@@ -604,7 +634,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1292, 345);
+            this.label7.Location = new System.Drawing.Point(79, 166);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 58;
@@ -612,7 +642,7 @@
             // 
             // resetT1P1
             // 
-            this.resetT1P1.Location = new System.Drawing.Point(619, 804);
+            this.resetT1P1.Location = new System.Drawing.Point(577, 61);
             this.resetT1P1.Name = "resetT1P1";
             this.resetT1P1.Size = new System.Drawing.Size(75, 23);
             this.resetT1P1.TabIndex = 67;
@@ -622,7 +652,7 @@
             // 
             // resetT1P2
             // 
-            this.resetT1P2.Location = new System.Drawing.Point(619, 864);
+            this.resetT1P2.Location = new System.Drawing.Point(577, 121);
             this.resetT1P2.Name = "resetT1P2";
             this.resetT1P2.Size = new System.Drawing.Size(75, 23);
             this.resetT1P2.TabIndex = 68;
@@ -632,7 +662,7 @@
             // 
             // resetT2P1
             // 
-            this.resetT2P1.Location = new System.Drawing.Point(1638, 803);
+            this.resetT2P1.Location = new System.Drawing.Point(579, 56);
             this.resetT2P1.Name = "resetT2P1";
             this.resetT2P1.Size = new System.Drawing.Size(75, 23);
             this.resetT2P1.TabIndex = 69;
@@ -642,7 +672,7 @@
             // 
             // resetT2P2
             // 
-            this.resetT2P2.Location = new System.Drawing.Point(1638, 853);
+            this.resetT2P2.Location = new System.Drawing.Point(579, 106);
             this.resetT2P2.Name = "resetT2P2";
             this.resetT2P2.Size = new System.Drawing.Size(75, 23);
             this.resetT2P2.TabIndex = 70;
@@ -674,13 +704,13 @@
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.timeToolStripMenuItem.Text = "Time";
             // 
             // appearanceToolStripMenuItem
             // 
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.appearanceToolStripMenuItem.Text = "Appearance";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
             // 
@@ -753,64 +783,314 @@
             this.closeScoreboardBtn.UseVisualStyleBackColor = true;
             this.closeScoreboardBtn.Click += new System.EventHandler(this.closeScoreboardBtn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(865, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 74;
+            this.label1.Text = "Period";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(210, 288);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 75;
+            this.label6.Text = "Score Team1";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(221, 288);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 13);
+            this.label8.TabIndex = 76;
+            this.label8.Text = "Score Team2";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.p1T1Number);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.p1T1Minutes);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.p1T1Seconds);
+            this.groupBox2.Controls.Add(this.p1T1ShowPenalty);
+            this.groupBox2.Controls.Add(this.p1T1HidePenalty);
+            this.groupBox2.Controls.Add(this.p2T1Number);
+            this.groupBox2.Controls.Add(this.p2T1Minutes);
+            this.groupBox2.Controls.Add(this.p2T1Seconds);
+            this.groupBox2.Controls.Add(this.resetT1P2);
+            this.groupBox2.Controls.Add(this.p2T1ShowPenalty);
+            this.groupBox2.Controls.Add(this.resetT1P1);
+            this.groupBox2.Controls.Add(this.p2T1HidePenalty);
+            this.groupBox2.Location = new System.Drawing.Point(42, 768);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(690, 200);
+            this.groupBox2.TabIndex = 77;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Penalty Team1";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(282, 35);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.TabIndex = 81;
+            this.label11.Text = "Seconds";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(175, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 80;
+            this.label10.Text = "Minutes";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(33, 35);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.TabIndex = 79;
+            this.label9.Text = "Player Number";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.p1T2Number);
+            this.groupBox3.Controls.Add(this.p1T2Minutes);
+            this.groupBox3.Controls.Add(this.p1T2Seconds);
+            this.groupBox3.Controls.Add(this.p2T2Number);
+            this.groupBox3.Controls.Add(this.p2T2Minutes);
+            this.groupBox3.Controls.Add(this.p2T2Seconds);
+            this.groupBox3.Controls.Add(this.p1T2ShowPenalty);
+            this.groupBox3.Controls.Add(this.resetT2P2);
+            this.groupBox3.Controls.Add(this.p1T2HidePenalty);
+            this.groupBox3.Controls.Add(this.resetT2P1);
+            this.groupBox3.Controls.Add(this.p2T2ShowPenalty);
+            this.groupBox3.Controls.Add(this.p2T2HidePenalty);
+            this.groupBox3.Location = new System.Drawing.Point(1024, 768);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(690, 200);
+            this.groupBox3.TabIndex = 78;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Penalty Team2";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(284, 35);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 13);
+            this.label14.TabIndex = 82;
+            this.label14.Text = "Seconds";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(177, 35);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 13);
+            this.label13.TabIndex = 82;
+            this.label13.Text = "Minutes";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(35, 35);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 13);
+            this.label12.TabIndex = 82;
+            this.label12.Text = "Player Number";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.showT2Logo);
+            this.groupBox4.Controls.Add(this.groupBox7);
+            this.groupBox4.Controls.Add(this.hideT2Logo);
+            this.groupBox4.Controls.Add(this.logo2Path);
+            this.groupBox4.Controls.Add(this.logo2);
+            this.groupBox4.Controls.Add(this.uploadLogoT2);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.setTeam2Name);
+            this.groupBox4.Controls.Add(this.team2NameBox);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.plusGoal2);
+            this.groupBox4.Controls.Add(this.minusGoal2);
+            this.groupBox4.Controls.Add(this.goalsTeam2);
+            this.groupBox4.Location = new System.Drawing.Point(1213, 179);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(530, 558);
+            this.groupBox4.TabIndex = 79;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Team2";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(355, 438);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 83;
+            this.button3.Text = "Cancel";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(255, 438);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 82;
+            this.button4.Text = "Start";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.timeoutT2S);
+            this.groupBox7.Controls.Add(this.label19);
+            this.groupBox7.Controls.Add(this.timeoutT2M);
+            this.groupBox7.Location = new System.Drawing.Point(98, 419);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(110, 55);
+            this.groupBox7.TabIndex = 81;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Timeout Team2";
+            // 
+            // timeoutT2S
+            // 
+            this.timeoutT2S.AutoSize = true;
+            this.timeoutT2S.Location = new System.Drawing.Point(76, 19);
+            this.timeoutT2S.Name = "timeoutT2S";
+            this.timeoutT2S.Size = new System.Drawing.Size(19, 13);
+            this.timeoutT2S.TabIndex = 5;
+            this.timeoutT2S.Text = "00";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(50, 19);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(10, 13);
+            this.label19.TabIndex = 4;
+            this.label19.Text = ":";
+            // 
+            // timeoutT2M
+            // 
+            this.timeoutT2M.AutoSize = true;
+            this.timeoutT2M.Location = new System.Drawing.Point(22, 19);
+            this.timeoutT2M.Name = "timeoutT2M";
+            this.timeoutT2M.Size = new System.Drawing.Size(19, 13);
+            this.timeoutT2M.TabIndex = 3;
+            this.timeoutT2M.Text = "00";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button2);
+            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Controls.Add(this.showT1Logo);
+            this.groupBox5.Controls.Add(this.hideT1Logo);
+            this.groupBox5.Controls.Add(this.logo1Path);
+            this.groupBox5.Controls.Add(this.logo1);
+            this.groupBox5.Controls.Add(this.uploadLogoT1);
+            this.groupBox5.Controls.Add(this.label4);
+            this.groupBox5.Controls.Add(this.setTeam1Name);
+            this.groupBox5.Controls.Add(this.team1NameBox);
+            this.groupBox5.Controls.Add(this.label2);
+            this.groupBox5.Controls.Add(this.plusGoal1);
+            this.groupBox5.Controls.Add(this.minusGoal1);
+            this.groupBox5.Controls.Add(this.goalsTeam1);
+            this.groupBox5.Location = new System.Drawing.Point(26, 179);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(530, 558);
+            this.groupBox5.TabIndex = 80;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Team1";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(341, 438);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 78;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(241, 438);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 77;
+            this.button1.Text = "Start";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.timeoutT1S);
+            this.groupBox6.Controls.Add(this.label16);
+            this.groupBox6.Controls.Add(this.timeoutT1M);
+            this.groupBox6.Location = new System.Drawing.Point(84, 419);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(110, 55);
+            this.groupBox6.TabIndex = 76;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Timeout Team1";
+            // 
+            // timeoutT1S
+            // 
+            this.timeoutT1S.AutoSize = true;
+            this.timeoutT1S.Location = new System.Drawing.Point(76, 19);
+            this.timeoutT1S.Name = "timeoutT1S";
+            this.timeoutT1S.Size = new System.Drawing.Size(19, 13);
+            this.timeoutT1S.TabIndex = 5;
+            this.timeoutT1S.Text = "00";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(50, 19);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(10, 13);
+            this.label16.TabIndex = 4;
+            this.label16.Text = ":";
+            // 
+            // timeoutT1M
+            // 
+            this.timeoutT1M.AutoSize = true;
+            this.timeoutT1M.Location = new System.Drawing.Point(22, 19);
+            this.timeoutT1M.Name = "timeoutT1M";
+            this.timeoutT1M.Size = new System.Drawing.Size(19, 13);
+            this.timeoutT1M.TabIndex = 3;
+            this.timeoutT1M.Text = "00";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1760, 1119);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.closeScoreboardBtn);
             this.Controls.Add(this.createBtn);
-            this.Controls.Add(this.resetT2P2);
-            this.Controls.Add(this.resetT2P1);
-            this.Controls.Add(this.resetT1P2);
-            this.Controls.Add(this.resetT1P1);
-            this.Controls.Add(this.showT2Logo);
-            this.Controls.Add(this.hideT2Logo);
-            this.Controls.Add(this.logo2Path);
-            this.Controls.Add(this.logo2);
-            this.Controls.Add(this.uploadLogoT2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.setTeam2Name);
-            this.Controls.Add(this.team2NameBox);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.showT1Logo);
-            this.Controls.Add(this.hideT1Logo);
-            this.Controls.Add(this.logo1Path);
-            this.Controls.Add(this.logo1);
-            this.Controls.Add(this.uploadLogoT1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.setTeam1Name);
-            this.Controls.Add(this.team1NameBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.p2T2HidePenalty);
-            this.Controls.Add(this.p2T2ShowPenalty);
-            this.Controls.Add(this.p1T2HidePenalty);
-            this.Controls.Add(this.p1T2ShowPenalty);
-            this.Controls.Add(this.p2T1HidePenalty);
-            this.Controls.Add(this.p2T1ShowPenalty);
-            this.Controls.Add(this.p2T2Seconds);
-            this.Controls.Add(this.p2T2Minutes);
-            this.Controls.Add(this.p2T2Number);
-            this.Controls.Add(this.p1T2Seconds);
-            this.Controls.Add(this.p1T2Minutes);
-            this.Controls.Add(this.p1T2Number);
-            this.Controls.Add(this.p2T1Seconds);
-            this.Controls.Add(this.p2T1Minutes);
-            this.Controls.Add(this.p2T1Number);
-            this.Controls.Add(this.p1T1HidePenalty);
-            this.Controls.Add(this.p1T1ShowPenalty);
-            this.Controls.Add(this.p1T1Seconds);
-            this.Controls.Add(this.p1T1Minutes);
-            this.Controls.Add(this.p1T1Number);
             this.Controls.Add(this.periodPlus);
             this.Controls.Add(this.periodMinus);
             this.Controls.Add(this.period);
-            this.Controls.Add(this.plusGoal1);
-            this.Controls.Add(this.minusGoal1);
-            this.Controls.Add(this.goalsTeam1);
-            this.Controls.Add(this.plusGoal2);
-            this.Controls.Add(this.minusGoal2);
-            this.Controls.Add(this.goalsTeam2);
             this.Controls.Add(this.resetTime);
             this.Controls.Add(this.stopTime);
             this.Controls.Add(this.startTime);
@@ -838,6 +1118,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -916,5 +1208,30 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
         private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Button closeScoreboardBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label timeoutT2S;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label timeoutT2M;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label timeoutT1S;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label timeoutT1M;
     }
 }

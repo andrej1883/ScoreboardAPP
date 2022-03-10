@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -91,6 +92,27 @@ namespace Scoreboard.Forms
             get =>  periodLbl.ForeColor;
             set => periodLbl.ForeColor = (Color)value;
         }
+
+        public Color TimeoutLColor
+        {
+            get =>  timeoutL1.ForeColor;
+            set {
+                timeoutL1.ForeColor = (Color)value;
+                timeoutL2.ForeColor = (Color)value;
+            }
+        }
+
+        public Color TimeoutTColor
+        {
+            get =>  timeout1Min.ForeColor;
+            set {
+                timeout1Min.ForeColor = (Color)value;
+                timeout1Sec.ForeColor = (Color)value;
+                timeout2Min.ForeColor = (Color)value;
+                timeout2Sec.ForeColor = (Color)value;
+            }
+        }
+
 
         public Color BackgrColor
         {
@@ -208,6 +230,20 @@ namespace Scoreboard.Forms
         public void ResetInstance()
         {
             _instance = null;
+        }
+
+        public void SetTimeout(int team1, int minutes, int seconds)
+        {
+            if (team1 == 1)
+            {
+                timeout1Min.Text = minutes.ToString();
+                timeout1Sec.Text = seconds.ToString();
+            }
+            else if (team1 == 2)
+            {
+                timeout2Min.Text = minutes.ToString();
+                timeout1Sec.Text = seconds.ToString();
+            }
         }
 
         public void SetSize(int width, int height)

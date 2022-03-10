@@ -7,6 +7,11 @@ namespace Scoreboard.Forms
 {
     public partial class GameForm : Form
     {
+        public const int MAX_PENALTIES = 4;
+        public const int TWO_TEAMS = 2;
+        public const int TIMEOUT_MIN_DEFAULT = 1;
+        public const int TIMEOUT_SEC_DEFAULT = 0;
+
         private ScoreboardForm _formScoreBoard;
         private int _team1Goals = 0;
         private int _team2Goals =0;
@@ -21,13 +26,64 @@ namespace Scoreboard.Forms
         private bool _penaltyRunning = false;
         private Timer _timerPenalty = null;
         private bool _periodEnd = false;
-        private int _penaltyCount = 4;
+        private Timer _timeoutTimer = null;
+        private int[][] _timeouts;
 
 
         public GameForm(ScoreboardForm parFormScoreBoard)
         {
             InitializeComponent();
             _formScoreBoard = parFormScoreBoard;
+        }
+
+        private void GameForm_Load(object sender, EventArgs e)
+        {
+            _formScoreBoard.SetTime(_minutesT, _secondsT);
+            UpdateTime(_minutesT,_secondsT);
+            _penalty = new int[MAX_PENALTIES][];
+            for (int i = 0; i < MAX_PENALTIES; i++)
+            {
+                _penalty[i] = new int[3];
+                _penalty[i][1] = 2;
+            }
+
+            for (int i = 0; i < _penalty.Length; i++)
+            {
+                UpdatePenaltyGf(i+1,_penalty[i][0],_penalty[i][1],_penalty[i][2]);
+            }
+
+            _timeouts = new int[TWO_TEAMS][];
+            for (int i = 0; i < _timeouts.Length; i++)
+            {
+                _timeouts[i] = new int[2];
+            }
+
+            SetTimeoutLength(TIMEOUT_MIN_DEFAULT,TIMEOUT_SEC_DEFAULT);
+        }
+
+        public void SetTimeoutLength(int minutes, int seconds)
+        {
+            for (int i = 0; i < _timeouts.Length; i++)
+            {
+                _timeouts[i][0] = minutes;
+                _timeouts[i][1] = seconds;
+                _formScoreBoard.SetTimeout(i,minutes,seconds);
+                UpdateTimeoutGf(i,minutes,seconds);
+            }
+        }
+
+        private void UpdateTimeoutGf(int team, int minutes, int seconds)
+        {
+            if (team == 1)
+            {
+                timeoutT1M.Text = _timeouts[team - 1][0].ToString();
+                timeoutT1S.Text = _timeouts[team - 1][1].ToString();
+            }
+            else if (team == 2)
+            {
+                timeoutT2M.Text = _timeouts[team - 1][0].ToString();
+                timeoutT2S.Text = _timeouts[team - 1][1].ToString();
+            }
         }
 
         private void minusGoal1_Click(object sender, EventArgs e)
@@ -45,10 +101,6 @@ namespace Scoreboard.Forms
             _team1Goals ++;
             _formScoreBoard.SetGoal(_team1Goals.ToString(), true);
             goalsTeam1.Text = _team1Goals.ToString();
-        }
-
-        private void goalsTeam1_Click(object sender, EventArgs e)
-        {
         }
 
         private void minusGoal2_Click(object sender, EventArgs e)
@@ -124,7 +176,7 @@ namespace Scoreboard.Forms
 
         private void periodPlus_Click(object sender, EventArgs e)
         {
-            if (_period < 6)
+            if (_period < 4)
             {
                 _period++;
                 period.Text = _period.ToString();
@@ -199,22 +251,6 @@ namespace Scoreboard.Forms
             _formScoreBoard.ShowLogo(false);
         }
 
-        private void GameForm_Load(object sender, EventArgs e)
-        {
-            _formScoreBoard.SetTime(_minutesT, _secondsT);
-            UpdateTime(_minutesT,_secondsT);
-            _penalty = new int[_penaltyCount][];
-            for (int i = 0; i < _penaltyCount; i++)
-            {
-                _penalty[i] = new int[3];
-                _penalty[i][1] = 2;
-            }
-
-            for (int i = 0; i < _penalty.Length; i++)
-            {
-                UpdatePenaltyGf(i+1,_penalty[i][0],_penalty[i][1],_penalty[i][2]);
-            }
-        }
 
         private void startTime_Click(object sender, EventArgs e)
         {
@@ -492,7 +528,7 @@ namespace Scoreboard.Forms
                 _formScoreBoard.BringToFront();
             }
 
-            for (var i = 1; i <= _penaltyCount; i++) _formScoreBoard.HidePenalty(i);
+            for (var i = 1; i <= MAX_PENALTIES; i++) _formScoreBoard.HidePenalty(i);
         }
 
         private void closeScoreboardBtn_Click(object sender, EventArgs e)
