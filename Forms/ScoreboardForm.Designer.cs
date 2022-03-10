@@ -99,9 +99,9 @@
             // 
             this.scoreT1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreT1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.scoreT1Lbl.Location = new System.Drawing.Point(323, 60);
+            this.scoreT1Lbl.Location = new System.Drawing.Point(238, 60);
             this.scoreT1Lbl.Name = "scoreT1Lbl";
-            this.scoreT1Lbl.Size = new System.Drawing.Size(106, 76);
+            this.scoreT1Lbl.Size = new System.Drawing.Size(191, 76);
             this.scoreT1Lbl.TabIndex = 4;
             this.scoreT1Lbl.Text = "00";
             this.scoreT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -112,7 +112,7 @@
             this.scoreT2Lbl.ForeColor = System.Drawing.Color.Black;
             this.scoreT2Lbl.Location = new System.Drawing.Point(504, 60);
             this.scoreT2Lbl.Name = "scoreT2Lbl";
-            this.scoreT2Lbl.Size = new System.Drawing.Size(106, 72);
+            this.scoreT2Lbl.Size = new System.Drawing.Size(159, 72);
             this.scoreT2Lbl.TabIndex = 5;
             this.scoreT2Lbl.Text = "00";
             this.scoreT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
