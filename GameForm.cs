@@ -532,5 +532,47 @@ namespace Scoreboard
         {
             penalty[3][2] = (int) p2T2Seconds.Value;
         }
+
+        private void createBtn_Click(object sender, EventArgs e)
+        {
+            formScoreBoard = ScoreboardForm.GetInstance();
+            var area = Screen.AllScreens[1].Bounds;
+            formScoreBoard.SetSize(area.Width,area.Height);
+            var location = area.Location;
+            location.Offset((area.Width - formScoreBoard.Width) / 2, (area.Height - formScoreBoard.Height) / 2);
+            formScoreBoard.Location = location;
+
+            if (!formScoreBoard.IsActive)
+            {
+                formScoreBoard.Show();
+                formScoreBoard.IsActive = true;
+            }
+            else if (!formScoreBoard.IsDisposed)
+            {
+                formScoreBoard.BringToFront();
+            }
+
+            for (int i = 1; i <= penaltyCount; i++)
+            {
+                formScoreBoard.HidePenalty(i);
+            }
+        }
+
+        private void closeScoreboardBtn_Click(object sender, EventArgs e)
+        {
+            if (formScoreBoard != null)
+            {
+                formScoreBoard.Dispose();
+                formScoreBoard.ResetInstance();
+                formScoreBoard.IsActive = false;
+            }
+        }
+
+        private void appearanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var control = new ControlForm(formScoreBoard);
+            control.ShowDialog();
+            
+        }
     }
 }

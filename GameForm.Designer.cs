@@ -58,8 +58,6 @@
             this.p2T2Seconds = new System.Windows.Forms.NumericUpDown();
             this.p2T2Minutes = new System.Windows.Forms.NumericUpDown();
             this.p2T2Number = new System.Windows.Forms.NumericUpDown();
-            this.penaltyStart = new System.Windows.Forms.Button();
-            this.penaltyStop = new System.Windows.Forms.Button();
             this.p2T1HidePenalty = new System.Windows.Forms.Button();
             this.p2T1ShowPenalty = new System.Windows.Forms.Button();
             this.p1T2HidePenalty = new System.Windows.Forms.Button();
@@ -88,6 +86,19 @@
             this.resetT1P2 = new System.Windows.Forms.Button();
             this.resetT2P1 = new System.Windows.Forms.Button();
             this.resetT2P2 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.videosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.createBtn = new System.Windows.Forms.Button();
+            this.closeScoreboardBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -103,6 +114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.p2T2Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -378,26 +390,6 @@
             this.p2T2Number.TabIndex = 28;
             this.p2T2Number.ValueChanged += new System.EventHandler(this.p2T2Number_ValueChanged);
             // 
-            // penaltyStart
-            // 
-            this.penaltyStart.Location = new System.Drawing.Point(856, 803);
-            this.penaltyStart.Name = "penaltyStart";
-            this.penaltyStart.Size = new System.Drawing.Size(75, 23);
-            this.penaltyStart.TabIndex = 33;
-            this.penaltyStart.Text = "Start";
-            this.penaltyStart.UseVisualStyleBackColor = true;
-            this.penaltyStart.Click += new System.EventHandler(this.penaltyStart_Click);
-            // 
-            // penaltyStop
-            // 
-            this.penaltyStop.Location = new System.Drawing.Point(856, 853);
-            this.penaltyStop.Name = "penaltyStop";
-            this.penaltyStop.Size = new System.Drawing.Size(75, 23);
-            this.penaltyStop.TabIndex = 34;
-            this.penaltyStop.Text = "Stop";
-            this.penaltyStop.UseVisualStyleBackColor = true;
-            this.penaltyStop.Click += new System.EventHandler(this.penaltyStop_Click);
-            // 
             // p2T1HidePenalty
             // 
             this.p2T1HidePenalty.Location = new System.Drawing.Point(538, 864);
@@ -660,11 +652,116 @@
             this.resetT2P2.UseVisualStyleBackColor = true;
             this.resetT2P2.Click += new System.EventHandler(this.resetT2P2_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
+            this.videosToolStripMenuItem,
+            this.teamsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1760, 24);
+            this.menuStrip1.TabIndex = 71;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.timeToolStripMenuItem,
+            this.appearanceToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // timeToolStripMenuItem
+            // 
+            this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timeToolStripMenuItem.Text = "Time";
+            // 
+            // appearanceToolStripMenuItem
+            // 
+            this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.appearanceToolStripMenuItem.Text = "Appearance";
+            this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
+            // 
+            // videosToolStripMenuItem
+            // 
+            this.videosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.settingsToolStripMenuItem1});
+            this.videosToolStripMenuItem.Name = "videosToolStripMenuItem";
+            this.videosToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.videosToolStripMenuItem.Text = "Videos";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // settingsToolStripMenuItem1
+            // 
+            this.settingsToolStripMenuItem1.Name = "settingsToolStripMenuItem1";
+            this.settingsToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem1.Text = "Settings";
+            // 
+            // teamsToolStripMenuItem
+            // 
+            this.teamsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importToolStripMenuItem,
+            this.exportToolStripMenuItem,
+            this.editToolStripMenuItem1});
+            this.teamsToolStripMenuItem.Name = "teamsToolStripMenuItem";
+            this.teamsToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.teamsToolStripMenuItem.Text = "Teams";
+            // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.importToolStripMenuItem.Text = "Import";
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.editToolStripMenuItem1.Text = "Edit";
+            // 
+            // createBtn
+            // 
+            this.createBtn.Location = new System.Drawing.Point(806, 803);
+            this.createBtn.Name = "createBtn";
+            this.createBtn.Size = new System.Drawing.Size(145, 23);
+            this.createBtn.TabIndex = 72;
+            this.createBtn.Text = "Create ScoreBoard";
+            this.createBtn.UseVisualStyleBackColor = true;
+            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
+            // 
+            // closeScoreboardBtn
+            // 
+            this.closeScoreboardBtn.Location = new System.Drawing.Point(806, 860);
+            this.closeScoreboardBtn.Name = "closeScoreboardBtn";
+            this.closeScoreboardBtn.Size = new System.Drawing.Size(145, 23);
+            this.closeScoreboardBtn.TabIndex = 73;
+            this.closeScoreboardBtn.Text = "Close Scoreboard";
+            this.closeScoreboardBtn.UseVisualStyleBackColor = true;
+            this.closeScoreboardBtn.Click += new System.EventHandler(this.closeScoreboardBtn_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1760, 1119);
+            this.Controls.Add(this.closeScoreboardBtn);
+            this.Controls.Add(this.createBtn);
             this.Controls.Add(this.resetT2P2);
             this.Controls.Add(this.resetT2P1);
             this.Controls.Add(this.resetT1P2);
@@ -693,8 +790,6 @@
             this.Controls.Add(this.p1T2ShowPenalty);
             this.Controls.Add(this.p2T1HidePenalty);
             this.Controls.Add(this.p2T1ShowPenalty);
-            this.Controls.Add(this.penaltyStop);
-            this.Controls.Add(this.penaltyStart);
             this.Controls.Add(this.p2T2Seconds);
             this.Controls.Add(this.p2T2Minutes);
             this.Controls.Add(this.p2T2Number);
@@ -722,6 +817,8 @@
             this.Controls.Add(this.stopTime);
             this.Controls.Add(this.startTime);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "GameForm";
             this.Text = "GameForm";
             this.Load += new System.EventHandler(this.GameForm_Load);
@@ -741,6 +838,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.p2T2Number)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -778,8 +877,6 @@
         private System.Windows.Forms.NumericUpDown p2T2Seconds;
         private System.Windows.Forms.NumericUpDown p2T2Minutes;
         private System.Windows.Forms.NumericUpDown p2T2Number;
-        private System.Windows.Forms.Button penaltyStart;
-        private System.Windows.Forms.Button penaltyStop;
         private System.Windows.Forms.Button p2T1HidePenalty;
         private System.Windows.Forms.Button p2T1ShowPenalty;
         private System.Windows.Forms.Button p1T2HidePenalty;
@@ -808,5 +905,18 @@
         private System.Windows.Forms.Button resetT1P2;
         private System.Windows.Forms.Button resetT2P1;
         private System.Windows.Forms.Button resetT2P2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem appearanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem videosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem teamsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
+        private System.Windows.Forms.Button createBtn;
+        private System.Windows.Forms.Button closeScoreboardBtn;
     }
 }

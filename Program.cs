@@ -16,7 +16,7 @@ namespace Scoreboard
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ControlForm());
+            Application.Run(new GameForm(new ScoreboardForm()));
         }
     }
 }

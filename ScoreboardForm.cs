@@ -14,231 +14,195 @@ namespace Scoreboard
 {
     public partial class ScoreboardForm : Form
     {
-        private bool _isActive = false;
-        private Color _scoSColor = Color.Black;
-        private double _scoSSize;
-        private Color _scoLColor = Color.Black;
-        private double _scoLSize;
-        private Color _timeCColor = Color.Black;
-        private double _timeCSize;
+        public bool IsActive { get; set; }
 
         public Color ScoSColor
         {
-            get => _scoSColor;
+            get => scoreT1Lbl.ForeColor;
             set {
-                _scoSColor = value;
-                this.scoreT1Lbl.ForeColor = (Color)value;
-                this.scoreParseLblb.ForeColor = (Color)value;
-                this.scoreT2Lbl.ForeColor = (Color)value;
-            }
-        }
-
-        public double ScoSSize
-        {
-            get => _scoSSize;
-            set {
-                _scoSSize = value;
-                scoreT1Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                scoreT2Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                scoreParseLblb.Font = new Font("Microsoft Sans Serif",(int)value);
+                scoreT1Lbl.ForeColor = (Color)value;
+                scoreParseLblb.ForeColor = (Color)value;
+                scoreT2Lbl.ForeColor = (Color)value;
             }
         }
 
         public Color ScoLColor
         {
-            get => _scoLColor;
+            get => t1Lbl.ForeColor;
             set {
-                _scoLColor = value;
-                this.t1Lbl.ForeColor = (Color)value;
-                this.t2Lbl.ForeColor = (Color)value;
+                t1Lbl.ForeColor = (Color)value;
+                t2Lbl.ForeColor = (Color)value;
             }
 
-        }
-
-        public double ScoLSize
-        {
-            get => _scoLSize;
-            set {
-                _scoLSize = value;
-                t1Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                t2Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-            }
         }
 
         public Color TimeCColor
         {
-            get => _timeCColor;
+            get => timeMinutesLbl.ForeColor;
             set {
-                _timeCColor = value;
-                this.timeMinutesLbl.ForeColor = (Color)value;
-                this.timeSecondsLbl.ForeColor = (Color)value;
-                this.timeParseLbl.ForeColor = (Color)value;
-            }
-        }
-
-        public double TimeCSize
-        {
-            get => _timeCSize;
-            set {
-                _timeCSize = value;
-                timeMinutesLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                timeParseLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                timeSecondsLbl.Font = new Font("Microsoft Sans Serif",(int)value);
+                timeMinutesLbl.ForeColor = (Color)value;
+                timeSecondsLbl.ForeColor = (Color)value;
+                timeParseLbl.ForeColor = (Color)value;
             }
         }
 
         public Color TimeLColor
         {
-            get => _timeLColor;
-            set {
-                _timeLColor = value;
-                this.timeLbl.ForeColor = (Color)value;
-            }
-        }
-
-        public double TimeLSize
-        {
-            get => _timeLSize;
-            set {
-                _timeLSize = value;
-                timeLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-            }
-        }
-
-        public double PeriodPSize
-        {
-            get => _periodPSize;
-            set {
-                _periodPSize = value;
-                actualPeriodLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-            }
+            get => timeLbl.ForeColor;
+            set => timeLbl.ForeColor = (Color)value;
         }
 
         public Color PeriodColor
         {
-            get => _periodColor;
-            set {
-                _periodColor = value;
-                this.actualPeriodLbl.ForeColor = (Color)value;
-            }
-        }
-
-        public double PeriodLSize
-        {
-            get => _periodLSize;
-            set {
-                _periodLSize = value;
-                periodLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-            }
+            get => actualPeriodLbl.ForeColor;
+            set => actualPeriodLbl.ForeColor = (Color)value;
         }
 
         public Color PenaltyDColor
         {
-            get => _penaltyDColor;
+            get => playerNumber1T1lbl.ForeColor;
             set {
-                _penaltyDColor = value;
-                this.playerNumber1T1lbl.ForeColor = (Color)value;
-                this.playerNumber1T2lbl.ForeColor = (Color)value;
-                this.playerNumber2T1lbl.ForeColor = (Color)value;
-                this.playerNumber2T2lbl.ForeColor = (Color)value;
-                this.minutesT1P1Lbl.ForeColor = (Color)value;
-                this.minutesT1P2Lbl.ForeColor = (Color)value;
-                this.minutesT2P1Lbl.ForeColor = (Color)value;
-                this.minutesT2P2Lbl.ForeColor = (Color)value;
-                this.timeT1P1ParseLbl.ForeColor = (Color)value;
-                this.timeT1P2ParseLbl.ForeColor = (Color)value;
-                this.timeT2P1ParseLbl.ForeColor = (Color)value;
-                this.timeT2P2ParseLbl.ForeColor = (Color)value;
-                this.secondsT1P1Lbl.ForeColor = (Color)value;
-                this.secondsT1P2Lbl.ForeColor = (Color)value;
-                this.secondsT2P1Lbl.ForeColor = (Color)value;
-                this.secondsT2P2Lbl.ForeColor = (Color)value;
-            }
-        }
-
-        public double PenaltyDSize
-        {
-            get => _penaltyDSize;
-            set {
-                _penaltyDSize = value;
-                playerNumber1T1lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                playerNumber2T1lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                minutesT1P1Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                timeT1P1ParseLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                secondsT1P1Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                minutesT1P2Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                timeT1P2ParseLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                secondsT1P2Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                playerNumber1T2lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                playerNumber2T2lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                minutesT2P1Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                timeT2P1ParseLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                secondsT2P1Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                minutesT2P2Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                timeT2P2ParseLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                secondsT2P2Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-
+                playerNumber1T1lbl.ForeColor = (Color)value;
+                playerNumber1T2lbl.ForeColor = (Color)value;
+                playerNumber2T1lbl.ForeColor = (Color)value;
+                playerNumber2T2lbl.ForeColor = (Color)value;
+                minutesT1P1Lbl.ForeColor = (Color)value;
+                minutesT1P2Lbl.ForeColor = (Color)value;
+                minutesT2P1Lbl.ForeColor = (Color)value;
+                minutesT2P2Lbl.ForeColor = (Color)value;
+                timeT1P1ParseLbl.ForeColor = (Color)value;
+                timeT1P2ParseLbl.ForeColor = (Color)value;
+                timeT2P1ParseLbl.ForeColor = (Color)value;
+                timeT2P2ParseLbl.ForeColor = (Color)value;
+                secondsT1P1Lbl.ForeColor = (Color)value;
+                secondsT1P2Lbl.ForeColor = (Color)value;
+                secondsT2P1Lbl.ForeColor = (Color)value;
+                secondsT2P2Lbl.ForeColor = (Color)value;
             }
         }
 
         public Color PenaltyLColor
         {
-            get => _penaltyLColor;
+            get => penaltyT1Lbl.ForeColor;
             set {
-                _penaltyLColor = value;
-                this.penaltyT1Lbl.ForeColor = (Color)value;
-                this.penaltyT2Lbl.ForeColor = (Color)value;
-                this.penaltyT1PlayerLbl.ForeColor = (Color)value;
-                this.penaltyT2PlayerLbl.ForeColor = (Color)value;
-                this.penaltyT1TimeLbl.ForeColor = (Color)value;
-                this.penaltyT2TimeLbl.ForeColor = (Color)value;
+                penaltyT1Lbl.ForeColor = (Color)value;
+                penaltyT2Lbl.ForeColor = (Color)value;
+                penaltyT1PlayerLbl.ForeColor = (Color)value;
+                penaltyT2PlayerLbl.ForeColor = (Color)value;
+                penaltyT1TimeLbl.ForeColor = (Color)value;
+                penaltyT2TimeLbl.ForeColor = (Color)value;
             }
         }
-
-        public double PenaltyLSize
-        {
-            get => _penaltyLSize;
-            set {
-                _penaltyLSize = value;
-                penaltyT1Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                penaltyT2Lbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                penaltyT1PlayerLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                penaltyT1TimeLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                penaltyT2PlayerLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-                penaltyT2TimeLbl.Font = new Font("Microsoft Sans Serif",(int)value);
-            }
-        }
-
-        private Color _timeLColor = Color.Black;
-        private double _timeLSize;
-        private double _periodPSize;
-        private Color _periodColor = Color.Black;
-        private Color _periodLColor = Color.Black;
 
         public Color PeriodLColor
         {
-            get => _periodLColor;
-            set {
-                _periodLColor = value;
-                this.periodLbl.ForeColor = (Color)value;
-            }
+            get =>  periodLbl.ForeColor;
+            set => periodLbl.ForeColor = (Color)value;
         }
-
-        private double _periodLSize;
-        private Color _penaltyDColor = Color.Black;
-        private double _penaltyDSize;
-        private Color _penaltyLColor = Color.Black;
-        private double _penaltyLSize;
-        private Color _backgrColor = DefaultBackColor;
 
         public Color BackgrColor
         {
-            get => _backgrColor;
-            set {
-                _backgrColor = value;
-                this.BackColor = (Color)value;
-                }
+            get => BackColor;
+            set => BackColor = (Color)value;
         }
+
+        public Font ScoSFont
+        {
+            get =>  scoreT1Lbl.Font;
+            set
+            {
+                scoreT1Lbl.Font = value;
+                scoreT2Lbl.Font = value;
+                scoreParseLblb.Font = value;
+            }
+        }
+
+        
+
+        public Font ScoLFont
+        {
+            get => t1Lbl.Font;
+            set {
+                t1Lbl.Font = value;
+                t2Lbl.Font = value;
+            }
+        }
+
+        
+
+        public Font TimeCFont
+        {
+            get => timeMinutesLbl.Font;
+            set {
+                timeMinutesLbl.Font = value;
+                timeParseLbl.Font = value;
+                timeSecondsLbl.Font = value;
+            }
+        }
+
+        
+
+        public Font TimeLFont
+        {
+            get => timeLbl.Font;
+            set => timeLbl.Font = value;
+        }
+
+        public Font PeriodPFont
+        {
+            get => actualPeriodLbl.Font;
+            set => actualPeriodLbl.Font = value;
+        }
+
+
+        public Font PeriodLFont
+        {
+            get => periodLbl.Font;
+            set => periodLbl.Font = value;
+        }
+
+        
+
+        public Font PenaltyDFont
+        {
+            get => playerNumber1T1lbl.Font;
+            set {
+                playerNumber1T1lbl.Font = value;
+                playerNumber2T1lbl.Font = value;
+                minutesT1P1Lbl.Font = value;
+                timeT1P1ParseLbl.Font = value;
+                secondsT1P1Lbl.Font = value;
+                minutesT1P2Lbl.Font = value;
+                timeT1P2ParseLbl.Font = value;
+                secondsT1P2Lbl.Font = value;
+                playerNumber1T2lbl.Font = value;
+                playerNumber2T2lbl.Font = value;
+                minutesT2P1Lbl.Font = value;
+                timeT2P1ParseLbl.Font = value;
+                secondsT2P1Lbl.Font = value;
+                minutesT2P2Lbl.Font = value;
+                timeT2P2ParseLbl.Font = value;
+                secondsT2P2Lbl.Font = value;
+
+            }
+        }
+
+       
+
+        public Font PenaltyLFont
+        {
+            get =>  penaltyT1Lbl.Font;
+            set {
+                penaltyT1Lbl.Font = value;
+                penaltyT2Lbl.Font = value;
+                penaltyT1PlayerLbl.Font = value;
+                penaltyT1TimeLbl.Font = value;
+                penaltyT2PlayerLbl.Font = value;
+                penaltyT2TimeLbl.Font = value;
+            }
+        }
+
+        
 
         private static ScoreboardForm _instance;
         internal static ScoreboardForm GetInstance()
@@ -246,8 +210,11 @@ namespace Scoreboard
             if (_instance == null)
             {
                 _instance = new ScoreboardForm();
-                Screen[] screens = Screen.AllScreens;
-                Rectangle bounds = screens[1].Bounds;
+                _instance.FormBorderStyle = FormBorderStyle.None;
+                _instance.MinimizeBox = false;
+                _instance.MaximizeBox = false;
+                _instance.ControlBox = false; 
+                var bounds = Screen.AllScreens[1].Bounds;
                 _instance.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
                 _instance.StartPosition = FormStartPosition.Manual;
             }
@@ -256,25 +223,9 @@ namespace Scoreboard
 
         private void ScoreboardForm_Load(object sender, EventArgs e)
         {
-            _scoLSize = t1Lbl.Font.Size;
-            PeriodLSize = periodLbl.Font.Size;
-            TimeLSize = timeLbl.Font.Size;
-            PenaltyLSize = penaltyT1Lbl.Font.Size;
-            ScoSSize = scoreT1Lbl.Font.Size;
-            PeriodPSize = actualPeriodLbl.Font.Size;
-            _timeCSize = timeMinutesLbl.Font.Size;
-            PenaltyDSize = playerNumber1T1lbl.Font.Size;
+            
         }
 
-        public void SetActive(bool active)
-        {
-            _isActive = active;
-        }
-
-        public bool GetActive()
-        {
-            return _isActive;
-        }
         public ScoreboardForm()
         {
             InitializeComponent();
@@ -289,6 +240,11 @@ namespace Scoreboard
         {
             _instance.Height = height;
             _instance.Width = width;
+        }
+
+        public Font SetFontSize(int varSize)
+        {
+            return new Font("Microsoft Sans Serif",varSize);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -380,7 +336,7 @@ namespace Scoreboard
             string sSeconds;
             if (minutes < 10)
             {
-                 sMinutes = "0" + minutes.ToString();
+                 sMinutes = "0" + minutes;
             }
             else
             {
@@ -389,7 +345,7 @@ namespace Scoreboard
 
             if (seconds < 10)
             {
-                sSeconds = "0" + seconds.ToString();
+                sSeconds = "0" + seconds;
             }
             else
             {
@@ -480,7 +436,7 @@ namespace Scoreboard
         {
             if (minutes < 10)
             {
-                timeMinutesLbl.Text = "0" + minutes.ToString();
+                timeMinutesLbl.Text = "0" + minutes;
             }
             else
             {
@@ -489,7 +445,7 @@ namespace Scoreboard
 
             if (seconds < 10)
             {
-                timeSecondsLbl.Text = "0" + seconds.ToString();
+                timeSecondsLbl.Text = "0" + seconds;
             }
             else
             {
@@ -498,12 +454,12 @@ namespace Scoreboard
         }
         public override string ToString()
         {
-            return $"{_backgrColor.Name},{_penaltyDColor.Name},{_penaltyLColor.Name},{_periodColor.Name},{_periodLColor.Name},{_timeLColor.Name}," +
-                   $"{_scoLColor.Name},{_scoSColor.Name},{_timeCColor.Name}," +
+            return $"{BackgrColor.Name},{PenaltyDColor.Name},{PenaltyLColor.Name},{PeriodColor.Name},{PeriodLColor.Name},{TimeLColor.Name}," +
+                   $"{ScoLColor.Name},{ScoSColor.Name},{TimeCColor.Name}," +
 
-                   $"{_penaltyDSize},{_penaltyLSize},{_periodLSize},{_periodPSize}," +
-                   $"{_timeLSize},{_scoLSize},{_scoSSize},{_timeCSize}," +
-                   $"{this.Width},{this.Height}";
+                   $"{PenaltyDFont.Size},{PenaltyLFont.Size},{PeriodLFont.Size},{PeriodPFont.Size}," +
+                   $"{TimeLFont.Size},{ScoLFont.Size},{ScoSFont.Size},{TimeCFont.Size}," +
+                   $"{Width},{Height}";
         }
     }
 }

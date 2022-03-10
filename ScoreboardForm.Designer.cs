@@ -92,23 +92,24 @@
             this.scoreT1Lbl.AutoSize = true;
             this.scoreT1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreT1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.scoreT1Lbl.Location = new System.Drawing.Point(299, 51);
+            this.scoreT1Lbl.Location = new System.Drawing.Point(262, 51);
             this.scoreT1Lbl.Name = "scoreT1Lbl";
-            this.scoreT1Lbl.Size = new System.Drawing.Size(69, 76);
+            this.scoreT1Lbl.Size = new System.Drawing.Size(106, 76);
             this.scoreT1Lbl.TabIndex = 4;
-            this.scoreT1Lbl.Text = "0";
+            this.scoreT1Lbl.Text = "00";
+            this.scoreT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.scoreT1Lbl.Click += new System.EventHandler(this.label3_Click);
             // 
             // scoreT2Lbl
             // 
-            this.scoreT2Lbl.AutoSize = true;
             this.scoreT2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreT2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.scoreT2Lbl.Location = new System.Drawing.Point(434, 51);
+            this.scoreT2Lbl.Location = new System.Drawing.Point(431, 43);
             this.scoreT2Lbl.Name = "scoreT2Lbl";
-            this.scoreT2Lbl.Size = new System.Drawing.Size(69, 76);
+            this.scoreT2Lbl.Size = new System.Drawing.Size(119, 92);
             this.scoreT2Lbl.TabIndex = 5;
-            this.scoreT2Lbl.Text = "0";
+            this.scoreT2Lbl.Text = "00";
+            this.scoreT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // scoreParseLblb
             // 
@@ -426,7 +427,7 @@
             // 
             // team1Logo
             // 
-            this.team1Logo.Location = new System.Drawing.Point(183, 51);
+            this.team1Logo.Location = new System.Drawing.Point(74, 51);
             this.team1Logo.Name = "team1Logo";
             this.team1Logo.Size = new System.Drawing.Size(110, 64);
             this.team1Logo.TabIndex = 49;
@@ -434,7 +435,7 @@
             // 
             // team2Logo
             // 
-            this.team2Logo.Location = new System.Drawing.Point(509, 51);
+            this.team2Logo.Location = new System.Drawing.Point(574, 51);
             this.team2Logo.Name = "team2Logo";
             this.team2Logo.Size = new System.Drawing.Size(110, 64);
             this.team2Logo.TabIndex = 50;
