@@ -271,28 +271,28 @@ namespace Scoreboard.Forms
             switch (position)
             {
                 case 1:
-                    playerNumber1T1lbl.ForeColor = BackgrColor;
-                    minutesT1P1Lbl.ForeColor = BackgrColor;
-                    timeT1P1ParseLbl.ForeColor = BackgrColor;
-                    secondsT1P1Lbl.ForeColor = BackgrColor;
+                    playerNumber1T1lbl.Visible = false;
+                    minutesT1P1Lbl.Visible = false;
+                    timeT1P1ParseLbl.Visible = false;
+                    secondsT1P1Lbl.Visible = false;
                     break;
                 case 2:
-                    playerNumber2T1lbl.ForeColor = BackgrColor;
-                    minutesT1P2Lbl.ForeColor = BackgrColor;
-                    timeT1P2ParseLbl.ForeColor = BackgrColor;
-                    secondsT1P2Lbl.ForeColor = BackgrColor;
+                    playerNumber2T1lbl.Visible = false;
+                    minutesT1P2Lbl.Visible = false;
+                    timeT1P2ParseLbl.Visible = false;
+                    secondsT1P2Lbl.Visible = false;
                     break;
                 case 3:
-                    playerNumber1T2lbl.ForeColor = BackgrColor;
-                    minutesT2P1Lbl.ForeColor = BackgrColor;
-                    timeT2P1ParseLbl.ForeColor = BackgrColor;
-                    secondsT2P1Lbl.ForeColor = BackgrColor;
+                    playerNumber1T2lbl.Visible = false;
+                    minutesT2P1Lbl.Visible = false;
+                    timeT2P1ParseLbl.Visible = false;
+                    secondsT2P1Lbl.Visible = false;
                     break;
                 case 4:
-                    playerNumber2T2lbl.ForeColor = BackgrColor;
-                    minutesT2P2Lbl.ForeColor = BackgrColor;
-                    timeT2P2ParseLbl.ForeColor = BackgrColor;
-                    secondsT2P2Lbl.ForeColor = BackgrColor;
+                    playerNumber2T2lbl.Visible = false;
+                    minutesT2P2Lbl.Visible = false;
+                    timeT2P2ParseLbl.Visible = false;
+                    secondsT2P2Lbl.Visible = false;
                     break;
                 default:
                     throw new ArgumentException("Index is out of range");
@@ -304,28 +304,28 @@ namespace Scoreboard.Forms
             switch (position)
             {
                 case 1:
-                    playerNumber1T1lbl.ForeColor = PenaltyDColor;
-                    minutesT1P1Lbl.ForeColor = PenaltyDColor;
-                    timeT1P1ParseLbl.ForeColor = PenaltyDColor;
-                    secondsT1P1Lbl.ForeColor = PenaltyDColor;
+                    playerNumber1T1lbl.Visible = true;
+                    minutesT1P1Lbl.Visible = true;
+                    timeT1P1ParseLbl.Visible = true;
+                    secondsT1P1Lbl.Visible = true;
                     break;
                 case 2:
-                    playerNumber2T1lbl.ForeColor = PenaltyDColor;;
-                    minutesT1P2Lbl.ForeColor = PenaltyDColor;
-                    timeT1P2ParseLbl.ForeColor = PenaltyDColor;
-                    secondsT1P2Lbl.ForeColor = PenaltyDColor;
+                    playerNumber2T1lbl.Visible = true;
+                    minutesT1P2Lbl.Visible = true;
+                    timeT1P2ParseLbl.Visible = true;
+                    secondsT1P2Lbl.Visible = true;
                     break;
                 case 3:
-                    playerNumber1T2lbl.ForeColor = PenaltyDColor;
-                    minutesT2P1Lbl.ForeColor = PenaltyDColor;
-                    timeT2P1ParseLbl.ForeColor = PenaltyDColor;
-                    secondsT2P1Lbl.ForeColor = PenaltyDColor;
+                    playerNumber1T2lbl.Visible = true;
+                    minutesT2P1Lbl.Visible = true;
+                    timeT2P1ParseLbl.Visible = true;
+                    secondsT2P1Lbl.Visible = true;
                     break;
                 case 4:
-                    playerNumber2T2lbl.ForeColor = PenaltyDColor;
-                    minutesT2P2Lbl.ForeColor = PenaltyDColor;
-                    timeT2P2ParseLbl.ForeColor = PenaltyDColor;
-                    secondsT2P2Lbl.ForeColor = PenaltyDColor;
+                    playerNumber2T2lbl.Visible = true;
+                    minutesT2P2Lbl.Visible = true;
+                    timeT2P2ParseLbl.Visible = true;
+                    secondsT2P2Lbl.Visible = true;
                     break;
                 default:
                     throw new ArgumentException("Index is out of range");
