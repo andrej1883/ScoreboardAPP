@@ -11,8 +11,8 @@ namespace Scoreboard.Forms
         private const int TwoTeams = 2;
         private const int TimeoutMinDefault = 1;
         private const int TimeoutSecDefault = 0;
-        private const int MatchMinDefault = 15;
-        private const int MatchSecDefault = 0;
+        private const int MatchMinDefault = 0;
+        private const int MatchSecDefault = 10;
 
         private ScoreboardForm _formScoreBoard;
         private int _team1Goals = 0;
@@ -22,16 +22,15 @@ namespace Scoreboard.Forms
         private string _team2Name;
         private int _secondsT = 0;
         private int _minutesT = 0;
+        private int _breakMinutes = 0;
+        private int _breakSeconds = 5;
         private int[][] _penalty;
         private Timer _timer = null;
-        private bool _timerRunning = false;
-        private bool _penaltyRunning = false;
         private Timer _timerPenalty = null;
         private bool _periodEnd = false;
         private Timer _timeoutTimer = null;
         private int[][] _timeouts;
-        private bool _timeout1Running = false;
-        private bool _timeout2Running = false;
+        private bool _breakRunning = false;
 
 
         public GameForm(ScoreboardForm parFormScoreBoard)
@@ -39,6 +38,10 @@ namespace Scoreboard.Forms
             InitializeComponent();
             _formScoreBoard = parFormScoreBoard;
             SetTime(MatchMinDefault,MatchSecDefault);
+
+            _timer = ResetTimer();
+            _timerPenalty = ResetTimer();
+            _timeoutTimer = ResetTimer();
         }
 
         private void GameForm_Load(object sender, EventArgs e)
@@ -59,10 +62,17 @@ namespace Scoreboard.Forms
             }
         }
 
+        private Timer ResetTimer()
+        {
+            var parTimer = new Timer();
+            parTimer.Interval = 1000;
+            return parTimer;
+        }
+
         public void InitBoards()
         {
             period.Text = _period.ToString();
-            _formScoreBoard.SetPeriod(_period);
+            _formScoreBoard.SetPeriod(_period.ToString());
             minutesTime.Text = _minutesT.ToString();
             secondsTime.Text = _secondsT.ToString();
             _formScoreBoard.SetTime(_minutesT,_secondsT);
@@ -189,24 +199,27 @@ namespace Scoreboard.Forms
         {
             _formScoreBoard.HidePenalty(4);
         }
+        private void UpdatePeriod()
+        {
+            period.Text = _period.ToString();
+            _formScoreBoard.SetPeriod(_period.ToString());
+        }
 
         private void periodMinus_Click(object sender, EventArgs e)
         {
             if (_period > 0)
             {
                 _period--;
-                period.Text = _period.ToString();
-                _formScoreBoard.SetPeriod(_period);
+                UpdatePeriod();
             }
         }
 
         private void periodPlus_Click(object sender, EventArgs e)
         {
-            if (_period < 4)
+            if (_period < 3)
             {
                 _period++;
-                period.Text = _period.ToString();
-                _formScoreBoard.SetPeriod(_period);
+                UpdatePeriod();
             }
         }
 
@@ -290,14 +303,12 @@ namespace Scoreboard.Forms
 
         private void startTime_Click(object sender, EventArgs e)
         {
-            if (!_timerRunning && !_periodEnd && (_minutesT > 0 || _secondsT > 0) && (!_timeout1Running && !_timeout2Running))
+            if (!_timer.Enabled && !_periodEnd && (_minutesT > 0 || _secondsT > 0) && (!_timeoutTimer.Enabled))
             {
-                _timer = new Timer();
+                _timer = ResetTimer();
                 _timer.Tick += DisplayTimeTimer;
                 _timer.Enabled = true;
-                _timer.Interval = 1000;
                 _timer.Start();
-                _timerRunning = true;
                 StartPenalty();
             }
         }
@@ -323,17 +334,29 @@ namespace Scoreboard.Forms
 
             if (_minutesT == 0 && _secondsT == 0)
             {
-                _timerRunning = false;
-                _periodEnd = true;
+                _timer.Enabled = false;
+                if (!_periodEnd)
+                {
+                    _periodEnd = true;
+                }
+                else
+                {
+                    _breakRunning = false;
+                    _periodEnd = false;
+                    _period++;
+                    SetTime(MatchMinDefault,MatchSecDefault);
+                    InitBoards();
+                }
             }
         }
 
         private void StopTime()
         {
-            if (_timerRunning && !_periodEnd)
+            if (_timer.Enabled && !_periodEnd)
             {
                 _timer.Stop();
-                _timerRunning = false;
+                _timer.Enabled = false;
+                _timer = new Timer();
                 StopPenalty();
             }
         }
@@ -345,13 +368,15 @@ namespace Scoreboard.Forms
 
         private void resetTime_Click(object sender, EventArgs e)
         {
-            if (_timerRunning) _timer.Stop();
-            _minutesT = 15;
-            _secondsT = 0;
-            _formScoreBoard.SetTime(_minutesT,_secondsT);
-            UpdateTime(_minutesT,_secondsT);
-            _timerRunning = false;
+            if (_timer.Enabled)
+            {
+                _timer.Stop();
+            }
+            _minutesT = MatchMinDefault;
+            _secondsT = MatchSecDefault;
+            _timer.Enabled = false;
             _periodEnd = false;
+            InitBoards();
         }
 
         private void UpdateTime(int minutes, int seconds)
@@ -450,14 +475,12 @@ namespace Scoreboard.Forms
 
         private void StartPenalty()
         {
-            if (!_penaltyRunning && !_periodEnd && _timerRunning)
+            if (!_timerPenalty.Enabled && !_periodEnd && _timer.Enabled)
             {
-                _timerPenalty = new Timer();
                 _timerPenalty.Tick += new EventHandler(DisplayTimePenalty);
                 _timerPenalty.Enabled = true;
-                _timerPenalty.Interval = 1000;
                 _timerPenalty.Start();
-                _penaltyRunning = true;
+
             }
         }
 
@@ -493,10 +516,10 @@ namespace Scoreboard.Forms
 
         private void StopPenalty()
         {
-            if (_penaltyRunning && !_timerRunning)
+            if (_timerPenalty.Enabled && !_timer.Enabled)
             {
                 _timerPenalty.Stop();
-                _penaltyRunning = false;
+                _timerPenalty.Enabled = false;
             }
         }
 
@@ -591,24 +614,24 @@ namespace Scoreboard.Forms
 
         private void startTimeoutT1_Click(object sender, EventArgs e)
         {
-            if (!_timeout2Running && (_timeouts[0][0] > 0 || _timeouts[0][1] > 0))
+            if (!_timeoutTimer.Enabled && (_timeouts[0][0] > 0 || _timeouts[0][1] > 0))
             {
                 StartTimeout(1);
-                _timeout1Running = true;
+                _timeoutTimer.Enabled = true;
             }
         }
         private void startTimeoutT2_Click(object sender, EventArgs e)
         {
-            if (!_timeout1Running && (_timeouts[1][0] > 0 || _timeouts[1][1] > 0))
+            if (!_timeoutTimer.Enabled && (_timeouts[1][0] > 0 || _timeouts[1][1] > 0))
             {
                 StartTimeout(2);
-                _timeout2Running = true;
+                _timeoutTimer.Enabled = true;
             }
         }
 
         private void StartTimeout(int team)
         {
-            _timeoutTimer = new Timer();
+            _timeoutTimer = ResetTimer();
             if (team == 1)
             {
                 _timeoutTimer.Tick += DisplayTimeTimeout1;
@@ -618,12 +641,11 @@ namespace Scoreboard.Forms
                 _timeoutTimer.Tick += DisplayTimeTimeout2;
             }
             _timeoutTimer.Enabled = true;
-            _timeoutTimer.Interval = 1000;
             _timeoutTimer.Start();
             StopPenalty();
             StopTime();
-            _timerRunning = false;
-            _penaltyRunning = false;
+            _timer.Enabled = false;
+            _timerPenalty.Enabled = false;
         }
 
         private void CountTimeout(int team)
@@ -651,11 +673,11 @@ namespace Scoreboard.Forms
                 _timeoutTimer.Stop();
                 if (team == 1)
                 {
-                    _timeout1Running = false;
+                    _timeoutTimer.Enabled = false;
                 } 
                 else if (team == 2)
                 {
-                    _timeout2Running = false;
+                    _timeoutTimer.Enabled = false;
                 }
             }
         }
@@ -672,21 +694,53 @@ namespace Scoreboard.Forms
 
         private void cancelTimeoutT1_Click(object sender, EventArgs e)
         {
-            if (_timeout1Running)
+            if (_timeoutTimer.Enabled)
             {
                 _timeoutTimer.Stop();
                 SetTimeoutLength(1,TimeoutMinDefault,TimeoutSecDefault);
-                _timeout1Running = false;
+                _timeoutTimer.Enabled = false;
             }
         }
 
         private void cancelTimeoutT2_Click(object sender, EventArgs e)
         {
-            if (_timeout2Running)
+            if (_timeoutTimer.Enabled)
             {
                 _timeoutTimer.Stop();
                 SetTimeoutLength(2,TimeoutMinDefault,TimeoutSecDefault);
-                _timeout2Running = false;
+                _timeoutTimer.Enabled = false;
+            }
+        }
+
+        private void startBreak_Click(object sender, EventArgs e)
+        {
+            if (_periodEnd && !_breakRunning && !_timer.Enabled && (_period+1 < 4))
+            {
+                _minutesT = _breakMinutes;
+                _secondsT = _breakSeconds;
+                _timer = ResetTimer();
+                _timer.Tick += DisplayTimeTimer;
+                _timer.Enabled = true;
+                _timer.Start();
+                _breakRunning = true;
+                period.Text = "B";
+                _formScoreBoard.SetPeriod("B");
+                _formScoreBoard.SetTime(_minutesT,_secondsT);
+                UpdateTime(_minutesT,_secondsT);
+            }
+        }
+
+        private void cancelBreak_Click(object sender, EventArgs e)
+        {
+            if (_breakRunning && _timer.Enabled)
+            {
+                _timer.Stop();
+                _minutesT = _breakMinutes;
+                _secondsT = _breakSeconds;
+                _breakRunning = false;
+                _timer.Enabled = false;
+                _formScoreBoard.SetTime(_minutesT,_secondsT);
+                UpdateTime(_minutesT,_secondsT);
             }
         }
     }

@@ -368,9 +368,9 @@ namespace Scoreboard.Forms
             }
         }
 
-        public void SetPeriod(int parPeriod)
+        public void SetPeriod(string parPeriod)
         {
-            actualPeriodLbl.Text = parPeriod.ToString();
+            actualPeriodLbl.Text = parPeriod;
         }
 
         public void SetTeamName(bool team1, string parName)

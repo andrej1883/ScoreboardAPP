@@ -124,6 +124,8 @@
             this.timeoutT1S = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.timeoutT1M = new System.Windows.Forms.Label();
+            this.startBreak = new System.Windows.Forms.Button();
+            this.cancelBreak = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -1080,11 +1082,33 @@
             this.timeoutT1M.TabIndex = 3;
             this.timeoutT1M.Text = "00";
             // 
+            // startBreak
+            // 
+            this.startBreak.Location = new System.Drawing.Point(725, 547);
+            this.startBreak.Name = "startBreak";
+            this.startBreak.Size = new System.Drawing.Size(75, 23);
+            this.startBreak.TabIndex = 81;
+            this.startBreak.Text = "Start break";
+            this.startBreak.UseVisualStyleBackColor = true;
+            this.startBreak.Click += new System.EventHandler(this.startBreak_Click);
+            // 
+            // cancelBreak
+            // 
+            this.cancelBreak.Location = new System.Drawing.Point(838, 547);
+            this.cancelBreak.Name = "cancelBreak";
+            this.cancelBreak.Size = new System.Drawing.Size(75, 23);
+            this.cancelBreak.TabIndex = 79;
+            this.cancelBreak.Text = "Cancel";
+            this.cancelBreak.UseVisualStyleBackColor = true;
+            this.cancelBreak.Click += new System.EventHandler(this.cancelBreak_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1760, 1119);
+            this.Controls.Add(this.cancelBreak);
+            this.Controls.Add(this.startBreak);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -1237,5 +1261,7 @@
         private System.Windows.Forms.Label timeoutT1S;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label timeoutT1M;
+        private System.Windows.Forms.Button startBreak;
+        private System.Windows.Forms.Button cancelBreak;
     }
 }

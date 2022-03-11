@@ -750,7 +750,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 948);
+            this.ClientSize = new System.Drawing.Size(748, 948);
             this.Controls.Add(this.scoreBoardSettingsBox);
             this.Controls.Add(this.penaltySettingsBox);
             this.Controls.Add(this.timeSettingsBox);
