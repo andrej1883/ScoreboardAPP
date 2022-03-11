@@ -7,10 +7,12 @@ namespace Scoreboard.Forms
 {
     public partial class GameForm : Form
     {
-        public const int MAX_PENALTIES = 4;
-        public const int TWO_TEAMS = 2;
-        public const int TIMEOUT_MIN_DEFAULT = 1;
-        public const int TIMEOUT_SEC_DEFAULT = 0;
+        private const int MaxPenalties = 4;
+        private const int TwoTeams = 2;
+        private const int TimeoutMinDefault = 1;
+        private const int TimeoutSecDefault = 0;
+        private const int MatchMinDefault = 15;
+        private const int MatchSecDefault = 0;
 
         private ScoreboardForm _formScoreBoard;
         private int _team1Goals = 0;
@@ -36,29 +38,48 @@ namespace Scoreboard.Forms
         {
             InitializeComponent();
             _formScoreBoard = parFormScoreBoard;
+            SetTime(MatchMinDefault,MatchSecDefault);
         }
 
         private void GameForm_Load(object sender, EventArgs e)
         {
             _formScoreBoard.SetTime(_minutesT, _secondsT);
             UpdateTime(_minutesT,_secondsT);
-            _penalty = new int[MAX_PENALTIES][];
-            for (int i = 0; i < MAX_PENALTIES; i++)
+            _penalty = new int[MaxPenalties][];
+            for (int i = 0; i < MaxPenalties; i++)
             {
                 _penalty[i] = new int[3];
-                _penalty[i][1] = 2;
             }
 
-            for (int i = 0; i < _penalty.Length; i++)
-            {
-                UpdatePenaltyGf(i+1,_penalty[i][0],_penalty[i][1],_penalty[i][2]);
-            }
-
-            _timeouts = new int[TWO_TEAMS][];
+            _timeouts = new int[TwoTeams][];
             for (int i = 0; i < _timeouts.Length; i++)
             {
                 _timeouts[i] = new int[2];
-                SetTimeoutLength(i+1,TIMEOUT_MIN_DEFAULT,TIMEOUT_SEC_DEFAULT);
+                SetTimeoutLength(i+1,TimeoutMinDefault,TimeoutSecDefault);
+            }
+        }
+
+        public void InitBoards()
+        {
+            period.Text = _period.ToString();
+            _formScoreBoard.SetPeriod(_period);
+            minutesTime.Text = _minutesT.ToString();
+            secondsTime.Text = _secondsT.ToString();
+            _formScoreBoard.SetTime(_minutesT,_secondsT);
+            goalsTeam1.Text = _team1Goals.ToString();
+            _formScoreBoard.SetGoal(true,_team1Goals);
+            goalsTeam2.Text = _team2Goals.ToString();
+            _formScoreBoard.SetGoal(false,_team1Goals);
+            for (int i = 0; i < _penalty.Length; i++)
+            {
+                UpdatePenaltyGf(i+1,_penalty[i][0],_penalty[i][1],_penalty[i][2]);
+                _formScoreBoard.SetPenalty(i+1,_penalty[i][0],_penalty[i][1],_penalty[i][2]);
+            }
+            for (int i = 0; i < _timeouts.Length; i++)
+            {
+                UpdateTimeoutGf(i+1,_timeouts[i][0],_timeouts[i][1]);
+                _formScoreBoard.SetTimeout(i+1,_timeouts[i][0],_timeouts[i][1]);
+
             }
         }
 
@@ -69,6 +90,12 @@ namespace Scoreboard.Forms
             _formScoreBoard.SetTimeout(team,minutes,seconds);
             UpdateTimeoutGf(team,minutes,seconds);
 
+        }
+
+        public void SetTime(int minutes, int seconds)
+        {
+            _minutesT = minutes;
+            _secondsT = seconds;
         }
 
         private void UpdateTimeoutGf(int team, int minutes, int seconds)
@@ -90,7 +117,7 @@ namespace Scoreboard.Forms
             if (_team1Goals > 0)
             {
                 _team1Goals --;
-                _formScoreBoard.SetGoal(_team1Goals.ToString(), true);
+                _formScoreBoard.SetGoal(true,_team1Goals);
                 goalsTeam1.Text = _team1Goals.ToString();
             }
         }
@@ -98,7 +125,7 @@ namespace Scoreboard.Forms
         private void plusGoal1_Click(object sender, EventArgs e)
         {
             _team1Goals ++;
-            _formScoreBoard.SetGoal(_team1Goals.ToString(), true);
+            _formScoreBoard.SetGoal(true,_team1Goals);
             goalsTeam1.Text = _team1Goals.ToString();
         }
 
@@ -107,7 +134,7 @@ namespace Scoreboard.Forms
             if (_team2Goals > 0)
             {
                 _team2Goals --;
-                _formScoreBoard.SetGoal(_team2Goals.ToString(), false);
+                _formScoreBoard.SetGoal(false,_team2Goals);
                 goalsTeam2.Text = _team2Goals.ToString();
             }
         }
@@ -115,7 +142,7 @@ namespace Scoreboard.Forms
         private void plusGoal2_Click(object sender, EventArgs e)
         {
             _team2Goals ++;
-            _formScoreBoard.SetGoal(_team2Goals.ToString(), false);
+            _formScoreBoard.SetGoal(false,_team2Goals);
             goalsTeam2.Text = _team2Goals.ToString();
         }
 
@@ -169,7 +196,7 @@ namespace Scoreboard.Forms
             {
                 _period--;
                 period.Text = _period.ToString();
-                _formScoreBoard.SetPeriod(_period.ToString());
+                _formScoreBoard.SetPeriod(_period);
             }
         }
 
@@ -179,7 +206,7 @@ namespace Scoreboard.Forms
             {
                 _period++;
                 period.Text = _period.ToString();
-                _formScoreBoard.SetPeriod(_period.ToString());
+                _formScoreBoard.SetPeriod(_period);
             }
         }
 
@@ -201,13 +228,19 @@ namespace Scoreboard.Forms
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";  
             if (open.ShowDialog() == DialogResult.OK) {
-                logo1.Image = new Bitmap(open.FileName);
-                logo1Path.Text = open.FileName;
-
                 if (team1)
+                {
+                    logo1.Image = new Bitmap(open.FileName);
+                    logo1Path.Text = open.FileName;
                     _formScoreBoard.SetLogo(true, logo1.Image);
+                }
                 else
+                {
+                    logo2.Image = new Bitmap(open.FileName);
+                    logo2Path.Text = open.FileName;
                     _formScoreBoard.SetLogo(false, logo2.Image);
+                }
+                
             }
         }
 
@@ -235,8 +268,8 @@ namespace Scoreboard.Forms
             else
             {
                 _team2Name = "Team2";
-                _formScoreBoard.SetTeamName(false, _team2Name);
             }
+            _formScoreBoard.SetTeamName(false, _team2Name);
         }
 
         private void uploadLogoT2_Click(object sender, EventArgs e)
@@ -536,7 +569,8 @@ namespace Scoreboard.Forms
                 _formScoreBoard.BringToFront();
             }
 
-            for (var i = 1; i <= MAX_PENALTIES; i++) _formScoreBoard.HidePenalty(i);
+            for (var i = 1; i <= MaxPenalties; i++) _formScoreBoard.HidePenalty(i);
+            InitBoards();
         }
 
         private void closeScoreboardBtn_Click(object sender, EventArgs e)
@@ -641,7 +675,7 @@ namespace Scoreboard.Forms
             if (_timeout1Running)
             {
                 _timeoutTimer.Stop();
-                SetTimeoutLength(1,TIMEOUT_MIN_DEFAULT,TIMEOUT_SEC_DEFAULT);
+                SetTimeoutLength(1,TimeoutMinDefault,TimeoutSecDefault);
                 _timeout1Running = false;
             }
         }
@@ -651,7 +685,7 @@ namespace Scoreboard.Forms
             if (_timeout2Running)
             {
                 _timeoutTimer.Stop();
-                SetTimeoutLength(2,TIMEOUT_MIN_DEFAULT,TIMEOUT_SEC_DEFAULT);
+                SetTimeoutLength(2,TimeoutMinDefault,TimeoutSecDefault);
                 _timeout2Running = false;
             }
         }

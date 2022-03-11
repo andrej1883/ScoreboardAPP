@@ -236,13 +236,13 @@ namespace Scoreboard.Forms
         {
             if (team1 == 1)
             {
-                timeout1Min.Text = minutes.ToString();
-                timeout1Sec.Text = seconds.ToString();
+                timeout1Min.Text = CheckZero(minutes);
+                timeout1Sec.Text = CheckZero(seconds);
             }
             else if (team1 == 2)
             {
-                timeout2Min.Text = minutes.ToString();
-                timeout2Sec.Text = seconds.ToString();
+                timeout2Min.Text = CheckZero(minutes);
+                timeout2Sec.Text = CheckZero(seconds);
             }
         }
 
@@ -257,12 +257,17 @@ namespace Scoreboard.Forms
             return new Font("Microsoft Sans Serif",varSize);
         }
 
-        public void SetGoal(string val, bool team1)
+        public void SetGoal(bool team1, int parGoals)
         {
             if (team1)
-                scoreT1Lbl.Text = val;
+            {
+                scoreT1Lbl.Text = parGoals.ToString();
+            }
             else
-                scoreT2Lbl.Text = val;
+            {
+                scoreT2Lbl.Text = parGoals.ToString();
+            }
+            
         }
 
         public void HidePenalty(int position)
@@ -333,18 +338,9 @@ namespace Scoreboard.Forms
         }
         public void SetPenalty(int position, int number, int minutes, int seconds)
         {
-            string sMinutes;
-            string sSeconds;
-            if (minutes < 10)
-                sMinutes = "0" + minutes;
-            else
-                sMinutes = minutes.ToString();
-
-            if (seconds < 10)
-                sSeconds = "0" + seconds;
-            else
-                sSeconds = seconds.ToString();
-
+            string sMinutes = CheckZero(minutes);
+            string sSeconds = CheckZero(seconds);
+            
             switch (position)
             {
                 case 1:
@@ -372,33 +368,48 @@ namespace Scoreboard.Forms
             }
         }
 
-        public void SetPeriod(string val)
+        public void SetPeriod(int parPeriod)
         {
-            actualPeriodLbl.Text = val;
+            actualPeriodLbl.Text = parPeriod.ToString();
         }
 
-        public void SetTeamName(bool team1, string val)
+        public void SetTeamName(bool team1, string parName)
         {
             if (team1)
-                t1Lbl.Text = val;
+            {
+                t1Lbl.Text = parName;
+            }
             else
-                t2Lbl.Text = val;
+            {
+                t2Lbl.Text = parName;
+            }
+            
         }
 
-        public void SetLogo(bool team1, Image var)
+        public void SetLogo(bool team1, Image parLogo)
         {
             if (team1)
-                team1Logo.Image = var;
+            {
+                team1Logo.Image = parLogo;
+            }
             else
-                team2Logo.Image = var;
+            {
+                team2Logo.Image = parLogo;
+            }
+            
         }
 
         public void HideLogo(bool team1)
         {
             if (team1)
+            {
                 team1Logo.Hide();
+            }
             else
+            {
                 team2Logo.Hide();
+            }
+            
         }
 
         public void ShowLogo(bool team1)
@@ -411,16 +422,10 @@ namespace Scoreboard.Forms
 
         public void SetTime(int minutes, int seconds)
         {
-            if (minutes < 10)
-                timeMinutesLbl.Text = "0" + minutes;
-            else
-                timeMinutesLbl.Text = minutes.ToString();
-
-            if (seconds < 10)
-                timeSecondsLbl.Text = "0" + seconds;
-            else
-                timeSecondsLbl.Text = seconds.ToString();
+            timeMinutesLbl.Text = CheckZero(minutes);
+            timeSecondsLbl.Text = CheckZero(seconds);
         }
+
         public override string ToString()
         {
             return $"{BackgrColor.ToArgb()}|{PenaltyDColor.ToArgb()}|{PenaltyLColor.ToArgb()}|{PeriodColor.ToArgb()}|{PeriodLColor.ToArgb()}|{TimeLColor.ToArgb()}|" +
@@ -429,6 +434,15 @@ namespace Scoreboard.Forms
                    $"{PenaltyDFont.Size}|{PenaltyLFont.Size}|{PeriodLFont.Size}|{PeriodPFont.Size}|" +
                    $"{TimeLFont.Size}|{ScoLFont.Size}|{ScoSFont.Size}|{TimeCFont.Size}|" +
                    $"{Width}|{Height}";
+        }
+
+        private string CheckZero(int number)
+        {
+            if (number < 10)
+            {
+                return "0" + number;
+            }
+            return number.ToString();
         }
     }
 }

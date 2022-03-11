@@ -438,17 +438,17 @@
             // 
             // team1Logo
             // 
-            this.team1Logo.Location = new System.Drawing.Point(74, 60);
+            this.team1Logo.Location = new System.Drawing.Point(57, 32);
             this.team1Logo.Name = "team1Logo";
-            this.team1Logo.Size = new System.Drawing.Size(110, 64);
+            this.team1Logo.Size = new System.Drawing.Size(179, 149);
             this.team1Logo.TabIndex = 49;
             this.team1Logo.TabStop = false;
             // 
             // team2Logo
             // 
-            this.team2Logo.Location = new System.Drawing.Point(761, 72);
+            this.team2Logo.Location = new System.Drawing.Point(712, 42);
             this.team2Logo.Name = "team2Logo";
-            this.team2Logo.Size = new System.Drawing.Size(110, 64);
+            this.team2Logo.Size = new System.Drawing.Size(179, 149);
             this.team2Logo.TabIndex = 50;
             this.team2Logo.TabStop = false;
             // 
