@@ -242,7 +242,7 @@ namespace Scoreboard.Forms
             else if (team1 == 2)
             {
                 timeout2Min.Text = minutes.ToString();
-                timeout1Sec.Text = seconds.ToString();
+                timeout2Sec.Text = seconds.ToString();
             }
         }
 

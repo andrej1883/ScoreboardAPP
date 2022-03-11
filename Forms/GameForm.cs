@@ -28,6 +28,8 @@ namespace Scoreboard.Forms
         private bool _periodEnd = false;
         private Timer _timeoutTimer = null;
         private int[][] _timeouts;
+        private bool _timeout1Running = false;
+        private bool _timeout2Running = false;
 
 
         public GameForm(ScoreboardForm parFormScoreBoard)
@@ -56,20 +58,17 @@ namespace Scoreboard.Forms
             for (int i = 0; i < _timeouts.Length; i++)
             {
                 _timeouts[i] = new int[2];
+                SetTimeoutLength(i+1,TIMEOUT_MIN_DEFAULT,TIMEOUT_SEC_DEFAULT);
             }
-
-            SetTimeoutLength(TIMEOUT_MIN_DEFAULT,TIMEOUT_SEC_DEFAULT);
         }
 
-        public void SetTimeoutLength(int minutes, int seconds)
+        public void SetTimeoutLength(int team, int minutes, int seconds)
         {
-            for (int i = 0; i < _timeouts.Length; i++)
-            {
-                _timeouts[i][0] = minutes;
-                _timeouts[i][1] = seconds;
-                _formScoreBoard.SetTimeout(i,minutes,seconds);
-                UpdateTimeoutGf(i,minutes,seconds);
-            }
+            _timeouts[team-1][0] = minutes;
+            _timeouts[team-1][1] = seconds;
+            _formScoreBoard.SetTimeout(team,minutes,seconds);
+            UpdateTimeoutGf(team,minutes,seconds);
+
         }
 
         private void UpdateTimeoutGf(int team, int minutes, int seconds)
@@ -192,7 +191,7 @@ namespace Scoreboard.Forms
             }
             else
             {
-                _team1Name = "Team 1";
+                _team1Name = "Team1";
             }
             _formScoreBoard.SetTeamName(true,_team1Name);
         }
@@ -230,10 +229,14 @@ namespace Scoreboard.Forms
         private void setTeam2Name_Click_1(object sender, EventArgs e)
         {
             if (team2NameBox.Text.Length > 0)
+            {
                 _team2Name = team2NameBox.Text;
+            }
             else
-                _team2Name = "Team 2";
-            _formScoreBoard.SetTeamName(false,_team2Name);
+            {
+                _team2Name = "Team2";
+                _formScoreBoard.SetTeamName(false, _team2Name);
+            }
         }
 
         private void uploadLogoT2_Click(object sender, EventArgs e)
@@ -254,7 +257,7 @@ namespace Scoreboard.Forms
 
         private void startTime_Click(object sender, EventArgs e)
         {
-            if (!_timerRunning && !_periodEnd)
+            if (!_timerRunning && !_periodEnd && (_minutesT > 0 || _secondsT > 0) && (!_timeout1Running && !_timeout2Running))
             {
                 _timer = new Timer();
                 _timer.Tick += DisplayTimeTimer;
@@ -292,7 +295,7 @@ namespace Scoreboard.Forms
             }
         }
 
-        private void stopTime_Click(object sender, EventArgs e)
+        private void StopTime()
         {
             if (_timerRunning && !_periodEnd)
             {
@@ -300,6 +303,11 @@ namespace Scoreboard.Forms
                 _timerRunning = false;
                 StopPenalty();
             }
+        }
+
+        private void stopTime_Click(object sender, EventArgs e)
+        {
+            StopTime();
         }
 
         private void resetTime_Click(object sender, EventArgs e)
@@ -545,6 +553,107 @@ namespace Scoreboard.Forms
         {
             var control = new ControlForm(_formScoreBoard);
             control.ShowDialog();
+        }
+
+        private void startTimeoutT1_Click(object sender, EventArgs e)
+        {
+            if (!_timeout2Running && (_timeouts[0][0] > 0 || _timeouts[0][1] > 0))
+            {
+                StartTimeout(1);
+                _timeout1Running = true;
+            }
+        }
+        private void startTimeoutT2_Click(object sender, EventArgs e)
+        {
+            if (!_timeout1Running && (_timeouts[1][0] > 0 || _timeouts[1][1] > 0))
+            {
+                StartTimeout(2);
+                _timeout2Running = true;
+            }
+        }
+
+        private void StartTimeout(int team)
+        {
+            _timeoutTimer = new Timer();
+            if (team == 1)
+            {
+                _timeoutTimer.Tick += DisplayTimeTimeout1;
+            }
+            else if (team == 2)
+            {
+                _timeoutTimer.Tick += DisplayTimeTimeout2;
+            }
+            _timeoutTimer.Enabled = true;
+            _timeoutTimer.Interval = 1000;
+            _timeoutTimer.Start();
+            StopPenalty();
+            StopTime();
+            _timerRunning = false;
+            _penaltyRunning = false;
+        }
+
+        private void CountTimeout(int team)
+        {
+            if (_timeouts[team-1][1] == 0)
+            {
+                if (_timeouts[team-1][0] > 0)
+                {
+                    _timeouts[team-1][0]--;
+                    _timeouts[team-1][1] = 60;
+                    _timeouts[team-1][1]--;
+                }
+            }
+            else
+            {
+                _timeouts[team-1][1]--;
+            }
+
+            _formScoreBoard.SetTimeout(team,_timeouts[team-1][0],_timeouts[team-1][1]);
+            UpdateTimeoutGf(team,_timeouts[team-1][0],_timeouts[team-1][1]);
+            
+
+            if (_timeouts[team-1][0] == 0 && _timeouts[team-1][1] == 0)
+            {
+                _timeoutTimer.Stop();
+                if (team == 1)
+                {
+                    _timeout1Running = false;
+                } 
+                else if (team == 2)
+                {
+                    _timeout2Running = false;
+                }
+            }
+        }
+
+        private void DisplayTimeTimeout1(Object myObject, EventArgs myEventArgs)
+        {
+            CountTimeout(1);
+        }
+
+        private void DisplayTimeTimeout2(Object myObject, EventArgs myEventArgs)
+        {
+            CountTimeout(2);
+        }
+
+        private void cancelTimeoutT1_Click(object sender, EventArgs e)
+        {
+            if (_timeout1Running)
+            {
+                _timeoutTimer.Stop();
+                SetTimeoutLength(1,TIMEOUT_MIN_DEFAULT,TIMEOUT_SEC_DEFAULT);
+                _timeout1Running = false;
+            }
+        }
+
+        private void cancelTimeoutT2_Click(object sender, EventArgs e)
+        {
+            if (_timeout2Running)
+            {
+                _timeoutTimer.Stop();
+                SetTimeoutLength(2,TIMEOUT_MIN_DEFAULT,TIMEOUT_SEC_DEFAULT);
+                _timeout2Running = false;
+            }
         }
     }
 }

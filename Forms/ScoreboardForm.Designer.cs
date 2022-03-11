@@ -78,9 +78,9 @@
             // t1Lbl
             // 
             this.t1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.t1Lbl.Location = new System.Drawing.Point(370, 32);
+            this.t1Lbl.Location = new System.Drawing.Point(267, 32);
             this.t1Lbl.Name = "t1Lbl";
-            this.t1Lbl.Size = new System.Drawing.Size(40, 13);
+            this.t1Lbl.Size = new System.Drawing.Size(123, 13);
             this.t1Lbl.TabIndex = 2;
             this.t1Lbl.Text = "Team1";
             this.t1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,9 +88,9 @@
             // t2Lbl
             // 
             this.t2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.t2Lbl.Location = new System.Drawing.Point(505, 32);
+            this.t2Lbl.Location = new System.Drawing.Point(514, 32);
             this.t2Lbl.Name = "t2Lbl";
-            this.t2Lbl.Size = new System.Drawing.Size(40, 13);
+            this.t2Lbl.Size = new System.Drawing.Size(128, 13);
             this.t2Lbl.TabIndex = 3;
             this.t2Lbl.Text = "Team2";
             this.t2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

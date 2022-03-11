@@ -111,15 +111,15 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.cancelTimeoutT2 = new System.Windows.Forms.Button();
+            this.startTimeoutT2 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.timeoutT2S = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.timeoutT2M = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cancelTimeoutT1 = new System.Windows.Forms.Button();
+            this.startTimeoutT1 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.timeoutT1S = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -914,9 +914,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.cancelTimeoutT2);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.startTimeoutT2);
             this.groupBox4.Controls.Add(this.showT2Logo);
             this.groupBox4.Controls.Add(this.groupBox7);
             this.groupBox4.Controls.Add(this.hideT2Logo);
@@ -937,23 +937,25 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Team2";
             // 
-            // button3
+            // cancelTimeoutT2
             // 
-            this.button3.Location = new System.Drawing.Point(355, 438);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 83;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cancelTimeoutT2.Location = new System.Drawing.Point(355, 438);
+            this.cancelTimeoutT2.Name = "cancelTimeoutT2";
+            this.cancelTimeoutT2.Size = new System.Drawing.Size(75, 23);
+            this.cancelTimeoutT2.TabIndex = 83;
+            this.cancelTimeoutT2.Text = "Cancel";
+            this.cancelTimeoutT2.UseVisualStyleBackColor = true;
+            this.cancelTimeoutT2.Click += new System.EventHandler(this.cancelTimeoutT2_Click);
             // 
-            // button4
+            // startTimeoutT2
             // 
-            this.button4.Location = new System.Drawing.Point(255, 438);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 82;
-            this.button4.Text = "Start";
-            this.button4.UseVisualStyleBackColor = true;
+            this.startTimeoutT2.Location = new System.Drawing.Point(255, 438);
+            this.startTimeoutT2.Name = "startTimeoutT2";
+            this.startTimeoutT2.Size = new System.Drawing.Size(75, 23);
+            this.startTimeoutT2.TabIndex = 82;
+            this.startTimeoutT2.Text = "Start";
+            this.startTimeoutT2.UseVisualStyleBackColor = true;
+            this.startTimeoutT2.Click += new System.EventHandler(this.startTimeoutT2_Click);
             // 
             // groupBox7
             // 
@@ -996,8 +998,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button2);
-            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Controls.Add(this.cancelTimeoutT1);
+            this.groupBox5.Controls.Add(this.startTimeoutT1);
             this.groupBox5.Controls.Add(this.groupBox6);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.showT1Logo);
@@ -1019,23 +1021,25 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Team1";
             // 
-            // button2
+            // cancelTimeoutT1
             // 
-            this.button2.Location = new System.Drawing.Point(341, 438);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 78;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelTimeoutT1.Location = new System.Drawing.Point(341, 438);
+            this.cancelTimeoutT1.Name = "cancelTimeoutT1";
+            this.cancelTimeoutT1.Size = new System.Drawing.Size(75, 23);
+            this.cancelTimeoutT1.TabIndex = 78;
+            this.cancelTimeoutT1.Text = "Cancel";
+            this.cancelTimeoutT1.UseVisualStyleBackColor = true;
+            this.cancelTimeoutT1.Click += new System.EventHandler(this.cancelTimeoutT1_Click);
             // 
-            // button1
+            // startTimeoutT1
             // 
-            this.button1.Location = new System.Drawing.Point(241, 438);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 77;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
+            this.startTimeoutT1.Location = new System.Drawing.Point(241, 438);
+            this.startTimeoutT1.Name = "startTimeoutT1";
+            this.startTimeoutT1.Size = new System.Drawing.Size(75, 23);
+            this.startTimeoutT1.TabIndex = 77;
+            this.startTimeoutT1.Text = "Start";
+            this.startTimeoutT1.UseVisualStyleBackColor = true;
+            this.startTimeoutT1.Click += new System.EventHandler(this.startTimeoutT1_Click);
             // 
             // groupBox6
             // 
@@ -1221,14 +1225,14 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button cancelTimeoutT2;
+        private System.Windows.Forms.Button startTimeoutT2;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label timeoutT2S;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label timeoutT2M;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancelTimeoutT1;
+        private System.Windows.Forms.Button startTimeoutT1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label timeoutT1S;
         private System.Windows.Forms.Label label16;
