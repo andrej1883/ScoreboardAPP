@@ -743,5 +743,11 @@ namespace Scoreboard.Forms
                 UpdateTime(_minutesT,_secondsT);
             }
         }
+
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var teams = new LoadTeamDataForm();
+            teams.Show();
+        }
     }
 }

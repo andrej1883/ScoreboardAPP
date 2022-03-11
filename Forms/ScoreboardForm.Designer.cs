@@ -175,9 +175,9 @@
             // 
             this.actualPeriodLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.actualPeriodLbl.ForeColor = System.Drawing.Color.Black;
-            this.actualPeriodLbl.Location = new System.Drawing.Point(440, 163);
+            this.actualPeriodLbl.Location = new System.Drawing.Point(436, 163);
             this.actualPeriodLbl.Name = "actualPeriodLbl";
-            this.actualPeriodLbl.Size = new System.Drawing.Size(42, 46);
+            this.actualPeriodLbl.Size = new System.Drawing.Size(46, 46);
             this.actualPeriodLbl.TabIndex = 11;
             this.actualPeriodLbl.Text = "0";
             this.actualPeriodLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
