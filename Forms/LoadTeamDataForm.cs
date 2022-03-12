@@ -19,7 +19,10 @@ namespace Scoreboard.Forms
         public LoadTeamDataForm()
         {
             InitializeComponent();
-            _database = new Database();
+            if (_database == null)
+            {
+                _database = new Database();
+            }
             UpdateGv();
         }
 
@@ -134,6 +137,11 @@ namespace Scoreboard.Forms
         private void OK_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void LoadTeamDataForm_Load(object sender, EventArgs e)
+        {
+            UpdateGv();
         }
     }
 }

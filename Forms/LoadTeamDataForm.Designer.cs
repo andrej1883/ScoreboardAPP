@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.videoPathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LogoPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loadXML = new System.Windows.Forms.Button();
@@ -38,9 +41,6 @@
             this.RemoveTeam = new System.Windows.Forms.Button();
             this.EditTeamPlayers = new System.Windows.Forms.Button();
             this.OK = new System.Windows.Forms.Button();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.videoPathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LogoPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
@@ -59,6 +59,27 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(543, 404);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // videoPathDataGridViewTextBoxColumn
+            // 
+            this.videoPathDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.videoPathDataGridViewTextBoxColumn.DataPropertyName = "VideoPath";
+            this.videoPathDataGridViewTextBoxColumn.HeaderText = "VideoPath";
+            this.videoPathDataGridViewTextBoxColumn.Name = "videoPathDataGridViewTextBoxColumn";
+            this.videoPathDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // LogoPath
+            // 
+            this.LogoPath.DataPropertyName = "LogoPath";
+            this.LogoPath.HeaderText = "LogoPath";
+            this.LogoPath.Name = "LogoPath";
+            this.LogoPath.Width = 200;
             // 
             // teamListBindingSource
             // 
@@ -129,27 +150,6 @@
             this.OK.UseVisualStyleBackColor = true;
             this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // videoPathDataGridViewTextBoxColumn
-            // 
-            this.videoPathDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.videoPathDataGridViewTextBoxColumn.DataPropertyName = "VideoPath";
-            this.videoPathDataGridViewTextBoxColumn.HeaderText = "VideoPath";
-            this.videoPathDataGridViewTextBoxColumn.Name = "videoPathDataGridViewTextBoxColumn";
-            this.videoPathDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // LogoPath
-            // 
-            this.LogoPath.DataPropertyName = "LogoPath";
-            this.LogoPath.HeaderText = "LogoPath";
-            this.LogoPath.Name = "LogoPath";
-            this.LogoPath.Width = 200;
-            // 
             // LoadTeamDataForm
             // 
             this.AllowDrop = true;
@@ -166,6 +166,7 @@
             this.KeyPreview = true;
             this.Name = "LoadTeamDataForm";
             this.Text = "LoadTeamDataForm";
+            this.Load += new System.EventHandler(this.LoadTeamDataForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();

@@ -35,6 +35,12 @@ namespace Scoreboard.Forms
 
         private Database _teamsDatabase;
 
+        public Database TeamsDatabase
+        {
+            get => _teamsDatabase;
+            set => _teamsDatabase = value;
+        }
+
 
         public GameForm(ScoreboardForm parFormScoreBoard)
         {
@@ -767,31 +773,43 @@ namespace Scoreboard.Forms
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var teams = new LoadTeamDataForm();
+            if (_teamsDatabase != null)
+            {
+                teams.Database = _teamsDatabase;
+            }
             teams.ShowDialog();
             if (teams.IsDisposed)
             {
                 _teamsDatabase = teams.Database;
                 TeamsDBT1.DataSource = _teamsDatabase.TeamList;
+                TeamsDBT2.BindingContext = new BindingContext();
                 TeamsDBT2.DataSource = _teamsDatabase.TeamList;
             }
         }
 
         private void SetFromDBT1_Click(object sender, EventArgs e)
         {
-            Team selected = (Team)TeamsDBT1.SelectedItem;
-            _team1Name = selected.Name;
-            team1NameBox.Text = _team1Name;
-            _formScoreBoard.SetTeamName(true,_team1Name);
-            UploadLogo(true,selected.LogoPath);
+            if (_teamsDatabase != null)
+            {
+                Team selected = (Team)TeamsDBT1.SelectedItem;
+                _team1Name = selected.Name;
+                team1NameBox.Text = _team1Name;
+                _formScoreBoard.SetTeamName(true,_team1Name);
+                UploadLogo(true,selected.LogoPath);
+            }
         }
 
         private void SetFromDBT2_Click(object sender, EventArgs e)
         {
-            Team selected = (Team)TeamsDBT2.SelectedItem;
-            _team2Name = selected.Name;
-            team2NameBox.Text = _team2Name;
-            _formScoreBoard.SetTeamName(false,_team2Name);
-            UploadLogo(false,selected.LogoPath);
+            if (_teamsDatabase != null)
+            {
+                Team selected = (Team) TeamsDBT2.SelectedItem;
+                _team2Name = selected.Name;
+                team2NameBox.Text = _team2Name;
+                _formScoreBoard.SetTeamName(false, _team2Name);
+                UploadLogo(false, selected.LogoPath);
+            }
         }
+
     }
 }
