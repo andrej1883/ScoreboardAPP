@@ -28,28 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.loadXML = new System.Windows.Forms.Button();
             this.savedData = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.AddTeam = new System.Windows.Forms.Button();
+            this.RemoveTeam = new System.Windows.Forms.Button();
+            this.teamListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EditTeamPlayers = new System.Windows.Forms.Button();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.videoPathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.OK = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 167);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.videoPathDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.teamListBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(32, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(519, 249);
+            this.dataGridView1.Size = new System.Drawing.Size(543, 404);
             this.dataGridView1.TabIndex = 0;
             // 
             // loadXML
             // 
-            this.loadXML.Location = new System.Drawing.Point(651, 280);
+            this.loadXML.Location = new System.Drawing.Point(652, 116);
             this.loadXML.Name = "loadXML";
-            this.loadXML.Size = new System.Drawing.Size(75, 23);
+            this.loadXML.Size = new System.Drawing.Size(104, 23);
             this.loadXML.TabIndex = 1;
             this.loadXML.Text = "Load Data";
             this.loadXML.UseVisualStyleBackColor = true;
@@ -57,47 +70,96 @@
             // 
             // savedData
             // 
-            this.savedData.Location = new System.Drawing.Point(651, 211);
+            this.savedData.Location = new System.Drawing.Point(652, 75);
             this.savedData.Name = "savedData";
-            this.savedData.Size = new System.Drawing.Size(75, 23);
+            this.savedData.Size = new System.Drawing.Size(104, 23);
             this.savedData.TabIndex = 2;
             this.savedData.Text = "Save Data";
             this.savedData.UseVisualStyleBackColor = true;
             this.savedData.Click += new System.EventHandler(this.savedData_Click);
             // 
-            // listBox1
+            // AddTeam
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(39, 24);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 3;
+            this.AddTeam.Location = new System.Drawing.Point(652, 190);
+            this.AddTeam.Name = "AddTeam";
+            this.AddTeam.Size = new System.Drawing.Size(104, 23);
+            this.AddTeam.TabIndex = 4;
+            this.AddTeam.Text = "Add Team";
+            this.AddTeam.UseVisualStyleBackColor = true;
+            this.AddTeam.Click += new System.EventHandler(this.AddTeam_Click);
             // 
-            // pictureBox7
+            // RemoveTeam
             // 
-            this.pictureBox7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox7.Location = new System.Drawing.Point(297, 24);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(225, 105);
-            this.pictureBox7.TabIndex = 4;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox7_MouseDown);
-            this.pictureBox7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox7_MouseMove);
+            this.RemoveTeam.Location = new System.Drawing.Point(652, 235);
+            this.RemoveTeam.Name = "RemoveTeam";
+            this.RemoveTeam.Size = new System.Drawing.Size(104, 23);
+            this.RemoveTeam.TabIndex = 5;
+            this.RemoveTeam.Text = "Remove Team";
+            this.RemoveTeam.UseVisualStyleBackColor = true;
+            this.RemoveTeam.Click += new System.EventHandler(this.RemoveTeam_Click);
+            // 
+            // teamListBindingSource
+            // 
+            this.teamListBindingSource.DataMember = "TeamList";
+            this.teamListBindingSource.DataSource = this.databaseBindingSource;
+            // 
+            // EditTeamPlayers
+            // 
+            this.EditTeamPlayers.Location = new System.Drawing.Point(652, 338);
+            this.EditTeamPlayers.Name = "EditTeamPlayers";
+            this.EditTeamPlayers.Size = new System.Drawing.Size(104, 23);
+            this.EditTeamPlayers.TabIndex = 6;
+            this.EditTeamPlayers.Text = "Edit Players";
+            this.EditTeamPlayers.UseVisualStyleBackColor = true;
+            this.EditTeamPlayers.Click += new System.EventHandler(this.EditTeamPlayers_Click);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // videoPathDataGridViewTextBoxColumn
+            // 
+            this.videoPathDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.videoPathDataGridViewTextBoxColumn.DataPropertyName = "VideoPath";
+            this.videoPathDataGridViewTextBoxColumn.HeaderText = "VideoPath";
+            this.videoPathDataGridViewTextBoxColumn.Name = "videoPathDataGridViewTextBoxColumn";
+            this.videoPathDataGridViewTextBoxColumn.Width = 400;
+            // 
+            // databaseBindingSource
+            // 
+            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database);
+            // 
+            // OK
+            // 
+            this.OK.Location = new System.Drawing.Point(652, 379);
+            this.OK.Name = "OK";
+            this.OK.Size = new System.Drawing.Size(108, 23);
+            this.OK.TabIndex = 14;
+            this.OK.Text = "Done";
+            this.OK.UseVisualStyleBackColor = true;
+            this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
             // LoadTeamDataForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.OK);
+            this.Controls.Add(this.EditTeamPlayers);
+            this.Controls.Add(this.RemoveTeam);
+            this.Controls.Add(this.AddTeam);
             this.Controls.Add(this.savedData);
             this.Controls.Add(this.loadXML);
             this.Controls.Add(this.dataGridView1);
+            this.KeyPreview = true;
             this.Name = "LoadTeamDataForm";
             this.Text = "LoadTeamDataForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -107,7 +169,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button loadXML;
         private System.Windows.Forms.Button savedData;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button AddTeam;
+        private System.Windows.Forms.Button RemoveTeam;
+        private System.Windows.Forms.BindingSource teamListBindingSource;
+        private System.Windows.Forms.BindingSource databaseBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn videoPathDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button EditTeamPlayers;
+        private System.Windows.Forms.Button OK;
     }
 }

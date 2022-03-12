@@ -9,70 +9,123 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using Scoreboard.Classes;
 
 namespace Scoreboard.Forms
 {
     public partial class LoadTeamDataForm : Form
     {
+        private Database _database;
+        private string _dbPath = Environment.CurrentDirectory+ "\\db2.xml";
+
         public LoadTeamDataForm()
         {
             InitializeComponent();
+            _database = new Database();
         }
 
         private void loadXML_Click(object sender, EventArgs e)
         {
-            List<Player> l1 = new List<Player>();
-            XmlSerializer serial = new XmlSerializer(typeof(List<Player>));
-
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\test.xml", FileMode.Open, FileAccess.Read))
-            {
-                l1 = serial.Deserialize(fs) as List<Player>;
-            }
-
-            dataGridView1.DataSource = l1;
-            listBox1.DataSource = l1;
+            LoadDatabase();
+            UpdateGv();
         }
 
         private void savedData_Click(object sender, EventArgs e)
         {
-            List<Player> l1 = new List<Player>();
-            XmlSerializer serial = new XmlSerializer(typeof(List<Player>));
-            l1.Add(new Player() {Name = "Franto", Number = "10"});
-            l1.Add(new Player() {Name = "Pepa", Number = "12"});
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\test.xml", FileMode.Create, FileAccess.Write))
-            {
-                serial.Serialize(fs, l1);
-                MessageBox.Show("created");
-            }
+            SaveDatabase();
         }
 
-        private int xPos;
-        private int yPos;
-
-        private void pictureBox7_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void LoadDatabase()
         {
-            if (e.Button == MouseButtons.Left)
+            TextReader textReader = null;
+            try
             {
-                xPos = e.X;
-                yPos = e.Y;
+                XmlSerializer deserializer = new XmlSerializer(typeof(Database));
+                textReader = new StreamReader(_dbPath);
+                _database = (Database)deserializer.Deserialize(textReader);
+            }
+            catch (Exception ex)
+            {
+                _database = new Database();
+                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (textReader != null)
+                    textReader.Close();
+                _database.PostLoad();
             }
         }
 
-        private void pictureBox7_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void SaveDatabase()
         {
-            PictureBox p = sender as PictureBox;
+            TextWriter textWriter = null;
 
-            if (p != null)
+            try
             {
-                if (e.Button == MouseButtons.Left)
-                {
-                    p.Top += (e.Y - yPos);
-                    p.Left += (e.X - xPos);
-                }
+                XmlSerializer serializer = new XmlSerializer(typeof(Database));
+                textWriter = new StreamWriter(_dbPath);
+                serializer.Serialize(textWriter, _database);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (textWriter != null)
+                    textWriter.Close();
+            }
+        }
+
+        private void AddTeam_Click(object sender, EventArgs e)
+        {
+            var add = new CreateTeamForm();
+            add.ShowDialog();
+
+            Team help = add.Team;
+            if (help != null)
+            {
+                _database.AddTeam(help);
+                UpdateGv();
+            }
+            else
+            {
+                MessageBox.Show("Team null error" , "Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
+        private void RemoveTeam_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                _database.RemoveTeam((Team)dataGridView1.SelectedRows[0].DataBoundItem);
+                UpdateGv();
+            }
+        }
+
+        private void UpdateGv()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = _database.TeamList;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Update();
+        }
+
+        private void EditTeamPlayers_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0 && _database.TeamList.Count > 0)
+            {
+                var plaForm = new CreatePlayerForm((Team)dataGridView1.SelectedRows[0].DataBoundItem);
+                plaForm.ShowDialog();
+                UpdateGv();
+            }
+        }
+
+        private void OK_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
-
 }

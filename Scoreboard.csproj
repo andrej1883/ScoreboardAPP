@@ -46,11 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Database.cs" />
+    <Compile Include="Classes\Team.cs" />
     <Compile Include="Forms\ControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ControlForm.Designer.cs">
       <DependentUpon>ControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreatePlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreatePlayerForm.Designer.cs">
+      <DependentUpon>CreatePlayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateTeamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateTeamForm.Designer.cs">
+      <DependentUpon>CreateTeamForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GameForm.cs">
       <SubType>Form</SubType>
@@ -76,6 +90,12 @@
     <EmbeddedResource Include="Forms\ControlForm.resx">
       <DependentUpon>ControlForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreatePlayerForm.resx">
+      <DependentUpon>CreatePlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateTeamForm.resx">
+      <DependentUpon>CreateTeamForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +114,7 @@
     <EmbeddedResource Include="Forms\ScoreboardForm.resx">
       <DependentUpon>ScoreboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Scoreboard.Classes.Database.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
