@@ -30,16 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.teamListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loadXML = new System.Windows.Forms.Button();
             this.savedData = new System.Windows.Forms.Button();
             this.AddTeam = new System.Windows.Forms.Button();
             this.RemoveTeam = new System.Windows.Forms.Button();
-            this.teamListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.EditTeamPlayers = new System.Windows.Forms.Button();
+            this.OK = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.videoPathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.OK = new System.Windows.Forms.Button();
+            this.LogoPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
@@ -51,12 +52,22 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
-            this.videoPathDataGridViewTextBoxColumn});
+            this.videoPathDataGridViewTextBoxColumn,
+            this.LogoPath});
             this.dataGridView1.DataSource = this.teamListBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(32, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(543, 404);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // teamListBindingSource
+            // 
+            this.teamListBindingSource.DataMember = "TeamList";
+            this.teamListBindingSource.DataSource = this.databaseBindingSource;
+            // 
+            // databaseBindingSource
+            // 
+            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database);
             // 
             // loadXML
             // 
@@ -98,11 +109,6 @@
             this.RemoveTeam.UseVisualStyleBackColor = true;
             this.RemoveTeam.Click += new System.EventHandler(this.RemoveTeam_Click);
             // 
-            // teamListBindingSource
-            // 
-            this.teamListBindingSource.DataMember = "TeamList";
-            this.teamListBindingSource.DataSource = this.databaseBindingSource;
-            // 
             // EditTeamPlayers
             // 
             this.EditTeamPlayers.Location = new System.Drawing.Point(652, 338);
@@ -112,6 +118,16 @@
             this.EditTeamPlayers.Text = "Edit Players";
             this.EditTeamPlayers.UseVisualStyleBackColor = true;
             this.EditTeamPlayers.Click += new System.EventHandler(this.EditTeamPlayers_Click);
+            // 
+            // OK
+            // 
+            this.OK.Location = new System.Drawing.Point(652, 379);
+            this.OK.Name = "OK";
+            this.OK.Size = new System.Drawing.Size(108, 23);
+            this.OK.TabIndex = 14;
+            this.OK.Text = "Done";
+            this.OK.UseVisualStyleBackColor = true;
+            this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -125,21 +141,14 @@
             this.videoPathDataGridViewTextBoxColumn.DataPropertyName = "VideoPath";
             this.videoPathDataGridViewTextBoxColumn.HeaderText = "VideoPath";
             this.videoPathDataGridViewTextBoxColumn.Name = "videoPathDataGridViewTextBoxColumn";
-            this.videoPathDataGridViewTextBoxColumn.Width = 400;
+            this.videoPathDataGridViewTextBoxColumn.Width = 200;
             // 
-            // databaseBindingSource
+            // LogoPath
             // 
-            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database);
-            // 
-            // OK
-            // 
-            this.OK.Location = new System.Drawing.Point(652, 379);
-            this.OK.Name = "OK";
-            this.OK.Size = new System.Drawing.Size(108, 23);
-            this.OK.TabIndex = 14;
-            this.OK.Text = "Done";
-            this.OK.UseVisualStyleBackColor = true;
-            this.OK.Click += new System.EventHandler(this.OK_Click);
+            this.LogoPath.DataPropertyName = "LogoPath";
+            this.LogoPath.HeaderText = "LogoPath";
+            this.LogoPath.Name = "LogoPath";
+            this.LogoPath.Width = 200;
             // 
             // LoadTeamDataForm
             // 
@@ -173,9 +182,10 @@
         private System.Windows.Forms.Button RemoveTeam;
         private System.Windows.Forms.BindingSource teamListBindingSource;
         private System.Windows.Forms.BindingSource databaseBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn videoPathDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button EditTeamPlayers;
         private System.Windows.Forms.Button OK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn videoPathDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LogoPath;
     }
 }

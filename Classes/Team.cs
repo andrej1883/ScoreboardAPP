@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Scoreboard.Forms;
 
@@ -10,10 +7,16 @@ namespace Scoreboard.Classes
 {
     public class Team
     {
-        private const int PlayersMax = 20;
-
         private string _name;
         private string _videoPath;
+        private string _logoPath;
+
+        public string LogoPath
+        {
+            get => _logoPath;
+            set => _logoPath = value;
+        }
+
         private List<Player> _players;
 
         public string Name
@@ -36,18 +39,18 @@ namespace Scoreboard.Classes
 
         public Team()
         {
-
+            Players = new List<Player>(20);
         }
 
         public void AddPlayer(Player parPlayer)
         {
-            if (_players.Count < PlayersMax && !_players.Contains(parPlayer))
+            if (!_players.Contains(parPlayer))
             {
                 _players.Add(parPlayer);
             }
             else
             {
-                MessageBox.Show("Maximum players allowed: " + PlayersMax + "! Each player only once!" , "Add player Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show( "! Each player only once!" , "Add player Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -61,6 +64,11 @@ namespace Scoreboard.Classes
             {
                 MessageBox.Show("Player not found", "Remove player Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}";
         }
     }
 }

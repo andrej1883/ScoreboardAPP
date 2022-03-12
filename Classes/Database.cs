@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Scoreboard.Classes
@@ -21,7 +18,6 @@ namespace Scoreboard.Classes
         public Database()
         {
             _teamList = new List<Team>();
-            //_teamList.Add(new Team() {Name = "HC Neviem", VideoPath ="C:\\Users\\pc\\Videos\\DaVinci projects\\Mike.mp4" });
 
         }
 
@@ -68,14 +64,22 @@ namespace Scoreboard.Classes
 
         public void AddTeam(Team parTeam)
         {
-            if (!TeamList.Contains(parTeam))
+            if (parTeam.Players.Count > 20)
             {
-                TeamList.Add(parTeam);
+                MessageBox.Show(@"Too many players! Max 20!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Each Team only once!" , "Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!TeamList.Contains(parTeam) && FindTeam(parTeam.Name) == null && parTeam.Name.Length > 0)
+                {
+                    TeamList.Add(parTeam);
+                }
+                else
+                {
+                    MessageBox.Show(@"Team was not added! Each team can be added only once! Define at least Team Name!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            
         }
 
         public void RemoveTeam(Team parTeam)

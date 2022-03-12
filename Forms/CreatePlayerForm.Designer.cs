@@ -35,6 +35,8 @@
             this.PlayerName = new System.Windows.Forms.TextBox();
             this.PlayerNumber = new System.Windows.Forms.TextBox();
             this.OK = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PLayersGW)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +71,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.PlayerNumber);
             this.groupBox1.Controls.Add(this.PlayerName);
             this.groupBox1.Controls.Add(this.AddPlayer);
@@ -103,6 +107,24 @@
             this.OK.UseVisualStyleBackColor = true;
             this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(50, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Name: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Number:";
+            // 
             // CreatePlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,5 +152,7 @@
         private System.Windows.Forms.TextBox PlayerNumber;
         private System.Windows.Forms.TextBox PlayerName;
         private System.Windows.Forms.Button OK;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Scoreboard.Classes;
 
@@ -36,6 +29,7 @@ namespace Scoreboard.Forms
             _team = new Team();
             _team.Name = TeamName.Text;
             _team.VideoPath = VideoPath.Text;
+            _team.LogoPath = LogoPath.Text;
             Dispose();
         }
 
@@ -52,6 +46,16 @@ namespace Scoreboard.Forms
         private void Cancel_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void SelectPathLogo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";   
+            if (open.ShowDialog() == DialogResult.OK) {
+
+                LogoPath.Text = open.FileName;
+            }
         }
     }
 }

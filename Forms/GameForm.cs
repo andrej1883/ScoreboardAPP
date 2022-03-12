@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Scoreboard.Classes;
 using Timer = System.Windows.Forms.Timer;
 
 namespace Scoreboard.Forms
@@ -31,6 +32,8 @@ namespace Scoreboard.Forms
         private Timer _timeoutTimer = null;
         private int[][] _timeouts;
         private bool _breakRunning = false;
+
+        private Database _teamsDatabase;
 
 
         public GameForm(ScoreboardForm parFormScoreBoard)
@@ -255,6 +258,23 @@ namespace Scoreboard.Forms
                 }
                 
             }
+        }
+
+        private void UploadLogo(bool team1, string parPath)
+        {
+
+                if (team1)
+                {
+                    logo1.Image = new Bitmap(parPath);
+                    logo1Path.Text = parPath;
+                    _formScoreBoard.SetLogo(true, logo1.Image);
+                }
+                else
+                {
+                    logo2.Image = new Bitmap(parPath);
+                    logo2Path.Text = parPath;
+                    _formScoreBoard.SetLogo(false, logo2.Image);
+                }
         }
 
         private void uploadLogoT1_Click(object sender, EventArgs e)
@@ -747,7 +767,31 @@ namespace Scoreboard.Forms
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var teams = new LoadTeamDataForm();
-            teams.Show();
+            teams.ShowDialog();
+            if (teams.IsDisposed)
+            {
+                _teamsDatabase = teams.Database;
+                TeamsDBT1.DataSource = _teamsDatabase.TeamList;
+                TeamsDBT2.DataSource = _teamsDatabase.TeamList;
+            }
+        }
+
+        private void SetFromDBT1_Click(object sender, EventArgs e)
+        {
+            Team selected = (Team)TeamsDBT1.SelectedItem;
+            _team1Name = selected.Name;
+            team1NameBox.Text = _team1Name;
+            _formScoreBoard.SetTeamName(true,_team1Name);
+            UploadLogo(true,selected.LogoPath);
+        }
+
+        private void SetFromDBT2_Click(object sender, EventArgs e)
+        {
+            Team selected = (Team)TeamsDBT2.SelectedItem;
+            _team2Name = selected.Name;
+            team2NameBox.Text = _team2Name;
+            _formScoreBoard.SetTeamName(false,_team2Name);
+            UploadLogo(false,selected.LogoPath);
         }
     }
 }

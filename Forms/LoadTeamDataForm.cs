@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using Scoreboard.Classes;
@@ -16,12 +9,18 @@ namespace Scoreboard.Forms
     public partial class LoadTeamDataForm : Form
     {
         private Database _database;
-        private string _dbPath = Environment.CurrentDirectory+ "\\db2.xml";
+
+        public Database Database
+        {
+            get => _database;
+            set => _database = value;
+        }
 
         public LoadTeamDataForm()
         {
             InitializeComponent();
             _database = new Database();
+            UpdateGv();
         }
 
         private void loadXML_Click(object sender, EventArgs e)
@@ -40,9 +39,15 @@ namespace Scoreboard.Forms
             TextReader textReader = null;
             try
             {
-                XmlSerializer deserializer = new XmlSerializer(typeof(Database));
-                textReader = new StreamReader(_dbPath);
-                _database = (Database)deserializer.Deserialize(textReader);
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "xml files (*.xml)|*.xml";
+                open.InitialDirectory = Environment.CurrentDirectory;
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    XmlSerializer deserializer = new XmlSerializer(typeof(Database));
+                    textReader = new StreamReader(open.FileName);
+                    _database = (Database)deserializer.Deserialize(textReader);
+                }
             }
             catch (Exception ex)
             {
@@ -59,13 +64,21 @@ namespace Scoreboard.Forms
 
         private void SaveDatabase()
         {
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xml files (*.xml)|*.xml";
+            saveFileDialog1.InitialDirectory = Environment.CurrentDirectory;
             TextWriter textWriter = null;
 
             try
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(Database));
-                textWriter = new StreamWriter(_dbPath);
-                serializer.Serialize(textWriter, _database);
+                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(Database));
+                    textWriter = new StreamWriter(saveFileDialog1.FileName);
+                    serializer.Serialize(textWriter, _database);
+
+                }
             }
             catch (Exception ex)
             {
@@ -89,11 +102,6 @@ namespace Scoreboard.Forms
                 _database.AddTeam(help);
                 UpdateGv();
             }
-            else
-            {
-                MessageBox.Show("Team null error" , "Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
 
         private void RemoveTeam_Click(object sender, EventArgs e)
