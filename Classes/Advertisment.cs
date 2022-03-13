@@ -25,12 +25,16 @@ namespace Scoreboard.Classes
         public string Path
         {
             get => _path;
-            set => _path = value;
+            set
+            {
+                _path = value;
+                _name = System.IO.Path.GetFileName(value);
+            }
         }
 
         public override string ToString()
         {
-            return $"{_path}";
+            return $"{_name}";
         }
     }
 }
