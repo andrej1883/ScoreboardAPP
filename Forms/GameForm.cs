@@ -612,6 +612,7 @@ namespace Scoreboard.Forms
             var location = area.Location;
             location.Offset((area.Width - _formScoreBoard.Width) / 2, (area.Height - _formScoreBoard.Height) / 2);
             _formScoreBoard.Location = location;
+            _formScoreBoard.TopMost = true;
 
             if (!_formScoreBoard.IsActive)
             {
@@ -639,8 +640,16 @@ namespace Scoreboard.Forms
 
         private void appearanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var control = new ControlForm(_formScoreBoard);
-            control.ShowDialog();
+            if (_formScoreBoard.IsActive)
+            {
+                var control = new ControlForm(_formScoreBoard);
+                control.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void startTimeoutT1_Click(object sender, EventArgs e)
