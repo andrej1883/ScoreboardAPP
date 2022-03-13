@@ -88,6 +88,7 @@
             this.importSettings = new System.Windows.Forms.Button();
             this.exportSettings = new System.Windows.Forms.Button();
             this.backgroundColorLbl = new System.Windows.Forms.Label();
+            this.unlockScoreboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBHeight)).BeginInit();
             this.scoreSettingBox.SuspendLayout();
@@ -678,6 +679,7 @@
             // 
             // scoreBoardSettingsBox
             // 
+            this.scoreBoardSettingsBox.Controls.Add(this.unlockScoreboard);
             this.scoreBoardSettingsBox.Controls.Add(this.backgrColor);
             this.scoreBoardSettingsBox.Controls.Add(this.importPath);
             this.scoreBoardSettingsBox.Controls.Add(this.importSettings);
@@ -745,6 +747,16 @@
             this.backgroundColorLbl.Size = new System.Drawing.Size(95, 13);
             this.backgroundColorLbl.TabIndex = 13;
             this.backgroundColorLbl.Text = "Background Color:";
+            // 
+            // unlockScoreboard
+            // 
+            this.unlockScoreboard.Location = new System.Drawing.Point(32, 230);
+            this.unlockScoreboard.Name = "unlockScoreboard";
+            this.unlockScoreboard.Size = new System.Drawing.Size(125, 23);
+            this.unlockScoreboard.TabIndex = 18;
+            this.unlockScoreboard.Text = "Unlock";
+            this.unlockScoreboard.UseVisualStyleBackColor = true;
+            this.unlockScoreboard.Click += new System.EventHandler(this.unlockScoreboard_Click);
             // 
             // ControlForm
             // 
@@ -848,6 +860,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button setSizePenL;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button unlockScoreboard;
     }
 }
 

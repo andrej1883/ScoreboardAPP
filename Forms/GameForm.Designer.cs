@@ -144,6 +144,9 @@
             this.playAd = new System.Windows.Forms.Button();
             this.cancelAd = new System.Windows.Forms.Button();
             this.adsDBV = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -947,6 +950,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.cancelVideo2);
             this.groupBox4.Controls.Add(this.TeamsDBT2);
             this.groupBox4.Controls.Add(this.playVideo2);
@@ -1103,6 +1107,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.cancelVideo1);
             this.groupBox5.Controls.Add(this.playVideo1);
             this.groupBox5.Controls.Add(this.videoPath1);
@@ -1305,11 +1310,39 @@
             this.adsDBV.Size = new System.Drawing.Size(152, 21);
             this.adsDBV.TabIndex = 85;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(351, 90);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(107, 13);
+            this.label18.TabIndex = 86;
+            this.label18.Text = "Select team from DB:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(366, 90);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(107, 13);
+            this.label20.TabIndex = 87;
+            this.label20.Text = "Select team from DB:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(722, 619);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(143, 13);
+            this.label21.TabIndex = 87;
+            this.label21.Text = "Select advertisement to play:";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1760, 1119);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.adsDBV);
             this.Controls.Add(this.cancelAd);
             this.Controls.Add(this.playAd);
@@ -1487,5 +1520,8 @@
         private System.Windows.Forms.ToolStripMenuItem dropToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ComboBox adsDBV;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label21;
     }
 }

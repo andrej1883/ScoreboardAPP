@@ -147,6 +147,7 @@ namespace Scoreboard.Forms
 
         private void plusGoal1_Click(object sender, EventArgs e)
         {
+            StopTime();
             _team1Goals ++;
             _formScoreBoard.SetGoal(true,_team1Goals);
             goalsTeam1.Text = _team1Goals.ToString();
@@ -164,6 +165,7 @@ namespace Scoreboard.Forms
 
         private void plusGoal2_Click(object sender, EventArgs e)
         {
+            StopTime();
             _team2Goals ++;
             _formScoreBoard.SetGoal(false,_team2Goals);
             goalsTeam2.Text = _team2Goals.ToString();
@@ -643,7 +645,7 @@ namespace Scoreboard.Forms
             if (_formScoreBoard.IsActive)
             {
                 var control = new ControlForm(_formScoreBoard);
-                control.ShowDialog();
+                control.Show();
             }
             else
             {

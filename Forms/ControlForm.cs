@@ -299,5 +299,19 @@ namespace Scoreboard.Forms
             _fontDial.Font = _formScoreBoard.PenaltyDFont;
             if (_fontDial.ShowDialog() == DialogResult.OK) _formScoreBoard.PenaltyDFont = _fontDial.Font;
         }
+
+        private void unlockScoreboard_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsLocked)
+            {
+                _formScoreBoard.IsLocked = false;
+                unlockScoreboard.ForeColor = Color.DarkRed;
+            }
+            else
+            {
+                _formScoreBoard.IsLocked = true;
+                unlockScoreboard.ForeColor = DefaultForeColor;
+            }
+        }
     }
 }
