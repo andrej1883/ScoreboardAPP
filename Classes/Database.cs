@@ -8,9 +8,14 @@ namespace Scoreboard.Classes
     public class Database
     {
         private List<Team> _teamList;
-        private List<AdvertisementVideo> _advertisement;
+        private List<Advertisment> _advList;
 
 
+        public List<Advertisment> AdvList
+        {
+            get => _advList;
+            set => _advList = value;
+        }
 
         public List<Team> TeamList
         {
@@ -18,9 +23,11 @@ namespace Scoreboard.Classes
             set => _teamList = value;
         }
 
+
         public Database()
         {
             _teamList = new List<Team>();
+            _advList = new List<Advertisment>();
 
         }
 
@@ -30,6 +37,15 @@ namespace Scoreboard.Classes
             {
                 if (t.Name.Equals(parTeamName))
                     return t;
+            }
+            return null;
+        }
+        public Advertisment FindAdv(string parAdvPath)
+        {
+            foreach (Advertisment a in _advList)
+            {
+                if (a.Path.Equals(parAdvPath))
+                    return a;
             }
             return null;
         }
@@ -87,6 +103,30 @@ namespace Scoreboard.Classes
             else
             {
                 MessageBox.Show("Player not found", "Remove team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void AddAdv(Advertisment parVid)
+        {
+
+            if (!_advList.Contains(parVid) && FindAdv(parVid.Path) == null && parVid.Path.Length > 0)
+            {
+                _advList.Add(parVid);
+            }
+            else
+            {
+                MessageBox.Show(@"Video was not added! Each video can be added only once! Define at least Video path!" , @"Add adv Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void RemoveAdv(Advertisment parVid)
+        {
+            if (_advList.Contains(parVid))
+            {
+                _advList.Remove(parVid);
+            }
+            else
+            {
+                MessageBox.Show("Video not found", "Remove adv Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\AdvertisementVideo.cs" />
+    <Compile Include="Classes\Advertisment.cs" />
     <Compile Include="Classes\Database.cs" />
     <Compile Include="Classes\Team.cs" />
     <Compile Include="Forms\ControlForm.cs">
@@ -81,6 +81,12 @@
       <DependentUpon>LoadTeamDataForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Player.cs" />
+    <Compile Include="Forms\LoadAds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoadAds.Designer.cs">
+      <DependentUpon>LoadAds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\VideoPlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoadAds.resx">
+      <DependentUpon>LoadAds.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoadTeamDataForm.resx">
       <DependentUpon>LoadTeamDataForm.cs</DependentUpon>

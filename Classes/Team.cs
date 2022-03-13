@@ -5,19 +5,19 @@ using Scoreboard.Forms;
 
 namespace Scoreboard.Classes
 {
+    [Serializable]
     public class Team
     {
         private string _name;
         private string _videoPath;
         private string _logoPath;
+        private List<Player> _players;
 
         public string LogoPath
         {
             get => _logoPath;
             set => _logoPath = value;
         }
-
-        private List<Player> _players;
 
         public string Name
         {
@@ -39,7 +39,7 @@ namespace Scoreboard.Classes
 
         public Team()
         {
-            Players = new List<Player>(20);
+            Players = new List<Player>();
         }
 
         public void AddPlayer(Player parPlayer)

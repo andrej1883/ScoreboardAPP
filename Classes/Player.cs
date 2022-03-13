@@ -1,5 +1,8 @@
-﻿namespace Scoreboard.Forms
+﻿using System;
+
+namespace Scoreboard.Forms
 {
+    [Serializable]
     public class Player
     {
         private string _name;

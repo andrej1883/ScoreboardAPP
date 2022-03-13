@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Scoreboard.Classes
 {
-    internal class AdvertisementVideo
+    [Serializable]
+    public class Advertisment
     {
         private string _name;
-        private string _videoPath;
+        private string _path;
 
-        public AdvertisementVideo()
+        public Advertisment()
         {
         }
 
@@ -21,15 +22,15 @@ namespace Scoreboard.Classes
             set => _name = value;
         }
 
-        public string VideoPath
+        public string Path
         {
-            get => _videoPath;
-            set => _videoPath = value;
+            get => _path;
+            set => _path = value;
         }
 
         public override string ToString()
         {
-            return $"{Name}";
+            return $"{_path}";
         }
     }
 }

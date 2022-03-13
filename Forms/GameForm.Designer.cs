@@ -91,13 +91,13 @@
             this.timeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.videosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editTeamTS = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dropToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBtn = new System.Windows.Forms.Button();
             this.closeScoreboardBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -141,10 +141,9 @@
             this.timeoutT1M = new System.Windows.Forms.Label();
             this.startBreak = new System.Windows.Forms.Button();
             this.cancelBreak = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dropToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playAd = new System.Windows.Forms.Button();
+            this.cancelAd = new System.Windows.Forms.Button();
+            this.adsDBV = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -739,23 +738,17 @@
             // videosToolStripMenuItem
             // 
             this.videosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem,
-            this.settingsToolStripMenuItem1});
+            this.loadToolStripMenuItem});
             this.videosToolStripMenuItem.Name = "videosToolStripMenuItem";
-            this.videosToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.videosToolStripMenuItem.Text = "Videos";
+            this.videosToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.videosToolStripMenuItem.Text = "Advertisement";
             // 
-            // editToolStripMenuItem
+            // loadToolStripMenuItem
             // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // settingsToolStripMenuItem1
-            // 
-            this.settingsToolStripMenuItem1.Name = "settingsToolStripMenuItem1";
-            this.settingsToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
-            this.settingsToolStripMenuItem1.Text = "Settings";
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.loadToolStripMenuItem.Text = "Edit";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // teamsToolStripMenuItem
             // 
@@ -785,16 +778,23 @@
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
+            // dropToolStripMenuItem
+            // 
+            this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
+            this.dropToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.dropToolStripMenuItem.Text = "Drop";
+            this.dropToolStripMenuItem.Click += new System.EventHandler(this.dropToolStripMenuItem_Click);
             // 
             // createBtn
             // 
@@ -1021,6 +1021,7 @@
             this.videoPath2.Name = "videoPath2";
             this.videoPath2.Size = new System.Drawing.Size(100, 20);
             this.videoPath2.TabIndex = 88;
+            this.videoPath2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.videoPath2_MouseDoubleClick);
             // 
             // cancelTimeoutT2
             // 
@@ -1158,6 +1159,7 @@
             this.videoPath1.Name = "videoPath1";
             this.videoPath1.Size = new System.Drawing.Size(100, 20);
             this.videoPath1.TabIndex = 83;
+            this.videoPath1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.videoPath1_MouseDoubleClick);
             // 
             // uploadVideoT1
             // 
@@ -1275,51 +1277,42 @@
             this.cancelBreak.UseVisualStyleBackColor = true;
             this.cancelBreak.Click += new System.EventHandler(this.cancelBreak_Click);
             // 
-            // button1
+            // playAd
             // 
-            this.button1.Location = new System.Drawing.Point(1239, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 82;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.playAd.Location = new System.Drawing.Point(920, 644);
+            this.playAd.Name = "playAd";
+            this.playAd.Size = new System.Drawing.Size(75, 23);
+            this.playAd.TabIndex = 83;
+            this.playAd.Text = "Play";
+            this.playAd.UseVisualStyleBackColor = true;
+            this.playAd.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button2
+            // cancelAd
             // 
-            this.button2.Location = new System.Drawing.Point(1331, 121);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 83;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cancelAd.Location = new System.Drawing.Point(1001, 644);
+            this.cancelAd.Name = "cancelAd";
+            this.cancelAd.Size = new System.Drawing.Size(75, 23);
+            this.cancelAd.TabIndex = 84;
+            this.cancelAd.Text = "Cancel";
+            this.cancelAd.UseVisualStyleBackColor = true;
+            this.cancelAd.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button3
+            // adsDBV
             // 
-            this.button3.Location = new System.Drawing.Point(1413, 121);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 84;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // dropToolStripMenuItem
-            // 
-            this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
-            this.dropToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dropToolStripMenuItem.Text = "Drop";
-            this.dropToolStripMenuItem.Click += new System.EventHandler(this.dropToolStripMenuItem_Click);
+            this.adsDBV.FormattingEnabled = true;
+            this.adsDBV.Location = new System.Drawing.Point(725, 646);
+            this.adsDBV.Name = "adsDBV";
+            this.adsDBV.Size = new System.Drawing.Size(152, 21);
+            this.adsDBV.TabIndex = 85;
             // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1760, 1119);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.adsDBV);
+            this.Controls.Add(this.cancelAd);
+            this.Controls.Add(this.playAd);
             this.Controls.Add(this.cancelBreak);
             this.Controls.Add(this.startBreak);
             this.Controls.Add(this.groupBox5);
@@ -1441,8 +1434,6 @@
         private System.Windows.Forms.ToolStripMenuItem timeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem appearanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem videosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem teamsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editTeamTS;
         private System.Windows.Forms.Button createBtn;
@@ -1478,9 +1469,8 @@
         private System.Windows.Forms.ComboBox TeamsDBT1;
         private System.Windows.Forms.ComboBox TeamsDBT2;
         private System.Windows.Forms.Button SetFromDBT2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button playAd;
+        private System.Windows.Forms.Button cancelAd;
         private System.Windows.Forms.Button cancelVideo1;
         private System.Windows.Forms.Button playVideo1;
         private System.Windows.Forms.TextBox videoPath1;
@@ -1495,5 +1485,7 @@
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dropToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ComboBox adsDBV;
     }
 }

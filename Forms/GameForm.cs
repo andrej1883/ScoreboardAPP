@@ -36,18 +36,19 @@ namespace Scoreboard.Forms
         private int[][] _timeouts;
         private bool _breakRunning = false;
 
-        private Database _database;
+        private Database _databaseGame;
         private VideoPlayerForm _videoPlayerForm;
 
-        public Database Database
+        public Database DatabaseGame
         {
-            get => _database;
-            set => _database = value;
+            get => _databaseGame;
+            set => _databaseGame = value;
         }
 
 
         public GameForm(ScoreboardForm parFormScoreBoard)
         {
+            _databaseGame = new Database();
             InitializeComponent();
             _formScoreBoard = parFormScoreBoard;
             SetTime(MatchMinDefault,MatchSecDefault);
@@ -776,36 +777,42 @@ namespace Scoreboard.Forms
 
         public void UpdateTeams(Database parDB)
         {
-            if (parDB.TeamList == null)
+            if (parDB.TeamList != null)
             {
-                _database.TeamList = parDB.TeamList;
+                _databaseGame.TeamList = parDB.TeamList;
+            }
+        }
+
+        public void UpdateAds(Database parDB)
+        {
+            if (parDB.AdvList != null)
+            {
+                _databaseGame.AdvList = parDB.AdvList;
             }
         }
 
         private void editTeamTS_Click(object sender, EventArgs e)
         {
             var teams = new LoadTeamDataForm(this);
-            if (_database == null)
-            {
-                _database = new Database();
-            }
-            teams.Database.TeamList = _database.TeamList;
+            teams.Database.TeamList = _databaseGame.TeamList;
             teams.ShowDialog();
             if (teams.IsDisposed)
             {
                 if (teams.Database.TeamList != null)
                 {
-                    _database.TeamList = teams.Database.TeamList;
-                    TeamsDBT1.DataSource = _database.TeamList;
+                    _databaseGame.TeamList = teams.Database.TeamList;
+                    TeamsDBT1.DataSource = null;
+                    TeamsDBT1.DataSource = _databaseGame.TeamList;
                     TeamsDBT2.BindingContext = new BindingContext();
-                    TeamsDBT2.DataSource = _database.TeamList;
+                    TeamsDBT2.DataSource = null;
+                    TeamsDBT2.DataSource = _databaseGame.TeamList;
                 }
             }
         }
 
         private void SetFromDBT1_Click(object sender, EventArgs e)
         {
-            if (_database != null)
+            if (_databaseGame != null)
             {
                 Team selected = (Team)TeamsDBT1.SelectedItem;
                 _team1Name = selected.Name;
@@ -822,7 +829,7 @@ namespace Scoreboard.Forms
 
         private void SetFromDBT2_Click(object sender, EventArgs e)
         {
-            if (_database != null)
+            if (_databaseGame != null)
             {
                 Team selected = (Team) TeamsDBT2.SelectedItem;
                 _team2Name = selected.Name;
@@ -839,7 +846,7 @@ namespace Scoreboard.Forms
 
         private void PlayVideo(string parPath)
         {
-            if (parPath != null)
+            if (parPath != null && parPath.Length > 0)
             {
                 _videoPlayerForm = new VideoPlayerForm();
                 _videoPlayerForm.VideoPath = parPath;
@@ -850,10 +857,9 @@ namespace Scoreboard.Forms
 
         private void StopVideo()
         {
-            if (!_videoPlayerForm.IsDisposed)
-            {
-                _videoPlayerForm.Dispose();
-            }
+            if (_videoPlayerForm == null) return;
+
+            if (!_videoPlayerForm.IsDisposed) _videoPlayerForm.Dispose();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -870,7 +876,8 @@ namespace Scoreboard.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            _videoPlayerForm.PlayVideo();
+            if (adsDBV.Text.Length > 0) PlayVideo(adsDBV.Text);
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -892,6 +899,7 @@ namespace Scoreboard.Forms
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Video Files(*.mp4)|*.mp4";  
+            open.InitialDirectory = Environment.CurrentDirectory+ "\\Videos\\Intro";
             if (open.ShowDialog() == DialogResult.OK) {
                 if (_videoPlayerForm == null) _videoPlayerForm = new VideoPlayerForm();
                 _videoPlayerForm.VideoPath = open.FileName;
@@ -903,6 +911,7 @@ namespace Scoreboard.Forms
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Video Files(*.mp4)|*.mp4";  
+            open.InitialDirectory = Environment.CurrentDirectory+ "\\Videos\\Intro";
             if (open.ShowDialog() == DialogResult.OK) {
                 if (_videoPlayerForm == null) _videoPlayerForm = new VideoPlayerForm();
                 _videoPlayerForm.VideoPath = open.FileName;
@@ -932,24 +941,27 @@ namespace Scoreboard.Forms
                 {
                     XmlSerializer deserializer = new XmlSerializer(typeof(Database));
                     textReader = new StreamReader(open.FileName);
-                    _database = (Database)deserializer.Deserialize(textReader);
+                    _databaseGame = (Database)deserializer.Deserialize(textReader);
                 }
             }
             catch (Exception ex)
             {
-                _database = new Database();
+                _databaseGame = new Database();
                 MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 if (textReader != null)
                     textReader.Close();
-                if (_database != null)
+                if (_databaseGame != null)
                 {
-                    _database.PostLoad();
-                    TeamsDBT1.DataSource = _database.TeamList;
+                    _databaseGame.PostLoad();
+                    TeamsDBT1.DataSource = _databaseGame.TeamList;
                     TeamsDBT2.BindingContext = new BindingContext();
-                    TeamsDBT2.DataSource = _database.TeamList;
+                    TeamsDBT2.DataSource = _databaseGame.TeamList;
+                    adsDBV.DataSource = null;
+                    adsDBV.DataSource = _databaseGame.AdvList;
+
                 }
                 
             }
@@ -968,7 +980,7 @@ namespace Scoreboard.Forms
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(Database));
                     textWriter = new StreamWriter(saveFileDialog1.FileName);
-                    serializer.Serialize(textWriter, _database);
+                    serializer.Serialize(textWriter, _databaseGame);
 
                 }
             }
@@ -985,7 +997,7 @@ namespace Scoreboard.Forms
 
         private void dropToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _database = null;
+            _databaseGame = null;
             TeamsDBT1.DataSource = null;
             _team1Name = null;
             videoPath1.Text =null;
@@ -1002,6 +1014,31 @@ namespace Scoreboard.Forms
             logo2.Dispose();
             InitBoards();
             
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ads = new LoadAds(this);
+            ads.Database.AdvList = _databaseGame.AdvList;
+            ads.ShowDialog();
+            if (ads.IsDisposed)
+            {
+                if (ads.Database.AdvList != null)
+                {
+                    _databaseGame.AdvList = ads.Database.AdvList;
+                    adsDBV.DataSource = null;
+                    adsDBV.DataSource = _databaseGame.AdvList;
+                }
+            }
+        }
+
+        private void videoPath1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            videoPath1.SelectAll();
+        }
+        private void videoPath2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            videoPath2.SelectAll();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Scoreboard.Forms
         public LoadTeamDataForm(GameForm parGameForm)
         {
             _pareGameForm = parGameForm;
-            _database = _pareGameForm.Database;
+            _database = _pareGameForm.DatabaseGame;
             InitializeComponent();
             if (_database == null)
             {
@@ -74,5 +74,6 @@ namespace Scoreboard.Forms
         {
             Dispose();
         }
+
     }
 }
