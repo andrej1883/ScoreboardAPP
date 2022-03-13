@@ -8,6 +8,9 @@ namespace Scoreboard.Classes
     public class Database
     {
         private List<Team> _teamList;
+        private List<AdvertisementVideo> _advertisement;
+
+
 
         public List<Team> TeamList
         {
@@ -64,22 +67,15 @@ namespace Scoreboard.Classes
 
         public void AddTeam(Team parTeam)
         {
-            if (parTeam.Players.Count > 20)
+
+            if (!TeamList.Contains(parTeam) && FindTeam(parTeam.Name) == null && parTeam.Name.Length > 0)
             {
-                MessageBox.Show(@"Too many players! Max 20!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TeamList.Add(parTeam);
             }
             else
             {
-                if (!TeamList.Contains(parTeam) && FindTeam(parTeam.Name) == null && parTeam.Name.Length > 0)
-                {
-                    TeamList.Add(parTeam);
-                }
-                else
-                {
-                    MessageBox.Show(@"Team was not added! Each team can be added only once! Define at least Team Name!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show(@"Team was not added! Each team can be added only once! Define at least Team Name!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         public void RemoveTeam(Team parTeam)

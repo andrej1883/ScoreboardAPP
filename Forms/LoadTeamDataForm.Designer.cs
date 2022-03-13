@@ -35,8 +35,6 @@
             this.LogoPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.loadXML = new System.Windows.Forms.Button();
-            this.savedData = new System.Windows.Forms.Button();
             this.AddTeam = new System.Windows.Forms.Button();
             this.RemoveTeam = new System.Windows.Forms.Button();
             this.EditTeamPlayers = new System.Windows.Forms.Button();
@@ -90,29 +88,9 @@
             // 
             this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database);
             // 
-            // loadXML
-            // 
-            this.loadXML.Location = new System.Drawing.Point(652, 116);
-            this.loadXML.Name = "loadXML";
-            this.loadXML.Size = new System.Drawing.Size(104, 23);
-            this.loadXML.TabIndex = 1;
-            this.loadXML.Text = "Load Data";
-            this.loadXML.UseVisualStyleBackColor = true;
-            this.loadXML.Click += new System.EventHandler(this.loadXML_Click);
-            // 
-            // savedData
-            // 
-            this.savedData.Location = new System.Drawing.Point(652, 75);
-            this.savedData.Name = "savedData";
-            this.savedData.Size = new System.Drawing.Size(104, 23);
-            this.savedData.TabIndex = 2;
-            this.savedData.Text = "Save Data";
-            this.savedData.UseVisualStyleBackColor = true;
-            this.savedData.Click += new System.EventHandler(this.savedData_Click);
-            // 
             // AddTeam
             // 
-            this.AddTeam.Location = new System.Drawing.Point(652, 190);
+            this.AddTeam.Location = new System.Drawing.Point(652, 57);
             this.AddTeam.Name = "AddTeam";
             this.AddTeam.Size = new System.Drawing.Size(104, 23);
             this.AddTeam.TabIndex = 4;
@@ -122,7 +100,7 @@
             // 
             // RemoveTeam
             // 
-            this.RemoveTeam.Location = new System.Drawing.Point(652, 235);
+            this.RemoveTeam.Location = new System.Drawing.Point(652, 102);
             this.RemoveTeam.Name = "RemoveTeam";
             this.RemoveTeam.Size = new System.Drawing.Size(104, 23);
             this.RemoveTeam.TabIndex = 5;
@@ -132,7 +110,7 @@
             // 
             // EditTeamPlayers
             // 
-            this.EditTeamPlayers.Location = new System.Drawing.Point(652, 338);
+            this.EditTeamPlayers.Location = new System.Drawing.Point(652, 220);
             this.EditTeamPlayers.Name = "EditTeamPlayers";
             this.EditTeamPlayers.Size = new System.Drawing.Size(104, 23);
             this.EditTeamPlayers.TabIndex = 6;
@@ -160,13 +138,10 @@
             this.Controls.Add(this.EditTeamPlayers);
             this.Controls.Add(this.RemoveTeam);
             this.Controls.Add(this.AddTeam);
-            this.Controls.Add(this.savedData);
-            this.Controls.Add(this.loadXML);
             this.Controls.Add(this.dataGridView1);
             this.KeyPreview = true;
             this.Name = "LoadTeamDataForm";
             this.Text = "LoadTeamDataForm";
-            this.Load += new System.EventHandler(this.LoadTeamDataForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();
@@ -177,8 +152,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button loadXML;
-        private System.Windows.Forms.Button savedData;
         private System.Windows.Forms.Button AddTeam;
         private System.Windows.Forms.Button RemoveTeam;
         private System.Windows.Forms.BindingSource teamListBindingSource;

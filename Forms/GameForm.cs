@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using Scoreboard.Classes;
 using Timer = System.Windows.Forms.Timer;
 
@@ -34,13 +36,13 @@ namespace Scoreboard.Forms
         private int[][] _timeouts;
         private bool _breakRunning = false;
 
-        private Database _teamsDatabase;
+        private Database _database;
         private VideoPlayerForm _videoPlayerForm;
 
-        public Database TeamsDatabase
+        public Database Database
         {
-            get => _teamsDatabase;
-            set => _teamsDatabase = value;
+            get => _database;
+            set => _database = value;
         }
 
 
@@ -269,6 +271,7 @@ namespace Scoreboard.Forms
 
         private void UploadLogo(bool team1, string parPath)
         {
+            if (parPath.Length == 0) return;
 
                 if (team1)
                 {
@@ -771,26 +774,38 @@ namespace Scoreboard.Forms
             }
         }
 
-        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        public void UpdateTeams(Database parDB)
         {
-            var teams = new LoadTeamDataForm();
-            if (_teamsDatabase != null)
+            if (parDB.TeamList == null)
             {
-                teams.Database = _teamsDatabase;
+                _database.TeamList = parDB.TeamList;
             }
+        }
+
+        private void editTeamTS_Click(object sender, EventArgs e)
+        {
+            var teams = new LoadTeamDataForm(this);
+            if (_database == null)
+            {
+                _database = new Database();
+            }
+            teams.Database.TeamList = _database.TeamList;
             teams.ShowDialog();
             if (teams.IsDisposed)
             {
-                _teamsDatabase = teams.Database;
-                TeamsDBT1.DataSource = _teamsDatabase.TeamList;
-                TeamsDBT2.BindingContext = new BindingContext();
-                TeamsDBT2.DataSource = _teamsDatabase.TeamList;
+                if (teams.Database.TeamList != null)
+                {
+                    _database.TeamList = teams.Database.TeamList;
+                    TeamsDBT1.DataSource = _database.TeamList;
+                    TeamsDBT2.BindingContext = new BindingContext();
+                    TeamsDBT2.DataSource = _database.TeamList;
+                }
             }
         }
 
         private void SetFromDBT1_Click(object sender, EventArgs e)
         {
-            if (_teamsDatabase != null)
+            if (_database != null)
             {
                 Team selected = (Team)TeamsDBT1.SelectedItem;
                 _team1Name = selected.Name;
@@ -807,7 +822,7 @@ namespace Scoreboard.Forms
 
         private void SetFromDBT2_Click(object sender, EventArgs e)
         {
-            if (_teamsDatabase != null)
+            if (_database != null)
             {
                 Team selected = (Team) TeamsDBT2.SelectedItem;
                 _team2Name = selected.Name;
@@ -903,6 +918,90 @@ namespace Scoreboard.Forms
         private void cancelVideo2_Click(object sender, EventArgs e)
         {
             StopVideo();
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TextReader textReader = null;
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "xml files (*.xml)|*.xml";
+                open.InitialDirectory = Environment.CurrentDirectory+ "\\DB";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    XmlSerializer deserializer = new XmlSerializer(typeof(Database));
+                    textReader = new StreamReader(open.FileName);
+                    _database = (Database)deserializer.Deserialize(textReader);
+                }
+            }
+            catch (Exception ex)
+            {
+                _database = new Database();
+                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (textReader != null)
+                    textReader.Close();
+                if (_database != null)
+                {
+                    _database.PostLoad();
+                    TeamsDBT1.DataSource = _database.TeamList;
+                    TeamsDBT2.BindingContext = new BindingContext();
+                    TeamsDBT2.DataSource = _database.TeamList;
+                }
+                
+            }
+        }
+
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "xml files (*.xml)|*.xml";
+            saveFileDialog1.InitialDirectory = Environment.CurrentDirectory+ "\\DB";
+            TextWriter textWriter = null;
+
+            try
+            {
+                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(Database));
+                    textWriter = new StreamWriter(saveFileDialog1.FileName);
+                    serializer.Serialize(textWriter, _database);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (textWriter != null)
+                    textWriter.Close();
+            }
+        }
+
+        private void dropToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _database = null;
+            TeamsDBT1.DataSource = null;
+            _team1Name = null;
+            videoPath1.Text =null;
+            team1NameBox.Text = null;
+            logo1Path.Text = null;
+            _formScoreBoard.SetTeamName(true,_team1Name);
+            logo1.Dispose();
+            TeamsDBT2.DataSource =  null;
+            _team2Name = null;
+            videoPath2.Text =null;
+            team2NameBox.Text = null;
+            logo2Path.Text = null;
+            _formScoreBoard.SetTeamName(false,_team2Name);
+            logo2.Dispose();
+            InitBoards();
+            
         }
     }
 }

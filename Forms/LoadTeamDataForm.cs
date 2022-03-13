@@ -9,6 +9,7 @@ namespace Scoreboard.Forms
     public partial class LoadTeamDataForm : Form
     {
         private Database _database;
+        private GameForm _pareGameForm;
 
         public Database Database
         {
@@ -16,82 +17,16 @@ namespace Scoreboard.Forms
             set => _database = value;
         }
 
-        public LoadTeamDataForm()
+        public LoadTeamDataForm(GameForm parGameForm)
         {
+            _pareGameForm = parGameForm;
+            _database = _pareGameForm.Database;
             InitializeComponent();
             if (_database == null)
             {
                 _database = new Database();
             }
             UpdateGv();
-        }
-
-        private void loadXML_Click(object sender, EventArgs e)
-        {
-            LoadDatabase();
-            UpdateGv();
-        }
-
-        private void savedData_Click(object sender, EventArgs e)
-        {
-            SaveDatabase();
-        }
-
-        private void LoadDatabase()
-        {
-            TextReader textReader = null;
-            try
-            {
-                OpenFileDialog open = new OpenFileDialog();
-                open.Filter = "xml files (*.xml)|*.xml";
-                open.InitialDirectory = Environment.CurrentDirectory+ "\\DB";
-                if (open.ShowDialog() == DialogResult.OK)
-                {
-                    XmlSerializer deserializer = new XmlSerializer(typeof(Database));
-                    textReader = new StreamReader(open.FileName);
-                    _database = (Database)deserializer.Deserialize(textReader);
-                }
-            }
-            catch (Exception ex)
-            {
-                _database = new Database();
-                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (textReader != null)
-                    textReader.Close();
-                _database.PostLoad();
-            }
-        }
-
-        private void SaveDatabase()
-        {
-
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "xml files (*.xml)|*.xml";
-            saveFileDialog1.InitialDirectory = Environment.CurrentDirectory+ "\\DB";
-            TextWriter textWriter = null;
-
-            try
-            {
-                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(Database));
-                    textWriter = new StreamWriter(saveFileDialog1.FileName);
-                    serializer.Serialize(textWriter, _database);
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (textWriter != null)
-                    textWriter.Close();
-            }
         }
 
         private void AddTeam_Click(object sender, EventArgs e)
@@ -122,6 +57,7 @@ namespace Scoreboard.Forms
             dataGridView1.DataSource = _database.TeamList;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Update();
+            _pareGameForm.UpdateTeams(_database);
         }
 
         private void EditTeamPlayers_Click(object sender, EventArgs e)
@@ -137,11 +73,6 @@ namespace Scoreboard.Forms
         private void OK_Click(object sender, EventArgs e)
         {
             Dispose();
-        }
-
-        private void LoadTeamDataForm_Load(object sender, EventArgs e)
-        {
-            UpdateGv();
         }
     }
 }

@@ -94,7 +94,10 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editTeamTS = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBtn = new System.Windows.Forms.Button();
             this.closeScoreboardBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -109,9 +112,14 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cancelVideo2 = new System.Windows.Forms.Button();
             this.TeamsDBT2 = new System.Windows.Forms.ComboBox();
+            this.playVideo2 = new System.Windows.Forms.Button();
             this.SetFromDBT2 = new System.Windows.Forms.Button();
+            this.videoPath2 = new System.Windows.Forms.TextBox();
             this.cancelTimeoutT2 = new System.Windows.Forms.Button();
+            this.uploadVideoT2 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             this.startTimeoutT2 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.timeoutT2S = new System.Windows.Forms.Label();
@@ -136,11 +144,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.cancelVideo2 = new System.Windows.Forms.Button();
-            this.playVideo2 = new System.Windows.Forms.Button();
-            this.videoPath2 = new System.Windows.Forms.TextBox();
-            this.uploadVideoT2 = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
+            this.dropToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -702,7 +706,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.videosToolStripMenuItem,
-            this.teamsToolStripMenuItem});
+            this.teamsToolStripMenuItem,
+            this.databaseToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1760, 24);
@@ -755,17 +760,41 @@
             // teamsToolStripMenuItem
             // 
             this.teamsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem1});
+            this.editTeamTS});
             this.teamsToolStripMenuItem.Name = "teamsToolStripMenuItem";
             this.teamsToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.teamsToolStripMenuItem.Text = "Teams";
             // 
-            // editToolStripMenuItem1
+            // editTeamTS
             // 
-            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(94, 22);
-            this.editToolStripMenuItem1.Text = "Edit";
-            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
+            this.editTeamTS.Name = "editTeamTS";
+            this.editTeamTS.Size = new System.Drawing.Size(94, 22);
+            this.editTeamTS.Text = "Edit";
+            this.editTeamTS.Click += new System.EventHandler(this.editTeamTS_Click);
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importToolStripMenuItem,
+            this.exportToolStripMenuItem,
+            this.dropToolStripMenuItem});
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.databaseToolStripMenuItem.Text = "Database";
+            // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Text = "Import";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // createBtn
             // 
@@ -948,6 +977,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Team2";
             // 
+            // cancelVideo2
+            // 
+            this.cancelVideo2.Location = new System.Drawing.Point(446, 246);
+            this.cancelVideo2.Name = "cancelVideo2";
+            this.cancelVideo2.Size = new System.Drawing.Size(75, 23);
+            this.cancelVideo2.TabIndex = 90;
+            this.cancelVideo2.Text = "Cancel";
+            this.cancelVideo2.UseVisualStyleBackColor = true;
+            this.cancelVideo2.Click += new System.EventHandler(this.cancelVideo2_Click);
+            // 
             // TeamsDBT2
             // 
             this.TeamsDBT2.FormattingEnabled = true;
@@ -955,6 +994,16 @@
             this.TeamsDBT2.Name = "TeamsDBT2";
             this.TeamsDBT2.Size = new System.Drawing.Size(152, 21);
             this.TeamsDBT2.TabIndex = 82;
+            // 
+            // playVideo2
+            // 
+            this.playVideo2.Location = new System.Drawing.Point(365, 246);
+            this.playVideo2.Name = "playVideo2";
+            this.playVideo2.Size = new System.Drawing.Size(75, 23);
+            this.playVideo2.TabIndex = 89;
+            this.playVideo2.Text = "Play";
+            this.playVideo2.UseVisualStyleBackColor = true;
+            this.playVideo2.Click += new System.EventHandler(this.playVideo2_Click);
             // 
             // SetFromDBT2
             // 
@@ -966,6 +1015,13 @@
             this.SetFromDBT2.UseVisualStyleBackColor = true;
             this.SetFromDBT2.Click += new System.EventHandler(this.SetFromDBT2_Click);
             // 
+            // videoPath2
+            // 
+            this.videoPath2.Location = new System.Drawing.Point(178, 248);
+            this.videoPath2.Name = "videoPath2";
+            this.videoPath2.Size = new System.Drawing.Size(100, 20);
+            this.videoPath2.TabIndex = 88;
+            // 
             // cancelTimeoutT2
             // 
             this.cancelTimeoutT2.Location = new System.Drawing.Point(355, 486);
@@ -975,6 +1031,25 @@
             this.cancelTimeoutT2.Text = "Cancel";
             this.cancelTimeoutT2.UseVisualStyleBackColor = true;
             this.cancelTimeoutT2.Click += new System.EventHandler(this.cancelTimeoutT2_Click);
+            // 
+            // uploadVideoT2
+            // 
+            this.uploadVideoT2.Location = new System.Drawing.Point(287, 247);
+            this.uploadVideoT2.Name = "uploadVideoT2";
+            this.uploadVideoT2.Size = new System.Drawing.Size(75, 23);
+            this.uploadVideoT2.TabIndex = 87;
+            this.uploadVideoT2.Text = "Upload";
+            this.uploadVideoT2.UseVisualStyleBackColor = true;
+            this.uploadVideoT2.Click += new System.EventHandler(this.uploadVideoT2_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(79, 252);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(101, 13);
+            this.label17.TabIndex = 86;
+            this.label17.Text = "Upload Team Video";
             // 
             // startTimeoutT2
             // 
@@ -1230,51 +1305,12 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // cancelVideo2
+            // dropToolStripMenuItem
             // 
-            this.cancelVideo2.Location = new System.Drawing.Point(446, 246);
-            this.cancelVideo2.Name = "cancelVideo2";
-            this.cancelVideo2.Size = new System.Drawing.Size(75, 23);
-            this.cancelVideo2.TabIndex = 90;
-            this.cancelVideo2.Text = "Cancel";
-            this.cancelVideo2.UseVisualStyleBackColor = true;
-            this.cancelVideo2.Click += new System.EventHandler(this.cancelVideo2_Click);
-            // 
-            // playVideo2
-            // 
-            this.playVideo2.Location = new System.Drawing.Point(365, 246);
-            this.playVideo2.Name = "playVideo2";
-            this.playVideo2.Size = new System.Drawing.Size(75, 23);
-            this.playVideo2.TabIndex = 89;
-            this.playVideo2.Text = "Play";
-            this.playVideo2.UseVisualStyleBackColor = true;
-            this.playVideo2.Click += new System.EventHandler(this.playVideo2_Click);
-            // 
-            // videoPath2
-            // 
-            this.videoPath2.Location = new System.Drawing.Point(178, 248);
-            this.videoPath2.Name = "videoPath2";
-            this.videoPath2.Size = new System.Drawing.Size(100, 20);
-            this.videoPath2.TabIndex = 88;
-            // 
-            // uploadVideoT2
-            // 
-            this.uploadVideoT2.Location = new System.Drawing.Point(287, 247);
-            this.uploadVideoT2.Name = "uploadVideoT2";
-            this.uploadVideoT2.Size = new System.Drawing.Size(75, 23);
-            this.uploadVideoT2.TabIndex = 87;
-            this.uploadVideoT2.Text = "Upload";
-            this.uploadVideoT2.UseVisualStyleBackColor = true;
-            this.uploadVideoT2.Click += new System.EventHandler(this.uploadVideoT2_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(79, 252);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(101, 13);
-            this.label17.TabIndex = 86;
-            this.label17.Text = "Upload Team Video";
+            this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
+            this.dropToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dropToolStripMenuItem.Text = "Drop";
+            this.dropToolStripMenuItem.Click += new System.EventHandler(this.dropToolStripMenuItem_Click);
             // 
             // GameForm
             // 
@@ -1408,7 +1444,7 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem teamsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem editTeamTS;
         private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Button closeScoreboardBtn;
         private System.Windows.Forms.Label label1;
@@ -1455,5 +1491,9 @@
         private System.Windows.Forms.TextBox videoPath2;
         private System.Windows.Forms.Button uploadVideoT2;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dropToolStripMenuItem;
     }
 }
