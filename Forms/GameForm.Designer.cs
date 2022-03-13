@@ -118,6 +118,11 @@
             this.label19 = new System.Windows.Forms.Label();
             this.timeoutT2M = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cancelVideo1 = new System.Windows.Forms.Button();
+            this.playVideo1 = new System.Windows.Forms.Button();
+            this.videoPath1 = new System.Windows.Forms.TextBox();
+            this.uploadVideoT1 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.TeamsDBT1 = new System.Windows.Forms.ComboBox();
             this.SetFromDBT1 = new System.Windows.Forms.Button();
             this.cancelTimeoutT1 = new System.Windows.Forms.Button();
@@ -131,11 +136,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cancelVideo1 = new System.Windows.Forms.Button();
-            this.playVideo1 = new System.Windows.Forms.Button();
-            this.videoPath1 = new System.Windows.Forms.TextBox();
-            this.uploadVideoT1 = new System.Windows.Forms.Button();
+            this.cancelVideo2 = new System.Windows.Forms.Button();
+            this.playVideo2 = new System.Windows.Forms.Button();
+            this.videoPath2 = new System.Windows.Forms.TextBox();
+            this.uploadVideoT2 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -232,7 +237,7 @@
             // goalsTeam2
             // 
             this.goalsTeam2.AutoSize = true;
-            this.goalsTeam2.Location = new System.Drawing.Point(250, 325);
+            this.goalsTeam2.Location = new System.Drawing.Point(250, 363);
             this.goalsTeam2.Name = "goalsTeam2";
             this.goalsTeam2.Size = new System.Drawing.Size(13, 13);
             this.goalsTeam2.TabIndex = 4;
@@ -240,7 +245,7 @@
             // 
             // minusGoal2
             // 
-            this.minusGoal2.Location = new System.Drawing.Point(151, 338);
+            this.minusGoal2.Location = new System.Drawing.Point(151, 376);
             this.minusGoal2.Name = "minusGoal2";
             this.minusGoal2.Size = new System.Drawing.Size(75, 23);
             this.minusGoal2.TabIndex = 5;
@@ -250,7 +255,7 @@
             // 
             // plusGoal2
             // 
-            this.plusGoal2.Location = new System.Drawing.Point(284, 338);
+            this.plusGoal2.Location = new System.Drawing.Point(284, 376);
             this.plusGoal2.Name = "plusGoal2";
             this.plusGoal2.Size = new System.Drawing.Size(75, 23);
             this.plusGoal2.TabIndex = 6;
@@ -803,7 +808,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(221, 288);
+            this.label8.Location = new System.Drawing.Point(221, 326);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 13);
             this.label8.TabIndex = 76;
@@ -913,10 +918,15 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.cancelVideo2);
             this.groupBox4.Controls.Add(this.TeamsDBT2);
+            this.groupBox4.Controls.Add(this.playVideo2);
             this.groupBox4.Controls.Add(this.SetFromDBT2);
+            this.groupBox4.Controls.Add(this.videoPath2);
             this.groupBox4.Controls.Add(this.cancelTimeoutT2);
+            this.groupBox4.Controls.Add(this.uploadVideoT2);
             this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.startTimeoutT2);
             this.groupBox4.Controls.Add(this.showT2Logo);
             this.groupBox4.Controls.Add(this.groupBox7);
@@ -958,7 +968,7 @@
             // 
             // cancelTimeoutT2
             // 
-            this.cancelTimeoutT2.Location = new System.Drawing.Point(355, 438);
+            this.cancelTimeoutT2.Location = new System.Drawing.Point(355, 486);
             this.cancelTimeoutT2.Name = "cancelTimeoutT2";
             this.cancelTimeoutT2.Size = new System.Drawing.Size(75, 23);
             this.cancelTimeoutT2.TabIndex = 83;
@@ -968,7 +978,7 @@
             // 
             // startTimeoutT2
             // 
-            this.startTimeoutT2.Location = new System.Drawing.Point(255, 438);
+            this.startTimeoutT2.Location = new System.Drawing.Point(255, 486);
             this.startTimeoutT2.Name = "startTimeoutT2";
             this.startTimeoutT2.Size = new System.Drawing.Size(75, 23);
             this.startTimeoutT2.TabIndex = 82;
@@ -981,7 +991,7 @@
             this.groupBox7.Controls.Add(this.timeoutT2S);
             this.groupBox7.Controls.Add(this.label19);
             this.groupBox7.Controls.Add(this.timeoutT2M);
-            this.groupBox7.Location = new System.Drawing.Point(98, 419);
+            this.groupBox7.Location = new System.Drawing.Point(98, 467);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(110, 55);
             this.groupBox7.TabIndex = 81;
@@ -1046,6 +1056,52 @@
             this.groupBox5.TabIndex = 80;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Team1";
+            // 
+            // cancelVideo1
+            // 
+            this.cancelVideo1.Location = new System.Drawing.Point(431, 248);
+            this.cancelVideo1.Name = "cancelVideo1";
+            this.cancelVideo1.Size = new System.Drawing.Size(75, 23);
+            this.cancelVideo1.TabIndex = 85;
+            this.cancelVideo1.Text = "Cancel";
+            this.cancelVideo1.UseVisualStyleBackColor = true;
+            this.cancelVideo1.Click += new System.EventHandler(this.cancelVideo1_Click);
+            // 
+            // playVideo1
+            // 
+            this.playVideo1.Location = new System.Drawing.Point(350, 248);
+            this.playVideo1.Name = "playVideo1";
+            this.playVideo1.Size = new System.Drawing.Size(75, 23);
+            this.playVideo1.TabIndex = 84;
+            this.playVideo1.Text = "Play";
+            this.playVideo1.UseVisualStyleBackColor = true;
+            this.playVideo1.Click += new System.EventHandler(this.playVideo1_Click);
+            // 
+            // videoPath1
+            // 
+            this.videoPath1.Location = new System.Drawing.Point(163, 249);
+            this.videoPath1.Name = "videoPath1";
+            this.videoPath1.Size = new System.Drawing.Size(100, 20);
+            this.videoPath1.TabIndex = 83;
+            // 
+            // uploadVideoT1
+            // 
+            this.uploadVideoT1.Location = new System.Drawing.Point(272, 248);
+            this.uploadVideoT1.Name = "uploadVideoT1";
+            this.uploadVideoT1.Size = new System.Drawing.Size(75, 23);
+            this.uploadVideoT1.TabIndex = 82;
+            this.uploadVideoT1.Text = "Upload";
+            this.uploadVideoT1.UseVisualStyleBackColor = true;
+            this.uploadVideoT1.Click += new System.EventHandler(this.uploadVideoT1_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(64, 253);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 13);
+            this.label15.TabIndex = 81;
+            this.label15.Text = "Upload Team Video";
             // 
             // TeamsDBT1
             // 
@@ -1174,50 +1230,51 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label15
+            // cancelVideo2
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(64, 253);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(101, 13);
-            this.label15.TabIndex = 81;
-            this.label15.Text = "Upload Team Video";
+            this.cancelVideo2.Location = new System.Drawing.Point(446, 246);
+            this.cancelVideo2.Name = "cancelVideo2";
+            this.cancelVideo2.Size = new System.Drawing.Size(75, 23);
+            this.cancelVideo2.TabIndex = 90;
+            this.cancelVideo2.Text = "Cancel";
+            this.cancelVideo2.UseVisualStyleBackColor = true;
+            this.cancelVideo2.Click += new System.EventHandler(this.cancelVideo2_Click);
             // 
-            // cancelVideo1
+            // playVideo2
             // 
-            this.cancelVideo1.Location = new System.Drawing.Point(431, 248);
-            this.cancelVideo1.Name = "cancelVideo1";
-            this.cancelVideo1.Size = new System.Drawing.Size(75, 23);
-            this.cancelVideo1.TabIndex = 85;
-            this.cancelVideo1.Text = "Cancel";
-            this.cancelVideo1.UseVisualStyleBackColor = true;
-            this.cancelVideo1.Click += new System.EventHandler(this.cancelVideo1_Click);
+            this.playVideo2.Location = new System.Drawing.Point(365, 246);
+            this.playVideo2.Name = "playVideo2";
+            this.playVideo2.Size = new System.Drawing.Size(75, 23);
+            this.playVideo2.TabIndex = 89;
+            this.playVideo2.Text = "Play";
+            this.playVideo2.UseVisualStyleBackColor = true;
+            this.playVideo2.Click += new System.EventHandler(this.playVideo2_Click);
             // 
-            // playVideo1
+            // videoPath2
             // 
-            this.playVideo1.Location = new System.Drawing.Point(350, 249);
-            this.playVideo1.Name = "playVideo1";
-            this.playVideo1.Size = new System.Drawing.Size(75, 23);
-            this.playVideo1.TabIndex = 84;
-            this.playVideo1.Text = "Play";
-            this.playVideo1.UseVisualStyleBackColor = true;
-            this.playVideo1.Click += new System.EventHandler(this.playVideo1_Click);
+            this.videoPath2.Location = new System.Drawing.Point(178, 248);
+            this.videoPath2.Name = "videoPath2";
+            this.videoPath2.Size = new System.Drawing.Size(100, 20);
+            this.videoPath2.TabIndex = 88;
             // 
-            // videoPath1
+            // uploadVideoT2
             // 
-            this.videoPath1.Location = new System.Drawing.Point(163, 249);
-            this.videoPath1.Name = "videoPath1";
-            this.videoPath1.Size = new System.Drawing.Size(100, 20);
-            this.videoPath1.TabIndex = 83;
+            this.uploadVideoT2.Location = new System.Drawing.Point(287, 247);
+            this.uploadVideoT2.Name = "uploadVideoT2";
+            this.uploadVideoT2.Size = new System.Drawing.Size(75, 23);
+            this.uploadVideoT2.TabIndex = 87;
+            this.uploadVideoT2.Text = "Upload";
+            this.uploadVideoT2.UseVisualStyleBackColor = true;
+            this.uploadVideoT2.Click += new System.EventHandler(this.uploadVideoT2_Click);
             // 
-            // uploadVideoT1
+            // label17
             // 
-            this.uploadVideoT1.Location = new System.Drawing.Point(272, 248);
-            this.uploadVideoT1.Name = "uploadVideoT1";
-            this.uploadVideoT1.Size = new System.Drawing.Size(75, 23);
-            this.uploadVideoT1.TabIndex = 82;
-            this.uploadVideoT1.Text = "Upload";
-            this.uploadVideoT1.UseVisualStyleBackColor = true;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(79, 252);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(101, 13);
+            this.label17.TabIndex = 86;
+            this.label17.Text = "Upload Team Video";
             // 
             // GameForm
             // 
@@ -1393,5 +1450,10 @@
         private System.Windows.Forms.TextBox videoPath1;
         private System.Windows.Forms.Button uploadVideoT1;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button cancelVideo2;
+        private System.Windows.Forms.Button playVideo2;
+        private System.Windows.Forms.TextBox videoPath2;
+        private System.Windows.Forms.Button uploadVideoT2;
+        private System.Windows.Forms.Label label17;
     }
 }

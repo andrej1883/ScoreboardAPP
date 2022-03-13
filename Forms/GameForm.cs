@@ -49,7 +49,6 @@ namespace Scoreboard.Forms
             InitializeComponent();
             _formScoreBoard = parFormScoreBoard;
             SetTime(MatchMinDefault,MatchSecDefault);
-
             _timer = ResetTimer();
             _timerPenalty = ResetTimer();
             _timeoutTimer = ResetTimer();
@@ -815,6 +814,11 @@ namespace Scoreboard.Forms
                 team2NameBox.Text = _team2Name;
                 _formScoreBoard.SetTeamName(false, _team2Name);
                 UploadLogo(false, selected.LogoPath);
+                videoPath2.Text = selected.VideoPath;
+            }
+            else
+            {
+                MessageBox.Show("Database not connected", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -822,18 +826,9 @@ namespace Scoreboard.Forms
         {
             if (parPath != null)
             {
-                var video = new VideoPlayerForm(parPath);
-                _videoPlayerForm  = video;
-               
-                video.FormBorderStyle = FormBorderStyle.None;
-                video.MinimizeBox = false;
-                video.MaximizeBox = false;
-                video.ControlBox = false; 
-                var area = Screen.AllScreens[1].Bounds;
-                video.Location = area.Location;
-                video.MediaPlayer.uiMode = "none";
-                video.SetBounds(area.X, area.Y, area.Width, area.Height);
-                video.Show();
+                _videoPlayerForm = new VideoPlayerForm();
+                _videoPlayerForm.VideoPath = parPath;
+                _videoPlayerForm.Show();
                 _videoPlayerForm.PlayVideo();
             }
         }
@@ -874,6 +869,38 @@ namespace Scoreboard.Forms
         }
 
         private void cancelVideo1_Click(object sender, EventArgs e)
+        {
+            StopVideo();
+        }
+
+        private void uploadVideoT2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Video Files(*.mp4)|*.mp4";  
+            if (open.ShowDialog() == DialogResult.OK) {
+                if (_videoPlayerForm == null) _videoPlayerForm = new VideoPlayerForm();
+                _videoPlayerForm.VideoPath = open.FileName;
+                videoPath2.Text = _videoPlayerForm.VideoPath;
+            }
+        }
+
+        private void uploadVideoT1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Video Files(*.mp4)|*.mp4";  
+            if (open.ShowDialog() == DialogResult.OK) {
+                if (_videoPlayerForm == null) _videoPlayerForm = new VideoPlayerForm();
+                _videoPlayerForm.VideoPath = open.FileName;
+                videoPath1.Text = _videoPlayerForm.VideoPath;
+            }
+        }
+
+        private void playVideo2_Click(object sender, EventArgs e)
+        {
+            PlayVideo(videoPath2.Text);
+        }
+
+        private void cancelVideo2_Click(object sender, EventArgs e)
         {
             StopVideo();
         }
