@@ -44,7 +44,7 @@ namespace Scoreboard.Forms
             {
                 OpenFileDialog open = new OpenFileDialog();
                 open.Filter = "xml files (*.xml)|*.xml";
-                open.InitialDirectory = Environment.CurrentDirectory;
+                open.InitialDirectory = Environment.CurrentDirectory+ "\\DB";
                 if (open.ShowDialog() == DialogResult.OK)
                 {
                     XmlSerializer deserializer = new XmlSerializer(typeof(Database));
@@ -70,7 +70,7 @@ namespace Scoreboard.Forms
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "xml files (*.xml)|*.xml";
-            saveFileDialog1.InitialDirectory = Environment.CurrentDirectory;
+            saveFileDialog1.InitialDirectory = Environment.CurrentDirectory+ "\\DB";
             TextWriter textWriter = null;
 
             try

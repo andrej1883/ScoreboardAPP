@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Scoreboard.Classes;
 using Timer = System.Windows.Forms.Timer;
@@ -34,6 +35,7 @@ namespace Scoreboard.Forms
         private bool _breakRunning = false;
 
         private Database _teamsDatabase;
+        private VideoPlayerForm _videoPlayerForm;
 
         public Database TeamsDatabase
         {
@@ -796,6 +798,11 @@ namespace Scoreboard.Forms
                 team1NameBox.Text = _team1Name;
                 _formScoreBoard.SetTeamName(true,_team1Name);
                 UploadLogo(true,selected.LogoPath);
+                videoPath1.Text = selected.VideoPath;
+            }
+            else
+            {
+                MessageBox.Show("Database not connected", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -811,5 +818,64 @@ namespace Scoreboard.Forms
             }
         }
 
+        private void PlayVideo(string parPath)
+        {
+            if (parPath != null)
+            {
+                var video = new VideoPlayerForm(parPath);
+                _videoPlayerForm  = video;
+               
+                video.FormBorderStyle = FormBorderStyle.None;
+                video.MinimizeBox = false;
+                video.MaximizeBox = false;
+                video.ControlBox = false; 
+                var area = Screen.AllScreens[1].Bounds;
+                video.Location = area.Location;
+                video.MediaPlayer.uiMode = "none";
+                video.SetBounds(area.X, area.Y, area.Width, area.Height);
+                video.Show();
+                _videoPlayerForm.PlayVideo();
+            }
+        }
+
+        private void StopVideo()
+        {
+            if (!_videoPlayerForm.IsDisposed)
+            {
+                _videoPlayerForm.Dispose();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string path = null;
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Video Files(*.mp4)|*.mp4";  
+            if (open.ShowDialog() == DialogResult.OK) {
+
+                path = open.FileName;
+            }
+            PlayVideo(path);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _videoPlayerForm.PlayVideo();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            StopVideo();
+        }
+
+        private void playVideo1_Click(object sender, EventArgs e)
+        {
+            PlayVideo(videoPath1.Text);
+        }
+
+        private void cancelVideo1_Click(object sender, EventArgs e)
+        {
+            StopVideo();
+        }
     }
 }
