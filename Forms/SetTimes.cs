@@ -88,7 +88,7 @@ namespace Scoreboard.Forms
             var mess = MessageBox.Show(@"This option will reset gameboard timers! Do you want to continue?" , @"Adjust timers length", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (mess == DialogResult.Yes)
             {
-
+                CheckNumbers();
                 _periodLength.Minutes = (int)periodLInputM.Value;
                 _periodLength.Seconds = (int)periodLInputS.Value;
                 _breakLength.Minutes = (int)breakLInputM.Value;
@@ -101,7 +101,6 @@ namespace Scoreboard.Forms
                 _longPenaltyLength.Seconds = (int)longPenaltyInputS.Value;
                 _preMatchTime.Minutes = (int)preMatchInputM.Value;
                 _preMatchTime.Seconds = (int)preMatchInputS.Value;
-                CheckNumbers();
                 _parentForm.SetTime(_periodLength.Minutes,PeriodLength.Seconds);
                 _parentForm.SetTimeoutLength(1,_timeoutLength.Minutes,_timeoutLength.Seconds);
                 _parentForm.SetTimeoutLength(2,_timeoutLength.Minutes,_timeoutLength.Seconds);
