@@ -125,6 +125,11 @@
             // preMatchInputM
             // 
             this.preMatchInputM.Location = new System.Drawing.Point(70, 186);
+            this.preMatchInputM.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.preMatchInputM.Name = "preMatchInputM";
             this.preMatchInputM.Size = new System.Drawing.Size(120, 20);
             this.preMatchInputM.TabIndex = 6;
@@ -132,6 +137,11 @@
             // periodLInputM
             // 
             this.periodLInputM.Location = new System.Drawing.Point(70, 68);
+            this.periodLInputM.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.periodLInputM.Name = "periodLInputM";
             this.periodLInputM.Size = new System.Drawing.Size(120, 20);
             this.periodLInputM.TabIndex = 7;
@@ -139,6 +149,11 @@
             // breakLInputM
             // 
             this.breakLInputM.Location = new System.Drawing.Point(70, 107);
+            this.breakLInputM.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.breakLInputM.Name = "breakLInputM";
             this.breakLInputM.Size = new System.Drawing.Size(120, 20);
             this.breakLInputM.TabIndex = 8;
@@ -146,6 +161,11 @@
             // timeoutLInputM
             // 
             this.timeoutLInputM.Location = new System.Drawing.Point(70, 146);
+            this.timeoutLInputM.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.timeoutLInputM.Name = "timeoutLInputM";
             this.timeoutLInputM.Size = new System.Drawing.Size(120, 20);
             this.timeoutLInputM.TabIndex = 9;
@@ -153,6 +173,11 @@
             // shortPenaltyInputM
             // 
             this.shortPenaltyInputM.Location = new System.Drawing.Point(70, 226);
+            this.shortPenaltyInputM.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.shortPenaltyInputM.Name = "shortPenaltyInputM";
             this.shortPenaltyInputM.Size = new System.Drawing.Size(120, 20);
             this.shortPenaltyInputM.TabIndex = 10;
@@ -160,6 +185,11 @@
             // longPenaltyInputM
             // 
             this.longPenaltyInputM.Location = new System.Drawing.Point(70, 265);
+            this.longPenaltyInputM.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.longPenaltyInputM.Name = "longPenaltyInputM";
             this.longPenaltyInputM.Size = new System.Drawing.Size(120, 20);
             this.longPenaltyInputM.TabIndex = 11;
@@ -187,6 +217,11 @@
             // longPenaltyInputS
             // 
             this.longPenaltyInputS.Location = new System.Drawing.Point(208, 265);
+            this.longPenaltyInputS.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.longPenaltyInputS.Name = "longPenaltyInputS";
             this.longPenaltyInputS.Size = new System.Drawing.Size(120, 20);
             this.longPenaltyInputS.TabIndex = 25;
@@ -194,6 +229,11 @@
             // shortPenaltyInputS
             // 
             this.shortPenaltyInputS.Location = new System.Drawing.Point(208, 226);
+            this.shortPenaltyInputS.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.shortPenaltyInputS.Name = "shortPenaltyInputS";
             this.shortPenaltyInputS.Size = new System.Drawing.Size(120, 20);
             this.shortPenaltyInputS.TabIndex = 24;
@@ -201,6 +241,11 @@
             // timeoutLInputS
             // 
             this.timeoutLInputS.Location = new System.Drawing.Point(208, 146);
+            this.timeoutLInputS.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.timeoutLInputS.Name = "timeoutLInputS";
             this.timeoutLInputS.Size = new System.Drawing.Size(120, 20);
             this.timeoutLInputS.TabIndex = 23;
@@ -208,6 +253,11 @@
             // breakLInputS
             // 
             this.breakLInputS.Location = new System.Drawing.Point(208, 107);
+            this.breakLInputS.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.breakLInputS.Name = "breakLInputS";
             this.breakLInputS.Size = new System.Drawing.Size(120, 20);
             this.breakLInputS.TabIndex = 22;
@@ -215,6 +265,11 @@
             // periodLInputS
             // 
             this.periodLInputS.Location = new System.Drawing.Point(208, 68);
+            this.periodLInputS.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.periodLInputS.Name = "periodLInputS";
             this.periodLInputS.Size = new System.Drawing.Size(120, 20);
             this.periodLInputS.TabIndex = 21;
@@ -222,6 +277,11 @@
             // preMatchInputS
             // 
             this.preMatchInputS.Location = new System.Drawing.Point(208, 186);
+            this.preMatchInputS.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.preMatchInputS.Name = "preMatchInputS";
             this.preMatchInputS.Size = new System.Drawing.Size(120, 20);
             this.preMatchInputS.TabIndex = 20;

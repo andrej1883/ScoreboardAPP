@@ -13,10 +13,10 @@ namespace Scoreboard.Forms
     {
         private const int MaxPenalties = 4;
         private const int TwoTeams = 2;
-        private const int TimeoutMinDefault = 1;
-        private const int TimeoutSecDefault = 0;
-        private const int MatchMinDefault = 0;
-        private const int MatchSecDefault = 10;
+        //private const int TimeoutMinDefault = 1;
+        //private const int TimeoutSecDefault = 0;
+        //private const int MatchMinDefault = 0;
+        //private const int MatchSecDefault = 10;
 
         private ScoreboardForm _formScoreBoard;
         private int _team1Goals = 0;
@@ -74,7 +74,7 @@ namespace Scoreboard.Forms
             for (int i = 0; i < _timeouts.Length; i++)
             {
                 _timeouts[i] = new int[2];
-                SetTimeoutLength(i+1,TimeoutMinDefault,TimeoutSecDefault);
+                SetTimeoutLength(i+1,_gameTimes.TimeoutLength.Minutes,_gameTimes.TimeoutLength.Seconds);
             }
         }
 
@@ -374,13 +374,14 @@ namespace Scoreboard.Forms
                 if (!_periodEnd)
                 {
                     _periodEnd = true;
+                    StopTime();
                 }
                 else
                 {
                     _breakRunning = false;
                     _periodEnd = false;
                     _period++;
-                    SetTime(MatchMinDefault,MatchSecDefault);
+                    SetTime(_gameTimes.PeriodLength.Minutes,_gameTimes.PeriodLength.Seconds);
                     InitBoards();
                 }
             }
@@ -392,7 +393,7 @@ namespace Scoreboard.Forms
             {
                 _timer.Stop();
                 _timer.Enabled = false;
-                _timer = new Timer();
+                ResetTimer();
                 StopPenalty();
             }
         }
@@ -408,8 +409,8 @@ namespace Scoreboard.Forms
             {
                 _timer.Stop();
             }
-            _minutesT = MatchMinDefault;
-            _secondsT = MatchSecDefault;
+            _minutesT = _gameTimes.PeriodLength.Minutes;
+            _secondsT = _gameTimes.PeriodLength.Seconds;
             _timer.Enabled = false;
             _periodEnd = false;
             InitBoards();
@@ -742,7 +743,7 @@ namespace Scoreboard.Forms
             if (_timeoutTimer.Enabled)
             {
                 _timeoutTimer.Stop();
-                SetTimeoutLength(1,TimeoutMinDefault,TimeoutSecDefault);
+                SetTimeoutLength(1,_gameTimes.TimeoutLength.Minutes,_gameTimes.TimeoutLength.Seconds);
                 _timeoutTimer.Enabled = false;
             }
         }
@@ -752,7 +753,7 @@ namespace Scoreboard.Forms
             if (_timeoutTimer.Enabled)
             {
                 _timeoutTimer.Stop();
-                SetTimeoutLength(2,TimeoutMinDefault,TimeoutSecDefault);
+                SetTimeoutLength(2,_gameTimes.TimeoutLength.Minutes,_gameTimes.TimeoutLength.Seconds);
                 _timeoutTimer.Enabled = false;
             }
         }
@@ -1045,7 +1046,7 @@ namespace Scoreboard.Forms
 
         private void timeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _gameTimes.Show(this);
+            _gameTimes.Show();
         }
     }
 }

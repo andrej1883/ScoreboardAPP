@@ -14,17 +14,47 @@ namespace Scoreboard.Forms
     public partial class SetTimes : Form
     {
         private Time _periodLength = new Time() {Minutes = 20, Seconds = 0};
-        private int _breakLenght = 15;
-        private int _timeoutLength = 1;
-        private int _shortPenaltyLenght = 2;
-        private int _longPenaltyLength = 5;
-        private int _prematchTime = 10;
+        private Time _breakLength = new Time() {Minutes = 15, Seconds = 0};
+        private Time _timeoutLength = new Time() {Minutes = 1, Seconds = 0};
+        private Time _shortPenaltyLength = new Time() {Minutes = 2, Seconds = 0};
+        private Time _longPenaltyLength = new Time() {Minutes = 5, Seconds = 0};
+        private Time _preMatchTime = new Time() {Minutes = 10, Seconds = 0};
         private GameForm _parentForm;
 
         public Time PeriodLength
         {
             get => _periodLength;
             set => _periodLength = value;
+        }
+
+        public Time BreakLength
+        {
+            get => _breakLength;
+            set => _breakLength = value;
+        }
+
+        public Time TimeoutLength
+        {
+            get => _timeoutLength;
+            set => _timeoutLength = value;
+        }
+
+        public Time ShortPenaltyLength
+        {
+            get => _shortPenaltyLength;
+            set => _shortPenaltyLength = value;
+        }
+
+        public Time LongPenaltyLength
+        {
+            get => _longPenaltyLength;
+            set => _longPenaltyLength = value;
+        }
+
+        public Time PreMatchTime
+        {
+            get => _preMatchTime;
+            set => _preMatchTime = value;
         }
 
         public SetTimes(GameForm parForm)
@@ -34,35 +64,71 @@ namespace Scoreboard.Forms
             StartPosition=FormStartPosition.CenterScreen;
             MaximizeBox = false;
             ControlBox = false;
+            
         }
 
         private void SetTimes_Load(object sender, EventArgs e)
         {
             periodLInputM.Value = _periodLength.Minutes;
-            breakLInputM.Value = _breakLenght;
-            timeoutLInputM.Value = _timeoutLength;
-            shortPenaltyInputM.Value = _shortPenaltyLenght;
-            longPenaltyInputM.Value = _longPenaltyLength;
-            preMatchInputM.Value = _prematchTime;
+            periodLInputS.Value = _periodLength.Seconds;
+            breakLInputM.Value = _breakLength.Minutes;
+            breakLInputS.Value = _breakLength.Seconds;
+            timeoutLInputM.Value = _timeoutLength.Minutes;
+            timeoutLInputS.Value = _timeoutLength.Seconds;
+            shortPenaltyInputM.Value = _shortPenaltyLength.Minutes;
+            shortPenaltyInputS.Value = _shortPenaltyLength.Seconds;
+            longPenaltyInputM.Value = _longPenaltyLength.Minutes;
+            longPenaltyInputS.Value = _longPenaltyLength.Seconds;
+            preMatchInputM.Value = _preMatchTime.Minutes;
+            preMatchInputS.Value = _preMatchTime.Seconds;
         }
 
         private void saveTimes_Click(object sender, EventArgs e)
         {
-            if (periodLInputM.Value > 0)_periodLength.Minutes = (int)periodLInputM.Value;
-            if (breakLInputM.Value > 0)_breakLenght = (int)breakLInputM.Value;
-            if (timeoutLInputM.Value > 0)_timeoutLength = (int)timeoutLInputM.Value;
-            if (shortPenaltyInputM.Value > 0)_shortPenaltyLenght = (int)shortPenaltyInputM.Value;
-            if (longPenaltyInputM.Value > 0)_longPenaltyLength = (int)longPenaltyInputM.Value;
-            if (preMatchInputM.Value > 0)_prematchTime = (int)preMatchInputM.Value;
-            _parentForm.SetTime(_periodLength.Minutes,PeriodLength.Seconds);
-            _parentForm.InitBoards();
-            Hide();
+            var mess = MessageBox.Show(@"This option will reset gameboard timers! Do you want to continue?" , @"Adjust timers length", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (mess == DialogResult.Yes)
+            {
+
+                _periodLength.Minutes = (int)periodLInputM.Value;
+                _periodLength.Seconds = (int)periodLInputS.Value;
+                _breakLength.Minutes = (int)breakLInputM.Value;
+                _breakLength.Seconds = (int)breakLInputS.Value;
+                _timeoutLength.Minutes = (int)timeoutLInputM.Value;
+                _timeoutLength.Seconds = (int)timeoutLInputS.Value;
+                _shortPenaltyLength.Minutes = (int)shortPenaltyInputM.Value;
+                _shortPenaltyLength.Seconds = (int)shortPenaltyInputS.Value;
+                _longPenaltyLength.Minutes = (int)longPenaltyInputM.Value;
+                _longPenaltyLength.Seconds = (int)longPenaltyInputS.Value;
+                _preMatchTime.Minutes = (int)preMatchInputM.Value;
+                _preMatchTime.Seconds = (int)preMatchInputS.Value;
+                CheckNumbers();
+                _parentForm.SetTime(_periodLength.Minutes,PeriodLength.Seconds);
+                _parentForm.SetTimeoutLength(1,_timeoutLength.Minutes,_timeoutLength.Seconds);
+                _parentForm.SetTimeoutLength(2,_timeoutLength.Minutes,_timeoutLength.Seconds);
+                _parentForm.InitBoards();
+                Hide();
+            }
         }
 
         private void cancelEditTimes_Click(object sender, EventArgs e)
         {
             _parentForm.InitBoards();
             Hide();
+        }
+
+        private void CheckNumbers()
+        {
+            foreach (NumericUpDown upDown in Controls.OfType<NumericUpDown>())
+            {
+                if (String.IsNullOrWhiteSpace(upDown.Text))
+                {
+                    upDown.Value = 0;
+                }
+                else if (upDown.Value > 60)
+                {
+                    upDown.Value = 60;
+                }
+            }
         }
     }
 }
