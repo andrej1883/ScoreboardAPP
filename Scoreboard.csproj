@@ -49,6 +49,7 @@
     <Compile Include="Classes\Advertisment.cs" />
     <Compile Include="Classes\Database.cs" />
     <Compile Include="Classes\Team.cs" />
+    <Compile Include="Classes\Time.cs" />
     <Compile Include="Forms\ControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +88,12 @@
     <Compile Include="Forms\LoadAds.Designer.cs">
       <DependentUpon>LoadAds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SetTimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SetTimes.Designer.cs">
+      <DependentUpon>SetTimes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\VideoPlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoadTeamDataForm.resx">
       <DependentUpon>LoadTeamDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SetTimes.resx">
+      <DependentUpon>SetTimes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoPlayerForm.resx">
       <DependentUpon>VideoPlayerForm.cs</DependentUpon>

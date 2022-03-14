@@ -480,6 +480,7 @@ namespace Scoreboard.Forms
         {
             if (e.Button == MouseButtons.Left && !_isLocked)
             {
+
                 var gridSize = 50;
                 var y = e.Y - mouseClick.X;
                 y -= y % gridSize;

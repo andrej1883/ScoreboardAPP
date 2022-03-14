@@ -112,6 +112,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.cancelVideo2 = new System.Windows.Forms.Button();
             this.TeamsDBT2 = new System.Windows.Forms.ComboBox();
             this.playVideo2 = new System.Windows.Forms.Button();
@@ -126,6 +127,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.timeoutT2M = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.cancelVideo1 = new System.Windows.Forms.Button();
             this.playVideo1 = new System.Windows.Forms.Button();
             this.videoPath1 = new System.Windows.Forms.TextBox();
@@ -144,8 +146,6 @@
             this.playAd = new System.Windows.Forms.Button();
             this.cancelAd = new System.Windows.Forms.Button();
             this.adsDBV = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
@@ -728,13 +728,14 @@
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.timeToolStripMenuItem.Text = "Time";
+            this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
             // appearanceToolStripMenuItem
             // 
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.appearanceToolStripMenuItem.Text = "Appearance";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
             // 
@@ -981,6 +982,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Team2";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(366, 90);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(107, 13);
+            this.label20.TabIndex = 87;
+            this.label20.Text = "Select team from DB:";
+            // 
             // cancelVideo2
             // 
             this.cancelVideo2.Location = new System.Drawing.Point(446, 246);
@@ -1137,6 +1147,15 @@
             this.groupBox5.TabIndex = 80;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Team1";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(351, 90);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(107, 13);
+            this.label18.TabIndex = 86;
+            this.label18.Text = "Select team from DB:";
             // 
             // cancelVideo1
             // 
@@ -1309,24 +1328,6 @@
             this.adsDBV.Name = "adsDBV";
             this.adsDBV.Size = new System.Drawing.Size(152, 21);
             this.adsDBV.TabIndex = 85;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(351, 90);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(107, 13);
-            this.label18.TabIndex = 86;
-            this.label18.Text = "Select team from DB:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(366, 90);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(107, 13);
-            this.label20.TabIndex = 87;
-            this.label20.Text = "Select team from DB:";
             // 
             // label21
             // 

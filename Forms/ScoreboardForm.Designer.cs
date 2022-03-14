@@ -78,7 +78,7 @@
             // t1Lbl
             // 
             this.t1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.t1Lbl.Location = new System.Drawing.Point(267, 32);
+            this.t1Lbl.Location = new System.Drawing.Point(438, 83);
             this.t1Lbl.Name = "t1Lbl";
             this.t1Lbl.Size = new System.Drawing.Size(123, 13);
             this.t1Lbl.TabIndex = 2;
@@ -90,7 +90,7 @@
             // t2Lbl
             // 
             this.t2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.t2Lbl.Location = new System.Drawing.Point(514, 32);
+            this.t2Lbl.Location = new System.Drawing.Point(687, 83);
             this.t2Lbl.Name = "t2Lbl";
             this.t2Lbl.Size = new System.Drawing.Size(128, 13);
             this.t2Lbl.TabIndex = 3;
@@ -103,9 +103,9 @@
             // 
             this.scoreT1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreT1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.scoreT1Lbl.Location = new System.Drawing.Point(238, 60);
+            this.scoreT1Lbl.Location = new System.Drawing.Point(450, 126);
             this.scoreT1Lbl.Name = "scoreT1Lbl";
-            this.scoreT1Lbl.Size = new System.Drawing.Size(191, 76);
+            this.scoreT1Lbl.Size = new System.Drawing.Size(111, 76);
             this.scoreT1Lbl.TabIndex = 4;
             this.scoreT1Lbl.Text = "00";
             this.scoreT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,9 +116,9 @@
             // 
             this.scoreT2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreT2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.scoreT2Lbl.Location = new System.Drawing.Point(504, 60);
+            this.scoreT2Lbl.Location = new System.Drawing.Point(706, 124);
             this.scoreT2Lbl.Name = "scoreT2Lbl";
-            this.scoreT2Lbl.Size = new System.Drawing.Size(159, 72);
+            this.scoreT2Lbl.Size = new System.Drawing.Size(107, 72);
             this.scoreT2Lbl.TabIndex = 5;
             this.scoreT2Lbl.Text = "00";
             this.scoreT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -129,9 +129,9 @@
             // 
             this.scoreParseLblb.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreParseLblb.ForeColor = System.Drawing.Color.Black;
-            this.scoreParseLblb.Location = new System.Drawing.Point(435, 60);
+            this.scoreParseLblb.Location = new System.Drawing.Point(617, 126);
             this.scoreParseLblb.Name = "scoreParseLblb";
-            this.scoreParseLblb.Size = new System.Drawing.Size(54, 76);
+            this.scoreParseLblb.Size = new System.Drawing.Size(40, 72);
             this.scoreParseLblb.TabIndex = 6;
             this.scoreParseLblb.Text = "-";
             this.scoreParseLblb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,7 +141,7 @@
             // periodLbl
             // 
             this.periodLbl.ForeColor = System.Drawing.Color.Black;
-            this.periodLbl.Location = new System.Drawing.Point(445, 136);
+            this.periodLbl.Location = new System.Drawing.Point(616, 230);
             this.periodLbl.Name = "periodLbl";
             this.periodLbl.Size = new System.Drawing.Size(37, 13);
             this.periodLbl.TabIndex = 7;
@@ -154,9 +154,9 @@
             // 
             this.timeMinutesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeMinutesLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeMinutesLbl.Location = new System.Drawing.Point(257, 237);
+            this.timeMinutesLbl.Location = new System.Drawing.Point(480, 376);
             this.timeMinutesLbl.Name = "timeMinutesLbl";
-            this.timeMinutesLbl.Size = new System.Drawing.Size(172, 76);
+            this.timeMinutesLbl.Size = new System.Drawing.Size(108, 76);
             this.timeMinutesLbl.TabIndex = 8;
             this.timeMinutesLbl.Text = "00";
             this.timeMinutesLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -167,9 +167,9 @@
             // 
             this.timeParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeParseLbl.Location = new System.Drawing.Point(435, 237);
+            this.timeParseLbl.Location = new System.Drawing.Point(617, 376);
             this.timeParseLbl.Name = "timeParseLbl";
-            this.timeParseLbl.Size = new System.Drawing.Size(51, 76);
+            this.timeParseLbl.Size = new System.Drawing.Size(36, 76);
             this.timeParseLbl.TabIndex = 9;
             this.timeParseLbl.Text = ":";
             this.timeParseLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,9 +180,9 @@
             // 
             this.timeSecondsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeSecondsLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeSecondsLbl.Location = new System.Drawing.Point(492, 237);
+            this.timeSecondsLbl.Location = new System.Drawing.Point(677, 376);
             this.timeSecondsLbl.Name = "timeSecondsLbl";
-            this.timeSecondsLbl.Size = new System.Drawing.Size(185, 76);
+            this.timeSecondsLbl.Size = new System.Drawing.Size(110, 76);
             this.timeSecondsLbl.TabIndex = 10;
             this.timeSecondsLbl.Text = "00";
             this.timeSecondsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,7 +193,7 @@
             // 
             this.actualPeriodLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.actualPeriodLbl.ForeColor = System.Drawing.Color.Black;
-            this.actualPeriodLbl.Location = new System.Drawing.Point(436, 163);
+            this.actualPeriodLbl.Location = new System.Drawing.Point(611, 259);
             this.actualPeriodLbl.Name = "actualPeriodLbl";
             this.actualPeriodLbl.Size = new System.Drawing.Size(46, 46);
             this.actualPeriodLbl.TabIndex = 11;
@@ -204,7 +204,7 @@
             // timeLbl
             // 
             this.timeLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeLbl.Location = new System.Drawing.Point(445, 224);
+            this.timeLbl.Location = new System.Drawing.Point(616, 343);
             this.timeLbl.Name = "timeLbl";
             this.timeLbl.Size = new System.Drawing.Size(30, 13);
             this.timeLbl.TabIndex = 12;
@@ -216,7 +216,7 @@
             // penaltyT1Lbl
             // 
             this.penaltyT1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT1Lbl.Location = new System.Drawing.Point(142, 485);
+            this.penaltyT1Lbl.Location = new System.Drawing.Point(196, 729);
             this.penaltyT1Lbl.Name = "penaltyT1Lbl";
             this.penaltyT1Lbl.Size = new System.Drawing.Size(42, 13);
             this.penaltyT1Lbl.TabIndex = 14;
@@ -228,7 +228,7 @@
             // penaltyT1PlayerLbl
             // 
             this.penaltyT1PlayerLbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT1PlayerLbl.Location = new System.Drawing.Point(76, 504);
+            this.penaltyT1PlayerLbl.Location = new System.Drawing.Point(130, 748);
             this.penaltyT1PlayerLbl.Name = "penaltyT1PlayerLbl";
             this.penaltyT1PlayerLbl.Size = new System.Drawing.Size(36, 13);
             this.penaltyT1PlayerLbl.TabIndex = 15;
@@ -240,7 +240,7 @@
             // penaltyT1TimeLbl
             // 
             this.penaltyT1TimeLbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT1TimeLbl.Location = new System.Drawing.Point(198, 504);
+            this.penaltyT1TimeLbl.Location = new System.Drawing.Point(252, 748);
             this.penaltyT1TimeLbl.Name = "penaltyT1TimeLbl";
             this.penaltyT1TimeLbl.Size = new System.Drawing.Size(30, 13);
             this.penaltyT1TimeLbl.TabIndex = 16;
@@ -252,7 +252,7 @@
             // penaltyT2TimeLbl
             // 
             this.penaltyT2TimeLbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT2TimeLbl.Location = new System.Drawing.Point(831, 504);
+            this.penaltyT2TimeLbl.Location = new System.Drawing.Point(1056, 748);
             this.penaltyT2TimeLbl.Name = "penaltyT2TimeLbl";
             this.penaltyT2TimeLbl.Size = new System.Drawing.Size(30, 13);
             this.penaltyT2TimeLbl.TabIndex = 19;
@@ -264,7 +264,7 @@
             // penaltyT2PlayerLbl
             // 
             this.penaltyT2PlayerLbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT2PlayerLbl.Location = new System.Drawing.Point(709, 504);
+            this.penaltyT2PlayerLbl.Location = new System.Drawing.Point(934, 748);
             this.penaltyT2PlayerLbl.Name = "penaltyT2PlayerLbl";
             this.penaltyT2PlayerLbl.Size = new System.Drawing.Size(36, 13);
             this.penaltyT2PlayerLbl.TabIndex = 18;
@@ -276,7 +276,7 @@
             // penaltyT2Lbl
             // 
             this.penaltyT2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT2Lbl.Location = new System.Drawing.Point(775, 485);
+            this.penaltyT2Lbl.Location = new System.Drawing.Point(1000, 729);
             this.penaltyT2Lbl.Name = "penaltyT2Lbl";
             this.penaltyT2Lbl.Size = new System.Drawing.Size(42, 13);
             this.penaltyT2Lbl.TabIndex = 17;
@@ -289,7 +289,7 @@
             // 
             this.playerNumber1T1lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.playerNumber1T1lbl.ForeColor = System.Drawing.Color.Black;
-            this.playerNumber1T1lbl.Location = new System.Drawing.Point(51, 526);
+            this.playerNumber1T1lbl.Location = new System.Drawing.Point(105, 770);
             this.playerNumber1T1lbl.Name = "playerNumber1T1lbl";
             this.playerNumber1T1lbl.Size = new System.Drawing.Size(49, 31);
             this.playerNumber1T1lbl.TabIndex = 20;
@@ -303,7 +303,7 @@
             this.playerNumber1T2lbl.AutoSize = true;
             this.playerNumber1T2lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.playerNumber1T2lbl.ForeColor = System.Drawing.Color.Black;
-            this.playerNumber1T2lbl.Location = new System.Drawing.Point(690, 526);
+            this.playerNumber1T2lbl.Location = new System.Drawing.Point(915, 770);
             this.playerNumber1T2lbl.Name = "playerNumber1T2lbl";
             this.playerNumber1T2lbl.Size = new System.Drawing.Size(44, 31);
             this.playerNumber1T2lbl.TabIndex = 21;
@@ -316,7 +316,7 @@
             // 
             this.playerNumber2T1lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.playerNumber2T1lbl.ForeColor = System.Drawing.Color.Black;
-            this.playerNumber2T1lbl.Location = new System.Drawing.Point(51, 566);
+            this.playerNumber2T1lbl.Location = new System.Drawing.Point(105, 810);
             this.playerNumber2T1lbl.Name = "playerNumber2T1lbl";
             this.playerNumber2T1lbl.Size = new System.Drawing.Size(49, 31);
             this.playerNumber2T1lbl.TabIndex = 22;
@@ -330,7 +330,7 @@
             this.playerNumber2T2lbl.AutoSize = true;
             this.playerNumber2T2lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.playerNumber2T2lbl.ForeColor = System.Drawing.Color.Black;
-            this.playerNumber2T2lbl.Location = new System.Drawing.Point(690, 566);
+            this.playerNumber2T2lbl.Location = new System.Drawing.Point(915, 810);
             this.playerNumber2T2lbl.Name = "playerNumber2T2lbl";
             this.playerNumber2T2lbl.Size = new System.Drawing.Size(44, 31);
             this.playerNumber2T2lbl.TabIndex = 23;
@@ -343,7 +343,7 @@
             // 
             this.minutesT1P1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.minutesT1P1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.minutesT1P1Lbl.Location = new System.Drawing.Point(145, 526);
+            this.minutesT1P1Lbl.Location = new System.Drawing.Point(199, 770);
             this.minutesT1P1Lbl.Name = "minutesT1P1Lbl";
             this.minutesT1P1Lbl.Size = new System.Drawing.Size(53, 31);
             this.minutesT1P1Lbl.TabIndex = 24;
@@ -356,7 +356,7 @@
             // 
             this.secondsT1P1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.secondsT1P1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.secondsT1P1Lbl.Location = new System.Drawing.Point(232, 526);
+            this.secondsT1P1Lbl.Location = new System.Drawing.Point(286, 770);
             this.secondsT1P1Lbl.Name = "secondsT1P1Lbl";
             this.secondsT1P1Lbl.Size = new System.Drawing.Size(47, 31);
             this.secondsT1P1Lbl.TabIndex = 28;
@@ -369,7 +369,7 @@
             // 
             this.timeT1P1ParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeT1P1ParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeT1P1ParseLbl.Location = new System.Drawing.Point(204, 526);
+            this.timeT1P1ParseLbl.Location = new System.Drawing.Point(258, 770);
             this.timeT1P1ParseLbl.Name = "timeT1P1ParseLbl";
             this.timeT1P1ParseLbl.Size = new System.Drawing.Size(22, 31);
             this.timeT1P1ParseLbl.TabIndex = 36;
@@ -382,7 +382,7 @@
             // 
             this.timeT1P2ParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeT1P2ParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeT1P2ParseLbl.Location = new System.Drawing.Point(204, 566);
+            this.timeT1P2ParseLbl.Location = new System.Drawing.Point(258, 810);
             this.timeT1P2ParseLbl.Name = "timeT1P2ParseLbl";
             this.timeT1P2ParseLbl.Size = new System.Drawing.Size(22, 31);
             this.timeT1P2ParseLbl.TabIndex = 40;
@@ -395,7 +395,7 @@
             // 
             this.secondsT1P2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.secondsT1P2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.secondsT1P2Lbl.Location = new System.Drawing.Point(232, 566);
+            this.secondsT1P2Lbl.Location = new System.Drawing.Point(286, 810);
             this.secondsT1P2Lbl.Name = "secondsT1P2Lbl";
             this.secondsT1P2Lbl.Size = new System.Drawing.Size(47, 31);
             this.secondsT1P2Lbl.TabIndex = 38;
@@ -408,7 +408,7 @@
             // 
             this.minutesT1P2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.minutesT1P2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.minutesT1P2Lbl.Location = new System.Drawing.Point(145, 566);
+            this.minutesT1P2Lbl.Location = new System.Drawing.Point(199, 810);
             this.minutesT1P2Lbl.Name = "minutesT1P2Lbl";
             this.minutesT1P2Lbl.Size = new System.Drawing.Size(53, 31);
             this.minutesT1P2Lbl.TabIndex = 37;
@@ -422,7 +422,7 @@
             this.timeT2P1ParseLbl.AutoSize = true;
             this.timeT2P1ParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeT2P1ParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeT2P1ParseLbl.Location = new System.Drawing.Point(849, 526);
+            this.timeT2P1ParseLbl.Location = new System.Drawing.Point(1074, 770);
             this.timeT2P1ParseLbl.Name = "timeT2P1ParseLbl";
             this.timeT2P1ParseLbl.Size = new System.Drawing.Size(22, 31);
             this.timeT2P1ParseLbl.TabIndex = 44;
@@ -436,7 +436,7 @@
             this.secondsT2P1Lbl.AutoSize = true;
             this.secondsT2P1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.secondsT2P1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.secondsT2P1Lbl.Location = new System.Drawing.Point(877, 526);
+            this.secondsT2P1Lbl.Location = new System.Drawing.Point(1102, 770);
             this.secondsT2P1Lbl.Name = "secondsT2P1Lbl";
             this.secondsT2P1Lbl.Size = new System.Drawing.Size(44, 31);
             this.secondsT2P1Lbl.TabIndex = 42;
@@ -450,7 +450,7 @@
             this.minutesT2P1Lbl.AutoSize = true;
             this.minutesT2P1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.minutesT2P1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.minutesT2P1Lbl.Location = new System.Drawing.Point(794, 526);
+            this.minutesT2P1Lbl.Location = new System.Drawing.Point(1019, 770);
             this.minutesT2P1Lbl.Name = "minutesT2P1Lbl";
             this.minutesT2P1Lbl.Size = new System.Drawing.Size(44, 31);
             this.minutesT2P1Lbl.TabIndex = 41;
@@ -464,7 +464,7 @@
             this.timeT2P2ParseLbl.AutoSize = true;
             this.timeT2P2ParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeT2P2ParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeT2P2ParseLbl.Location = new System.Drawing.Point(849, 566);
+            this.timeT2P2ParseLbl.Location = new System.Drawing.Point(1074, 810);
             this.timeT2P2ParseLbl.Name = "timeT2P2ParseLbl";
             this.timeT2P2ParseLbl.Size = new System.Drawing.Size(22, 31);
             this.timeT2P2ParseLbl.TabIndex = 48;
@@ -478,7 +478,7 @@
             this.secondsT2P2Lbl.AutoSize = true;
             this.secondsT2P2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.secondsT2P2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.secondsT2P2Lbl.Location = new System.Drawing.Point(877, 566);
+            this.secondsT2P2Lbl.Location = new System.Drawing.Point(1102, 810);
             this.secondsT2P2Lbl.Name = "secondsT2P2Lbl";
             this.secondsT2P2Lbl.Size = new System.Drawing.Size(44, 31);
             this.secondsT2P2Lbl.TabIndex = 46;
@@ -492,7 +492,7 @@
             this.minutesT2P2Lbl.AutoSize = true;
             this.minutesT2P2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.minutesT2P2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.minutesT2P2Lbl.Location = new System.Drawing.Point(794, 566);
+            this.minutesT2P2Lbl.Location = new System.Drawing.Point(1019, 810);
             this.minutesT2P2Lbl.Name = "minutesT2P2Lbl";
             this.minutesT2P2Lbl.Size = new System.Drawing.Size(44, 31);
             this.minutesT2P2Lbl.TabIndex = 45;
@@ -503,9 +503,9 @@
             // 
             // team1Logo
             // 
-            this.team1Logo.Location = new System.Drawing.Point(57, 32);
+            this.team1Logo.Location = new System.Drawing.Point(50, 80);
             this.team1Logo.Name = "team1Logo";
-            this.team1Logo.Size = new System.Drawing.Size(179, 149);
+            this.team1Logo.Size = new System.Drawing.Size(280, 250);
             this.team1Logo.TabIndex = 49;
             this.team1Logo.TabStop = false;
             this.team1Logo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.team1Logo_MouseDown);
@@ -513,9 +513,9 @@
             // 
             // team2Logo
             // 
-            this.team2Logo.Location = new System.Drawing.Point(712, 42);
+            this.team2Logo.Location = new System.Drawing.Point(937, 80);
             this.team2Logo.Name = "team2Logo";
-            this.team2Logo.Size = new System.Drawing.Size(179, 149);
+            this.team2Logo.Size = new System.Drawing.Size(280, 250);
             this.team2Logo.TabIndex = 50;
             this.team2Logo.TabStop = false;
             this.team2Logo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.team2Logo_MouseDown);
@@ -524,7 +524,7 @@
             // timeoutL2
             // 
             this.timeoutL2.AutoSize = true;
-            this.timeoutL2.Location = new System.Drawing.Point(797, 300);
+            this.timeoutL2.Location = new System.Drawing.Point(1098, 424);
             this.timeoutL2.Name = "timeoutL2";
             this.timeoutL2.Size = new System.Drawing.Size(48, 13);
             this.timeoutL2.TabIndex = 51;
@@ -536,7 +536,7 @@
             // timeoutL1
             // 
             this.timeoutL1.AutoSize = true;
-            this.timeoutL1.Location = new System.Drawing.Point(136, 300);
+            this.timeoutL1.Location = new System.Drawing.Point(130, 424);
             this.timeoutL1.Name = "timeoutL1";
             this.timeoutL1.Size = new System.Drawing.Size(48, 13);
             this.timeoutL1.TabIndex = 52;
@@ -549,7 +549,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(810, 336);
+            this.label3.Location = new System.Drawing.Point(1111, 460);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 31);
             this.label3.TabIndex = 55;
@@ -562,7 +562,7 @@
             // 
             this.timeout2Sec.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeout2Sec.ForeColor = System.Drawing.Color.Black;
-            this.timeout2Sec.Location = new System.Drawing.Point(838, 336);
+            this.timeout2Sec.Location = new System.Drawing.Point(1139, 460);
             this.timeout2Sec.Name = "timeout2Sec";
             this.timeout2Sec.Size = new System.Drawing.Size(48, 31);
             this.timeout2Sec.TabIndex = 54;
@@ -575,7 +575,7 @@
             // 
             this.timeout2Min.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeout2Min.ForeColor = System.Drawing.Color.Black;
-            this.timeout2Min.Location = new System.Drawing.Point(755, 336);
+            this.timeout2Min.Location = new System.Drawing.Point(1056, 460);
             this.timeout2Min.Name = "timeout2Min";
             this.timeout2Min.Size = new System.Drawing.Size(49, 31);
             this.timeout2Min.TabIndex = 53;
@@ -588,7 +588,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(145, 336);
+            this.label6.Location = new System.Drawing.Point(139, 460);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(22, 31);
             this.label6.TabIndex = 58;
@@ -601,7 +601,7 @@
             // 
             this.timeout1Sec.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeout1Sec.ForeColor = System.Drawing.Color.Black;
-            this.timeout1Sec.Location = new System.Drawing.Point(173, 336);
+            this.timeout1Sec.Location = new System.Drawing.Point(167, 460);
             this.timeout1Sec.Name = "timeout1Sec";
             this.timeout1Sec.Size = new System.Drawing.Size(48, 31);
             this.timeout1Sec.TabIndex = 57;
@@ -614,7 +614,7 @@
             // 
             this.timeout1Min.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeout1Min.ForeColor = System.Drawing.Color.Black;
-            this.timeout1Min.Location = new System.Drawing.Point(90, 336);
+            this.timeout1Min.Location = new System.Drawing.Point(84, 460);
             this.timeout1Min.Name = "timeout1Min";
             this.timeout1Min.Size = new System.Drawing.Size(49, 31);
             this.timeout1Min.TabIndex = 56;
@@ -627,7 +627,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 761);
+            this.ClientSize = new System.Drawing.Size(1264, 985);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.timeout1Sec);
             this.Controls.Add(this.timeout1Min);

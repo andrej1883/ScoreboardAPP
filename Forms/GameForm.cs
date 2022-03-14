@@ -38,6 +38,7 @@ namespace Scoreboard.Forms
 
         private Database _databaseGame;
         private VideoPlayerForm _videoPlayerForm;
+        private SetTimes _gameTimes;
 
         public Database DatabaseGame
         {
@@ -49,12 +50,14 @@ namespace Scoreboard.Forms
         public GameForm(ScoreboardForm parFormScoreBoard)
         {
             _databaseGame = new Database();
+            _gameTimes = new SetTimes(this);
             InitializeComponent();
             _formScoreBoard = parFormScoreBoard;
-            SetTime(MatchMinDefault,MatchSecDefault);
+            SetTime(_gameTimes.PeriodLength.Minutes,_gameTimes.PeriodLength.Seconds);
             _timer = ResetTimer();
             _timerPenalty = ResetTimer();
             _timeoutTimer = ResetTimer();
+            StartPosition=FormStartPosition.CenterScreen;
         }
 
         private void GameForm_Load(object sender, EventArgs e)
@@ -873,18 +876,6 @@ namespace Scoreboard.Forms
             if (!_videoPlayerForm.IsDisposed) _videoPlayerForm.Dispose();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string path = null;
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Video Files(*.mp4)|*.mp4";  
-            if (open.ShowDialog() == DialogResult.OK) {
-
-                path = open.FileName;
-            }
-            PlayVideo(path);
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (adsDBV.Text.Length > 0) PlayVideo(adsDBV.Text);
@@ -1052,5 +1043,9 @@ namespace Scoreboard.Forms
             videoPath2.SelectAll();
         }
 
+        private void timeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _gameTimes.Show(this);
+        }
     }
 }
