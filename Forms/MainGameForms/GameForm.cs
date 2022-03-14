@@ -13,12 +13,14 @@ namespace Scoreboard.Forms
     {
         private const int MaxPenalties = 4;
         private const int TwoTeams = 2;
-        //private const int TimeoutMinDefault = 1;
-        //private const int TimeoutSecDefault = 0;
-        //private const int MatchMinDefault = 0;
-        //private const int MatchSecDefault = 10;
+
 
         private ScoreboardForm _formScoreBoard;
+        private Database _databaseGame;
+        private VideoPlayerForm _videoPlayerForm;
+        private SetTimes _gameTimes;
+
+
         private int _team1Goals = 0;
         private int _team2Goals =0;
         private int _period = 1;
@@ -26,19 +28,21 @@ namespace Scoreboard.Forms
         private string _team2Name;
         private int _secondsT = 0;
         private int _minutesT = 0;
-        //private int _breakMinutes = 0;
-        //private int _breakSeconds = 5;
+
+        private bool _breakRunning = false;
+        private bool _periodEnd = false;
+
         private int[][] _penalty;
+        private int[][] _timeouts;
+
         private Timer _timer = null;
         private Timer _timerPenalty = null;
-        private bool _periodEnd = false;
         private Timer _timeoutTimer = null;
-        private int[][] _timeouts;
-        private bool _breakRunning = false;
+        
+        
+        
 
-        private Database _databaseGame;
-        private VideoPlayerForm _videoPlayerForm;
-        private SetTimes _gameTimes;
+        
 
         public Database DatabaseGame
         {
