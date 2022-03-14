@@ -26,8 +26,8 @@ namespace Scoreboard.Forms
         private string _team2Name;
         private int _secondsT = 0;
         private int _minutesT = 0;
-        private int _breakMinutes = 0;
-        private int _breakSeconds = 5;
+        //private int _breakMinutes = 0;
+        //private int _breakSeconds = 5;
         private int[][] _penalty;
         private Timer _timer = null;
         private Timer _timerPenalty = null;
@@ -370,11 +370,11 @@ namespace Scoreboard.Forms
 
             if (_minutesT == 0 && _secondsT == 0)
             {
+                StopTime();
                 _timer.Enabled = false;
                 if (!_periodEnd)
                 {
                     _periodEnd = true;
-                    StopTime();
                 }
                 else
                 {
@@ -393,7 +393,6 @@ namespace Scoreboard.Forms
             {
                 _timer.Stop();
                 _timer.Enabled = false;
-                ResetTimer();
                 StopPenalty();
             }
         }
@@ -514,6 +513,7 @@ namespace Scoreboard.Forms
         {
             if (!_timerPenalty.Enabled && !_periodEnd && _timer.Enabled)
             {
+                _timerPenalty = ResetTimer();
                 _timerPenalty.Tick += new EventHandler(DisplayTimePenalty);
                 _timerPenalty.Enabled = true;
                 _timerPenalty.Start();
@@ -660,7 +660,7 @@ namespace Scoreboard.Forms
 
         private void startTimeoutT1_Click(object sender, EventArgs e)
         {
-            if (!_timeoutTimer.Enabled && (_timeouts[0][0] > 0 || _timeouts[0][1] > 0))
+            if (!_timeoutTimer.Enabled && (_timeouts[0][0] > 0 || _timeouts[0][1] > 0) && !_breakRunning)
             {
                 StartTimeout(1);
                 _timeoutTimer.Enabled = true;
@@ -668,7 +668,7 @@ namespace Scoreboard.Forms
         }
         private void startTimeoutT2_Click(object sender, EventArgs e)
         {
-            if (!_timeoutTimer.Enabled && (_timeouts[1][0] > 0 || _timeouts[1][1] > 0))
+            if (!_timeoutTimer.Enabled && (_timeouts[1][0] > 0 || _timeouts[1][1] > 0) && !_breakRunning)
             {
                 StartTimeout(2);
                 _timeoutTimer.Enabled = true;
@@ -760,10 +760,10 @@ namespace Scoreboard.Forms
 
         private void startBreak_Click(object sender, EventArgs e)
         {
-            if (_periodEnd && !_breakRunning && !_timer.Enabled && (_period+1 < 4))
+            if (_periodEnd && !_breakRunning && !_timer.Enabled && (_period < 3))
             {
-                _minutesT = _breakMinutes;
-                _secondsT = _breakSeconds;
+                _minutesT = _gameTimes.BreakLength.Minutes;
+                _secondsT = _gameTimes.BreakLength.Seconds;
                 _timer = ResetTimer();
                 _timer.Tick += DisplayTimeTimer;
                 _timer.Enabled = true;
@@ -781,8 +781,8 @@ namespace Scoreboard.Forms
             if (_breakRunning && _timer.Enabled)
             {
                 _timer.Stop();
-                _minutesT = _breakMinutes;
-                _secondsT = _breakSeconds;
+                _minutesT = _gameTimes.BreakLength.Minutes;
+                _secondsT = _gameTimes.BreakLength.Seconds;
                 _breakRunning = false;
                 _timer.Enabled = false;
                 _formScoreBoard.SetTime(_minutesT,_secondsT);

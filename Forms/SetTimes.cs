@@ -123,9 +123,9 @@ namespace Scoreboard.Forms
                 {
                     upDown.Value = 0;
                 }
-                else if (upDown.Value > 60)
+                else if (upDown.Value > 59)
                 {
-                    upDown.Value = 60;
+                    upDown.Value = 59;
                 }
             }
         }

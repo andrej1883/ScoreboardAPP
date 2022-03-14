@@ -126,7 +126,7 @@
             // 
             this.preMatchInputM.Location = new System.Drawing.Point(70, 186);
             this.preMatchInputM.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -138,7 +138,7 @@
             // 
             this.periodLInputM.Location = new System.Drawing.Point(70, 68);
             this.periodLInputM.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -150,7 +150,7 @@
             // 
             this.breakLInputM.Location = new System.Drawing.Point(70, 107);
             this.breakLInputM.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -162,7 +162,7 @@
             // 
             this.timeoutLInputM.Location = new System.Drawing.Point(70, 146);
             this.timeoutLInputM.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -174,7 +174,7 @@
             // 
             this.shortPenaltyInputM.Location = new System.Drawing.Point(70, 226);
             this.shortPenaltyInputM.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -186,7 +186,7 @@
             // 
             this.longPenaltyInputM.Location = new System.Drawing.Point(70, 265);
             this.longPenaltyInputM.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -218,7 +218,7 @@
             // 
             this.longPenaltyInputS.Location = new System.Drawing.Point(208, 265);
             this.longPenaltyInputS.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -230,7 +230,7 @@
             // 
             this.shortPenaltyInputS.Location = new System.Drawing.Point(208, 226);
             this.shortPenaltyInputS.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -242,7 +242,7 @@
             // 
             this.timeoutLInputS.Location = new System.Drawing.Point(208, 146);
             this.timeoutLInputS.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -254,7 +254,7 @@
             // 
             this.breakLInputS.Location = new System.Drawing.Point(208, 107);
             this.breakLInputS.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -266,7 +266,7 @@
             // 
             this.periodLInputS.Location = new System.Drawing.Point(208, 68);
             this.periodLInputS.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -278,7 +278,7 @@
             // 
             this.preMatchInputS.Location = new System.Drawing.Point(208, 186);
             this.preMatchInputS.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
