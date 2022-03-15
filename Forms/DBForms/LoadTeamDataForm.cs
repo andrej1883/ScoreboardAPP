@@ -1,10 +1,9 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
-using System.Xml.Serialization;
-using Scoreboard.Classes;
+using Scoreboard.Classes.Database;
+using Scoreboard.Forms.MainGameForms;
 
-namespace Scoreboard.Forms
+namespace Scoreboard.Forms.DBForms
 {
     public partial class LoadTeamDataForm : Form
     {

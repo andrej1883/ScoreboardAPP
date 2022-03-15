@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Scoreboard.Classes
 {
@@ -48,6 +44,30 @@ namespace Scoreboard.Classes
             }
         }
 
+        public void SubtractTime(Time parTime)
+        {
+            Time help = this;
+            if (IsValidTime(parTime))
+            {
+                if (help.Seconds < parTime.Seconds && help.Minutes-1 >= 0)
+                {
+                    help.Minutes--;
+                    help.Seconds += 60;
+                    help.Minutes -= parTime.Minutes;
+                    help.Seconds -= parTime.Seconds;
+                    if (IsValidTime(help))
+                    {
+                        _minutes = help.Minutes;
+                        _seconds = help.Seconds;
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Subtract time invalid operation!");
+                    }
+                }
+            }
+        }
+
 
         public bool IsValidTime(Time parTime)
         {
@@ -59,7 +79,9 @@ namespace Scoreboard.Classes
             return false;
         }
 
-
-
+        public override string ToString()
+        {
+            return $"{_minutes}{"_"}{_seconds}";
+        }
     }
 }

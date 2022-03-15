@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Scoreboard.Classes
+namespace Scoreboard.Classes.Database
 {
     [Serializable]
     public class Database

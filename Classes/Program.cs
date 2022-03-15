@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Scoreboard.Forms;
+using Scoreboard.Forms.MainGameForms;
 
 namespace Scoreboard.Classes
 {

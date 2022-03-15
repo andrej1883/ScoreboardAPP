@@ -1,13 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Scoreboard.Classes
+﻿namespace Scoreboard.Classes.GameStatistics
 {
-    public class MatchEvent
+    public struct MatchEvent
     {
+        private string _eventName;
+        private string _eventInfo;
 
+        public string EventName
+        {
+            get => _eventName;
+            set => _eventName = value;
+        }
+
+        public string EventInfo
+        {
+            get => _eventInfo;
+            set => _eventInfo = value;
+        }
     }
 }

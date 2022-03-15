@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 
-namespace Scoreboard.Forms
+namespace Scoreboard.Forms.MainGameForms
 {
     public partial class ScoreboardForm : Form
     {

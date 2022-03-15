@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Scoreboard.Forms;
 
-namespace Scoreboard.Classes
+namespace Scoreboard.Classes.Database
 {
     [Serializable]
     public class Team

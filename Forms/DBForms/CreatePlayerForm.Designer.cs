@@ -1,4 +1,4 @@
-﻿namespace Scoreboard.Forms
+﻿namespace Scoreboard.Forms.DBForms
 {
     partial class CreatePlayerForm
     {

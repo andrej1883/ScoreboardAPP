@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using Scoreboard.Classes;
+using Scoreboard.Classes.Database;
+using Scoreboard.Classes.GameStatistics;
+using Scoreboard.Forms.DBForms;
 using Timer = System.Windows.Forms.Timer;
 
-namespace Scoreboard.Forms
+namespace Scoreboard.Forms.MainGameForms
 {
     public partial class GameForm : Form
     {
@@ -19,13 +20,14 @@ namespace Scoreboard.Forms
         private Database _databaseGame;
         private VideoPlayerForm _videoPlayerForm;
         private SetTimes _gameTimes;
+        private MatchStatistics _matchStats;
 
 
         private int _team1Goals = 0;
         private int _team2Goals =0;
         private int _period = 1;
-        private string _team1Name;
-        private string _team2Name;
+        private string _team1Name = "Team1";
+        private string _team2Name = "Team2";
         private int _secondsT = 0;
         private int _minutesT = 0;
 
@@ -55,6 +57,8 @@ namespace Scoreboard.Forms
         {
             _databaseGame = new Database();
             _gameTimes = new SetTimes(this);
+            _matchStats = new MatchStatistics(_team1Name, _team2Name);
+
             InitializeComponent();
             _formScoreBoard = parFormScoreBoard;
             SetTime(_gameTimes.PeriodLength.Minutes,_gameTimes.PeriodLength.Seconds);
@@ -80,6 +84,7 @@ namespace Scoreboard.Forms
                 _timeouts[i] = new int[2];
                 SetTimeoutLength(i+1,_gameTimes.TimeoutLength.Minutes,_gameTimes.TimeoutLength.Seconds);
             }
+            InitBoards();
         }
 
         private Timer ResetTimer()
@@ -229,7 +234,7 @@ namespace Scoreboard.Forms
 
         private void periodMinus_Click(object sender, EventArgs e)
         {
-            if (_period > 0)
+            if (_period > 1)
             {
                 _period--;
                 UpdatePeriod();
@@ -349,6 +354,7 @@ namespace Scoreboard.Forms
                 _timer.Tick += DisplayTimeTimer;
                 _timer.Enabled = true;
                 _timer.Start();
+                _matchStats.CreateStartPeriodEvent(_period);
                 StartPenalty();
             }
         }

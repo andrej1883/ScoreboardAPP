@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using Scoreboard.Classes;
+using Scoreboard.Classes.Database;
 
-namespace Scoreboard.Forms
+namespace Scoreboard.Forms.DBForms
 {
     public partial class CreateTeamForm : Form
     {

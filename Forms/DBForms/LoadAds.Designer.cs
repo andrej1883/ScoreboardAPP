@@ -1,4 +1,6 @@
-﻿namespace Scoreboard.Forms
+﻿using Scoreboard.Classes.Database;
+
+namespace Scoreboard.Forms.DBForms
 {
     partial class LoadAds
     {
@@ -96,11 +98,11 @@
             // 
             // databaseBindingSource
             // 
-            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database);
+            this.databaseBindingSource.DataSource = typeof(Database);
             // 
             // databaseBindingSource1
             // 
-            this.databaseBindingSource1.DataSource = typeof(Scoreboard.Classes.Database);
+            this.databaseBindingSource1.DataSource = typeof(Database);
             // 
             // advListBindingSource
             // 

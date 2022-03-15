@@ -1,4 +1,6 @@
-﻿namespace Scoreboard.Forms
+﻿using Scoreboard.Classes.Database;
+
+namespace Scoreboard.Forms.DBForms
 {
     partial class LoadTeamDataForm
     {
@@ -86,7 +88,7 @@
             // 
             // databaseBindingSource
             // 
-            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database);
+            this.databaseBindingSource.DataSource = typeof(Database);
             // 
             // AddTeam
             // 

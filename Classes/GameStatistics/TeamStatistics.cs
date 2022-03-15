@@ -1,4 +1,4 @@
-﻿namespace Scoreboard.Classes
+﻿namespace Scoreboard.Classes.GameStatistics
 {
     public struct TeamStatistics
     {

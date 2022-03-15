@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Scoreboard.Classes;
+using Scoreboard.Forms.MainGameForms;
 
 namespace Scoreboard.Forms
 {

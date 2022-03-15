@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Scoreboard.Forms
+namespace Scoreboard.Classes.Database
 {
     [Serializable]
     public class Player
