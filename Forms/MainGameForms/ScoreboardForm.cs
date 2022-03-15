@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Scoreboard.Forms.MainGameForms
@@ -239,6 +240,7 @@ namespace Scoreboard.Forms.MainGameForms
                 var bounds = Screen.AllScreens[1].Bounds;
                 _instance.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
                 _instance.StartPosition = FormStartPosition.Manual;
+                _instance.TopMost = true;
             }
             return _instance;
         }

@@ -728,14 +728,14 @@
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.timeToolStripMenuItem.Text = "Time";
             this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
             // appearanceToolStripMenuItem
             // 
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.appearanceToolStripMenuItem.Text = "Appearance";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
             // 
@@ -806,7 +806,7 @@
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(145, 23);
             this.createBtn.TabIndex = 72;
-            this.createBtn.Text = "Create ScoreBoard";
+            this.createBtn.Text = "Show ScoreBoard";
             this.createBtn.UseVisualStyleBackColor = true;
             this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
             // 

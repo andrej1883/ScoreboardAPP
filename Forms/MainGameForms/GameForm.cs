@@ -55,6 +55,7 @@ namespace Scoreboard.Forms.MainGameForms
 
         public GameForm(ScoreboardForm parFormScoreBoard)
         {
+            _videoPlayerForm = new VideoPlayerForm();
             _databaseGame = new Database();
             _gameTimes = new SetTimes(this);
             _matchStats = new MatchStatistics(_team1Name, _team2Name);
@@ -345,8 +346,7 @@ namespace Scoreboard.Forms.MainGameForms
             _formScoreBoard.ShowLogo(false);
         }
 
-
-        private void startTime_Click(object sender, EventArgs e)
+        private void StartTimer()
         {
             if (!_timer.Enabled && !_periodEnd && (_minutesT > 0 || _secondsT > 0) && (!_timeoutTimer.Enabled))
             {
@@ -357,6 +357,11 @@ namespace Scoreboard.Forms.MainGameForms
                 _matchStats.CreateStartPeriodEvent(_period);
                 StartPenalty();
             }
+        }
+
+        private void startTime_Click(object sender, EventArgs e)
+        {
+            StartTimer();
         }
 
         private void DisplayTimeTimer(Object myObject, EventArgs myEventArgs)
@@ -385,6 +390,7 @@ namespace Scoreboard.Forms.MainGameForms
                 if (!_periodEnd)
                 {
                     _periodEnd = true;
+                    MessageBox.Show(@"Period ended" , @"Timer stopped", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -393,6 +399,7 @@ namespace Scoreboard.Forms.MainGameForms
                     _period++;
                     SetTime(_gameTimes.PeriodLength.Minutes,_gameTimes.PeriodLength.Seconds);
                     InitBoards();
+                    MessageBox.Show(@"Break ended" , @"Timer stopped", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -404,6 +411,7 @@ namespace Scoreboard.Forms.MainGameForms
                 _timer.Stop();
                 _timer.Enabled = false;
                 StopPenalty();
+                
             }
         }
 
@@ -620,16 +628,9 @@ namespace Scoreboard.Forms.MainGameForms
             _penalty[3][2] = (int) p2T2Seconds.Value;
         }
 
-        private void createBtn_Click(object sender, EventArgs e)
+        private void ShowScoreBoard()
         {
             _formScoreBoard = ScoreboardForm.GetInstance();
-            var area = Screen.AllScreens[1].Bounds;
-            _formScoreBoard.SetSize(area.Width,area.Height);
-            var location = area.Location;
-            location.Offset((area.Width - _formScoreBoard.Width) / 2, (area.Height - _formScoreBoard.Height) / 2);
-            _formScoreBoard.Location = location;
-            _formScoreBoard.TopMost = true;
-
             if (!_formScoreBoard.IsActive)
             {
                 _formScoreBoard.Show();
@@ -644,7 +645,12 @@ namespace Scoreboard.Forms.MainGameForms
             InitBoards();
         }
 
-        private void closeScoreboardBtn_Click(object sender, EventArgs e)
+        private void createBtn_Click(object sender, EventArgs e)
+        {
+            ShowScoreBoard();
+        }
+
+        private void CloseScoreBoard()
         {
             if (_formScoreBoard != null)
             {
@@ -652,6 +658,11 @@ namespace Scoreboard.Forms.MainGameForms
                 _formScoreBoard.ResetInstance();
                 _formScoreBoard.IsActive = false;
             }
+        }
+
+        private void closeScoreboardBtn_Click(object sender, EventArgs e)
+        {
+            CloseScoreBoard();
         }
 
         private void appearanceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -840,6 +851,7 @@ namespace Scoreboard.Forms.MainGameForms
             if (_databaseGame != null)
             {
                 Team selected = (Team)TeamsDBT1.SelectedItem;
+                if (selected == null) return;   
                 _team1Name = selected.Name;
                 team1NameBox.Text = _team1Name;
                 _formScoreBoard.SetTeamName(true,_team1Name);
@@ -857,6 +869,7 @@ namespace Scoreboard.Forms.MainGameForms
             if (_databaseGame != null)
             {
                 Team selected = (Team) TeamsDBT2.SelectedItem;
+                if (selected == null) return; 
                 _team2Name = selected.Name;
                 team2NameBox.Text = _team2Name;
                 _formScoreBoard.SetTeamName(false, _team2Name);
@@ -871,12 +884,17 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void PlayVideo(string parPath)
         {
-            if (parPath != null && parPath.Length > 0)
+            if (File.Exists(parPath))
             {
-                _videoPlayerForm = new VideoPlayerForm();
+                //_videoPlayerForm = new VideoPlayerForm();
                 _videoPlayerForm.VideoPath = parPath;
                 _videoPlayerForm.Show();
                 _videoPlayerForm.PlayVideo();
+                _videoPlayerForm.TopMost = true;
+            }
+            else
+            {
+                MessageBox.Show(@"File not found! Please select proper path to file!" , @"Video player path not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -884,13 +902,25 @@ namespace Scoreboard.Forms.MainGameForms
         {
             if (_videoPlayerForm == null) return;
 
-            if (!_videoPlayerForm.IsDisposed) _videoPlayerForm.Dispose();
+            if (!_videoPlayerForm.IsDisposed)
+            {
+                _videoPlayerForm.MediaPlayer.close();
+                _videoPlayerForm.Hide();
+                _videoPlayerForm.TopMost = false;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (adsDBV.Text.Length > 0) PlayVideo(adsDBV.Text);
-
+            Advertisment selected = (Advertisment)adsDBV.SelectedItem;
+            if (selected != null && File.Exists(selected.Path))
+            {
+                PlayVideo(selected.Path);
+            }
+            else
+            {
+                MessageBox.Show(@"File not found! Please select proper path to file!" , @"Video player path not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -914,7 +944,7 @@ namespace Scoreboard.Forms.MainGameForms
             open.Filter = "Video Files(*.mp4)|*.mp4";  
             open.InitialDirectory = Environment.CurrentDirectory+ "\\Videos\\Intro";
             if (open.ShowDialog() == DialogResult.OK) {
-                if (_videoPlayerForm == null) _videoPlayerForm = new VideoPlayerForm();
+                //if (_videoPlayerForm == null) _videoPlayerForm = new VideoPlayerForm();
                 _videoPlayerForm.VideoPath = open.FileName;
                 videoPath2.Text = _videoPlayerForm.VideoPath;
             }
@@ -926,7 +956,7 @@ namespace Scoreboard.Forms.MainGameForms
             open.Filter = "Video Files(*.mp4)|*.mp4";  
             open.InitialDirectory = Environment.CurrentDirectory+ "\\Videos\\Intro";
             if (open.ShowDialog() == DialogResult.OK) {
-                if (_videoPlayerForm == null) _videoPlayerForm = new VideoPlayerForm();
+                //if (_videoPlayerForm == null) _videoPlayerForm = new VideoPlayerForm();
                 _videoPlayerForm.VideoPath = open.FileName;
                 videoPath1.Text = _videoPlayerForm.VideoPath;
             }
@@ -1010,7 +1040,7 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void dropToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _databaseGame = null;
+            _databaseGame = new Database();
             TeamsDBT1.DataSource = null;
             _team1Name = null;
             videoPath1.Text =null;
