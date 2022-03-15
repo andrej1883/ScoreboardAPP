@@ -5,6 +5,14 @@
         private string _name;
         private int _goals;
         private int _shots;
+        private int _faceOffs;
+
+        public int FaceOffs
+        {
+            get => _faceOffs;
+            set => _faceOffs = value;
+        }
+
         private Time _penalTime;
 
         public string Name

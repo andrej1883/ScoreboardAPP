@@ -1053,6 +1053,7 @@ namespace Scoreboard.Forms.MainGameForms
             videoPath2.Text =null;
             team2NameBox.Text = null;
             logo2Path.Text = null;
+            adsDBV.DataSource = null;
             _formScoreBoard.SetTeamName(false,_team2Name);
             logo2.Dispose();
             InitBoards();
@@ -1087,6 +1088,74 @@ namespace Scoreboard.Forms.MainGameForms
         private void timeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _gameTimes.Show();
+        }
+
+        private void plusShotsT1_Click(object sender, EventArgs e)
+        {
+            _matchStats.TeamStats[0].Shots++;
+            _formScoreBoard.SetShots(true,_matchStats.TeamStats[0].Shots);
+            shotsT1.Text = _matchStats.TeamStats[0].Shots.ToString();
+        }
+
+        private void plusShotsT2_Click(object sender, EventArgs e)
+        {
+            _matchStats.TeamStats[1].Shots++;
+            _formScoreBoard.SetShots(false,_matchStats.TeamStats[1].Shots);
+            shotsT2.Text = _matchStats.TeamStats[1].Shots.ToString();
+        }
+
+        private void plusFaceoffsT1_Click(object sender, EventArgs e)
+        {
+            _matchStats.TeamStats[0].FaceOffs++;
+            _formScoreBoard.SetFaceOff(true,_matchStats.TeamStats[0].FaceOffs);
+            faceoffsT1.Text = _matchStats.TeamStats[0].FaceOffs.ToString();
+        }
+
+        private void plusFaceoffsT2_Click(object sender, EventArgs e)
+        {
+            _matchStats.TeamStats[1].FaceOffs++;
+            _formScoreBoard.SetFaceOff(false,_matchStats.TeamStats[1].FaceOffs);
+            faceoffsT2.Text = _matchStats.TeamStats[1].FaceOffs.ToString();
+        }
+
+        private void minusShotsT1_Click(object sender, EventArgs e)
+        {
+            if (_matchStats.TeamStats[0].Shots > 0)
+            {
+                _matchStats.TeamStats[0].Shots --;
+                _formScoreBoard.SetShots(true,_matchStats.TeamStats[0].Shots);
+                shotsT1.Text = _matchStats.TeamStats[0].Shots.ToString();
+            }
+        }
+
+        private void minusFaceoffsT1_Click(object sender, EventArgs e)
+        {
+            if (_matchStats.TeamStats[0].FaceOffs > 0)
+            {
+                _matchStats.TeamStats[0].FaceOffs --;
+                _formScoreBoard.SetFaceOff(true,_matchStats.TeamStats[0].FaceOffs);
+                faceoffsT1.Text = _matchStats.TeamStats[0].FaceOffs.ToString();
+            }
+        }
+
+        private void minusShotsT2_Click(object sender, EventArgs e)
+        {
+            if (_matchStats.TeamStats[1].Shots > 0)
+            {
+                _matchStats.TeamStats[1].Shots --;
+                _formScoreBoard.SetShots(false,_matchStats.TeamStats[1].Shots);
+                shotsT2.Text = _matchStats.TeamStats[1].Shots.ToString();
+            }
+        }
+
+        private void minusFaceoffsT2_Click(object sender, EventArgs e)
+        {
+            if (_matchStats.TeamStats[1].FaceOffs > 0)
+            {
+                _matchStats.TeamStats[1].FaceOffs --;
+                _formScoreBoard.SetFaceOff(false,_matchStats.TeamStats[1].FaceOffs);
+                faceoffsT2.Text = _matchStats.TeamStats[1].FaceOffs.ToString();
+            }
         }
     }
 }

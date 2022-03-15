@@ -136,6 +136,8 @@ namespace Scoreboard.Classes.GameStatistics
                 _teamStats[i].Goals = 0;
                 _teamStats[i].Shots = 0;
                 _teamStats[i].PenalTime = zero;
+                _teamStats[i].FaceOffs = 0;
+                _teamStats[i].Shots = 0;
             }
         }
     }

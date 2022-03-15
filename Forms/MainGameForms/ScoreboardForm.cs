@@ -269,6 +269,30 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
+        public void SetFaceOff(bool team1, int parValue)
+        {
+            if (team1)
+            {
+                faceOffsT1.Text = parValue.ToString();
+            }
+            else
+            {
+                faceOffsT2.Text = parValue.ToString();
+            }
+        }
+
+        public void SetShots(bool team1, int parValue)
+        {
+            if (team1)
+            {
+                shotsT1.Text = parValue.ToString();
+            }
+            else
+            {
+                shotsT2.Text = parValue.ToString();
+            }
+        }
+
         public void SetSize(int width, int height)
         {
             _instance.Height = height;
