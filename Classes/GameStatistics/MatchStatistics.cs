@@ -60,8 +60,9 @@ namespace Scoreboard.Classes.GameStatistics
             ExportEvent(help);
         }
 
-        public void CreateFaceOffEvent(int parTeam)
+        public void CreateFaceOffEvent(int parTeam, Time parTime)
         {
+            UpdateTime(parTime);
             TeamStatistics team = _teamStats[parTeam - 1];
             string nameEvent = _actualTime.ToString();
             string infoEvent = team.Name + " won face-off!"  ;

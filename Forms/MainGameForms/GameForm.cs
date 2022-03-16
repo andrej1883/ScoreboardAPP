@@ -168,13 +168,13 @@ namespace Scoreboard.Forms.MainGameForms
             t2.SubtractTime(t1);
             if (team == 1)
             {
-                if (_team1 == null || _team1.Players.Count < 2) return;
+                if (_team1 == null || _team1.Players.Count < 6) return;
                 SelectPlayerGoal varGoal = new SelectPlayerGoal(1, _matchStats, _team1.Players,t2);
                 varGoal.Show();
             }
             if (team == 2)
             {
-                if (_team2 == null || _team2.Players.Count < 2) return;
+                if (_team2 == null || _team2.Players.Count < 6) return;
                 SelectPlayerGoal varGoal = new SelectPlayerGoal(2, _matchStats, _team2.Players,t2);
                 varGoal.Show();
             }
@@ -1156,16 +1156,28 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void plusFaceoffsT1_Click(object sender, EventArgs e)
         {
+            var t1 = new Time() {Minutes = _minutesT, Seconds = _secondsT};
+            var t2 = _gameTimes.PeriodLength;
+            t2.SubtractTime(t1);
+
             _matchStats.TeamStats[0].FaceOffs++;
             _formScoreBoard.SetFaceOff(true,_matchStats.TeamStats[0].FaceOffs);
             faceoffsT1.Text = _matchStats.TeamStats[0].FaceOffs.ToString();
+
+            _matchStats.CreateFaceOffEvent(1,t2);
         }
 
         private void plusFaceoffsT2_Click(object sender, EventArgs e)
         {
+            var t1 = new Time() {Minutes = _minutesT, Seconds = _secondsT};
+            var t2 = _gameTimes.PeriodLength;
+            t2.SubtractTime(t1);
+
             _matchStats.TeamStats[1].FaceOffs++;
             _formScoreBoard.SetFaceOff(false,_matchStats.TeamStats[1].FaceOffs);
             faceoffsT2.Text = _matchStats.TeamStats[1].FaceOffs.ToString();
+
+            _matchStats.CreateFaceOffEvent(2,t2);
         }
 
         private void minusShotsT1_Click(object sender, EventArgs e)
