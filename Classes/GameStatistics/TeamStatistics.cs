@@ -6,14 +6,13 @@
         private int _goals;
         private int _shots;
         private int _faceOffs;
+        private Time _penalTime;
 
         public int FaceOffs
         {
             get => _faceOffs;
             set => _faceOffs = value;
         }
-
-        private Time _penalTime;
 
         public string Name
         {

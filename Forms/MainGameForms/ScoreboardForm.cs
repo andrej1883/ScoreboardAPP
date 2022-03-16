@@ -383,6 +383,7 @@ namespace Scoreboard.Forms.MainGameForms
                     throw new ArgumentException("Index is out of range");
             }
         }
+
         public void SetPenalty(int position, int number, int minutes, int seconds)
         {
             string sMinutes = CheckZero(minutes);

@@ -26,13 +26,14 @@ namespace Scoreboard.Forms.MainGameForms
 
         private Team _team1;
         private Team _team2;
-        private int _team1Goals = 0;
-        private int _team2Goals =0;
-        private int _period = 1;
-        private string _team1Name = "Team1";
-        private string _team2Name = "Team2";
+        //private int _team1Goals = 0;
+        //private int _team2Goals =0;
+        //private string _team1Name = "Team1";
+        //private string _team2Name = "Team2";
+
         private int _secondsT = 0;
         private int _minutesT = 0;
+        private int _period = 1;
 
         private bool _breakRunning = false;
         private bool _periodEnd = false;
@@ -61,7 +62,7 @@ namespace Scoreboard.Forms.MainGameForms
             _videoPlayerForm = new VideoPlayerForm();
             _databaseGame = new Database();
             _gameTimes = new SetTimes(this);
-            _matchStats = new MatchStatistics(_team1Name, _team2Name);
+            _matchStats = new MatchStatistics("Team1", "Team2");
 
             InitializeComponent();
             _formScoreBoard = parFormScoreBoard;
@@ -105,10 +106,10 @@ namespace Scoreboard.Forms.MainGameForms
             minutesTime.Text = _minutesT.ToString();
             secondsTime.Text = _secondsT.ToString();
             _formScoreBoard.SetTime(_minutesT,_secondsT);
-            goalsTeam1.Text = _team1Goals.ToString();
-            _formScoreBoard.SetGoal(true,_team1Goals);
-            goalsTeam2.Text = _team2Goals.ToString();
-            _formScoreBoard.SetGoal(false,_team1Goals);
+            goalsTeam1.Text = _matchStats.TeamStats[0].Goals.ToString();
+            _formScoreBoard.SetGoal(true,_matchStats.TeamStats[0].Goals);
+            goalsTeam2.Text = _matchStats.TeamStats[1].Goals.ToString();
+            _formScoreBoard.SetGoal(false,_matchStats.TeamStats[1].Goals);
             for (int i = 0; i < _penalty.Length; i++)
             {
                 UpdatePenaltyGf(i+1,_penalty[i][0],_penalty[i][1],_penalty[i][2]);
@@ -118,7 +119,6 @@ namespace Scoreboard.Forms.MainGameForms
             {
                 UpdateTimeoutGf(i+1,_timeouts[i][0],_timeouts[i][1]);
                 _formScoreBoard.SetTimeout(i+1,_timeouts[i][0],_timeouts[i][1]);
-
             }
         }
 
@@ -153,11 +153,11 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void minusGoal1_Click(object sender, EventArgs e)
         {
-            if (_team1Goals > 0)
+            if (_matchStats.TeamStats[0].Goals > 0)
             {
-                _team1Goals --;
-                _formScoreBoard.SetGoal(true,_team1Goals);
-                goalsTeam1.Text = _team1Goals.ToString();
+                _matchStats.TeamStats[0].Goals --;
+                _formScoreBoard.SetGoal(true,_matchStats.TeamStats[0].Goals);
+                goalsTeam1.Text = _matchStats.TeamStats[0].Goals.ToString();
             }
         }
 
@@ -168,13 +168,13 @@ namespace Scoreboard.Forms.MainGameForms
             t2.SubtractTime(t1);
             if (team == 1)
             {
-                if (_team1 == null) return;
+                if (_team1 == null || _team1.Players.Count < 2) return;
                 SelectPlayerGoal varGoal = new SelectPlayerGoal(1, _matchStats, _team1.Players,t2);
                 varGoal.Show();
             }
             if (team == 2)
             {
-                if (_team2 == null) return;
+                if (_team2 == null || _team2.Players.Count < 2) return;
                 SelectPlayerGoal varGoal = new SelectPlayerGoal(2, _matchStats, _team2.Players,t2);
                 varGoal.Show();
             }
@@ -183,28 +183,28 @@ namespace Scoreboard.Forms.MainGameForms
         private void plusGoal1_Click(object sender, EventArgs e)
         {
             StopTime();
-            _team1Goals ++;
-            _formScoreBoard.SetGoal(true,_team1Goals);
-            goalsTeam1.Text = _team1Goals.ToString();
+            _matchStats.TeamStats[0].Goals ++;
+            _formScoreBoard.SetGoal(true,_matchStats.TeamStats[0].Goals);
+            goalsTeam1.Text = _matchStats.TeamStats[0].Goals.ToString();
             GoalSelectPlayer(1);
         }
 
         private void minusGoal2_Click(object sender, EventArgs e)
         {
-            if (_team2Goals > 0)
+            if (_matchStats.TeamStats[1].Goals > 0)
             {
-                _team2Goals --;
-                _formScoreBoard.SetGoal(false,_team2Goals);
-                goalsTeam2.Text = _team2Goals.ToString();
+                _matchStats.TeamStats[1].Goals --;
+                _formScoreBoard.SetGoal(false,_matchStats.TeamStats[1].Goals);
+                goalsTeam2.Text = _matchStats.TeamStats[1].Goals.ToString();
             }
         }
 
         private void plusGoal2_Click(object sender, EventArgs e)
         {
             StopTime();
-            _team2Goals ++;
-            _formScoreBoard.SetGoal(false,_team2Goals);
-            goalsTeam2.Text = _team2Goals.ToString();
+            _matchStats.TeamStats[1].Goals ++;
+            _formScoreBoard.SetGoal(false,_matchStats.TeamStats[1].Goals);
+            goalsTeam2.Text = _matchStats.TeamStats[1].Goals.ToString();
             GoalSelectPlayer(2);
         }
 
@@ -275,17 +275,22 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
-        private void setTeam1Name_Click(object sender, EventArgs e)
+        private void UpdateTeam1Name()
         {
             if (team1NameBox.Text.Length > 0)
             {
-                _team1Name = team1NameBox.Text;
+                _matchStats.TeamStats[0].Name = team1NameBox.Text;
             }
             else
             {
-                _team1Name = "Team1";
+                _matchStats.TeamStats[0].Name = "Team1";
             }
-            _formScoreBoard.SetTeamName(true,_team1Name);
+            _formScoreBoard.SetTeamName(true, _matchStats.TeamStats[0].Name);
+        }
+
+        private void setTeam1Name_Click(object sender, EventArgs e)
+        {
+            UpdateTeam1Name();
         }
 
         private void UploadLogo(bool team1)
@@ -342,17 +347,22 @@ namespace Scoreboard.Forms.MainGameForms
             _formScoreBoard.ShowLogo(true);
         }
 
-        private void setTeam2Name_Click_1(object sender, EventArgs e)
+        private void UpdateTeam2Name()
         {
             if (team2NameBox.Text.Length > 0)
             {
-                _team2Name = team2NameBox.Text;
+                _matchStats.TeamStats[1].Name = team2NameBox.Text;
             }
             else
             {
-                _team2Name = "Team2";
+                _matchStats.TeamStats[1].Name = "Team2";
             }
-            _formScoreBoard.SetTeamName(false, _team2Name);
+            _formScoreBoard.SetTeamName(false,  _matchStats.TeamStats[1].Name);
+        }
+
+        private void setTeam2Name_Click_1(object sender, EventArgs e)
+        {
+            UpdateTeam2Name();
         }
 
         private void uploadLogoT2_Click(object sender, EventArgs e)
@@ -885,9 +895,8 @@ namespace Scoreboard.Forms.MainGameForms
                 Team selected = (Team) TeamsDBT1.SelectedItem;
                 _team1 = selected;
                 _matchStats.TeamStats[0].Name = _team1.Name;
-                _team1Name = name;
-                team1NameBox.Text = _team1Name;
-                _formScoreBoard.SetTeamName(true,_team1Name);
+                team1NameBox.Text = _team1.Name;
+                _formScoreBoard.SetTeamName(true,_team1.Name);
                 UploadLogo(true,_team1.LogoPath);
                 videoPath1.Text = _team1.VideoPath;
             }
@@ -909,9 +918,10 @@ namespace Scoreboard.Forms.MainGameForms
                 }
                 Team selected = (Team) TeamsDBT2.SelectedItem;
                 if (selected == null) return; 
-                _team2Name = selected.Name;
-                team2NameBox.Text = _team2Name;
-                _formScoreBoard.SetTeamName(false, _team2Name);
+                _team2 = selected;
+                _matchStats.TeamStats[1].Name = selected.Name;
+                team2NameBox.Text =  _matchStats.TeamStats[1].Name;
+                _formScoreBoard.SetTeamName(false,  _matchStats.TeamStats[1].Name);
                 UploadLogo(false, selected.LogoPath);
                 videoPath2.Text = selected.VideoPath;
             }
@@ -1082,19 +1092,19 @@ namespace Scoreboard.Forms.MainGameForms
         {
             _databaseGame = new Database();
             TeamsDBT1.DataSource = null;
-            _team1Name = null;
+            _matchStats.TeamStats[0].Name = null;
             videoPath1.Text =null;
             team1NameBox.Text = null;
             logo1Path.Text = null;
-            _formScoreBoard.SetTeamName(true,_team1Name);
+            _formScoreBoard.SetTeamName(true, _matchStats.TeamStats[0].Name);
             logo1.Dispose();
             TeamsDBT2.DataSource =  null;
-            _team2Name = null;
+            _matchStats.TeamStats[1].Name = null;
             videoPath2.Text =null;
             team2NameBox.Text = null;
             logo2Path.Text = null;
             adsDBV.DataSource = null;
-            _formScoreBoard.SetTeamName(false,_team2Name);
+            _formScoreBoard.SetTeamName(false, _matchStats.TeamStats[1].Name);
             logo2.Dispose();
             InitBoards();
             
