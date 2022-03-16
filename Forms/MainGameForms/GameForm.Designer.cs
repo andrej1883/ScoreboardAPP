@@ -112,21 +112,37 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.plusFaceoffsT2 = new System.Windows.Forms.Button();
             this.cancelVideo2 = new System.Windows.Forms.Button();
+            this.minusFaceoffsT2 = new System.Windows.Forms.Button();
             this.TeamsDBT2 = new System.Windows.Forms.ComboBox();
+            this.faceoffsT2 = new System.Windows.Forms.Label();
             this.playVideo2 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
             this.SetFromDBT2 = new System.Windows.Forms.Button();
             this.videoPath2 = new System.Windows.Forms.TextBox();
             this.cancelTimeoutT2 = new System.Windows.Forms.Button();
+            this.plusShotsT2 = new System.Windows.Forms.Button();
             this.uploadVideoT2 = new System.Windows.Forms.Button();
+            this.minusShotsT2 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
+            this.shotsT2 = new System.Windows.Forms.Label();
             this.startTimeoutT2 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.timeoutT2S = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.timeoutT2M = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.plusShotsT1 = new System.Windows.Forms.Button();
+            this.plusFaceoffsT1 = new System.Windows.Forms.Button();
+            this.minusFaceoffsT1 = new System.Windows.Forms.Button();
+            this.minusShotsT1 = new System.Windows.Forms.Button();
+            this.shotsT1 = new System.Windows.Forms.Label();
+            this.faceoffsT1 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.cancelVideo1 = new System.Windows.Forms.Button();
             this.playVideo1 = new System.Windows.Forms.Button();
@@ -150,22 +166,8 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.plusShotsT1 = new System.Windows.Forms.Button();
-            this.minusShotsT1 = new System.Windows.Forms.Button();
-            this.shotsT1 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.plusFaceoffsT1 = new System.Windows.Forms.Button();
-            this.minusFaceoffsT1 = new System.Windows.Forms.Button();
-            this.faceoffsT1 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.plusFaceoffsT2 = new System.Windows.Forms.Button();
-            this.minusFaceoffsT2 = new System.Windows.Forms.Button();
-            this.faceoffsT2 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.plusShotsT2 = new System.Windows.Forms.Button();
-            this.minusShotsT2 = new System.Windows.Forms.Button();
-            this.shotsT2 = new System.Windows.Forms.Label();
+            this.importToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -750,14 +752,17 @@
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.timeToolStripMenuItem.Text = "Time";
             this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
             // appearanceToolStripMenuItem
             // 
+            this.appearanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importToolStripMenuItem1,
+            this.exportToolStripMenuItem1});
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.appearanceToolStripMenuItem.Text = "Appearance";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
             // 
@@ -804,21 +809,21 @@
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // dropToolStripMenuItem
             // 
             this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
-            this.dropToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dropToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.dropToolStripMenuItem.Text = "Drop";
             this.dropToolStripMenuItem.Click += new System.EventHandler(this.dropToolStripMenuItem_Click);
             // 
@@ -1012,6 +1017,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Team2";
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(209, 545);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(87, 13);
+            this.label26.TabIndex = 102;
+            this.label26.Text = "Face-offs Team2";
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -1020,6 +1034,16 @@
             this.label20.Size = new System.Drawing.Size(107, 13);
             this.label20.TabIndex = 87;
             this.label20.Text = "Select team from DB:";
+            // 
+            // plusFaceoffsT2
+            // 
+            this.plusFaceoffsT2.Location = new System.Drawing.Point(287, 576);
+            this.plusFaceoffsT2.Name = "plusFaceoffsT2";
+            this.plusFaceoffsT2.Size = new System.Drawing.Size(75, 23);
+            this.plusFaceoffsT2.TabIndex = 101;
+            this.plusFaceoffsT2.Text = "+";
+            this.plusFaceoffsT2.UseVisualStyleBackColor = true;
+            this.plusFaceoffsT2.Click += new System.EventHandler(this.plusFaceoffsT2_Click);
             // 
             // cancelVideo2
             // 
@@ -1031,6 +1055,16 @@
             this.cancelVideo2.UseVisualStyleBackColor = true;
             this.cancelVideo2.Click += new System.EventHandler(this.cancelVideo2_Click);
             // 
+            // minusFaceoffsT2
+            // 
+            this.minusFaceoffsT2.Location = new System.Drawing.Point(147, 576);
+            this.minusFaceoffsT2.Name = "minusFaceoffsT2";
+            this.minusFaceoffsT2.Size = new System.Drawing.Size(75, 23);
+            this.minusFaceoffsT2.TabIndex = 100;
+            this.minusFaceoffsT2.Text = "-";
+            this.minusFaceoffsT2.UseVisualStyleBackColor = true;
+            this.minusFaceoffsT2.Click += new System.EventHandler(this.minusFaceoffsT2_Click);
+            // 
             // TeamsDBT2
             // 
             this.TeamsDBT2.FormattingEnabled = true;
@@ -1038,6 +1072,15 @@
             this.TeamsDBT2.Name = "TeamsDBT2";
             this.TeamsDBT2.Size = new System.Drawing.Size(152, 21);
             this.TeamsDBT2.TabIndex = 82;
+            // 
+            // faceoffsT2
+            // 
+            this.faceoffsT2.AutoSize = true;
+            this.faceoffsT2.Location = new System.Drawing.Point(249, 581);
+            this.faceoffsT2.Name = "faceoffsT2";
+            this.faceoffsT2.Size = new System.Drawing.Size(13, 13);
+            this.faceoffsT2.TabIndex = 99;
+            this.faceoffsT2.Text = "0";
             // 
             // playVideo2
             // 
@@ -1048,6 +1091,15 @@
             this.playVideo2.Text = "Play";
             this.playVideo2.UseVisualStyleBackColor = true;
             this.playVideo2.Click += new System.EventHandler(this.playVideo2_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(206, 627);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(108, 13);
+            this.label28.TabIndex = 98;
+            this.label28.Text = "Shots on goal Team2";
             // 
             // SetFromDBT2
             // 
@@ -1077,6 +1129,16 @@
             this.cancelTimeoutT2.UseVisualStyleBackColor = true;
             this.cancelTimeoutT2.Click += new System.EventHandler(this.cancelTimeoutT2_Click);
             // 
+            // plusShotsT2
+            // 
+            this.plusShotsT2.Location = new System.Drawing.Point(287, 659);
+            this.plusShotsT2.Name = "plusShotsT2";
+            this.plusShotsT2.Size = new System.Drawing.Size(75, 23);
+            this.plusShotsT2.TabIndex = 97;
+            this.plusShotsT2.Text = "+";
+            this.plusShotsT2.UseVisualStyleBackColor = true;
+            this.plusShotsT2.Click += new System.EventHandler(this.plusShotsT2_Click);
+            // 
             // uploadVideoT2
             // 
             this.uploadVideoT2.Location = new System.Drawing.Point(287, 247);
@@ -1087,6 +1149,16 @@
             this.uploadVideoT2.UseVisualStyleBackColor = true;
             this.uploadVideoT2.Click += new System.EventHandler(this.uploadVideoT2_Click);
             // 
+            // minusShotsT2
+            // 
+            this.minusShotsT2.Location = new System.Drawing.Point(147, 659);
+            this.minusShotsT2.Name = "minusShotsT2";
+            this.minusShotsT2.Size = new System.Drawing.Size(75, 23);
+            this.minusShotsT2.TabIndex = 96;
+            this.minusShotsT2.Text = "-";
+            this.minusShotsT2.UseVisualStyleBackColor = true;
+            this.minusShotsT2.Click += new System.EventHandler(this.minusShotsT2_Click);
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -1095,6 +1167,15 @@
             this.label17.Size = new System.Drawing.Size(101, 13);
             this.label17.TabIndex = 86;
             this.label17.Text = "Upload Team Video";
+            // 
+            // shotsT2
+            // 
+            this.shotsT2.AutoSize = true;
+            this.shotsT2.Location = new System.Drawing.Point(249, 664);
+            this.shotsT2.Name = "shotsT2";
+            this.shotsT2.Size = new System.Drawing.Size(13, 13);
+            this.shotsT2.TabIndex = 95;
+            this.shotsT2.Text = "0";
             // 
             // startTimeoutT2
             // 
@@ -1185,6 +1266,82 @@
             this.groupBox5.TabIndex = 80;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Team1";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(198, 545);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(87, 13);
+            this.label24.TabIndex = 94;
+            this.label24.Text = "Face-offs Team1";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(195, 627);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(108, 13);
+            this.label22.TabIndex = 90;
+            this.label22.Text = "Shots on goal Team1";
+            // 
+            // plusShotsT1
+            // 
+            this.plusShotsT1.Location = new System.Drawing.Point(276, 659);
+            this.plusShotsT1.Name = "plusShotsT1";
+            this.plusShotsT1.Size = new System.Drawing.Size(75, 23);
+            this.plusShotsT1.TabIndex = 89;
+            this.plusShotsT1.Text = "+";
+            this.plusShotsT1.UseVisualStyleBackColor = true;
+            this.plusShotsT1.Click += new System.EventHandler(this.plusShotsT1_Click);
+            // 
+            // plusFaceoffsT1
+            // 
+            this.plusFaceoffsT1.Location = new System.Drawing.Point(276, 576);
+            this.plusFaceoffsT1.Name = "plusFaceoffsT1";
+            this.plusFaceoffsT1.Size = new System.Drawing.Size(75, 23);
+            this.plusFaceoffsT1.TabIndex = 93;
+            this.plusFaceoffsT1.Text = "+";
+            this.plusFaceoffsT1.UseVisualStyleBackColor = true;
+            this.plusFaceoffsT1.Click += new System.EventHandler(this.plusFaceoffsT1_Click);
+            // 
+            // minusFaceoffsT1
+            // 
+            this.minusFaceoffsT1.Location = new System.Drawing.Point(136, 576);
+            this.minusFaceoffsT1.Name = "minusFaceoffsT1";
+            this.minusFaceoffsT1.Size = new System.Drawing.Size(75, 23);
+            this.minusFaceoffsT1.TabIndex = 92;
+            this.minusFaceoffsT1.Text = "-";
+            this.minusFaceoffsT1.UseVisualStyleBackColor = true;
+            this.minusFaceoffsT1.Click += new System.EventHandler(this.minusFaceoffsT1_Click);
+            // 
+            // minusShotsT1
+            // 
+            this.minusShotsT1.Location = new System.Drawing.Point(136, 659);
+            this.minusShotsT1.Name = "minusShotsT1";
+            this.minusShotsT1.Size = new System.Drawing.Size(75, 23);
+            this.minusShotsT1.TabIndex = 88;
+            this.minusShotsT1.Text = "-";
+            this.minusShotsT1.UseVisualStyleBackColor = true;
+            this.minusShotsT1.Click += new System.EventHandler(this.minusShotsT1_Click);
+            // 
+            // shotsT1
+            // 
+            this.shotsT1.AutoSize = true;
+            this.shotsT1.Location = new System.Drawing.Point(238, 664);
+            this.shotsT1.Name = "shotsT1";
+            this.shotsT1.Size = new System.Drawing.Size(13, 13);
+            this.shotsT1.TabIndex = 87;
+            this.shotsT1.Text = "0";
+            // 
+            // faceoffsT1
+            // 
+            this.faceoffsT1.AutoSize = true;
+            this.faceoffsT1.Location = new System.Drawing.Point(238, 581);
+            this.faceoffsT1.Name = "faceoffsT1";
+            this.faceoffsT1.Size = new System.Drawing.Size(13, 13);
+            this.faceoffsT1.TabIndex = 91;
+            this.faceoffsT1.Text = "0";
             // 
             // label18
             // 
@@ -1412,157 +1569,19 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Advertisement controls";
             // 
-            // label22
+            // importToolStripMenuItem1
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(195, 627);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(108, 13);
-            this.label22.TabIndex = 90;
-            this.label22.Text = "Shots on goal Team1";
+            this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
+            this.importToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem1.Text = "Import";
+            this.importToolStripMenuItem1.Click += new System.EventHandler(this.importToolStripMenuItem1_Click);
             // 
-            // plusShotsT1
+            // exportToolStripMenuItem1
             // 
-            this.plusShotsT1.Location = new System.Drawing.Point(276, 659);
-            this.plusShotsT1.Name = "plusShotsT1";
-            this.plusShotsT1.Size = new System.Drawing.Size(75, 23);
-            this.plusShotsT1.TabIndex = 89;
-            this.plusShotsT1.Text = "+";
-            this.plusShotsT1.UseVisualStyleBackColor = true;
-            this.plusShotsT1.Click += new System.EventHandler(this.plusShotsT1_Click);
-            // 
-            // minusShotsT1
-            // 
-            this.minusShotsT1.Location = new System.Drawing.Point(136, 659);
-            this.minusShotsT1.Name = "minusShotsT1";
-            this.minusShotsT1.Size = new System.Drawing.Size(75, 23);
-            this.minusShotsT1.TabIndex = 88;
-            this.minusShotsT1.Text = "-";
-            this.minusShotsT1.UseVisualStyleBackColor = true;
-            this.minusShotsT1.Click += new System.EventHandler(this.minusShotsT1_Click);
-            // 
-            // shotsT1
-            // 
-            this.shotsT1.AutoSize = true;
-            this.shotsT1.Location = new System.Drawing.Point(238, 664);
-            this.shotsT1.Name = "shotsT1";
-            this.shotsT1.Size = new System.Drawing.Size(13, 13);
-            this.shotsT1.TabIndex = 87;
-            this.shotsT1.Text = "0";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(198, 545);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(87, 13);
-            this.label24.TabIndex = 94;
-            this.label24.Text = "Face-offs Team1";
-            // 
-            // plusFaceoffsT1
-            // 
-            this.plusFaceoffsT1.Location = new System.Drawing.Point(276, 576);
-            this.plusFaceoffsT1.Name = "plusFaceoffsT1";
-            this.plusFaceoffsT1.Size = new System.Drawing.Size(75, 23);
-            this.plusFaceoffsT1.TabIndex = 93;
-            this.plusFaceoffsT1.Text = "+";
-            this.plusFaceoffsT1.UseVisualStyleBackColor = true;
-            this.plusFaceoffsT1.Click += new System.EventHandler(this.plusFaceoffsT1_Click);
-            // 
-            // minusFaceoffsT1
-            // 
-            this.minusFaceoffsT1.Location = new System.Drawing.Point(136, 576);
-            this.minusFaceoffsT1.Name = "minusFaceoffsT1";
-            this.minusFaceoffsT1.Size = new System.Drawing.Size(75, 23);
-            this.minusFaceoffsT1.TabIndex = 92;
-            this.minusFaceoffsT1.Text = "-";
-            this.minusFaceoffsT1.UseVisualStyleBackColor = true;
-            this.minusFaceoffsT1.Click += new System.EventHandler(this.minusFaceoffsT1_Click);
-            // 
-            // faceoffsT1
-            // 
-            this.faceoffsT1.AutoSize = true;
-            this.faceoffsT1.Location = new System.Drawing.Point(238, 581);
-            this.faceoffsT1.Name = "faceoffsT1";
-            this.faceoffsT1.Size = new System.Drawing.Size(13, 13);
-            this.faceoffsT1.TabIndex = 91;
-            this.faceoffsT1.Text = "0";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(209, 545);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(87, 13);
-            this.label26.TabIndex = 102;
-            this.label26.Text = "Face-offs Team2";
-            // 
-            // plusFaceoffsT2
-            // 
-            this.plusFaceoffsT2.Location = new System.Drawing.Point(287, 576);
-            this.plusFaceoffsT2.Name = "plusFaceoffsT2";
-            this.plusFaceoffsT2.Size = new System.Drawing.Size(75, 23);
-            this.plusFaceoffsT2.TabIndex = 101;
-            this.plusFaceoffsT2.Text = "+";
-            this.plusFaceoffsT2.UseVisualStyleBackColor = true;
-            this.plusFaceoffsT2.Click += new System.EventHandler(this.plusFaceoffsT2_Click);
-            // 
-            // minusFaceoffsT2
-            // 
-            this.minusFaceoffsT2.Location = new System.Drawing.Point(147, 576);
-            this.minusFaceoffsT2.Name = "minusFaceoffsT2";
-            this.minusFaceoffsT2.Size = new System.Drawing.Size(75, 23);
-            this.minusFaceoffsT2.TabIndex = 100;
-            this.minusFaceoffsT2.Text = "-";
-            this.minusFaceoffsT2.UseVisualStyleBackColor = true;
-            this.minusFaceoffsT2.Click += new System.EventHandler(this.minusFaceoffsT2_Click);
-            // 
-            // faceoffsT2
-            // 
-            this.faceoffsT2.AutoSize = true;
-            this.faceoffsT2.Location = new System.Drawing.Point(249, 581);
-            this.faceoffsT2.Name = "faceoffsT2";
-            this.faceoffsT2.Size = new System.Drawing.Size(13, 13);
-            this.faceoffsT2.TabIndex = 99;
-            this.faceoffsT2.Text = "0";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(206, 627);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(108, 13);
-            this.label28.TabIndex = 98;
-            this.label28.Text = "Shots on goal Team2";
-            // 
-            // plusShotsT2
-            // 
-            this.plusShotsT2.Location = new System.Drawing.Point(287, 659);
-            this.plusShotsT2.Name = "plusShotsT2";
-            this.plusShotsT2.Size = new System.Drawing.Size(75, 23);
-            this.plusShotsT2.TabIndex = 97;
-            this.plusShotsT2.Text = "+";
-            this.plusShotsT2.UseVisualStyleBackColor = true;
-            this.plusShotsT2.Click += new System.EventHandler(this.plusShotsT2_Click);
-            // 
-            // minusShotsT2
-            // 
-            this.minusShotsT2.Location = new System.Drawing.Point(147, 659);
-            this.minusShotsT2.Name = "minusShotsT2";
-            this.minusShotsT2.Size = new System.Drawing.Size(75, 23);
-            this.minusShotsT2.TabIndex = 96;
-            this.minusShotsT2.Text = "-";
-            this.minusShotsT2.UseVisualStyleBackColor = true;
-            this.minusShotsT2.Click += new System.EventHandler(this.minusShotsT2_Click);
-            // 
-            // shotsT2
-            // 
-            this.shotsT2.AutoSize = true;
-            this.shotsT2.Location = new System.Drawing.Point(249, 664);
-            this.shotsT2.Name = "shotsT2";
-            this.shotsT2.Size = new System.Drawing.Size(13, 13);
-            this.shotsT2.TabIndex = 95;
-            this.shotsT2.Text = "0";
+            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
+            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem1.Text = "Export";
+            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
             // 
             // GameForm
             // 
@@ -1767,5 +1786,7 @@
         private System.Windows.Forms.Button plusShotsT2;
         private System.Windows.Forms.Button minusShotsT2;
         private System.Windows.Forms.Label shotsT2;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
     }
 }

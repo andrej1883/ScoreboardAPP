@@ -91,6 +91,12 @@
     <Compile Include="Forms\DBForms\LoadAds.Designer.cs">
       <DependentUpon>LoadAds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SelectPlayerGoal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectPlayerGoal.Designer.cs">
+      <DependentUpon>SelectPlayerGoal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SetTimes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DBForms\LoadTeamDataForm.resx">
       <DependentUpon>LoadTeamDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectPlayerGoal.resx">
+      <DependentUpon>SelectPlayerGoal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SetTimes.resx">
       <DependentUpon>SetTimes.cs</DependentUpon>

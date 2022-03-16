@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using Scoreboard.Classes;
 using Scoreboard.Classes.Database;
 using Scoreboard.Classes.GameStatistics;
 using Scoreboard.Forms.DBForms;
@@ -21,8 +22,10 @@ namespace Scoreboard.Forms.MainGameForms
         private VideoPlayerForm _videoPlayerForm;
         private SetTimes _gameTimes;
         private MatchStatistics _matchStats;
+        private ControlForm _controlForm;
 
-
+        private Team _team1;
+        private Team _team2;
         private int _team1Goals = 0;
         private int _team2Goals =0;
         private int _period = 1;
@@ -164,6 +167,12 @@ namespace Scoreboard.Forms.MainGameForms
             _team1Goals ++;
             _formScoreBoard.SetGoal(true,_team1Goals);
             goalsTeam1.Text = _team1Goals.ToString();
+            var t1 = new Time() {Minutes = _minutesT, Seconds = _secondsT};
+            var t2 = _gameTimes.PeriodLength;
+            t2.SubtractTime(t1);
+            if (_team1 == null) return;
+            SelectPlayerGoal varGoal = new SelectPlayerGoal(1, _matchStats, _team1.Players,t2);
+            varGoal.Show();
         }
 
         private void minusGoal2_Click(object sender, EventArgs e)
@@ -669,8 +678,9 @@ namespace Scoreboard.Forms.MainGameForms
         {
             if (_formScoreBoard.IsActive)
             {
-                var control = new ControlForm(_formScoreBoard);
-                control.Show();
+                if (_controlForm == null || _controlForm.IsDisposed) _controlForm = new ControlForm(_formScoreBoard);
+                _controlForm.Show();
+                _controlForm.BringToFront();
             }
             else
             {
@@ -850,13 +860,16 @@ namespace Scoreboard.Forms.MainGameForms
         {
             if (_databaseGame != null)
             {
-                Team selected = (Team)TeamsDBT1.SelectedItem;
-                if (selected == null) return;   
-                _team1Name = selected.Name;
+                string name = TeamsDBT1.Text;
+                if (string.IsNullOrWhiteSpace(name)) return;
+                Team selected = (Team) TeamsDBT1.SelectedItem;
+                _team1 = selected;
+                _matchStats.TeamStats[0].Name = _team1.Name;
+                _team1Name = name;
                 team1NameBox.Text = _team1Name;
                 _formScoreBoard.SetTeamName(true,_team1Name);
-                UploadLogo(true,selected.LogoPath);
-                videoPath1.Text = selected.VideoPath;
+                UploadLogo(true,_team1.LogoPath);
+                videoPath1.Text = _team1.VideoPath;
             }
             else
             {
@@ -1155,6 +1168,30 @@ namespace Scoreboard.Forms.MainGameForms
                 _matchStats.TeamStats[1].FaceOffs --;
                 _formScoreBoard.SetFaceOff(false,_matchStats.TeamStats[1].FaceOffs);
                 faceoffsT2.Text = _matchStats.TeamStats[1].FaceOffs.ToString();
+            }
+        }
+
+        private void importToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsActive)
+            {
+                if (_controlForm == null || _controlForm.IsDisposed)
+                {
+                    _controlForm = new ControlForm(_formScoreBoard);
+                }
+                _controlForm.ControlImport();
+            }
+        }
+
+        private void exportToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsActive)
+            {
+                if (_controlForm == null || _controlForm.IsDisposed) 
+                {
+                    _controlForm = new ControlForm(_formScoreBoard);
+                }
+                _controlForm.ControlExport();
             }
         }
     }

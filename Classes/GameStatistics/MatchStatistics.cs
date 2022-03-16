@@ -9,7 +9,7 @@ namespace Scoreboard.Classes.GameStatistics
     {
         private TeamStatistics[] _teamStats;
         private List<MatchEvent> _matchEvents;
-        private Time actualTime;
+        private Time _actualTime;
 
         public List<MatchEvent> MatchEvents
         {
@@ -30,11 +30,12 @@ namespace Scoreboard.Classes.GameStatistics
             ResetStats(team1Name,team2Name);
         }
 
-        public void CreateGoalEvent(int parTeam, Player parPlayerG, Player parPlayerA1, Player parPlayerA2)
+        public void CreateGoalEvent(int parTeam, Player parPlayerG, Player parPlayerA1, Player parPlayerA2, Time parTime)
         {
+            UpdateTime(parTime);
             TeamStatistics team = _teamStats[parTeam - 1];
-            string nameEvent = actualTime.ToString()+ " " + team.Name + " has scored!"  ;
-            string infoEvent = parPlayerG.Name + " shot a goal with assistance of: " + parPlayerA1.Name + ", " + parPlayerA2.Name;
+            string nameEvent = _actualTime.ToString()+ " " + team.Name + " has scored!"  ;
+            string infoEvent = parPlayerG.Name + " shot a goal with assistance of: " + parPlayerA1.Name + " " + parPlayerA2.Name;
             MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
             _matchEvents.Add(help);
             ExportEvent(help);
@@ -43,7 +44,7 @@ namespace Scoreboard.Classes.GameStatistics
         public void CreatePenaltyEvent(int parTeam, Player parPlayerG, Time penalLength)
         {
             TeamStatistics team = _teamStats[parTeam - 1];
-            string nameEvent = actualTime.ToString();
+            string nameEvent = _actualTime.ToString();
             string infoEvent = "Player from team: "+ team.Name + " was sent for penalty: "+ penalLength.ToString();
             MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
             _matchEvents.Add(help);
@@ -52,7 +53,7 @@ namespace Scoreboard.Classes.GameStatistics
         public void EndPenaltyEvent(int parTeam, Player parPlayerG)
         {
             TeamStatistics team = _teamStats[parTeam - 1];
-            string nameEvent = actualTime.ToString();
+            string nameEvent = _actualTime.ToString();
             string infoEvent = "Penalty for team: " + team.Name + " has ended";
             MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
             _matchEvents.Add(help);
@@ -62,7 +63,7 @@ namespace Scoreboard.Classes.GameStatistics
         public void CreateFaceOffEvent(int parTeam)
         {
             TeamStatistics team = _teamStats[parTeam - 1];
-            string nameEvent = actualTime.ToString();
+            string nameEvent = _actualTime.ToString();
             string infoEvent = team.Name + " won face-off!"  ;
             MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
             _matchEvents.Add(help);
@@ -76,7 +77,7 @@ namespace Scoreboard.Classes.GameStatistics
             {
                 score = "with score: " + _teamStats[0].Name + " " + _teamStats[0].Goals + " : " + _teamStats[1].Goals + " "+ _teamStats[1].Name;
             }
-            string nameEvent = actualTime.ToString();
+            string nameEvent = _actualTime.ToString();
             string infoEvent = parPeriod + ". period started " + score;
             MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
             _matchEvents.Add(help);
@@ -86,7 +87,7 @@ namespace Scoreboard.Classes.GameStatistics
         public void CreateLastMinuteEvent()
         {
             string score = _teamStats[0].Name + " " + _teamStats[0].Goals + " : " + _teamStats[1].Goals + " "+ _teamStats[2].Name;
-            string nameEvent = actualTime.ToString();
+            string nameEvent = _actualTime.ToString();
             string infoEvent = "Last minute of match with score: " + score;
             MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
             _matchEvents.Add(help);
@@ -96,7 +97,7 @@ namespace Scoreboard.Classes.GameStatistics
         public void CreateEndPeriodEvent(int parPeriod)
         {
             string score = _teamStats[0].Name + " " + _teamStats[0].Goals + " : " + _teamStats[1].Goals + " "+ _teamStats[2].Name;
-            string nameEvent = actualTime.ToString();
+            string nameEvent = _actualTime.ToString();
             string infoEvent = parPeriod + ".  started with score: " + score;
             MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
             _matchEvents.Add(help);
@@ -105,7 +106,7 @@ namespace Scoreboard.Classes.GameStatistics
 
         public void CreateManualEvent(string parInfoEvent)
         {
-            string nameEvent = actualTime.ToString();
+            string nameEvent = _actualTime.ToString();
             MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = parInfoEvent};
             _matchEvents.Add(help);
             ExportEvent(help);
@@ -114,6 +115,11 @@ namespace Scoreboard.Classes.GameStatistics
         public void SetName(int team, string parName)
         {
             _teamStats[team-1].Name = parName;
+        }
+
+        public void UpdateTime(Time parTime)
+        {
+            _actualTime = parTime;
         }
 
         private void ExportEvent(MatchEvent parEvent)

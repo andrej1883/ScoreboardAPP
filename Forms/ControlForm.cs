@@ -24,6 +24,7 @@ namespace Scoreboard.Forms
             _colorDial.AnyColor = true;
             _colorDial.SolidColorOnly = false;
             _fontDial = new FontDialog();
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
@@ -147,9 +148,9 @@ namespace Scoreboard.Forms
             InitDropdowns();
         }
 
-        private void importSettings_Click(object sender, EventArgs e)
+        public void ControlImport()
         {
-            string[] settings;
+             string[] settings;
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Text files(*.txt)|*.txt";
             if (open.ShowDialog() == DialogResult.OK) 
@@ -184,7 +185,12 @@ namespace Scoreboard.Forms
             }
         }
 
-        private void exportSettings_Click(object sender, EventArgs e)
+        private void importSettings_Click(object sender, EventArgs e)
+        {
+           ControlImport();
+        }
+
+        public void ControlExport()
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
  
@@ -197,6 +203,11 @@ namespace Scoreboard.Forms
                 string text = _formScoreBoard.ToString();
                 File.WriteAllText(saveFileDialog1.FileName, text);
             }
+        }
+
+        private void exportSettings_Click(object sender, EventArgs e)
+        {
+            ControlExport();
         }
 
         private void backgrColor_Click(object sender, EventArgs e)

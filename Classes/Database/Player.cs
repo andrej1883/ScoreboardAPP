@@ -23,5 +23,10 @@ namespace Scoreboard.Classes.Database
         public Player()
         {
         }
+
+        public override string ToString()
+        {
+            return $"{Name} {Number}";
+        }
     }
 }
