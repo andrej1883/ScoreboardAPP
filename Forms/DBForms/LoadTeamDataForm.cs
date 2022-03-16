@@ -39,11 +39,6 @@ namespace Scoreboard.Forms.DBForms
             {
                 _database.AddTeam(help);
                 UpdateGv();
-                //if (add.IsDisposed)
-                //{
-                //    _pareGameForm.UpdateTeams(Database);
-                //    UpdateGv();
-                //}
             }
         }
 

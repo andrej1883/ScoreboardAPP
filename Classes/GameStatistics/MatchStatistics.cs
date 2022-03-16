@@ -34,7 +34,7 @@ namespace Scoreboard.Classes.GameStatistics
         {
             UpdateTime(parTime);
             TeamStatistics team = _teamStats[parTeam - 1];
-            string nameEvent = _actualTime.ToString()+ " " + team.Name + " has scored!"  ;
+            string nameEvent = _actualTime.ToString()+ " " + team.Name + " scored!"  ;
             string infoEvent = parPlayerG.Name + " shot a goal with assistance of: " + parPlayerA1.Name + " " + parPlayerA2.Name;
             MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
             _matchEvents.Add(help);

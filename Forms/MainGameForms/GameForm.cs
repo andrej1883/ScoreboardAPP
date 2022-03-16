@@ -873,8 +873,13 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void SetFromDBT1_Click(object sender, EventArgs e)
         {
-            if (_databaseGame != null)
+            if (_databaseGame != null && !String.IsNullOrWhiteSpace(TeamsDBT1.Text))
             {
+                if (Equals(TeamsDBT1.Text,TeamsDBT2.Text))
+                {
+                    MessageBox.Show("Select different teams!", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 string name = TeamsDBT1.Text;
                 if (string.IsNullOrWhiteSpace(name)) return;
                 Team selected = (Team) TeamsDBT1.SelectedItem;
@@ -890,12 +895,18 @@ namespace Scoreboard.Forms.MainGameForms
             {
                 MessageBox.Show("Database not connected", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void SetFromDBT2_Click(object sender, EventArgs e)
         {
-            if (_databaseGame != null)
+            if (_databaseGame != null && !String.IsNullOrWhiteSpace(TeamsDBT2.Text))
             {
+                if (Equals(TeamsDBT1.Text,TeamsDBT2.Text))
+                {
+                    MessageBox.Show("Select different teams!", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 Team selected = (Team) TeamsDBT2.SelectedItem;
                 if (selected == null) return; 
                 _team2Name = selected.Name;
@@ -1028,8 +1039,10 @@ namespace Scoreboard.Forms.MainGameForms
                 {
                     _databaseGame.PostLoad();
                     TeamsDBT1.DataSource = _databaseGame.TeamList;
+                    TeamsDBT1.SelectedItem = _databaseGame.TeamList[0];
                     TeamsDBT2.BindingContext = new BindingContext();
                     TeamsDBT2.DataSource = _databaseGame.TeamList;
+                    TeamsDBT2.SelectedItem = _databaseGame.TeamList[1];
                     adsDBV.DataSource = null;
                     adsDBV.DataSource = _databaseGame.AdvList;
                 }
