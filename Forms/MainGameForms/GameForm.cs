@@ -161,18 +161,32 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
+        private void GoalSelectPlayer(int team)
+        {
+            var t1 = new Time() {Minutes = _minutesT, Seconds = _secondsT};
+            var t2 = _gameTimes.PeriodLength;
+            t2.SubtractTime(t1);
+            if (team == 1)
+            {
+                if (_team1 == null) return;
+                SelectPlayerGoal varGoal = new SelectPlayerGoal(1, _matchStats, _team1.Players,t2);
+                varGoal.Show();
+            }
+            if (team == 2)
+            {
+                if (_team2 == null) return;
+                SelectPlayerGoal varGoal = new SelectPlayerGoal(2, _matchStats, _team2.Players,t2);
+                varGoal.Show();
+            }
+        }
+
         private void plusGoal1_Click(object sender, EventArgs e)
         {
             StopTime();
             _team1Goals ++;
             _formScoreBoard.SetGoal(true,_team1Goals);
             goalsTeam1.Text = _team1Goals.ToString();
-            var t1 = new Time() {Minutes = _minutesT, Seconds = _secondsT};
-            var t2 = _gameTimes.PeriodLength;
-            t2.SubtractTime(t1);
-            if (_team1 == null) return;
-            SelectPlayerGoal varGoal = new SelectPlayerGoal(1, _matchStats, _team1.Players,t2);
-            varGoal.Show();
+            GoalSelectPlayer(1);
         }
 
         private void minusGoal2_Click(object sender, EventArgs e)
@@ -191,6 +205,7 @@ namespace Scoreboard.Forms.MainGameForms
             _team2Goals ++;
             _formScoreBoard.SetGoal(false,_team2Goals);
             goalsTeam2.Text = _team2Goals.ToString();
+            GoalSelectPlayer(2);
         }
 
         private void p1T1ShowPenalty_Click(object sender, EventArgs e)
@@ -276,7 +291,7 @@ namespace Scoreboard.Forms.MainGameForms
         private void UploadLogo(bool team1)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";  
             if (open.ShowDialog() == DialogResult.OK) {
                 if (team1)
                 {
@@ -1017,7 +1032,6 @@ namespace Scoreboard.Forms.MainGameForms
                     TeamsDBT2.DataSource = _databaseGame.TeamList;
                     adsDBV.DataSource = null;
                     adsDBV.DataSource = _databaseGame.AdvList;
-
                 }
                 
             }

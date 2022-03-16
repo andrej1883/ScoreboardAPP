@@ -522,6 +522,7 @@
             this.team1Logo.Location = new System.Drawing.Point(50, 80);
             this.team1Logo.Name = "team1Logo";
             this.team1Logo.Size = new System.Drawing.Size(280, 250);
+            this.team1Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.team1Logo.TabIndex = 49;
             this.team1Logo.TabStop = false;
             this.team1Logo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.team1Logo_MouseDown);
@@ -532,6 +533,7 @@
             this.team2Logo.Location = new System.Drawing.Point(937, 80);
             this.team2Logo.Name = "team2Logo";
             this.team2Logo.Size = new System.Drawing.Size(280, 250);
+            this.team2Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.team2Logo.TabIndex = 50;
             this.team2Logo.TabStop = false;
             this.team2Logo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.team2Logo_MouseDown);

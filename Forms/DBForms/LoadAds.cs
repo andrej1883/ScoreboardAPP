@@ -62,6 +62,7 @@ namespace Scoreboard.Forms.DBForms
         private void UpdateGv()
         {
             dataGridView1.DataSource = null;
+            dataGridView1.BindingContext = new BindingContext();
             dataGridView1.DataSource = _database.AdvList;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Update();

@@ -26,6 +26,7 @@ namespace Scoreboard.Forms.DBForms
                 _database = new Database();
             }
             UpdateGv();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void AddTeam_Click(object sender, EventArgs e)
@@ -38,6 +39,11 @@ namespace Scoreboard.Forms.DBForms
             {
                 _database.AddTeam(help);
                 UpdateGv();
+                //if (add.IsDisposed)
+                //{
+                //    _pareGameForm.UpdateTeams(Database);
+                //    UpdateGv();
+                //}
             }
         }
 
@@ -53,6 +59,7 @@ namespace Scoreboard.Forms.DBForms
         private void UpdateGv()
         {
             dataGridView1.DataSource = null;
+            dataGridView1.BindingContext = new BindingContext();
             dataGridView1.DataSource = _database.TeamList;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Update();

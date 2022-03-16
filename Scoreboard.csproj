@@ -156,6 +156,7 @@
       <DependentUpon>ScoreboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Scoreboard.Classes.Database.datasource" />
+    <None Include="Properties\DataSources\Scoreboard.Classes.Database.Player.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

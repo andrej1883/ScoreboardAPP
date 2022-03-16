@@ -577,6 +577,7 @@
             this.logo1.Location = new System.Drawing.Point(163, 19);
             this.logo1.Name = "logo1";
             this.logo1.Size = new System.Drawing.Size(160, 120);
+            this.logo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo1.TabIndex = 53;
             this.logo1.TabStop = false;
             // 
@@ -639,6 +640,7 @@
             this.logo2.Location = new System.Drawing.Point(178, 22);
             this.logo2.Name = "logo2";
             this.logo2.Size = new System.Drawing.Size(160, 120);
+            this.logo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo2.TabIndex = 63;
             this.logo2.TabStop = false;
             // 
@@ -809,21 +811,21 @@
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // dropToolStripMenuItem
             // 
             this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
-            this.dropToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.dropToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dropToolStripMenuItem.Text = "Drop";
             this.dropToolStripMenuItem.Click += new System.EventHandler(this.dropToolStripMenuItem_Click);
             // 

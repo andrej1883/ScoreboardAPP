@@ -12,6 +12,7 @@ namespace Scoreboard.Forms.DBForms
         {
             InitializeComponent();
             _team = parTeam;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void CreatePlayerForm_Load(object sender, EventArgs e)
@@ -22,6 +23,7 @@ namespace Scoreboard.Forms.DBForms
         private void UpdateGv()
         {
             PLayersGW.DataSource = null;
+            PLayersGW.BindingContext = new BindingContext();
             PLayersGW.DataSource = _team.Players;
             PLayersGW.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             PLayersGW.Update();

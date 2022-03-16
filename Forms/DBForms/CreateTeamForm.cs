@@ -16,6 +16,7 @@ namespace Scoreboard.Forms.DBForms
 
         public CreateTeamForm()
         {
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
@@ -37,6 +38,7 @@ namespace Scoreboard.Forms.DBForms
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Video Files(*.mp4)|*.mp4";  
+            open.InitialDirectory = Environment.CurrentDirectory+ "\\Videos\\Intro";
             if (open.ShowDialog() == DialogResult.OK) {
 
                 VideoPath.Text = open.FileName;
@@ -51,7 +53,7 @@ namespace Scoreboard.Forms.DBForms
         private void SelectPathLogo_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";   
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";   
             if (open.ShowDialog() == DialogResult.OK) {
 
                 LogoPath.Text = open.FileName;
