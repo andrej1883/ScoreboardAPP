@@ -4,9 +4,20 @@ namespace Scoreboard.Classes
 {
     public struct Time
     {
-        public int Minutes { get; set; }
+        private int _minutes;
+        private int _seconds;
 
-        public int Seconds { get; set; }
+        public int Minutes
+        {
+            get => _minutes;
+            set => _minutes = value;
+        }
+
+        public int Seconds
+        {
+            get => _seconds;
+            set => _seconds = value;
+        }
 
         public void AddTime(Time parTime)
         {
@@ -45,7 +56,6 @@ namespace Scoreboard.Classes
             }
         }
 
-
         public bool IsValidTime(Time parTime)
         {
             if (parTime.Minutes >= 0 && parTime.Seconds >= 0 &&
@@ -59,6 +69,24 @@ namespace Scoreboard.Classes
         public override string ToString()
         {
             return $"{Minutes}{"_"}{Seconds}";
+        }
+
+        public void Tick()
+        {
+            if (_minutes == 0 && _seconds == 0) return;
+            if (_seconds == 0)
+            {
+                if (_minutes > 0)
+                {
+                    _minutes--;
+                    _seconds = 60;
+                    _seconds--;
+                }
+            }
+            else
+            {
+                _seconds--;
+            }
         }
     }
 }

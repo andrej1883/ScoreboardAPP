@@ -31,8 +31,9 @@ namespace Scoreboard.Forms.MainGameForms
         //private string _team1Name = "Team1";
         //private string _team2Name = "Team2";
 
-        private int _secondsT = 0;
-        private int _minutesT = 0;
+        //private int _secondsT = 0;
+        //private int _minutesT = 0;
+        private Time _matchTime;
         private int _period = 1;
 
         private bool _breakRunning = false;
@@ -76,7 +77,7 @@ namespace Scoreboard.Forms.MainGameForms
         private void GameForm_Load(object sender, EventArgs e)
         {
             _formScoreBoard.SetTime(_minutesT, _secondsT);
-            UpdateTime(_minutesT,_secondsT);
+            UpdateTime(_minutesT, _secondsT);
             _penalty = new int[MaxPenalties][];
             for (int i = 0; i < MaxPenalties; i++)
             {
@@ -87,8 +88,9 @@ namespace Scoreboard.Forms.MainGameForms
             for (int i = 0; i < _timeouts.Length; i++)
             {
                 _timeouts[i] = new int[2];
-                SetTimeoutLength(i+1,_gameTimes.TimeoutLength.Minutes,_gameTimes.TimeoutLength.Seconds);
+                SetTimeoutLength(i + 1, _gameTimes.TimeoutLength.Minutes, _gameTimes.TimeoutLength.Seconds);
             }
+
             InitBoards();
         }
 
@@ -251,6 +253,7 @@ namespace Scoreboard.Forms.MainGameForms
         {
             _formScoreBoard.HidePenalty(4);
         }
+
         private void UpdatePeriod()
         {
             period.Text = _period.ToString();
@@ -277,9 +280,10 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void UpdateTeam1Name()
         {
-            if (team1NameBox.Text.Length > 0)
+            if (team1NameBox.Text.Length > 0 && !Equals(team2NameBox.Text,team1NameBox.Text))
             {
                 _matchStats.TeamStats[0].Name = team1NameBox.Text;
+                team1NameBox.Text = "Team1";
             }
             else
             {
@@ -349,13 +353,14 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void UpdateTeam2Name()
         {
-            if (team2NameBox.Text.Length > 0)
+            if (team2NameBox.Text.Length > 0 && !Equals(team2NameBox.Text,team1NameBox.Text))
             {
                 _matchStats.TeamStats[1].Name = team2NameBox.Text;
             }
             else
             {
                 _matchStats.TeamStats[1].Name = "Team2";
+                team2NameBox.Text = "Team2";
             }
             _formScoreBoard.SetTeamName(false,  _matchStats.TeamStats[1].Name);
         }
@@ -722,6 +727,7 @@ namespace Scoreboard.Forms.MainGameForms
                 _timeoutTimer.Enabled = true;
             }
         }
+
         private void startTimeoutT2_Click(object sender, EventArgs e)
         {
             if (!_timeoutTimer.Enabled && (_timeouts[1][0] > 0 || _timeouts[1][1] > 0) && !_breakRunning)
@@ -885,7 +891,7 @@ namespace Scoreboard.Forms.MainGameForms
         {
             if (_databaseGame != null && !String.IsNullOrWhiteSpace(TeamsDBT1.Text))
             {
-                if (Equals(TeamsDBT1.Text,TeamsDBT2.Text))
+                if (Equals(TeamsDBT1.Text,team2NameBox.Text))
                 {
                     MessageBox.Show("Select different teams!", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -911,7 +917,7 @@ namespace Scoreboard.Forms.MainGameForms
         {
             if (_databaseGame != null && !String.IsNullOrWhiteSpace(TeamsDBT2.Text))
             {
-                if (Equals(TeamsDBT1.Text,TeamsDBT2.Text))
+                if (Equals(team1NameBox.Text,TeamsDBT2.Text))
                 {
                     MessageBox.Show("Select different teams!", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -1130,6 +1136,7 @@ namespace Scoreboard.Forms.MainGameForms
         {
             videoPath1.SelectAll();
         }
+
         private void videoPath2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             videoPath2.SelectAll();
@@ -1246,8 +1253,7 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void setPT1P1_Click(object sender, EventArgs e)
         {
-            var form = new SetPenaltyForm();
-            form.ShowDialog();
+            
         }
 
         private void setPT1P2_Click(object sender, EventArgs e)
@@ -1264,6 +1270,13 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void setT2P2_Click(object sender, EventArgs e)
         {
+            var form = new SetPenaltyForm();
+            form.ShowDialog();
+        }
+
+        private void SetPenalty(int team, int player)
+        {
+            StopTime();
             var form = new SetPenaltyForm();
             form.ShowDialog();
         }

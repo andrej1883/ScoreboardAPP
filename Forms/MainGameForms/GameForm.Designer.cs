@@ -112,6 +112,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.setT2P2 = new System.Windows.Forms.Button();
+            this.setT2P1 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -170,8 +172,18 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.setT2P1 = new System.Windows.Forms.Button();
-            this.setT2P2 = new System.Windows.Forms.Button();
+            this.penP1T1 = new System.Windows.Forms.Label();
+            this.penP2T1 = new System.Windows.Forms.Label();
+            this.penP2T2 = new System.Windows.Forms.Label();
+            this.penP1T2 = new System.Windows.Forms.Label();
+            this.pMinP2T1 = new System.Windows.Forms.Label();
+            this.pMinP1T1 = new System.Windows.Forms.Label();
+            this.penSecP2T1 = new System.Windows.Forms.Label();
+            this.penSecP1T1 = new System.Windows.Forms.Label();
+            this.pSecP2T2 = new System.Windows.Forms.Label();
+            this.pSecP1T2 = new System.Windows.Forms.Label();
+            this.pMinP2T2 = new System.Windows.Forms.Label();
+            this.pMinP1T2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -373,7 +385,7 @@
             // 
             // p1T1Seconds
             // 
-            this.p1T1Seconds.Location = new System.Drawing.Point(285, 64);
+            this.p1T1Seconds.Location = new System.Drawing.Point(272, 64);
             this.p1T1Seconds.Name = "p1T1Seconds";
             this.p1T1Seconds.Size = new System.Drawing.Size(59, 20);
             this.p1T1Seconds.TabIndex = 15;
@@ -401,7 +413,7 @@
             // 
             // p2T1Seconds
             // 
-            this.p2T1Seconds.Location = new System.Drawing.Point(285, 121);
+            this.p2T1Seconds.Location = new System.Drawing.Point(272, 121);
             this.p2T1Seconds.Name = "p2T1Seconds";
             this.p2T1Seconds.Size = new System.Drawing.Size(59, 20);
             this.p2T1Seconds.TabIndex = 20;
@@ -435,7 +447,7 @@
             // 
             this.p1T2Minutes.Location = new System.Drawing.Point(180, 60);
             this.p1T2Minutes.Name = "p1T2Minutes";
-            this.p1T2Minutes.Size = new System.Drawing.Size(87, 20);
+            this.p1T2Minutes.Size = new System.Drawing.Size(54, 20);
             this.p1T2Minutes.TabIndex = 24;
             this.p1T2Minutes.ValueChanged += new System.EventHandler(this.p1T2Minutes_ValueChanged);
             // 
@@ -459,7 +471,7 @@
             // 
             this.p2T2Minutes.Location = new System.Drawing.Point(180, 113);
             this.p2T2Minutes.Name = "p2T2Minutes";
-            this.p2T2Minutes.Size = new System.Drawing.Size(87, 20);
+            this.p2T2Minutes.Size = new System.Drawing.Size(54, 20);
             this.p2T2Minutes.TabIndex = 29;
             this.p2T2Minutes.ValueChanged += new System.EventHandler(this.p2T2Minutes_ValueChanged);
             // 
@@ -669,7 +681,7 @@
             // 
             // setTeam2Name
             // 
-            this.setTeam2Name.Location = new System.Drawing.Point(284, 160);
+            this.setTeam2Name.Location = new System.Drawing.Point(284, 159);
             this.setTeam2Name.Name = "setTeam2Name";
             this.setTeam2Name.Size = new System.Drawing.Size(75, 23);
             this.setTeam2Name.TabIndex = 60;
@@ -896,6 +908,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.penSecP2T1);
+            this.groupBox2.Controls.Add(this.penSecP1T1);
+            this.groupBox2.Controls.Add(this.pMinP2T1);
+            this.groupBox2.Controls.Add(this.pMinP1T1);
+            this.groupBox2.Controls.Add(this.penP2T1);
+            this.groupBox2.Controls.Add(this.penP1T1);
             this.groupBox2.Controls.Add(this.setPT1P2);
             this.groupBox2.Controls.Add(this.setPT1P1);
             this.groupBox2.Controls.Add(this.label11);
@@ -969,7 +987,13 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.pSecP2T2);
+            this.groupBox3.Controls.Add(this.penP2T2);
+            this.groupBox3.Controls.Add(this.pSecP1T2);
             this.groupBox3.Controls.Add(this.setT2P2);
+            this.groupBox3.Controls.Add(this.pMinP2T2);
+            this.groupBox3.Controls.Add(this.penP1T2);
+            this.groupBox3.Controls.Add(this.pMinP1T2);
             this.groupBox3.Controls.Add(this.setT2P1);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
@@ -992,6 +1016,26 @@
             this.groupBox3.TabIndex = 78;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Penalty Team2";
+            // 
+            // setT2P2
+            // 
+            this.setT2P2.Location = new System.Drawing.Point(601, 110);
+            this.setT2P2.Name = "setT2P2";
+            this.setT2P2.Size = new System.Drawing.Size(75, 23);
+            this.setT2P2.TabIndex = 85;
+            this.setT2P2.Text = "Set";
+            this.setT2P2.UseVisualStyleBackColor = true;
+            this.setT2P2.Click += new System.EventHandler(this.setT2P2_Click);
+            // 
+            // setT2P1
+            // 
+            this.setT2P1.Location = new System.Drawing.Point(601, 56);
+            this.setT2P1.Name = "setT2P1";
+            this.setT2P1.Size = new System.Drawing.Size(75, 23);
+            this.setT2P1.TabIndex = 84;
+            this.setT2P1.Text = "Set";
+            this.setT2P1.UseVisualStyleBackColor = true;
+            this.setT2P1.Click += new System.EventHandler(this.setT2P1_Click);
             // 
             // label14
             // 
@@ -1111,6 +1155,7 @@
             // 
             // TeamsDBT2
             // 
+            this.TeamsDBT2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TeamsDBT2.FormattingEnabled = true;
             this.TeamsDBT2.Location = new System.Drawing.Point(369, 116);
             this.TeamsDBT2.Name = "TeamsDBT2";
@@ -1445,6 +1490,7 @@
             // 
             // TeamsDBT1
             // 
+            this.TeamsDBT1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TeamsDBT1.FormattingEnabled = true;
             this.TeamsDBT1.Location = new System.Drawing.Point(354, 121);
             this.TeamsDBT1.Name = "TeamsDBT1";
@@ -1562,6 +1608,7 @@
             // 
             // adsDBV
             // 
+            this.adsDBV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.adsDBV.FormattingEnabled = true;
             this.adsDBV.Location = new System.Drawing.Point(32, 52);
             this.adsDBV.Name = "adsDBV";
@@ -1613,25 +1660,113 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Advertisement controls";
             // 
-            // setT2P1
+            // penP1T1
             // 
-            this.setT2P1.Location = new System.Drawing.Point(601, 56);
-            this.setT2P1.Name = "setT2P1";
-            this.setT2P1.Size = new System.Drawing.Size(75, 23);
-            this.setT2P1.TabIndex = 84;
-            this.setT2P1.Text = "Set";
-            this.setT2P1.UseVisualStyleBackColor = true;
-            this.setT2P1.Click += new System.EventHandler(this.setT2P1_Click);
+            this.penP1T1.AutoSize = true;
+            this.penP1T1.Location = new System.Drawing.Point(116, 69);
+            this.penP1T1.Name = "penP1T1";
+            this.penP1T1.Size = new System.Drawing.Size(19, 13);
+            this.penP1T1.TabIndex = 84;
+            this.penP1T1.Text = "00";
             // 
-            // setT2P2
+            // penP2T1
             // 
-            this.setT2P2.Location = new System.Drawing.Point(601, 110);
-            this.setT2P2.Name = "setT2P2";
-            this.setT2P2.Size = new System.Drawing.Size(75, 23);
-            this.setT2P2.TabIndex = 85;
-            this.setT2P2.Text = "Set";
-            this.setT2P2.UseVisualStyleBackColor = true;
-            this.setT2P2.Click += new System.EventHandler(this.setT2P2_Click);
+            this.penP2T1.AutoSize = true;
+            this.penP2T1.Location = new System.Drawing.Point(116, 123);
+            this.penP2T1.Name = "penP2T1";
+            this.penP2T1.Size = new System.Drawing.Size(19, 13);
+            this.penP2T1.TabIndex = 85;
+            this.penP2T1.Text = "00";
+            // 
+            // penP2T2
+            // 
+            this.penP2T2.AutoSize = true;
+            this.penP2T2.Location = new System.Drawing.Point(131, 116);
+            this.penP2T2.Name = "penP2T2";
+            this.penP2T2.Size = new System.Drawing.Size(19, 13);
+            this.penP2T2.TabIndex = 87;
+            this.penP2T2.Text = "00";
+            // 
+            // penP1T2
+            // 
+            this.penP1T2.AutoSize = true;
+            this.penP1T2.Location = new System.Drawing.Point(131, 62);
+            this.penP1T2.Name = "penP1T2";
+            this.penP1T2.Size = new System.Drawing.Size(19, 13);
+            this.penP1T2.TabIndex = 86;
+            this.penP1T2.Text = "00";
+            // 
+            // pMinP2T1
+            // 
+            this.pMinP2T1.AutoSize = true;
+            this.pMinP2T1.Location = new System.Drawing.Point(249, 123);
+            this.pMinP2T1.Name = "pMinP2T1";
+            this.pMinP2T1.Size = new System.Drawing.Size(19, 13);
+            this.pMinP2T1.TabIndex = 87;
+            this.pMinP2T1.Text = "00";
+            // 
+            // pMinP1T1
+            // 
+            this.pMinP1T1.AutoSize = true;
+            this.pMinP1T1.Location = new System.Drawing.Point(249, 69);
+            this.pMinP1T1.Name = "pMinP1T1";
+            this.pMinP1T1.Size = new System.Drawing.Size(19, 13);
+            this.pMinP1T1.TabIndex = 86;
+            this.pMinP1T1.Text = "00";
+            // 
+            // penSecP2T1
+            // 
+            this.penSecP2T1.AutoSize = true;
+            this.penSecP2T1.Location = new System.Drawing.Point(336, 121);
+            this.penSecP2T1.Name = "penSecP2T1";
+            this.penSecP2T1.Size = new System.Drawing.Size(19, 13);
+            this.penSecP2T1.TabIndex = 89;
+            this.penSecP2T1.Text = "00";
+            // 
+            // penSecP1T1
+            // 
+            this.penSecP1T1.AutoSize = true;
+            this.penSecP1T1.Location = new System.Drawing.Point(336, 67);
+            this.penSecP1T1.Name = "penSecP1T1";
+            this.penSecP1T1.Size = new System.Drawing.Size(19, 13);
+            this.penSecP1T1.TabIndex = 88;
+            this.penSecP1T1.Text = "00";
+            // 
+            // pSecP2T2
+            // 
+            this.pSecP2T2.AutoSize = true;
+            this.pSecP2T2.Location = new System.Drawing.Point(337, 117);
+            this.pSecP2T2.Name = "pSecP2T2";
+            this.pSecP2T2.Size = new System.Drawing.Size(19, 13);
+            this.pSecP2T2.TabIndex = 93;
+            this.pSecP2T2.Text = "00";
+            // 
+            // pSecP1T2
+            // 
+            this.pSecP1T2.AutoSize = true;
+            this.pSecP1T2.Location = new System.Drawing.Point(337, 63);
+            this.pSecP1T2.Name = "pSecP1T2";
+            this.pSecP1T2.Size = new System.Drawing.Size(19, 13);
+            this.pSecP1T2.TabIndex = 92;
+            this.pSecP1T2.Text = "00";
+            // 
+            // pMinP2T2
+            // 
+            this.pMinP2T2.AutoSize = true;
+            this.pMinP2T2.Location = new System.Drawing.Point(250, 119);
+            this.pMinP2T2.Name = "pMinP2T2";
+            this.pMinP2T2.Size = new System.Drawing.Size(19, 13);
+            this.pMinP2T2.TabIndex = 91;
+            this.pMinP2T2.Text = "00";
+            // 
+            // pMinP1T2
+            // 
+            this.pMinP1T2.AutoSize = true;
+            this.pMinP1T2.Location = new System.Drawing.Point(250, 65);
+            this.pMinP1T2.Name = "pMinP1T2";
+            this.pMinP1T2.Size = new System.Drawing.Size(19, 13);
+            this.pMinP1T2.TabIndex = 90;
+            this.pMinP1T2.Text = "00";
             // 
             // GameForm
             // 
@@ -1842,5 +1977,17 @@
         private System.Windows.Forms.Button setPT1P2;
         private System.Windows.Forms.Button setT2P2;
         private System.Windows.Forms.Button setT2P1;
+        private System.Windows.Forms.Label penP2T1;
+        private System.Windows.Forms.Label penP1T1;
+        private System.Windows.Forms.Label pMinP2T1;
+        private System.Windows.Forms.Label pMinP1T1;
+        private System.Windows.Forms.Label penP2T2;
+        private System.Windows.Forms.Label penP1T2;
+        private System.Windows.Forms.Label penSecP2T1;
+        private System.Windows.Forms.Label penSecP1T1;
+        private System.Windows.Forms.Label pSecP2T2;
+        private System.Windows.Forms.Label pSecP1T2;
+        private System.Windows.Forms.Label pMinP2T2;
+        private System.Windows.Forms.Label pMinP1T2;
     }
 }

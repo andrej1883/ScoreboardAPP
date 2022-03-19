@@ -29,49 +29,52 @@
         private void InitializeComponent()
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.penaltyTimesCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.p1T1Minutes = new System.Windows.Forms.NumericUpDown();
-            this.p1T1Seconds = new System.Windows.Forms.NumericUpDown();
+            this.pMinutes = new System.Windows.Forms.NumericUpDown();
+            this.pSeconds = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.savePenaltyBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T1Seconds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pMinutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pSeconds)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 49);
+            this.comboBox1.Location = new System.Drawing.Point(17, 58);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
             // 
-            // comboBox2
+            // penaltyTimesCombo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(17, 58);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 1;
+            this.penaltyTimesCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.penaltyTimesCombo.FormattingEnabled = true;
+            this.penaltyTimesCombo.Location = new System.Drawing.Point(17, 58);
+            this.penaltyTimesCombo.Name = "penaltyTimesCombo";
+            this.penaltyTimesCombo.Size = new System.Drawing.Size(121, 21);
+            this.penaltyTimesCombo.TabIndex = 1;
+            this.penaltyTimesCombo.SelectedIndexChanged += new System.EventHandler(this.penaltyTimesCombo_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -109,26 +112,26 @@
             this.label10.TabIndex = 84;
             this.label10.Text = "Minutes:";
             // 
-            // p1T1Minutes
+            // pMinutes
             // 
-            this.p1T1Minutes.Location = new System.Drawing.Point(27, 58);
-            this.p1T1Minutes.Name = "p1T1Minutes";
-            this.p1T1Minutes.Size = new System.Drawing.Size(65, 20);
-            this.p1T1Minutes.TabIndex = 82;
+            this.pMinutes.Location = new System.Drawing.Point(27, 58);
+            this.pMinutes.Name = "pMinutes";
+            this.pMinutes.Size = new System.Drawing.Size(65, 20);
+            this.pMinutes.TabIndex = 82;
             // 
-            // p1T1Seconds
+            // pSeconds
             // 
-            this.p1T1Seconds.Location = new System.Drawing.Point(134, 58);
-            this.p1T1Seconds.Name = "p1T1Seconds";
-            this.p1T1Seconds.Size = new System.Drawing.Size(59, 20);
-            this.p1T1Seconds.TabIndex = 83;
+            this.pSeconds.Location = new System.Drawing.Point(134, 58);
+            this.pSeconds.Name = "pSeconds";
+            this.pSeconds.Size = new System.Drawing.Size(59, 20);
+            this.pSeconds.TabIndex = 83;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.p1T1Minutes);
-            this.groupBox1.Controls.Add(this.p1T1Seconds);
+            this.groupBox1.Controls.Add(this.pMinutes);
+            this.groupBox1.Controls.Add(this.pSeconds);
             this.groupBox1.Location = new System.Drawing.Point(39, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(210, 107);
@@ -138,7 +141,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.penaltyTimesCombo);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(278, 45);
             this.groupBox2.Name = "groupBox2";
@@ -169,17 +172,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Select penalty for player";
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Controls.Add(this.comboBox1);
-            this.groupBox5.Location = new System.Drawing.Point(278, 31);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(166, 103);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Select from DB";
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label3);
@@ -208,9 +200,30 @@
             0,
             0,
             0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(74, 20);
             this.numericUpDown1.TabIndex = 86;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label1);
+            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Location = new System.Drawing.Point(278, 31);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(166, 103);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Select from DB";
             // 
             // cancelBtn
             // 
@@ -244,19 +257,19 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SetPenaltyForm";
             this.Text = "SetPenaltyForm";
-            ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T1Seconds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pMinutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pSeconds)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -264,13 +277,13 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox penaltyTimesCombo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown p1T1Minutes;
-        private System.Windows.Forms.NumericUpDown p1T1Seconds;
+        private System.Windows.Forms.NumericUpDown pMinutes;
+        private System.Windows.Forms.NumericUpDown pSeconds;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
