@@ -90,6 +90,8 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.videosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,6 +106,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.setPT1P2 = new System.Windows.Forms.Button();
+            this.setPT1P1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -166,8 +170,8 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.importToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.setT2P1 = new System.Windows.Forms.Button();
+            this.setT2P2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -355,7 +359,7 @@
             // 
             this.p1T1Number.Location = new System.Drawing.Point(36, 64);
             this.p1T1Number.Name = "p1T1Number";
-            this.p1T1Number.Size = new System.Drawing.Size(87, 20);
+            this.p1T1Number.Size = new System.Drawing.Size(73, 20);
             this.p1T1Number.TabIndex = 13;
             this.p1T1Number.ValueChanged += new System.EventHandler(this.p1T1Number_ValueChanged);
             // 
@@ -363,7 +367,7 @@
             // 
             this.p1T1Minutes.Location = new System.Drawing.Point(178, 64);
             this.p1T1Minutes.Name = "p1T1Minutes";
-            this.p1T1Minutes.Size = new System.Drawing.Size(87, 20);
+            this.p1T1Minutes.Size = new System.Drawing.Size(65, 20);
             this.p1T1Minutes.TabIndex = 14;
             this.p1T1Minutes.ValueChanged += new System.EventHandler(this.p1T1Minutes_ValueChanged);
             // 
@@ -371,13 +375,13 @@
             // 
             this.p1T1Seconds.Location = new System.Drawing.Point(285, 64);
             this.p1T1Seconds.Name = "p1T1Seconds";
-            this.p1T1Seconds.Size = new System.Drawing.Size(87, 20);
+            this.p1T1Seconds.Size = new System.Drawing.Size(59, 20);
             this.p1T1Seconds.TabIndex = 15;
             this.p1T1Seconds.ValueChanged += new System.EventHandler(this.p1T1Seconds_ValueChanged);
             // 
             // p1T1ShowPenalty
             // 
-            this.p1T1ShowPenalty.Location = new System.Drawing.Point(404, 60);
+            this.p1T1ShowPenalty.Location = new System.Drawing.Point(363, 60);
             this.p1T1ShowPenalty.Name = "p1T1ShowPenalty";
             this.p1T1ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T1ShowPenalty.TabIndex = 16;
@@ -387,7 +391,7 @@
             // 
             // p1T1HidePenalty
             // 
-            this.p1T1HidePenalty.Location = new System.Drawing.Point(496, 60);
+            this.p1T1HidePenalty.Location = new System.Drawing.Point(444, 60);
             this.p1T1HidePenalty.Name = "p1T1HidePenalty";
             this.p1T1HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T1HidePenalty.TabIndex = 17;
@@ -399,7 +403,7 @@
             // 
             this.p2T1Seconds.Location = new System.Drawing.Point(285, 121);
             this.p2T1Seconds.Name = "p2T1Seconds";
-            this.p2T1Seconds.Size = new System.Drawing.Size(87, 20);
+            this.p2T1Seconds.Size = new System.Drawing.Size(59, 20);
             this.p2T1Seconds.TabIndex = 20;
             this.p2T1Seconds.ValueChanged += new System.EventHandler(this.p2T1Seconds_ValueChanged);
             // 
@@ -407,7 +411,7 @@
             // 
             this.p2T1Minutes.Location = new System.Drawing.Point(178, 121);
             this.p2T1Minutes.Name = "p2T1Minutes";
-            this.p2T1Minutes.Size = new System.Drawing.Size(87, 20);
+            this.p2T1Minutes.Size = new System.Drawing.Size(65, 20);
             this.p2T1Minutes.TabIndex = 19;
             this.p2T1Minutes.ValueChanged += new System.EventHandler(this.p2T1Minutes_ValueChanged);
             // 
@@ -415,7 +419,7 @@
             // 
             this.p2T1Number.Location = new System.Drawing.Point(36, 121);
             this.p2T1Number.Name = "p2T1Number";
-            this.p2T1Number.Size = new System.Drawing.Size(87, 20);
+            this.p2T1Number.Size = new System.Drawing.Size(71, 20);
             this.p2T1Number.TabIndex = 18;
             this.p2T1Number.ValueChanged += new System.EventHandler(this.p2T1Number_ValueChanged);
             // 
@@ -423,7 +427,7 @@
             // 
             this.p1T2Seconds.Location = new System.Drawing.Point(287, 60);
             this.p1T2Seconds.Name = "p1T2Seconds";
-            this.p1T2Seconds.Size = new System.Drawing.Size(87, 20);
+            this.p1T2Seconds.Size = new System.Drawing.Size(46, 20);
             this.p1T2Seconds.TabIndex = 25;
             this.p1T2Seconds.ValueChanged += new System.EventHandler(this.p1T2Seconds_ValueChanged);
             // 
@@ -447,7 +451,7 @@
             // 
             this.p2T2Seconds.Location = new System.Drawing.Point(287, 113);
             this.p2T2Seconds.Name = "p2T2Seconds";
-            this.p2T2Seconds.Size = new System.Drawing.Size(87, 20);
+            this.p2T2Seconds.Size = new System.Drawing.Size(46, 20);
             this.p2T2Seconds.TabIndex = 30;
             this.p2T2Seconds.ValueChanged += new System.EventHandler(this.p2T2Seconds_ValueChanged);
             // 
@@ -469,7 +473,7 @@
             // 
             // p2T1HidePenalty
             // 
-            this.p2T1HidePenalty.Location = new System.Drawing.Point(496, 121);
+            this.p2T1HidePenalty.Location = new System.Drawing.Point(444, 118);
             this.p2T1HidePenalty.Name = "p2T1HidePenalty";
             this.p2T1HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T1HidePenalty.TabIndex = 37;
@@ -479,7 +483,7 @@
             // 
             // p2T1ShowPenalty
             // 
-            this.p2T1ShowPenalty.Location = new System.Drawing.Point(404, 121);
+            this.p2T1ShowPenalty.Location = new System.Drawing.Point(363, 118);
             this.p2T1ShowPenalty.Name = "p2T1ShowPenalty";
             this.p2T1ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T1ShowPenalty.TabIndex = 36;
@@ -489,7 +493,7 @@
             // 
             // p1T2HidePenalty
             // 
-            this.p1T2HidePenalty.Location = new System.Drawing.Point(498, 56);
+            this.p1T2HidePenalty.Location = new System.Drawing.Point(439, 56);
             this.p1T2HidePenalty.Name = "p1T2HidePenalty";
             this.p1T2HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T2HidePenalty.TabIndex = 39;
@@ -499,7 +503,7 @@
             // 
             // p1T2ShowPenalty
             // 
-            this.p1T2ShowPenalty.Location = new System.Drawing.Point(406, 56);
+            this.p1T2ShowPenalty.Location = new System.Drawing.Point(358, 57);
             this.p1T2ShowPenalty.Name = "p1T2ShowPenalty";
             this.p1T2ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T2ShowPenalty.TabIndex = 38;
@@ -509,7 +513,7 @@
             // 
             // p2T2HidePenalty
             // 
-            this.p2T2HidePenalty.Location = new System.Drawing.Point(498, 106);
+            this.p2T2HidePenalty.Location = new System.Drawing.Point(439, 110);
             this.p2T2HidePenalty.Name = "p2T2HidePenalty";
             this.p2T2HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T2HidePenalty.TabIndex = 41;
@@ -519,7 +523,7 @@
             // 
             // p2T2ShowPenalty
             // 
-            this.p2T2ShowPenalty.Location = new System.Drawing.Point(406, 106);
+            this.p2T2ShowPenalty.Location = new System.Drawing.Point(358, 110);
             this.p2T2ShowPenalty.Name = "p2T2ShowPenalty";
             this.p2T2ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T2ShowPenalty.TabIndex = 40;
@@ -691,7 +695,7 @@
             // 
             // resetT1P1
             // 
-            this.resetT1P1.Location = new System.Drawing.Point(577, 61);
+            this.resetT1P1.Location = new System.Drawing.Point(525, 61);
             this.resetT1P1.Name = "resetT1P1";
             this.resetT1P1.Size = new System.Drawing.Size(75, 23);
             this.resetT1P1.TabIndex = 67;
@@ -701,7 +705,7 @@
             // 
             // resetT1P2
             // 
-            this.resetT1P2.Location = new System.Drawing.Point(577, 121);
+            this.resetT1P2.Location = new System.Drawing.Point(525, 118);
             this.resetT1P2.Name = "resetT1P2";
             this.resetT1P2.Size = new System.Drawing.Size(75, 23);
             this.resetT1P2.TabIndex = 68;
@@ -711,7 +715,7 @@
             // 
             // resetT2P1
             // 
-            this.resetT2P1.Location = new System.Drawing.Point(579, 56);
+            this.resetT2P1.Location = new System.Drawing.Point(520, 56);
             this.resetT2P1.Name = "resetT2P1";
             this.resetT2P1.Size = new System.Drawing.Size(75, 23);
             this.resetT2P1.TabIndex = 69;
@@ -721,7 +725,7 @@
             // 
             // resetT2P2
             // 
-            this.resetT2P2.Location = new System.Drawing.Point(579, 106);
+            this.resetT2P2.Location = new System.Drawing.Point(520, 110);
             this.resetT2P2.Name = "resetT2P2";
             this.resetT2P2.Size = new System.Drawing.Size(75, 23);
             this.resetT2P2.TabIndex = 70;
@@ -754,7 +758,7 @@
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.timeToolStripMenuItem.Text = "Time";
             this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
@@ -764,9 +768,23 @@
             this.importToolStripMenuItem1,
             this.exportToolStripMenuItem1});
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.appearanceToolStripMenuItem.Text = "Appearance";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
+            // 
+            // importToolStripMenuItem1
+            // 
+            this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
+            this.importToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.importToolStripMenuItem1.Text = "Import";
+            this.importToolStripMenuItem1.Click += new System.EventHandler(this.importToolStripMenuItem1_Click);
+            // 
+            // exportToolStripMenuItem1
+            // 
+            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
+            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.exportToolStripMenuItem1.Text = "Export";
+            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
             // 
             // videosToolStripMenuItem
             // 
@@ -811,21 +829,21 @@
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // dropToolStripMenuItem
             // 
             this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
-            this.dropToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dropToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.dropToolStripMenuItem.Text = "Drop";
             this.dropToolStripMenuItem.Click += new System.EventHandler(this.dropToolStripMenuItem_Click);
             // 
@@ -878,6 +896,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.setPT1P2);
+            this.groupBox2.Controls.Add(this.setPT1P1);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.p1T1Number);
             this.groupBox2.Controls.Add(this.label10);
@@ -899,6 +919,26 @@
             this.groupBox2.TabIndex = 77;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Penalty Team1";
+            // 
+            // setPT1P2
+            // 
+            this.setPT1P2.Location = new System.Drawing.Point(606, 118);
+            this.setPT1P2.Name = "setPT1P2";
+            this.setPT1P2.Size = new System.Drawing.Size(75, 23);
+            this.setPT1P2.TabIndex = 83;
+            this.setPT1P2.Text = "Set";
+            this.setPT1P2.UseVisualStyleBackColor = true;
+            this.setPT1P2.Click += new System.EventHandler(this.setPT1P2_Click);
+            // 
+            // setPT1P1
+            // 
+            this.setPT1P1.Location = new System.Drawing.Point(606, 60);
+            this.setPT1P1.Name = "setPT1P1";
+            this.setPT1P1.Size = new System.Drawing.Size(75, 23);
+            this.setPT1P1.TabIndex = 82;
+            this.setPT1P1.Text = "Set";
+            this.setPT1P1.UseVisualStyleBackColor = true;
+            this.setPT1P1.Click += new System.EventHandler(this.setPT1P1_Click);
             // 
             // label11
             // 
@@ -929,6 +969,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.setT2P2);
+            this.groupBox3.Controls.Add(this.setT2P1);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
@@ -1571,19 +1613,25 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Advertisement controls";
             // 
-            // importToolStripMenuItem1
+            // setT2P1
             // 
-            this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
-            this.importToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.importToolStripMenuItem1.Text = "Import";
-            this.importToolStripMenuItem1.Click += new System.EventHandler(this.importToolStripMenuItem1_Click);
+            this.setT2P1.Location = new System.Drawing.Point(601, 56);
+            this.setT2P1.Name = "setT2P1";
+            this.setT2P1.Size = new System.Drawing.Size(75, 23);
+            this.setT2P1.TabIndex = 84;
+            this.setT2P1.Text = "Set";
+            this.setT2P1.UseVisualStyleBackColor = true;
+            this.setT2P1.Click += new System.EventHandler(this.setT2P1_Click);
             // 
-            // exportToolStripMenuItem1
+            // setT2P2
             // 
-            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.exportToolStripMenuItem1.Text = "Export";
-            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
+            this.setT2P2.Location = new System.Drawing.Point(601, 110);
+            this.setT2P2.Name = "setT2P2";
+            this.setT2P2.Size = new System.Drawing.Size(75, 23);
+            this.setT2P2.TabIndex = 85;
+            this.setT2P2.Text = "Set";
+            this.setT2P2.UseVisualStyleBackColor = true;
+            this.setT2P2.Click += new System.EventHandler(this.setT2P2_Click);
             // 
             // GameForm
             // 
@@ -1790,5 +1838,9 @@
         private System.Windows.Forms.Label shotsT2;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
+        private System.Windows.Forms.Button setPT1P1;
+        private System.Windows.Forms.Button setPT1P2;
+        private System.Windows.Forms.Button setT2P2;
+        private System.Windows.Forms.Button setT2P1;
     }
 }

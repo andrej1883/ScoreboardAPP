@@ -1243,5 +1243,29 @@ namespace Scoreboard.Forms.MainGameForms
                 _controlForm.ControlExport();
             }
         }
+
+        private void setPT1P1_Click(object sender, EventArgs e)
+        {
+            var form = new SetPenaltyForm();
+            form.ShowDialog();
+        }
+
+        private void setPT1P2_Click(object sender, EventArgs e)
+        {
+            var form = new SetPenaltyForm();
+            form.ShowDialog();
+        }
+
+        private void setT2P1_Click(object sender, EventArgs e)
+        {
+            var form = new SetPenaltyForm();
+            form.ShowDialog();
+        }
+
+        private void setT2P2_Click(object sender, EventArgs e)
+        {
+            var form = new SetPenaltyForm();
+            form.ShowDialog();
+        }
     }
 }
