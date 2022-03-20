@@ -65,10 +65,10 @@
             this.team2Logo = new System.Windows.Forms.PictureBox();
             this.timeoutL2 = new System.Windows.Forms.Label();
             this.timeoutL1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.timeout2Parse = new System.Windows.Forms.Label();
             this.timeout2Sec = new System.Windows.Forms.Label();
             this.timeout2Min = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.timeout1Parse = new System.Windows.Forms.Label();
             this.timeout1Sec = new System.Windows.Forms.Label();
             this.timeout1Min = new System.Windows.Forms.Label();
             this.faceOffsT1Lbl = new System.Windows.Forms.Label();
@@ -563,18 +563,18 @@
             this.timeoutL1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeoutL1_MouseDown);
             this.timeoutL1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeoutL1_MouseMove);
             // 
-            // label3
+            // timeout2Parse
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1111, 402);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 31);
-            this.label3.TabIndex = 55;
-            this.label3.Text = ":";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label3_MouseDown);
-            this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label3_MouseMove);
+            this.timeout2Parse.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.timeout2Parse.ForeColor = System.Drawing.Color.Black;
+            this.timeout2Parse.Location = new System.Drawing.Point(1111, 402);
+            this.timeout2Parse.Name = "timeout2Parse";
+            this.timeout2Parse.Size = new System.Drawing.Size(22, 31);
+            this.timeout2Parse.TabIndex = 55;
+            this.timeout2Parse.Text = ":";
+            this.timeout2Parse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timeout2Parse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label3_MouseDown);
+            this.timeout2Parse.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label3_MouseMove);
             // 
             // timeout2Sec
             // 
@@ -602,18 +602,18 @@
             this.timeout2Min.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeout2Min_MouseDown);
             this.timeout2Min.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeout2Min_MouseMove);
             // 
-            // label6
+            // timeout1Parse
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(137, 402);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(22, 31);
-            this.label6.TabIndex = 58;
-            this.label6.Text = ":";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label6_MouseDown);
-            this.label6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label6_MouseMove);
+            this.timeout1Parse.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.timeout1Parse.ForeColor = System.Drawing.Color.Black;
+            this.timeout1Parse.Location = new System.Drawing.Point(137, 402);
+            this.timeout1Parse.Name = "timeout1Parse";
+            this.timeout1Parse.Size = new System.Drawing.Size(22, 31);
+            this.timeout1Parse.TabIndex = 58;
+            this.timeout1Parse.Text = ":";
+            this.timeout1Parse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timeout1Parse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label6_MouseDown);
+            this.timeout1Parse.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label6_MouseMove);
             // 
             // timeout1Sec
             // 
@@ -738,10 +738,10 @@
             this.Controls.Add(this.faceOffsT1);
             this.Controls.Add(this.faceOffsT2Lbl);
             this.Controls.Add(this.faceOffsT1Lbl);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.timeout1Parse);
             this.Controls.Add(this.timeout1Sec);
             this.Controls.Add(this.timeout1Min);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.timeout2Parse);
             this.Controls.Add(this.timeout2Sec);
             this.Controls.Add(this.timeout2Min);
             this.Controls.Add(this.timeoutL1);
@@ -829,10 +829,10 @@
         private System.Windows.Forms.PictureBox team2Logo;
         private System.Windows.Forms.Label timeoutL2;
         private System.Windows.Forms.Label timeoutL1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label timeout2Parse;
         private System.Windows.Forms.Label timeout2Sec;
         private System.Windows.Forms.Label timeout2Min;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label timeout1Parse;
         private System.Windows.Forms.Label timeout1Sec;
         private System.Windows.Forms.Label timeout1Min;
         private System.Windows.Forms.Label faceOffsT1Lbl;

@@ -24,6 +24,7 @@ namespace Scoreboard.Forms.MainGameForms
         private SetTimes _gameTimes;
         private MatchStatistics _matchStats;
         private ControlForm _controlForm;
+        private StatisticsSettings _statSettings;
 
         private Team _team1;
         private Team _team2;
@@ -70,6 +71,7 @@ namespace Scoreboard.Forms.MainGameForms
             _databaseGame = new Database();
             _gameTimes = new SetTimes(this);
             _matchStats = new MatchStatistics("Team1", "Team2");
+            _statSettings = new StatisticsSettings();
 
             InitializeComponent();
             _formScoreBoard = parFormScoreBoard;
@@ -756,6 +758,7 @@ namespace Scoreboard.Forms.MainGameForms
                 StartTimeout(1);
                 _timeoutTimer.Enabled = true;
                 _timeout1Running = true;
+                _matchStats.CreateTimeoutEvent(1,_elapsedTime);
             }
         }
 
@@ -766,6 +769,7 @@ namespace Scoreboard.Forms.MainGameForms
                 StartTimeout(2);
                 _timeoutTimer.Enabled = true;
                 _timeout2Running = true;
+                _matchStats.CreateTimeoutEvent(2,_elapsedTime);
             }
         }
 
@@ -1358,6 +1362,76 @@ namespace Scoreboard.Forms.MainGameForms
                         break;
                 }
                 InitBoards();
+            }
+        }
+
+        private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsActive)
+            {
+                _statSettings.ShowDialog();
+                if (_statSettings.DialogResult == DialogResult.OK)
+                {
+                    SelectStats(_statSettings.ActiveStatistics);
+                    _formScoreBoard.SelectStats(_statSettings.ActiveStatistics);
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void SelectStats(bool[] parStats)
+        {
+            if (!parStats[0])
+            {
+                startTimeoutT1.Hide();
+                startTimeoutT2.Hide();
+                cancelTimeoutT1.Hide();
+                cancelTimeoutT2.Hide();
+            }
+            else
+            {
+                startTimeoutT1.Show();
+                startTimeoutT2.Show();
+                cancelTimeoutT1.Show();
+                cancelTimeoutT2.Show();
+            }
+
+            if (!parStats[1])
+            {
+                minusFaceoffsT1.Hide();
+                minusFaceoffsT2.Hide();
+                plusFaceoffsT1.Hide();
+                plusFaceoffsT2.Hide();
+            }
+            else
+            {
+                minusFaceoffsT1.Show();
+                minusFaceoffsT2.Show();
+                plusFaceoffsT1.Show();
+                plusFaceoffsT2.Show();
+            }
+
+            if (!parStats[2])
+            {
+                minusShotsT1.Hide();
+                minusShotsT2.Hide();
+                plusShotsT1.Hide();
+                plusShotsT2.Hide();
+            }
+            else
+            {
+                minusShotsT1.Show();
+                minusShotsT2.Show();
+                plusShotsT1.Show();
+                plusShotsT2.Show();
             }
         }
     }

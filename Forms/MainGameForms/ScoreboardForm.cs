@@ -517,6 +517,62 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
+        public void SelectStats(bool[] parOptions)
+        {
+            if (!parOptions[0])
+            {
+                timeoutL1.Hide();
+                timeoutL2.Hide();
+                timeout1Min.Hide();
+                timeout1Parse.Hide();
+                timeout2Parse.Hide();
+                timeout1Sec.Hide();
+                timeout2Min.Hide();
+                timeout2Sec.Hide();
+            }
+            else
+            {
+                timeoutL1.Show();
+                timeoutL2.Show();
+                timeout1Min.Show();
+                timeout1Parse.Show();
+                timeout2Parse.Show();
+                timeout1Sec.Show();
+                timeout2Min.Show();
+                timeout2Sec.Show();
+            }
+
+            if (!parOptions[1])
+            {
+                faceOffsT1Lbl.Hide();
+                faceOffsT1.Hide();
+                faceOffsT2Lbl.Hide();
+                faceOffsT2.Hide();
+            }
+            else
+            {
+                faceOffsT1Lbl.Show();
+                faceOffsT1.Show();
+                faceOffsT2Lbl.Show();
+                faceOffsT2.Show();
+            }
+
+            if (!parOptions[2])
+            {
+                shotsT1Lbl.Hide();
+                shotsT1.Hide();
+                shotsT2Lbl.Hide();
+                shotsT2.Hide();
+            }
+            else
+            {
+                shotsT1Lbl.Show();
+                shotsT1.Show();
+                shotsT2Lbl.Show();
+                shotsT2.Show();
+            }
+        }
+
 
 
 
@@ -669,7 +725,7 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void label6_MouseMove(object sender, MouseEventArgs e)
         {
-            ReplaceObject(e,label6);
+            ReplaceObject(e,timeout1Parse);
         }
 
         private void timeout1Sec_MouseDown(object sender, MouseEventArgs e)
@@ -709,7 +765,7 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void label3_MouseMove(object sender, MouseEventArgs e)
         {
-            ReplaceObject(e,label3);
+            ReplaceObject(e,timeout2Parse);
         }
 
         private void timeout2Sec_MouseDown(object sender, MouseEventArgs e)
