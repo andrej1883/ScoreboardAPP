@@ -73,7 +73,7 @@ namespace Scoreboard.Classes
 
         public void Tick()
         {
-            if (_minutes == 0 && _seconds == 0) return;
+            if (IsZero()) return;
             if (_seconds == 0)
             {
                 if (_minutes > 0)
@@ -87,6 +87,16 @@ namespace Scoreboard.Classes
             {
                 _seconds--;
             }
+        }
+
+        public bool IsZero()
+        {
+            if (_minutes == 0 && _seconds == 0)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

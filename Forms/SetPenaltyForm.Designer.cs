@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.selectPlayer = new System.Windows.Forms.ComboBox();
             this.penaltyTimesCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.playerNumber = new System.Windows.Forms.NumericUpDown();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.savePenaltyBtn = new System.Windows.Forms.Button();
@@ -53,18 +53,19 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerNumber)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // selectPlayer
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.selectPlayer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectPlayer.FormattingEnabled = true;
+            this.selectPlayer.Location = new System.Drawing.Point(17, 58);
+            this.selectPlayer.Name = "selectPlayer";
+            this.selectPlayer.Size = new System.Drawing.Size(121, 21);
+            this.selectPlayer.TabIndex = 0;
+            this.selectPlayer.SelectedIndexChanged += new System.EventHandler(this.selectPlayer_SelectedIndexChanged);
             // 
             // penaltyTimesCombo
             // 
@@ -175,7 +176,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label3);
-            this.groupBox6.Controls.Add(this.numericUpDown1);
+            this.groupBox6.Controls.Add(this.playerNumber);
             this.groupBox6.Location = new System.Drawing.Point(39, 31);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(209, 103);
@@ -192,23 +193,23 @@
             this.label3.TabIndex = 87;
             this.label3.Text = "Player number:";
             // 
-            // numericUpDown1
+            // playerNumber
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(27, 58);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.playerNumber.Location = new System.Drawing.Point(27, 58);
+            this.playerNumber.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.playerNumber.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(74, 20);
-            this.numericUpDown1.TabIndex = 86;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.playerNumber.Name = "playerNumber";
+            this.playerNumber.Size = new System.Drawing.Size(74, 20);
+            this.playerNumber.TabIndex = 86;
+            this.playerNumber.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -217,7 +218,7 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.selectPlayer);
             this.groupBox5.Location = new System.Drawing.Point(278, 31);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(166, 103);
@@ -267,7 +268,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerNumber)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -276,7 +277,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox selectPlayer;
         private System.Windows.Forms.ComboBox penaltyTimesCombo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -290,7 +291,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown playerNumber;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button savePenaltyBtn;

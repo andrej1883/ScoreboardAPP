@@ -102,9 +102,9 @@ namespace Scoreboard.Forms
                 _longPenaltyLength.Seconds = (int)longPenaltyInputS.Value;
                 _preMatchTime.Minutes = (int)preMatchInputM.Value;
                 _preMatchTime.Seconds = (int)preMatchInputS.Value;
-                _parentForm.SetTime(_periodLength.Minutes,PeriodLength.Seconds);
-                _parentForm.SetTimeoutLength(1,_timeoutLength.Minutes,_timeoutLength.Seconds);
-                _parentForm.SetTimeoutLength(2,_timeoutLength.Minutes,_timeoutLength.Seconds);
+                _parentForm.SetTime(_periodLength);
+                _parentForm.SetTimeoutLength(1,_timeoutLength);
+                _parentForm.SetTimeoutLength(2,_timeoutLength);
                 _parentForm.InitBoards();
                 Hide();
             }

@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Scoreboard.Classes;
 
 namespace Scoreboard.Forms.MainGameForms
 {
@@ -255,17 +256,17 @@ namespace Scoreboard.Forms.MainGameForms
             _instance = null;
         }
 
-        public void SetTimeout(int team1, int minutes, int seconds)
+        public void SetTimeout(int team1, Time parTime)
         {
             if (team1 == 1)
             {
-                timeout1Min.Text = CheckZero(minutes);
-                timeout1Sec.Text = CheckZero(seconds);
+                timeout1Min.Text = CheckZero(parTime.Minutes);
+                timeout1Sec.Text = CheckZero(parTime.Seconds);
             }
             else if (team1 == 2)
             {
-                timeout2Min.Text = CheckZero(minutes);
-                timeout2Sec.Text = CheckZero(seconds);
+                timeout2Min.Text = CheckZero(parTime.Minutes);
+                timeout2Sec.Text = CheckZero(parTime.Seconds);
             }
         }
 
@@ -468,10 +469,10 @@ namespace Scoreboard.Forms.MainGameForms
                 team2Logo.Show();
         }
 
-        public void SetTime(int minutes, int seconds)
+        public void SetTime(Time parTime)
         {
-            timeMinutesLbl.Text = CheckZero(minutes);
-            timeSecondsLbl.Text = CheckZero(seconds);
+            timeMinutesLbl.Text = CheckZero(parTime.Minutes);
+            timeSecondsLbl.Text = CheckZero(parTime.Seconds);
         }
 
         public override string ToString()
