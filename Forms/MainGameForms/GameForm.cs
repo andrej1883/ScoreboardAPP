@@ -170,13 +170,13 @@ namespace Scoreboard.Forms.MainGameForms
             t2.SubtractTime(t1);
             if (team == 1)
             {
-                if (_team1 == null || _team1.Players.Count < 6) return;
+                if (_team1 == null || _team1.Players.Count < 1) return;
                 SelectPlayerGoal varGoal = new SelectPlayerGoal(1, _matchStats, _team1.Players,t2);
                 varGoal.Show();
             }
             if (team == 2)
             {
-                if (_team2 == null || _team2.Players.Count < 6) return;
+                if (_team2 == null || _team2.Players.Count < 1) return;
                 SelectPlayerGoal varGoal = new SelectPlayerGoal(2, _matchStats, _team2.Players,t2);
                 varGoal.Show();
             }
@@ -897,6 +897,8 @@ namespace Scoreboard.Forms.MainGameForms
                 if (string.IsNullOrWhiteSpace(name)) return;
                 Team selected = (Team) TeamsDBT1.SelectedItem;
                 _team1 = selected;
+                var empty = new Player() {Name = " ", Number = " "};
+                _team1.Players.Add(empty);
                 _matchStats.TeamStats[0].Name = _team1.Name;
                 team1NameBox.Text = _team1.Name;
                 _formScoreBoard.SetTeamName(true,_team1.Name);
@@ -922,11 +924,13 @@ namespace Scoreboard.Forms.MainGameForms
                 Team selected = (Team) TeamsDBT2.SelectedItem;
                 if (selected == null) return; 
                 _team2 = selected;
-                _matchStats.TeamStats[1].Name = selected.Name;
+                var empty = new Player() {Name = " ", Number = " "};
+                _team2.Players.Add(empty);
+                _matchStats.TeamStats[1].Name = _team2.Name;
                 team2NameBox.Text =  _matchStats.TeamStats[1].Name;
-                _formScoreBoard.SetTeamName(false,  _matchStats.TeamStats[1].Name);
-                UploadLogo(false, selected.LogoPath);
-                videoPath2.Text = selected.VideoPath;
+                _formScoreBoard.SetTeamName(false,  _team2.Name);
+                UploadLogo(false, _team2.LogoPath);
+                videoPath2.Text = _team2.VideoPath;
             }
             else
             {

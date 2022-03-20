@@ -43,15 +43,20 @@ namespace Scoreboard.Classes
                     help.Seconds += 60;
                     help.Minutes -= parTime.Minutes;
                     help.Seconds -= parTime.Seconds;
-                    if (IsValidTime(help))
-                    {
-                        Minutes = help.Minutes;
-                        Seconds = help.Seconds;
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("Subtract time invalid operation!");
-                    }
+                }
+                else
+                { 
+                    help.Minutes -= parTime.Minutes;
+                    help.Seconds -= parTime.Seconds;
+                }
+                if (IsValidTime(help))
+                {
+                    Minutes = help.Minutes;
+                    Seconds = help.Seconds;
+                }
+                else
+                {
+                    throw new InvalidOperationException("Subtract time invalid operation!");
                 }
             }
         }

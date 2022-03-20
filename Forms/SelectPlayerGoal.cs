@@ -27,8 +27,7 @@ namespace Scoreboard.Forms
             _team = parTeam;
             _players = parPlayers;
             InitializeComponent();
-            var empty = new Player() {Name = " ", Number = " "};
-            _players.Add(empty);
+            
             playerGoal.DataSource = _players;
             playerA1.BindingContext = new BindingContext();
             playerA1.DataSource = _players;
