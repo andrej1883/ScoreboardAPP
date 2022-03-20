@@ -71,12 +71,7 @@ namespace Scoreboard.Classes
             return false;
         }
 
-        public override string ToString()
-        {
-            return $"{Minutes}{"_"}{Seconds}";
-        }
-
-        public void Tick()
+        public void TickMinus()
         {
             if (IsZero()) return;
             if (_seconds == 0)
@@ -94,6 +89,16 @@ namespace Scoreboard.Classes
             }
         }
 
+        public void TickPlus()
+        {
+            _seconds++;
+            if (_seconds == 60)
+            {
+                _minutes++;
+                _seconds = 0;
+            }
+        }
+
         public bool IsZero()
         {
             if (_minutes == 0 && _seconds == 0)
@@ -102,6 +107,24 @@ namespace Scoreboard.Classes
             }
 
             return false;
+        }
+
+        public override string ToString()
+        {
+            string sMinutes;
+            string sSeconds;
+
+            if (_minutes < 10)
+                sMinutes = "0" + _minutes;
+            else
+                sMinutes = _minutes.ToString();
+
+            if (_seconds < 10)
+                sSeconds = "0" + _seconds;
+            else
+                sSeconds = _seconds.ToString();
+
+            return $"{sMinutes}{"_"}{sSeconds}";
         }
     }
 }

@@ -1627,7 +1627,7 @@
             // 
             // startTimeoutT1
             // 
-            this.startTimeoutT1.Location = new System.Drawing.Point(224, 486);
+            this.startTimeoutT1.Location = new System.Drawing.Point(225, 486);
             this.startTimeoutT1.Name = "startTimeoutT1";
             this.startTimeoutT1.Size = new System.Drawing.Size(75, 23);
             this.startTimeoutT1.TabIndex = 77;

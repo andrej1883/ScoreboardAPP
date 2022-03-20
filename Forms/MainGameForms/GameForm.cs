@@ -35,12 +35,15 @@ namespace Scoreboard.Forms.MainGameForms
         //private int _secondsT = 0;
         //private int _minutesT = 0;
         private Time _matchTime;
+        private Time _elapsedTime;
         private int _period = 1;
 
         private bool _breakRunning = false;
         private bool _periodEnd = false;
+        private bool _periodStarted = false;
         private bool _timeout1Running = false;
         private bool _timeout2Running = false;
+        private bool[] _activePenalty;
 
         private int[][] _penalty;
         private Time[] _timeouts;
@@ -82,9 +85,11 @@ namespace Scoreboard.Forms.MainGameForms
             _formScoreBoard.SetTime(_matchTime);
             UpdateTime(_matchTime);
             _penalty = new int[MaxPenalties][];
+            _activePenalty = new bool[MaxPenalties];
             for (int i = 0; i < MaxPenalties; i++)
             {
                 _penalty[i] = new int[3];
+                _activePenalty[i] = false;
             }
 
             _timeouts = new Time[TwoTeams];
@@ -258,6 +263,7 @@ namespace Scoreboard.Forms.MainGameForms
         {
             period.Text = _period.ToString();
             _formScoreBoard.SetPeriod(_period.ToString());
+            _periodStarted = false;
         }
 
         private void periodMinus_Click(object sender, EventArgs e)
@@ -387,13 +393,17 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void StartTimer()
         {
-            if (!_timer.Enabled && !_periodEnd && (_matchTime.Minutes > 0 || _matchTime.Seconds > 0) && (!_timeoutTimer.Enabled))
+            if (!_timer.Enabled && !_periodEnd && !_matchTime.IsZero() && (!_timeoutTimer.Enabled))
             {
                 _timer = ResetTimer();
                 _timer.Tick += DisplayTimeTimer;
                 _timer.Enabled = true;
                 _timer.Start();
-                _matchStats.CreateStartPeriodEvent(_period);
+                if (!_periodStarted)
+                {
+                    _matchStats.CreateStartPeriodEvent(_period);
+                    _periodStarted = true;
+                }
                 StartPenalty();
             }
         }
@@ -405,7 +415,15 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void DisplayTimeTimer(Object myObject, EventArgs myEventArgs)
         {
-            _matchTime.Tick();
+            _matchTime.TickMinus();
+            _elapsedTime.TickPlus();
+            var t1 = _matchTime;
+            var t2 = _gameTimes.PeriodLength;
+            t2.SubtractTime(t1);
+            if (t2.Minutes == 1 && t2.Seconds == 0)
+            {
+                _matchStats.CreateLastMinuteEvent(_period);
+            }
 
             _formScoreBoard.SetTime(_matchTime);
             UpdateTime(_matchTime);
@@ -417,7 +435,9 @@ namespace Scoreboard.Forms.MainGameForms
                 if (!_periodEnd)
                 {
                     _periodEnd = true;
+                    _periodStarted = false;
                     MessageBox.Show(@"Period ended" , @"Timer stopped", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _matchStats.CreateEndPeriodEvent(_period);
                 }
                 else
                 {
@@ -456,6 +476,7 @@ namespace Scoreboard.Forms.MainGameForms
             _matchTime = _gameTimes.PeriodLength;
             _timer.Enabled = false;
             _periodEnd = false;
+            _periodStarted = false;
             InitBoards();
         }
 
@@ -607,6 +628,12 @@ namespace Scoreboard.Forms.MainGameForms
                 else
                 {
                     _formScoreBoard.HidePenalty(i + 1);
+                    if (_activePenalty[i])
+                    {
+                        _matchStats.EndPenaltyEvent(i + 1);
+                        _activePenalty[i] = false;
+                    }
+                    
                 }
             }
         }
@@ -763,7 +790,8 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void CountTimeout(int team)
         {
-            _timeouts[team-1].Tick();
+            _timeouts[team-1].TickMinus();
+            _elapsedTime.TickPlus();
             
 
             _formScoreBoard.SetTimeout(team,_timeouts[team-1]);
@@ -1164,28 +1192,32 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void plusFaceoffsT1_Click(object sender, EventArgs e)
         {
-            var t1 = _matchTime;
-            var t2 = _gameTimes.PeriodLength;
-            t2.SubtractTime(t1);
+            if (!_timer.Enabled && !_breakRunning)
+            {
+                _matchStats.TeamStats[0].FaceOffs++;
+                _formScoreBoard.SetFaceOff(true,_matchStats.TeamStats[0].FaceOffs);
+                faceoffsT1.Text = _matchStats.TeamStats[0].FaceOffs.ToString();
 
-            _matchStats.TeamStats[0].FaceOffs++;
-            _formScoreBoard.SetFaceOff(true,_matchStats.TeamStats[0].FaceOffs);
-            faceoffsT1.Text = _matchStats.TeamStats[0].FaceOffs.ToString();
-
-            _matchStats.CreateFaceOffEvent(1,t2);
+                _matchStats.CreateFaceOffEvent(1,_elapsedTime);
+                StartTimer();
+            }
         }
 
         private void plusFaceoffsT2_Click(object sender, EventArgs e)
         {
-            var t1 = _matchTime;
-            var t2 = _gameTimes.PeriodLength;
-            t2.SubtractTime(t1);
+            if (!_timer.Enabled && !_breakRunning)
+            {
+                var t1 = _matchTime;
+                var t2 = _gameTimes.PeriodLength;
+                t2.SubtractTime(t1);
 
-            _matchStats.TeamStats[1].FaceOffs++;
-            _formScoreBoard.SetFaceOff(false,_matchStats.TeamStats[1].FaceOffs);
-            faceoffsT2.Text = _matchStats.TeamStats[1].FaceOffs.ToString();
+                _matchStats.TeamStats[1].FaceOffs++;
+                _formScoreBoard.SetFaceOff(false,_matchStats.TeamStats[1].FaceOffs);
+                faceoffsT2.Text = _matchStats.TeamStats[1].FaceOffs.ToString();
 
-            _matchStats.CreateFaceOffEvent(2,t2);
+                _matchStats.CreateFaceOffEvent(2,_elapsedTime);
+                StartTimer();
+            }
         }
 
         private void minusShotsT1_Click(object sender, EventArgs e)
@@ -1293,24 +1325,36 @@ namespace Scoreboard.Forms.MainGameForms
                 switch (position)
                 {
                     case 1:
-                        _penalty[0][0] =  form.Penalty[0];
-                        _penalty[0][1] =  form.Penalty[1];
-                        _penalty[0][2] =  form.Penalty[2];
+                        for (int i = 0; i < _penalty[0].Length; i++)
+                        {
+                            _penalty[0][i] =  form.Penalty[i];
+                        }
+                        _matchStats.CreatePenaltyEvent(1,new Time() {Minutes =form.Penalty[1], Seconds = form.Penalty[2]});
+                        _activePenalty[0] = true;
                         break;
                     case 2:
-                        _penalty[1][0] =  form.Penalty[0];
-                        _penalty[1][1] =  form.Penalty[1];
-                        _penalty[1][2] =  form.Penalty[2];
+                        for (int i = 0; i < _penalty[0].Length; i++)
+                        {
+                            _penalty[1][i] =  form.Penalty[i];
+                        }
+                        _matchStats.CreatePenaltyEvent(1,new Time() {Minutes =form.Penalty[1], Seconds = form.Penalty[2]});
+                        _activePenalty[1] = true;
                         break;
                     case 3:
-                        _penalty[2][0] =  form.Penalty[0];
-                        _penalty[2][1] =  form.Penalty[1];
-                        _penalty[2][2] =  form.Penalty[2];
+                        for (int i = 0; i < _penalty[0].Length; i++)
+                        {
+                            _penalty[2][i] =  form.Penalty[i];
+                        }
+                        _matchStats.CreatePenaltyEvent(2,new Time() {Minutes =form.Penalty[1], Seconds = form.Penalty[2]});
+                        _activePenalty[2] = true;
                         break;
                     case 4:
-                        _penalty[3][0] =  form.Penalty[0];
-                        _penalty[3][1] =  form.Penalty[1];
-                        _penalty[3][2] =  form.Penalty[2];
+                        for (int i = 0; i < _penalty[0].Length; i++)
+                        {
+                            _penalty[3][i] =  form.Penalty[i];
+                        }
+                        _matchStats.CreatePenaltyEvent(2,new Time() {Minutes =form.Penalty[1], Seconds = form.Penalty[2]});
+                        _activePenalty[3] = true;
                         break;
                 }
                 InitBoards();

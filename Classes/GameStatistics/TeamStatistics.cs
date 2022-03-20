@@ -31,11 +31,5 @@
             get => _shots;
             set => _shots = value;
         }
-
-        public Time PenalTime
-        {
-            get => _penalTime;
-            set => _penalTime = value;
-        }
     }
 }
