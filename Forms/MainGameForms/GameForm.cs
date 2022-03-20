@@ -25,6 +25,7 @@ namespace Scoreboard.Forms.MainGameForms
         private MatchStatistics _matchStats;
         private ControlForm _controlForm;
         private StatisticsSettings _statSettings;
+        private ExportStatsForm _exportSettings;
 
         private Team _team1;
         private Team _team2;
@@ -72,6 +73,7 @@ namespace Scoreboard.Forms.MainGameForms
             _gameTimes = new SetTimes(this);
             _matchStats = new MatchStatistics("Team1", "Team2");
             _statSettings = new StatisticsSettings();
+            _exportSettings = new ExportStatsForm();
 
             InitializeComponent();
             _formScoreBoard = parFormScoreBoard;
@@ -1365,23 +1367,6 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
-        private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (_formScoreBoard.IsActive)
-            {
-                _statSettings.ShowDialog();
-                if (_statSettings.DialogResult == DialogResult.OK)
-                {
-                    SelectStats(_statSettings.ActiveStatistics);
-                    _formScoreBoard.SelectStats(_statSettings.ActiveStatistics);
-                }
-            }
-            else
-            {
-                MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dispose();
@@ -1432,6 +1417,36 @@ namespace Scoreboard.Forms.MainGameForms
                 minusShotsT2.Show();
                 plusShotsT1.Show();
                 plusShotsT2.Show();
+            }
+        }
+
+        private void selectStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsActive)
+            {
+                _statSettings.ShowDialog();
+                if (_statSettings.DialogResult == DialogResult.OK)
+                {
+                    SelectStats(_statSettings.ActiveStatistics);
+                    _formScoreBoard.SelectStats(_statSettings.ActiveStatistics);
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void exportSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_matchStats != null)
+            {
+                _exportSettings.ShowDialog();
+                if (_exportSettings.DialogResult == DialogResult.OK)
+                {
+                    _matchStats.ExportEvents = _exportSettings.Export;
+                    _matchStats.ExpoPath = _exportSettings.Path;
+                }
             }
         }
     }

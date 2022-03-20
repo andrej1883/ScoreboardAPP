@@ -10,6 +10,20 @@ namespace Scoreboard.Classes.GameStatistics
         private TeamStatistics[] _teamStats;
         private List<MatchEvent> _matchEvents;
         private Time _actualTime;
+        private bool _exportEvents = true;
+        private string _expoPath = Environment.CurrentDirectory + "\\Events";
+
+        public string ExpoPath
+        {
+            get => _expoPath;
+            set => _expoPath = value;
+        }
+
+        public bool ExportEvents
+        {
+            get => _exportEvents;
+            set => _exportEvents = value;
+        }
 
         public List<MatchEvent> MatchEvents
         {
@@ -146,12 +160,14 @@ namespace Scoreboard.Classes.GameStatistics
 
         private void ExportEvent(MatchEvent parEvent)
         {
-            string dir = Environment.CurrentDirectory + "\\Events";
-            if (!Directory.Exists(dir))
+            if (_exportEvents)
             {
-                Directory.CreateDirectory(dir);
+                if (!Directory.Exists(_expoPath))
+                {
+                    Directory.CreateDirectory(_expoPath);
+                }
+                File.WriteAllText(Path.Combine(_expoPath, parEvent.EventName + ".txt"), parEvent.EventInfo);
             }
-            File.WriteAllText(Path.Combine(dir, parEvent.EventName + ".txt"), parEvent.EventInfo);
         }
 
         private void ResetStats(string team1Name, string team2Name)

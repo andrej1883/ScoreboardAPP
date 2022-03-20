@@ -73,6 +73,12 @@
     <Compile Include="Forms\DBForms\CreateTeamForm.Designer.cs">
       <DependentUpon>CreateTeamForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ExportStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExportStatsForm.Designer.cs">
+      <DependentUpon>ExportStatsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainGameForms\GameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DBForms\CreateTeamForm.resx">
       <DependentUpon>CreateTeamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExportStatsForm.resx">
+      <DependentUpon>ExportStatsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainGameForms\GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
