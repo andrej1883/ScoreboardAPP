@@ -149,7 +149,7 @@
             // periodLbl
             // 
             this.periodLbl.ForeColor = System.Drawing.Color.Black;
-            this.periodLbl.Location = new System.Drawing.Point(616, 30);
+            this.periodLbl.Location = new System.Drawing.Point(609, 39);
             this.periodLbl.Name = "periodLbl";
             this.periodLbl.Size = new System.Drawing.Size(37, 13);
             this.periodLbl.TabIndex = 7;
@@ -199,9 +199,10 @@
             // 
             // actualPeriodLbl
             // 
+            this.actualPeriodLbl.AutoSize = true;
             this.actualPeriodLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.actualPeriodLbl.ForeColor = System.Drawing.Color.Black;
-            this.actualPeriodLbl.Location = new System.Drawing.Point(602, 57);
+            this.actualPeriodLbl.Location = new System.Drawing.Point(598, 63);
             this.actualPeriodLbl.Name = "actualPeriodLbl";
             this.actualPeriodLbl.Size = new System.Drawing.Size(64, 46);
             this.actualPeriodLbl.TabIndex = 11;
@@ -650,6 +651,8 @@
             this.faceOffsT1Lbl.TabIndex = 59;
             this.faceOffsT1Lbl.Text = "Face-offs";
             this.faceOffsT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.faceOffsT1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.faceOffsT1Lbl_MouseDown);
+            this.faceOffsT1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.faceOffsT1Lbl_MouseMove);
             // 
             // faceOffsT2Lbl
             // 
@@ -660,6 +663,8 @@
             this.faceOffsT2Lbl.TabIndex = 60;
             this.faceOffsT2Lbl.Text = "Face-offs";
             this.faceOffsT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.faceOffsT2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.faceOffsT2Lbl_MouseDown);
+            this.faceOffsT2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.faceOffsT2Lbl_MouseMove);
             // 
             // faceOffsT1
             // 
@@ -671,6 +676,8 @@
             this.faceOffsT1.TabIndex = 61;
             this.faceOffsT1.Text = "00";
             this.faceOffsT1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.faceOffsT1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.faceOffsT1_MouseDown);
+            this.faceOffsT1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.faceOffsT1_MouseMove);
             // 
             // faceOffsT2
             // 
@@ -682,6 +689,8 @@
             this.faceOffsT2.TabIndex = 62;
             this.faceOffsT2.Text = "00";
             this.faceOffsT2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.faceOffsT2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.faceOffsT2_MouseDown);
+            this.faceOffsT2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.faceOffsT2_MouseMove);
             // 
             // shotsT1
             // 
@@ -693,6 +702,8 @@
             this.shotsT1.TabIndex = 64;
             this.shotsT1.Text = "00";
             this.shotsT1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.shotsT1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shotsT1_MouseDown);
+            this.shotsT1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.shotsT1_MouseMove);
             // 
             // shotsT1Lbl
             // 
@@ -703,6 +714,8 @@
             this.shotsT1Lbl.TabIndex = 63;
             this.shotsT1Lbl.Text = "Shots on goal";
             this.shotsT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.shotsT1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shotsT1Lbl_MouseDown);
+            this.shotsT1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.shotsT1Lbl_MouseMove);
             // 
             // shotsT2
             // 
@@ -714,6 +727,8 @@
             this.shotsT2.TabIndex = 66;
             this.shotsT2.Text = "00";
             this.shotsT2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.shotsT2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shotsT2_MouseDown);
+            this.shotsT2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.shotsT2_MouseMove);
             // 
             // shotsT2Lbl
             // 
@@ -724,6 +739,8 @@
             this.shotsT2Lbl.TabIndex = 65;
             this.shotsT2Lbl.Text = "Shots on goal";
             this.shotsT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.shotsT2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shotsT2Lbl_MouseDown);
+            this.shotsT2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.shotsT2Lbl_MouseMove);
             // 
             // ScoreboardForm
             // 

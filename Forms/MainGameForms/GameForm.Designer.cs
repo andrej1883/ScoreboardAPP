@@ -188,6 +188,14 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.shootoutBtn = new System.Windows.Forms.Button();
+            this.preMatchCount = new System.Windows.Forms.Button();
+            this.overT1 = new System.Windows.Forms.Button();
+            this.overT2 = new System.Windows.Forms.Button();
+            this.overTBreak = new System.Windows.Forms.Button();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -213,6 +221,9 @@
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -345,7 +356,7 @@
             // period
             // 
             this.period.AutoSize = true;
-            this.period.Location = new System.Drawing.Point(876, 105);
+            this.period.Location = new System.Drawing.Point(187, 48);
             this.period.Name = "period";
             this.period.Size = new System.Drawing.Size(13, 13);
             this.period.TabIndex = 10;
@@ -353,7 +364,7 @@
             // 
             // periodMinus
             // 
-            this.periodMinus.Location = new System.Drawing.Point(763, 100);
+            this.periodMinus.Location = new System.Drawing.Point(74, 43);
             this.periodMinus.Name = "periodMinus";
             this.periodMinus.Size = new System.Drawing.Size(75, 23);
             this.periodMinus.TabIndex = 11;
@@ -363,7 +374,7 @@
             // 
             // periodPlus
             // 
-            this.periodPlus.Location = new System.Drawing.Point(927, 100);
+            this.periodPlus.Location = new System.Drawing.Point(238, 43);
             this.periodPlus.Name = "periodPlus";
             this.periodPlus.Size = new System.Drawing.Size(75, 23);
             this.periodPlus.TabIndex = 12;
@@ -776,7 +787,7 @@
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.timeToolStripMenuItem.Text = "Time";
             this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
@@ -786,7 +797,7 @@
             this.importToolStripMenuItem1,
             this.exportToolStripMenuItem1});
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.appearanceToolStripMenuItem.Text = "Appearance";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
             // 
@@ -810,27 +821,27 @@
             this.selectStatisticsToolStripMenuItem,
             this.exportSettingsToolStripMenuItem});
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.statisticsToolStripMenuItem.Text = "Statistics";
             // 
             // selectStatisticsToolStripMenuItem
             // 
             this.selectStatisticsToolStripMenuItem.Name = "selectStatisticsToolStripMenuItem";
-            this.selectStatisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectStatisticsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.selectStatisticsToolStripMenuItem.Text = "Select Statistics";
             this.selectStatisticsToolStripMenuItem.Click += new System.EventHandler(this.selectStatisticsToolStripMenuItem_Click);
             // 
             // exportSettingsToolStripMenuItem
             // 
             this.exportSettingsToolStripMenuItem.Name = "exportSettingsToolStripMenuItem";
-            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.exportSettingsToolStripMenuItem.Text = "Export settings";
             this.exportSettingsToolStripMenuItem.Click += new System.EventHandler(this.exportSettingsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -897,7 +908,7 @@
             // 
             // createBtn
             // 
-            this.createBtn.Location = new System.Drawing.Point(799, 924);
+            this.createBtn.Location = new System.Drawing.Point(45, 64);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(145, 23);
             this.createBtn.TabIndex = 72;
@@ -907,7 +918,7 @@
             // 
             // closeScoreboardBtn
             // 
-            this.closeScoreboardBtn.Location = new System.Drawing.Point(799, 981);
+            this.closeScoreboardBtn.Location = new System.Drawing.Point(45, 121);
             this.closeScoreboardBtn.Name = "closeScoreboardBtn";
             this.closeScoreboardBtn.Size = new System.Drawing.Size(145, 23);
             this.closeScoreboardBtn.TabIndex = 73;
@@ -918,7 +929,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(865, 50);
+            this.label1.Location = new System.Drawing.Point(176, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 74;
@@ -1770,6 +1781,7 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.preMatchCount);
             this.groupBox8.Controls.Add(this.cancelBreak);
             this.groupBox8.Controls.Add(this.startBreak);
             this.groupBox8.Location = new System.Drawing.Point(693, 528);
@@ -1804,11 +1816,101 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Advertisement controls";
             // 
+            // shootoutBtn
+            // 
+            this.shootoutBtn.Location = new System.Drawing.Point(271, 35);
+            this.shootoutBtn.Name = "shootoutBtn";
+            this.shootoutBtn.Size = new System.Drawing.Size(107, 23);
+            this.shootoutBtn.TabIndex = 91;
+            this.shootoutBtn.Text = "Start shootout";
+            this.shootoutBtn.UseVisualStyleBackColor = true;
+            this.shootoutBtn.Click += new System.EventHandler(this.shootoutBtn_Click);
+            // 
+            // preMatchCount
+            // 
+            this.preMatchCount.Location = new System.Drawing.Point(255, 28);
+            this.preMatchCount.Name = "preMatchCount";
+            this.preMatchCount.Size = new System.Drawing.Size(128, 23);
+            this.preMatchCount.TabIndex = 82;
+            this.preMatchCount.Text = "Pre match countdown";
+            this.preMatchCount.UseVisualStyleBackColor = true;
+            this.preMatchCount.Click += new System.EventHandler(this.preMatchCount_Click);
+            // 
+            // overT1
+            // 
+            this.overT1.Location = new System.Drawing.Point(14, 35);
+            this.overT1.Name = "overT1";
+            this.overT1.Size = new System.Drawing.Size(75, 23);
+            this.overT1.TabIndex = 92;
+            this.overT1.Text = "Overtime 1";
+            this.overT1.UseVisualStyleBackColor = true;
+            this.overT1.Click += new System.EventHandler(this.overT1_Click);
+            // 
+            // overT2
+            // 
+            this.overT2.Location = new System.Drawing.Point(190, 35);
+            this.overT2.Name = "overT2";
+            this.overT2.Size = new System.Drawing.Size(75, 23);
+            this.overT2.TabIndex = 93;
+            this.overT2.Text = "Overtime 2";
+            this.overT2.UseVisualStyleBackColor = true;
+            this.overT2.Click += new System.EventHandler(this.overT2_Click);
+            // 
+            // overTBreak
+            // 
+            this.overTBreak.Location = new System.Drawing.Point(95, 35);
+            this.overTBreak.Name = "overTBreak";
+            this.overTBreak.Size = new System.Drawing.Size(89, 23);
+            this.overTBreak.TabIndex = 94;
+            this.overTBreak.Text = "Overtime break";
+            this.overTBreak.UseVisualStyleBackColor = true;
+            this.overTBreak.Click += new System.EventHandler(this.overTBreak_Click);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.overTBreak);
+            this.groupBox11.Controls.Add(this.overT2);
+            this.groupBox11.Controls.Add(this.overT1);
+            this.groupBox11.Controls.Add(this.shootoutBtn);
+            this.groupBox11.Location = new System.Drawing.Point(693, 729);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(397, 84);
+            this.groupBox11.TabIndex = 95;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Extra time";
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.label1);
+            this.groupBox12.Controls.Add(this.periodPlus);
+            this.groupBox12.Controls.Add(this.periodMinus);
+            this.groupBox12.Controls.Add(this.period);
+            this.groupBox12.Location = new System.Drawing.Point(693, 57);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(397, 79);
+            this.groupBox12.TabIndex = 96;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Period settings";
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.closeScoreboardBtn);
+            this.groupBox13.Controls.Add(this.createBtn);
+            this.groupBox13.Location = new System.Drawing.Point(768, 860);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(226, 200);
+            this.groupBox13.TabIndex = 97;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "ScoreBoard";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1760, 1119);
+            this.Controls.Add(this.groupBox13);
+            this.Controls.Add(this.groupBox12);
+            this.Controls.Add(this.groupBox11);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
@@ -1816,12 +1918,6 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.closeScoreboardBtn);
-            this.Controls.Add(this.createBtn);
-            this.Controls.Add(this.periodPlus);
-            this.Controls.Add(this.periodMinus);
-            this.Controls.Add(this.period);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -1862,6 +1958,10 @@
             this.groupBox9.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2029,5 +2129,13 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectStatisticsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportSettingsToolStripMenuItem;
+        private System.Windows.Forms.Button shootoutBtn;
+        private System.Windows.Forms.Button preMatchCount;
+        private System.Windows.Forms.Button overT1;
+        private System.Windows.Forms.Button overT2;
+        private System.Windows.Forms.Button overTBreak;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.GroupBox groupBox13;
     }
 }

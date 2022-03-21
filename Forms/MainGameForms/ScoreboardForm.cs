@@ -1007,5 +1007,85 @@ namespace Scoreboard.Forms.MainGameForms
         {
             ReplaceObject(e,scoreT2Lbl);
         }
+
+        private void faceOffsT1Lbl_MouseDown(object sender, MouseEventArgs e)
+        {
+            SaveMouseLocation(e);
+        }
+
+        private void faceOffsT1Lbl_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReplaceObject(e,faceOffsT1Lbl);
+        }
+
+        private void faceOffsT1_MouseDown(object sender, MouseEventArgs e)
+        {
+            SaveMouseLocation(e);
+        }
+
+        private void faceOffsT1_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReplaceObject(e,faceOffsT1);
+        }
+
+        private void faceOffsT2Lbl_MouseDown(object sender, MouseEventArgs e)
+        {
+            SaveMouseLocation(e);
+        }
+
+        private void faceOffsT2Lbl_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReplaceObject(e,faceOffsT2Lbl);
+        }
+
+        private void faceOffsT2_MouseDown(object sender, MouseEventArgs e)
+        {
+            SaveMouseLocation(e);
+        }
+
+        private void faceOffsT2_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReplaceObject(e,faceOffsT2);
+        }
+
+        private void shotsT1Lbl_MouseDown(object sender, MouseEventArgs e)
+        {
+            SaveMouseLocation(e);
+        }
+
+        private void shotsT1Lbl_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReplaceObject(e,shotsT1Lbl);
+        }
+
+        private void shotsT1_MouseDown(object sender, MouseEventArgs e)
+        {
+            SaveMouseLocation(e);
+        }
+
+        private void shotsT1_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReplaceObject(e,shotsT1);
+        }
+
+        private void shotsT2Lbl_MouseDown(object sender, MouseEventArgs e)
+        {
+            SaveMouseLocation(e);
+        }
+
+        private void shotsT2Lbl_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReplaceObject(e,shotsT2Lbl);
+        }
+
+        private void shotsT2_MouseDown(object sender, MouseEventArgs e)
+        {
+            SaveMouseLocation(e);
+        }
+
+        private void shotsT2_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReplaceObject(e,shotsT2);
+        }
     }
 }

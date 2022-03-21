@@ -314,6 +314,12 @@ namespace Scoreboard.Forms
 
         private void unlockScoreboard_Click(object sender, EventArgs e)
         {
+            for (int i = 1; i < 5; i++)
+            {
+                _formScoreBoard.ShowPenalty(i);
+            }
+            
+
             if (_formScoreBoard.IsLocked)
             {
                 _formScoreBoard.IsLocked = false;

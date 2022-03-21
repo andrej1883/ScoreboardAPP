@@ -54,6 +54,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.overBreakLS = new System.Windows.Forms.NumericUpDown();
+            this.overPeriodLS = new System.Windows.Forms.NumericUpDown();
+            this.overBreakLM = new System.Windows.Forms.NumericUpDown();
+            this.overPeriodLM = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.preMatchInputM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodLInputM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.breakLInputM)).BeginInit();
@@ -66,6 +74,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.breakLInputS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodLInputS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.preMatchInputS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overBreakLS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overPeriodLS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overBreakLM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overPeriodLM)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -196,7 +208,7 @@
             // 
             // saveTimes
             // 
-            this.saveTimes.Location = new System.Drawing.Point(115, 315);
+            this.saveTimes.Location = new System.Drawing.Point(115, 391);
             this.saveTimes.Name = "saveTimes";
             this.saveTimes.Size = new System.Drawing.Size(75, 23);
             this.saveTimes.TabIndex = 12;
@@ -206,7 +218,7 @@
             // 
             // cancelEditTimes
             // 
-            this.cancelEditTimes.Location = new System.Drawing.Point(208, 315);
+            this.cancelEditTimes.Location = new System.Drawing.Point(208, 391);
             this.cancelEditTimes.Name = "cancelEditTimes";
             this.cancelEditTimes.Size = new System.Drawing.Size(75, 23);
             this.cancelEditTimes.TabIndex = 13;
@@ -340,11 +352,103 @@
             this.label12.TabIndex = 31;
             this.label12.Text = ":";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(196, 351);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(10, 13);
+            this.label13.TabIndex = 39;
+            this.label13.Text = ":";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(196, 312);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(10, 13);
+            this.label14.TabIndex = 38;
+            this.label14.Text = ":";
+            // 
+            // overBreakLS
+            // 
+            this.overBreakLS.Location = new System.Drawing.Point(208, 349);
+            this.overBreakLS.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.overBreakLS.Name = "overBreakLS";
+            this.overBreakLS.Size = new System.Drawing.Size(120, 20);
+            this.overBreakLS.TabIndex = 37;
+            // 
+            // overPeriodLS
+            // 
+            this.overPeriodLS.Location = new System.Drawing.Point(208, 310);
+            this.overPeriodLS.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.overPeriodLS.Name = "overPeriodLS";
+            this.overPeriodLS.Size = new System.Drawing.Size(120, 20);
+            this.overPeriodLS.TabIndex = 36;
+            // 
+            // overBreakLM
+            // 
+            this.overBreakLM.Location = new System.Drawing.Point(70, 349);
+            this.overBreakLM.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.overBreakLM.Name = "overBreakLM";
+            this.overBreakLM.Size = new System.Drawing.Size(120, 20);
+            this.overBreakLM.TabIndex = 35;
+            // 
+            // overPeriodLM
+            // 
+            this.overPeriodLM.Location = new System.Drawing.Point(70, 310);
+            this.overPeriodLM.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.overPeriodLM.Name = "overPeriodLM";
+            this.overPeriodLM.Size = new System.Drawing.Size(120, 20);
+            this.overPeriodLM.TabIndex = 34;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(67, 333);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(114, 13);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Overtime break length:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(67, 293);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(116, 13);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "Overtime period length:";
+            // 
             // SetTimes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 357);
+            this.ClientSize = new System.Drawing.Size(375, 426);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.overBreakLS);
+            this.Controls.Add(this.overPeriodLS);
+            this.Controls.Add(this.overBreakLM);
+            this.Controls.Add(this.overPeriodLM);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -386,6 +490,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.breakLInputS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodLInputS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.preMatchInputS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overBreakLS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overPeriodLS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overBreakLM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overPeriodLM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,5 +527,13 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown overBreakLS;
+        private System.Windows.Forms.NumericUpDown overPeriodLS;
+        private System.Windows.Forms.NumericUpDown overBreakLM;
+        private System.Windows.Forms.NumericUpDown overPeriodLM;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }

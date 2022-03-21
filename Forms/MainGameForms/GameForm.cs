@@ -1449,5 +1449,104 @@ namespace Scoreboard.Forms.MainGameForms
                 }
             }
         }
+
+        private void shootoutBtn_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsActive)
+            {
+                if (_timer.Enabled) return;
+                _matchTime = new Time() {Minutes = 0, Seconds = 0};
+                period.Text = "SH";
+                _formScoreBoard.SetPeriod("SH");
+                _formScoreBoard.SetTime(_matchTime);
+                UpdateTime(_matchTime);
+            }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!", @"Add team Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void overTBreak_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsActive)
+            {
+                if (!_timer.Enabled)
+                {
+                    _matchTime = _gameTimes.BreakOvertLength;
+                    _breakRunning = true;
+                    period.Text = "OB";
+                    _formScoreBoard.SetPeriod("OB");
+                    _formScoreBoard.SetTime(_matchTime);
+                    UpdateTime(_matchTime);
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!", @"Add team Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void preMatchCount_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsActive)
+            {
+                if (_timer.Enabled) return;
+                _matchTime = _gameTimes.PreMatchTime;
+                period.Text = " ";
+                _formScoreBoard.SetPeriod(" ");
+                _formScoreBoard.SetTime(_matchTime);
+                UpdateTime(_matchTime);
+            }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!", @"Add team Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void overT1_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsActive)
+            {
+                if (!_timer.Enabled)
+                {
+                    _matchTime = _gameTimes.PeriodOvertLength;
+                    _breakRunning = true;
+                    period.Text = "O1";
+                    _formScoreBoard.SetPeriod("O1");
+                    _formScoreBoard.SetTime(_matchTime);
+                    UpdateTime(_matchTime);
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!", @"Add team Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void overT2_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsActive)
+            {
+                if (!_timer.Enabled)
+                {
+                    _matchTime = _gameTimes.PeriodOvertLength;
+                    _breakRunning = true;
+                    period.Text = "O2";
+                    _formScoreBoard.SetPeriod("O2");
+                    _formScoreBoard.SetTime(_matchTime);
+                    UpdateTime(_matchTime);
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!", @"Add team Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
     }
 }

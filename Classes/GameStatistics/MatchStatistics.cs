@@ -11,7 +11,7 @@ namespace Scoreboard.Classes.GameStatistics
         private List<MatchEvent> _matchEvents;
         private Time _actualTime;
         private bool _exportEvents = true;
-        private string _expoPath = Environment.CurrentDirectory + "\\Events";
+        private string _expoPath;
 
         public string ExpoPath
         {
@@ -160,6 +160,10 @@ namespace Scoreboard.Classes.GameStatistics
 
         private void ExportEvent(MatchEvent parEvent)
         {
+            if (_expoPath == null)
+            {
+                _expoPath = Environment.CurrentDirectory + "\\Events";
+            }
             if (_exportEvents)
             {
                 if (!Directory.Exists(_expoPath))

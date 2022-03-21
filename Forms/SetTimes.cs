@@ -20,12 +20,26 @@ namespace Scoreboard.Forms
         private Time _shortPenaltyLength = new Time() {Minutes = 2, Seconds = 0};
         private Time _longPenaltyLength = new Time() {Minutes = 5, Seconds = 0};
         private Time _preMatchTime = new Time() {Minutes = 10, Seconds = 0};
+        private Time _periodOvertLength = new Time() {Minutes = 10, Seconds = 0};
+        private Time _breakOvertLength = new Time() {Minutes = 5, Seconds = 0};
         private GameForm _parentForm;
 
         public Time PeriodLength
         {
             get => _periodLength;
             set => _periodLength = value;
+        }
+
+        public Time PeriodOvertLength
+        {
+            get => _periodOvertLength;
+            set => _periodOvertLength = value;
+        }
+
+        public Time BreakOvertLength
+        {
+            get => _breakOvertLength;
+            set => _breakOvertLength = value;
         }
 
         public Time BreakLength
@@ -82,6 +96,10 @@ namespace Scoreboard.Forms
             longPenaltyInputS.Value = _longPenaltyLength.Seconds;
             preMatchInputM.Value = _preMatchTime.Minutes;
             preMatchInputS.Value = _preMatchTime.Seconds;
+            overPeriodLM.Value = _periodOvertLength.Minutes;
+            overPeriodLS.Value = _periodOvertLength.Seconds;
+            overBreakLM.Value = _breakOvertLength.Minutes;
+            overBreakLS.Value = _breakOvertLength.Seconds;
         }
 
         private void saveTimes_Click(object sender, EventArgs e)
@@ -102,6 +120,10 @@ namespace Scoreboard.Forms
                 _longPenaltyLength.Seconds = (int)longPenaltyInputS.Value;
                 _preMatchTime.Minutes = (int)preMatchInputM.Value;
                 _preMatchTime.Seconds = (int)preMatchInputS.Value;
+                _periodOvertLength.Minutes = (int)overPeriodLM.Value;
+                _periodOvertLength.Seconds = (int)overPeriodLS.Value;
+                _breakOvertLength.Minutes = (int)overBreakLM.Value;
+                _breakOvertLength.Seconds = (int)overBreakLS.Value;
                 _parentForm.SetTime(_periodLength);
                 _parentForm.SetTimeoutLength(1,_timeoutLength);
                 _parentForm.SetTimeoutLength(2,_timeoutLength);
