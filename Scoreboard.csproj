@@ -54,6 +54,8 @@
     <Compile Include="Classes\GameStatistics\MatchStatistics.cs" />
     <Compile Include="Classes\Database\Team.cs" />
     <Compile Include="Classes\GameStatistics\TeamStatistics.cs" />
+    <Compile Include="Classes\ScoreboardElement.cs" />
+    <Compile Include="Classes\ScoreboardSettings.cs" />
     <Compile Include="Classes\Time.cs" />
     <Compile Include="Forms\ControlForm.cs">
       <SubType>Form</SubType>

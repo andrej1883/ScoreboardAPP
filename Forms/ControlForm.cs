@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using Scoreboard.Classes;
 using Scoreboard.Forms.MainGameForms;
 
 namespace Scoreboard.Forms
@@ -150,7 +152,7 @@ namespace Scoreboard.Forms
 
         public void ControlImport()
         {
-             string[] settings;
+             /*string[] settings;
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Text files(*.txt)|*.txt";
             if (open.ShowDialog() == DialogResult.OK) 
@@ -182,12 +184,19 @@ namespace Scoreboard.Forms
                     _formScoreBoard.Height = int.Parse(settings[18]);
                     InitDropdowns();
                 }
-            }
+            }*/
         }
 
         private void importSettings_Click(object sender, EventArgs e)
         {
-           ControlImport();
+            ScoreboardSettings set = new ScoreboardSettings();
+            ControlImport();
+           TextReader textReader = null;
+           XmlSerializer deserializer = new XmlSerializer(typeof(ScoreboardSettings));
+           textReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, "settings.xml"));
+           set = (ScoreboardSettings)deserializer.Deserialize(textReader);
+
+           set.SetElements(_formScoreBoard);
         }
 
         public void ControlExport()
@@ -207,7 +216,19 @@ namespace Scoreboard.Forms
 
         private void exportSettings_Click(object sender, EventArgs e)
         {
-            ControlExport();
+            //ControlExport();
+            ScoreboardSettings set = new ScoreboardSettings();
+            set.AddElements(_formScoreBoard);
+            //String formSettingFilePath = Path.Combine(Environment.CurrentDirectory, "settings.xml");
+            //using (var sw = new StreamWriter(formSettingFilePath))
+            //{
+            //    XmlSerializer xmlSer = new XmlSerializer(typeof(ScoreboardSettings));
+            //    xmlSer.Serialize(sw, set);
+            //}
+            TextWriter textWriter = null;
+            XmlSerializer serializer = new XmlSerializer(typeof(ScoreboardSettings));
+            textWriter = new StreamWriter(Path.Combine(Environment.CurrentDirectory, "settings.xml"));
+            serializer.Serialize(textWriter, set);
         }
 
         private void backgrColor_Click(object sender, EventArgs e)

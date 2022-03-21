@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Scoreboard.Classes;
@@ -117,8 +118,15 @@ namespace Scoreboard.Forms.MainGameForms
         public Color BackgrColor
         {
             get => BackColor;
-            set => BackColor = (Color)value;
-        }
+            set
+            {
+                BackColor = (Color)value;
+                foreach (Label lbl in _instance.Controls.OfType<Label>())
+                {
+                    lbl.BackColor = (Color) value;
+                }
+            }
+    }
 
         public Font ScoSFont
         {
@@ -215,7 +223,7 @@ namespace Scoreboard.Forms.MainGameForms
                 {
                     if (value == true)
                     {
-                        ctr.BackColor = DefaultBackColor;
+                        ctr.BackColor = BackgrColor;
                     }
                     else
                     {
@@ -300,9 +308,9 @@ namespace Scoreboard.Forms.MainGameForms
             _instance.Width = width;
         }
 
-        public Font SetFontSize(float varSize)
+        public Font SetFontSize(float varSize, string parFont)
         {
-            return new Font("Microsoft Sans Serif",varSize);
+            return new Font(parFont,varSize);
         }
 
         public void SetGoal(bool team1, int parGoals)

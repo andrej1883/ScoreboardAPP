@@ -83,12 +83,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.setColorPenL = new System.Windows.Forms.Button();
             this.scoreBoardSettingsBox = new System.Windows.Forms.GroupBox();
+            this.unlockScoreboard = new System.Windows.Forms.Button();
             this.backgrColor = new System.Windows.Forms.Button();
             this.importPath = new System.Windows.Forms.TextBox();
             this.importSettings = new System.Windows.Forms.Button();
             this.exportSettings = new System.Windows.Forms.Button();
             this.backgroundColorLbl = new System.Windows.Forms.Label();
-            this.unlockScoreboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBHeight)).BeginInit();
             this.scoreSettingBox.SuspendLayout();
@@ -110,7 +110,7 @@
             // 
             this.scoreBWidth.Location = new System.Drawing.Point(58, 51);
             this.scoreBWidth.Maximum = new decimal(new int[] {
-            2000,
+            20000,
             0,
             0,
             0});
@@ -118,7 +118,7 @@
             this.scoreBWidth.Size = new System.Drawing.Size(120, 20);
             this.scoreBWidth.TabIndex = 1;
             this.scoreBWidth.Value = new decimal(new int[] {
-            800,
+            1280,
             0,
             0,
             0});
@@ -128,7 +128,7 @@
             // 
             this.scoreBHeight.Location = new System.Drawing.Point(58, 118);
             this.scoreBHeight.Maximum = new decimal(new int[] {
-            2000,
+            20000,
             0,
             0,
             0});
@@ -136,7 +136,7 @@
             this.scoreBHeight.Size = new System.Drawing.Size(120, 20);
             this.scoreBHeight.TabIndex = 2;
             this.scoreBHeight.Value = new decimal(new int[] {
-            600,
+            1024,
             0,
             0,
             0});
@@ -702,6 +702,16 @@
             this.scoreBoardSettingsBox.TabStop = false;
             this.scoreBoardSettingsBox.Text = "ScoreBoard Settings";
             // 
+            // unlockScoreboard
+            // 
+            this.unlockScoreboard.Location = new System.Drawing.Point(32, 230);
+            this.unlockScoreboard.Name = "unlockScoreboard";
+            this.unlockScoreboard.Size = new System.Drawing.Size(125, 23);
+            this.unlockScoreboard.TabIndex = 18;
+            this.unlockScoreboard.Text = "Unlock";
+            this.unlockScoreboard.UseVisualStyleBackColor = true;
+            this.unlockScoreboard.Click += new System.EventHandler(this.unlockScoreboard_Click);
+            // 
             // backgrColor
             // 
             this.backgrColor.Location = new System.Drawing.Point(118, 173);
@@ -747,16 +757,6 @@
             this.backgroundColorLbl.Size = new System.Drawing.Size(95, 13);
             this.backgroundColorLbl.TabIndex = 13;
             this.backgroundColorLbl.Text = "Background Color:";
-            // 
-            // unlockScoreboard
-            // 
-            this.unlockScoreboard.Location = new System.Drawing.Point(32, 230);
-            this.unlockScoreboard.Name = "unlockScoreboard";
-            this.unlockScoreboard.Size = new System.Drawing.Size(125, 23);
-            this.unlockScoreboard.TabIndex = 18;
-            this.unlockScoreboard.Text = "Unlock";
-            this.unlockScoreboard.UseVisualStyleBackColor = true;
-            this.unlockScoreboard.Click += new System.EventHandler(this.unlockScoreboard_Click);
             // 
             // ControlForm
             // 
