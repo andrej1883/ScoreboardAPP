@@ -18,6 +18,18 @@ namespace Scoreboard.Forms.Appearance
         private ColorDialog _colorDial;
         private FontDialog _fontDial;
 
+        public bool BlackActive
+        {
+            get => _blackActive;
+            set => _blackActive = value;
+        }
+
+        public Form BlacForm
+        {
+            get => _blacForm;
+            set => _blacForm = value;
+        }
+
         public ControlForm(ScoreboardForm parForm)
         {
             _formScoreBoard = parForm;
@@ -34,8 +46,11 @@ namespace Scoreboard.Forms.Appearance
         {
             if (_formScoreBoard.IsActive)
             {
-                scoreBWidth.Value = (int) _formScoreBoard.Width;
-                scoreBHeight.Value = (int) _formScoreBoard.Height;
+                scoreBWidth.Value = _formScoreBoard.Width;
+                scoreBHeight.Value = _formScoreBoard.Height;
+                gridSizeNumeric.Value = _formScoreBoard.GridSize;
+                logoHeightBox.Value = _formScoreBoard.LogoSize.Height;
+                logoWidthBox.Value = _formScoreBoard.LogoSize.Width;
             }
         }
 
@@ -152,83 +167,73 @@ namespace Scoreboard.Forms.Appearance
 
         public void ControlImport()
         {
-             /*string[] settings;
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Text files(*.txt)|*.txt";
-            if (open.ShowDialog() == DialogResult.OK) 
+            ScoreboardSettings set = new ScoreboardSettings();
+            TextReader textReader = null;
+            try
             {
-                importPath.Text = open.FileName;
-                StreamReader reader = File.OpenText( importPath.Text);
-                string line;
-                while ((line = reader.ReadLine()) != null) 
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "xml files (*.xml)|*.xml";
+                open.InitialDirectory = Environment.CurrentDirectory;
+                if (open.ShowDialog() == DialogResult.OK)
                 {
-                    settings = line.Split('|');
-                    _formScoreBoard.BackgrColor = Color.FromArgb(int.Parse(settings[0]));
-                    _formScoreBoard.PenaltyDColor = Color.FromArgb(int.Parse(settings[1]));
-                    _formScoreBoard.PenaltyLColor = Color.FromArgb(int.Parse(settings[2]));
-                    _formScoreBoard.PeriodColor = Color.FromArgb(int.Parse(settings[3]));
-                    _formScoreBoard.PeriodLColor = Color.FromArgb(int.Parse(settings[4]));
-                    _formScoreBoard.TimeLColor = Color.FromArgb(int.Parse(settings[5]));
-                    _formScoreBoard.ScoLColor = Color.FromArgb(int.Parse(settings[6]));
-                    _formScoreBoard.ScoSColor = Color.FromArgb(int.Parse(settings[7]));
-                    _formScoreBoard.TimeCColor = Color.FromArgb(int.Parse(settings[8]));
-                    _formScoreBoard.PenaltyDFont = _formScoreBoard.SetFontSize(float.Parse(settings[9]));
-                    _formScoreBoard.PenaltyLFont = _formScoreBoard.SetFontSize(float.Parse(settings[10]));
-                    _formScoreBoard.PeriodLFont = _formScoreBoard.SetFontSize(float.Parse(settings[11]));
-                    _formScoreBoard.PeriodPFont = _formScoreBoard.SetFontSize(float.Parse(settings[12]));
-                    _formScoreBoard.TimeLFont = _formScoreBoard.SetFontSize(float.Parse(settings[13]));
-                    _formScoreBoard.ScoLFont = _formScoreBoard.SetFontSize(float.Parse(settings[14]));
-                    _formScoreBoard.ScoSFont =_formScoreBoard.SetFontSize( float.Parse(settings[15]));
-                    _formScoreBoard.TimeCFont = _formScoreBoard.SetFontSize(float.Parse(settings[16]));
-                    _formScoreBoard.Width = int.Parse(settings[17]);
-                    _formScoreBoard.Height = int.Parse(settings[18]);
-                    InitDropdowns();
+                    XmlSerializer deserializer = new XmlSerializer(typeof(ScoreboardSettings));
+                    textReader = new StreamReader(open.FileName);
+                    set = (ScoreboardSettings)deserializer.Deserialize(textReader);
                 }
-            }*/
+            }
+            catch (Exception ex)
+            {
+                set = new ScoreboardSettings();
+                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (textReader != null)
+                    textReader.Close();
+                if (set != null)
+                {
+                    set.SetElements(_formScoreBoard);
+                }
+            }
         }
 
         private void importSettings_Click(object sender, EventArgs e)
-        {
-            ScoreboardSettings set = new ScoreboardSettings();
-            ControlImport();
-           TextReader textReader = null;
-           XmlSerializer deserializer = new XmlSerializer(typeof(ScoreboardSettings));
-           textReader = new StreamReader(Path.Combine(Environment.CurrentDirectory, "settings.xml"));
-           set = (ScoreboardSettings)deserializer.Deserialize(textReader);
-
-           set.SetElements(_formScoreBoard);
+        { 
+           ControlImport();
         }
 
         public void ControlExport()
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
- 
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
-            saveFileDialog1.FilterIndex = 2 ;
-            saveFileDialog1.RestoreDirectory = true ;
- 
-            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            saveFileDialog1.Filter = "xml files (*.xml)|*.xml";
+            saveFileDialog1.InitialDirectory = Environment.CurrentDirectory;
+            TextWriter textWriter = null;
+            ScoreboardSettings set = new ScoreboardSettings();
+            set.AddElements(_formScoreBoard);
+            try
             {
-                string text = _formScoreBoard.ToString();
-                File.WriteAllText(saveFileDialog1.FileName, text);
+                if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(ScoreboardSettings));
+                    textWriter = new StreamWriter(saveFileDialog1.FileName);
+                    serializer.Serialize(textWriter, set);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (textWriter != null)
+                    textWriter.Close();
             }
         }
 
         private void exportSettings_Click(object sender, EventArgs e)
         {
-            //ControlExport();
-            ScoreboardSettings set = new ScoreboardSettings();
-            set.AddElements(_formScoreBoard);
-            //String formSettingFilePath = Path.Combine(Environment.CurrentDirectory, "settings.xml");
-            //using (var sw = new StreamWriter(formSettingFilePath))
-            //{
-            //    XmlSerializer xmlSer = new XmlSerializer(typeof(ScoreboardSettings));
-            //    xmlSer.Serialize(sw, set);
-            //}
-            TextWriter textWriter = null;
-            XmlSerializer serializer = new XmlSerializer(typeof(ScoreboardSettings));
-            textWriter = new StreamWriter(Path.Combine(Environment.CurrentDirectory, "settings.xml"));
-            serializer.Serialize(textWriter, set);
+            ControlExport();
         }
 
         private void backgrColor_Click(object sender, EventArgs e)
@@ -277,6 +282,10 @@ namespace Scoreboard.Forms.Appearance
         {
             _colorDial.Color = _formScoreBoard.PenaltyDColor;
             if (_colorDial.ShowDialog() == DialogResult.OK) _formScoreBoard.PenaltyDColor = _colorDial.Color;
+            for (int i = 1; i < 5; i++)
+            {
+                _formScoreBoard.ShowPenalty(i);
+            }
         }
 
         private void setColorSS_Click(object sender, EventArgs e)
@@ -331,6 +340,10 @@ namespace Scoreboard.Forms.Appearance
         {
             _fontDial.Font = _formScoreBoard.PenaltyDFont;
             if (_fontDial.ShowDialog() == DialogResult.OK) _formScoreBoard.PenaltyDFont = _fontDial.Font;
+            for (int i = 1; i < 5; i++)
+            {
+                _formScoreBoard.ShowPenalty(i);
+            }
         }
 
         private void unlockScoreboard_Click(object sender, EventArgs e)
@@ -345,12 +358,96 @@ namespace Scoreboard.Forms.Appearance
             {
                 _formScoreBoard.IsLocked = false;
                 unlockScoreboard.ForeColor = Color.DarkRed;
+                unlockScoreboard.Text = "Lock";
             }
             else
             {
                 _formScoreBoard.IsLocked = true;
                 unlockScoreboard.ForeColor = DefaultForeColor;
+                unlockScoreboard.Text = "Unlock";
             }
+        }
+
+        private void setGrid_Click(object sender, EventArgs e)
+        {
+            _formScoreBoard.GridSize = (int)gridSizeNumeric.Value;
+        }
+
+        private void setLogoSize_Click(object sender, EventArgs e)
+        {
+            _formScoreBoard.LogoSize = new Size((int) logoWidthBox.Value, (int) logoHeightBox.Value);
+        }
+
+        private void setSizeShL_Click(object sender, EventArgs e)
+        {
+            _fontDial.Font = _formScoreBoard.ShotsLFont;
+            if (_fontDial.ShowDialog() == DialogResult.OK) _formScoreBoard.ShotsLFont = _fontDial.Font;
+        }
+
+        private void setSizeShShot_Click(object sender, EventArgs e)
+        {
+            _fontDial.Font = _formScoreBoard.ShotsSFont;
+            if (_fontDial.ShowDialog() == DialogResult.OK) _formScoreBoard.ShotsSFont = _fontDial.Font;
+        }
+
+        private void setSizeTimeoL_Click(object sender, EventArgs e)
+        {
+            _fontDial.Font = _formScoreBoard.TimeoutLFont;
+            if (_fontDial.ShowDialog() == DialogResult.OK) _formScoreBoard.TimeoutLFont = _fontDial.Font;
+        }
+
+        private void setSizeTimeout_Click(object sender, EventArgs e)
+        {
+            _fontDial.Font = _formScoreBoard.TimeoutTFont;
+            if (_fontDial.ShowDialog() == DialogResult.OK) _formScoreBoard.TimeoutTFont = _fontDial.Font;
+        }
+
+        private void setSizeFaceL_Click(object sender, EventArgs e)
+        {
+            _fontDial.Font = _formScoreBoard.FaceOffLFont;
+            if (_fontDial.ShowDialog() == DialogResult.OK) _formScoreBoard.FaceOffLFont = _fontDial.Font;
+        }
+
+        private void setSizeFace_Click(object sender, EventArgs e)
+        {
+            _fontDial.Font = _formScoreBoard.FaceOffFaceFont;
+            if (_fontDial.ShowDialog() == DialogResult.OK) _formScoreBoard.FaceOffFaceFont = _fontDial.Font;
+        }
+
+        private void setColorShL_Click(object sender, EventArgs e)
+        {
+            _colorDial.Color = _formScoreBoard.ShotsLColor;
+            if (_colorDial.ShowDialog() == DialogResult.OK) _formScoreBoard.ShotsLColor = _colorDial.Color;
+        }
+
+        private void setColorShShot_Click(object sender, EventArgs e)
+        {
+            _colorDial.Color = _formScoreBoard.ShotsSColor;
+            if (_colorDial.ShowDialog() == DialogResult.OK) _formScoreBoard.ShotsSColor = _colorDial.Color;
+        }
+
+        private void setColorTimeoL_Click(object sender, EventArgs e)
+        {
+            _colorDial.Color = _formScoreBoard.TimeoutLColor;
+            if (_colorDial.ShowDialog() == DialogResult.OK) _formScoreBoard.TimeoutLColor = _colorDial.Color;
+        }
+
+        private void setColorTimeout_Click(object sender, EventArgs e)
+        {
+            _colorDial.Color = _formScoreBoard.TimeoutTColor;
+            if (_colorDial.ShowDialog() == DialogResult.OK) _formScoreBoard.TimeoutTColor = _colorDial.Color;
+        }
+
+        private void setColorFaceL_Click(object sender, EventArgs e)
+        {
+            _colorDial.Color = _formScoreBoard.FaceOffLColor;
+            if (_colorDial.ShowDialog() == DialogResult.OK) _formScoreBoard.FaceOffLColor = _colorDial.Color;
+        }
+
+        private void setColorFace_Click(object sender, EventArgs e)
+        {
+            _colorDial.Color = _formScoreBoard.FaceOffFaceColor;
+            if (_colorDial.ShowDialog() == DialogResult.OK) _formScoreBoard.FaceOffFaceColor = _colorDial.Color;
         }
     }
 }

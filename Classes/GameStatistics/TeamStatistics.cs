@@ -6,7 +6,6 @@
         private int _goals;
         private int _shots;
         private int _faceOffs;
-        private Time _penalTime;
 
         public int FaceOffs
         {

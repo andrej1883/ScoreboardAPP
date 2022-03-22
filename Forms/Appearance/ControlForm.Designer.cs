@@ -85,10 +85,51 @@
             this.scoreBoardSettingsBox = new System.Windows.Forms.GroupBox();
             this.unlockScoreboard = new System.Windows.Forms.Button();
             this.backgrColor = new System.Windows.Forms.Button();
-            this.importPath = new System.Windows.Forms.TextBox();
             this.importSettings = new System.Windows.Forms.Button();
             this.exportSettings = new System.Windows.Forms.Button();
             this.backgroundColorLbl = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.gridSizeNumeric = new System.Windows.Forms.NumericUpDown();
+            this.setGrid = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.setSizeFace = new System.Windows.Forms.Button();
+            this.setColorFace = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.setSizeFaceL = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.setColorFaceL = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.setSizeTimeout = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.setColorTimeout = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.setSizeTimeoL = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.setColorTimeoL = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.setSizeShShot = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.setColorShShot = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.setSizeShL = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.setColorShL = new System.Windows.Forms.Button();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.logoWidthBox = new System.Windows.Forms.NumericUpDown();
+            this.logoHeightBox = new System.Windows.Forms.NumericUpDown();
+            this.label31 = new System.Windows.Forms.Label();
+            this.setLogoSize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBHeight)).BeginInit();
             this.scoreSettingBox.SuspendLayout();
@@ -104,6 +145,19 @@
             this.penaltyGBPenaltyData.SuspendLayout();
             this.penaltyGBLabels.SuspendLayout();
             this.scoreBoardSettingsBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSizeNumeric)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoWidthBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoHeightBox)).BeginInit();
             this.SuspendLayout();
             // 
             // scoreBWidth
@@ -111,6 +165,11 @@
             this.scoreBWidth.Location = new System.Drawing.Point(58, 51);
             this.scoreBWidth.Maximum = new decimal(new int[] {
             20000,
+            0,
+            0,
+            0});
+            this.scoreBWidth.Minimum = new decimal(new int[] {
+            800,
             0,
             0,
             0});
@@ -129,6 +188,11 @@
             this.scoreBHeight.Location = new System.Drawing.Point(58, 118);
             this.scoreBHeight.Maximum = new decimal(new int[] {
             20000,
+            0,
+            0,
+            0});
+            this.scoreBHeight.Minimum = new decimal(new int[] {
+            600,
             0,
             0,
             0});
@@ -679,9 +743,12 @@
             // 
             // scoreBoardSettingsBox
             // 
+            this.scoreBoardSettingsBox.Controls.Add(this.groupBox10);
+            this.scoreBoardSettingsBox.Controls.Add(this.setGrid);
+            this.scoreBoardSettingsBox.Controls.Add(this.gridSizeNumeric);
+            this.scoreBoardSettingsBox.Controls.Add(this.label17);
             this.scoreBoardSettingsBox.Controls.Add(this.unlockScoreboard);
             this.scoreBoardSettingsBox.Controls.Add(this.backgrColor);
-            this.scoreBoardSettingsBox.Controls.Add(this.importPath);
             this.scoreBoardSettingsBox.Controls.Add(this.importSettings);
             this.scoreBoardSettingsBox.Controls.Add(this.exportSettings);
             this.scoreBoardSettingsBox.Controls.Add(this.backgroundColorLbl);
@@ -697,7 +764,7 @@
             this.scoreBoardSettingsBox.Controls.Add(this.kv2Btn);
             this.scoreBoardSettingsBox.Location = new System.Drawing.Point(12, 12);
             this.scoreBoardSettingsBox.Name = "scoreBoardSettingsBox";
-            this.scoreBoardSettingsBox.Size = new System.Drawing.Size(719, 337);
+            this.scoreBoardSettingsBox.Size = new System.Drawing.Size(1082, 337);
             this.scoreBoardSettingsBox.TabIndex = 18;
             this.scoreBoardSettingsBox.TabStop = false;
             this.scoreBoardSettingsBox.Text = "ScoreBoard Settings";
@@ -722,18 +789,11 @@
             this.backgrColor.UseVisualStyleBackColor = true;
             this.backgrColor.Click += new System.EventHandler(this.backgrColor_Click);
             // 
-            // importPath
-            // 
-            this.importPath.Location = new System.Drawing.Point(437, 215);
-            this.importPath.Name = "importPath";
-            this.importPath.Size = new System.Drawing.Size(243, 20);
-            this.importPath.TabIndex = 16;
-            // 
             // importSettings
             // 
-            this.importSettings.Location = new System.Drawing.Point(313, 215);
+            this.importSettings.Location = new System.Drawing.Point(361, 271);
             this.importSettings.Name = "importSettings";
-            this.importSettings.Size = new System.Drawing.Size(100, 23);
+            this.importSettings.Size = new System.Drawing.Size(137, 23);
             this.importSettings.TabIndex = 15;
             this.importSettings.Text = "Import";
             this.importSettings.UseVisualStyleBackColor = true;
@@ -741,9 +801,9 @@
             // 
             // exportSettings
             // 
-            this.exportSettings.Location = new System.Drawing.Point(313, 271);
+            this.exportSettings.Location = new System.Drawing.Point(539, 271);
             this.exportSettings.Name = "exportSettings";
-            this.exportSettings.Size = new System.Drawing.Size(100, 23);
+            this.exportSettings.Size = new System.Drawing.Size(137, 23);
             this.exportSettings.TabIndex = 14;
             this.exportSettings.Text = "Export";
             this.exportSettings.UseVisualStyleBackColor = true;
@@ -758,11 +818,471 @@
             this.backgroundColorLbl.TabIndex = 13;
             this.backgroundColorLbl.Text = "Background Color:";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(361, 221);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(55, 13);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "Grid Size: ";
+            // 
+            // gridSizeNumeric
+            // 
+            this.gridSizeNumeric.Location = new System.Drawing.Point(420, 219);
+            this.gridSizeNumeric.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.gridSizeNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.gridSizeNumeric.Name = "gridSizeNumeric";
+            this.gridSizeNumeric.Size = new System.Drawing.Size(78, 20);
+            this.gridSizeNumeric.TabIndex = 20;
+            this.gridSizeNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // setGrid
+            // 
+            this.setGrid.Location = new System.Drawing.Point(539, 216);
+            this.setGrid.Name = "setGrid";
+            this.setGrid.Size = new System.Drawing.Size(137, 23);
+            this.setGrid.TabIndex = 21;
+            this.setGrid.Text = "Set grid";
+            this.setGrid.UseVisualStyleBackColor = true;
+            this.setGrid.Click += new System.EventHandler(this.setGrid_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Location = new System.Drawing.Point(749, 754);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(345, 175);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Face-offs Settings";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.WhiteSpace;
+            this.groupBox2.Controls.Add(this.setSizeFace);
+            this.groupBox2.Controls.Add(this.setColorFace);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Location = new System.Drawing.Point(185, 28);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(147, 130);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Face-offs";
+            // 
+            // setSizeFace
+            // 
+            this.setSizeFace.Location = new System.Drawing.Point(46, 48);
+            this.setSizeFace.Name = "setSizeFace";
+            this.setSizeFace.Size = new System.Drawing.Size(75, 23);
+            this.setSizeFace.TabIndex = 34;
+            this.setSizeFace.Text = "Set Font";
+            this.setSizeFace.UseVisualStyleBackColor = true;
+            this.setSizeFace.Click += new System.EventHandler(this.setSizeFace_Click);
+            // 
+            // setColorFace
+            // 
+            this.setColorFace.Location = new System.Drawing.Point(46, 86);
+            this.setColorFace.Name = "setColorFace";
+            this.setColorFace.Size = new System.Drawing.Size(75, 23);
+            this.setColorFace.TabIndex = 25;
+            this.setColorFace.Text = "Set Color";
+            this.setColorFace.UseVisualStyleBackColor = true;
+            this.setColorFace.Click += new System.EventHandler(this.setColorFace_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 53);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(31, 13);
+            this.label18.TabIndex = 33;
+            this.label18.Text = "Font:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 91);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(34, 13);
+            this.label19.TabIndex = 25;
+            this.label19.Text = "Color:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.setSizeFaceL);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Controls.Add(this.label21);
+            this.groupBox3.Controls.Add(this.setColorFaceL);
+            this.groupBox3.Location = new System.Drawing.Point(15, 28);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(151, 130);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Labels";
+            // 
+            // setSizeFaceL
+            // 
+            this.setSizeFaceL.Location = new System.Drawing.Point(46, 48);
+            this.setSizeFaceL.Name = "setSizeFaceL";
+            this.setSizeFaceL.Size = new System.Drawing.Size(75, 23);
+            this.setSizeFaceL.TabIndex = 32;
+            this.setSizeFaceL.Text = "Set Font";
+            this.setSizeFaceL.UseVisualStyleBackColor = true;
+            this.setSizeFaceL.Click += new System.EventHandler(this.setSizeFaceL_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 91);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(34, 13);
+            this.label20.TabIndex = 9;
+            this.label20.Text = "Color:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 53);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(31, 13);
+            this.label21.TabIndex = 31;
+            this.label21.Text = "Font:";
+            // 
+            // setColorFaceL
+            // 
+            this.setColorFaceL.Location = new System.Drawing.Point(46, 86);
+            this.setColorFaceL.Name = "setColorFaceL";
+            this.setColorFaceL.Size = new System.Drawing.Size(75, 23);
+            this.setColorFaceL.TabIndex = 24;
+            this.setColorFaceL.Text = "Set Color";
+            this.setColorFaceL.UseVisualStyleBackColor = true;
+            this.setColorFaceL.Click += new System.EventHandler(this.setColorFaceL_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Controls.Add(this.groupBox6);
+            this.groupBox4.Location = new System.Drawing.Point(386, 754);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(345, 175);
+            this.groupBox4.TabIndex = 19;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Timeout Settings";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.setSizeTimeout);
+            this.groupBox5.Controls.Add(this.label22);
+            this.groupBox5.Controls.Add(this.label23);
+            this.groupBox5.Controls.Add(this.setColorTimeout);
+            this.groupBox5.Location = new System.Drawing.Point(185, 28);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(147, 130);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Timeout";
+            // 
+            // setSizeTimeout
+            // 
+            this.setSizeTimeout.Location = new System.Drawing.Point(46, 43);
+            this.setSizeTimeout.Name = "setSizeTimeout";
+            this.setSizeTimeout.Size = new System.Drawing.Size(75, 23);
+            this.setSizeTimeout.TabIndex = 30;
+            this.setSizeTimeout.Text = "Set Font";
+            this.setSizeTimeout.UseVisualStyleBackColor = true;
+            this.setSizeTimeout.Click += new System.EventHandler(this.setSizeTimeout_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 91);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(34, 13);
+            this.label22.TabIndex = 23;
+            this.label22.Text = "Color:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 48);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(31, 13);
+            this.label23.TabIndex = 29;
+            this.label23.Text = "Font:";
+            // 
+            // setColorTimeout
+            // 
+            this.setColorTimeout.Location = new System.Drawing.Point(46, 86);
+            this.setColorTimeout.Name = "setColorTimeout";
+            this.setColorTimeout.Size = new System.Drawing.Size(75, 23);
+            this.setColorTimeout.TabIndex = 23;
+            this.setColorTimeout.Text = "Set Color";
+            this.setColorTimeout.UseVisualStyleBackColor = true;
+            this.setColorTimeout.Click += new System.EventHandler(this.setColorTimeout_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.setSizeTimeoL);
+            this.groupBox6.Controls.Add(this.label24);
+            this.groupBox6.Controls.Add(this.label25);
+            this.groupBox6.Controls.Add(this.setColorTimeoL);
+            this.groupBox6.Location = new System.Drawing.Point(15, 28);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(151, 130);
+            this.groupBox6.TabIndex = 1;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Labels";
+            // 
+            // setSizeTimeoL
+            // 
+            this.setSizeTimeoL.Location = new System.Drawing.Point(46, 43);
+            this.setSizeTimeoL.Name = "setSizeTimeoL";
+            this.setSizeTimeoL.Size = new System.Drawing.Size(75, 23);
+            this.setSizeTimeoL.TabIndex = 28;
+            this.setSizeTimeoL.Text = "Set Font";
+            this.setSizeTimeoL.UseVisualStyleBackColor = true;
+            this.setSizeTimeoL.Click += new System.EventHandler(this.setSizeTimeoL_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 91);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(34, 13);
+            this.label24.TabIndex = 19;
+            this.label24.Text = "Color:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 48);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(31, 13);
+            this.label25.TabIndex = 27;
+            this.label25.Text = "Font:";
+            // 
+            // setColorTimeoL
+            // 
+            this.setColorTimeoL.Location = new System.Drawing.Point(46, 86);
+            this.setColorTimeoL.Name = "setColorTimeoL";
+            this.setColorTimeoL.Size = new System.Drawing.Size(75, 23);
+            this.setColorTimeoL.TabIndex = 22;
+            this.setColorTimeoL.Text = "Set Color";
+            this.setColorTimeoL.UseVisualStyleBackColor = true;
+            this.setColorTimeoL.Click += new System.EventHandler(this.setColorTimeoL_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.groupBox8);
+            this.groupBox7.Controls.Add(this.groupBox9);
+            this.groupBox7.Location = new System.Drawing.Point(12, 754);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(345, 175);
+            this.groupBox7.TabIndex = 20;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Shots Settings";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.setSizeShShot);
+            this.groupBox8.Controls.Add(this.label26);
+            this.groupBox8.Controls.Add(this.label27);
+            this.groupBox8.Controls.Add(this.setColorShShot);
+            this.groupBox8.Location = new System.Drawing.Point(185, 28);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(147, 130);
+            this.groupBox8.TabIndex = 2;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Shots";
+            // 
+            // setSizeShShot
+            // 
+            this.setSizeShShot.Location = new System.Drawing.Point(46, 43);
+            this.setSizeShShot.Name = "setSizeShShot";
+            this.setSizeShShot.Size = new System.Drawing.Size(75, 23);
+            this.setSizeShShot.TabIndex = 30;
+            this.setSizeShShot.Text = "Set Font";
+            this.setSizeShShot.UseVisualStyleBackColor = true;
+            this.setSizeShShot.Click += new System.EventHandler(this.setSizeShShot_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 91);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(34, 13);
+            this.label26.TabIndex = 23;
+            this.label26.Text = "Color:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 48);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(31, 13);
+            this.label27.TabIndex = 29;
+            this.label27.Text = "Font:";
+            // 
+            // setColorShShot
+            // 
+            this.setColorShShot.Location = new System.Drawing.Point(46, 86);
+            this.setColorShShot.Name = "setColorShShot";
+            this.setColorShShot.Size = new System.Drawing.Size(75, 23);
+            this.setColorShShot.TabIndex = 23;
+            this.setColorShShot.Text = "Set Color";
+            this.setColorShShot.UseVisualStyleBackColor = true;
+            this.setColorShShot.Click += new System.EventHandler(this.setColorShShot_Click);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.setSizeShL);
+            this.groupBox9.Controls.Add(this.label28);
+            this.groupBox9.Controls.Add(this.label29);
+            this.groupBox9.Controls.Add(this.setColorShL);
+            this.groupBox9.Location = new System.Drawing.Point(15, 28);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(151, 130);
+            this.groupBox9.TabIndex = 1;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Labels";
+            // 
+            // setSizeShL
+            // 
+            this.setSizeShL.Location = new System.Drawing.Point(46, 43);
+            this.setSizeShL.Name = "setSizeShL";
+            this.setSizeShL.Size = new System.Drawing.Size(75, 23);
+            this.setSizeShL.TabIndex = 28;
+            this.setSizeShL.Text = "Set Font";
+            this.setSizeShL.UseVisualStyleBackColor = true;
+            this.setSizeShL.Click += new System.EventHandler(this.setSizeShL_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 91);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(34, 13);
+            this.label28.TabIndex = 19;
+            this.label28.Text = "Color:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 48);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(31, 13);
+            this.label29.TabIndex = 27;
+            this.label29.Text = "Font:";
+            // 
+            // setColorShL
+            // 
+            this.setColorShL.Location = new System.Drawing.Point(46, 86);
+            this.setColorShL.Name = "setColorShL";
+            this.setColorShL.Size = new System.Drawing.Size(75, 23);
+            this.setColorShL.TabIndex = 22;
+            this.setColorShL.Text = "Set Color";
+            this.setColorShL.UseVisualStyleBackColor = true;
+            this.setColorShL.Click += new System.EventHandler(this.setColorShL_Click);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.setLogoSize);
+            this.groupBox10.Controls.Add(this.label30);
+            this.groupBox10.Controls.Add(this.logoWidthBox);
+            this.groupBox10.Controls.Add(this.label31);
+            this.groupBox10.Controls.Add(this.logoHeightBox);
+            this.groupBox10.Location = new System.Drawing.Point(737, 48);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(317, 246);
+            this.groupBox10.TabIndex = 22;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Logo size";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(75, 49);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 13);
+            this.label30.TabIndex = 25;
+            this.label30.Text = "Width: ";
+            // 
+            // logoWidthBox
+            // 
+            this.logoWidthBox.Location = new System.Drawing.Point(125, 47);
+            this.logoWidthBox.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.logoWidthBox.Name = "logoWidthBox";
+            this.logoWidthBox.Size = new System.Drawing.Size(120, 20);
+            this.logoWidthBox.TabIndex = 23;
+            this.logoWidthBox.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // logoHeightBox
+            // 
+            this.logoHeightBox.Location = new System.Drawing.Point(125, 114);
+            this.logoHeightBox.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.logoHeightBox.Name = "logoHeightBox";
+            this.logoHeightBox.Size = new System.Drawing.Size(120, 20);
+            this.logoHeightBox.TabIndex = 24;
+            this.logoHeightBox.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(75, 116);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(44, 13);
+            this.label31.TabIndex = 26;
+            this.label31.Text = "Height: ";
+            // 
+            // setLogoSize
+            // 
+            this.setLogoSize.Location = new System.Drawing.Point(108, 168);
+            this.setLogoSize.Name = "setLogoSize";
+            this.setLogoSize.Size = new System.Drawing.Size(137, 23);
+            this.setLogoSize.TabIndex = 27;
+            this.setLogoSize.Text = "Set logo size";
+            this.setLogoSize.UseVisualStyleBackColor = true;
+            this.setLogoSize.Click += new System.EventHandler(this.setLogoSize_Click);
+            // 
             // ControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 948);
+            this.ClientSize = new System.Drawing.Size(1112, 955);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.scoreBoardSettingsBox);
             this.Controls.Add(this.penaltySettingsBox);
             this.Controls.Add(this.timeSettingsBox);
@@ -795,6 +1315,26 @@
             this.penaltyGBLabels.PerformLayout();
             this.scoreBoardSettingsBox.ResumeLayout(false);
             this.scoreBoardSettingsBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSizeNumeric)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoWidthBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoHeightBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -828,7 +1368,6 @@
         private System.Windows.Forms.Label backgroundColorLbl;
         private System.Windows.Forms.Button importSettings;
         private System.Windows.Forms.Button exportSettings;
-        private System.Windows.Forms.TextBox importPath;
         private System.Windows.Forms.Button backgrColor;
         private System.Windows.Forms.Button setColorSS;
         private System.Windows.Forms.Button setColorSL;
@@ -861,6 +1400,48 @@
         private System.Windows.Forms.Button setSizePenL;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button unlockScoreboard;
+        private System.Windows.Forms.Button setGrid;
+        private System.Windows.Forms.NumericUpDown gridSizeNumeric;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button setSizeFace;
+        private System.Windows.Forms.Button setColorFace;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button setSizeFaceL;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button setColorFaceL;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button setSizeTimeout;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button setColorTimeout;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button setSizeTimeoL;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button setColorTimeoL;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button setSizeShShot;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button setColorShShot;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button setSizeShL;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button setColorShL;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Button setLogoSize;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.NumericUpDown logoWidthBox;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.NumericUpDown logoHeightBox;
     }
 }
 

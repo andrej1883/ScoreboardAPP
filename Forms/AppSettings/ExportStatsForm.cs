@@ -24,6 +24,7 @@ namespace Scoreboard.Forms.AppSettings
         {
             StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
+            pathTextBox.Text = Environment.CurrentDirectory + "\\Events";
         }
 
         private void exportEventsBox_CheckedChanged(object sender, EventArgs e)

@@ -7,7 +7,7 @@ public class CommunicationController
 {
     private const byte STX = 2;
     private const byte ETX = 3;
-    private const byte pannelAddr = 100;
+    private const byte sirenAddr = 100;
     private const int MaxAttempts = 5;
     private const int WaitingTime = 5000;
 
@@ -15,148 +15,143 @@ public class CommunicationController
     private bool _isOpenPort;
     private int _portNumber;
 
-    private void NastavCOMport(int noveCisloPortu)
+    private void NastavCOMport(int parPortNumber)
+    {
+        if (_portNumber != parPortNumber)
         {
-            if (_portNumber != noveCisloPortu)
-            {
-                bool bolOtvorenyPort = _isOpenPort;
-                ZastavVysielanie();
+            bool wasOpen = _isOpenPort;
+            StopBroadcast();
 
-                _portNumber = noveCisloPortu;
-                _commPort.PortName = "COM" + _portNumber.ToString();
+            _portNumber = parPortNumber;
+            _commPort.PortName = "COM" + _portNumber.ToString();
 
-                if (bolOtvorenyPort)
-                    SpustiVysielanie();
-            }
+            if (wasOpen)
+                StartBroadcast();
         }
+    }
 
-private void SpustiVysielanie()
+    private void StartBroadcast()
+    {
+        _isOpenPort = true;
+        try
         {
-            _isOpenPort = true;
-            try
-            {
-                _commPort.Open();
-            }
-            catch
-            {
-                _isOpenPort = false;
-            }
+            _commPort.Open();
         }
-
-        private void ZastavVysielanie()
+        catch
         {
             _isOpenPort = false;
-            try
-            {
-                if (_commPort.IsOpen)
-                    _commPort.Close();
-            }
-            catch
-            {
-                _isOpenPort = true;
-            }
         }
+    }
 
-
-        #region Sireny
-
-        private byte getCheckSum(byte[] paket)
+    private void StopBroadcast()
+    {
+        _isOpenPort = false;
+        try
         {
-            // Pomocna metoda na vypocet kontrolnej sumy
-            byte kontrolnaSuma = 0;
-
-            // Posledny prvok sa uz nepocita, ten sluzi v sprave prave na kontrolnu sumu
-            for (int i = 0; i < paket.Length - 1; i++)
-            {
-                kontrolnaSuma ^= paket[i];
-            }
-
-            return kontrolnaSuma;
+            if (_commPort.IsOpen)
+                _commPort.Close();
         }
-
-        private void PosliSpravu3x(byte[] sprava)
+        catch
         {
-            if (!_isOpenPort)
-                return;
-
-            try
-            {
-                if (_commPort.IsOpen)
-                {
-                    for (int i = 0; i < MaxAttempts; i++)
-                    {
-                        // Posli spravu
-                        _commPort.ReadTimeout = WaitingTime;
-                        _commPort.DiscardInBuffer();
-                        _commPort.Write(sprava, 0, sprava.Length);
-
-                        if (i < MaxAttempts - 1)
-                            Thread.Sleep(WaitingTime);
-                    }
-                }
-            }
-            catch
-            {
-            }
+            _isOpenPort = true;
         }
+    }
 
-        private SirenType getDruhSireny(int index)
+    private byte getCheckSum(byte[] parPacket)
+    {
+        byte checkSum = 0;
+
+        for (int i = 0; i < parPacket.Length - 1; i++)
         {
-            switch (index)
+            checkSum ^= parPacket[i];
+        }
+
+        return checkSum;
+    }
+
+    private void SendMessage3x(byte[] parMessage)
+    {
+        if (!_isOpenPort)
+            return;
+
+        try
+        {
+            if (_commPort.IsOpen)
             {
-                case 0:
-                    return SirenType.SHORT;
-                case 1:
-                    return SirenType.NORMAL;
-                case 2:
-                    return SirenType.LONG;
-                case 3:
-                    return SirenType.DISRUPTED;
-                default:
-                    return SirenType.NONE;
+                for (int i = 0; i < MaxAttempts; i++)
+                {
+                    // Posli spravu
+                    _commPort.ReadTimeout = WaitingTime;
+                    _commPort.DiscardInBuffer();
+                    _commPort.Write(parMessage, 0, parMessage.Length);
+
+                    if (i < MaxAttempts - 1)
+                        Thread.Sleep(WaitingTime);
+                }
             }
         }
-
-        private void SpustiSirenu(SirenType parType)
+        catch
         {
-            if (parType == SirenType.NONE) return;
-
-            byte[] poleBytov = null;
-            
-                if (parType == SirenType.LONG)
-                {
-                    poleBytov = new byte[5];
-                    poleBytov[0] = STX;
-                    poleBytov[1] = (byte)'S';
-                    poleBytov[2] = (byte)'2';
-                    poleBytov[3] = ETX;
-                }
-                else if (parType == SirenType.NORMAL)
-                {
-                    poleBytov = new byte[5];
-                    poleBytov[0] = STX;
-                    poleBytov[1] = (byte)'S';
-                    poleBytov[2] = (byte)'1';
-                    poleBytov[3] = ETX;
-                }
-                else if (parType == SirenType.SHORT)
-                {
-                    poleBytov = new byte[5];
-                    poleBytov[0] = STX;
-                    poleBytov[1] = (byte)'S';
-                    poleBytov[2] = (byte)'3';
-                    poleBytov[3] = ETX;
-                }
-                else if (parType == SirenType.DISRUPTED)
-                {
-                    poleBytov = new byte[5];
-                    poleBytov[0] = STX;
-                    poleBytov[1] = (byte)'S';
-                    poleBytov[2] = (byte)'5';
-                    poleBytov[3] = ETX;
-                }
-                
-            poleBytov[poleBytov.Length - 1] = getCheckSum(poleBytov);
-            PosliSpravu3x(poleBytov);
         }
+    }
+
+    private SirenType getSirenType(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                return SirenType.SHORT;
+            case 1:
+                return SirenType.NORMAL;
+            case 2:
+                return SirenType.LONG;
+            case 3:
+                return SirenType.DISRUPTED;
+            default:
+                return SirenType.NONE;
+        }
+    }
+
+    private void SirenStart(SirenType parType)
+    {
+        if (parType == SirenType.NONE) return;
+
+        byte[] byteArray = null;
+
+        if (parType == SirenType.LONG)
+        {
+            byteArray = new byte[5];
+            byteArray[0] = STX;
+            byteArray[1] = (byte)'S';
+            byteArray[2] = (byte)'2';
+            byteArray[3] = ETX;
+        }
+        else if (parType == SirenType.NORMAL)
+        {
+            byteArray = new byte[5];
+            byteArray[0] = STX;
+            byteArray[1] = (byte)'S';
+            byteArray[2] = (byte)'1';
+            byteArray[3] = ETX;
+        }
+        else if (parType == SirenType.SHORT)
+        {
+            byteArray = new byte[5];
+            byteArray[0] = STX;
+            byteArray[1] = (byte)'S';
+            byteArray[2] = (byte)'3';
+            byteArray[3] = ETX;
+        }
+        else if (parType == SirenType.DISRUPTED)
+        {
+            byteArray = new byte[5];
+            byteArray[0] = STX;
+            byteArray[1] = (byte)'S';
+            byteArray[2] = (byte)'5';
+            byteArray[3] = ETX;
+        }
+
+        byteArray[byteArray.Length - 1] = getCheckSum(byteArray);
+        SendMessage3x(byteArray);
+    }
 }

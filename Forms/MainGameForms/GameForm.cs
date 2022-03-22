@@ -730,6 +730,7 @@ namespace Scoreboard.Forms.MainGameForms
         {
             if (_formScoreBoard != null)
             {
+                if (_controlForm.BlackActive) _controlForm.BlacForm.Dispose();
                 _formScoreBoard.Dispose();
                 _formScoreBoard.ResetInstance();
                 _formScoreBoard.IsActive = false;
@@ -739,21 +740,6 @@ namespace Scoreboard.Forms.MainGameForms
         private void closeScoreboardBtn_Click(object sender, EventArgs e)
         {
             CloseScoreBoard();
-        }
-
-        private void appearanceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (_formScoreBoard.IsActive)
-            {
-                if (_controlForm == null || _controlForm.IsDisposed) _controlForm = new ControlForm(_formScoreBoard);
-                _controlForm.Show();
-                _controlForm.BringToFront();
-            }
-            else
-            {
-                MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            
         }
 
         private void startTimeoutT1_Click(object sender, EventArgs e)
@@ -1279,6 +1265,10 @@ namespace Scoreboard.Forms.MainGameForms
                 }
                 _controlForm.ControlImport();
             }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void exportToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -1290,6 +1280,10 @@ namespace Scoreboard.Forms.MainGameForms
                     _controlForm = new ControlForm(_formScoreBoard);
                 }
                 _controlForm.ControlExport();
+            }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -1549,6 +1543,25 @@ namespace Scoreboard.Forms.MainGameForms
             {
                 MessageBox.Show(@"You have to create scoreboard at first!", @"Add team Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+            }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void appearanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_formScoreBoard.IsActive)
+            {
+                if (_controlForm == null || _controlForm.IsDisposed) _controlForm = new ControlForm(_formScoreBoard);
+                _controlForm.Show();
+                _controlForm.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

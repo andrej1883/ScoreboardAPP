@@ -90,8 +90,6 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -186,10 +184,10 @@
             this.adsDBV = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.preMatchCount = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.shootoutBtn = new System.Windows.Forms.Button();
-            this.preMatchCount = new System.Windows.Forms.Button();
             this.overT1 = new System.Windows.Forms.Button();
             this.overT2 = new System.Windows.Forms.Button();
             this.overTBreak = new System.Windows.Forms.Button();
@@ -787,33 +785,16 @@
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.timeToolStripMenuItem.Text = "Time";
             this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
             // appearanceToolStripMenuItem
             // 
-            this.appearanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importToolStripMenuItem1,
-            this.exportToolStripMenuItem1});
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.appearanceToolStripMenuItem.Text = "Appearance";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
-            // 
-            // importToolStripMenuItem1
-            // 
-            this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
-            this.importToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
-            this.importToolStripMenuItem1.Text = "Import";
-            this.importToolStripMenuItem1.Click += new System.EventHandler(this.importToolStripMenuItem1_Click);
-            // 
-            // exportToolStripMenuItem1
-            // 
-            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
-            this.exportToolStripMenuItem1.Text = "Export";
-            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
             // 
             // statisticsToolStripMenuItem
             // 
@@ -821,27 +802,27 @@
             this.selectStatisticsToolStripMenuItem,
             this.exportSettingsToolStripMenuItem});
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.statisticsToolStripMenuItem.Text = "Statistics";
             // 
             // selectStatisticsToolStripMenuItem
             // 
             this.selectStatisticsToolStripMenuItem.Name = "selectStatisticsToolStripMenuItem";
-            this.selectStatisticsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.selectStatisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.selectStatisticsToolStripMenuItem.Text = "Select Statistics";
             this.selectStatisticsToolStripMenuItem.Click += new System.EventHandler(this.selectStatisticsToolStripMenuItem_Click);
             // 
             // exportSettingsToolStripMenuItem
             // 
             this.exportSettingsToolStripMenuItem.Name = "exportSettingsToolStripMenuItem";
-            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportSettingsToolStripMenuItem.Text = "Export settings";
             this.exportSettingsToolStripMenuItem.Click += new System.EventHandler(this.exportSettingsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -856,7 +837,7 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadToolStripMenuItem.Text = "Edit";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
@@ -871,7 +852,7 @@
             // editTeamTS
             // 
             this.editTeamTS.Name = "editTeamTS";
-            this.editTeamTS.Size = new System.Drawing.Size(94, 22);
+            this.editTeamTS.Size = new System.Drawing.Size(180, 22);
             this.editTeamTS.Text = "Edit";
             this.editTeamTS.Click += new System.EventHandler(this.editTeamTS_Click);
             // 
@@ -888,21 +869,21 @@
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // dropToolStripMenuItem
             // 
             this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
-            this.dropToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.dropToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dropToolStripMenuItem.Text = "Drop";
             this.dropToolStripMenuItem.Click += new System.EventHandler(this.dropToolStripMenuItem_Click);
             // 
@@ -1791,6 +1772,16 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Break controls";
             // 
+            // preMatchCount
+            // 
+            this.preMatchCount.Location = new System.Drawing.Point(255, 28);
+            this.preMatchCount.Name = "preMatchCount";
+            this.preMatchCount.Size = new System.Drawing.Size(128, 23);
+            this.preMatchCount.TabIndex = 82;
+            this.preMatchCount.Text = "Pre match countdown";
+            this.preMatchCount.UseVisualStyleBackColor = true;
+            this.preMatchCount.Click += new System.EventHandler(this.preMatchCount_Click);
+            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.resetTime);
@@ -1825,16 +1816,6 @@
             this.shootoutBtn.Text = "Start shootout";
             this.shootoutBtn.UseVisualStyleBackColor = true;
             this.shootoutBtn.Click += new System.EventHandler(this.shootoutBtn_Click);
-            // 
-            // preMatchCount
-            // 
-            this.preMatchCount.Location = new System.Drawing.Point(255, 28);
-            this.preMatchCount.Name = "preMatchCount";
-            this.preMatchCount.Size = new System.Drawing.Size(128, 23);
-            this.preMatchCount.TabIndex = 82;
-            this.preMatchCount.Text = "Pre match countdown";
-            this.preMatchCount.UseVisualStyleBackColor = true;
-            this.preMatchCount.Click += new System.EventHandler(this.preMatchCount_Click);
             // 
             // overT1
             // 
@@ -2107,8 +2088,6 @@
         private System.Windows.Forms.Button plusShotsT2;
         private System.Windows.Forms.Button minusShotsT2;
         private System.Windows.Forms.Label shotsT2;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
         private System.Windows.Forms.Button setPT1P1;
         private System.Windows.Forms.Button setPT1P2;
         private System.Windows.Forms.Button setT2P2;

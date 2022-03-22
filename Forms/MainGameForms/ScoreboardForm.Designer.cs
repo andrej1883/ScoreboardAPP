@@ -798,7 +798,7 @@
             this.Controls.Add(this.scoreT1Lbl);
             this.Controls.Add(this.t2Lbl);
             this.Controls.Add(this.t1Lbl);
-            this.MinimumSize = new System.Drawing.Size(1280, 1024);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "ScoreboardForm";
             this.Text = "ScoreboardForm";
             ((System.ComponentModel.ISupportInitialize)(this.team1Logo)).EndInit();

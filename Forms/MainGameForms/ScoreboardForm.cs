@@ -115,15 +115,51 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
+        public Color FaceOffLColor
+        {
+            get =>  faceOffsT1Lbl.ForeColor;
+            set {
+                faceOffsT1Lbl.ForeColor = (Color)value;
+                faceOffsT2Lbl.ForeColor = (Color)value;
+            }
+        }
+
+        public Color FaceOffFaceColor
+        {
+            get =>  faceOffsT1.ForeColor;
+            set {
+                faceOffsT1.ForeColor = (Color)value;
+                faceOffsT2.ForeColor = (Color)value;
+            }
+        }
+
+        public Color ShotsLColor
+        {
+            get =>  shotsT1Lbl.ForeColor;
+            set {
+                shotsT1Lbl.ForeColor = (Color)value;
+                shotsT2Lbl.ForeColor = (Color)value;
+            }
+        }
+
+        public Color ShotsSColor
+        {
+            get =>  shotsT1.ForeColor;
+            set {
+                shotsT1.ForeColor = (Color)value;
+                shotsT2.ForeColor = (Color)value;
+            }
+        }
+
         public Color BackgrColor
         {
             get => BackColor;
             set
             {
-                BackColor = (Color)value;
+                if (value != Color.Transparent) BackColor = value;
                 foreach (Label lbl in _instance.Controls.OfType<Label>())
                 {
-                    lbl.BackColor = (Color) value;
+                    lbl.BackColor = value;
                 }
             }
     }
@@ -213,7 +249,78 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
+        public Font TimeoutLFont
+        {
+            get =>  timeoutL1.Font;
+            set {
+                timeoutL1.Font = value;
+                timeoutL2.Font = value;
+            }
+        }
+
+        public Font TimeoutTFont
+        {
+            get =>  timeout1Min.Font;
+            set {
+                timeout1Min.Font = value;
+                timeout2Min.Font = value;
+                timeout1Sec.Font = value;
+                timeout2Sec.Font = value;
+                timeout1Parse.Font = value;
+                timeout2Parse.Font = value;
+
+            }
+        }
+
+        public Font FaceOffLFont
+        {
+            get =>  faceOffsT1Lbl.Font;
+            set {
+                faceOffsT1Lbl.Font = value;
+                faceOffsT2Lbl.Font = value;
+            }
+        }
+
+        public Font FaceOffFaceFont
+        {
+            get =>  faceOffsT1.Font;
+            set {
+                faceOffsT1.Font = value;
+                faceOffsT2.Font = value;
+            }
+        }
+
+        public Font ShotsLFont
+        {
+            get =>  shotsT1Lbl.Font;
+            set {
+                shotsT1Lbl.Font = value;
+                shotsT2Lbl.Font = value;
+            }
+        }
+
+        public Font ShotsSFont
+        {
+            get =>  shotsT1.Font;
+            set {
+                shotsT1.Font = value;
+                shotsT2.Font = value;
+            }
+        }
+
+
+        public Size LogoSize
+        {
+            get => team1Logo.Size;
+            set
+            {
+                team1Logo.Size = value;
+                team2Logo.Size = value;
+            }
+        }
+
         private bool _isLocked = true;
+
         public bool IsLocked
         {
             get => _isLocked;
@@ -234,9 +341,18 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
+        private int _gridSize = 50;
+
+        public int GridSize
+        {
+            get => _gridSize;
+            set => _gridSize = value;
+        }
+
         private Point mouseClick;
 
         private static ScoreboardForm _instance;
+
         internal static ScoreboardForm GetInstance()
         {
             if (_instance == null)
@@ -485,7 +601,7 @@ namespace Scoreboard.Forms.MainGameForms
 
         public override string ToString()
         {
-            return $"{BackgrColor.ToArgb()}|{PenaltyDColor.ToArgb()}|{PenaltyLColor.ToArgb()}|{PeriodColor.ToArgb()}|{PeriodLColor.ToArgb()}|{TimeLColor.ToArgb()}|" +
+            return $"{BackgrColor}|{PenaltyDColor.ToArgb()}|{PenaltyLColor.ToArgb()}|{PeriodColor.ToArgb()}|{PeriodLColor.ToArgb()}|{TimeLColor.ToArgb()}|" +
                    $"{ScoLColor.ToArgb()}|{ScoSColor.ToArgb()}|{TimeCColor.ToArgb()}|" +
 
                    $"{PenaltyDFont.Size}|{PenaltyLFont.Size}|{PeriodLFont.Size}|{PeriodPFont.Size}|" +
@@ -514,13 +630,11 @@ namespace Scoreboard.Forms.MainGameForms
         {
             if (e.Button == MouseButtons.Left && !_isLocked)
             {
-
-                var gridSize = 50;
                 var y = e.Y - mouseClick.X;
-                y -= y % gridSize;
+                y -= y % _gridSize;
                 toBeMoved.Top += y;
                 var x = e.X - mouseClick.X;
-                x -= x % gridSize;
+                x -= x % _gridSize;
                 toBeMoved.Left += x;
             }
         }

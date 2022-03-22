@@ -12,6 +12,13 @@ public class ScoreboardElement
     private Point _position;
     private string _font;
     private float _size;
+    private Size _logoSize;
+
+    public Size LogoSize
+    {
+        get => _logoSize;
+        set => _logoSize = value;
+    }
 
     public string Font
     {
