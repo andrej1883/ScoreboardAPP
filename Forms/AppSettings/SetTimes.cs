@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Scoreboard.Classes;
 using Scoreboard.Forms.MainGameForms;
 
-namespace Scoreboard.Forms
+namespace Scoreboard.Forms.AppSettings
 {
     public partial class SetTimes : Form
     {

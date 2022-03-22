@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 using Scoreboard.Forms.MainGameForms;
 
-namespace Scoreboard.Classes
+namespace Scoreboard.Classes.Appearance
 {
     [Serializable]
     public class ScoreboardSettings

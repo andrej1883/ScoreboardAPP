@@ -7,7 +7,10 @@ using System.Xml.Serialization;
 using Scoreboard.Classes;
 using Scoreboard.Classes.Database;
 using Scoreboard.Classes.GameStatistics;
+using Scoreboard.Forms.Appearance;
+using Scoreboard.Forms.AppSettings;
 using Scoreboard.Forms.DBForms;
+using Scoreboard.Forms.Statistics;
 using Timer = System.Windows.Forms.Timer;
 
 namespace Scoreboard.Forms.MainGameForms

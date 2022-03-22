@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
 
-namespace Scoreboard.Classes;
+namespace Scoreboard.Classes.Appearance;
 
 [Serializable]
 public class ScoreboardElement

@@ -54,13 +54,13 @@
     <Compile Include="Classes\GameStatistics\MatchStatistics.cs" />
     <Compile Include="Classes\Database\Team.cs" />
     <Compile Include="Classes\GameStatistics\TeamStatistics.cs" />
-    <Compile Include="Classes\ScoreboardElement.cs" />
-    <Compile Include="Classes\ScoreboardSettings.cs" />
+    <Compile Include="Classes\Appearance\ScoreboardElement.cs" />
+    <Compile Include="Classes\Appearance\ScoreboardSettings.cs" />
     <Compile Include="Classes\Time.cs" />
-    <Compile Include="Forms\ControlForm.cs">
+    <Compile Include="Forms\Appearance\ControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ControlForm.Designer.cs">
+    <Compile Include="Forms\Appearance\ControlForm.Designer.cs">
       <DependentUpon>ControlForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DBForms\CreatePlayerForm.cs">
@@ -75,10 +75,10 @@
     <Compile Include="Forms\DBForms\CreateTeamForm.Designer.cs">
       <DependentUpon>CreateTeamForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ExportStatsForm.cs">
+    <Compile Include="Forms\AppSettings\ExportStatsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ExportStatsForm.Designer.cs">
+    <Compile Include="Forms\AppSettings\ExportStatsForm.Designer.cs">
       <DependentUpon>ExportStatsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainGameForms\GameForm.cs">
@@ -101,22 +101,22 @@
     <Compile Include="Forms\DBForms\LoadAds.Designer.cs">
       <DependentUpon>LoadAds.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SelectPlayerGoal.cs">
+    <Compile Include="Forms\Statistics\SelectPlayerGoal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SelectPlayerGoal.Designer.cs">
+    <Compile Include="Forms\Statistics\SelectPlayerGoal.Designer.cs">
       <DependentUpon>SelectPlayerGoal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SetPenaltyForm.cs">
+    <Compile Include="Forms\Statistics\SetPenaltyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SetPenaltyForm.Designer.cs">
+    <Compile Include="Forms\Statistics\SetPenaltyForm.Designer.cs">
       <DependentUpon>SetPenaltyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SetTimes.cs">
+    <Compile Include="Forms\AppSettings\SetTimes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SetTimes.Designer.cs">
+    <Compile Include="Forms\AppSettings\SetTimes.Designer.cs">
       <DependentUpon>SetTimes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainGameForms\VideoPlayerForm.cs">
@@ -125,10 +125,10 @@
     <Compile Include="Forms\MainGameForms\VideoPlayerForm.Designer.cs">
       <DependentUpon>VideoPlayerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StatisticsSettings.cs">
+    <Compile Include="Forms\AppSettings\StatisticsSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StatisticsSettings.Designer.cs">
+    <Compile Include="Forms\AppSettings\StatisticsSettings.Designer.cs">
       <DependentUpon>StatisticsSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,7 +138,7 @@
     <Compile Include="Forms\MainGameForms\ScoreboardForm.Designer.cs">
       <DependentUpon>ScoreboardForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\ControlForm.resx">
+    <EmbeddedResource Include="Forms\Appearance\ControlForm.resx">
       <DependentUpon>ControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DBForms\CreatePlayerForm.resx">
@@ -147,7 +147,7 @@
     <EmbeddedResource Include="Forms\DBForms\CreateTeamForm.resx">
       <DependentUpon>CreateTeamForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ExportStatsForm.resx">
+    <EmbeddedResource Include="Forms\AppSettings\ExportStatsForm.resx">
       <DependentUpon>ExportStatsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainGameForms\GameForm.resx">
@@ -159,19 +159,19 @@
     <EmbeddedResource Include="Forms\DBForms\LoadTeamDataForm.resx">
       <DependentUpon>LoadTeamDataForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SelectPlayerGoal.resx">
+    <EmbeddedResource Include="Forms\Statistics\SelectPlayerGoal.resx">
       <DependentUpon>SelectPlayerGoal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SetPenaltyForm.resx">
+    <EmbeddedResource Include="Forms\Statistics\SetPenaltyForm.resx">
       <DependentUpon>SetPenaltyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SetTimes.resx">
+    <EmbeddedResource Include="Forms\AppSettings\SetTimes.resx">
       <DependentUpon>SetTimes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainGameForms\VideoPlayerForm.resx">
       <DependentUpon>VideoPlayerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StatisticsSettings.resx">
+    <EmbeddedResource Include="Forms\AppSettings\StatisticsSettings.resx">
       <DependentUpon>StatisticsSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

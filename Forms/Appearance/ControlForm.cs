@@ -3,10 +3,10 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using Scoreboard.Classes;
+using Scoreboard.Classes.Appearance;
 using Scoreboard.Forms.MainGameForms;
 
-namespace Scoreboard.Forms
+namespace Scoreboard.Forms.Appearance
 {
     public partial class ControlForm : Form
     {

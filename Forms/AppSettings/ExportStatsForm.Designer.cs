@@ -1,4 +1,4 @@
-﻿namespace Scoreboard.Forms
+﻿namespace Scoreboard.Forms.AppSettings
 {
     partial class ExportStatsForm
     {
