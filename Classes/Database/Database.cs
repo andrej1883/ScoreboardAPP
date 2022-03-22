@@ -40,6 +40,7 @@ namespace Scoreboard.Classes.Database
             }
             return null;
         }
+
         public Advertisment FindAdv(string parAdvPath)
         {
             foreach (Advertisment a in _advList)
@@ -105,6 +106,7 @@ namespace Scoreboard.Classes.Database
                 MessageBox.Show("Player not found", "Remove team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public void AddAdv(Advertisment parVid)
         {
 
