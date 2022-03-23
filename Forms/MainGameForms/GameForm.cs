@@ -85,7 +85,7 @@ namespace Scoreboard.Forms.MainGameForms
             _timerPenalty = ResetTimer();
             _timeoutTimer = ResetTimer();
             StartPosition=FormStartPosition.CenterScreen;
-            _controlForm = new ControlForm(_formScoreBoard);
+           // _controlForm = new ControlForm(_formScoreBoard);
         }
 
         private void GameForm_Load(object sender, EventArgs e)

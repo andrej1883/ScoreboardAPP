@@ -83,14 +83,20 @@
             this.label8 = new System.Windows.Forms.Label();
             this.setColorPenL = new System.Windows.Forms.Button();
             this.scoreBoardSettingsBox = new System.Windows.Forms.GroupBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.setLogoSize = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.logoWidthBox = new System.Windows.Forms.NumericUpDown();
+            this.label31 = new System.Windows.Forms.Label();
+            this.logoHeightBox = new System.Windows.Forms.NumericUpDown();
+            this.setGrid = new System.Windows.Forms.Button();
+            this.gridSizeNumeric = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
             this.unlockScoreboard = new System.Windows.Forms.Button();
             this.backgrColor = new System.Windows.Forms.Button();
             this.importSettings = new System.Windows.Forms.Button();
             this.exportSettings = new System.Windows.Forms.Button();
             this.backgroundColorLbl = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.gridSizeNumeric = new System.Windows.Forms.NumericUpDown();
-            this.setGrid = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.setSizeFace = new System.Windows.Forms.Button();
@@ -124,12 +130,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.setColorShL = new System.Windows.Forms.Button();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.logoWidthBox = new System.Windows.Forms.NumericUpDown();
-            this.logoHeightBox = new System.Windows.Forms.NumericUpDown();
-            this.label31 = new System.Windows.Forms.Label();
-            this.setLogoSize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBHeight)).BeginInit();
             this.scoreSettingBox.SuspendLayout();
@@ -145,6 +145,9 @@
             this.penaltyGBPenaltyData.SuspendLayout();
             this.penaltyGBLabels.SuspendLayout();
             this.scoreBoardSettingsBox.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoWidthBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoHeightBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSizeNumeric)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -155,9 +158,6 @@
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoWidthBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoHeightBox)).BeginInit();
             this.SuspendLayout();
             // 
             // scoreBWidth
@@ -165,11 +165,6 @@
             this.scoreBWidth.Location = new System.Drawing.Point(58, 51);
             this.scoreBWidth.Maximum = new decimal(new int[] {
             20000,
-            0,
-            0,
-            0});
-            this.scoreBWidth.Minimum = new decimal(new int[] {
-            800,
             0,
             0,
             0});
@@ -188,11 +183,6 @@
             this.scoreBHeight.Location = new System.Drawing.Point(58, 118);
             this.scoreBHeight.Maximum = new decimal(new int[] {
             20000,
-            0,
-            0,
-            0});
-            this.scoreBHeight.Minimum = new decimal(new int[] {
-            600,
             0,
             0,
             0});
@@ -769,6 +759,123 @@
             this.scoreBoardSettingsBox.TabStop = false;
             this.scoreBoardSettingsBox.Text = "ScoreBoard Settings";
             // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.setLogoSize);
+            this.groupBox10.Controls.Add(this.label30);
+            this.groupBox10.Controls.Add(this.logoWidthBox);
+            this.groupBox10.Controls.Add(this.label31);
+            this.groupBox10.Controls.Add(this.logoHeightBox);
+            this.groupBox10.Location = new System.Drawing.Point(737, 48);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(317, 246);
+            this.groupBox10.TabIndex = 22;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Logo size";
+            // 
+            // setLogoSize
+            // 
+            this.setLogoSize.Location = new System.Drawing.Point(108, 168);
+            this.setLogoSize.Name = "setLogoSize";
+            this.setLogoSize.Size = new System.Drawing.Size(137, 23);
+            this.setLogoSize.TabIndex = 27;
+            this.setLogoSize.Text = "Set logo size";
+            this.setLogoSize.UseVisualStyleBackColor = true;
+            this.setLogoSize.Click += new System.EventHandler(this.setLogoSize_Click);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(75, 49);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 13);
+            this.label30.TabIndex = 25;
+            this.label30.Text = "Width: ";
+            // 
+            // logoWidthBox
+            // 
+            this.logoWidthBox.Location = new System.Drawing.Point(125, 47);
+            this.logoWidthBox.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.logoWidthBox.Name = "logoWidthBox";
+            this.logoWidthBox.Size = new System.Drawing.Size(120, 20);
+            this.logoWidthBox.TabIndex = 23;
+            this.logoWidthBox.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(75, 116);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(44, 13);
+            this.label31.TabIndex = 26;
+            this.label31.Text = "Height: ";
+            // 
+            // logoHeightBox
+            // 
+            this.logoHeightBox.Location = new System.Drawing.Point(125, 114);
+            this.logoHeightBox.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.logoHeightBox.Name = "logoHeightBox";
+            this.logoHeightBox.Size = new System.Drawing.Size(120, 20);
+            this.logoHeightBox.TabIndex = 24;
+            this.logoHeightBox.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // setGrid
+            // 
+            this.setGrid.Location = new System.Drawing.Point(539, 216);
+            this.setGrid.Name = "setGrid";
+            this.setGrid.Size = new System.Drawing.Size(137, 23);
+            this.setGrid.TabIndex = 21;
+            this.setGrid.Text = "Set grid";
+            this.setGrid.UseVisualStyleBackColor = true;
+            this.setGrid.Click += new System.EventHandler(this.setGrid_Click);
+            // 
+            // gridSizeNumeric
+            // 
+            this.gridSizeNumeric.Location = new System.Drawing.Point(420, 219);
+            this.gridSizeNumeric.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.gridSizeNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.gridSizeNumeric.Name = "gridSizeNumeric";
+            this.gridSizeNumeric.Size = new System.Drawing.Size(78, 20);
+            this.gridSizeNumeric.TabIndex = 20;
+            this.gridSizeNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(361, 221);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(55, 13);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "Grid Size: ";
+            // 
             // unlockScoreboard
             // 
             this.unlockScoreboard.Location = new System.Drawing.Point(32, 230);
@@ -817,47 +924,6 @@
             this.backgroundColorLbl.Size = new System.Drawing.Size(95, 13);
             this.backgroundColorLbl.TabIndex = 13;
             this.backgroundColorLbl.Text = "Background Color:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(361, 221);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(55, 13);
-            this.label17.TabIndex = 19;
-            this.label17.Text = "Grid Size: ";
-            // 
-            // gridSizeNumeric
-            // 
-            this.gridSizeNumeric.Location = new System.Drawing.Point(420, 219);
-            this.gridSizeNumeric.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.gridSizeNumeric.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.gridSizeNumeric.Name = "gridSizeNumeric";
-            this.gridSizeNumeric.Size = new System.Drawing.Size(78, 20);
-            this.gridSizeNumeric.TabIndex = 20;
-            this.gridSizeNumeric.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // setGrid
-            // 
-            this.setGrid.Location = new System.Drawing.Point(539, 216);
-            this.setGrid.Name = "setGrid";
-            this.setGrid.Size = new System.Drawing.Size(137, 23);
-            this.setGrid.TabIndex = 21;
-            this.setGrid.Text = "Set grid";
-            this.setGrid.UseVisualStyleBackColor = true;
-            this.setGrid.Click += new System.EventHandler(this.setGrid_Click);
             // 
             // groupBox1
             // 
@@ -1199,82 +1265,6 @@
             this.setColorShL.UseVisualStyleBackColor = true;
             this.setColorShL.Click += new System.EventHandler(this.setColorShL_Click);
             // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.setLogoSize);
-            this.groupBox10.Controls.Add(this.label30);
-            this.groupBox10.Controls.Add(this.logoWidthBox);
-            this.groupBox10.Controls.Add(this.label31);
-            this.groupBox10.Controls.Add(this.logoHeightBox);
-            this.groupBox10.Location = new System.Drawing.Point(737, 48);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(317, 246);
-            this.groupBox10.TabIndex = 22;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Logo size";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(75, 49);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(41, 13);
-            this.label30.TabIndex = 25;
-            this.label30.Text = "Width: ";
-            // 
-            // logoWidthBox
-            // 
-            this.logoWidthBox.Location = new System.Drawing.Point(125, 47);
-            this.logoWidthBox.Maximum = new decimal(new int[] {
-            20000,
-            0,
-            0,
-            0});
-            this.logoWidthBox.Name = "logoWidthBox";
-            this.logoWidthBox.Size = new System.Drawing.Size(120, 20);
-            this.logoWidthBox.TabIndex = 23;
-            this.logoWidthBox.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
-            // logoHeightBox
-            // 
-            this.logoHeightBox.Location = new System.Drawing.Point(125, 114);
-            this.logoHeightBox.Maximum = new decimal(new int[] {
-            20000,
-            0,
-            0,
-            0});
-            this.logoHeightBox.Name = "logoHeightBox";
-            this.logoHeightBox.Size = new System.Drawing.Size(120, 20);
-            this.logoHeightBox.TabIndex = 24;
-            this.logoHeightBox.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(75, 116);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(44, 13);
-            this.label31.TabIndex = 26;
-            this.label31.Text = "Height: ";
-            // 
-            // setLogoSize
-            // 
-            this.setLogoSize.Location = new System.Drawing.Point(108, 168);
-            this.setLogoSize.Name = "setLogoSize";
-            this.setLogoSize.Size = new System.Drawing.Size(137, 23);
-            this.setLogoSize.TabIndex = 27;
-            this.setLogoSize.Text = "Set logo size";
-            this.setLogoSize.UseVisualStyleBackColor = true;
-            this.setLogoSize.Click += new System.EventHandler(this.setLogoSize_Click);
-            // 
             // ControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1315,6 +1305,10 @@
             this.penaltyGBLabels.PerformLayout();
             this.scoreBoardSettingsBox.ResumeLayout(false);
             this.scoreBoardSettingsBox.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoWidthBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoHeightBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSizeNumeric)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -1331,10 +1325,6 @@
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoWidthBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoHeightBox)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -54,6 +54,14 @@ namespace Scoreboard.Forms.Appearance
             }
         }
 
+        private void ResizeControls()
+        {
+            foreach (Control ctr in _formScoreBoard.Controls)
+            {
+                
+            }
+        }
+
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {

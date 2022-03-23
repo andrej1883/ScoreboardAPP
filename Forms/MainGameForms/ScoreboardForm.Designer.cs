@@ -86,7 +86,7 @@
             // t1Lbl
             // 
             this.t1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.t1Lbl.Location = new System.Drawing.Point(435, 154);
+            this.t1Lbl.Location = new System.Drawing.Point(444, 154);
             this.t1Lbl.Name = "t1Lbl";
             this.t1Lbl.Size = new System.Drawing.Size(123, 17);
             this.t1Lbl.TabIndex = 2;
@@ -98,7 +98,7 @@
             // t2Lbl
             // 
             this.t2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.t2Lbl.Location = new System.Drawing.Point(690, 154);
+            this.t2Lbl.Location = new System.Drawing.Point(699, 154);
             this.t2Lbl.Name = "t2Lbl";
             this.t2Lbl.Size = new System.Drawing.Size(122, 13);
             this.t2Lbl.TabIndex = 3;
@@ -111,7 +111,7 @@
             // 
             this.scoreT1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreT1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.scoreT1Lbl.Location = new System.Drawing.Point(447, 171);
+            this.scoreT1Lbl.Location = new System.Drawing.Point(456, 171);
             this.scoreT1Lbl.Name = "scoreT1Lbl";
             this.scoreT1Lbl.Size = new System.Drawing.Size(111, 76);
             this.scoreT1Lbl.TabIndex = 4;
@@ -124,7 +124,7 @@
             // 
             this.scoreT2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreT2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.scoreT2Lbl.Location = new System.Drawing.Point(703, 169);
+            this.scoreT2Lbl.Location = new System.Drawing.Point(712, 169);
             this.scoreT2Lbl.Name = "scoreT2Lbl";
             this.scoreT2Lbl.Size = new System.Drawing.Size(107, 72);
             this.scoreT2Lbl.TabIndex = 5;
@@ -137,7 +137,7 @@
             // 
             this.scoreParseLblb.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreParseLblb.ForeColor = System.Drawing.Color.Black;
-            this.scoreParseLblb.Location = new System.Drawing.Point(613, 169);
+            this.scoreParseLblb.Location = new System.Drawing.Point(621, 169);
             this.scoreParseLblb.Name = "scoreParseLblb";
             this.scoreParseLblb.Size = new System.Drawing.Size(40, 72);
             this.scoreParseLblb.TabIndex = 6;
@@ -149,7 +149,7 @@
             // periodLbl
             // 
             this.periodLbl.ForeColor = System.Drawing.Color.Black;
-            this.periodLbl.Location = new System.Drawing.Point(609, 39);
+            this.periodLbl.Location = new System.Drawing.Point(620, 39);
             this.periodLbl.Name = "periodLbl";
             this.periodLbl.Size = new System.Drawing.Size(37, 13);
             this.periodLbl.TabIndex = 7;
@@ -162,7 +162,7 @@
             // 
             this.timeMinutesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeMinutesLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeMinutesLbl.Location = new System.Drawing.Point(306, 366);
+            this.timeMinutesLbl.Location = new System.Drawing.Point(306, 415);
             this.timeMinutesLbl.Name = "timeMinutesLbl";
             this.timeMinutesLbl.Size = new System.Drawing.Size(237, 154);
             this.timeMinutesLbl.TabIndex = 8;
@@ -175,7 +175,7 @@
             // 
             this.timeParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeParseLbl.Location = new System.Drawing.Point(593, 366);
+            this.timeParseLbl.Location = new System.Drawing.Point(591, 415);
             this.timeParseLbl.Name = "timeParseLbl";
             this.timeParseLbl.Size = new System.Drawing.Size(83, 154);
             this.timeParseLbl.TabIndex = 9;
@@ -186,11 +186,13 @@
             // 
             // timeSecondsLbl
             // 
+            this.timeSecondsLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.timeSecondsLbl.AutoSize = true;
             this.timeSecondsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeSecondsLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeSecondsLbl.Location = new System.Drawing.Point(729, 366);
+            this.timeSecondsLbl.Location = new System.Drawing.Point(728, 416);
             this.timeSecondsLbl.Name = "timeSecondsLbl";
-            this.timeSecondsLbl.Size = new System.Drawing.Size(230, 154);
+            this.timeSecondsLbl.Size = new System.Drawing.Size(215, 153);
             this.timeSecondsLbl.TabIndex = 10;
             this.timeSecondsLbl.Text = "00";
             this.timeSecondsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -202,7 +204,7 @@
             this.actualPeriodLbl.AutoSize = true;
             this.actualPeriodLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.actualPeriodLbl.ForeColor = System.Drawing.Color.Black;
-            this.actualPeriodLbl.Location = new System.Drawing.Point(598, 63);
+            this.actualPeriodLbl.Location = new System.Drawing.Point(609, 63);
             this.actualPeriodLbl.Name = "actualPeriodLbl";
             this.actualPeriodLbl.Size = new System.Drawing.Size(64, 46);
             this.actualPeriodLbl.TabIndex = 11;
@@ -213,7 +215,7 @@
             // timeLbl
             // 
             this.timeLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeLbl.Location = new System.Drawing.Point(616, 333);
+            this.timeLbl.Location = new System.Drawing.Point(617, 386);
             this.timeLbl.Name = "timeLbl";
             this.timeLbl.Size = new System.Drawing.Size(30, 13);
             this.timeLbl.TabIndex = 12;
@@ -798,7 +800,6 @@
             this.Controls.Add(this.scoreT1Lbl);
             this.Controls.Add(this.t2Lbl);
             this.Controls.Add(this.t1Lbl);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "ScoreboardForm";
             this.Text = "ScoreboardForm";
             ((System.ComponentModel.ISupportInitialize)(this.team1Logo)).EndInit();
