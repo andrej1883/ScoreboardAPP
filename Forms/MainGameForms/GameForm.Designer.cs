@@ -44,20 +44,8 @@
             this.period = new System.Windows.Forms.Label();
             this.periodMinus = new System.Windows.Forms.Button();
             this.periodPlus = new System.Windows.Forms.Button();
-            this.p1T1Number = new System.Windows.Forms.NumericUpDown();
-            this.p1T1Minutes = new System.Windows.Forms.NumericUpDown();
-            this.p1T1Seconds = new System.Windows.Forms.NumericUpDown();
             this.p1T1ShowPenalty = new System.Windows.Forms.Button();
             this.p1T1HidePenalty = new System.Windows.Forms.Button();
-            this.p2T1Seconds = new System.Windows.Forms.NumericUpDown();
-            this.p2T1Minutes = new System.Windows.Forms.NumericUpDown();
-            this.p2T1Number = new System.Windows.Forms.NumericUpDown();
-            this.p1T2Seconds = new System.Windows.Forms.NumericUpDown();
-            this.p1T2Minutes = new System.Windows.Forms.NumericUpDown();
-            this.p1T2Number = new System.Windows.Forms.NumericUpDown();
-            this.p2T2Seconds = new System.Windows.Forms.NumericUpDown();
-            this.p2T2Minutes = new System.Windows.Forms.NumericUpDown();
-            this.p2T2Number = new System.Windows.Forms.NumericUpDown();
             this.p2T1HidePenalty = new System.Windows.Forms.Button();
             this.p2T1ShowPenalty = new System.Windows.Forms.Button();
             this.p1T2HidePenalty = new System.Windows.Forms.Button();
@@ -93,6 +81,7 @@
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.auxiliaryDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.videosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,6 +91,7 @@
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dropToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBtn = new System.Windows.Forms.Button();
             this.closeScoreboardBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -194,21 +184,11 @@
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.customEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.auxiliaryDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cancelLogo1 = new System.Windows.Forms.Button();
+            this.cancelLogo2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T1Seconds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T1Seconds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T1Minutes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T1Number)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T2Seconds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T2Minutes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T2Number)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T2Seconds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T2Minutes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T2Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -224,24 +204,31 @@
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.secondsTime);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.minutesTime);
-            this.groupBox1.Location = new System.Drawing.Point(693, 180);
+            this.groupBox1.Location = new System.Drawing.Point(16, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(397, 232);
+            this.groupBox1.Size = new System.Drawing.Size(263, 232);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Timer";
             // 
             // secondsTime
             // 
+            this.secondsTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondsTime.AutoSize = true;
-            this.secondsTime.Location = new System.Drawing.Point(252, 118);
+            this.secondsTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.secondsTime.Location = new System.Drawing.Point(196, 110);
             this.secondsTime.Name = "secondsTime";
             this.secondsTime.Size = new System.Drawing.Size(19, 13);
             this.secondsTime.TabIndex = 2;
@@ -249,8 +236,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(186, 118);
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(130, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(10, 13);
             this.label5.TabIndex = 1;
@@ -258,8 +247,10 @@
             // 
             // minutesTime
             // 
+            this.minutesTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.minutesTime.AutoSize = true;
-            this.minutesTime.Location = new System.Drawing.Point(103, 118);
+            this.minutesTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.minutesTime.Location = new System.Drawing.Point(47, 110);
             this.minutesTime.Name = "minutesTime";
             this.minutesTime.Size = new System.Drawing.Size(19, 13);
             this.minutesTime.TabIndex = 0;
@@ -267,7 +258,9 @@
             // 
             // startTime
             // 
-            this.startTime.Location = new System.Drawing.Point(32, 24);
+            this.startTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.startTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.startTime.Location = new System.Drawing.Point(13, 24);
             this.startTime.Name = "startTime";
             this.startTime.Size = new System.Drawing.Size(75, 23);
             this.startTime.TabIndex = 1;
@@ -277,7 +270,9 @@
             // 
             // stopTime
             // 
-            this.stopTime.Location = new System.Drawing.Point(145, 24);
+            this.stopTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.stopTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.stopTime.Location = new System.Drawing.Point(94, 24);
             this.stopTime.Name = "stopTime";
             this.stopTime.Size = new System.Drawing.Size(75, 23);
             this.stopTime.TabIndex = 2;
@@ -287,7 +282,9 @@
             // 
             // resetTime
             // 
-            this.resetTime.Location = new System.Drawing.Point(271, 24);
+            this.resetTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.resetTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.resetTime.Location = new System.Drawing.Point(182, 24);
             this.resetTime.Name = "resetTime";
             this.resetTime.Size = new System.Drawing.Size(75, 23);
             this.resetTime.TabIndex = 3;
@@ -297,8 +294,10 @@
             // 
             // goalsTeam2
             // 
+            this.goalsTeam2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.goalsTeam2.AutoSize = true;
-            this.goalsTeam2.Location = new System.Drawing.Point(250, 363);
+            this.goalsTeam2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.goalsTeam2.Location = new System.Drawing.Point(231, 366);
             this.goalsTeam2.Name = "goalsTeam2";
             this.goalsTeam2.Size = new System.Drawing.Size(13, 13);
             this.goalsTeam2.TabIndex = 4;
@@ -306,7 +305,9 @@
             // 
             // minusGoal2
             // 
-            this.minusGoal2.Location = new System.Drawing.Point(151, 358);
+            this.minusGoal2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minusGoal2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.minusGoal2.Location = new System.Drawing.Point(132, 361);
             this.minusGoal2.Name = "minusGoal2";
             this.minusGoal2.Size = new System.Drawing.Size(75, 23);
             this.minusGoal2.TabIndex = 5;
@@ -316,7 +317,9 @@
             // 
             // plusGoal2
             // 
-            this.plusGoal2.Location = new System.Drawing.Point(287, 358);
+            this.plusGoal2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.plusGoal2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.plusGoal2.Location = new System.Drawing.Point(268, 361);
             this.plusGoal2.Name = "plusGoal2";
             this.plusGoal2.Size = new System.Drawing.Size(75, 23);
             this.plusGoal2.TabIndex = 6;
@@ -326,7 +329,9 @@
             // 
             // plusGoal1
             // 
-            this.plusGoal1.Location = new System.Drawing.Point(276, 358);
+            this.plusGoal1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.plusGoal1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.plusGoal1.Location = new System.Drawing.Point(261, 361);
             this.plusGoal1.Name = "plusGoal1";
             this.plusGoal1.Size = new System.Drawing.Size(75, 23);
             this.plusGoal1.TabIndex = 9;
@@ -336,7 +341,9 @@
             // 
             // minusGoal1
             // 
-            this.minusGoal1.Location = new System.Drawing.Point(136, 358);
+            this.minusGoal1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minusGoal1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.minusGoal1.Location = new System.Drawing.Point(121, 361);
             this.minusGoal1.Name = "minusGoal1";
             this.minusGoal1.Size = new System.Drawing.Size(75, 23);
             this.minusGoal1.TabIndex = 8;
@@ -346,8 +353,10 @@
             // 
             // goalsTeam1
             // 
+            this.goalsTeam1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.goalsTeam1.AutoSize = true;
-            this.goalsTeam1.Location = new System.Drawing.Point(238, 363);
+            this.goalsTeam1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.goalsTeam1.Location = new System.Drawing.Point(223, 366);
             this.goalsTeam1.Name = "goalsTeam1";
             this.goalsTeam1.Size = new System.Drawing.Size(13, 13);
             this.goalsTeam1.TabIndex = 7;
@@ -355,8 +364,10 @@
             // 
             // period
             // 
+            this.period.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.period.AutoSize = true;
-            this.period.Location = new System.Drawing.Point(187, 48);
+            this.period.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.period.Location = new System.Drawing.Point(138, 46);
             this.period.Name = "period";
             this.period.Size = new System.Drawing.Size(13, 13);
             this.period.TabIndex = 10;
@@ -364,7 +375,9 @@
             // 
             // periodMinus
             // 
-            this.periodMinus.Location = new System.Drawing.Point(74, 43);
+            this.periodMinus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.periodMinus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.periodMinus.Location = new System.Drawing.Point(24, 41);
             this.periodMinus.Name = "periodMinus";
             this.periodMinus.Size = new System.Drawing.Size(75, 23);
             this.periodMinus.TabIndex = 11;
@@ -374,7 +387,9 @@
             // 
             // periodPlus
             // 
-            this.periodPlus.Location = new System.Drawing.Point(238, 43);
+            this.periodPlus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.periodPlus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.periodPlus.Location = new System.Drawing.Point(188, 41);
             this.periodPlus.Name = "periodPlus";
             this.periodPlus.Size = new System.Drawing.Size(75, 23);
             this.periodPlus.TabIndex = 12;
@@ -382,33 +397,11 @@
             this.periodPlus.UseVisualStyleBackColor = true;
             this.periodPlus.Click += new System.EventHandler(this.periodPlus_Click);
             // 
-            // p1T1Number
-            // 
-            this.p1T1Number.Location = new System.Drawing.Point(36, 64);
-            this.p1T1Number.Name = "p1T1Number";
-            this.p1T1Number.Size = new System.Drawing.Size(73, 20);
-            this.p1T1Number.TabIndex = 13;
-            this.p1T1Number.ValueChanged += new System.EventHandler(this.p1T1Number_ValueChanged);
-            // 
-            // p1T1Minutes
-            // 
-            this.p1T1Minutes.Location = new System.Drawing.Point(178, 64);
-            this.p1T1Minutes.Name = "p1T1Minutes";
-            this.p1T1Minutes.Size = new System.Drawing.Size(65, 20);
-            this.p1T1Minutes.TabIndex = 14;
-            this.p1T1Minutes.ValueChanged += new System.EventHandler(this.p1T1Minutes_ValueChanged);
-            // 
-            // p1T1Seconds
-            // 
-            this.p1T1Seconds.Location = new System.Drawing.Point(272, 64);
-            this.p1T1Seconds.Name = "p1T1Seconds";
-            this.p1T1Seconds.Size = new System.Drawing.Size(59, 20);
-            this.p1T1Seconds.TabIndex = 15;
-            this.p1T1Seconds.ValueChanged += new System.EventHandler(this.p1T1Seconds_ValueChanged);
-            // 
             // p1T1ShowPenalty
             // 
-            this.p1T1ShowPenalty.Location = new System.Drawing.Point(363, 60);
+            this.p1T1ShowPenalty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p1T1ShowPenalty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.p1T1ShowPenalty.Location = new System.Drawing.Point(213, 34);
             this.p1T1ShowPenalty.Name = "p1T1ShowPenalty";
             this.p1T1ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T1ShowPenalty.TabIndex = 16;
@@ -418,7 +411,9 @@
             // 
             // p1T1HidePenalty
             // 
-            this.p1T1HidePenalty.Location = new System.Drawing.Point(444, 60);
+            this.p1T1HidePenalty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p1T1HidePenalty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.p1T1HidePenalty.Location = new System.Drawing.Point(213, 63);
             this.p1T1HidePenalty.Name = "p1T1HidePenalty";
             this.p1T1HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T1HidePenalty.TabIndex = 17;
@@ -426,81 +421,11 @@
             this.p1T1HidePenalty.UseVisualStyleBackColor = true;
             this.p1T1HidePenalty.Click += new System.EventHandler(this.p1T1HidePenalty_Click);
             // 
-            // p2T1Seconds
-            // 
-            this.p2T1Seconds.Location = new System.Drawing.Point(272, 121);
-            this.p2T1Seconds.Name = "p2T1Seconds";
-            this.p2T1Seconds.Size = new System.Drawing.Size(59, 20);
-            this.p2T1Seconds.TabIndex = 20;
-            this.p2T1Seconds.ValueChanged += new System.EventHandler(this.p2T1Seconds_ValueChanged);
-            // 
-            // p2T1Minutes
-            // 
-            this.p2T1Minutes.Location = new System.Drawing.Point(178, 121);
-            this.p2T1Minutes.Name = "p2T1Minutes";
-            this.p2T1Minutes.Size = new System.Drawing.Size(65, 20);
-            this.p2T1Minutes.TabIndex = 19;
-            this.p2T1Minutes.ValueChanged += new System.EventHandler(this.p2T1Minutes_ValueChanged);
-            // 
-            // p2T1Number
-            // 
-            this.p2T1Number.Location = new System.Drawing.Point(36, 121);
-            this.p2T1Number.Name = "p2T1Number";
-            this.p2T1Number.Size = new System.Drawing.Size(71, 20);
-            this.p2T1Number.TabIndex = 18;
-            this.p2T1Number.ValueChanged += new System.EventHandler(this.p2T1Number_ValueChanged);
-            // 
-            // p1T2Seconds
-            // 
-            this.p1T2Seconds.Location = new System.Drawing.Point(287, 60);
-            this.p1T2Seconds.Name = "p1T2Seconds";
-            this.p1T2Seconds.Size = new System.Drawing.Size(46, 20);
-            this.p1T2Seconds.TabIndex = 25;
-            this.p1T2Seconds.ValueChanged += new System.EventHandler(this.p1T2Seconds_ValueChanged);
-            // 
-            // p1T2Minutes
-            // 
-            this.p1T2Minutes.Location = new System.Drawing.Point(180, 60);
-            this.p1T2Minutes.Name = "p1T2Minutes";
-            this.p1T2Minutes.Size = new System.Drawing.Size(54, 20);
-            this.p1T2Minutes.TabIndex = 24;
-            this.p1T2Minutes.ValueChanged += new System.EventHandler(this.p1T2Minutes_ValueChanged);
-            // 
-            // p1T2Number
-            // 
-            this.p1T2Number.Location = new System.Drawing.Point(38, 60);
-            this.p1T2Number.Name = "p1T2Number";
-            this.p1T2Number.Size = new System.Drawing.Size(87, 20);
-            this.p1T2Number.TabIndex = 23;
-            this.p1T2Number.ValueChanged += new System.EventHandler(this.p1T2Number_ValueChanged);
-            // 
-            // p2T2Seconds
-            // 
-            this.p2T2Seconds.Location = new System.Drawing.Point(287, 113);
-            this.p2T2Seconds.Name = "p2T2Seconds";
-            this.p2T2Seconds.Size = new System.Drawing.Size(46, 20);
-            this.p2T2Seconds.TabIndex = 30;
-            this.p2T2Seconds.ValueChanged += new System.EventHandler(this.p2T2Seconds_ValueChanged);
-            // 
-            // p2T2Minutes
-            // 
-            this.p2T2Minutes.Location = new System.Drawing.Point(180, 113);
-            this.p2T2Minutes.Name = "p2T2Minutes";
-            this.p2T2Minutes.Size = new System.Drawing.Size(54, 20);
-            this.p2T2Minutes.TabIndex = 29;
-            this.p2T2Minutes.ValueChanged += new System.EventHandler(this.p2T2Minutes_ValueChanged);
-            // 
-            // p2T2Number
-            // 
-            this.p2T2Number.Location = new System.Drawing.Point(38, 113);
-            this.p2T2Number.Name = "p2T2Number";
-            this.p2T2Number.Size = new System.Drawing.Size(87, 20);
-            this.p2T2Number.TabIndex = 28;
-            this.p2T2Number.ValueChanged += new System.EventHandler(this.p2T2Number_ValueChanged);
-            // 
             // p2T1HidePenalty
             // 
-            this.p2T1HidePenalty.Location = new System.Drawing.Point(444, 118);
+            this.p2T1HidePenalty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p2T1HidePenalty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.p2T1HidePenalty.Location = new System.Drawing.Point(213, 131);
             this.p2T1HidePenalty.Name = "p2T1HidePenalty";
             this.p2T1HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T1HidePenalty.TabIndex = 37;
@@ -510,7 +435,9 @@
             // 
             // p2T1ShowPenalty
             // 
-            this.p2T1ShowPenalty.Location = new System.Drawing.Point(363, 118);
+            this.p2T1ShowPenalty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p2T1ShowPenalty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.p2T1ShowPenalty.Location = new System.Drawing.Point(213, 102);
             this.p2T1ShowPenalty.Name = "p2T1ShowPenalty";
             this.p2T1ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T1ShowPenalty.TabIndex = 36;
@@ -520,7 +447,9 @@
             // 
             // p1T2HidePenalty
             // 
-            this.p1T2HidePenalty.Location = new System.Drawing.Point(439, 56);
+            this.p1T2HidePenalty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p1T2HidePenalty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.p1T2HidePenalty.Location = new System.Drawing.Point(223, 63);
             this.p1T2HidePenalty.Name = "p1T2HidePenalty";
             this.p1T2HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T2HidePenalty.TabIndex = 39;
@@ -530,7 +459,9 @@
             // 
             // p1T2ShowPenalty
             // 
-            this.p1T2ShowPenalty.Location = new System.Drawing.Point(358, 57);
+            this.p1T2ShowPenalty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p1T2ShowPenalty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.p1T2ShowPenalty.Location = new System.Drawing.Point(223, 34);
             this.p1T2ShowPenalty.Name = "p1T2ShowPenalty";
             this.p1T2ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p1T2ShowPenalty.TabIndex = 38;
@@ -540,7 +471,9 @@
             // 
             // p2T2HidePenalty
             // 
-            this.p2T2HidePenalty.Location = new System.Drawing.Point(439, 110);
+            this.p2T2HidePenalty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p2T2HidePenalty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.p2T2HidePenalty.Location = new System.Drawing.Point(223, 131);
             this.p2T2HidePenalty.Name = "p2T2HidePenalty";
             this.p2T2HidePenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T2HidePenalty.TabIndex = 41;
@@ -550,7 +483,9 @@
             // 
             // p2T2ShowPenalty
             // 
-            this.p2T2ShowPenalty.Location = new System.Drawing.Point(358, 110);
+            this.p2T2ShowPenalty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p2T2ShowPenalty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.p2T2ShowPenalty.Location = new System.Drawing.Point(223, 102);
             this.p2T2ShowPenalty.Name = "p2T2ShowPenalty";
             this.p2T2ShowPenalty.Size = new System.Drawing.Size(75, 23);
             this.p2T2ShowPenalty.TabIndex = 40;
@@ -560,8 +495,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 170);
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(15, 209);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 42;
@@ -569,14 +506,17 @@
             // 
             // team1NameBox
             // 
-            this.team1NameBox.Location = new System.Drawing.Point(163, 164);
+            this.team1NameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.team1NameBox.Location = new System.Drawing.Point(114, 203);
             this.team1NameBox.Name = "team1NameBox";
             this.team1NameBox.Size = new System.Drawing.Size(100, 20);
             this.team1NameBox.TabIndex = 44;
             // 
             // setTeam1Name
             // 
-            this.setTeam1Name.Location = new System.Drawing.Point(272, 165);
+            this.setTeam1Name.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.setTeam1Name.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.setTeam1Name.Location = new System.Drawing.Point(223, 204);
             this.setTeam1Name.Name = "setTeam1Name";
             this.setTeam1Name.Size = new System.Drawing.Size(75, 23);
             this.setTeam1Name.TabIndex = 46;
@@ -586,8 +526,10 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(64, 218);
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(15, 257);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 49;
@@ -595,7 +537,9 @@
             // 
             // uploadLogoT1
             // 
-            this.uploadLogoT1.Location = new System.Drawing.Point(272, 210);
+            this.uploadLogoT1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uploadLogoT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.uploadLogoT1.Location = new System.Drawing.Point(223, 249);
             this.uploadLogoT1.Name = "uploadLogoT1";
             this.uploadLogoT1.Size = new System.Drawing.Size(75, 23);
             this.uploadLogoT1.TabIndex = 51;
@@ -605,7 +549,9 @@
             // 
             // logo1
             // 
-            this.logo1.Location = new System.Drawing.Point(163, 19);
+            this.logo1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logo1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.logo1.Location = new System.Drawing.Point(114, 58);
             this.logo1.Name = "logo1";
             this.logo1.Size = new System.Drawing.Size(160, 120);
             this.logo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -614,14 +560,17 @@
             // 
             // logo1Path
             // 
-            this.logo1Path.Location = new System.Drawing.Point(163, 213);
+            this.logo1Path.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logo1Path.Location = new System.Drawing.Point(114, 252);
             this.logo1Path.Name = "logo1Path";
             this.logo1Path.Size = new System.Drawing.Size(100, 20);
             this.logo1Path.TabIndex = 55;
             // 
             // hideT1Logo
             // 
-            this.hideT1Logo.Location = new System.Drawing.Point(350, 210);
+            this.hideT1Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.hideT1Logo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hideT1Logo.Location = new System.Drawing.Point(302, 249);
             this.hideT1Logo.Name = "hideT1Logo";
             this.hideT1Logo.Size = new System.Drawing.Size(75, 23);
             this.hideT1Logo.TabIndex = 56;
@@ -631,7 +580,9 @@
             // 
             // showT1Logo
             // 
-            this.showT1Logo.Location = new System.Drawing.Point(431, 210);
+            this.showT1Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showT1Logo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.showT1Logo.Location = new System.Drawing.Point(381, 249);
             this.showT1Logo.Name = "showT1Logo";
             this.showT1Logo.Size = new System.Drawing.Size(75, 23);
             this.showT1Logo.TabIndex = 57;
@@ -641,7 +592,9 @@
             // 
             // showT2Logo
             // 
-            this.showT2Logo.Location = new System.Drawing.Point(446, 208);
+            this.showT2Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showT2Logo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.showT2Logo.Location = new System.Drawing.Point(387, 247);
             this.showT2Logo.Name = "showT2Logo";
             this.showT2Logo.Size = new System.Drawing.Size(75, 23);
             this.showT2Logo.TabIndex = 66;
@@ -651,7 +604,9 @@
             // 
             // hideT2Logo
             // 
-            this.hideT2Logo.Location = new System.Drawing.Point(365, 208);
+            this.hideT2Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.hideT2Logo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.hideT2Logo.Location = new System.Drawing.Point(306, 247);
             this.hideT2Logo.Name = "hideT2Logo";
             this.hideT2Logo.Size = new System.Drawing.Size(75, 23);
             this.hideT2Logo.TabIndex = 65;
@@ -661,14 +616,17 @@
             // 
             // logo2Path
             // 
-            this.logo2Path.Location = new System.Drawing.Point(178, 208);
+            this.logo2Path.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logo2Path.Location = new System.Drawing.Point(119, 247);
             this.logo2Path.Name = "logo2Path";
             this.logo2Path.Size = new System.Drawing.Size(100, 20);
             this.logo2Path.TabIndex = 64;
             // 
             // logo2
             // 
-            this.logo2.Location = new System.Drawing.Point(178, 22);
+            this.logo2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logo2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.logo2.Location = new System.Drawing.Point(119, 61);
             this.logo2.Name = "logo2";
             this.logo2.Size = new System.Drawing.Size(160, 120);
             this.logo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -677,7 +635,9 @@
             // 
             // uploadLogoT2
             // 
-            this.uploadLogoT2.Location = new System.Drawing.Point(284, 208);
+            this.uploadLogoT2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uploadLogoT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.uploadLogoT2.Location = new System.Drawing.Point(225, 247);
             this.uploadLogoT2.Name = "uploadLogoT2";
             this.uploadLogoT2.Size = new System.Drawing.Size(75, 23);
             this.uploadLogoT2.TabIndex = 62;
@@ -687,8 +647,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(79, 213);
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(20, 252);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 61;
@@ -696,7 +658,9 @@
             // 
             // setTeam2Name
             // 
-            this.setTeam2Name.Location = new System.Drawing.Point(284, 159);
+            this.setTeam2Name.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.setTeam2Name.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.setTeam2Name.Location = new System.Drawing.Point(225, 198);
             this.setTeam2Name.Name = "setTeam2Name";
             this.setTeam2Name.Size = new System.Drawing.Size(75, 23);
             this.setTeam2Name.TabIndex = 60;
@@ -706,15 +670,18 @@
             // 
             // team2NameBox
             // 
-            this.team2NameBox.Location = new System.Drawing.Point(178, 163);
+            this.team2NameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.team2NameBox.Location = new System.Drawing.Point(119, 202);
             this.team2NameBox.Name = "team2NameBox";
             this.team2NameBox.Size = new System.Drawing.Size(100, 20);
             this.team2NameBox.TabIndex = 59;
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(79, 166);
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label7.Location = new System.Drawing.Point(20, 205);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 58;
@@ -722,7 +689,9 @@
             // 
             // resetT1P1
             // 
-            this.resetT1P1.Location = new System.Drawing.Point(525, 61);
+            this.resetT1P1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resetT1P1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.resetT1P1.Location = new System.Drawing.Point(305, 48);
             this.resetT1P1.Name = "resetT1P1";
             this.resetT1P1.Size = new System.Drawing.Size(75, 23);
             this.resetT1P1.TabIndex = 67;
@@ -732,7 +701,9 @@
             // 
             // resetT1P2
             // 
-            this.resetT1P2.Location = new System.Drawing.Point(525, 118);
+            this.resetT1P2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resetT1P2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.resetT1P2.Location = new System.Drawing.Point(305, 116);
             this.resetT1P2.Name = "resetT1P2";
             this.resetT1P2.Size = new System.Drawing.Size(75, 23);
             this.resetT1P2.TabIndex = 68;
@@ -742,7 +713,9 @@
             // 
             // resetT2P1
             // 
-            this.resetT2P1.Location = new System.Drawing.Point(520, 56);
+            this.resetT2P1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resetT2P1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.resetT2P1.Location = new System.Drawing.Point(309, 48);
             this.resetT2P1.Name = "resetT2P1";
             this.resetT2P1.Size = new System.Drawing.Size(75, 23);
             this.resetT2P1.TabIndex = 69;
@@ -752,7 +725,9 @@
             // 
             // resetT2P2
             // 
-            this.resetT2P2.Location = new System.Drawing.Point(520, 110);
+            this.resetT2P2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resetT2P2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.resetT2P2.Location = new System.Drawing.Point(311, 117);
             this.resetT2P2.Name = "resetT2P2";
             this.resetT2P2.Size = new System.Drawing.Size(75, 23);
             this.resetT2P2.TabIndex = 70;
@@ -770,7 +745,7 @@
             this.customEventToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1760, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
             this.menuStrip1.TabIndex = 71;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -789,14 +764,14 @@
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.timeToolStripMenuItem.Text = "Time";
             this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
             // appearanceToolStripMenuItem
             // 
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.appearanceToolStripMenuItem.Text = "Appearance";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
             // 
@@ -806,27 +781,34 @@
             this.selectStatisticsToolStripMenuItem,
             this.exportSettingsToolStripMenuItem});
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.statisticsToolStripMenuItem.Text = "Statistics";
             // 
             // selectStatisticsToolStripMenuItem
             // 
             this.selectStatisticsToolStripMenuItem.Name = "selectStatisticsToolStripMenuItem";
-            this.selectStatisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectStatisticsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.selectStatisticsToolStripMenuItem.Text = "Select Statistics";
             this.selectStatisticsToolStripMenuItem.Click += new System.EventHandler(this.selectStatisticsToolStripMenuItem_Click);
             // 
             // exportSettingsToolStripMenuItem
             // 
             this.exportSettingsToolStripMenuItem.Name = "exportSettingsToolStripMenuItem";
-            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.exportSettingsToolStripMenuItem.Text = "Export settings";
             this.exportSettingsToolStripMenuItem.Click += new System.EventHandler(this.exportSettingsToolStripMenuItem_Click);
+            // 
+            // auxiliaryDevicesToolStripMenuItem
+            // 
+            this.auxiliaryDevicesToolStripMenuItem.Name = "auxiliaryDevicesToolStripMenuItem";
+            this.auxiliaryDevicesToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.auxiliaryDevicesToolStripMenuItem.Text = "Auxiliary devices";
+            this.auxiliaryDevicesToolStripMenuItem.Click += new System.EventHandler(this.auxiliaryDevicesToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -841,7 +823,7 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.loadToolStripMenuItem.Text = "Edit";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
@@ -856,7 +838,7 @@
             // editTeamTS
             // 
             this.editTeamTS.Name = "editTeamTS";
-            this.editTeamTS.Size = new System.Drawing.Size(180, 22);
+            this.editTeamTS.Size = new System.Drawing.Size(94, 22);
             this.editTeamTS.Text = "Edit";
             this.editTeamTS.Click += new System.EventHandler(this.editTeamTS_Click);
             // 
@@ -873,27 +855,36 @@
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // dropToolStripMenuItem
             // 
             this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
-            this.dropToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dropToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.dropToolStripMenuItem.Text = "Drop";
             this.dropToolStripMenuItem.Click += new System.EventHandler(this.dropToolStripMenuItem_Click);
             // 
+            // customEventToolStripMenuItem
+            // 
+            this.customEventToolStripMenuItem.Name = "customEventToolStripMenuItem";
+            this.customEventToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.customEventToolStripMenuItem.Text = "Custom event";
+            this.customEventToolStripMenuItem.Click += new System.EventHandler(this.customEventToolStripMenuItem_Click);
+            // 
             // createBtn
             // 
-            this.createBtn.Location = new System.Drawing.Point(45, 64);
+            this.createBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.createBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.createBtn.Location = new System.Drawing.Point(77, 48);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(145, 23);
             this.createBtn.TabIndex = 72;
@@ -903,7 +894,9 @@
             // 
             // closeScoreboardBtn
             // 
-            this.closeScoreboardBtn.Location = new System.Drawing.Point(45, 121);
+            this.closeScoreboardBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.closeScoreboardBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.closeScoreboardBtn.Location = new System.Drawing.Point(77, 116);
             this.closeScoreboardBtn.Name = "closeScoreboardBtn";
             this.closeScoreboardBtn.Size = new System.Drawing.Size(145, 23);
             this.closeScoreboardBtn.TabIndex = 73;
@@ -913,8 +906,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(176, 19);
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(126, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 74;
@@ -922,8 +917,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(210, 326);
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(195, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 75;
@@ -931,8 +928,10 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(221, 326);
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(208, 329);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 13);
             this.label8.TabIndex = 76;
@@ -940,6 +939,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.penSecP2T1);
             this.groupBox2.Controls.Add(this.penSecP1T1);
             this.groupBox2.Controls.Add(this.penMinP2T1);
@@ -949,31 +950,27 @@
             this.groupBox2.Controls.Add(this.setPT1P2);
             this.groupBox2.Controls.Add(this.setPT1P1);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.p1T1Number);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.p1T1Minutes);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.p1T1Seconds);
             this.groupBox2.Controls.Add(this.p1T1ShowPenalty);
             this.groupBox2.Controls.Add(this.p1T1HidePenalty);
-            this.groupBox2.Controls.Add(this.p2T1Number);
-            this.groupBox2.Controls.Add(this.p2T1Minutes);
-            this.groupBox2.Controls.Add(this.p2T1Seconds);
             this.groupBox2.Controls.Add(this.resetT1P2);
             this.groupBox2.Controls.Add(this.p2T1ShowPenalty);
             this.groupBox2.Controls.Add(this.resetT1P1);
             this.groupBox2.Controls.Add(this.p2T1HidePenalty);
-            this.groupBox2.Location = new System.Drawing.Point(46, 860);
+            this.groupBox2.Location = new System.Drawing.Point(3, 785);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(690, 200);
+            this.groupBox2.Size = new System.Drawing.Size(473, 173);
             this.groupBox2.TabIndex = 77;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Penalty Team1";
             // 
             // penSecP2T1
             // 
+            this.penSecP2T1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penSecP2T1.AutoSize = true;
-            this.penSecP2T1.Location = new System.Drawing.Point(336, 121);
+            this.penSecP2T1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penSecP2T1.Location = new System.Drawing.Point(161, 122);
             this.penSecP2T1.Name = "penSecP2T1";
             this.penSecP2T1.Size = new System.Drawing.Size(19, 13);
             this.penSecP2T1.TabIndex = 89;
@@ -981,8 +978,10 @@
             // 
             // penSecP1T1
             // 
+            this.penSecP1T1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penSecP1T1.AutoSize = true;
-            this.penSecP1T1.Location = new System.Drawing.Point(336, 67);
+            this.penSecP1T1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penSecP1T1.Location = new System.Drawing.Point(161, 53);
             this.penSecP1T1.Name = "penSecP1T1";
             this.penSecP1T1.Size = new System.Drawing.Size(19, 13);
             this.penSecP1T1.TabIndex = 88;
@@ -990,8 +989,10 @@
             // 
             // penMinP2T1
             // 
+            this.penMinP2T1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penMinP2T1.AutoSize = true;
-            this.penMinP2T1.Location = new System.Drawing.Point(249, 123);
+            this.penMinP2T1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penMinP2T1.Location = new System.Drawing.Point(111, 122);
             this.penMinP2T1.Name = "penMinP2T1";
             this.penMinP2T1.Size = new System.Drawing.Size(19, 13);
             this.penMinP2T1.TabIndex = 87;
@@ -999,8 +1000,10 @@
             // 
             // penMinP1T1
             // 
+            this.penMinP1T1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penMinP1T1.AutoSize = true;
-            this.penMinP1T1.Location = new System.Drawing.Point(249, 69);
+            this.penMinP1T1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penMinP1T1.Location = new System.Drawing.Point(111, 53);
             this.penMinP1T1.Name = "penMinP1T1";
             this.penMinP1T1.Size = new System.Drawing.Size(19, 13);
             this.penMinP1T1.TabIndex = 86;
@@ -1008,8 +1011,10 @@
             // 
             // penP2T1
             // 
+            this.penP2T1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penP2T1.AutoSize = true;
-            this.penP2T1.Location = new System.Drawing.Point(116, 123);
+            this.penP2T1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penP2T1.Location = new System.Drawing.Point(45, 122);
             this.penP2T1.Name = "penP2T1";
             this.penP2T1.Size = new System.Drawing.Size(19, 13);
             this.penP2T1.TabIndex = 85;
@@ -1017,8 +1022,10 @@
             // 
             // penP1T1
             // 
+            this.penP1T1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penP1T1.AutoSize = true;
-            this.penP1T1.Location = new System.Drawing.Point(116, 69);
+            this.penP1T1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penP1T1.Location = new System.Drawing.Point(45, 53);
             this.penP1T1.Name = "penP1T1";
             this.penP1T1.Size = new System.Drawing.Size(19, 13);
             this.penP1T1.TabIndex = 84;
@@ -1026,7 +1033,9 @@
             // 
             // setPT1P2
             // 
-            this.setPT1P2.Location = new System.Drawing.Point(606, 118);
+            this.setPT1P2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.setPT1P2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.setPT1P2.Location = new System.Drawing.Point(392, 116);
             this.setPT1P2.Name = "setPT1P2";
             this.setPT1P2.Size = new System.Drawing.Size(75, 23);
             this.setPT1P2.TabIndex = 83;
@@ -1036,7 +1045,9 @@
             // 
             // setPT1P1
             // 
-            this.setPT1P1.Location = new System.Drawing.Point(606, 60);
+            this.setPT1P1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.setPT1P1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.setPT1P1.Location = new System.Drawing.Point(392, 48);
             this.setPT1P1.Name = "setPT1P1";
             this.setPT1P1.Size = new System.Drawing.Size(75, 23);
             this.setPT1P1.TabIndex = 82;
@@ -1046,8 +1057,10 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(282, 35);
+            this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label11.Location = new System.Drawing.Point(146, 34);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 13);
             this.label11.TabIndex = 81;
@@ -1055,8 +1068,10 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(175, 35);
+            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label10.Location = new System.Drawing.Point(98, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 13);
             this.label10.TabIndex = 80;
@@ -1064,8 +1079,10 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 35);
+            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label9.Location = new System.Drawing.Point(16, 34);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 79;
@@ -1073,6 +1090,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.penSecP2T2);
             this.groupBox3.Controls.Add(this.penP2T2);
             this.groupBox3.Controls.Add(this.penSecP1T2);
@@ -1084,29 +1103,25 @@
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.p1T2Number);
-            this.groupBox3.Controls.Add(this.p1T2Minutes);
-            this.groupBox3.Controls.Add(this.p1T2Seconds);
-            this.groupBox3.Controls.Add(this.p2T2Number);
-            this.groupBox3.Controls.Add(this.p2T2Minutes);
-            this.groupBox3.Controls.Add(this.p2T2Seconds);
             this.groupBox3.Controls.Add(this.p1T2ShowPenalty);
             this.groupBox3.Controls.Add(this.resetT2P2);
             this.groupBox3.Controls.Add(this.p1T2HidePenalty);
             this.groupBox3.Controls.Add(this.resetT2P1);
             this.groupBox3.Controls.Add(this.p2T2ShowPenalty);
             this.groupBox3.Controls.Add(this.p2T2HidePenalty);
-            this.groupBox3.Location = new System.Drawing.Point(1018, 860);
+            this.groupBox3.Location = new System.Drawing.Point(787, 785);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(690, 200);
+            this.groupBox3.Size = new System.Drawing.Size(474, 173);
             this.groupBox3.TabIndex = 78;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Penalty Team2";
             // 
             // penSecP2T2
             // 
+            this.penSecP2T2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penSecP2T2.AutoSize = true;
-            this.penSecP2T2.Location = new System.Drawing.Point(337, 117);
+            this.penSecP2T2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penSecP2T2.Location = new System.Drawing.Point(165, 122);
             this.penSecP2T2.Name = "penSecP2T2";
             this.penSecP2T2.Size = new System.Drawing.Size(19, 13);
             this.penSecP2T2.TabIndex = 93;
@@ -1114,8 +1129,10 @@
             // 
             // penP2T2
             // 
+            this.penP2T2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penP2T2.AutoSize = true;
-            this.penP2T2.Location = new System.Drawing.Point(131, 116);
+            this.penP2T2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penP2T2.Location = new System.Drawing.Point(37, 122);
             this.penP2T2.Name = "penP2T2";
             this.penP2T2.Size = new System.Drawing.Size(19, 13);
             this.penP2T2.TabIndex = 87;
@@ -1123,8 +1140,10 @@
             // 
             // penSecP1T2
             // 
+            this.penSecP1T2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penSecP1T2.AutoSize = true;
-            this.penSecP1T2.Location = new System.Drawing.Point(337, 63);
+            this.penSecP1T2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penSecP1T2.Location = new System.Drawing.Point(165, 53);
             this.penSecP1T2.Name = "penSecP1T2";
             this.penSecP1T2.Size = new System.Drawing.Size(19, 13);
             this.penSecP1T2.TabIndex = 92;
@@ -1132,7 +1151,9 @@
             // 
             // setT2P2
             // 
-            this.setT2P2.Location = new System.Drawing.Point(601, 110);
+            this.setT2P2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.setT2P2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.setT2P2.Location = new System.Drawing.Point(392, 117);
             this.setT2P2.Name = "setT2P2";
             this.setT2P2.Size = new System.Drawing.Size(75, 23);
             this.setT2P2.TabIndex = 85;
@@ -1142,8 +1163,10 @@
             // 
             // penMinP2T2
             // 
+            this.penMinP2T2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penMinP2T2.AutoSize = true;
-            this.penMinP2T2.Location = new System.Drawing.Point(250, 119);
+            this.penMinP2T2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penMinP2T2.Location = new System.Drawing.Point(102, 122);
             this.penMinP2T2.Name = "penMinP2T2";
             this.penMinP2T2.Size = new System.Drawing.Size(19, 13);
             this.penMinP2T2.TabIndex = 91;
@@ -1151,8 +1174,10 @@
             // 
             // penP1T2
             // 
+            this.penP1T2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penP1T2.AutoSize = true;
-            this.penP1T2.Location = new System.Drawing.Point(131, 62);
+            this.penP1T2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penP1T2.Location = new System.Drawing.Point(35, 53);
             this.penP1T2.Name = "penP1T2";
             this.penP1T2.Size = new System.Drawing.Size(19, 13);
             this.penP1T2.TabIndex = 86;
@@ -1160,8 +1185,10 @@
             // 
             // penMinP1T2
             // 
+            this.penMinP1T2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.penMinP1T2.AutoSize = true;
-            this.penMinP1T2.Location = new System.Drawing.Point(250, 65);
+            this.penMinP1T2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.penMinP1T2.Location = new System.Drawing.Point(100, 53);
             this.penMinP1T2.Name = "penMinP1T2";
             this.penMinP1T2.Size = new System.Drawing.Size(19, 13);
             this.penMinP1T2.TabIndex = 90;
@@ -1169,7 +1196,9 @@
             // 
             // setT2P1
             // 
-            this.setT2P1.Location = new System.Drawing.Point(601, 56);
+            this.setT2P1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.setT2P1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.setT2P1.Location = new System.Drawing.Point(390, 48);
             this.setT2P1.Name = "setT2P1";
             this.setT2P1.Size = new System.Drawing.Size(75, 23);
             this.setT2P1.TabIndex = 84;
@@ -1179,8 +1208,10 @@
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(284, 35);
+            this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label14.Location = new System.Drawing.Point(138, 34);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(49, 13);
             this.label14.TabIndex = 82;
@@ -1188,8 +1219,10 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(177, 35);
+            this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label13.Location = new System.Drawing.Point(88, 34);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(44, 13);
             this.label13.TabIndex = 82;
@@ -1197,8 +1230,10 @@
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(35, 35);
+            this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label12.Location = new System.Drawing.Point(6, 34);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(76, 13);
             this.label12.TabIndex = 82;
@@ -1206,6 +1241,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.cancelLogo2);
             this.groupBox4.Controls.Add(this.label26);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.plusFaceoffsT2);
@@ -1238,17 +1274,20 @@
             this.groupBox4.Controls.Add(this.plusGoal2);
             this.groupBox4.Controls.Add(this.minusGoal2);
             this.groupBox4.Controls.Add(this.goalsTeam2);
-            this.groupBox4.Location = new System.Drawing.Point(1198, 100);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(787, 105);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(530, 713);
+            this.groupBox4.Size = new System.Drawing.Size(474, 674);
             this.groupBox4.TabIndex = 79;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Team2";
             // 
             // label26
             // 
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(209, 545);
+            this.label26.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label26.Location = new System.Drawing.Point(192, 498);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(87, 13);
             this.label26.TabIndex = 102;
@@ -1256,8 +1295,10 @@
             // 
             // label20
             // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(366, 90);
+            this.label20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label20.Location = new System.Drawing.Point(307, 129);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(107, 13);
             this.label20.TabIndex = 87;
@@ -1265,7 +1306,9 @@
             // 
             // plusFaceoffsT2
             // 
-            this.plusFaceoffsT2.Location = new System.Drawing.Point(287, 576);
+            this.plusFaceoffsT2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.plusFaceoffsT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.plusFaceoffsT2.Location = new System.Drawing.Point(270, 524);
             this.plusFaceoffsT2.Name = "plusFaceoffsT2";
             this.plusFaceoffsT2.Size = new System.Drawing.Size(75, 23);
             this.plusFaceoffsT2.TabIndex = 101;
@@ -1275,7 +1318,9 @@
             // 
             // cancelVideo2
             // 
-            this.cancelVideo2.Location = new System.Drawing.Point(446, 246);
+            this.cancelVideo2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancelVideo2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cancelVideo2.Location = new System.Drawing.Point(387, 285);
             this.cancelVideo2.Name = "cancelVideo2";
             this.cancelVideo2.Size = new System.Drawing.Size(75, 23);
             this.cancelVideo2.TabIndex = 90;
@@ -1285,7 +1330,10 @@
             // 
             // minusFaceoffsT2
             // 
-            this.minusFaceoffsT2.Location = new System.Drawing.Point(147, 576);
+            this.minusFaceoffsT2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minusFaceoffsT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.minusFaceoffsT2.Location = new System.Drawing.Point(130, 524);
+            this.minusFaceoffsT2.MinimumSize = new System.Drawing.Size(40, 15);
             this.minusFaceoffsT2.Name = "minusFaceoffsT2";
             this.minusFaceoffsT2.Size = new System.Drawing.Size(75, 23);
             this.minusFaceoffsT2.TabIndex = 100;
@@ -1295,17 +1343,20 @@
             // 
             // TeamsDBT2
             // 
+            this.TeamsDBT2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TeamsDBT2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TeamsDBT2.FormattingEnabled = true;
-            this.TeamsDBT2.Location = new System.Drawing.Point(369, 116);
+            this.TeamsDBT2.Location = new System.Drawing.Point(310, 155);
             this.TeamsDBT2.Name = "TeamsDBT2";
             this.TeamsDBT2.Size = new System.Drawing.Size(152, 21);
             this.TeamsDBT2.TabIndex = 82;
             // 
             // faceoffsT2
             // 
+            this.faceoffsT2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.faceoffsT2.AutoSize = true;
-            this.faceoffsT2.Location = new System.Drawing.Point(249, 581);
+            this.faceoffsT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.faceoffsT2.Location = new System.Drawing.Point(232, 529);
             this.faceoffsT2.Name = "faceoffsT2";
             this.faceoffsT2.Size = new System.Drawing.Size(13, 13);
             this.faceoffsT2.TabIndex = 99;
@@ -1313,7 +1364,9 @@
             // 
             // playVideo2
             // 
-            this.playVideo2.Location = new System.Drawing.Point(365, 246);
+            this.playVideo2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.playVideo2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.playVideo2.Location = new System.Drawing.Point(306, 285);
             this.playVideo2.Name = "playVideo2";
             this.playVideo2.Size = new System.Drawing.Size(75, 23);
             this.playVideo2.TabIndex = 89;
@@ -1323,8 +1376,10 @@
             // 
             // label28
             // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(206, 627);
+            this.label28.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label28.Location = new System.Drawing.Point(189, 580);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(108, 13);
             this.label28.TabIndex = 98;
@@ -1332,7 +1387,9 @@
             // 
             // SetFromDBT2
             // 
-            this.SetFromDBT2.Location = new System.Drawing.Point(369, 160);
+            this.SetFromDBT2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SetFromDBT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SetFromDBT2.Location = new System.Drawing.Point(310, 199);
             this.SetFromDBT2.Name = "SetFromDBT2";
             this.SetFromDBT2.Size = new System.Drawing.Size(152, 23);
             this.SetFromDBT2.TabIndex = 81;
@@ -1342,7 +1399,8 @@
             // 
             // videoPath2
             // 
-            this.videoPath2.Location = new System.Drawing.Point(178, 248);
+            this.videoPath2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.videoPath2.Location = new System.Drawing.Point(119, 287);
             this.videoPath2.Name = "videoPath2";
             this.videoPath2.Size = new System.Drawing.Size(100, 20);
             this.videoPath2.TabIndex = 88;
@@ -1350,7 +1408,9 @@
             // 
             // cancelTimeoutT2
             // 
-            this.cancelTimeoutT2.Location = new System.Drawing.Point(355, 486);
+            this.cancelTimeoutT2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancelTimeoutT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cancelTimeoutT2.Location = new System.Drawing.Point(328, 426);
             this.cancelTimeoutT2.Name = "cancelTimeoutT2";
             this.cancelTimeoutT2.Size = new System.Drawing.Size(75, 23);
             this.cancelTimeoutT2.TabIndex = 83;
@@ -1360,7 +1420,9 @@
             // 
             // plusShotsT2
             // 
-            this.plusShotsT2.Location = new System.Drawing.Point(287, 659);
+            this.plusShotsT2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.plusShotsT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.plusShotsT2.Location = new System.Drawing.Point(270, 612);
             this.plusShotsT2.Name = "plusShotsT2";
             this.plusShotsT2.Size = new System.Drawing.Size(75, 23);
             this.plusShotsT2.TabIndex = 97;
@@ -1370,7 +1432,9 @@
             // 
             // uploadVideoT2
             // 
-            this.uploadVideoT2.Location = new System.Drawing.Point(287, 247);
+            this.uploadVideoT2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uploadVideoT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.uploadVideoT2.Location = new System.Drawing.Point(228, 286);
             this.uploadVideoT2.Name = "uploadVideoT2";
             this.uploadVideoT2.Size = new System.Drawing.Size(75, 23);
             this.uploadVideoT2.TabIndex = 87;
@@ -1380,7 +1444,9 @@
             // 
             // minusShotsT2
             // 
-            this.minusShotsT2.Location = new System.Drawing.Point(147, 659);
+            this.minusShotsT2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minusShotsT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.minusShotsT2.Location = new System.Drawing.Point(130, 612);
             this.minusShotsT2.Name = "minusShotsT2";
             this.minusShotsT2.Size = new System.Drawing.Size(75, 23);
             this.minusShotsT2.TabIndex = 96;
@@ -1390,8 +1456,10 @@
             // 
             // label17
             // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(79, 252);
+            this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label17.Location = new System.Drawing.Point(20, 291);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(101, 13);
             this.label17.TabIndex = 86;
@@ -1399,8 +1467,10 @@
             // 
             // shotsT2
             // 
+            this.shotsT2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.shotsT2.AutoSize = true;
-            this.shotsT2.Location = new System.Drawing.Point(249, 664);
+            this.shotsT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shotsT2.Location = new System.Drawing.Point(232, 617);
             this.shotsT2.Name = "shotsT2";
             this.shotsT2.Size = new System.Drawing.Size(13, 13);
             this.shotsT2.TabIndex = 95;
@@ -1408,7 +1478,9 @@
             // 
             // startTimeoutT2
             // 
-            this.startTimeoutT2.Location = new System.Drawing.Point(255, 486);
+            this.startTimeoutT2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.startTimeoutT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.startTimeoutT2.Location = new System.Drawing.Point(228, 426);
             this.startTimeoutT2.Name = "startTimeoutT2";
             this.startTimeoutT2.Size = new System.Drawing.Size(75, 23);
             this.startTimeoutT2.TabIndex = 82;
@@ -1418,10 +1490,11 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox7.Controls.Add(this.timeoutT2S);
             this.groupBox7.Controls.Add(this.label19);
             this.groupBox7.Controls.Add(this.timeoutT2M);
-            this.groupBox7.Location = new System.Drawing.Point(98, 467);
+            this.groupBox7.Location = new System.Drawing.Point(71, 410);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(110, 55);
             this.groupBox7.TabIndex = 81;
@@ -1431,6 +1504,7 @@
             // timeoutT2S
             // 
             this.timeoutT2S.AutoSize = true;
+            this.timeoutT2S.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.timeoutT2S.Location = new System.Drawing.Point(76, 19);
             this.timeoutT2S.Name = "timeoutT2S";
             this.timeoutT2S.Size = new System.Drawing.Size(19, 13);
@@ -1440,6 +1514,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label19.Location = new System.Drawing.Point(50, 19);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(10, 13);
@@ -1449,6 +1524,7 @@
             // timeoutT2M
             // 
             this.timeoutT2M.AutoSize = true;
+            this.timeoutT2M.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.timeoutT2M.Location = new System.Drawing.Point(22, 19);
             this.timeoutT2M.Name = "timeoutT2M";
             this.timeoutT2M.Size = new System.Drawing.Size(19, 13);
@@ -1457,6 +1533,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.cancelLogo1);
             this.groupBox5.Controls.Add(this.label24);
             this.groupBox5.Controls.Add(this.label22);
             this.groupBox5.Controls.Add(this.plusShotsT1);
@@ -1489,17 +1566,20 @@
             this.groupBox5.Controls.Add(this.plusGoal1);
             this.groupBox5.Controls.Add(this.minusGoal1);
             this.groupBox5.Controls.Add(this.goalsTeam1);
-            this.groupBox5.Location = new System.Drawing.Point(26, 100);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(3, 105);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(530, 713);
+            this.groupBox5.Size = new System.Drawing.Size(473, 674);
             this.groupBox5.TabIndex = 80;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Team1";
             // 
             // label24
             // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(198, 545);
+            this.label24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label24.Location = new System.Drawing.Point(183, 498);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(87, 13);
             this.label24.TabIndex = 94;
@@ -1507,8 +1587,10 @@
             // 
             // label22
             // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(195, 627);
+            this.label22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label22.Location = new System.Drawing.Point(180, 580);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(108, 13);
             this.label22.TabIndex = 90;
@@ -1516,7 +1598,9 @@
             // 
             // plusShotsT1
             // 
-            this.plusShotsT1.Location = new System.Drawing.Point(276, 659);
+            this.plusShotsT1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.plusShotsT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.plusShotsT1.Location = new System.Drawing.Point(261, 612);
             this.plusShotsT1.Name = "plusShotsT1";
             this.plusShotsT1.Size = new System.Drawing.Size(75, 23);
             this.plusShotsT1.TabIndex = 89;
@@ -1526,7 +1610,9 @@
             // 
             // plusFaceoffsT1
             // 
-            this.plusFaceoffsT1.Location = new System.Drawing.Point(276, 576);
+            this.plusFaceoffsT1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.plusFaceoffsT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.plusFaceoffsT1.Location = new System.Drawing.Point(261, 524);
             this.plusFaceoffsT1.Name = "plusFaceoffsT1";
             this.plusFaceoffsT1.Size = new System.Drawing.Size(75, 23);
             this.plusFaceoffsT1.TabIndex = 93;
@@ -1536,7 +1622,9 @@
             // 
             // minusFaceoffsT1
             // 
-            this.minusFaceoffsT1.Location = new System.Drawing.Point(136, 576);
+            this.minusFaceoffsT1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minusFaceoffsT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.minusFaceoffsT1.Location = new System.Drawing.Point(121, 524);
             this.minusFaceoffsT1.Name = "minusFaceoffsT1";
             this.minusFaceoffsT1.Size = new System.Drawing.Size(75, 23);
             this.minusFaceoffsT1.TabIndex = 92;
@@ -1546,7 +1634,9 @@
             // 
             // minusShotsT1
             // 
-            this.minusShotsT1.Location = new System.Drawing.Point(136, 659);
+            this.minusShotsT1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.minusShotsT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.minusShotsT1.Location = new System.Drawing.Point(121, 612);
             this.minusShotsT1.Name = "minusShotsT1";
             this.minusShotsT1.Size = new System.Drawing.Size(75, 23);
             this.minusShotsT1.TabIndex = 88;
@@ -1556,8 +1646,10 @@
             // 
             // shotsT1
             // 
+            this.shotsT1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.shotsT1.AutoSize = true;
-            this.shotsT1.Location = new System.Drawing.Point(238, 664);
+            this.shotsT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shotsT1.Location = new System.Drawing.Point(222, 617);
             this.shotsT1.Name = "shotsT1";
             this.shotsT1.Size = new System.Drawing.Size(13, 13);
             this.shotsT1.TabIndex = 87;
@@ -1565,8 +1657,10 @@
             // 
             // faceoffsT1
             // 
+            this.faceoffsT1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.faceoffsT1.AutoSize = true;
-            this.faceoffsT1.Location = new System.Drawing.Point(238, 581);
+            this.faceoffsT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.faceoffsT1.Location = new System.Drawing.Point(222, 529);
             this.faceoffsT1.Name = "faceoffsT1";
             this.faceoffsT1.Size = new System.Drawing.Size(13, 13);
             this.faceoffsT1.TabIndex = 91;
@@ -1574,8 +1668,10 @@
             // 
             // label18
             // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(351, 90);
+            this.label18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label18.Location = new System.Drawing.Point(302, 129);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(107, 13);
             this.label18.TabIndex = 86;
@@ -1583,7 +1679,9 @@
             // 
             // cancelVideo1
             // 
-            this.cancelVideo1.Location = new System.Drawing.Point(431, 248);
+            this.cancelVideo1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancelVideo1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cancelVideo1.Location = new System.Drawing.Point(381, 287);
             this.cancelVideo1.Name = "cancelVideo1";
             this.cancelVideo1.Size = new System.Drawing.Size(75, 23);
             this.cancelVideo1.TabIndex = 85;
@@ -1593,7 +1691,9 @@
             // 
             // playVideo1
             // 
-            this.playVideo1.Location = new System.Drawing.Point(350, 248);
+            this.playVideo1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.playVideo1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.playVideo1.Location = new System.Drawing.Point(302, 287);
             this.playVideo1.Name = "playVideo1";
             this.playVideo1.Size = new System.Drawing.Size(75, 23);
             this.playVideo1.TabIndex = 84;
@@ -1603,7 +1703,8 @@
             // 
             // videoPath1
             // 
-            this.videoPath1.Location = new System.Drawing.Point(163, 249);
+            this.videoPath1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.videoPath1.Location = new System.Drawing.Point(114, 288);
             this.videoPath1.Name = "videoPath1";
             this.videoPath1.Size = new System.Drawing.Size(100, 20);
             this.videoPath1.TabIndex = 83;
@@ -1611,7 +1712,9 @@
             // 
             // uploadVideoT1
             // 
-            this.uploadVideoT1.Location = new System.Drawing.Point(272, 248);
+            this.uploadVideoT1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uploadVideoT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.uploadVideoT1.Location = new System.Drawing.Point(223, 287);
             this.uploadVideoT1.Name = "uploadVideoT1";
             this.uploadVideoT1.Size = new System.Drawing.Size(75, 23);
             this.uploadVideoT1.TabIndex = 82;
@@ -1621,8 +1724,10 @@
             // 
             // label15
             // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(64, 253);
+            this.label15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label15.Location = new System.Drawing.Point(15, 292);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(101, 13);
             this.label15.TabIndex = 81;
@@ -1630,16 +1735,19 @@
             // 
             // TeamsDBT1
             // 
+            this.TeamsDBT1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TeamsDBT1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TeamsDBT1.FormattingEnabled = true;
-            this.TeamsDBT1.Location = new System.Drawing.Point(354, 121);
+            this.TeamsDBT1.Location = new System.Drawing.Point(305, 160);
             this.TeamsDBT1.Name = "TeamsDBT1";
             this.TeamsDBT1.Size = new System.Drawing.Size(152, 21);
             this.TeamsDBT1.TabIndex = 80;
             // 
             // SetFromDBT1
             // 
-            this.SetFromDBT1.Location = new System.Drawing.Point(354, 165);
+            this.SetFromDBT1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SetFromDBT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SetFromDBT1.Location = new System.Drawing.Point(305, 204);
             this.SetFromDBT1.Name = "SetFromDBT1";
             this.SetFromDBT1.Size = new System.Drawing.Size(152, 23);
             this.SetFromDBT1.TabIndex = 79;
@@ -1649,7 +1757,9 @@
             // 
             // cancelTimeoutT1
             // 
-            this.cancelTimeoutT1.Location = new System.Drawing.Point(324, 486);
+            this.cancelTimeoutT1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancelTimeoutT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cancelTimeoutT1.Location = new System.Drawing.Point(327, 426);
             this.cancelTimeoutT1.Name = "cancelTimeoutT1";
             this.cancelTimeoutT1.Size = new System.Drawing.Size(75, 23);
             this.cancelTimeoutT1.TabIndex = 78;
@@ -1659,7 +1769,9 @@
             // 
             // startTimeoutT1
             // 
-            this.startTimeoutT1.Location = new System.Drawing.Point(225, 486);
+            this.startTimeoutT1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.startTimeoutT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.startTimeoutT1.Location = new System.Drawing.Point(228, 426);
             this.startTimeoutT1.Name = "startTimeoutT1";
             this.startTimeoutT1.Size = new System.Drawing.Size(75, 23);
             this.startTimeoutT1.TabIndex = 77;
@@ -1669,10 +1781,11 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox6.Controls.Add(this.timeoutT1S);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.timeoutT1M);
-            this.groupBox6.Location = new System.Drawing.Point(67, 467);
+            this.groupBox6.Location = new System.Drawing.Point(70, 410);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(110, 55);
             this.groupBox6.TabIndex = 76;
@@ -1682,6 +1795,7 @@
             // timeoutT1S
             // 
             this.timeoutT1S.AutoSize = true;
+            this.timeoutT1S.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.timeoutT1S.Location = new System.Drawing.Point(76, 19);
             this.timeoutT1S.Name = "timeoutT1S";
             this.timeoutT1S.Size = new System.Drawing.Size(19, 13);
@@ -1691,6 +1805,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label16.Location = new System.Drawing.Point(50, 19);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(10, 13);
@@ -1700,6 +1815,7 @@
             // timeoutT1M
             // 
             this.timeoutT1M.AutoSize = true;
+            this.timeoutT1M.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.timeoutT1M.Location = new System.Drawing.Point(22, 19);
             this.timeoutT1M.Name = "timeoutT1M";
             this.timeoutT1M.Size = new System.Drawing.Size(19, 13);
@@ -1708,7 +1824,9 @@
             // 
             // startBreak
             // 
-            this.startBreak.Location = new System.Drawing.Point(32, 28);
+            this.startBreak.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.startBreak.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.startBreak.Location = new System.Drawing.Point(13, 24);
             this.startBreak.Name = "startBreak";
             this.startBreak.Size = new System.Drawing.Size(75, 23);
             this.startBreak.TabIndex = 81;
@@ -1718,7 +1836,9 @@
             // 
             // cancelBreak
             // 
-            this.cancelBreak.Location = new System.Drawing.Point(145, 28);
+            this.cancelBreak.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancelBreak.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cancelBreak.Location = new System.Drawing.Point(182, 24);
             this.cancelBreak.Name = "cancelBreak";
             this.cancelBreak.Size = new System.Drawing.Size(75, 23);
             this.cancelBreak.TabIndex = 79;
@@ -1728,7 +1848,9 @@
             // 
             // playAd
             // 
-            this.playAd.Location = new System.Drawing.Point(227, 50);
+            this.playAd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.playAd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.playAd.Location = new System.Drawing.Point(101, 78);
             this.playAd.Name = "playAd";
             this.playAd.Size = new System.Drawing.Size(75, 23);
             this.playAd.TabIndex = 83;
@@ -1738,7 +1860,9 @@
             // 
             // cancelAd
             // 
-            this.cancelAd.Location = new System.Drawing.Point(308, 50);
+            this.cancelAd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancelAd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cancelAd.Location = new System.Drawing.Point(182, 78);
             this.cancelAd.Name = "cancelAd";
             this.cancelAd.Size = new System.Drawing.Size(75, 23);
             this.cancelAd.TabIndex = 84;
@@ -1748,17 +1872,20 @@
             // 
             // adsDBV
             // 
+            this.adsDBV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.adsDBV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.adsDBV.FormattingEnabled = true;
-            this.adsDBV.Location = new System.Drawing.Point(32, 52);
+            this.adsDBV.Location = new System.Drawing.Point(4, 46);
             this.adsDBV.Name = "adsDBV";
             this.adsDBV.Size = new System.Drawing.Size(152, 21);
             this.adsDBV.TabIndex = 85;
             // 
             // label21
             // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(29, 36);
+            this.label21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label21.Location = new System.Drawing.Point(1, 30);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(143, 13);
             this.label21.TabIndex = 87;
@@ -1766,21 +1893,24 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.preMatchCount);
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.cancelBreak);
             this.groupBox8.Controls.Add(this.startBreak);
-            this.groupBox8.Location = new System.Drawing.Point(693, 528);
+            this.groupBox8.Location = new System.Drawing.Point(16, 351);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(397, 71);
+            this.groupBox8.Size = new System.Drawing.Size(263, 71);
             this.groupBox8.TabIndex = 88;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Break controls";
             // 
             // preMatchCount
             // 
-            this.preMatchCount.Location = new System.Drawing.Point(255, 28);
+            this.preMatchCount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.preMatchCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.preMatchCount.Location = new System.Drawing.Point(147, 28);
             this.preMatchCount.Name = "preMatchCount";
-            this.preMatchCount.Size = new System.Drawing.Size(128, 23);
+            this.preMatchCount.Size = new System.Drawing.Size(96, 23);
             this.preMatchCount.TabIndex = 82;
             this.preMatchCount.Text = "Pre match countdown";
             this.preMatchCount.UseVisualStyleBackColor = true;
@@ -1788,34 +1918,40 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox9.Controls.Add(this.resetTime);
             this.groupBox9.Controls.Add(this.stopTime);
             this.groupBox9.Controls.Add(this.startTime);
-            this.groupBox9.Location = new System.Drawing.Point(693, 435);
+            this.groupBox9.Location = new System.Drawing.Point(16, 258);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(397, 71);
+            this.groupBox9.Size = new System.Drawing.Size(263, 71);
             this.groupBox9.TabIndex = 89;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Timer controls";
             // 
             // groupBox10
             // 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox10.Controls.Add(this.label21);
             this.groupBox10.Controls.Add(this.adsDBV);
             this.groupBox10.Controls.Add(this.cancelAd);
             this.groupBox10.Controls.Add(this.playAd);
-            this.groupBox10.Location = new System.Drawing.Point(693, 608);
+            this.groupBox10.Location = new System.Drawing.Point(20, 431);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(397, 107);
+            this.groupBox10.Size = new System.Drawing.Size(263, 107);
             this.groupBox10.TabIndex = 90;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Advertisement controls";
             // 
             // shootoutBtn
             // 
-            this.shootoutBtn.Location = new System.Drawing.Point(271, 35);
+            this.shootoutBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.shootoutBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.shootoutBtn.Location = new System.Drawing.Point(147, 77);
             this.shootoutBtn.Name = "shootoutBtn";
-            this.shootoutBtn.Size = new System.Drawing.Size(107, 23);
+            this.shootoutBtn.Size = new System.Drawing.Size(96, 23);
             this.shootoutBtn.TabIndex = 91;
             this.shootoutBtn.Text = "Start shootout";
             this.shootoutBtn.UseVisualStyleBackColor = true;
@@ -1823,9 +1959,11 @@
             // 
             // overT1
             // 
-            this.overT1.Location = new System.Drawing.Point(14, 35);
+            this.overT1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.overT1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.overT1.Location = new System.Drawing.Point(9, 18);
             this.overT1.Name = "overT1";
-            this.overT1.Size = new System.Drawing.Size(75, 23);
+            this.overT1.Size = new System.Drawing.Size(96, 23);
             this.overT1.TabIndex = 92;
             this.overT1.Text = "Overtime 1";
             this.overT1.UseVisualStyleBackColor = true;
@@ -1833,9 +1971,11 @@
             // 
             // overT2
             // 
-            this.overT2.Location = new System.Drawing.Point(190, 35);
+            this.overT2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.overT2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.overT2.Location = new System.Drawing.Point(9, 77);
             this.overT2.Name = "overT2";
-            this.overT2.Size = new System.Drawing.Size(75, 23);
+            this.overT2.Size = new System.Drawing.Size(96, 23);
             this.overT2.TabIndex = 93;
             this.overT2.Text = "Overtime 2";
             this.overT2.UseVisualStyleBackColor = true;
@@ -1843,9 +1983,11 @@
             // 
             // overTBreak
             // 
-            this.overTBreak.Location = new System.Drawing.Point(95, 35);
+            this.overTBreak.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.overTBreak.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.overTBreak.Location = new System.Drawing.Point(9, 47);
             this.overTBreak.Name = "overTBreak";
-            this.overTBreak.Size = new System.Drawing.Size(89, 23);
+            this.overTBreak.Size = new System.Drawing.Size(96, 23);
             this.overTBreak.TabIndex = 94;
             this.overTBreak.Text = "Overtime break";
             this.overTBreak.UseVisualStyleBackColor = true;
@@ -1853,90 +1995,122 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox11.Controls.Add(this.preMatchCount);
             this.groupBox11.Controls.Add(this.overTBreak);
             this.groupBox11.Controls.Add(this.overT2);
             this.groupBox11.Controls.Add(this.overT1);
             this.groupBox11.Controls.Add(this.shootoutBtn);
-            this.groupBox11.Location = new System.Drawing.Point(693, 729);
+            this.groupBox11.Location = new System.Drawing.Point(20, 552);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(397, 84);
+            this.groupBox11.Size = new System.Drawing.Size(263, 106);
             this.groupBox11.TabIndex = 95;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Extra time";
             // 
             // groupBox12
             // 
+            this.groupBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox12.Controls.Add(this.label1);
             this.groupBox12.Controls.Add(this.periodPlus);
             this.groupBox12.Controls.Add(this.periodMinus);
             this.groupBox12.Controls.Add(this.period);
-            this.groupBox12.Location = new System.Drawing.Point(693, 57);
+            this.groupBox12.Location = new System.Drawing.Point(482, 3);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(397, 79);
+            this.groupBox12.Size = new System.Drawing.Size(299, 96);
             this.groupBox12.TabIndex = 96;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Period settings";
             // 
             // groupBox13
             // 
+            this.groupBox13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox13.Controls.Add(this.closeScoreboardBtn);
             this.groupBox13.Controls.Add(this.createBtn);
-            this.groupBox13.Location = new System.Drawing.Point(768, 860);
+            this.groupBox13.Location = new System.Drawing.Point(482, 785);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(226, 200);
+            this.groupBox13.Size = new System.Drawing.Size(299, 173);
             this.groupBox13.TabIndex = 97;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "ScoreBoard";
             // 
-            // customEventToolStripMenuItem
+            // tableLayoutPanel1
             // 
-            this.customEventToolStripMenuItem.Name = "customEventToolStripMenuItem";
-            this.customEventToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
-            this.customEventToolStripMenuItem.Text = "Custom event";
-            this.customEventToolStripMenuItem.Click += new System.EventHandler(this.customEventToolStripMenuItem_Click);
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.91468F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.17061F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.91471F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox13, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox4, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox12, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.62925F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.86168F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.50907F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 961);
+            this.tableLayoutPanel1.TabIndex = 98;
             // 
-            // auxiliaryDevicesToolStripMenuItem
+            // panel1
             // 
-            this.auxiliaryDevicesToolStripMenuItem.Name = "auxiliaryDevicesToolStripMenuItem";
-            this.auxiliaryDevicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.auxiliaryDevicesToolStripMenuItem.Text = "Auxiliary devices";
-            this.auxiliaryDevicesToolStripMenuItem.Click += new System.EventHandler(this.auxiliaryDevicesToolStripMenuItem_Click);
+            this.panel1.Controls.Add(this.groupBox11);
+            this.panel1.Controls.Add(this.groupBox10);
+            this.panel1.Controls.Add(this.groupBox9);
+            this.panel1.Controls.Add(this.groupBox8);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(482, 105);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(299, 674);
+            this.panel1.TabIndex = 99;
+            // 
+            // cancelLogo1
+            // 
+            this.cancelLogo1.Location = new System.Drawing.Point(280, 58);
+            this.cancelLogo1.Name = "cancelLogo1";
+            this.cancelLogo1.Size = new System.Drawing.Size(24, 23);
+            this.cancelLogo1.TabIndex = 95;
+            this.cancelLogo1.Text = "X";
+            this.cancelLogo1.UseVisualStyleBackColor = true;
+            this.cancelLogo1.Click += new System.EventHandler(this.cancelLogo1_Click);
+            // 
+            // cancelLogo2
+            // 
+            this.cancelLogo2.Location = new System.Drawing.Point(285, 61);
+            this.cancelLogo2.Name = "cancelLogo2";
+            this.cancelLogo2.Size = new System.Drawing.Size(24, 23);
+            this.cancelLogo2.TabIndex = 96;
+            this.cancelLogo2.Text = "X";
+            this.cancelLogo2.UseVisualStyleBackColor = true;
+            this.cancelLogo2.Click += new System.EventHandler(this.cancelLogo2_Click);
             // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1760, 1119);
-            this.Controls.Add(this.groupBox13);
-            this.Controls.Add(this.groupBox12);
-            this.Controls.Add(this.groupBox11);
-            this.Controls.Add(this.groupBox10);
-            this.Controls.Add(this.groupBox9);
-            this.Controls.Add(this.groupBox8);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1264, 985);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(1280, 1024);
             this.Name = "GameForm";
             this.Text = "GameForm";
             this.Load += new System.EventHandler(this.GameForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T1Seconds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T1Seconds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T1Minutes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T1Number)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T2Seconds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T2Minutes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1T2Number)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T2Seconds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T2Minutes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2T2Number)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -1961,6 +2135,9 @@
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1984,20 +2161,8 @@
         private System.Windows.Forms.Button periodPlus;
         private System.Windows.Forms.Label secondsTime;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown p1T1Number;
-        private System.Windows.Forms.NumericUpDown p1T1Minutes;
-        private System.Windows.Forms.NumericUpDown p1T1Seconds;
         private System.Windows.Forms.Button p1T1ShowPenalty;
         private System.Windows.Forms.Button p1T1HidePenalty;
-        private System.Windows.Forms.NumericUpDown p2T1Seconds;
-        private System.Windows.Forms.NumericUpDown p2T1Minutes;
-        private System.Windows.Forms.NumericUpDown p2T1Number;
-        private System.Windows.Forms.NumericUpDown p1T2Seconds;
-        private System.Windows.Forms.NumericUpDown p1T2Minutes;
-        private System.Windows.Forms.NumericUpDown p1T2Number;
-        private System.Windows.Forms.NumericUpDown p2T2Seconds;
-        private System.Windows.Forms.NumericUpDown p2T2Minutes;
-        private System.Windows.Forms.NumericUpDown p2T2Number;
         private System.Windows.Forms.Button p2T1HidePenalty;
         private System.Windows.Forms.Button p2T1ShowPenalty;
         private System.Windows.Forms.Button p1T2HidePenalty;
@@ -2136,5 +2301,9 @@
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.ToolStripMenuItem customEventToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auxiliaryDevicesToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button cancelLogo2;
+        private System.Windows.Forms.Button cancelLogo1;
     }
 }
