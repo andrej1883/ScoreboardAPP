@@ -1546,11 +1546,6 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
-        private void editToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void appearanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_formScoreBoard.IsActive)
@@ -1562,6 +1557,22 @@ namespace Scoreboard.Forms.MainGameForms
             else
             {
                 MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void auxiliaryDevicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var serial = new SerialPortSettings();
+            serial.Show();
+        }
+
+        private void customEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var help = new ManualEvent();
+            help.ShowDialog();
+            if (help.DialogResult == DialogResult.OK)
+            {
+                _matchStats.CreateManualEvent(help.Description,help.Name);
             }
         }
     }

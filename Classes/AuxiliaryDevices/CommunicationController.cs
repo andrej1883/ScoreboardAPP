@@ -8,56 +8,61 @@ public class CommunicationController
     private const byte STX = 2;
     private const byte ETX = 3;
     private const byte sirenAddr = 100;
-    private const int MaxAttempts = 5;
-    private const int WaitingTime = 5000;
+    private const int MaxAttempts = 1;
+    private const int WaitingTime = 1;
 
     private SerialPort _commPort;
     private bool _isOpenPort;
-    private int _portNumber;
+    private string _portNumber;
 
-    private void NastavCOMport(int parPortNumber)
+    public void NastavCOMport(string parPortNumber)
     {
         if (_portNumber != parPortNumber)
         {
+            _commPort = new SerialPort(parPortNumber);
             bool wasOpen = _isOpenPort;
             StopBroadcast();
 
             _portNumber = parPortNumber;
-            _commPort.PortName = "COM" + _portNumber.ToString();
+            _commPort.PortName = _portNumber;
 
             if (wasOpen)
                 StartBroadcast();
         }
     }
 
-    private void StartBroadcast()
+    public bool StartBroadcast()
     {
         _isOpenPort = true;
         try
         {
             _commPort.Open();
+            return true;
         }
         catch
         {
             _isOpenPort = false;
+            return false;
         }
     }
 
-    private void StopBroadcast()
+    public bool StopBroadcast()
     {
         _isOpenPort = false;
         try
         {
             if (_commPort.IsOpen)
                 _commPort.Close();
+            return true;
         }
         catch
         {
             _isOpenPort = true;
+            return false;
         }
     }
 
-    private byte getCheckSum(byte[] parPacket)
+    public byte getCheckSum(byte[] parPacket)
     {
         byte checkSum = 0;
 
@@ -69,7 +74,7 @@ public class CommunicationController
         return checkSum;
     }
 
-    private void SendMessage3x(byte[] parMessage)
+    public void SendMessage3x(byte[] parMessage)
     {
         if (!_isOpenPort)
             return;
@@ -95,7 +100,7 @@ public class CommunicationController
         }
     }
 
-    private SirenType getSirenType(int index)
+    public SirenType getSirenType(int index)
     {
         switch (index)
         {
@@ -112,7 +117,7 @@ public class CommunicationController
         }
     }
 
-    private void SirenStart(SirenType parType)
+    public void SirenStart(SirenType parType)
     {
         if (parType == SirenType.NONE) return;
 
@@ -153,5 +158,22 @@ public class CommunicationController
 
         byteArray[byteArray.Length - 1] = getCheckSum(byteArray);
         SendMessage3x(byteArray);
+
+        //byteArray = new byte[4];
+        //byteArray[0] = (byte)'C';
+        //byteArray[1] = (byte)'A';
+        //byteArray[2] = (byte)'U';
+        //byteArray[3] = ETX;
+        //SendMessage3x(byteArray);
+        //byteArray = new byte[3];
+        //byteArray[0] = (byte)'1';
+        //byteArray[1] = (byte)'A';
+        //byteArray[2] = (byte)'2';
+        //SendMessage3x(byteArray);
+        //byteArray = new byte[3];
+        //byteArray[0] = (byte)'1';
+        //byteArray[1] = (byte)'2';
+        //byteArray[2] = (byte)'3';
+        //SendMessage3x(byteArray);
     }
 }

@@ -140,9 +140,9 @@ namespace Scoreboard.Classes.GameStatistics
             ExportEvent(help);
         }
 
-        public void CreateManualEvent(string parInfoEvent)
+        public void CreateManualEvent(string parInfoEvent, string parNameEvent)
         {
-            string nameEvent = _actualTime.ToString();
+            string nameEvent = parNameEvent;
             MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = parInfoEvent};
             _matchEvents.Add(help);
             ExportEvent(help);

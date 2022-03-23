@@ -194,6 +194,8 @@
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.customEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.auxiliaryDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1T1Minutes)).BeginInit();
@@ -764,7 +766,8 @@
             this.settingsToolStripMenuItem,
             this.videosToolStripMenuItem,
             this.teamsToolStripMenuItem,
-            this.databaseToolStripMenuItem});
+            this.databaseToolStripMenuItem,
+            this.customEventToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1760, 24);
@@ -777,6 +780,7 @@
             this.timeToolStripMenuItem,
             this.appearanceToolStripMenuItem,
             this.statisticsToolStripMenuItem,
+            this.auxiliaryDevicesToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -1884,6 +1888,20 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "ScoreBoard";
             // 
+            // customEventToolStripMenuItem
+            // 
+            this.customEventToolStripMenuItem.Name = "customEventToolStripMenuItem";
+            this.customEventToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.customEventToolStripMenuItem.Text = "Custom event";
+            this.customEventToolStripMenuItem.Click += new System.EventHandler(this.customEventToolStripMenuItem_Click);
+            // 
+            // auxiliaryDevicesToolStripMenuItem
+            // 
+            this.auxiliaryDevicesToolStripMenuItem.Name = "auxiliaryDevicesToolStripMenuItem";
+            this.auxiliaryDevicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.auxiliaryDevicesToolStripMenuItem.Text = "Auxiliary devices";
+            this.auxiliaryDevicesToolStripMenuItem.Click += new System.EventHandler(this.auxiliaryDevicesToolStripMenuItem_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2116,5 +2134,7 @@
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.ToolStripMenuItem customEventToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem auxiliaryDevicesToolStripMenuItem;
     }
 }
