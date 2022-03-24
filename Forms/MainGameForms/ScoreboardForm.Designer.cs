@@ -85,10 +85,11 @@
             // 
             // t1Lbl
             // 
+            this.t1Lbl.AutoSize = true;
             this.t1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.t1Lbl.Location = new System.Drawing.Point(444, 154);
+            this.t1Lbl.Location = new System.Drawing.Point(526, 154);
             this.t1Lbl.Name = "t1Lbl";
-            this.t1Lbl.Size = new System.Drawing.Size(123, 17);
+            this.t1Lbl.Size = new System.Drawing.Size(40, 13);
             this.t1Lbl.TabIndex = 2;
             this.t1Lbl.Text = "Team1";
             this.t1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -97,10 +98,11 @@
             // 
             // t2Lbl
             // 
+            this.t2Lbl.AutoSize = true;
             this.t2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.t2Lbl.Location = new System.Drawing.Point(699, 154);
+            this.t2Lbl.Location = new System.Drawing.Point(698, 154);
             this.t2Lbl.Name = "t2Lbl";
-            this.t2Lbl.Size = new System.Drawing.Size(122, 13);
+            this.t2Lbl.Size = new System.Drawing.Size(40, 13);
             this.t2Lbl.TabIndex = 3;
             this.t2Lbl.Text = "Team2";
             this.t2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,11 +111,12 @@
             // 
             // scoreT1Lbl
             // 
+            this.scoreT1Lbl.AutoSize = true;
             this.scoreT1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreT1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.scoreT1Lbl.Location = new System.Drawing.Point(456, 171);
+            this.scoreT1Lbl.Location = new System.Drawing.Point(493, 169);
             this.scoreT1Lbl.Name = "scoreT1Lbl";
-            this.scoreT1Lbl.Size = new System.Drawing.Size(111, 76);
+            this.scoreT1Lbl.Size = new System.Drawing.Size(106, 76);
             this.scoreT1Lbl.TabIndex = 4;
             this.scoreT1Lbl.Text = "00";
             this.scoreT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -122,11 +125,12 @@
             // 
             // scoreT2Lbl
             // 
+            this.scoreT2Lbl.AutoSize = true;
             this.scoreT2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreT2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.scoreT2Lbl.Location = new System.Drawing.Point(712, 169);
+            this.scoreT2Lbl.Location = new System.Drawing.Point(665, 169);
             this.scoreT2Lbl.Name = "scoreT2Lbl";
-            this.scoreT2Lbl.Size = new System.Drawing.Size(107, 72);
+            this.scoreT2Lbl.Size = new System.Drawing.Size(106, 76);
             this.scoreT2Lbl.TabIndex = 5;
             this.scoreT2Lbl.Text = "00";
             this.scoreT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -135,11 +139,12 @@
             // 
             // scoreParseLblb
             // 
+            this.scoreParseLblb.AutoSize = true;
             this.scoreParseLblb.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreParseLblb.ForeColor = System.Drawing.Color.Black;
-            this.scoreParseLblb.Location = new System.Drawing.Point(621, 169);
+            this.scoreParseLblb.Location = new System.Drawing.Point(605, 169);
             this.scoreParseLblb.Name = "scoreParseLblb";
-            this.scoreParseLblb.Size = new System.Drawing.Size(40, 72);
+            this.scoreParseLblb.Size = new System.Drawing.Size(54, 76);
             this.scoreParseLblb.TabIndex = 6;
             this.scoreParseLblb.Text = "-";
             this.scoreParseLblb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,8 +153,9 @@
             // 
             // periodLbl
             // 
+            this.periodLbl.AutoSize = true;
             this.periodLbl.ForeColor = System.Drawing.Color.Black;
-            this.periodLbl.Location = new System.Drawing.Point(620, 39);
+            this.periodLbl.Location = new System.Drawing.Point(614, 39);
             this.periodLbl.Name = "periodLbl";
             this.periodLbl.Size = new System.Drawing.Size(37, 13);
             this.periodLbl.TabIndex = 7;
@@ -160,11 +166,12 @@
             // 
             // timeMinutesLbl
             // 
+            this.timeMinutesLbl.AutoSize = true;
             this.timeMinutesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeMinutesLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeMinutesLbl.Location = new System.Drawing.Point(306, 415);
+            this.timeMinutesLbl.Location = new System.Drawing.Point(360, 416);
             this.timeMinutesLbl.Name = "timeMinutesLbl";
-            this.timeMinutesLbl.Size = new System.Drawing.Size(237, 154);
+            this.timeMinutesLbl.Size = new System.Drawing.Size(215, 153);
             this.timeMinutesLbl.TabIndex = 8;
             this.timeMinutesLbl.Text = "00";
             this.timeMinutesLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,11 +180,12 @@
             // 
             // timeParseLbl
             // 
+            this.timeParseLbl.AutoSize = true;
             this.timeParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeParseLbl.Location = new System.Drawing.Point(591, 415);
+            this.timeParseLbl.Location = new System.Drawing.Point(581, 416);
             this.timeParseLbl.Name = "timeParseLbl";
-            this.timeParseLbl.Size = new System.Drawing.Size(83, 154);
+            this.timeParseLbl.Size = new System.Drawing.Size(102, 153);
             this.timeParseLbl.TabIndex = 9;
             this.timeParseLbl.Text = ":";
             this.timeParseLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,11 +194,10 @@
             // 
             // timeSecondsLbl
             // 
-            this.timeSecondsLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.timeSecondsLbl.AutoSize = true;
             this.timeSecondsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeSecondsLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeSecondsLbl.Location = new System.Drawing.Point(728, 416);
+            this.timeSecondsLbl.Location = new System.Drawing.Point(689, 416);
             this.timeSecondsLbl.Name = "timeSecondsLbl";
             this.timeSecondsLbl.Size = new System.Drawing.Size(215, 153);
             this.timeSecondsLbl.TabIndex = 10;
@@ -204,7 +211,7 @@
             this.actualPeriodLbl.AutoSize = true;
             this.actualPeriodLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.actualPeriodLbl.ForeColor = System.Drawing.Color.Black;
-            this.actualPeriodLbl.Location = new System.Drawing.Point(609, 63);
+            this.actualPeriodLbl.Location = new System.Drawing.Point(600, 63);
             this.actualPeriodLbl.Name = "actualPeriodLbl";
             this.actualPeriodLbl.Size = new System.Drawing.Size(64, 46);
             this.actualPeriodLbl.TabIndex = 11;
@@ -214,8 +221,9 @@
             // 
             // timeLbl
             // 
+            this.timeLbl.AutoSize = true;
             this.timeLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeLbl.Location = new System.Drawing.Point(617, 386);
+            this.timeLbl.Location = new System.Drawing.Point(617, 401);
             this.timeLbl.Name = "timeLbl";
             this.timeLbl.Size = new System.Drawing.Size(30, 13);
             this.timeLbl.TabIndex = 12;
@@ -226,8 +234,9 @@
             // 
             // penaltyT1Lbl
             // 
+            this.penaltyT1Lbl.AutoSize = true;
             this.penaltyT1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT1Lbl.Location = new System.Drawing.Point(271, 685);
+            this.penaltyT1Lbl.Location = new System.Drawing.Point(272, 746);
             this.penaltyT1Lbl.Name = "penaltyT1Lbl";
             this.penaltyT1Lbl.Size = new System.Drawing.Size(42, 13);
             this.penaltyT1Lbl.TabIndex = 14;
@@ -238,8 +247,9 @@
             // 
             // penaltyT1PlayerLbl
             // 
+            this.penaltyT1PlayerLbl.AutoSize = true;
             this.penaltyT1PlayerLbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT1PlayerLbl.Location = new System.Drawing.Point(181, 725);
+            this.penaltyT1PlayerLbl.Location = new System.Drawing.Point(193, 786);
             this.penaltyT1PlayerLbl.Name = "penaltyT1PlayerLbl";
             this.penaltyT1PlayerLbl.Size = new System.Drawing.Size(36, 13);
             this.penaltyT1PlayerLbl.TabIndex = 15;
@@ -250,8 +260,9 @@
             // 
             // penaltyT1TimeLbl
             // 
+            this.penaltyT1TimeLbl.AutoSize = true;
             this.penaltyT1TimeLbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT1TimeLbl.Location = new System.Drawing.Point(341, 725);
+            this.penaltyT1TimeLbl.Location = new System.Drawing.Point(353, 786);
             this.penaltyT1TimeLbl.Name = "penaltyT1TimeLbl";
             this.penaltyT1TimeLbl.Size = new System.Drawing.Size(30, 13);
             this.penaltyT1TimeLbl.TabIndex = 16;
@@ -262,8 +273,9 @@
             // 
             // penaltyT2TimeLbl
             // 
+            this.penaltyT2TimeLbl.AutoSize = true;
             this.penaltyT2TimeLbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT2TimeLbl.Location = new System.Drawing.Point(985, 725);
+            this.penaltyT2TimeLbl.Location = new System.Drawing.Point(997, 786);
             this.penaltyT2TimeLbl.Name = "penaltyT2TimeLbl";
             this.penaltyT2TimeLbl.Size = new System.Drawing.Size(30, 13);
             this.penaltyT2TimeLbl.TabIndex = 19;
@@ -274,8 +286,9 @@
             // 
             // penaltyT2PlayerLbl
             // 
+            this.penaltyT2PlayerLbl.AutoSize = true;
             this.penaltyT2PlayerLbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT2PlayerLbl.Location = new System.Drawing.Point(841, 725);
+            this.penaltyT2PlayerLbl.Location = new System.Drawing.Point(853, 786);
             this.penaltyT2PlayerLbl.Name = "penaltyT2PlayerLbl";
             this.penaltyT2PlayerLbl.Size = new System.Drawing.Size(36, 13);
             this.penaltyT2PlayerLbl.TabIndex = 18;
@@ -286,8 +299,9 @@
             // 
             // penaltyT2Lbl
             // 
+            this.penaltyT2Lbl.AutoSize = true;
             this.penaltyT2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.penaltyT2Lbl.Location = new System.Drawing.Point(911, 685);
+            this.penaltyT2Lbl.Location = new System.Drawing.Point(923, 746);
             this.penaltyT2Lbl.Name = "penaltyT2Lbl";
             this.penaltyT2Lbl.Size = new System.Drawing.Size(42, 13);
             this.penaltyT2Lbl.TabIndex = 17;
@@ -301,7 +315,7 @@
             this.playerNumber1T1lbl.AutoSize = true;
             this.playerNumber1T1lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.playerNumber1T1lbl.ForeColor = System.Drawing.Color.Black;
-            this.playerNumber1T1lbl.Location = new System.Drawing.Point(164, 747);
+            this.playerNumber1T1lbl.Location = new System.Drawing.Point(179, 808);
             this.playerNumber1T1lbl.Name = "playerNumber1T1lbl";
             this.playerNumber1T1lbl.Size = new System.Drawing.Size(64, 46);
             this.playerNumber1T1lbl.TabIndex = 20;
@@ -315,7 +329,7 @@
             this.playerNumber1T2lbl.AutoSize = true;
             this.playerNumber1T2lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.playerNumber1T2lbl.ForeColor = System.Drawing.Color.Black;
-            this.playerNumber1T2lbl.Location = new System.Drawing.Point(825, 747);
+            this.playerNumber1T2lbl.Location = new System.Drawing.Point(839, 808);
             this.playerNumber1T2lbl.Name = "playerNumber1T2lbl";
             this.playerNumber1T2lbl.Size = new System.Drawing.Size(64, 46);
             this.playerNumber1T2lbl.TabIndex = 21;
@@ -329,7 +343,7 @@
             this.playerNumber2T1lbl.AutoSize = true;
             this.playerNumber2T1lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.playerNumber2T1lbl.ForeColor = System.Drawing.Color.Black;
-            this.playerNumber2T1lbl.Location = new System.Drawing.Point(164, 787);
+            this.playerNumber2T1lbl.Location = new System.Drawing.Point(179, 848);
             this.playerNumber2T1lbl.Name = "playerNumber2T1lbl";
             this.playerNumber2T1lbl.Size = new System.Drawing.Size(64, 46);
             this.playerNumber2T1lbl.TabIndex = 22;
@@ -343,7 +357,7 @@
             this.playerNumber2T2lbl.AutoSize = true;
             this.playerNumber2T2lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.playerNumber2T2lbl.ForeColor = System.Drawing.Color.Black;
-            this.playerNumber2T2lbl.Location = new System.Drawing.Point(825, 787);
+            this.playerNumber2T2lbl.Location = new System.Drawing.Point(839, 848);
             this.playerNumber2T2lbl.Name = "playerNumber2T2lbl";
             this.playerNumber2T2lbl.Size = new System.Drawing.Size(64, 46);
             this.playerNumber2T2lbl.TabIndex = 23;
@@ -357,7 +371,7 @@
             this.minutesT1P1Lbl.AutoSize = true;
             this.minutesT1P1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.minutesT1P1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.minutesT1P1Lbl.Location = new System.Drawing.Point(266, 747);
+            this.minutesT1P1Lbl.Location = new System.Drawing.Point(283, 808);
             this.minutesT1P1Lbl.Name = "minutesT1P1Lbl";
             this.minutesT1P1Lbl.Size = new System.Drawing.Size(64, 46);
             this.minutesT1P1Lbl.TabIndex = 24;
@@ -371,7 +385,7 @@
             this.secondsT1P1Lbl.AutoSize = true;
             this.secondsT1P1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.secondsT1P1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.secondsT1P1Lbl.Location = new System.Drawing.Point(377, 747);
+            this.secondsT1P1Lbl.Location = new System.Drawing.Point(390, 808);
             this.secondsT1P1Lbl.Name = "secondsT1P1Lbl";
             this.secondsT1P1Lbl.Size = new System.Drawing.Size(64, 46);
             this.secondsT1P1Lbl.TabIndex = 28;
@@ -385,7 +399,7 @@
             this.timeT1P1ParseLbl.AutoSize = true;
             this.timeT1P1ParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeT1P1ParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeT1P1ParseLbl.Location = new System.Drawing.Point(340, 747);
+            this.timeT1P1ParseLbl.Location = new System.Drawing.Point(353, 808);
             this.timeT1P1ParseLbl.Name = "timeT1P1ParseLbl";
             this.timeT1P1ParseLbl.Size = new System.Drawing.Size(31, 46);
             this.timeT1P1ParseLbl.TabIndex = 36;
@@ -399,7 +413,7 @@
             this.timeT1P2ParseLbl.AutoSize = true;
             this.timeT1P2ParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeT1P2ParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeT1P2ParseLbl.Location = new System.Drawing.Point(340, 787);
+            this.timeT1P2ParseLbl.Location = new System.Drawing.Point(353, 848);
             this.timeT1P2ParseLbl.Name = "timeT1P2ParseLbl";
             this.timeT1P2ParseLbl.Size = new System.Drawing.Size(31, 46);
             this.timeT1P2ParseLbl.TabIndex = 40;
@@ -413,7 +427,7 @@
             this.secondsT1P2Lbl.AutoSize = true;
             this.secondsT1P2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.secondsT1P2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.secondsT1P2Lbl.Location = new System.Drawing.Point(377, 787);
+            this.secondsT1P2Lbl.Location = new System.Drawing.Point(390, 848);
             this.secondsT1P2Lbl.Name = "secondsT1P2Lbl";
             this.secondsT1P2Lbl.Size = new System.Drawing.Size(64, 46);
             this.secondsT1P2Lbl.TabIndex = 38;
@@ -427,7 +441,7 @@
             this.minutesT1P2Lbl.AutoSize = true;
             this.minutesT1P2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.minutesT1P2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.minutesT1P2Lbl.Location = new System.Drawing.Point(266, 787);
+            this.minutesT1P2Lbl.Location = new System.Drawing.Point(283, 848);
             this.minutesT1P2Lbl.Name = "minutesT1P2Lbl";
             this.minutesT1P2Lbl.Size = new System.Drawing.Size(64, 46);
             this.minutesT1P2Lbl.TabIndex = 37;
@@ -441,7 +455,7 @@
             this.timeT2P1ParseLbl.AutoSize = true;
             this.timeT2P1ParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeT2P1ParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeT2P1ParseLbl.Location = new System.Drawing.Point(984, 747);
+            this.timeT2P1ParseLbl.Location = new System.Drawing.Point(997, 808);
             this.timeT2P1ParseLbl.Name = "timeT2P1ParseLbl";
             this.timeT2P1ParseLbl.Size = new System.Drawing.Size(31, 46);
             this.timeT2P1ParseLbl.TabIndex = 44;
@@ -455,7 +469,7 @@
             this.secondsT2P1Lbl.AutoSize = true;
             this.secondsT2P1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.secondsT2P1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.secondsT2P1Lbl.Location = new System.Drawing.Point(1012, 747);
+            this.secondsT2P1Lbl.Location = new System.Drawing.Point(1024, 808);
             this.secondsT2P1Lbl.Name = "secondsT2P1Lbl";
             this.secondsT2P1Lbl.Size = new System.Drawing.Size(64, 46);
             this.secondsT2P1Lbl.TabIndex = 42;
@@ -469,7 +483,7 @@
             this.minutesT2P1Lbl.AutoSize = true;
             this.minutesT2P1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.minutesT2P1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.minutesT2P1Lbl.Location = new System.Drawing.Point(929, 747);
+            this.minutesT2P1Lbl.Location = new System.Drawing.Point(941, 808);
             this.minutesT2P1Lbl.Name = "minutesT2P1Lbl";
             this.minutesT2P1Lbl.Size = new System.Drawing.Size(64, 46);
             this.minutesT2P1Lbl.TabIndex = 41;
@@ -483,7 +497,7 @@
             this.timeT2P2ParseLbl.AutoSize = true;
             this.timeT2P2ParseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeT2P2ParseLbl.ForeColor = System.Drawing.Color.Black;
-            this.timeT2P2ParseLbl.Location = new System.Drawing.Point(984, 787);
+            this.timeT2P2ParseLbl.Location = new System.Drawing.Point(997, 848);
             this.timeT2P2ParseLbl.Name = "timeT2P2ParseLbl";
             this.timeT2P2ParseLbl.Size = new System.Drawing.Size(31, 46);
             this.timeT2P2ParseLbl.TabIndex = 48;
@@ -497,7 +511,7 @@
             this.secondsT2P2Lbl.AutoSize = true;
             this.secondsT2P2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.secondsT2P2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.secondsT2P2Lbl.Location = new System.Drawing.Point(1012, 787);
+            this.secondsT2P2Lbl.Location = new System.Drawing.Point(1024, 848);
             this.secondsT2P2Lbl.Name = "secondsT2P2Lbl";
             this.secondsT2P2Lbl.Size = new System.Drawing.Size(64, 46);
             this.secondsT2P2Lbl.TabIndex = 46;
@@ -511,7 +525,7 @@
             this.minutesT2P2Lbl.AutoSize = true;
             this.minutesT2P2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.minutesT2P2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.minutesT2P2Lbl.Location = new System.Drawing.Point(929, 787);
+            this.minutesT2P2Lbl.Location = new System.Drawing.Point(941, 848);
             this.minutesT2P2Lbl.Name = "minutesT2P2Lbl";
             this.minutesT2P2Lbl.Size = new System.Drawing.Size(64, 46);
             this.minutesT2P2Lbl.TabIndex = 45;
@@ -545,7 +559,7 @@
             // timeoutL2
             // 
             this.timeoutL2.AutoSize = true;
-            this.timeoutL2.Location = new System.Drawing.Point(1098, 366);
+            this.timeoutL2.Location = new System.Drawing.Point(1088, 366);
             this.timeoutL2.Name = "timeoutL2";
             this.timeoutL2.Size = new System.Drawing.Size(48, 13);
             this.timeoutL2.TabIndex = 51;
@@ -557,7 +571,7 @@
             // timeoutL1
             // 
             this.timeoutL1.AutoSize = true;
-            this.timeoutL1.Location = new System.Drawing.Point(128, 366);
+            this.timeoutL1.Location = new System.Drawing.Point(118, 366);
             this.timeoutL1.Name = "timeoutL1";
             this.timeoutL1.Size = new System.Drawing.Size(48, 13);
             this.timeoutL1.TabIndex = 52;
@@ -568,9 +582,10 @@
             // 
             // timeout2Parse
             // 
+            this.timeout2Parse.AutoSize = true;
             this.timeout2Parse.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeout2Parse.ForeColor = System.Drawing.Color.Black;
-            this.timeout2Parse.Location = new System.Drawing.Point(1111, 402);
+            this.timeout2Parse.Location = new System.Drawing.Point(1106, 402);
             this.timeout2Parse.Name = "timeout2Parse";
             this.timeout2Parse.Size = new System.Drawing.Size(22, 31);
             this.timeout2Parse.TabIndex = 55;
@@ -581,11 +596,12 @@
             // 
             // timeout2Sec
             // 
+            this.timeout2Sec.AutoSize = true;
             this.timeout2Sec.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeout2Sec.ForeColor = System.Drawing.Color.Black;
-            this.timeout2Sec.Location = new System.Drawing.Point(1139, 402);
+            this.timeout2Sec.Location = new System.Drawing.Point(1134, 402);
             this.timeout2Sec.Name = "timeout2Sec";
-            this.timeout2Sec.Size = new System.Drawing.Size(48, 31);
+            this.timeout2Sec.Size = new System.Drawing.Size(44, 31);
             this.timeout2Sec.TabIndex = 54;
             this.timeout2Sec.Text = "00";
             this.timeout2Sec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -594,11 +610,12 @@
             // 
             // timeout2Min
             // 
+            this.timeout2Min.AutoSize = true;
             this.timeout2Min.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeout2Min.ForeColor = System.Drawing.Color.Black;
             this.timeout2Min.Location = new System.Drawing.Point(1056, 402);
             this.timeout2Min.Name = "timeout2Min";
-            this.timeout2Min.Size = new System.Drawing.Size(49, 31);
+            this.timeout2Min.Size = new System.Drawing.Size(44, 31);
             this.timeout2Min.TabIndex = 53;
             this.timeout2Min.Text = "00";
             this.timeout2Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -607,9 +624,10 @@
             // 
             // timeout1Parse
             // 
+            this.timeout1Parse.AutoSize = true;
             this.timeout1Parse.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeout1Parse.ForeColor = System.Drawing.Color.Black;
-            this.timeout1Parse.Location = new System.Drawing.Point(137, 402);
+            this.timeout1Parse.Location = new System.Drawing.Point(136, 402);
             this.timeout1Parse.Name = "timeout1Parse";
             this.timeout1Parse.Size = new System.Drawing.Size(22, 31);
             this.timeout1Parse.TabIndex = 58;
@@ -620,11 +638,12 @@
             // 
             // timeout1Sec
             // 
+            this.timeout1Sec.AutoSize = true;
             this.timeout1Sec.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeout1Sec.ForeColor = System.Drawing.Color.Black;
-            this.timeout1Sec.Location = new System.Drawing.Point(165, 402);
+            this.timeout1Sec.Location = new System.Drawing.Point(164, 402);
             this.timeout1Sec.Name = "timeout1Sec";
-            this.timeout1Sec.Size = new System.Drawing.Size(48, 31);
+            this.timeout1Sec.Size = new System.Drawing.Size(44, 31);
             this.timeout1Sec.TabIndex = 57;
             this.timeout1Sec.Text = "00";
             this.timeout1Sec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -633,11 +652,12 @@
             // 
             // timeout1Min
             // 
+            this.timeout1Min.AutoSize = true;
             this.timeout1Min.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.timeout1Min.ForeColor = System.Drawing.Color.Black;
-            this.timeout1Min.Location = new System.Drawing.Point(82, 402);
+            this.timeout1Min.Location = new System.Drawing.Point(86, 401);
             this.timeout1Min.Name = "timeout1Min";
-            this.timeout1Min.Size = new System.Drawing.Size(49, 31);
+            this.timeout1Min.Size = new System.Drawing.Size(44, 31);
             this.timeout1Min.TabIndex = 56;
             this.timeout1Min.Text = "00";
             this.timeout1Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -646,10 +666,11 @@
             // 
             // faceOffsT1Lbl
             // 
+            this.faceOffsT1Lbl.AutoSize = true;
             this.faceOffsT1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.faceOffsT1Lbl.Location = new System.Drawing.Point(85, 529);
+            this.faceOffsT1Lbl.Location = new System.Drawing.Point(119, 551);
             this.faceOffsT1Lbl.Name = "faceOffsT1Lbl";
-            this.faceOffsT1Lbl.Size = new System.Drawing.Size(123, 13);
+            this.faceOffsT1Lbl.Size = new System.Drawing.Size(51, 13);
             this.faceOffsT1Lbl.TabIndex = 59;
             this.faceOffsT1Lbl.Text = "Face-offs";
             this.faceOffsT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -658,10 +679,11 @@
             // 
             // faceOffsT2Lbl
             // 
+            this.faceOffsT2Lbl.AutoSize = true;
             this.faceOffsT2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.faceOffsT2Lbl.Location = new System.Drawing.Point(1061, 529);
+            this.faceOffsT2Lbl.Location = new System.Drawing.Point(1095, 551);
             this.faceOffsT2Lbl.Name = "faceOffsT2Lbl";
-            this.faceOffsT2Lbl.Size = new System.Drawing.Size(123, 13);
+            this.faceOffsT2Lbl.Size = new System.Drawing.Size(51, 13);
             this.faceOffsT2Lbl.TabIndex = 60;
             this.faceOffsT2Lbl.Text = "Face-offs";
             this.faceOffsT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -670,11 +692,12 @@
             // 
             // faceOffsT1
             // 
+            this.faceOffsT1.AutoSize = true;
             this.faceOffsT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.faceOffsT1.ForeColor = System.Drawing.Color.Black;
-            this.faceOffsT1.Location = new System.Drawing.Point(125, 553);
+            this.faceOffsT1.Location = new System.Drawing.Point(122, 575);
             this.faceOffsT1.Name = "faceOffsT1";
-            this.faceOffsT1.Size = new System.Drawing.Size(49, 31);
+            this.faceOffsT1.Size = new System.Drawing.Size(44, 31);
             this.faceOffsT1.TabIndex = 61;
             this.faceOffsT1.Text = "00";
             this.faceOffsT1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -683,11 +706,12 @@
             // 
             // faceOffsT2
             // 
+            this.faceOffsT2.AutoSize = true;
             this.faceOffsT2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.faceOffsT2.ForeColor = System.Drawing.Color.Black;
-            this.faceOffsT2.Location = new System.Drawing.Point(1097, 553);
+            this.faceOffsT2.Location = new System.Drawing.Point(1098, 575);
             this.faceOffsT2.Name = "faceOffsT2";
-            this.faceOffsT2.Size = new System.Drawing.Size(49, 31);
+            this.faceOffsT2.Size = new System.Drawing.Size(44, 31);
             this.faceOffsT2.TabIndex = 62;
             this.faceOffsT2.Text = "00";
             this.faceOffsT2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -696,11 +720,12 @@
             // 
             // shotsT1
             // 
+            this.shotsT1.AutoSize = true;
             this.shotsT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.shotsT1.ForeColor = System.Drawing.Color.Black;
-            this.shotsT1.Location = new System.Drawing.Point(268, 607);
+            this.shotsT1.Location = new System.Drawing.Point(270, 661);
             this.shotsT1.Name = "shotsT1";
-            this.shotsT1.Size = new System.Drawing.Size(49, 31);
+            this.shotsT1.Size = new System.Drawing.Size(44, 31);
             this.shotsT1.TabIndex = 64;
             this.shotsT1.Text = "00";
             this.shotsT1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -709,10 +734,11 @@
             // 
             // shotsT1Lbl
             // 
+            this.shotsT1Lbl.AutoSize = true;
             this.shotsT1Lbl.ForeColor = System.Drawing.Color.Black;
-            this.shotsT1Lbl.Location = new System.Drawing.Point(229, 584);
+            this.shotsT1Lbl.Location = new System.Drawing.Point(256, 638);
             this.shotsT1Lbl.Name = "shotsT1Lbl";
-            this.shotsT1Lbl.Size = new System.Drawing.Size(123, 13);
+            this.shotsT1Lbl.Size = new System.Drawing.Size(72, 13);
             this.shotsT1Lbl.TabIndex = 63;
             this.shotsT1Lbl.Text = "Shots on goal";
             this.shotsT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -721,11 +747,12 @@
             // 
             // shotsT2
             // 
+            this.shotsT2.AutoSize = true;
             this.shotsT2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.shotsT2.ForeColor = System.Drawing.Color.Black;
-            this.shotsT2.Location = new System.Drawing.Point(944, 607);
+            this.shotsT2.Location = new System.Drawing.Point(950, 661);
             this.shotsT2.Name = "shotsT2";
-            this.shotsT2.Size = new System.Drawing.Size(49, 31);
+            this.shotsT2.Size = new System.Drawing.Size(44, 31);
             this.shotsT2.TabIndex = 66;
             this.shotsT2.Text = "00";
             this.shotsT2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -734,10 +761,11 @@
             // 
             // shotsT2Lbl
             // 
+            this.shotsT2Lbl.AutoSize = true;
             this.shotsT2Lbl.ForeColor = System.Drawing.Color.Black;
-            this.shotsT2Lbl.Location = new System.Drawing.Point(909, 584);
+            this.shotsT2Lbl.Location = new System.Drawing.Point(936, 638);
             this.shotsT2Lbl.Name = "shotsT2Lbl";
-            this.shotsT2Lbl.Size = new System.Drawing.Size(123, 13);
+            this.shotsT2Lbl.Size = new System.Drawing.Size(72, 13);
             this.shotsT2Lbl.TabIndex = 65;
             this.shotsT2Lbl.Text = "Shots on goal";
             this.shotsT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
