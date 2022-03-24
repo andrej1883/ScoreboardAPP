@@ -51,17 +51,13 @@ namespace Scoreboard.Forms.Appearance
                 gridSizeNumeric.Value = _formScoreBoard.GridSize;
                 logoHeightBox.Value = _formScoreBoard.LogoSize.Height;
                 logoWidthBox.Value = _formScoreBoard.LogoSize.Width;
-            }
-        }
-
-        private void ResizeControls()
-        {
-            foreach (Control ctr in _formScoreBoard.Controls)
-            {
+                for (int i = 1; i < 5; i++)
+                {
+                    _formScoreBoard.ShowPenalty(i);
+                }
                 
             }
         }
-
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -73,6 +69,7 @@ namespace Scoreboard.Forms.Appearance
 
             
             _formScoreBoard.Width = decimal.ToInt32(scoreBWidth.Value);
+            _formScoreBoard.MoveComponents();
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
@@ -84,6 +81,7 @@ namespace Scoreboard.Forms.Appearance
             }
             
             _formScoreBoard.Height = decimal.ToInt32(scoreBHeight.Value);
+            _formScoreBoard.MoveComponents();
         }
 
         private void blackBcgrBtn_Click(object sender, EventArgs e)

@@ -695,9 +695,20 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
-
-
-
+        public void MoveComponents()
+        {
+            foreach (Control ctr in Controls)
+            {
+                if (ctr.Location.X + ctr.Width > this.Width)
+                {
+                    ctr.Location = new Point(this.Width - ctr.Width,ctr.Location.Y);
+                }
+                if (ctr.Location.Y + ctr.Height > this.Height)
+                {
+                    ctr.Location = new Point(ctr.Location.X,this.Height - ctr.Height);
+                }
+            }
+        }
 
 
 
