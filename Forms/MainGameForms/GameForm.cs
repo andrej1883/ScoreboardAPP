@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using Scoreboard.Classes;
+using Scoreboard.Classes.AuxiliaryDevices;
 using Scoreboard.Classes.Database;
 using Scoreboard.Classes.GameStatistics;
 using Scoreboard.Forms.Appearance;
@@ -29,6 +30,7 @@ namespace Scoreboard.Forms.MainGameForms
         private ControlForm _controlForm;
         private StatisticsSettings _statSettings;
         private ExportStatsForm _exportSettings;
+        private SerialPortSettings _serialDevices;
 
         private Team _team1;
         private Team _team2;
@@ -76,6 +78,7 @@ namespace Scoreboard.Forms.MainGameForms
             _matchStats = new MatchStatistics("Team1", "Team2");
             _statSettings = new StatisticsSettings();
             _exportSettings = new ExportStatsForm();
+            _serialDevices = new SerialPortSettings();
             
 
             InitializeComponent();
@@ -202,6 +205,7 @@ namespace Scoreboard.Forms.MainGameForms
             _formScoreBoard.SetGoal(true,_matchStats.TeamStats[0].Goals);
             goalsTeam1.Text = _matchStats.TeamStats[0].Goals.ToString();
             GoalSelectPlayer(1);
+            _serialDevices.SirenStart(SirenType.LONG);
         }
 
         private void minusGoal2_Click(object sender, EventArgs e)
@@ -221,6 +225,7 @@ namespace Scoreboard.Forms.MainGameForms
             _formScoreBoard.SetGoal(false,_matchStats.TeamStats[1].Goals);
             goalsTeam2.Text = _matchStats.TeamStats[1].Goals.ToString();
             GoalSelectPlayer(2);
+            _serialDevices.SirenStart(SirenType.LONG);
         }
 
         private void p1T1ShowPenalty_Click(object sender, EventArgs e)
@@ -415,6 +420,7 @@ namespace Scoreboard.Forms.MainGameForms
                     _periodStarted = true;
                 }
                 StartPenalty();
+                _serialDevices.SirenStart(SirenType.NORMAL);
             }
         }
 
@@ -458,6 +464,7 @@ namespace Scoreboard.Forms.MainGameForms
                     InitBoards();
                     MessageBox.Show(@"Break ended" , @"Timer stopped", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                _serialDevices.SirenStart(SirenType.DISRUPTED);
             }
         }
 
@@ -753,6 +760,7 @@ namespace Scoreboard.Forms.MainGameForms
                 _timeoutTimer.Enabled = true;
                 _timeout1Running = true;
                 _matchStats.CreateTimeoutEvent(1,_elapsedTime);
+                _serialDevices.SirenStart(SirenType.SHORT);
             }
         }
 
@@ -764,6 +772,7 @@ namespace Scoreboard.Forms.MainGameForms
                 _timeoutTimer.Enabled = true;
                 _timeout2Running = true;
                 _matchStats.CreateTimeoutEvent(2,_elapsedTime);
+                _serialDevices.SirenStart(SirenType.SHORT);
             }
         }
 
@@ -859,6 +868,7 @@ namespace Scoreboard.Forms.MainGameForms
                 _formScoreBoard.SetPeriod("B");
                 _formScoreBoard.SetTime(_matchTime);
                 UpdateTime(_matchTime);
+                _serialDevices.SirenStart(SirenType.SHORT);
             }
         }
 
@@ -1364,6 +1374,7 @@ namespace Scoreboard.Forms.MainGameForms
                         break;
                 }
                 InitBoards();
+                _serialDevices.SirenStart(SirenType.SHORT);
             }
         }
 
@@ -1565,8 +1576,9 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void auxiliaryDevicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var serial = new SerialPortSettings();
-            serial.Show();
+            if (_serialDevices == null || _serialDevices.IsDisposed) _serialDevices = new SerialPortSettings();
+            _serialDevices.Show();
+
         }
 
         private void customEventToolStripMenuItem_Click(object sender, EventArgs e)

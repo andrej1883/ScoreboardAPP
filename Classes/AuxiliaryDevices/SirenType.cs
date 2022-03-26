@@ -5,6 +5,5 @@ public enum SirenType
     SHORT,
     NORMAL,
     LONG,
-    DISRUPTED,
-    NONE
+    DISRUPTED
 }

@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\AuxiliaryDevices\CommunicationController.cs" />
     <Compile Include="Classes\Database\Advertisment.cs" />
     <Compile Include="Classes\Database\Database.cs" />
     <Compile Include="Classes\GameStatistics\MatchEvent.cs" />
