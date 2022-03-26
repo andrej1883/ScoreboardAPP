@@ -26,7 +26,7 @@ namespace Scoreboard.Forms.DBForms
                 _database = new Database();
             }
             UpdateGv();
-            StartPosition = FormStartPosition.CenterScreen;
+            MaximizeBox = false;
         }
 
         private void AddTeam_Click(object sender, EventArgs e)

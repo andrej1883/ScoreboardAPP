@@ -155,7 +155,7 @@
             // 
             this.groupBox3.Controls.Add(this.groupBox2);
             this.groupBox3.Controls.Add(this.groupBox1);
-            this.groupBox3.Location = new System.Drawing.Point(12, 184);
+            this.groupBox3.Location = new System.Drawing.Point(12, 189);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(462, 178);
             this.groupBox3.TabIndex = 88;
@@ -166,7 +166,7 @@
             // 
             this.groupBox4.Controls.Add(this.groupBox6);
             this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Location = new System.Drawing.Point(12, 17);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(462, 152);
             this.groupBox4.TabIndex = 89;
@@ -228,7 +228,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(277, 390);
+            this.cancelBtn.Location = new System.Drawing.Point(277, 395);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 91;
@@ -238,7 +238,7 @@
             // 
             // savePenaltyBtn
             // 
-            this.savePenaltyBtn.Location = new System.Drawing.Point(146, 390);
+            this.savePenaltyBtn.Location = new System.Drawing.Point(146, 395);
             this.savePenaltyBtn.Name = "savePenaltyBtn";
             this.savePenaltyBtn.Size = new System.Drawing.Size(75, 23);
             this.savePenaltyBtn.TabIndex = 90;
@@ -255,9 +255,10 @@
             this.Controls.Add(this.savePenaltyBtn);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "SetPenaltyForm";
-            this.Text = "SetPenaltyForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Select penalty info";
             ((System.ComponentModel.ISupportInitialize)(this.pMinutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pSeconds)).EndInit();
             this.groupBox1.ResumeLayout(false);

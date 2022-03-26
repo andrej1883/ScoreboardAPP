@@ -26,9 +26,9 @@ namespace Scoreboard.Forms.DBForms
                 _database = new Database();
             }
             UpdateGv();
+            MaximizeBox = false;
         }
         
-
         private void addVideo_Click(object sender, EventArgs e)
         {
             string path = null;

@@ -42,14 +42,14 @@
             // 
             this.activePorts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.activePorts.FormattingEnabled = true;
-            this.activePorts.Location = new System.Drawing.Point(137, 41);
+            this.activePorts.Location = new System.Drawing.Point(137, 32);
             this.activePorts.Name = "activePorts";
             this.activePorts.Size = new System.Drawing.Size(121, 21);
             this.activePorts.TabIndex = 0;
             // 
             // connectToPort
             // 
-            this.connectToPort.Location = new System.Drawing.Point(286, 40);
+            this.connectToPort.Location = new System.Drawing.Point(286, 31);
             this.connectToPort.Name = "connectToPort";
             this.connectToPort.Size = new System.Drawing.Size(75, 23);
             this.connectToPort.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // disconnectPort
             // 
-            this.disconnectPort.Location = new System.Drawing.Point(286, 80);
+            this.disconnectPort.Location = new System.Drawing.Point(286, 71);
             this.disconnectPort.Name = "disconnectPort";
             this.disconnectPort.Size = new System.Drawing.Size(75, 23);
             this.disconnectPort.TabIndex = 2;
@@ -70,7 +70,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 45);
+            this.label1.Location = new System.Drawing.Point(67, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 4;
@@ -79,7 +79,7 @@
             // connectStatus
             // 
             this.connectStatus.AutoSize = true;
-            this.connectStatus.Location = new System.Drawing.Point(137, 85);
+            this.connectStatus.Location = new System.Drawing.Point(137, 76);
             this.connectStatus.Name = "connectStatus";
             this.connectStatus.Size = new System.Drawing.Size(78, 13);
             this.connectStatus.TabIndex = 5;
@@ -88,7 +88,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 85);
+            this.label2.Location = new System.Drawing.Point(67, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 6;
@@ -96,7 +96,7 @@
             // 
             // confirmBtn
             // 
-            this.confirmBtn.Location = new System.Drawing.Point(126, 141);
+            this.confirmBtn.Location = new System.Drawing.Point(126, 132);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.Size = new System.Drawing.Size(75, 23);
             this.confirmBtn.TabIndex = 7;
@@ -106,7 +106,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(227, 141);
+            this.cancelBtn.Location = new System.Drawing.Point(227, 132);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 8;
@@ -127,8 +127,10 @@
             this.Controls.Add(this.disconnectPort);
             this.Controls.Add(this.connectToPort);
             this.Controls.Add(this.activePorts);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "SerialPortSettings";
-            this.Text = "SerialPortSettings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Auxiliary devices settings";
             this.Load += new System.EventHandler(this.SerialPortSettings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

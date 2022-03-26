@@ -55,7 +55,7 @@ namespace Scoreboard.Forms.DBForms
             this.videoPathDataGridViewTextBoxColumn,
             this.LogoPath});
             this.dataGridView1.DataSource = this.teamListBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 23);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(543, 404);
             this.dataGridView1.TabIndex = 0;
@@ -88,11 +88,11 @@ namespace Scoreboard.Forms.DBForms
             // 
             // databaseBindingSource
             // 
-            this.databaseBindingSource.DataSource = typeof(Database);
+            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database.Database);
             // 
             // AddTeam
             // 
-            this.AddTeam.Location = new System.Drawing.Point(652, 57);
+            this.AddTeam.Location = new System.Drawing.Point(656, 68);
             this.AddTeam.Name = "AddTeam";
             this.AddTeam.Size = new System.Drawing.Size(104, 23);
             this.AddTeam.TabIndex = 4;
@@ -102,7 +102,7 @@ namespace Scoreboard.Forms.DBForms
             // 
             // RemoveTeam
             // 
-            this.RemoveTeam.Location = new System.Drawing.Point(652, 102);
+            this.RemoveTeam.Location = new System.Drawing.Point(656, 113);
             this.RemoveTeam.Name = "RemoveTeam";
             this.RemoveTeam.Size = new System.Drawing.Size(104, 23);
             this.RemoveTeam.TabIndex = 5;
@@ -112,7 +112,7 @@ namespace Scoreboard.Forms.DBForms
             // 
             // EditTeamPlayers
             // 
-            this.EditTeamPlayers.Location = new System.Drawing.Point(652, 220);
+            this.EditTeamPlayers.Location = new System.Drawing.Point(656, 231);
             this.EditTeamPlayers.Name = "EditTeamPlayers";
             this.EditTeamPlayers.Size = new System.Drawing.Size(104, 23);
             this.EditTeamPlayers.TabIndex = 6;
@@ -122,7 +122,7 @@ namespace Scoreboard.Forms.DBForms
             // 
             // OK
             // 
-            this.OK.Location = new System.Drawing.Point(652, 379);
+            this.OK.Location = new System.Drawing.Point(656, 390);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(108, 23);
             this.OK.TabIndex = 14;
@@ -141,9 +141,11 @@ namespace Scoreboard.Forms.DBForms
             this.Controls.Add(this.RemoveTeam);
             this.Controls.Add(this.AddTeam);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
             this.Name = "LoadTeamDataForm";
-            this.Text = "LoadTeamDataForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Edit teams";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();

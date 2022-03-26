@@ -22,9 +22,9 @@ namespace Scoreboard.Forms.AppSettings
 
         public ExportStatsForm()
         {
-            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             pathTextBox.Text = Environment.CurrentDirectory + "\\Events";
+            MaximizeBox = false;
         }
 
         private void exportEventsBox_CheckedChanged(object sender, EventArgs e)

@@ -26,8 +26,9 @@ namespace Scoreboard.Forms
         public SerialPortSettings()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
             _commPort = new SerialPort();
+            MaximizeBox = false;
+            ControlBox = false;
         }
 
         private void SerialPortSettings_Load(object sender, EventArgs e)
@@ -95,8 +96,6 @@ namespace Scoreboard.Forms
 
                     if (i < MessageCount - 1) Thread.Sleep(WaitingTime);
                 }
-            else
-                MessageBox.Show("Port is not connected", "Send error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void SirenStart(SirenType parType)

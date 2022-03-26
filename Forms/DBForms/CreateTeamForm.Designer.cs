@@ -42,14 +42,14 @@
             // 
             // TeamName
             // 
-            this.TeamName.Location = new System.Drawing.Point(70, 71);
+            this.TeamName.Location = new System.Drawing.Point(61, 61);
             this.TeamName.Name = "TeamName";
             this.TeamName.Size = new System.Drawing.Size(187, 20);
             this.TeamName.TabIndex = 0;
             // 
             // Create
             // 
-            this.Create.Location = new System.Drawing.Point(125, 219);
+            this.Create.Location = new System.Drawing.Point(123, 209);
             this.Create.Name = "Create";
             this.Create.Size = new System.Drawing.Size(75, 23);
             this.Create.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(215, 219);
+            this.Cancel.Location = new System.Drawing.Point(213, 209);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 2;
@@ -69,14 +69,14 @@
             // 
             // VideoPath
             // 
-            this.VideoPath.Location = new System.Drawing.Point(70, 110);
+            this.VideoPath.Location = new System.Drawing.Point(61, 100);
             this.VideoPath.Name = "VideoPath";
             this.VideoPath.Size = new System.Drawing.Size(187, 20);
             this.VideoPath.TabIndex = 3;
             // 
             // SelectPathVideo
             // 
-            this.SelectPathVideo.Location = new System.Drawing.Point(286, 110);
+            this.SelectPathVideo.Location = new System.Drawing.Point(277, 100);
             this.SelectPathVideo.Name = "SelectPathVideo";
             this.SelectPathVideo.Size = new System.Drawing.Size(75, 23);
             this.SelectPathVideo.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // SelectPathLogo
             // 
-            this.SelectPathLogo.Location = new System.Drawing.Point(286, 154);
+            this.SelectPathLogo.Location = new System.Drawing.Point(277, 144);
             this.SelectPathLogo.Name = "SelectPathLogo";
             this.SelectPathLogo.Size = new System.Drawing.Size(75, 23);
             this.SelectPathLogo.TabIndex = 6;
@@ -96,7 +96,7 @@
             // 
             // LogoPath
             // 
-            this.LogoPath.Location = new System.Drawing.Point(70, 154);
+            this.LogoPath.Location = new System.Drawing.Point(61, 144);
             this.LogoPath.Name = "LogoPath";
             this.LogoPath.Size = new System.Drawing.Size(187, 20);
             this.LogoPath.TabIndex = 5;
@@ -104,7 +104,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 55);
+            this.label1.Location = new System.Drawing.Point(58, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 7;
@@ -113,7 +113,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 138);
+            this.label2.Location = new System.Drawing.Point(58, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 8;
@@ -122,7 +122,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 94);
+            this.label3.Location = new System.Drawing.Point(58, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 9;
@@ -143,9 +143,10 @@
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Create);
             this.Controls.Add(this.TeamName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "CreateTeamForm";
-            this.Text = "CreateTeamForm";
-            this.Load += new System.EventHandler(this.CreateTeamForm_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Create team";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -122,6 +122,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cancelLogo2 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.plusFaceoffsT2 = new System.Windows.Forms.Button();
@@ -145,6 +146,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.timeoutT2M = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cancelLogo1 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.plusShotsT1 = new System.Windows.Forms.Button();
@@ -186,8 +188,6 @@
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cancelLogo1 = new System.Windows.Forms.Button();
-            this.cancelLogo2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
@@ -1282,6 +1282,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Team2";
             // 
+            // cancelLogo2
+            // 
+            this.cancelLogo2.Location = new System.Drawing.Point(285, 61);
+            this.cancelLogo2.Name = "cancelLogo2";
+            this.cancelLogo2.Size = new System.Drawing.Size(24, 23);
+            this.cancelLogo2.TabIndex = 96;
+            this.cancelLogo2.Text = "X";
+            this.cancelLogo2.UseVisualStyleBackColor = true;
+            this.cancelLogo2.Click += new System.EventHandler(this.cancelLogo2_Click);
+            // 
             // label26
             // 
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1573,6 +1583,16 @@
             this.groupBox5.TabIndex = 80;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Team1";
+            // 
+            // cancelLogo1
+            // 
+            this.cancelLogo1.Location = new System.Drawing.Point(280, 58);
+            this.cancelLogo1.Name = "cancelLogo1";
+            this.cancelLogo1.Size = new System.Drawing.Size(24, 23);
+            this.cancelLogo1.TabIndex = 95;
+            this.cancelLogo1.Text = "X";
+            this.cancelLogo1.UseVisualStyleBackColor = true;
+            this.cancelLogo1.Click += new System.EventHandler(this.cancelLogo1_Click);
             // 
             // label24
             // 
@@ -2074,26 +2094,6 @@
             this.panel1.Size = new System.Drawing.Size(299, 674);
             this.panel1.TabIndex = 99;
             // 
-            // cancelLogo1
-            // 
-            this.cancelLogo1.Location = new System.Drawing.Point(280, 58);
-            this.cancelLogo1.Name = "cancelLogo1";
-            this.cancelLogo1.Size = new System.Drawing.Size(24, 23);
-            this.cancelLogo1.TabIndex = 95;
-            this.cancelLogo1.Text = "X";
-            this.cancelLogo1.UseVisualStyleBackColor = true;
-            this.cancelLogo1.Click += new System.EventHandler(this.cancelLogo1_Click);
-            // 
-            // cancelLogo2
-            // 
-            this.cancelLogo2.Location = new System.Drawing.Point(285, 61);
-            this.cancelLogo2.Name = "cancelLogo2";
-            this.cancelLogo2.Size = new System.Drawing.Size(24, 23);
-            this.cancelLogo2.TabIndex = 96;
-            this.cancelLogo2.Text = "X";
-            this.cancelLogo2.UseVisualStyleBackColor = true;
-            this.cancelLogo2.Click += new System.EventHandler(this.cancelLogo2_Click);
-            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2103,11 +2103,10 @@
             this.ClientSize = new System.Drawing.Size(1264, 985);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1280, 1024);
             this.Name = "GameForm";
-            this.Text = "GameForm";
+            this.Text = "Game control board";
             this.Load += new System.EventHandler(this.GameForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

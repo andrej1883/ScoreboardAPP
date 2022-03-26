@@ -70,7 +70,6 @@ namespace Scoreboard.Forms.AppSettings
         {
             _parentForm = parForm;
             InitializeComponent();
-            StartPosition=FormStartPosition.CenterScreen;
             MaximizeBox = false;
             ControlBox = false;
             

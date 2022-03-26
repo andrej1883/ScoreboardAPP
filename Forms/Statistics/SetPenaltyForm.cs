@@ -23,7 +23,6 @@ namespace Scoreboard.Forms.Statistics
             _times = parTimes;
 
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
 
             penaltyTimesCombo.Items.Add("Short penalty");
             penaltyTimesCombo.Items.Add("Long penalty");
@@ -33,6 +32,9 @@ namespace Scoreboard.Forms.Statistics
 
 
             _penalty = new int[3];
+
+            MaximizeBox = false;
+            ControlBox = false;
         }
 
         private void savePenaltyBtn_Click(object sender, EventArgs e)
@@ -68,9 +70,10 @@ namespace Scoreboard.Forms.Statistics
         {
             if (_players == null) return;
             var help = (Player) selectPlayer.SelectedItem;
-            playerNumber.Value = Decimal.Parse(help.Number);
-
+            if (String.IsNullOrWhiteSpace(selectPlayer.Text))   
+                playerNumber.Value = 1;
+            else
+                playerNumber.Value = Decimal.Parse(help.Number);
         }
-
     }
 }

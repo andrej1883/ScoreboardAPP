@@ -16,13 +16,8 @@ namespace Scoreboard.Forms.DBForms
 
         public CreateTeamForm()
         {
-            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
-        }
-
-        private void CreateTeamForm_Load(object sender, EventArgs e)
-        {
-
+            MaximizeBox = false;
         }
 
         private void Create_Click(object sender, EventArgs e)

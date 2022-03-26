@@ -27,7 +27,9 @@ namespace Scoreboard.Forms.Statistics
             playerA1.DataSource = _players;
             playerA2.BindingContext = new BindingContext();
             playerA2.DataSource = _players;
-            StartPosition = FormStartPosition.CenterScreen;
+
+            MaximizeBox = false;
+            ControlBox = false;
         }
 
         private void saveGoalBtn_Click(object sender, EventArgs e)

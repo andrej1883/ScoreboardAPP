@@ -30,6 +30,7 @@ namespace Scoreboard.Forms
         public ManualEvent()
         {
             InitializeComponent();
+            MaximizeBox = false;
         }
 
         private void confirmBtn_Click(object sender, EventArgs e)

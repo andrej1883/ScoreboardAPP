@@ -102,16 +102,16 @@
     <Compile Include="Forms\DBForms\LoadAds.Designer.cs">
       <DependentUpon>LoadAds.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManualEvent.cs">
+    <Compile Include="Forms\Statistics\ManualEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManualEvent.Designer.cs">
+    <Compile Include="Forms\Statistics\ManualEvent.Designer.cs">
       <DependentUpon>ManualEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SerialPortSettings.cs">
+    <Compile Include="Forms\AppSettings\SerialPortSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SerialPortSettings.Designer.cs">
+    <Compile Include="Forms\AppSettings\SerialPortSettings.Designer.cs">
       <DependentUpon>SerialPortSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Statistics\SelectPlayerGoal.cs">
@@ -172,10 +172,10 @@
     <EmbeddedResource Include="Forms\DBForms\LoadTeamDataForm.resx">
       <DependentUpon>LoadTeamDataForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ManualEvent.resx">
+    <EmbeddedResource Include="Forms\Statistics\ManualEvent.resx">
       <DependentUpon>ManualEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SerialPortSettings.resx">
+    <EmbeddedResource Include="Forms\AppSettings\SerialPortSettings.resx">
       <DependentUpon>SerialPortSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Statistics\SelectPlayerGoal.resx">

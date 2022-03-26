@@ -41,7 +41,7 @@
             // playerGoal
             // 
             this.playerGoal.FormattingEnabled = true;
-            this.playerGoal.Location = new System.Drawing.Point(25, 65);
+            this.playerGoal.Location = new System.Drawing.Point(31, 58);
             this.playerGoal.Name = "playerGoal";
             this.playerGoal.Size = new System.Drawing.Size(121, 21);
             this.playerGoal.TabIndex = 0;
@@ -49,7 +49,7 @@
             // playerA1
             // 
             this.playerA1.FormattingEnabled = true;
-            this.playerA1.Location = new System.Drawing.Point(152, 65);
+            this.playerA1.Location = new System.Drawing.Point(158, 58);
             this.playerA1.Name = "playerA1";
             this.playerA1.Size = new System.Drawing.Size(121, 21);
             this.playerA1.TabIndex = 1;
@@ -57,7 +57,7 @@
             // playerA2
             // 
             this.playerA2.FormattingEnabled = true;
-            this.playerA2.Location = new System.Drawing.Point(279, 65);
+            this.playerA2.Location = new System.Drawing.Point(285, 58);
             this.playerA2.Name = "playerA2";
             this.playerA2.Size = new System.Drawing.Size(121, 21);
             this.playerA2.TabIndex = 2;
@@ -65,7 +65,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 49);
+            this.label1.Location = new System.Drawing.Point(28, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 3;
@@ -74,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(149, 49);
+            this.label2.Location = new System.Drawing.Point(155, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 4;
@@ -83,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(279, 49);
+            this.label3.Location = new System.Drawing.Point(285, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             // saveGoalBtn
             // 
-            this.saveGoalBtn.Location = new System.Drawing.Point(110, 129);
+            this.saveGoalBtn.Location = new System.Drawing.Point(116, 122);
             this.saveGoalBtn.Name = "saveGoalBtn";
             this.saveGoalBtn.Size = new System.Drawing.Size(75, 23);
             this.saveGoalBtn.TabIndex = 6;
@@ -101,7 +101,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(241, 129);
+            this.cancelBtn.Location = new System.Drawing.Point(247, 122);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 7;
@@ -122,9 +122,10 @@
             this.Controls.Add(this.playerA2);
             this.Controls.Add(this.playerA1);
             this.Controls.Add(this.playerGoal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "SelectPlayerGoal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SelectPlayerGoal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Select goal info";
             this.ResumeLayout(false);
             this.PerformLayout();
 

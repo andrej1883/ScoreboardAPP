@@ -35,22 +35,22 @@ namespace Scoreboard.Forms.DBForms
             this.removeVideo = new System.Windows.Forms.Button();
             this.addVideo = new System.Windows.Forms.Button();
             this.teamListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.advListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.advListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // done
             // 
-            this.done.Location = new System.Drawing.Point(665, 395);
+            this.done.Location = new System.Drawing.Point(673, 395);
             this.done.Name = "done";
             this.done.Size = new System.Drawing.Size(108, 23);
             this.done.TabIndex = 19;
@@ -60,7 +60,7 @@ namespace Scoreboard.Forms.DBForms
             // 
             // removeVideo
             // 
-            this.removeVideo.Location = new System.Drawing.Point(669, 113);
+            this.removeVideo.Location = new System.Drawing.Point(677, 113);
             this.removeVideo.Name = "removeVideo";
             this.removeVideo.Size = new System.Drawing.Size(104, 23);
             this.removeVideo.TabIndex = 17;
@@ -70,7 +70,7 @@ namespace Scoreboard.Forms.DBForms
             // 
             // addVideo
             // 
-            this.addVideo.Location = new System.Drawing.Point(669, 68);
+            this.addVideo.Location = new System.Drawing.Point(677, 68);
             this.addVideo.Name = "addVideo";
             this.addVideo.Size = new System.Drawing.Size(104, 23);
             this.addVideo.TabIndex = 16;
@@ -83,6 +83,10 @@ namespace Scoreboard.Forms.DBForms
             this.teamListBindingSource.DataMember = "TeamList";
             this.teamListBindingSource.DataSource = this.databaseBindingSource;
             // 
+            // databaseBindingSource
+            // 
+            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database.Database);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -91,23 +95,10 @@ namespace Scoreboard.Forms.DBForms
             this.pathDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.advListBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(20, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(644, 426);
             this.dataGridView1.TabIndex = 20;
-            // 
-            // databaseBindingSource
-            // 
-            this.databaseBindingSource.DataSource = typeof(Database);
-            // 
-            // databaseBindingSource1
-            // 
-            this.databaseBindingSource1.DataSource = typeof(Database);
-            // 
-            // advListBindingSource
-            // 
-            this.advListBindingSource.DataMember = "AdvList";
-            this.advListBindingSource.DataSource = this.databaseBindingSource;
             // 
             // pathDataGridViewTextBoxColumn
             // 
@@ -123,6 +114,15 @@ namespace Scoreboard.Forms.DBForms
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.Width = 200;
             // 
+            // advListBindingSource
+            // 
+            this.advListBindingSource.DataMember = "AdvList";
+            this.advListBindingSource.DataSource = this.databaseBindingSource;
+            // 
+            // databaseBindingSource1
+            // 
+            this.databaseBindingSource1.DataSource = typeof(Scoreboard.Classes.Database.Database);
+            // 
             // LoadAds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,13 +132,15 @@ namespace Scoreboard.Forms.DBForms
             this.Controls.Add(this.done);
             this.Controls.Add(this.removeVideo);
             this.Controls.Add(this.addVideo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "LoadAds";
-            this.Text = "LoadVideos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Load advertisements";
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

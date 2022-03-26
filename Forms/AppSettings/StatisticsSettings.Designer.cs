@@ -42,7 +42,7 @@
             this.groupBox1.Controls.Add(this.faceOffsBox);
             this.groupBox1.Controls.Add(this.timeoutsBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(39, 45);
+            this.groupBox1.Location = new System.Drawing.Point(38, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(339, 173);
             this.groupBox1.TabIndex = 0;
@@ -93,7 +93,7 @@
             // 
             // okBtn
             // 
-            this.okBtn.Location = new System.Drawing.Point(166, 264);
+            this.okBtn.Location = new System.Drawing.Point(170, 259);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
             this.okBtn.TabIndex = 93;
@@ -108,8 +108,10 @@
             this.ClientSize = new System.Drawing.Size(414, 322);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "StatisticsSettings";
-            this.Text = "Statistics";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Statistics settings";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

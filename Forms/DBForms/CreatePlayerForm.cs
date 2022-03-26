@@ -12,7 +12,7 @@ namespace Scoreboard.Forms.DBForms
         {
             InitializeComponent();
             _team = parTeam;
-            StartPosition = FormStartPosition.CenterScreen;
+            MaximizeBox = false;
         }
 
         private void CreatePlayerForm_Load(object sender, EventArgs e)

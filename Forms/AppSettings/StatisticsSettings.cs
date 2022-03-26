@@ -21,7 +21,8 @@ namespace Scoreboard.Forms.AppSettings
                 _activeStatistics[i] = true;
             }
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
+            MaximizeBox = false;
+            ControlBox = false;
         }
 
         private void timeoutsBox_CheckedChanged(object sender, EventArgs e)

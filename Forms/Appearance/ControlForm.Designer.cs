@@ -281,7 +281,7 @@
             // 
             this.scoreSettingBox.Controls.Add(this.scoreGBScore);
             this.scoreSettingBox.Controls.Add(this.scoreGBLabels);
-            this.scoreSettingBox.Location = new System.Drawing.Point(12, 364);
+            this.scoreSettingBox.Location = new System.Drawing.Point(15, 371);
             this.scoreSettingBox.Name = "scoreSettingBox";
             this.scoreSettingBox.Size = new System.Drawing.Size(345, 176);
             this.scoreSettingBox.TabIndex = 14;
@@ -394,7 +394,7 @@
             // 
             this.periodSettingsBox.Controls.Add(this.periodGBPeriod);
             this.periodSettingsBox.Controls.Add(this.periodGBLabel);
-            this.periodSettingsBox.Location = new System.Drawing.Point(12, 563);
+            this.periodSettingsBox.Location = new System.Drawing.Point(15, 570);
             this.periodSettingsBox.Name = "periodSettingsBox";
             this.periodSettingsBox.Size = new System.Drawing.Size(345, 175);
             this.periodSettingsBox.TabIndex = 15;
@@ -507,7 +507,7 @@
             // 
             this.timeSettingsBox.Controls.Add(this.timeGBClock);
             this.timeSettingsBox.Controls.Add(this.timeGBLabels);
-            this.timeSettingsBox.Location = new System.Drawing.Point(386, 364);
+            this.timeSettingsBox.Location = new System.Drawing.Point(389, 371);
             this.timeSettingsBox.Name = "timeSettingsBox";
             this.timeSettingsBox.Size = new System.Drawing.Size(345, 176);
             this.timeSettingsBox.TabIndex = 16;
@@ -621,7 +621,7 @@
             // 
             this.penaltySettingsBox.Controls.Add(this.penaltyGBPenaltyData);
             this.penaltySettingsBox.Controls.Add(this.penaltyGBLabels);
-            this.penaltySettingsBox.Location = new System.Drawing.Point(386, 563);
+            this.penaltySettingsBox.Location = new System.Drawing.Point(389, 570);
             this.penaltySettingsBox.Name = "penaltySettingsBox";
             this.penaltySettingsBox.Size = new System.Drawing.Size(345, 175);
             this.penaltySettingsBox.TabIndex = 17;
@@ -752,7 +752,7 @@
             this.scoreBoardSettingsBox.Controls.Add(this.centerScoreBtn);
             this.scoreBoardSettingsBox.Controls.Add(this.kv1Btn);
             this.scoreBoardSettingsBox.Controls.Add(this.kv2Btn);
-            this.scoreBoardSettingsBox.Location = new System.Drawing.Point(12, 12);
+            this.scoreBoardSettingsBox.Location = new System.Drawing.Point(15, 19);
             this.scoreBoardSettingsBox.Name = "scoreBoardSettingsBox";
             this.scoreBoardSettingsBox.Size = new System.Drawing.Size(1082, 337);
             this.scoreBoardSettingsBox.TabIndex = 18;
@@ -929,7 +929,7 @@
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Location = new System.Drawing.Point(749, 754);
+            this.groupBox1.Location = new System.Drawing.Point(752, 761);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(345, 175);
             this.groupBox1.TabIndex = 20;
@@ -1043,7 +1043,7 @@
             // 
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.groupBox6);
-            this.groupBox4.Location = new System.Drawing.Point(386, 754);
+            this.groupBox4.Location = new System.Drawing.Point(389, 761);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(345, 175);
             this.groupBox4.TabIndex = 19;
@@ -1156,7 +1156,7 @@
             // 
             this.groupBox7.Controls.Add(this.groupBox8);
             this.groupBox7.Controls.Add(this.groupBox9);
-            this.groupBox7.Location = new System.Drawing.Point(12, 754);
+            this.groupBox7.Location = new System.Drawing.Point(15, 761);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(345, 175);
             this.groupBox7.TabIndex = 20;
@@ -1278,8 +1278,10 @@
             this.Controls.Add(this.timeSettingsBox);
             this.Controls.Add(this.periodSettingsBox);
             this.Controls.Add(this.scoreSettingBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ControlForm";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Appearance settings";
             this.Load += new System.EventHandler(this.ControlForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.scoreBWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBHeight)).EndInit();

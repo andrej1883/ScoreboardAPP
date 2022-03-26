@@ -32,6 +32,9 @@
             this.RemovePlayer = new System.Windows.Forms.Button();
             this.AddPlayer = new System.Windows.Forms.Button();
             this.PLayersGW = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,18 +42,15 @@
             this.PlayerName = new System.Windows.Forms.TextBox();
             this.OK = new System.Windows.Forms.Button();
             this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.playerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PLayersGW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // RemovePlayer
             // 
-            this.RemovePlayer.Location = new System.Drawing.Point(412, 323);
+            this.RemovePlayer.Location = new System.Drawing.Point(411, 329);
             this.RemovePlayer.Name = "RemovePlayer";
             this.RemovePlayer.Size = new System.Drawing.Size(108, 23);
             this.RemovePlayer.TabIndex = 11;
@@ -76,10 +76,27 @@
             this.nameDataGridViewTextBoxColumn,
             this.numberDataGridViewTextBoxColumn});
             this.PLayersGW.DataSource = this.playerBindingSource1;
-            this.PLayersGW.Location = new System.Drawing.Point(12, 12);
+            this.PLayersGW.Location = new System.Drawing.Point(11, 18);
             this.PLayersGW.Name = "PLayersGW";
             this.PLayersGW.Size = new System.Drawing.Size(344, 415);
             this.PLayersGW.TabIndex = 7;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            // 
+            // playerBindingSource1
+            // 
+            this.playerBindingSource1.DataSource = typeof(Scoreboard.Classes.Database.Player);
             // 
             // groupBox1
             // 
@@ -88,7 +105,7 @@
             this.groupBox1.Controls.Add(this.PlayerNumber);
             this.groupBox1.Controls.Add(this.PlayerName);
             this.groupBox1.Controls.Add(this.AddPlayer);
-            this.groupBox1.Location = new System.Drawing.Point(362, 24);
+            this.groupBox1.Location = new System.Drawing.Point(361, 30);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 183);
             this.groupBox1.TabIndex = 12;
@@ -129,7 +146,7 @@
             // 
             // OK
             // 
-            this.OK.Location = new System.Drawing.Point(412, 372);
+            this.OK.Location = new System.Drawing.Point(411, 378);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(108, 23);
             this.OK.TabIndex = 13;
@@ -141,23 +158,6 @@
             // 
             this.playerBindingSource.DataSource = typeof(Scoreboard.Classes.Database.Player);
             // 
-            // playerBindingSource1
-            // 
-            this.playerBindingSource1.DataSource = typeof(Scoreboard.Classes.Database.Player);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            // 
             // CreatePlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,14 +167,16 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.RemovePlayer);
             this.Controls.Add(this.PLayersGW);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "CreatePlayerForm";
-            this.Text = "CreatePlayerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Create player";
             this.Load += new System.EventHandler(this.CreatePlayerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PLayersGW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

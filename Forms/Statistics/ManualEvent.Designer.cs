@@ -38,14 +38,14 @@
             // 
             // eventName
             // 
-            this.eventName.Location = new System.Drawing.Point(12, 32);
+            this.eventName.Location = new System.Drawing.Point(13, 36);
             this.eventName.Name = "eventName";
             this.eventName.Size = new System.Drawing.Size(216, 20);
             this.eventName.TabIndex = 0;
             // 
             // eventDescription
             // 
-            this.eventDescription.Location = new System.Drawing.Point(12, 85);
+            this.eventDescription.Location = new System.Drawing.Point(13, 89);
             this.eventDescription.Multiline = true;
             this.eventDescription.Name = "eventDescription";
             this.eventDescription.Size = new System.Drawing.Size(216, 116);
@@ -53,7 +53,7 @@
             // 
             // confirmBtn
             // 
-            this.confirmBtn.Location = new System.Drawing.Point(20, 216);
+            this.confirmBtn.Location = new System.Drawing.Point(21, 220);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.Size = new System.Drawing.Size(75, 23);
             this.confirmBtn.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(141, 216);
+            this.cancelBtn.Location = new System.Drawing.Point(142, 220);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 3;
@@ -74,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(13, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 4;
@@ -83,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 69);
+            this.label2.Location = new System.Drawing.Point(13, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 5;
@@ -100,8 +100,10 @@
             this.Controls.Add(this.confirmBtn);
             this.Controls.Add(this.eventDescription);
             this.Controls.Add(this.eventName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ManualEvent";
-            this.Text = "ManualEvent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Create custom event";
             this.ResumeLayout(false);
             this.PerformLayout();
 
