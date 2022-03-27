@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Scoreboard.Classes.Database;
@@ -41,19 +42,20 @@ public class Team
 
     public void AddPlayer(Player parPlayer)
     {
-        if (!_players.Contains(parPlayer))
+        if (!ContainsPlayer(parPlayer.Number, parPlayer.Name))
         {
             _players.Add(parPlayer);
         }
         else
         {
-            MessageBox.Show( @"! Each player only once!" , @"Add player Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if(parPlayer.Name != "" && parPlayer.Number != "")
+                MessageBox.Show( @"! Each player only once!" , @"Add player Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 
     public void RemovePlayer(Player parPlayer)
     {
-        if (_players.Contains(parPlayer))
+        if (ContainsPlayer(parPlayer.Number, parPlayer.Name))
         {
             _players.Remove(parPlayer);
         }
@@ -61,6 +63,11 @@ public class Team
         {
             MessageBox.Show(@"Player not found", @"Remove player Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+    }
+
+    private bool ContainsPlayer(string parNumber, string parName)
+    {
+        return _players.Any(parT => parT.Name == parName && parT.Number == parNumber);
     }
 
     public override string ToString()

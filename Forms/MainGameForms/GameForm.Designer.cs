@@ -191,6 +191,8 @@ namespace Scoreboard.Forms.MainGameForms
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.ResetElapsedBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
@@ -209,6 +211,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.groupBox13.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -503,7 +506,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label2.Location = new System.Drawing.Point(15, 209);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 42;
             this.label2.Text = "Team 1 EventName:";
             // 
@@ -686,7 +689,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label7.Location = new System.Drawing.Point(20, 205);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 13);
+            this.label7.Size = new System.Drawing.Size(105, 13);
             this.label7.TabIndex = 58;
             this.label7.Text = "Team 2 EventName:";
             // 
@@ -858,21 +861,21 @@ namespace Scoreboard.Forms.MainGameForms
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.ImportToolStripMenuItemClick);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.ExportToolStripMenuItemClick);
             // 
             // dropToolStripMenuItem
             // 
             this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
-            this.dropToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.dropToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dropToolStripMenuItem.Text = "Drop";
             this.dropToolStripMenuItem.Click += new System.EventHandler(this.DropToolStripMenuItemClick);
             // 
@@ -2074,6 +2077,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox4, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox12, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox14, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -2096,6 +2100,28 @@ namespace Scoreboard.Forms.MainGameForms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 674);
             this.panel1.TabIndex = 99;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.ResetElapsedBtn);
+            this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox14.Location = new System.Drawing.Point(787, 3);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(474, 96);
+            this.groupBox14.TabIndex = 100;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Special controls";
+            // 
+            // ResetElapsedBtn
+            // 
+            this.ResetElapsedBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ResetElapsedBtn.Location = new System.Drawing.Point(365, 67);
+            this.ResetElapsedBtn.Name = "ResetElapsedBtn";
+            this.ResetElapsedBtn.Size = new System.Drawing.Size(103, 23);
+            this.ResetElapsedBtn.TabIndex = 0;
+            this.ResetElapsedBtn.Text = "Reset elapsed";
+            this.ResetElapsedBtn.UseVisualStyleBackColor = true;
+            this.ResetElapsedBtn.Click += new System.EventHandler(this.ResetElapsedBtnClick);
             // 
             // GameForm
             // 
@@ -2140,6 +2166,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2307,5 +2334,7 @@ namespace Scoreboard.Forms.MainGameForms
         private Panel panel1;
         private Button cancelLogo2;
         private Button cancelLogo1;
+        private GroupBox groupBox14;
+        private Button ResetElapsedBtn;
     }
 }

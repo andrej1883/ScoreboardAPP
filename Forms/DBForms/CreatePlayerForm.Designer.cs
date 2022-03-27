@@ -35,9 +35,6 @@ namespace Scoreboard.Forms.DBForms
             this.RemovePlayer = new System.Windows.Forms.Button();
             this.AddPlayer = new System.Windows.Forms.Button();
             this.PLayersGW = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,10 +42,13 @@ namespace Scoreboard.Forms.DBForms
             this.PlayerName = new System.Windows.Forms.TextBox();
             this.OK = new System.Windows.Forms.Button();
             this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.playerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlayersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PLayersGW)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // RemovePlayer
@@ -76,30 +76,13 @@ namespace Scoreboard.Forms.DBForms
             this.PLayersGW.AutoGenerateColumns = false;
             this.PLayersGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PLayersGW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.numberDataGridViewTextBoxColumn});
-            this.PLayersGW.DataSource = this.playerBindingSource1;
+            this.numberDataGridViewTextBoxColumn,
+            this.PlayersName});
+            this.PLayersGW.DataSource = this.playerBindingSource;
             this.PLayersGW.Location = new System.Drawing.Point(11, 18);
             this.PLayersGW.Name = "PLayersGW";
             this.PLayersGW.Size = new System.Drawing.Size(344, 415);
             this.PLayersGW.TabIndex = 7;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "EventName";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "EventName";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            // 
-            // playerBindingSource1
-            // 
-            this.playerBindingSource1.DataSource = typeof(Scoreboard.Classes.Database.Player);
             // 
             // groupBox1
             // 
@@ -129,9 +112,9 @@ namespace Scoreboard.Forms.DBForms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(50, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 11;
-            this.label1.Text = "EventName: ";
+            this.label1.Text = "Players Name: ";
             // 
             // PlayerNumber
             // 
@@ -161,6 +144,23 @@ namespace Scoreboard.Forms.DBForms
             // 
             this.playerBindingSource.DataSource = typeof(Scoreboard.Classes.Database.Player);
             // 
+            // playerBindingSource1
+            // 
+            this.playerBindingSource1.DataSource = typeof(Scoreboard.Classes.Database.Player);
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            // 
+            // PlayersName
+            // 
+            this.PlayersName.DataPropertyName = "Name";
+            this.PlayersName.HeaderText = "Name";
+            this.PlayersName.Name = "PlayersName";
+            this.PlayersName.Width = 200;
+            // 
             // CreatePlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,10 +176,10 @@ namespace Scoreboard.Forms.DBForms
             this.Text = "Create player";
             this.Load += new System.EventHandler(this.CreatePlayerFormLoad);
             ((System.ComponentModel.ISupportInitialize)(this.PLayersGW)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,8 +195,8 @@ namespace Scoreboard.Forms.DBForms
         private Label label2;
         private Label label1;
         private BindingSource playerBindingSource;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
         private BindingSource playerBindingSource1;
+        private DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn PlayersName;
     }
 }

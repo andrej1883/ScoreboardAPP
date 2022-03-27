@@ -33,15 +33,15 @@ namespace Scoreboard.Forms.DBForms
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.videoPathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LogoPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AddTeam = new System.Windows.Forms.Button();
             this.RemoveTeam = new System.Windows.Forms.Button();
             this.EditTeamPlayers = new System.Windows.Forms.Button();
             this.OK = new System.Windows.Forms.Button();
+            this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TeamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.videoPathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LogoPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
@@ -52,7 +52,7 @@ namespace Scoreboard.Forms.DBForms
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
+            this.TeamName,
             this.videoPathDataGridViewTextBoxColumn,
             this.LogoPath});
             this.dataGridView1.DataSource = this.teamListBindingSource;
@@ -61,35 +61,10 @@ namespace Scoreboard.Forms.DBForms
             this.dataGridView1.Size = new System.Drawing.Size(543, 404);
             this.dataGridView1.TabIndex = 0;
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "EventName";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "EventName";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // videoPathDataGridViewTextBoxColumn
-            // 
-            this.videoPathDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.videoPathDataGridViewTextBoxColumn.DataPropertyName = "VideoPath";
-            this.videoPathDataGridViewTextBoxColumn.HeaderText = "VideoPath";
-            this.videoPathDataGridViewTextBoxColumn.Name = "videoPathDataGridViewTextBoxColumn";
-            this.videoPathDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // LogoPath
-            // 
-            this.LogoPath.DataPropertyName = "LogoPath";
-            this.LogoPath.HeaderText = "LogoPath";
-            this.LogoPath.Name = "LogoPath";
-            this.LogoPath.Width = 200;
-            // 
             // teamListBindingSource
             // 
             this.teamListBindingSource.DataMember = "TeamList";
             this.teamListBindingSource.DataSource = this.databaseBindingSource;
-            // 
-            // databaseBindingSource
-            // 
-            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database.Database);
             // 
             // AddTeam
             // 
@@ -131,6 +106,31 @@ namespace Scoreboard.Forms.DBForms
             this.OK.UseVisualStyleBackColor = true;
             this.OK.Click += new System.EventHandler(this.OkClick);
             // 
+            // databaseBindingSource
+            // 
+            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database.Database);
+            // 
+            // TeamName
+            // 
+            this.TeamName.DataPropertyName = "Name";
+            this.TeamName.HeaderText = "Name";
+            this.TeamName.Name = "TeamName";
+            // 
+            // videoPathDataGridViewTextBoxColumn
+            // 
+            this.videoPathDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.videoPathDataGridViewTextBoxColumn.DataPropertyName = "VideoPath";
+            this.videoPathDataGridViewTextBoxColumn.HeaderText = "VideoPath";
+            this.videoPathDataGridViewTextBoxColumn.Name = "videoPathDataGridViewTextBoxColumn";
+            this.videoPathDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // LogoPath
+            // 
+            this.LogoPath.DataPropertyName = "LogoPath";
+            this.LogoPath.HeaderText = "LogoPath";
+            this.LogoPath.Name = "LogoPath";
+            this.LogoPath.Width = 200;
+            // 
             // LoadTeamDataForm
             // 
             this.AllowDrop = true;
@@ -163,7 +163,7 @@ namespace Scoreboard.Forms.DBForms
         private BindingSource databaseBindingSource;
         private Button EditTeamPlayers;
         private Button OK;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn TeamName;
         private DataGridViewTextBoxColumn videoPathDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn LogoPath;
     }

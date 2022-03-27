@@ -16,6 +16,7 @@ public partial class CreateTeamForm : Form
 
     private void CreateClick(object parSender, EventArgs parE)
     {
+        if (string.IsNullOrWhiteSpace(TeamName.Text)) return;
         Team = new Team
         {
             Name = TeamName.Text,

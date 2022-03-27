@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Scoreboard.Classes;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Scoreboard.Classes;
 
 namespace Scoreboard.Forms.MainGameForms;
 
@@ -17,7 +17,8 @@ public partial class ScoreboardForm : Form
     public Color ScoSColor
     {
         get => scoreT1Lbl.ForeColor;
-        set {
+        set
+        {
             scoreT1Lbl.ForeColor = value;
             scoreParseLblb.ForeColor = value;
             scoreT2Lbl.ForeColor = value;
@@ -27,7 +28,8 @@ public partial class ScoreboardForm : Form
     public Color ScoLColor
     {
         get => t1Lbl.ForeColor;
-        set {
+        set
+        {
             t1Lbl.ForeColor = value;
             t2Lbl.ForeColor = value;
         }
@@ -37,7 +39,8 @@ public partial class ScoreboardForm : Form
     public Color TimeCColor
     {
         get => timeMinutesLbl.ForeColor;
-        set {
+        set
+        {
             timeMinutesLbl.ForeColor = value;
             timeSecondsLbl.ForeColor = value;
             timeParseLbl.ForeColor = value;
@@ -59,7 +62,8 @@ public partial class ScoreboardForm : Form
     public Color PenaltyDColor
     {
         get => playerNumber1T1lbl.ForeColor;
-        set {
+        set
+        {
             playerNumber1T1lbl.ForeColor = value;
             playerNumber1T2lbl.ForeColor = value;
             playerNumber2T1lbl.ForeColor = value;
@@ -82,7 +86,8 @@ public partial class ScoreboardForm : Form
     public Color PenaltyLColor
     {
         get => penaltyT1Lbl.ForeColor;
-        set {
+        set
+        {
             penaltyT1Lbl.ForeColor = value;
             penaltyT2Lbl.ForeColor = value;
             penaltyT1PlayerLbl.ForeColor = value;
@@ -94,14 +99,15 @@ public partial class ScoreboardForm : Form
 
     public Color PeriodLColor
     {
-        get =>  periodLbl.ForeColor;
+        get => periodLbl.ForeColor;
         set => periodLbl.ForeColor = value;
     }
 
     public Color TimeoutLColor
     {
-        get =>  timeoutL1.ForeColor;
-        set {
+        get => timeoutL1.ForeColor;
+        set
+        {
             timeoutL1.ForeColor = value;
             timeoutL2.ForeColor = value;
         }
@@ -109,8 +115,9 @@ public partial class ScoreboardForm : Form
 
     public Color TimeoutTColor
     {
-        get =>  timeout1Min.ForeColor;
-        set {
+        get => timeout1Min.ForeColor;
+        set
+        {
             timeout1Min.ForeColor = value;
             timeout1Sec.ForeColor = value;
             timeout2Min.ForeColor = value;
@@ -120,8 +127,9 @@ public partial class ScoreboardForm : Form
 
     public Color FaceOffLColor
     {
-        get =>  faceOffsT1Lbl.ForeColor;
-        set {
+        get => faceOffsT1Lbl.ForeColor;
+        set
+        {
             faceOffsT1Lbl.ForeColor = value;
             faceOffsT2Lbl.ForeColor = value;
         }
@@ -129,8 +137,9 @@ public partial class ScoreboardForm : Form
 
     public Color FaceOffFaceColor
     {
-        get =>  faceOffsT1.ForeColor;
-        set {
+        get => faceOffsT1.ForeColor;
+        set
+        {
             faceOffsT1.ForeColor = value;
             faceOffsT2.ForeColor = value;
         }
@@ -138,8 +147,9 @@ public partial class ScoreboardForm : Form
 
     public Color ShotsLColor
     {
-        get =>  shotsT1Lbl.ForeColor;
-        set {
+        get => shotsT1Lbl.ForeColor;
+        set
+        {
             shotsT1Lbl.ForeColor = value;
             shotsT2Lbl.ForeColor = value;
         }
@@ -147,8 +157,9 @@ public partial class ScoreboardForm : Form
 
     public Color ShotsSColor
     {
-        get =>  shotsT1.ForeColor;
-        set {
+        get => shotsT1.ForeColor;
+        set
+        {
             shotsT1.ForeColor = value;
             shotsT2.ForeColor = value;
         }
@@ -169,7 +180,7 @@ public partial class ScoreboardForm : Form
 
     public Font ScoSFont
     {
-        get =>  scoreT1Lbl.Font;
+        get => scoreT1Lbl.Font;
         set
         {
             scoreT1Lbl.Font = value;
@@ -181,7 +192,8 @@ public partial class ScoreboardForm : Form
     public Font ScoLFont
     {
         get => t1Lbl.Font;
-        set {
+        set
+        {
             t1Lbl.Font = value;
             t2Lbl.Font = value;
         }
@@ -190,7 +202,8 @@ public partial class ScoreboardForm : Form
     public Font TimeCFont
     {
         get => timeMinutesLbl.Font;
-        set {
+        set
+        {
             timeMinutesLbl.Font = value;
             timeParseLbl.Font = value;
             timeSecondsLbl.Font = value;
@@ -218,7 +231,8 @@ public partial class ScoreboardForm : Form
     public Font PenaltyDFont
     {
         get => playerNumber1T1lbl.Font;
-        set {
+        set
+        {
             playerNumber1T1lbl.Font = value;
             playerNumber2T1lbl.Font = value;
             minutesT1P1Lbl.Font = value;
@@ -241,8 +255,9 @@ public partial class ScoreboardForm : Form
 
     public Font PenaltyLFont
     {
-        get =>  penaltyT1Lbl.Font;
-        set {
+        get => penaltyT1Lbl.Font;
+        set
+        {
             penaltyT1Lbl.Font = value;
             penaltyT2Lbl.Font = value;
             penaltyT1PlayerLbl.Font = value;
@@ -254,8 +269,9 @@ public partial class ScoreboardForm : Form
 
     public Font TimeoutLFont
     {
-        get =>  timeoutL1.Font;
-        set {
+        get => timeoutL1.Font;
+        set
+        {
             timeoutL1.Font = value;
             timeoutL2.Font = value;
         }
@@ -263,8 +279,9 @@ public partial class ScoreboardForm : Form
 
     public Font TimeoutTFont
     {
-        get =>  timeout1Min.Font;
-        set {
+        get => timeout1Min.Font;
+        set
+        {
             timeout1Min.Font = value;
             timeout2Min.Font = value;
             timeout1Sec.Font = value;
@@ -277,8 +294,9 @@ public partial class ScoreboardForm : Form
 
     public Font FaceOffLFont
     {
-        get =>  faceOffsT1Lbl.Font;
-        set {
+        get => faceOffsT1Lbl.Font;
+        set
+        {
             faceOffsT1Lbl.Font = value;
             faceOffsT2Lbl.Font = value;
         }
@@ -286,8 +304,9 @@ public partial class ScoreboardForm : Form
 
     public Font FaceOffFaceFont
     {
-        get =>  faceOffsT1.Font;
-        set {
+        get => faceOffsT1.Font;
+        set
+        {
             faceOffsT1.Font = value;
             faceOffsT2.Font = value;
         }
@@ -295,8 +314,9 @@ public partial class ScoreboardForm : Form
 
     public Font ShotsLFont
     {
-        get =>  shotsT1Lbl.Font;
-        set {
+        get => shotsT1Lbl.Font;
+        set
+        {
             shotsT1Lbl.Font = value;
             shotsT2Lbl.Font = value;
         }
@@ -304,8 +324,9 @@ public partial class ScoreboardForm : Form
 
     public Font ShotsSFont
     {
-        get =>  shotsT1.Font;
-        set {
+        get => shotsT1.Font;
+        set
+        {
             shotsT1.Font = value;
             shotsT2.Font = value;
         }
@@ -345,7 +366,7 @@ public partial class ScoreboardForm : Form
         _instance.FormBorderStyle = FormBorderStyle.None;
         _instance.MinimizeBox = false;
         _instance.MaximizeBox = false;
-        _instance.ControlBox = false; 
+        _instance.ControlBox = false;
         var bounds = Screen.AllScreens[1].Bounds;
         _instance.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
         _instance.StartPosition = FormStartPosition.Manual;
@@ -412,7 +433,7 @@ public partial class ScoreboardForm : Form
         {
             scoreT2Lbl.Text = parGoals.ToString();
         }
-            
+
     }
 
     public void HidePenalty(int parPosition)
@@ -486,7 +507,7 @@ public partial class ScoreboardForm : Form
     {
         var sMinutes = CheckZero(parMinutes);
         var sSeconds = CheckZero(parSeconds);
-            
+
         switch (parPosition)
         {
             case 1:
@@ -522,40 +543,25 @@ public partial class ScoreboardForm : Form
     public void SetTeamName(bool parTeam1, string parName)
     {
         if (parTeam1)
-        {
             t1Lbl.Text = parName;
-        }
         else
-        {
             t2Lbl.Text = parName;
-        }
-            
     }
 
     public void SetLogo(bool parTeam1, Image parLogo)
     {
         if (parTeam1)
-        {
             team1Logo.Image = parLogo;
-        }
         else
-        {
             team2Logo.Image = parLogo;
-        }
-            
     }
 
     public void HideLogo(bool parTeam1)
     {
         if (parTeam1)
-        {
             team1Logo.Hide();
-        }
         else
-        {
             team2Logo.Hide();
-        }
-            
     }
 
     public void ShowLogo(bool parTeam1)
@@ -664,11 +670,11 @@ public partial class ScoreboardForm : Form
         {
             if (ctr.Location.X + ctr.Width > Width)
             {
-                ctr.Location = new Point(Width - ctr.Width,ctr.Location.Y);
+                ctr.Location = new Point(Width - ctr.Width, ctr.Location.Y);
             }
             if (ctr.Location.Y + ctr.Height > Height)
             {
-                ctr.Location = new Point(ctr.Location.X,Height - ctr.Height);
+                ctr.Location = new Point(ctr.Location.X, Height - ctr.Height);
             }
         }
     }
@@ -682,7 +688,7 @@ public partial class ScoreboardForm : Form
 
     private void Team1LogoMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,team1Logo);
+        ReplaceObject(parE, team1Logo);
     }
 
     private void ScoreT1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -692,7 +698,7 @@ public partial class ScoreboardForm : Form
 
     private void ScoreT1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,scoreT1Lbl);
+        ReplaceObject(parE, scoreT1Lbl);
     }
 
     private void T1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -702,7 +708,7 @@ public partial class ScoreboardForm : Form
 
     private void T1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,t1Lbl);
+        ReplaceObject(parE, t1Lbl);
     }
 
     private void ScoreParseLblbMouseDown(object parSender, MouseEventArgs parE)
@@ -712,7 +718,7 @@ public partial class ScoreboardForm : Form
 
     private void ScoreParseLblbMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,scoreParseLblb);
+        ReplaceObject(parE, scoreParseLblb);
     }
 
     private void ScoreT2LblMouseDown(object parSender, MouseEventArgs parE)
@@ -727,7 +733,7 @@ public partial class ScoreboardForm : Form
 
     private void T2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,t2Lbl);
+        ReplaceObject(parE, t2Lbl);
     }
 
     private void Team2LogoMouseDown(object parSender, MouseEventArgs parE)
@@ -737,7 +743,7 @@ public partial class ScoreboardForm : Form
 
     private void Team2LogoMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,team2Logo);
+        ReplaceObject(parE, team2Logo);
     }
 
     private void PeriodLblMouseDown(object parSender, MouseEventArgs parE)
@@ -747,7 +753,7 @@ public partial class ScoreboardForm : Form
 
     private void ActualPeriodLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,actualPeriodLbl);
+        ReplaceObject(parE, actualPeriodLbl);
     }
 
     private void TimeLblMouseDown(object parSender, MouseEventArgs parE)
@@ -757,7 +763,7 @@ public partial class ScoreboardForm : Form
 
     private void TimeLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeLbl);
+        ReplaceObject(parE, timeLbl);
     }
 
     private void TimeMinutesLblMouseDown(object parSender, MouseEventArgs parE)
@@ -767,7 +773,7 @@ public partial class ScoreboardForm : Form
 
     private void TimeMinutesLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeMinutesLbl);
+        ReplaceObject(parE, timeMinutesLbl);
     }
 
     private void TimeParseLblMouseDown(object parSender, MouseEventArgs parE)
@@ -777,7 +783,7 @@ public partial class ScoreboardForm : Form
 
     private void TimeParseLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeParseLbl);
+        ReplaceObject(parE, timeParseLbl);
     }
 
     private void TimeSecondsLblMouseDown(object parSender, MouseEventArgs parE)
@@ -787,7 +793,7 @@ public partial class ScoreboardForm : Form
 
     private void TimeSecondsLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeSecondsLbl);
+        ReplaceObject(parE, timeSecondsLbl);
     }
 
     private void TimeoutL1MouseDown(object parSender, MouseEventArgs parE)
@@ -797,7 +803,7 @@ public partial class ScoreboardForm : Form
 
     private void TimeoutL1MouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeoutL1);
+        ReplaceObject(parE, timeoutL1);
     }
 
     private void Timeout1MinMouseDown(object parSender, MouseEventArgs parE)
@@ -807,7 +813,7 @@ public partial class ScoreboardForm : Form
 
     private void Timeout1MinMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeout1Min);
+        ReplaceObject(parE, timeout1Min);
     }
 
     private void Label6MouseDown(object parSender, MouseEventArgs parE)
@@ -817,7 +823,7 @@ public partial class ScoreboardForm : Form
 
     private void Label6MouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeout1Parse);
+        ReplaceObject(parE, timeout1Parse);
     }
 
     private void Timeout1SecMouseDown(object parSender, MouseEventArgs parE)
@@ -827,7 +833,7 @@ public partial class ScoreboardForm : Form
 
     private void Timeout1SecMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeout1Sec);
+        ReplaceObject(parE, timeout1Sec);
     }
 
     private void TimeoutL2MouseDown(object parSender, MouseEventArgs parE)
@@ -837,7 +843,7 @@ public partial class ScoreboardForm : Form
 
     private void TimeoutL2MouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeoutL2);
+        ReplaceObject(parE, timeoutL2);
     }
 
     private void Timeout2MinMouseDown(object parSender, MouseEventArgs parE)
@@ -847,7 +853,7 @@ public partial class ScoreboardForm : Form
 
     private void Timeout2MinMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeout2Min);
+        ReplaceObject(parE, timeout2Min);
     }
 
     private void Label3MouseDown(object parSender, MouseEventArgs parE)
@@ -857,7 +863,7 @@ public partial class ScoreboardForm : Form
 
     private void Label3MouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeout2Parse);
+        ReplaceObject(parE, timeout2Parse);
     }
 
     private void Timeout2SecMouseDown(object parSender, MouseEventArgs parE)
@@ -867,7 +873,7 @@ public partial class ScoreboardForm : Form
 
     private void Timeout2SecMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeout2Sec);
+        ReplaceObject(parE, timeout2Sec);
     }
 
     private void PenaltyT1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -877,7 +883,7 @@ public partial class ScoreboardForm : Form
 
     private void PenaltyT1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,penaltyT1Lbl);
+        ReplaceObject(parE, penaltyT1Lbl);
     }
 
     private void PenaltyT1PlayerLblMouseDown(object parSender, MouseEventArgs parE)
@@ -887,7 +893,7 @@ public partial class ScoreboardForm : Form
 
     private void PenaltyT1PlayerLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,penaltyT1PlayerLbl);
+        ReplaceObject(parE, penaltyT1PlayerLbl);
     }
 
     private void PenaltyT1TimeLblMouseDown(object parSender, MouseEventArgs parE)
@@ -897,7 +903,7 @@ public partial class ScoreboardForm : Form
 
     private void PenaltyT1TimeLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,penaltyT1TimeLbl);
+        ReplaceObject(parE, penaltyT1TimeLbl);
     }
 
     private void PlayerNumber1T1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -907,7 +913,7 @@ public partial class ScoreboardForm : Form
 
     private void PlayerNumber1T1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,playerNumber1T1lbl);
+        ReplaceObject(parE, playerNumber1T1lbl);
     }
 
     private void PlayerNumber2T1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -917,7 +923,7 @@ public partial class ScoreboardForm : Form
 
     private void PlayerNumber2T1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,playerNumber2T1lbl);
+        ReplaceObject(parE, playerNumber2T1lbl);
     }
 
     private void MinutesT1P1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -927,7 +933,7 @@ public partial class ScoreboardForm : Form
 
     private void MinutesT1P1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,minutesT1P1Lbl);
+        ReplaceObject(parE, minutesT1P1Lbl);
     }
 
     private void TimeT1P1ParseLblMouseDown(object parSender, MouseEventArgs parE)
@@ -937,7 +943,7 @@ public partial class ScoreboardForm : Form
 
     private void TimeT1P1ParseLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeT1P1ParseLbl);
+        ReplaceObject(parE, timeT1P1ParseLbl);
     }
 
     private void SecondsT1P1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -947,7 +953,7 @@ public partial class ScoreboardForm : Form
 
     private void SecondsT1P1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,secondsT1P1Lbl);
+        ReplaceObject(parE, secondsT1P1Lbl);
     }
 
     private void MinutesT1P2LblMouseDown(object parSender, MouseEventArgs parE)
@@ -957,7 +963,7 @@ public partial class ScoreboardForm : Form
 
     private void MinutesT1P2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,minutesT1P2Lbl);
+        ReplaceObject(parE, minutesT1P2Lbl);
     }
 
     private void TimeT1P2ParseLblMouseDown(object parSender, MouseEventArgs parE)
@@ -967,7 +973,7 @@ public partial class ScoreboardForm : Form
 
     private void TimeT1P2ParseLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeT1P2ParseLbl);
+        ReplaceObject(parE, timeT1P2ParseLbl);
     }
 
     private void SecondsT1P2LblMouseDown(object parSender, MouseEventArgs parE)
@@ -977,7 +983,7 @@ public partial class ScoreboardForm : Form
 
     private void SecondsT1P2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,secondsT1P2Lbl);
+        ReplaceObject(parE, secondsT1P2Lbl);
     }
 
     private void PlayerNumber1T2LblMouseDown(object parSender, MouseEventArgs parE)
@@ -987,7 +993,7 @@ public partial class ScoreboardForm : Form
 
     private void PlayerNumber1T2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,playerNumber1T2lbl);
+        ReplaceObject(parE, playerNumber1T2lbl);
     }
 
     private void PlayerNumber2T2LblMouseDown(object parSender, MouseEventArgs parE)
@@ -997,7 +1003,7 @@ public partial class ScoreboardForm : Form
 
     private void PlayerNumber2T2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,playerNumber2T2lbl);
+        ReplaceObject(parE, playerNumber2T2lbl);
     }
 
     private void MinutesT2P1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -1007,7 +1013,7 @@ public partial class ScoreboardForm : Form
 
     private void MinutesT2P1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,minutesT2P1Lbl);
+        ReplaceObject(parE, minutesT2P1Lbl);
     }
 
     private void TimeT2P1ParseLblMouseDown(object parSender, MouseEventArgs parE)
@@ -1017,7 +1023,7 @@ public partial class ScoreboardForm : Form
 
     private void TimeT2P1ParseLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeT2P1ParseLbl);
+        ReplaceObject(parE, timeT2P1ParseLbl);
     }
 
     private void SecondsT2P1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -1027,7 +1033,7 @@ public partial class ScoreboardForm : Form
 
     private void SecondsT2P1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,secondsT2P1Lbl);
+        ReplaceObject(parE, secondsT2P1Lbl);
     }
 
     private void MinutesT2P2LblMouseDown(object parSender, MouseEventArgs parE)
@@ -1037,7 +1043,7 @@ public partial class ScoreboardForm : Form
 
     private void MinutesT2P2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,minutesT2P2Lbl);
+        ReplaceObject(parE, minutesT2P2Lbl);
     }
 
     private void TimeT2P2ParseLblMouseDown(object parSender, MouseEventArgs parE)
@@ -1047,7 +1053,7 @@ public partial class ScoreboardForm : Form
 
     private void TimeT2P2ParseLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,timeT2P2ParseLbl);
+        ReplaceObject(parE, timeT2P2ParseLbl);
     }
 
     private void SecondsT2P2LblMouseDown(object parSender, MouseEventArgs parE)
@@ -1057,7 +1063,7 @@ public partial class ScoreboardForm : Form
 
     private void SecondsT2P2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,secondsT2P2Lbl);
+        ReplaceObject(parE, secondsT2P2Lbl);
     }
 
     private void PenaltyT2PlayerLblMouseDown(object parSender, MouseEventArgs parE)
@@ -1067,7 +1073,7 @@ public partial class ScoreboardForm : Form
 
     private void PenaltyT2PlayerLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,penaltyT2PlayerLbl);
+        ReplaceObject(parE, penaltyT2PlayerLbl);
     }
 
     private void PenaltyT2LblMouseDown(object parSender, MouseEventArgs parE)
@@ -1077,7 +1083,7 @@ public partial class ScoreboardForm : Form
 
     private void PenaltyT2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,penaltyT2Lbl);
+        ReplaceObject(parE, penaltyT2Lbl);
     }
 
     private void PenaltyT2TimeLblMouseDown(object parSender, MouseEventArgs parE)
@@ -1087,17 +1093,17 @@ public partial class ScoreboardForm : Form
 
     private void PenaltyT2TimeLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,penaltyT2TimeLbl);
+        ReplaceObject(parE, penaltyT2TimeLbl);
     }
 
     private void PeriodLblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,periodLbl);
+        ReplaceObject(parE, periodLbl);
     }
 
     private void ScoreT2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,scoreT2Lbl);
+        ReplaceObject(parE, scoreT2Lbl);
     }
 
     private void FaceOffsT1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -1107,7 +1113,7 @@ public partial class ScoreboardForm : Form
 
     private void FaceOffsT1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,faceOffsT1Lbl);
+        ReplaceObject(parE, faceOffsT1Lbl);
     }
 
     private void FaceOffsT1MouseDown(object parSender, MouseEventArgs parE)
@@ -1117,7 +1123,7 @@ public partial class ScoreboardForm : Form
 
     private void FaceOffsT1MouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,faceOffsT1);
+        ReplaceObject(parE, faceOffsT1);
     }
 
     private void FaceOffsT2LblMouseDown(object parSender, MouseEventArgs parE)
@@ -1127,7 +1133,7 @@ public partial class ScoreboardForm : Form
 
     private void FaceOffsT2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,faceOffsT2Lbl);
+        ReplaceObject(parE, faceOffsT2Lbl);
     }
 
     private void FaceOffsT2MouseDown(object parSender, MouseEventArgs parE)
@@ -1137,7 +1143,7 @@ public partial class ScoreboardForm : Form
 
     private void FaceOffsT2MouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,faceOffsT2);
+        ReplaceObject(parE, faceOffsT2);
     }
 
     private void ShotsT1LblMouseDown(object parSender, MouseEventArgs parE)
@@ -1147,7 +1153,7 @@ public partial class ScoreboardForm : Form
 
     private void ShotsT1LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,shotsT1Lbl);
+        ReplaceObject(parE, shotsT1Lbl);
     }
 
     private void ShotsT1MouseDown(object parSender, MouseEventArgs parE)
@@ -1157,7 +1163,7 @@ public partial class ScoreboardForm : Form
 
     private void ShotsT1MouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,shotsT1);
+        ReplaceObject(parE, shotsT1);
     }
 
     private void ShotsT2LblMouseDown(object parSender, MouseEventArgs parE)
@@ -1167,7 +1173,7 @@ public partial class ScoreboardForm : Form
 
     private void ShotsT2LblMouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,shotsT2Lbl);
+        ReplaceObject(parE, shotsT2Lbl);
     }
 
     private void ShotsT2MouseDown(object parSender, MouseEventArgs parE)
@@ -1177,6 +1183,6 @@ public partial class ScoreboardForm : Form
 
     private void ShotsT2MouseMove(object parSender, MouseEventArgs parE)
     {
-        ReplaceObject(parE,shotsT2);
+        ReplaceObject(parE, shotsT2);
     }
 }

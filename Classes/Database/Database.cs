@@ -74,7 +74,7 @@ public class Database
         }
         else
         {
-            MessageBox.Show(@"Team was not added! Each team can be added only once! Define at least Team EventName!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(@"Team was not added! Each team can be added only once! Define at least Team Name!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 

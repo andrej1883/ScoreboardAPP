@@ -111,7 +111,7 @@ namespace Scoreboard.Forms.DBForms
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Team EventName:";
+            this.label1.Text = "Team Name:";
             // 
             // label2
             // 

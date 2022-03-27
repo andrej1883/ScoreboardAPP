@@ -31,8 +31,9 @@ public partial class CreatePlayerForm : Form
 
     private void AddPlayerClick(object parSender, EventArgs parE)
     {
+        if (string.IsNullOrWhiteSpace(PlayerName.Text) || string.IsNullOrWhiteSpace(PlayerNumber.Text)) return;
         Player help = new() {Name = PlayerName.Text, Number = PlayerNumber.Text};
-        _team.Players.Add(help);
+        _team.AddPlayer(help);
         UpdateGv();
         PlayerName.Clear();
         PlayerNumber.Clear();
@@ -41,7 +42,7 @@ public partial class CreatePlayerForm : Form
     private void RemovePlayerClick(object parSender, EventArgs parE)
     {
         if (PLayersGW.SelectedRows.Count <= 0) return;
-        _team.Players.Remove((Player)PLayersGW.SelectedRows[0].DataBoundItem);
+        _team.RemovePlayer((Player)PLayersGW.SelectedRows[0].DataBoundItem);
         UpdateGv();
     }
 

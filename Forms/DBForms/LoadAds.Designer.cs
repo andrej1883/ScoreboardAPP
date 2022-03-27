@@ -36,16 +36,15 @@ namespace Scoreboard.Forms.DBForms
             this.removeVideo = new System.Windows.Forms.Button();
             this.addVideo = new System.Windows.Forms.Button();
             this.teamListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.advListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,45 +83,37 @@ namespace Scoreboard.Forms.DBForms
             this.teamListBindingSource.DataMember = "TeamList";
             this.teamListBindingSource.DataSource = this.databaseBindingSource;
             // 
-            // databaseBindingSource
-            // 
-            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database.Database);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pathDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn});
+            this.pathDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.advListBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(20, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(644, 426);
             this.dataGridView1.TabIndex = 20;
             // 
-            // pathDataGridViewTextBoxColumn
-            // 
-            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
-            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
-            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.Width = 400;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "EventName";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "EventName";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 200;
-            // 
             // advListBindingSource
             // 
             this.advListBindingSource.DataMember = "AdvList";
             this.advListBindingSource.DataSource = this.databaseBindingSource;
             // 
+            // databaseBindingSource
+            // 
+            this.databaseBindingSource.DataSource = typeof(Scoreboard.Classes.Database.Database);
+            // 
             // databaseBindingSource1
             // 
             this.databaseBindingSource1.DataSource = typeof(Scoreboard.Classes.Database.Database);
+            // 
+            // pathDataGridViewTextBoxColumn
+            // 
+            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
+            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
+            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
+            this.pathDataGridViewTextBoxColumn.Width = 600;
             // 
             // LoadAds
             // 
@@ -138,9 +129,9 @@ namespace Scoreboard.Forms.DBForms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Load advertisements";
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -155,8 +146,7 @@ namespace Scoreboard.Forms.DBForms
         private BindingSource teamListBindingSource;
         private BindingSource databaseBindingSource1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn pathDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private BindingSource advListBindingSource;
+        private DataGridViewTextBoxColumn pathDataGridViewTextBoxColumn;
     }
 }

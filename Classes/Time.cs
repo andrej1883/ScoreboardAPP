@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Scoreboard.Classes;
+﻿namespace Scoreboard.Classes;
 
 public struct Time
 {
@@ -8,38 +6,6 @@ public struct Time
 
     public int Seconds { get; set; }
 
-
-    public void SubtractTime(Time parTime)
-    {
-        var help = this;
-        if (!IsValidTime(parTime)) return;
-        if (help.Seconds < parTime.Seconds && help.Minutes-1 >= 0)
-        {
-            help.Minutes--;
-            help.Seconds += 60;
-            help.Minutes -= parTime.Minutes;
-            help.Seconds -= parTime.Seconds;
-        }
-        else
-        { 
-            help.Minutes -= parTime.Minutes;
-            help.Seconds -= parTime.Seconds;
-        }
-        if (IsValidTime(help))
-        {
-            Minutes = help.Minutes;
-            Seconds = help.Seconds;
-        }
-        else
-        {
-            throw new InvalidOperationException("Subtract time invalid operation!");
-        }
-    }
-
-    private static bool IsValidTime(Time parTime)
-    {
-        return parTime.Minutes >= 0 && parTime.Seconds is >= 0 and < 60;
-    }
 
     public void TickMinus()
     {

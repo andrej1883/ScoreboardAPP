@@ -39,6 +39,7 @@ public partial class GameForm : Form
 
     private int _period = 1;
 
+    private bool _specialTime;
     private bool _breakRunning;
     private bool _periodEnd;
     private bool _periodStarted;
@@ -69,7 +70,6 @@ public partial class GameForm : Form
         _timerPenalty = ResetTimer();
         _timeoutTimer = ResetTimer();
         StartPosition=FormStartPosition.CenterScreen;
-        // _controlForm = new ControlForm(_formScoreBoard);
     }
 
     private void GameFormLoad(object parSender, EventArgs parE)
@@ -109,6 +109,15 @@ public partial class GameForm : Form
         _formScoreBoard.SetGoal(true,_matchStats.TeamStats[0].Goals);
         goalsTeam2.Text = _matchStats.TeamStats[1].Goals.ToString();
         _formScoreBoard.SetGoal(false,_matchStats.TeamStats[1].Goals);
+        shotsT1.Text = _matchStats.TeamStats[0].Shots.ToString();
+        _formScoreBoard.SetShots(true,_matchStats.TeamStats[0].Shots);
+        faceoffsT1.Text = _matchStats.TeamStats[0].FaceOffs.ToString();
+        _formScoreBoard.SetFaceOff(true,_matchStats.TeamStats[0].FaceOffs);
+        shotsT2.Text = _matchStats.TeamStats[1].Shots.ToString();
+        _formScoreBoard.SetShots(false,_matchStats.TeamStats[1].Shots);
+        faceoffsT2.Text = _matchStats.TeamStats[1].FaceOffs.ToString();
+        _formScoreBoard.SetFaceOff(false,_matchStats.TeamStats[1].FaceOffs);
+
         for (var i = 0; i < _penalty.Length; i++)
         {
             UpdatePenaltyGf(i+1,_penalty[i][1],_penalty[i][2]);
@@ -159,16 +168,13 @@ public partial class GameForm : Form
 
     private void GoalSelectPlayer(int parTeam)
     {
-        var t1 = _matchTime;
-        var t2 = _gameTimes.PeriodLength;
-        t2.SubtractTime(t1);
         switch (parTeam)
         {
             case 1 when _team1 == null || _team1.Players.Count < 1:
                 return;
             case 1:
             {
-                SelectPlayerGoal varGoal = new(1, _matchStats, _team1.Players,t2);
+                SelectPlayerGoal varGoal = new(1, _matchStats, _team1.Players,_elapsedTime);
                 varGoal.Show();
                 break;
             }
@@ -176,7 +182,7 @@ public partial class GameForm : Form
                 return;
             case 2:
             {
-                SelectPlayerGoal varGoal = new(2, _matchStats, _team2.Players,t2);
+                SelectPlayerGoal varGoal = new(2, _matchStats, _team2.Players,_elapsedTime);
                 varGoal.Show();
                 break;
             }
@@ -277,11 +283,11 @@ public partial class GameForm : Form
         if (team1NameBox.Text.Length > 0 && !Equals(team2NameBox.Text,team1NameBox.Text))
         {
             _matchStats.TeamStats[0].Name = team1NameBox.Text;
-            team1NameBox.Text = @"Team1";
         }
         else
         {
             _matchStats.TeamStats[0].Name = "Team1";
+            team1NameBox.Text = @"Team1";
         }
         _formScoreBoard.SetTeamName(true, _matchStats.TeamStats[0].Name);
     }
@@ -388,7 +394,7 @@ public partial class GameForm : Form
         _timer.Start();
         if (!_periodStarted)
         {
-            _matchStats.CreateStartPeriodEvent(_period);
+            if(!_specialTime) _matchStats.CreateStartPeriodEvent(_period, _elapsedTime);
             _periodStarted = true;
         }
         StartPenalty();
@@ -403,14 +409,9 @@ public partial class GameForm : Form
     private void DisplayTimeTimer(object parMyObject, EventArgs parMyEventArgs)
     {
         _matchTime.TickMinus();
-        _elapsedTime.TickPlus();
-        var t1 = _matchTime;
-        var t2 = _gameTimes.PeriodLength;
-        t2.SubtractTime(t1);
-        if (t2.Minutes == 1 && t2.Seconds == 0)
-        {
-            _matchStats.CreateLastMinuteEvent(_period);
-        }
+        if(!_specialTime && !_breakRunning) _elapsedTime.TickPlus();
+
+        if (_matchTime.Minutes == 1 && _matchTime.Seconds == 0 && !_specialTime) _matchStats.CreateLastMinuteEvent(_period, _elapsedTime);
 
         _formScoreBoard.SetTime(_matchTime);
         UpdateTime(_matchTime);
@@ -423,7 +424,8 @@ public partial class GameForm : Form
             _periodEnd = true;
             _periodStarted = false;
             MessageBox.Show(@"Period ended" , @"Timer stopped", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            _matchStats.CreateEndPeriodEvent(_period);
+            if(!_specialTime) _matchStats.CreateEndPeriodEvent(_period, _elapsedTime);
+            _specialTime = false;
         }
         else
         {
@@ -460,6 +462,7 @@ public partial class GameForm : Form
         _timer.Enabled = false;
         _periodEnd = false;
         _periodStarted = false;
+        _specialTime = false;
         InitBoards();
     }
 
@@ -572,7 +575,7 @@ public partial class GameForm : Form
             {
                 _formScoreBoard.HidePenalty(i + 1);
                 if (!_activePenalty[i]) continue;
-                _matchStats.EndPenaltyEvent(i + 1);
+                _matchStats.EndPenaltyEvent(i + 1, _elapsedTime);
                 _activePenalty[i] = false;
             }
         }
@@ -610,10 +613,11 @@ public partial class GameForm : Form
     private void CloseScoreBoard()
     {
         if (_formScoreBoard == null) return;
-        if (_controlForm.BlackActive) _controlForm.BlacForm.Dispose();
         _formScoreBoard.Dispose();
         _formScoreBoard.ResetInstance();
         _formScoreBoard.IsActive = false;
+        if(_controlForm == null) return;
+        if (_controlForm.BlackActive) _controlForm.BlacForm.Dispose();
     }
 
     private void CloseScoreboardBtnClick(object parSender, EventArgs parE)
@@ -664,8 +668,7 @@ public partial class GameForm : Form
     private void CountTimeout(int parTeam)
     {
         _timeouts[parTeam-1].TickMinus();
-        _elapsedTime.TickPlus();
-            
+
 
         _formScoreBoard.SetTimeout(parTeam,_timeouts[parTeam-1]);
         UpdateTimeoutGf(parTeam);
@@ -784,13 +787,14 @@ public partial class GameForm : Form
             if (string.IsNullOrWhiteSpace(name)) return;
             var selected = (Team) TeamsDBT1.SelectedItem;
             _team1 = selected;
-            var empty = new Player {Name = " ", Number = " "};
-            _team1.Players.Add(empty);
+            var empty = new Player {Name = "", Number = ""};
+            _team1.AddPlayer(empty);
             _matchStats.TeamStats[0].Name = _team1.Name;
             team1NameBox.Text = _team1.Name;
             _formScoreBoard.SetTeamName(true,_team1.Name);
             UploadLogo(true,_team1.LogoPath);
             videoPath1.Text = _team1.VideoPath;
+            _formScoreBoard.ShowLogo(true);
         }
         else
         {
@@ -811,13 +815,14 @@ public partial class GameForm : Form
             var selected = (Team) TeamsDBT2.SelectedItem;
             if (selected == null) return; 
             _team2 = selected;
-            var empty = new Player {Name = " ", Number = " "};
-            _team2.Players.Add(empty);
+            var empty = new Player {Name = "", Number = ""};
+            _team2.AddPlayer(empty);
             _matchStats.TeamStats[1].Name = _team2.Name;
             team2NameBox.Text =  _matchStats.TeamStats[1].Name;
             _formScoreBoard.SetTeamName(false,  _team2.Name);
             UploadLogo(false, _team2.LogoPath);
             videoPath2.Text = _team2.VideoPath;
+            _formScoreBoard.ShowLogo(false);
         }
         else
         {
@@ -977,7 +982,7 @@ public partial class GameForm : Form
         team1NameBox.Text = null;
         logo1Path.Text = null;
         _formScoreBoard.SetTeamName(true, _matchStats.TeamStats[0].Name);
-        logo1.Dispose();
+        logo1.Image = null;
         TeamsDBT2.DataSource =  null;
         _matchStats.TeamStats[1].Name = null;
         videoPath2.Text =null;
@@ -985,7 +990,9 @@ public partial class GameForm : Form
         logo2Path.Text = null;
         adsDBV.DataSource = null;
         _formScoreBoard.SetTeamName(false, _matchStats.TeamStats[1].Name);
-        logo2.Dispose();
+        logo2.Image = null;
+        _team1 = null;
+        _team2 = null;
         InitBoards();
             
     }
@@ -1037,24 +1044,21 @@ public partial class GameForm : Form
         _matchStats.TeamStats[0].FaceOffs++;
         _formScoreBoard.SetFaceOff(true,_matchStats.TeamStats[0].FaceOffs);
         faceoffsT1.Text = _matchStats.TeamStats[0].FaceOffs.ToString();
-
-        _matchStats.CreateFaceOffEvent(1,_elapsedTime);
         StartTimer();
+        DisplayTimeTimer(parSender,parE);
+        _matchStats.CreateFaceOffEvent(1,_elapsedTime);
     }
 
     private void PlusFaceoffsT2Click(object parSender, EventArgs parE)
     {
         if (_timer.Enabled || _breakRunning) return;
-        var t1 = _matchTime;
-        var t2 = _gameTimes.PeriodLength;
-        t2.SubtractTime(t1);
 
         _matchStats.TeamStats[1].FaceOffs++;
         _formScoreBoard.SetFaceOff(false,_matchStats.TeamStats[1].FaceOffs);
         faceoffsT2.Text = _matchStats.TeamStats[1].FaceOffs.ToString();
-
-        _matchStats.CreateFaceOffEvent(2,_elapsedTime);
         StartTimer();
+        DisplayTimeTimer(parSender,parE);
+        _matchStats.CreateFaceOffEvent(2,_elapsedTime);
     }
 
     private void MinusShotsT1Click(object parSender, EventArgs parE)
@@ -1134,7 +1138,7 @@ public partial class GameForm : Form
                 {
                     _penalty[0][i] =  form.Penalty[i];
                 }
-                _matchStats.CreatePenaltyEvent(1,new Time {Minutes =form.Penalty[1], Seconds = form.Penalty[2]});
+                _matchStats.CreatePenaltyEvent(1,new Time {Minutes =form.Penalty[1], Seconds = form.Penalty[2]}, _elapsedTime);
                 _activePenalty[0] = true;
                 break;
             case 2:
@@ -1142,7 +1146,7 @@ public partial class GameForm : Form
                 {
                     _penalty[1][i] =  form.Penalty[i];
                 }
-                _matchStats.CreatePenaltyEvent(1,new Time {Minutes =form.Penalty[1], Seconds = form.Penalty[2]});
+                _matchStats.CreatePenaltyEvent(1,new Time {Minutes =form.Penalty[1], Seconds = form.Penalty[2]}, _elapsedTime);
                 _activePenalty[1] = true;
                 break;
             case 3:
@@ -1150,7 +1154,7 @@ public partial class GameForm : Form
                 {
                     _penalty[2][i] =  form.Penalty[i];
                 }
-                _matchStats.CreatePenaltyEvent(2,new Time {Minutes =form.Penalty[1], Seconds = form.Penalty[2]});
+                _matchStats.CreatePenaltyEvent(2,new Time {Minutes =form.Penalty[1], Seconds = form.Penalty[2]}, _elapsedTime);
                 _activePenalty[2] = true;
                 break;
             case 4:
@@ -1158,7 +1162,7 @@ public partial class GameForm : Form
                 {
                     _penalty[3][i] =  form.Penalty[i];
                 }
-                _matchStats.CreatePenaltyEvent(2,new Time {Minutes =form.Penalty[1], Seconds = form.Penalty[2]});
+                _matchStats.CreatePenaltyEvent(2,new Time {Minutes =form.Penalty[1], Seconds = form.Penalty[2]}, _elapsedTime);
                 _activePenalty[3] = true;
                 break;
         }
@@ -1254,6 +1258,7 @@ public partial class GameForm : Form
             _formScoreBoard.SetPeriod("SH");
             _formScoreBoard.SetTime(_matchTime);
             UpdateTime(_matchTime);
+            _specialTime = true;
         }
         else
         {
@@ -1273,6 +1278,7 @@ public partial class GameForm : Form
             _formScoreBoard.SetPeriod("OB");
             _formScoreBoard.SetTime(_matchTime);
             UpdateTime(_matchTime);
+            _specialTime = true;
         }
         else
         {
@@ -1290,6 +1296,7 @@ public partial class GameForm : Form
             period.Text = @" ";
             _formScoreBoard.SetPeriod(" ");
             _formScoreBoard.SetTime(_matchTime);
+            _specialTime = true;
             UpdateTime(_matchTime);
         }
         else
@@ -1310,6 +1317,7 @@ public partial class GameForm : Form
             _formScoreBoard.SetPeriod("O1");
             _formScoreBoard.SetTime(_matchTime);
             UpdateTime(_matchTime);
+            _specialTime = true;
         }
         else
         {
@@ -1329,6 +1337,7 @@ public partial class GameForm : Form
             _formScoreBoard.SetPeriod("O2");
             _formScoreBoard.SetTime(_matchTime);
             UpdateTime(_matchTime);
+            _specialTime = true;
         }
         else
         {
@@ -1378,5 +1387,10 @@ public partial class GameForm : Form
     {
         logo2.Image = null;
         logo2Path.Text = string.Empty;
+    }
+
+    private void ResetElapsedBtnClick(object parSender, EventArgs parE)
+    {
+        _elapsedTime = new Time {Minutes = 0, Seconds = 0};
     }
 }
