@@ -38,8 +38,6 @@ public class ScoreboardElement
         set => _elementName = value;
     }
 
-
-
     public int Color
     {
         get => _color;

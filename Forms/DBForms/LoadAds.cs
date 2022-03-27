@@ -38,7 +38,7 @@ namespace Scoreboard.Forms.DBForms
             if (open.ShowDialog() == DialogResult.OK) 
             {
                 path = open.FileName;
-                var help = new Advertisment() {Path = path};
+                var help = new Advertisement() {Path = path};
                 _database.AddAdv(help);
                 UpdateGv();
             }
@@ -48,7 +48,7 @@ namespace Scoreboard.Forms.DBForms
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                _database.RemoveAdv((Advertisment)dataGridView1.SelectedRows[0].DataBoundItem);
+                _database.RemoveAdv((Advertisement)dataGridView1.SelectedRows[0].DataBoundItem);
                 UpdateGv();
             }
         }

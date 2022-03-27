@@ -8,28 +8,26 @@ namespace Scoreboard.Classes.Database
     public class Database
     {
         private List<Team> _teamList;
-        private List<Advertisment> _advList;
+        private List<Advertisement> _advList;
 
 
-        public List<Advertisment> AdvList
+        public List<Advertisement> AdvList
         {
             get => _advList;
             set => _advList = value;
         }
-
         public List<Team> TeamList
         {
             get => _teamList;
             set => _teamList = value;
         }
-
-
         public Database()
         {
             _teamList = new List<Team>();
-            _advList = new List<Advertisment>();
+            _advList = new List<Advertisement>();
 
         }
+
 
         public Team FindTeam(string parTeamName)
         {
@@ -41,9 +39,9 @@ namespace Scoreboard.Classes.Database
             return null;
         }
 
-        public Advertisment FindAdv(string parAdvPath)
+        public Advertisement FindAdv(string parAdvPath)
         {
-            foreach (Advertisment a in _advList)
+            foreach (Advertisement a in _advList)
             {
                 if (a.Path.Equals(parAdvPath))
                     return a;
@@ -51,40 +49,38 @@ namespace Scoreboard.Classes.Database
             return null;
         }
 
-        public void PostLoad()
+        public void OrderAfterLoad()
         {
-            int pocet = _teamList.Count;
-            if (pocet > 0)
+            int teamCount = _teamList.Count;
+            if (teamCount > 0)
             {
-                string[] pole = new string[pocet];
-                for (int i = 0; i < pocet; i++)
+                string[] teamNames = new string[teamCount];
+                for (int i = 0; i < teamCount; i++)
                 {
-                    pole[i] = _teamList[i].Name;
+                    teamNames[i] = _teamList[i].Name;
                 }
 
-                Array.Sort(pole);
+                Array.Sort(teamNames);
 
                 Team teamH;
-                List<Team> usporiadanyZoznam = new List<Team>();
-                for (int i = 0; i < pocet; i++)
+                List<Team> sortedTeams = new List<Team>();
+                for (int i = 0; i < teamCount; i++)
                 {
                     teamH = null;
                     foreach (Team t in TeamList)
                     {
-                        if (t.Name.Equals(pole[i]))
+                        if (t.Name.Equals(teamNames[i]))
                             teamH = t;
                     }
                     TeamList.Remove(teamH);
-                    usporiadanyZoznam.Add(teamH);
+                    sortedTeams.Add(teamH);
                 }
-
-                TeamList = usporiadanyZoznam;
+                TeamList = sortedTeams;
             }
         }
 
         public void AddTeam(Team parTeam)
         {
-
             if (!TeamList.Contains(parTeam) && FindTeam(parTeam.Name) == null && parTeam.Name.Length > 0)
             {
                 TeamList.Add(parTeam);
@@ -103,11 +99,11 @@ namespace Scoreboard.Classes.Database
             }
             else
             {
-                MessageBox.Show("Player not found", "Remove team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Team not found", @"Remove team Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void AddAdv(Advertisment parVid)
+        public void AddAdv(Advertisement parVid)
         {
 
             if (!_advList.Contains(parVid) && FindAdv(parVid.Path) == null && parVid.Path.Length > 0)
@@ -116,11 +112,11 @@ namespace Scoreboard.Classes.Database
             }
             else
             {
-                MessageBox.Show(@"Video was not added! Each video can be added only once! Define at least Video path!" , @"Add adv Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Video was not added! Each video can be added only once! Define at least Video path!" , @"Add advertisement Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void RemoveAdv(Advertisment parVid)
+        public void RemoveAdv(Advertisement parVid)
         {
             if (_advList.Contains(parVid))
             {
@@ -128,7 +124,7 @@ namespace Scoreboard.Classes.Database
             }
             else
             {
-                MessageBox.Show("Video not found", "Remove adv Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Video not found", @"Remove advertisement Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

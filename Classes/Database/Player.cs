@@ -13,7 +13,6 @@ namespace Scoreboard.Classes.Database
             get => _name;
             set => _name = value;
         }
-
         public string Number
         {
             get => _number;

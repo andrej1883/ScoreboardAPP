@@ -1004,7 +1004,7 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Advertisment selected = (Advertisment)adsDBV.SelectedItem;
+            Advertisement selected = (Advertisement)adsDBV.SelectedItem;
             if (selected != null && File.Exists(selected.Path))
             {
                 PlayVideo(selected.Path);
@@ -1090,7 +1090,7 @@ namespace Scoreboard.Forms.MainGameForms
                     textReader.Close();
                 if (_databaseGame != null && _databaseGame.TeamList.Count > 0)
                 {
-                    _databaseGame.PostLoad();
+                    _databaseGame.OrderAfterLoad();
                     TeamsDBT1.DataSource = _databaseGame.TeamList;
                     TeamsDBT1.SelectedItem = _databaseGame.TeamList[0];
                     TeamsDBT2.BindingContext = new BindingContext();

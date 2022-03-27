@@ -12,25 +12,12 @@ namespace Scoreboard.Classes
             get => _minutes;
             set => _minutes = value;
         }
-
         public int Seconds
         {
             get => _seconds;
             set => _seconds = value;
         }
 
-        public void AddTime(Time parTime)
-        {
-            if (IsValidTime(parTime))
-            {
-                Seconds += parTime.Seconds;
-                if (Seconds > 60)
-                {
-                    Seconds %= 60;
-                    Minutes++;
-                }
-            }
-        }
 
         public void SubtractTime(Time parTime)
         {

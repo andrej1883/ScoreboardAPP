@@ -3,12 +3,12 @@
 namespace Scoreboard.Classes.Database
 {
     [Serializable]
-    public class Advertisment
+    public class Advertisement
     {
         private string _name;
         private string _path;
 
-        public Advertisment()
+        public Advertisement()
         {
         }
 

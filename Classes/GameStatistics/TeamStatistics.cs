@@ -12,19 +12,16 @@
             get => _faceOffs;
             set => _faceOffs = value;
         }
-
         public string Name
         {
             get => _name;
             set => _name = value;
         }
-
         public int Goals
         {
             get => _goals;
             set => _goals = value;
         }
-
         public int Shots
         {
             get => _shots;

@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Database\Advertisment.cs" />
+    <Compile Include="Classes\Database\Advertisement.cs" />
     <Compile Include="Classes\Database\Database.cs" />
     <Compile Include="Classes\GameStatistics\MatchEvent.cs" />
     <Compile Include="Classes\GameStatistics\MatchStatistics.cs" />

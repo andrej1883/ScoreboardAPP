@@ -10,7 +10,6 @@
             get => _eventName;
             set => _eventName = value;
         }
-
         public string EventInfo
         {
             get => _eventInfo;

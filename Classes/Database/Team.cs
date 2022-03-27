@@ -10,6 +10,7 @@ namespace Scoreboard.Classes.Database
         private string _name;
         private string _videoPath;
         private string _logoPath;
+
         private List<Player> _players;
 
         public string LogoPath
@@ -17,19 +18,16 @@ namespace Scoreboard.Classes.Database
             get => _logoPath;
             set => _logoPath = value;
         }
-
         public string Name
         {
             get => _name;
             set => _name = value;
         }
-
         public string VideoPath
         {
             get => _videoPath;
             set => _videoPath = value;
         }
-
         public List<Player> Players
         {
             get => _players;
@@ -49,7 +47,7 @@ namespace Scoreboard.Classes.Database
             }
             else
             {
-                MessageBox.Show( "! Each player only once!" , "Add player Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show( @"! Each player only once!" , @"Add player Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -61,7 +59,7 @@ namespace Scoreboard.Classes.Database
             }
             else
             {
-                MessageBox.Show("Player not found", "Remove player Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Player not found", @"Remove player Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -18,19 +18,16 @@ namespace Scoreboard.Classes.GameStatistics
             get => _expoPath;
             set => _expoPath = value;
         }
-
         public bool ExportEvents
         {
             get => _exportEvents;
             set => _exportEvents = value;
         }
-
         public List<MatchEvent> MatchEvents
         {
             get => _matchEvents;
             set => _matchEvents = value;
         }
-
         public TeamStatistics[] TeamStats
         {
             get => _teamStats;
