@@ -13,7 +13,6 @@ namespace Scoreboard.Forms.AppSettings
             get => _path;
             set => _path = value;
         }
-
         public bool Export
         {
             get => _export;

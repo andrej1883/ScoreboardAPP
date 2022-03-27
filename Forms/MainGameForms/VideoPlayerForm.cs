@@ -17,7 +17,6 @@ namespace Scoreboard.Forms.MainGameForms
         {
             get => _videoPath;
             set => _videoPath = value;
-
         }
 
         public VideoPlayerForm()

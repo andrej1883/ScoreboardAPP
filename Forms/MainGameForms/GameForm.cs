@@ -34,15 +34,12 @@ namespace Scoreboard.Forms.MainGameForms
 
         private Team _team1;
         private Team _team2;
-        //private int _team1Goals = 0;
-        //private int _team2Goals =0;
-        //private string _team1Name = "Team1";
-        //private string _team2Name = "Team2";
-
-        //private int _secondsT = 0;
-        //private int _minutesT = 0;
         private Time _matchTime;
         private Time _elapsedTime;
+        private Timer _timer = null;
+        private Timer _timerPenalty = null;
+        private Timer _timeoutTimer = null;
+
         private int _period = 1;
 
         private bool _breakRunning = false;
@@ -54,15 +51,6 @@ namespace Scoreboard.Forms.MainGameForms
 
         private int[][] _penalty;
         private Time[] _timeouts;
-
-        private Timer _timer = null;
-        private Timer _timerPenalty = null;
-        private Timer _timeoutTimer = null;
-        
-        
-        
-
-        
 
         public Database DatabaseGame
         {
@@ -205,7 +193,7 @@ namespace Scoreboard.Forms.MainGameForms
             _formScoreBoard.SetGoal(true,_matchStats.TeamStats[0].Goals);
             goalsTeam1.Text = _matchStats.TeamStats[0].Goals.ToString();
             GoalSelectPlayer(1);
-            _serialDevices.SirenStart(SirenType.LONG);
+            _serialDevices.SirenStart(SirenType.Long);
         }
 
         private void minusGoal2_Click(object sender, EventArgs e)
@@ -225,18 +213,16 @@ namespace Scoreboard.Forms.MainGameForms
             _formScoreBoard.SetGoal(false,_matchStats.TeamStats[1].Goals);
             goalsTeam2.Text = _matchStats.TeamStats[1].Goals.ToString();
             GoalSelectPlayer(2);
-            _serialDevices.SirenStart(SirenType.LONG);
+            _serialDevices.SirenStart(SirenType.Long);
         }
 
         private void p1T1ShowPenalty_Click(object sender, EventArgs e)
         {
-            //_formScoreBoard.SetPenalty(1,(int)p1T1Number.Value,(int)p1T1Minutes.Value,(int)p1T1Seconds.Value);
             _formScoreBoard.ShowPenalty(1);
         }
 
         private void p2T1ShowPenalty_Click(object sender, EventArgs e)
         {
-            //_formScoreBoard.SetPenalty(2,(int)p2T1Number.Value,(int)p2T1Minutes.Value,(int)p2T1Seconds.Value);
             _formScoreBoard.ShowPenalty(2);
         }
 
@@ -252,13 +238,11 @@ namespace Scoreboard.Forms.MainGameForms
 
         private void p1T2ShowPenalty_Click(object sender, EventArgs e)
         {
-            //_formScoreBoard.SetPenalty(3,(int)p1T2Number.Value,(int)p1T2Minutes.Value,(int)p1T2Seconds.Value);
             _formScoreBoard.ShowPenalty(3);
         }
 
         private void p2T2ShowPenalty_Click(object sender, EventArgs e)
         {
-            //_formScoreBoard.SetPenalty(4,(int)p2T2Number.Value,(int)p2T2Minutes.Value,(int)p2T2Seconds.Value);
             _formScoreBoard.ShowPenalty(4);
         }
 
@@ -333,7 +317,6 @@ namespace Scoreboard.Forms.MainGameForms
                     logo2Path.Text = open.FileName;
                     _formScoreBoard.SetLogo(false, logo2.Image);
                 }
-                
             }
         }
 
@@ -420,7 +403,7 @@ namespace Scoreboard.Forms.MainGameForms
                     _periodStarted = true;
                 }
                 StartPenalty();
-                _serialDevices.SirenStart(SirenType.NORMAL);
+                _serialDevices.SirenStart(SirenType.Normal);
             }
         }
 
@@ -464,7 +447,7 @@ namespace Scoreboard.Forms.MainGameForms
                     InitBoards();
                     MessageBox.Show(@"Break ended" , @"Timer stopped", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                _serialDevices.SirenStart(SirenType.DISRUPTED);
+                _serialDevices.SirenStart(SirenType.Disrupted);
             }
         }
 
@@ -475,7 +458,6 @@ namespace Scoreboard.Forms.MainGameForms
                 _timer.Stop();
                 _timer.Enabled = false;
                 StopPenalty();
-                
             }
         }
 
@@ -510,16 +492,6 @@ namespace Scoreboard.Forms.MainGameForms
                 secondsTime.Text = parTime.Seconds.ToString();
         }
 
-        // private void p1T1Minutes_ValueChanged(object sender, EventArgs e)
-        // {
-        //     _penalty[0][1] = (int) p1T1Minutes.Value;
-        // }
-        //
-        // private void p1T1Seconds_ValueChanged(object sender, EventArgs e)
-        // {
-        //     _penalty[0][2] = (int) p1T1Seconds.Value;
-        // }
-
         private void UpdatePenaltyGf(int position, int number, int minutes, int seconds)
         {
             string sMinutes;
@@ -537,41 +509,29 @@ namespace Scoreboard.Forms.MainGameForms
             switch (position)
             {
               case 1:
-                  // p1T1Number.Text = _penalty[0][0].ToString();
-                  // p1T1Seconds.Text = sSeconds;
-                  // p1T1Minutes.Text = sMinutes;
-
                   penP1T1.Text = _penalty[0][0].ToString();
                   penMinP1T1.Text = sMinutes;
                   penSecP1T1.Text = sSeconds;
                   break;
-              case 2:
-                  // p2T1Number.Text = _penalty[1][0].ToString();
-                  // p2T1Seconds.Text = sSeconds;
-                  // p2T1Minutes.Text = sMinutes;
 
+              case 2:
                   penP2T1.Text = _penalty[1][0].ToString();
                   penMinP2T1.Text = sMinutes;
                   penSecP2T1.Text = sSeconds;
                   break;
-              case 3:
-                  //p1T2Number.Text = _penalty[2][0].ToString();
-                  //p1T2Seconds.Text = sSeconds;
-                  //p1T2Minutes.Text = sMinutes;
 
+              case 3:
                   penP1T2.Text = _penalty[2][0].ToString();
                   penMinP1T2.Text = sMinutes;
                   penSecP1T2.Text = sSeconds;
                   break;
-              case 4:
-                  //p2T2Number.Text = _penalty[3][0].ToString();
-                  //p2T2Seconds.Text = sSeconds;
-                  //p2T2Minutes.Text = sMinutes;
 
+              case 4:
                   penP2T2.Text = _penalty[3][0].ToString();
                   penMinP2T2.Text = sMinutes;
                   penSecP2T2.Text = sSeconds;
                   break;
+
               default:
                   throw new ArgumentException("Index is out of range");
             }
@@ -638,7 +598,6 @@ namespace Scoreboard.Forms.MainGameForms
                     {
                         _penalty[i][2]--;
                     }
-
                     UpdatePenaltyGf(i + 1, _penalty[i][0], _penalty[i][1], _penalty[i][2]);
                     _formScoreBoard.SetPenalty(i + 1, _penalty[i][0], _penalty[i][1], _penalty[i][2]);
                 }
@@ -650,7 +609,6 @@ namespace Scoreboard.Forms.MainGameForms
                         _matchStats.EndPenaltyEvent(i + 1);
                         _activePenalty[i] = false;
                     }
-                    
                 }
             }
         }
@@ -663,56 +621,6 @@ namespace Scoreboard.Forms.MainGameForms
                 _timerPenalty.Enabled = false;
             }
         }
-
-        /*private void p1T1Number_ValueChanged(object sender, EventArgs e)
-        {
-            _penalty[0][0] = (int) p1T1Number.Value;
-        }
-
-        private void p2T1Number_ValueChanged(object sender, EventArgs e)
-        {
-            _penalty[1][0] = (int) p2T1Number.Value;
-        }
-
-        private void p1T2Number_ValueChanged(object sender, EventArgs e)
-        {
-            _penalty[2][0] = (int) p1T2Number.Value;
-        }
-
-        private void p2T2Number_ValueChanged(object sender, EventArgs e)
-        {
-            _penalty[3][0] = (int) p2T2Number.Value;
-        }
-
-        private void p2T1Seconds_ValueChanged(object sender, EventArgs e)
-        {
-            _penalty[1][2] = (int) p2T1Seconds.Value;
-        }
-
-        private void p2T1Minutes_ValueChanged(object sender, EventArgs e)
-        {
-            _penalty[1][1] = (int)  p2T1Minutes.Value;
-        }
-
-        private void p1T2Minutes_ValueChanged(object sender, EventArgs e)
-        {
-            _penalty[2][1] = (int) p1T2Minutes.Value;
-        }
-
-        private void p1T2Seconds_ValueChanged(object sender, EventArgs e)
-        {
-            _penalty[2][2] = (int) p1T2Seconds.Value;
-        }
-
-        private void p2T2Minutes_ValueChanged(object sender, EventArgs e)
-        {
-            _penalty[3][1] = (int) p2T2Minutes.Value;
-        }
-
-        private void p2T2Seconds_ValueChanged(object sender, EventArgs e)
-        {
-            _penalty[3][2] = (int) p2T2Seconds.Value;
-        }*/
 
         private void ShowScoreBoard()
         {
@@ -760,7 +668,7 @@ namespace Scoreboard.Forms.MainGameForms
                 _timeoutTimer.Enabled = true;
                 _timeout1Running = true;
                 _matchStats.CreateTimeoutEvent(1,_elapsedTime);
-                _serialDevices.SirenStart(SirenType.SHORT);
+                _serialDevices.SirenStart(SirenType.Short);
             }
         }
 
@@ -772,7 +680,7 @@ namespace Scoreboard.Forms.MainGameForms
                 _timeoutTimer.Enabled = true;
                 _timeout2Running = true;
                 _matchStats.CreateTimeoutEvent(2,_elapsedTime);
-                _serialDevices.SirenStart(SirenType.SHORT);
+                _serialDevices.SirenStart(SirenType.Short);
             }
         }
 
@@ -868,7 +776,7 @@ namespace Scoreboard.Forms.MainGameForms
                 _formScoreBoard.SetPeriod("B");
                 _formScoreBoard.SetTime(_matchTime);
                 UpdateTime(_matchTime);
-                _serialDevices.SirenStart(SirenType.SHORT);
+                _serialDevices.SirenStart(SirenType.Short);
             }
         }
 
@@ -885,19 +793,19 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
-        public void UpdateTeams(Database parDB)
+        public void UpdateTeams(Database parDb)
         {
-            if (parDB.TeamList != null)
+            if (parDb.TeamList != null)
             {
-                _databaseGame.TeamList = parDB.TeamList;
+                _databaseGame.TeamList = parDb.TeamList;
             }
         }
 
-        public void UpdateAds(Database parDB)
+        public void UpdateAds(Database parDb)
         {
-            if (parDB.AdvList != null)
+            if (parDb.AdvList != null)
             {
-                _databaseGame.AdvList = parDB.AdvList;
+                _databaseGame.AdvList = parDb.AdvList;
             }
         }
 
@@ -926,7 +834,7 @@ namespace Scoreboard.Forms.MainGameForms
             {
                 if (Equals(TeamsDBT1.Text,team2NameBox.Text))
                 {
-                    MessageBox.Show("Select different teams!", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(@"Select different teams!", @"Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 string name = TeamsDBT1.Text;
@@ -943,7 +851,7 @@ namespace Scoreboard.Forms.MainGameForms
             }
             else
             {
-                MessageBox.Show("Database not connected", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Database not connected", @"Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -954,7 +862,7 @@ namespace Scoreboard.Forms.MainGameForms
             {
                 if (Equals(team1NameBox.Text,TeamsDBT2.Text))
                 {
-                    MessageBox.Show("Select different teams!", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(@"Select different teams!", @"Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 Team selected = (Team) TeamsDBT2.SelectedItem;
@@ -970,7 +878,7 @@ namespace Scoreboard.Forms.MainGameForms
             }
             else
             {
-                MessageBox.Show("Database not connected", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Database not connected", "Load from DB", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -978,7 +886,6 @@ namespace Scoreboard.Forms.MainGameForms
         {
             if (File.Exists(parPath))
             {
-                //_videoPlayerForm = new VideoPlayerForm();
                 _videoPlayerForm.VideoPath = parPath;
                 _videoPlayerForm.Show();
                 _videoPlayerForm.PlayVideo();
@@ -1036,7 +943,6 @@ namespace Scoreboard.Forms.MainGameForms
             open.Filter = "Video Files(*.mp4)|*.mp4";  
             open.InitialDirectory = Environment.CurrentDirectory+ "\\Videos\\Intro";
             if (open.ShowDialog() == DialogResult.OK) {
-                //if (_videoPlayerForm == null) _videoPlayerForm = new VideoPlayerForm();
                 _videoPlayerForm.VideoPath = open.FileName;
                 videoPath2.Text = _videoPlayerForm.VideoPath;
             }
@@ -1048,7 +954,6 @@ namespace Scoreboard.Forms.MainGameForms
             open.Filter = "Video Files(*.mp4)|*.mp4";  
             open.InitialDirectory = Environment.CurrentDirectory+ "\\Videos\\Intro";
             if (open.ShowDialog() == DialogResult.OK) {
-                //if (_videoPlayerForm == null) _videoPlayerForm = new VideoPlayerForm();
                 _videoPlayerForm.VideoPath = open.FileName;
                 videoPath1.Text = _videoPlayerForm.VideoPath;
             }
@@ -1082,7 +987,7 @@ namespace Scoreboard.Forms.MainGameForms
             catch (Exception ex)
             {
                 _databaseGame = new Database();
-                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"Import database error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -1122,7 +1027,7 @@ namespace Scoreboard.Forms.MainGameForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Export database error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -1268,38 +1173,6 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
-        private void importToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (_formScoreBoard.IsActive)
-            {
-                if (_controlForm == null || _controlForm.IsDisposed)
-                {
-                    _controlForm = new ControlForm(_formScoreBoard);
-                }
-                _controlForm.ControlImport();
-            }
-            else
-            {
-                MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void exportToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (_formScoreBoard.IsActive)
-            {
-                if (_controlForm == null || _controlForm.IsDisposed) 
-                {
-                    _controlForm = new ControlForm(_formScoreBoard);
-                }
-                _controlForm.ControlExport();
-            }
-            else
-            {
-                MessageBox.Show(@"You have to create scoreboard at first!" , @"Add team Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void setPT1P1_Click(object sender, EventArgs e)
         {
             SetPenalty(1);
@@ -1374,7 +1247,7 @@ namespace Scoreboard.Forms.MainGameForms
                         break;
                 }
                 InitBoards();
-                _serialDevices.SirenStart(SirenType.SHORT);
+                _serialDevices.SirenStart(SirenType.Short);
             }
         }
 
@@ -1587,7 +1460,7 @@ namespace Scoreboard.Forms.MainGameForms
             help.ShowDialog();
             if (help.DialogResult == DialogResult.OK)
             {
-                _matchStats.CreateManualEvent(help.Description,help.Name);
+                _matchStats.CreateManualEvent(help.Description,help.EventName);
             }
         }
 

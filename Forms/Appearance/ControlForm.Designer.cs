@@ -176,7 +176,7 @@
             0,
             0,
             0});
-            this.scoreBWidth.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.scoreBWidth.ValueChanged += new System.EventHandler(this.scoreBWidth_ValueChanged);
             // 
             // scoreBHeight
             // 
@@ -194,7 +194,7 @@
             0,
             0,
             0});
-            this.scoreBHeight.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.scoreBHeight.ValueChanged += new System.EventHandler(this.scoreBHeight_ValueChanged);
             // 
             // blackBcgrBtn
             // 

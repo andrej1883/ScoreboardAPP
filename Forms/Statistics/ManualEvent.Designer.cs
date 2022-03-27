@@ -101,7 +101,7 @@
             this.Controls.Add(this.eventDescription);
             this.Controls.Add(this.eventName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "ManualEvent";
+            this.EventName = "ManualEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create custom event";
             this.ResumeLayout(false);

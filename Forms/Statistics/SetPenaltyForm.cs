@@ -63,7 +63,6 @@ namespace Scoreboard.Forms.Statistics
                 pMinutes.Value = _times.LongPenaltyLength.Minutes;
                 pSeconds.Value = _times.LongPenaltyLength.Seconds;
             }
-
         }
 
         private void selectPlayer_SelectedIndexChanged(object sender, EventArgs e)

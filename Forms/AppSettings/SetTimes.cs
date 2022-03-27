@@ -8,14 +8,14 @@ namespace Scoreboard.Forms.AppSettings
 {
     public partial class SetTimes : Form
     {
-        private Time _periodLength = new Time() {Minutes = 20, Seconds = 0};
-        private Time _breakLength = new Time() {Minutes = 15, Seconds = 0};
-        private Time _timeoutLength = new Time() {Minutes = 1, Seconds = 0};
-        private Time _shortPenaltyLength = new Time() {Minutes = 2, Seconds = 0};
-        private Time _longPenaltyLength = new Time() {Minutes = 5, Seconds = 0};
-        private Time _preMatchTime = new Time() {Minutes = 10, Seconds = 0};
-        private Time _periodOvertLength = new Time() {Minutes = 10, Seconds = 0};
-        private Time _breakOvertLength = new Time() {Minutes = 5, Seconds = 0};
+        private Time _periodLength = new() {Minutes = 20, Seconds = 0};
+        private Time _breakLength = new() {Minutes = 15, Seconds = 0};
+        private Time _timeoutLength = new() {Minutes = 1, Seconds = 0};
+        private Time _shortPenaltyLength = new() {Minutes = 2, Seconds = 0};
+        private Time _longPenaltyLength = new() {Minutes = 5, Seconds = 0};
+        private Time _preMatchTime = new() {Minutes = 10, Seconds = 0};
+        private Time _periodOvertLength = new() {Minutes = 10, Seconds = 0};
+        private Time _breakOvertLength = new() {Minutes = 5, Seconds = 0};
         private GameForm _parentForm;
 
         public Time PeriodLength
@@ -135,7 +135,7 @@ namespace Scoreboard.Forms.AppSettings
         {
             foreach (NumericUpDown upDown in Controls.OfType<NumericUpDown>())
             {
-                if (String.IsNullOrWhiteSpace(upDown.Text))
+                if (string.IsNullOrWhiteSpace(upDown.Text))
                 {
                     upDown.Value = 0;
                 }

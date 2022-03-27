@@ -75,6 +75,5 @@ namespace Scoreboard.Forms.DBForms
         {
             Dispose();
         }
-
     }
 }

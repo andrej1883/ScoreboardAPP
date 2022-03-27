@@ -31,13 +31,12 @@ namespace Scoreboard.Forms.DBForms
         
         private void addVideo_Click(object sender, EventArgs e)
         {
-            string path = null;
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Video Files(*.mp4)|*.mp4";  
             open.InitialDirectory = Environment.CurrentDirectory+ "\\Videos\\Ads";
             if (open.ShowDialog() == DialogResult.OK) 
             {
-                path = open.FileName;
+                string path = open.FileName;
                 var help = new Advertisement() {Path = path};
                 _database.AddAdv(help);
                 UpdateGv();
@@ -52,7 +51,6 @@ namespace Scoreboard.Forms.DBForms
                 UpdateGv();
             }
         }
-
 
         private void done_Click(object sender, EventArgs e)
         {

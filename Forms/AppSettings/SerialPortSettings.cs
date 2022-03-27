@@ -15,8 +15,8 @@ namespace Scoreboard.Forms
 {
     public partial class SerialPortSettings : Form
     {
-        private const byte STX = 2;
-        private const byte ETX = 3;
+        private const byte Stx = 2;
+        private const byte Etx = 3;
         private const int MessageCount = 1;
         private const int WaitingTime = 1;
 
@@ -85,7 +85,7 @@ namespace Scoreboard.Forms
             return checkSum;
         }
 
-        public void SendMessage(byte[] parMessage)
+        private void SendMessage(byte[] parMessage)
         {
             if (_commPort.IsOpen)
                 for (var i = 0; i < MessageCount; i++)
@@ -104,36 +104,36 @@ namespace Scoreboard.Forms
 
             switch (parType)
             {
-                case SirenType.SHORT:
+                case SirenType.Short:
                     byteArray = new byte[5];
-                    byteArray[0] = STX;
+                    byteArray[0] = Stx;
                     byteArray[1] = (byte) 'S';
                     byteArray[2] = (byte) '3';
-                    byteArray[3] = ETX;
+                    byteArray[3] = Etx;
                     break;
 
-                case SirenType.NORMAL:
+                case SirenType.Normal:
                     byteArray = new byte[5];
-                    byteArray[0] = STX;
+                    byteArray[0] = Stx;
                     byteArray[1] = (byte) 'S';
                     byteArray[2] = (byte) '1';
-                    byteArray[3] = ETX;
+                    byteArray[3] = Etx;
                     break;
 
-                case SirenType.LONG:
+                case SirenType.Long:
                     byteArray = new byte[5];
-                    byteArray[0] = STX;
+                    byteArray[0] = Stx;
                     byteArray[1] = (byte) 'S';
                     byteArray[2] = (byte) '2';
-                    byteArray[3] = ETX;
+                    byteArray[3] = Etx;
                     break;
 
-                case SirenType.DISRUPTED:
+                case SirenType.Disrupted:
                     byteArray = new byte[5];
-                    byteArray[0] = STX;
+                    byteArray[0] = Stx;
                     byteArray[1] = (byte) 'S';
                     byteArray[2] = (byte) '5';
-                    byteArray[3] = ETX;
+                    byteArray[3] = Etx;
                     break;
 
                 default:

@@ -62,8 +62,8 @@ namespace Scoreboard.Forms.DBForms
             // 
             // nameDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "EventName";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "EventName";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // videoPathDataGridViewTextBoxColumn

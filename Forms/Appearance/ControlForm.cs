@@ -12,23 +12,24 @@ namespace Scoreboard.Forms.Appearance
     {
 
         private ScoreboardForm _formScoreBoard;
-        private bool _blackActive = false;
-        private Form _blacForm = null;
-        private bool _fOpen = false;
         private ColorDialog _colorDial;
         private FontDialog _fontDial;
+        private Form _blacForm = null;
 
+        private bool _blackActive = false;
+        private bool _fOpen = false;
+        
         public bool BlackActive
         {
             get => _blackActive;
             set => _blackActive = value;
         }
-
         public Form BlacForm
         {
             get => _blacForm;
             set => _blacForm = value;
         }
+
 
         public ControlForm(ScoreboardForm parForm)
         {
@@ -38,7 +39,6 @@ namespace Scoreboard.Forms.Appearance
             _colorDial.AnyColor = true;
             _colorDial.SolidColorOnly = false;
             _fontDial = new FontDialog();
-            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
@@ -59,7 +59,7 @@ namespace Scoreboard.Forms.Appearance
             }
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void scoreBWidth_ValueChanged(object sender, EventArgs e)
         {
             if (!_fOpen)
             {
@@ -72,7 +72,7 @@ namespace Scoreboard.Forms.Appearance
             _formScoreBoard.MoveComponents();
         }
 
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        private void scoreBHeight_ValueChanged(object sender, EventArgs e)
         {
             if (!_fOpen)
             {
@@ -102,11 +102,13 @@ namespace Scoreboard.Forms.Appearance
                 _blacForm.StartPosition = FormStartPosition.Manual;
                 _blacForm.Show();
                 _blackActive = true;
+                blackBcgrBtn.ForeColor = Color.DarkRed;
             }
             else
             {
                 _blacForm.Dispose();
                 _blackActive = false;
+                blackBcgrBtn.ForeColor = DefaultForeColor;
             }
 
         }
@@ -190,7 +192,7 @@ namespace Scoreboard.Forms.Appearance
             catch (Exception ex)
             {
                 set = new ScoreboardSettings();
-                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"Import appearance error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -228,7 +230,7 @@ namespace Scoreboard.Forms.Appearance
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "nazovProgramuString", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"Export appearance error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

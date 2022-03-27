@@ -96,7 +96,7 @@
             this.t1Lbl.TabIndex = 2;
             this.t1Lbl.Text = "Team1";
             this.t1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.toolTip1.SetToolTip(this.t1Lbl, "Team 1 Name");
+            this.toolTip1.SetToolTip(this.t1Lbl, "Team 1 EventName");
             this.t1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.t1Lbl_MouseDown);
             this.t1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.t1Lbl_MouseMove);
             // 
@@ -111,7 +111,7 @@
             this.t2Lbl.TabIndex = 3;
             this.t2Lbl.Text = "Team2";
             this.t2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.toolTip1.SetToolTip(this.t2Lbl, "Team 2 Name");
+            this.toolTip1.SetToolTip(this.t2Lbl, "Team 2 EventName");
             this.t2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.t2Lbl_MouseDown);
             this.t2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.t2Lbl_MouseMove);
             // 

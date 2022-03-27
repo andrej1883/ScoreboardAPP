@@ -9,6 +9,11 @@ namespace Scoreboard.Forms.MainGameForms
 {
     public partial class ScoreboardForm : Form
     {
+        private int _gridSize = 50;
+        private bool _isLocked = true;
+        private Point _mouseClick;
+        private static ScoreboardForm _instance;
+
         public bool IsActive { get; set; }
 
         public Color ScoSColor
@@ -308,7 +313,6 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
-
         public Size LogoSize
         {
             get => team1Logo.Size;
@@ -318,8 +322,6 @@ namespace Scoreboard.Forms.MainGameForms
                 team2Logo.Size = value;
             }
         }
-
-        private bool _isLocked = true;
 
         public bool IsLocked
         {
@@ -341,17 +343,11 @@ namespace Scoreboard.Forms.MainGameForms
             }
         }
 
-        private int _gridSize = 50;
-
         public int GridSize
         {
             get => _gridSize;
             set => _gridSize = value;
         }
-
-        private Point mouseClick;
-
-        private static ScoreboardForm _instance;
 
         internal static ScoreboardForm GetInstance()
         {
@@ -622,7 +618,7 @@ namespace Scoreboard.Forms.MainGameForms
         {
             if (e.Button == MouseButtons.Left && !_isLocked)
             {
-                mouseClick = e.Location;
+                _mouseClick = e.Location;
             }
         }
 
@@ -630,10 +626,10 @@ namespace Scoreboard.Forms.MainGameForms
         {
             if (e.Button == MouseButtons.Left && !_isLocked)
             {
-                var y = e.Y - mouseClick.X;
+                var y = e.Y - _mouseClick.X;
                 y -= y % _gridSize;
                 toBeMoved.Top += y;
-                var x = e.X - mouseClick.X;
+                var x = e.X - _mouseClick.X;
                 x -= x % _gridSize;
                 toBeMoved.Left += x;
             }
@@ -709,10 +705,6 @@ namespace Scoreboard.Forms.MainGameForms
                 }
             }
         }
-
-
-
-
 
 
 

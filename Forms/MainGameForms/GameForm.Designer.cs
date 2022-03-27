@@ -502,7 +502,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 42;
-            this.label2.Text = "Team 1 Name:";
+            this.label2.Text = "Team 1 EventName:";
             // 
             // team1NameBox
             // 
@@ -685,7 +685,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 58;
-            this.label7.Text = "Team 2 Name:";
+            this.label7.Text = "Team 2 EventName:";
             // 
             // resetT1P1
             // 

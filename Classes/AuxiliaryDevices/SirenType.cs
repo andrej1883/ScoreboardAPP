@@ -2,8 +2,8 @@
 
 public enum SirenType
 {
-    SHORT,
-    NORMAL,
-    LONG,
-    DISRUPTED
+    Short,
+    Normal,
+    Long,
+    Disrupted
 }

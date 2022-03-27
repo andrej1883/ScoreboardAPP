@@ -108,7 +108,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Team Name:";
+            this.label1.Text = "Team EventName:";
             // 
             // label2
             // 
