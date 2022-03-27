@@ -1,161 +1,157 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Scoreboard.Classes.AuxiliaryDevices;
+using static System.IO.Ports.SerialPort;
 
-namespace Scoreboard.Forms
+namespace Scoreboard.Forms.AppSettings;
+
+public partial class SerialPortSettings : Form
 {
-    public partial class SerialPortSettings : Form
+    private const byte Stx = 2;
+    private const byte Etx = 3;
+    private const int MessageCount = 1;
+    private const int WaitingTime = 1;
+
+    private readonly SerialPort _commPort;
+
+
+    public SerialPortSettings()
     {
-        private const byte Stx = 2;
-        private const byte Etx = 3;
-        private const int MessageCount = 1;
-        private const int WaitingTime = 1;
+        InitializeComponent();
+        _commPort = new SerialPort();
+        MaximizeBox = false;
+        ControlBox = false;
+    }
 
-        private SerialPort _commPort;
+    private void SerialPortSettingsLoad(object parSender, EventArgs parE)
+    {
+        var ports = GetPortNames();
+        foreach (var port in ports)
+            activePorts.Items.Add(port);
+        disconnectPort.Enabled = false;
+            
 
+            
+    }
 
-        public SerialPortSettings()
+    private void ConnectToPortClick(object parSender, EventArgs parE)
+    {
+        try
         {
-            InitializeComponent();
-            _commPort = new SerialPort();
-            MaximizeBox = false;
-            ControlBox = false;
+            _commPort.PortName = activePorts.Text;
+            _commPort.Open();
+            if (!_commPort.IsOpen) return;
+            disconnectPort.Enabled = true;
+            connectToPort.Enabled = false;
+            connectStatus.Text = $@"Connected to: {_commPort.PortName}";
+            activePorts.Enabled = false;
         }
-
-        private void SerialPortSettings_Load(object sender, EventArgs e)
+        catch (Exception exception)
         {
-            activePorts.Items.AddRange(SerialPort.GetPortNames());
+            MessageBox.Show(exception.Message, @"Connect error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void DisconnectPortClick(object parSender, EventArgs parE)
+    {
+        try
+        {
+            _commPort.Close();
+            if (_commPort.IsOpen) return;
             disconnectPort.Enabled = false;
+            connectToPort.Enabled = true;
+            connectStatus.Text = @"Disconnected";
+            activePorts.Enabled = true;
         }
-
-        private void connectToPort_Click(object sender, EventArgs e)
+        catch (Exception exception)
         {
-            try
-            {
-                _commPort.PortName = activePorts.Text;
-                _commPort.Open();
-                if (_commPort.IsOpen)
-                {
-                    disconnectPort.Enabled = true;
-                    connectToPort.Enabled = false;
-                    connectStatus.Text = "Connected to: " + _commPort.PortName;
-                    activePorts.Enabled = false;
-                }
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Connect error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            MessageBox.Show(exception.Message, @"Disconnect error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+    }
 
-        private void disconnectPort_Click(object sender, EventArgs e)
+    private static byte GetCheckSum(byte[] parPacket)
+    {
+        if (parPacket.Length == 0)
+            throw new ArgumentException(@"Value cannot be an empty collection.", nameof(parPacket));
+        byte checkSum = 0;
+
+        for (var i = 0; i < parPacket.Length - 1; i++) checkSum ^= parPacket[i];
+
+        return checkSum;
+    }
+
+    private void SendMessage(byte[] parMessage)
+    {
+        if (!_commPort.IsOpen) return;
+        for (var i = 0; i < MessageCount; i++)
         {
-            try
-            {
-                _commPort.Close();
-                if (!_commPort.IsOpen)
-                {
-                    disconnectPort.Enabled = false;
-                    connectToPort.Enabled = true;
-                    connectStatus.Text = "Disconnected";
-                    activePorts.Enabled = true;
-                }
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Disconnect error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+            _commPort.ReadTimeout = WaitingTime;
+            _commPort.DiscardInBuffer();
+            _commPort.Write(parMessage, 0, parMessage.Length);
 
-        public byte GetCheckSum(byte[] parPacket)
+            if (i < MessageCount - 1) Thread.Sleep(WaitingTime);
+        }
+    }
+
+    public void SirenStart(SirenType parType)
+    {
+        byte[] byteArray;
+
+        switch (parType)
         {
-            byte checkSum = 0;
+            case SirenType.Short:
+                byteArray = new byte[5];
+                byteArray[0] = Stx;
+                byteArray[1] = (byte) 'S';
+                byteArray[2] = (byte) '3';
+                byteArray[3] = Etx;
+                break;
 
-            for (var i = 0; i < parPacket.Length - 1; i++) checkSum ^= parPacket[i];
+            case SirenType.Normal:
+                byteArray = new byte[5];
+                byteArray[0] = Stx;
+                byteArray[1] = (byte) 'S';
+                byteArray[2] = (byte) '1';
+                byteArray[3] = Etx;
+                break;
 
-            return checkSum;
+            case SirenType.Long:
+                byteArray = new byte[5];
+                byteArray[0] = Stx;
+                byteArray[1] = (byte) 'S';
+                byteArray[2] = (byte) '2';
+                byteArray[3] = Etx;
+                break;
+
+            case SirenType.Disrupted:
+                byteArray = new byte[5];
+                byteArray[0] = Stx;
+                byteArray[1] = (byte) 'S';
+                byteArray[2] = (byte) '5';
+                byteArray[3] = Etx;
+                break;
+
+            default:
+                return;
         }
 
-        private void SendMessage(byte[] parMessage)
+        byteArray[byteArray.Length - 1] = GetCheckSum(byteArray);
+        SendMessage(byteArray);
+    }
+
+    private void ConfirmBtnClick(object parSender, EventArgs parE)
+    {
+        Hide();
+    }
+
+    private void CancelBtnClick(object parSender, EventArgs parE)
+    {
+        if (_commPort.IsOpen)
         {
-            if (_commPort.IsOpen)
-                for (var i = 0; i < MessageCount; i++)
-                {
-                    _commPort.ReadTimeout = WaitingTime;
-                    _commPort.DiscardInBuffer();
-                    _commPort.Write(parMessage, 0, parMessage.Length);
-
-                    if (i < MessageCount - 1) Thread.Sleep(WaitingTime);
-                }
+            _commPort.Close();
         }
-
-        public void SirenStart(SirenType parType)
-        {
-            byte[] byteArray = null;
-
-            switch (parType)
-            {
-                case SirenType.Short:
-                    byteArray = new byte[5];
-                    byteArray[0] = Stx;
-                    byteArray[1] = (byte) 'S';
-                    byteArray[2] = (byte) '3';
-                    byteArray[3] = Etx;
-                    break;
-
-                case SirenType.Normal:
-                    byteArray = new byte[5];
-                    byteArray[0] = Stx;
-                    byteArray[1] = (byte) 'S';
-                    byteArray[2] = (byte) '1';
-                    byteArray[3] = Etx;
-                    break;
-
-                case SirenType.Long:
-                    byteArray = new byte[5];
-                    byteArray[0] = Stx;
-                    byteArray[1] = (byte) 'S';
-                    byteArray[2] = (byte) '2';
-                    byteArray[3] = Etx;
-                    break;
-
-                case SirenType.Disrupted:
-                    byteArray = new byte[5];
-                    byteArray[0] = Stx;
-                    byteArray[1] = (byte) 'S';
-                    byteArray[2] = (byte) '5';
-                    byteArray[3] = Etx;
-                    break;
-
-                default:
-                    return;
-            }
-
-            byteArray[byteArray.Length - 1] = GetCheckSum(byteArray);
-            SendMessage(byteArray);
-        }
-
-        private void confirmBtn_Click(object sender, EventArgs e)
-        {
-            Hide();
-        }
-
-        private void cancelBtn_Click(object sender, EventArgs e)
-        {
-            if (_commPort.IsOpen)
-            {
-                _commPort.Close();
-            }
-            Dispose();
-        }
+        Dispose();
     }
 }

@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms.Appearance
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.Appearance
 {
     partial class ControlForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -176,7 +179,7 @@
             0,
             0,
             0});
-            this.scoreBWidth.ValueChanged += new System.EventHandler(this.scoreBWidth_ValueChanged);
+            this.scoreBWidth.ValueChanged += new System.EventHandler(this.ScoreBWidthValueChanged);
             // 
             // scoreBHeight
             // 
@@ -194,7 +197,7 @@
             0,
             0,
             0});
-            this.scoreBHeight.ValueChanged += new System.EventHandler(this.scoreBHeight_ValueChanged);
+            this.scoreBHeight.ValueChanged += new System.EventHandler(this.ScoreBHeightValueChanged);
             // 
             // blackBcgrBtn
             // 
@@ -204,7 +207,7 @@
             this.blackBcgrBtn.TabIndex = 3;
             this.blackBcgrBtn.Text = "Black bacground";
             this.blackBcgrBtn.UseVisualStyleBackColor = true;
-            this.blackBcgrBtn.Click += new System.EventHandler(this.blackBcgrBtn_Click);
+            this.blackBcgrBtn.Click += new System.EventHandler(this.BlackBcgrBtnClick);
             // 
             // widthLbl
             // 
@@ -235,7 +238,7 @@
             this.centerScoreBtn.TabIndex = 7;
             this.centerScoreBtn.Text = "Center Scoreboard";
             this.centerScoreBtn.UseVisualStyleBackColor = true;
-            this.centerScoreBtn.Click += new System.EventHandler(this.centerScoreBtn_Click_1);
+            this.centerScoreBtn.Click += new System.EventHandler(this.CenterScoreBtnClick1);
             // 
             // kv1Btn
             // 
@@ -245,7 +248,7 @@
             this.kv1Btn.TabIndex = 8;
             this.kv1Btn.Text = "1st Kvadrant";
             this.kv1Btn.UseVisualStyleBackColor = true;
-            this.kv1Btn.Click += new System.EventHandler(this.kv1Btn_Click);
+            this.kv1Btn.Click += new System.EventHandler(this.Kv1BtnClick);
             // 
             // kv2Btn
             // 
@@ -255,7 +258,7 @@
             this.kv2Btn.TabIndex = 9;
             this.kv2Btn.Text = "2nd Kvadrant";
             this.kv2Btn.UseVisualStyleBackColor = true;
-            this.kv2Btn.Click += new System.EventHandler(this.kv2Btn_Click);
+            this.kv2Btn.Click += new System.EventHandler(this.Kv2BtnClick);
             // 
             // kv3Btn
             // 
@@ -265,7 +268,7 @@
             this.kv3Btn.TabIndex = 10;
             this.kv3Btn.Text = "3rd Kvadrant";
             this.kv3Btn.UseVisualStyleBackColor = true;
-            this.kv3Btn.Click += new System.EventHandler(this.kv3Btn_Click);
+            this.kv3Btn.Click += new System.EventHandler(this.Kv3BtnClick);
             // 
             // kv4Btn
             // 
@@ -275,7 +278,7 @@
             this.kv4Btn.TabIndex = 11;
             this.kv4Btn.Text = "4th Kvadrant";
             this.kv4Btn.UseVisualStyleBackColor = true;
-            this.kv4Btn.Click += new System.EventHandler(this.kv4Btn_Click);
+            this.kv4Btn.Click += new System.EventHandler(this.Kv4BtnClick);
             // 
             // scoreSettingBox
             // 
@@ -309,7 +312,7 @@
             this.setSizeSS.TabIndex = 21;
             this.setSizeSS.Text = "Set Font";
             this.setSizeSS.UseVisualStyleBackColor = true;
-            this.setSizeSS.Click += new System.EventHandler(this.setSizeSS_Click);
+            this.setSizeSS.Click += new System.EventHandler(this.SetSizeSsClick);
             // 
             // setColorSS
             // 
@@ -319,7 +322,7 @@
             this.setColorSS.TabIndex = 19;
             this.setColorSS.Text = "Set Color";
             this.setColorSS.UseVisualStyleBackColor = true;
-            this.setColorSS.Click += new System.EventHandler(this.setColorSS_Click);
+            this.setColorSS.Click += new System.EventHandler(this.SetColorSsClick);
             // 
             // label3
             // 
@@ -360,7 +363,7 @@
             this.setSizeSL.TabIndex = 19;
             this.setSizeSL.Text = "Set Font";
             this.setSizeSL.UseVisualStyleBackColor = true;
-            this.setSizeSL.Click += new System.EventHandler(this.setSizeSL_Click);
+            this.setSizeSL.Click += new System.EventHandler(this.SetSizeSlClick);
             // 
             // label2
             // 
@@ -379,7 +382,7 @@
             this.setColorSL.TabIndex = 18;
             this.setColorSL.Text = "Set Color";
             this.setColorSL.UseVisualStyleBackColor = true;
-            this.setColorSL.Click += new System.EventHandler(this.SetColorSL_Click);
+            this.setColorSL.Click += new System.EventHandler(this.SetColorSlClick);
             // 
             // label1
             // 
@@ -422,7 +425,7 @@
             this.setSizePP.TabIndex = 30;
             this.setSizePP.Text = "Set Font";
             this.setSizePP.UseVisualStyleBackColor = true;
-            this.setSizePP.Click += new System.EventHandler(this.setSizePP_Click);
+            this.setSizePP.Click += new System.EventHandler(this.SetSizePpClick);
             // 
             // label14
             // 
@@ -450,7 +453,7 @@
             this.setColorPP.TabIndex = 23;
             this.setColorPP.Text = "Set Color";
             this.setColorPP.UseVisualStyleBackColor = true;
-            this.setColorPP.Click += new System.EventHandler(this.setColorPP_Click);
+            this.setColorPP.Click += new System.EventHandler(this.SetColorPpClick);
             // 
             // periodGBLabel
             // 
@@ -473,7 +476,7 @@
             this.setSizePL.TabIndex = 28;
             this.setSizePL.Text = "Set Font";
             this.setSizePL.UseVisualStyleBackColor = true;
-            this.setSizePL.Click += new System.EventHandler(this.setSizePL_Click);
+            this.setSizePL.Click += new System.EventHandler(this.SetSizePlClick);
             // 
             // label13
             // 
@@ -501,7 +504,7 @@
             this.setColorPL.TabIndex = 22;
             this.setColorPL.Text = "Set Color";
             this.setColorPL.UseVisualStyleBackColor = true;
-            this.setColorPL.Click += new System.EventHandler(this.setColorPL_Click);
+            this.setColorPL.Click += new System.EventHandler(this.SetColorPlClick);
             // 
             // timeSettingsBox
             // 
@@ -536,7 +539,7 @@
             this.setSizeTC.TabIndex = 25;
             this.setSizeTC.Text = "Set Font";
             this.setSizeTC.UseVisualStyleBackColor = true;
-            this.setSizeTC.Click += new System.EventHandler(this.setSizeTC_Click);
+            this.setSizeTC.Click += new System.EventHandler(this.SetSizeTcClick);
             // 
             // setColorTC
             // 
@@ -546,7 +549,7 @@
             this.setColorTC.TabIndex = 21;
             this.setColorTC.Text = "Set Color";
             this.setColorTC.UseVisualStyleBackColor = true;
-            this.setColorTC.Click += new System.EventHandler(this.setColorTC_Click);
+            this.setColorTC.Click += new System.EventHandler(this.SetColorTcClick);
             // 
             // label5
             // 
@@ -587,7 +590,7 @@
             this.setSizeTL.TabIndex = 23;
             this.setSizeTL.Text = "Set Font";
             this.setSizeTL.UseVisualStyleBackColor = true;
-            this.setSizeTL.Click += new System.EventHandler(this.setSizeTL_Click);
+            this.setSizeTL.Click += new System.EventHandler(this.SetSizeTlClick);
             // 
             // label11
             // 
@@ -615,7 +618,7 @@
             this.setColorTL.TabIndex = 20;
             this.setColorTL.Text = "Set Color";
             this.setColorTL.UseVisualStyleBackColor = true;
-            this.setColorTL.Click += new System.EventHandler(this.setColorTL_Click);
+            this.setColorTL.Click += new System.EventHandler(this.SetColorTlClick);
             // 
             // penaltySettingsBox
             // 
@@ -650,7 +653,7 @@
             this.setSizePenData.TabIndex = 34;
             this.setSizePenData.Text = "Set Font";
             this.setSizePenData.UseVisualStyleBackColor = true;
-            this.setSizePenData.Click += new System.EventHandler(this.setSizePenData_Click);
+            this.setSizePenData.Click += new System.EventHandler(this.SetSizePenDataClick);
             // 
             // setColorPenData
             // 
@@ -660,7 +663,7 @@
             this.setColorPenData.TabIndex = 25;
             this.setColorPenData.Text = "Set Color";
             this.setColorPenData.UseVisualStyleBackColor = true;
-            this.setColorPenData.Click += new System.EventHandler(this.setColorPenData_Click);
+            this.setColorPenData.Click += new System.EventHandler(this.SetColorPenDataClick);
             // 
             // label9
             // 
@@ -701,7 +704,7 @@
             this.setSizePenL.TabIndex = 32;
             this.setSizePenL.Text = "Set Font";
             this.setSizePenL.UseVisualStyleBackColor = true;
-            this.setSizePenL.Click += new System.EventHandler(this.setSizePenL_Click);
+            this.setSizePenL.Click += new System.EventHandler(this.SetSizePenLClick);
             // 
             // label15
             // 
@@ -729,7 +732,7 @@
             this.setColorPenL.TabIndex = 24;
             this.setColorPenL.Text = "Set Color";
             this.setColorPenL.UseVisualStyleBackColor = true;
-            this.setColorPenL.Click += new System.EventHandler(this.setColorPenL_Click);
+            this.setColorPenL.Click += new System.EventHandler(this.SetColorPenLClick);
             // 
             // scoreBoardSettingsBox
             // 
@@ -781,7 +784,7 @@
             this.setLogoSize.TabIndex = 27;
             this.setLogoSize.Text = "Set logo size";
             this.setLogoSize.UseVisualStyleBackColor = true;
-            this.setLogoSize.Click += new System.EventHandler(this.setLogoSize_Click);
+            this.setLogoSize.Click += new System.EventHandler(this.SetLogoSizeClick);
             // 
             // label30
             // 
@@ -843,7 +846,7 @@
             this.setGrid.TabIndex = 21;
             this.setGrid.Text = "Set grid";
             this.setGrid.UseVisualStyleBackColor = true;
-            this.setGrid.Click += new System.EventHandler(this.setGrid_Click);
+            this.setGrid.Click += new System.EventHandler(this.SetGridClick);
             // 
             // gridSizeNumeric
             // 
@@ -884,7 +887,7 @@
             this.unlockScoreboard.TabIndex = 18;
             this.unlockScoreboard.Text = "Unlock";
             this.unlockScoreboard.UseVisualStyleBackColor = true;
-            this.unlockScoreboard.Click += new System.EventHandler(this.unlockScoreboard_Click);
+            this.unlockScoreboard.Click += new System.EventHandler(this.UnlockScoreboardClick);
             // 
             // backgrColor
             // 
@@ -894,7 +897,7 @@
             this.backgrColor.TabIndex = 17;
             this.backgrColor.Text = "Set Color";
             this.backgrColor.UseVisualStyleBackColor = true;
-            this.backgrColor.Click += new System.EventHandler(this.backgrColor_Click);
+            this.backgrColor.Click += new System.EventHandler(this.BackgrColorClick);
             // 
             // importSettings
             // 
@@ -904,7 +907,7 @@
             this.importSettings.TabIndex = 15;
             this.importSettings.Text = "Import";
             this.importSettings.UseVisualStyleBackColor = true;
-            this.importSettings.Click += new System.EventHandler(this.importSettings_Click);
+            this.importSettings.Click += new System.EventHandler(this.ImportSettingsClick);
             // 
             // exportSettings
             // 
@@ -914,7 +917,7 @@
             this.exportSettings.TabIndex = 14;
             this.exportSettings.Text = "Export";
             this.exportSettings.UseVisualStyleBackColor = true;
-            this.exportSettings.Click += new System.EventHandler(this.exportSettings_Click);
+            this.exportSettings.Click += new System.EventHandler(this.ExportSettingsClick);
             // 
             // backgroundColorLbl
             // 
@@ -958,7 +961,7 @@
             this.setSizeFace.TabIndex = 34;
             this.setSizeFace.Text = "Set Font";
             this.setSizeFace.UseVisualStyleBackColor = true;
-            this.setSizeFace.Click += new System.EventHandler(this.setSizeFace_Click);
+            this.setSizeFace.Click += new System.EventHandler(this.SetSizeFaceClick);
             // 
             // setColorFace
             // 
@@ -968,7 +971,7 @@
             this.setColorFace.TabIndex = 25;
             this.setColorFace.Text = "Set Color";
             this.setColorFace.UseVisualStyleBackColor = true;
-            this.setColorFace.Click += new System.EventHandler(this.setColorFace_Click);
+            this.setColorFace.Click += new System.EventHandler(this.SetColorFaceClick);
             // 
             // label18
             // 
@@ -1009,7 +1012,7 @@
             this.setSizeFaceL.TabIndex = 32;
             this.setSizeFaceL.Text = "Set Font";
             this.setSizeFaceL.UseVisualStyleBackColor = true;
-            this.setSizeFaceL.Click += new System.EventHandler(this.setSizeFaceL_Click);
+            this.setSizeFaceL.Click += new System.EventHandler(this.SetSizeFaceLClick);
             // 
             // label20
             // 
@@ -1037,7 +1040,7 @@
             this.setColorFaceL.TabIndex = 24;
             this.setColorFaceL.Text = "Set Color";
             this.setColorFaceL.UseVisualStyleBackColor = true;
-            this.setColorFaceL.Click += new System.EventHandler(this.setColorFaceL_Click);
+            this.setColorFaceL.Click += new System.EventHandler(this.SetColorFaceLClick);
             // 
             // groupBox4
             // 
@@ -1071,7 +1074,7 @@
             this.setSizeTimeout.TabIndex = 30;
             this.setSizeTimeout.Text = "Set Font";
             this.setSizeTimeout.UseVisualStyleBackColor = true;
-            this.setSizeTimeout.Click += new System.EventHandler(this.setSizeTimeout_Click);
+            this.setSizeTimeout.Click += new System.EventHandler(this.SetSizeTimeoutClick);
             // 
             // label22
             // 
@@ -1099,7 +1102,7 @@
             this.setColorTimeout.TabIndex = 23;
             this.setColorTimeout.Text = "Set Color";
             this.setColorTimeout.UseVisualStyleBackColor = true;
-            this.setColorTimeout.Click += new System.EventHandler(this.setColorTimeout_Click);
+            this.setColorTimeout.Click += new System.EventHandler(this.SetColorTimeoutClick);
             // 
             // groupBox6
             // 
@@ -1122,7 +1125,7 @@
             this.setSizeTimeoL.TabIndex = 28;
             this.setSizeTimeoL.Text = "Set Font";
             this.setSizeTimeoL.UseVisualStyleBackColor = true;
-            this.setSizeTimeoL.Click += new System.EventHandler(this.setSizeTimeoL_Click);
+            this.setSizeTimeoL.Click += new System.EventHandler(this.SetSizeTimeoLClick);
             // 
             // label24
             // 
@@ -1150,7 +1153,7 @@
             this.setColorTimeoL.TabIndex = 22;
             this.setColorTimeoL.Text = "Set Color";
             this.setColorTimeoL.UseVisualStyleBackColor = true;
-            this.setColorTimeoL.Click += new System.EventHandler(this.setColorTimeoL_Click);
+            this.setColorTimeoL.Click += new System.EventHandler(this.SetColorTimeoLClick);
             // 
             // groupBox7
             // 
@@ -1184,7 +1187,7 @@
             this.setSizeShShot.TabIndex = 30;
             this.setSizeShShot.Text = "Set Font";
             this.setSizeShShot.UseVisualStyleBackColor = true;
-            this.setSizeShShot.Click += new System.EventHandler(this.setSizeShShot_Click);
+            this.setSizeShShot.Click += new System.EventHandler(this.SetSizeShShotClick);
             // 
             // label26
             // 
@@ -1212,7 +1215,7 @@
             this.setColorShShot.TabIndex = 23;
             this.setColorShShot.Text = "Set Color";
             this.setColorShShot.UseVisualStyleBackColor = true;
-            this.setColorShShot.Click += new System.EventHandler(this.setColorShShot_Click);
+            this.setColorShShot.Click += new System.EventHandler(this.SetColorShShotClick);
             // 
             // groupBox9
             // 
@@ -1235,7 +1238,7 @@
             this.setSizeShL.TabIndex = 28;
             this.setSizeShL.Text = "Set Font";
             this.setSizeShL.UseVisualStyleBackColor = true;
-            this.setSizeShL.Click += new System.EventHandler(this.setSizeShL_Click);
+            this.setSizeShL.Click += new System.EventHandler(this.SetSizeShLClick);
             // 
             // label28
             // 
@@ -1263,7 +1266,7 @@
             this.setColorShL.TabIndex = 22;
             this.setColorShL.Text = "Set Color";
             this.setColorShL.UseVisualStyleBackColor = true;
-            this.setColorShL.Click += new System.EventHandler(this.setColorShL_Click);
+            this.setColorShL.Click += new System.EventHandler(this.SetColorShLClick);
             // 
             // ControlForm
             // 
@@ -1282,7 +1285,7 @@
             this.Name = "ControlForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Appearance settings";
-            this.Load += new System.EventHandler(this.ControlForm_Load);
+            this.Load += new System.EventHandler(this.ControlFormLoad);
             ((System.ComponentModel.ISupportInitialize)(this.scoreBWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBHeight)).EndInit();
             this.scoreSettingBox.ResumeLayout(false);
@@ -1332,108 +1335,108 @@
         }
 
         #endregion
-        private System.Windows.Forms.NumericUpDown scoreBWidth;
-        private System.Windows.Forms.NumericUpDown scoreBHeight;
-        private System.Windows.Forms.Button blackBcgrBtn;
-        private System.Windows.Forms.Label widthLbl;
-        private System.Windows.Forms.Label hghtLbl;
-        private System.Windows.Forms.Button centerScoreBtn;
-        private System.Windows.Forms.Button kv1Btn;
-        private System.Windows.Forms.Button kv2Btn;
-        private System.Windows.Forms.Button kv3Btn;
-        private System.Windows.Forms.Button kv4Btn;
-        private System.Windows.Forms.GroupBox scoreSettingBox;
-        private System.Windows.Forms.GroupBox scoreGBScore;
-        private System.Windows.Forms.GroupBox scoreGBLabels;
-        private System.Windows.Forms.GroupBox periodSettingsBox;
-        private System.Windows.Forms.GroupBox periodGBPeriod;
-        private System.Windows.Forms.GroupBox periodGBLabel;
-        private System.Windows.Forms.GroupBox timeSettingsBox;
-        private System.Windows.Forms.GroupBox timeGBClock;
-        private System.Windows.Forms.GroupBox timeGBLabels;
-        private System.Windows.Forms.GroupBox penaltySettingsBox;
-        private System.Windows.Forms.GroupBox penaltyGBPenaltyData;
-        private System.Windows.Forms.GroupBox penaltyGBLabels;
-        private System.Windows.Forms.GroupBox scoreBoardSettingsBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label backgroundColorLbl;
-        private System.Windows.Forms.Button importSettings;
-        private System.Windows.Forms.Button exportSettings;
-        private System.Windows.Forms.Button backgrColor;
-        private System.Windows.Forms.Button setColorSS;
-        private System.Windows.Forms.Button setColorSL;
-        private System.Windows.Forms.Button setColorTC;
-        private System.Windows.Forms.Button setColorTL;
-        private System.Windows.Forms.Button setColorPL;
-        private System.Windows.Forms.Button setColorPP;
-        private System.Windows.Forms.Button setColorPenL;
-        private System.Windows.Forms.Button setColorPenData;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button setSizeSL;
-        private System.Windows.Forms.Button setSizeSS;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button setSizePP;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button setSizePL;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button setSizeTC;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button setSizeTL;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button setSizePenData;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button setSizePenL;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button unlockScoreboard;
-        private System.Windows.Forms.Button setGrid;
-        private System.Windows.Forms.NumericUpDown gridSizeNumeric;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button setSizeFace;
-        private System.Windows.Forms.Button setColorFace;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button setSizeFaceL;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button setColorFaceL;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button setSizeTimeout;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button setColorTimeout;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button setSizeTimeoL;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button setColorTimeoL;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button setSizeShShot;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Button setColorShShot;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button setSizeShL;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Button setColorShL;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Button setLogoSize;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.NumericUpDown logoWidthBox;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.NumericUpDown logoHeightBox;
+        private NumericUpDown scoreBWidth;
+        private NumericUpDown scoreBHeight;
+        private Button blackBcgrBtn;
+        private Label widthLbl;
+        private Label hghtLbl;
+        private Button centerScoreBtn;
+        private Button kv1Btn;
+        private Button kv2Btn;
+        private Button kv3Btn;
+        private Button kv4Btn;
+        private GroupBox scoreSettingBox;
+        private GroupBox scoreGBScore;
+        private GroupBox scoreGBLabels;
+        private GroupBox periodSettingsBox;
+        private GroupBox periodGBPeriod;
+        private GroupBox periodGBLabel;
+        private GroupBox timeSettingsBox;
+        private GroupBox timeGBClock;
+        private GroupBox timeGBLabels;
+        private GroupBox penaltySettingsBox;
+        private GroupBox penaltyGBPenaltyData;
+        private GroupBox penaltyGBLabels;
+        private GroupBox scoreBoardSettingsBox;
+        private Label label2;
+        private Label label1;
+        private Label backgroundColorLbl;
+        private Button importSettings;
+        private Button exportSettings;
+        private Button backgrColor;
+        private Button setColorSS;
+        private Button setColorSL;
+        private Button setColorTC;
+        private Button setColorTL;
+        private Button setColorPL;
+        private Button setColorPP;
+        private Button setColorPenL;
+        private Button setColorPenData;
+        private Label label10;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private Label label11;
+        private Label label16;
+        private Label label15;
+        private Button setSizeSL;
+        private Button setSizeSS;
+        private Label label3;
+        private Button setSizePP;
+        private Label label7;
+        private Button setSizePL;
+        private Label label6;
+        private Button setSizeTC;
+        private Label label5;
+        private Button setSizeTL;
+        private Label label4;
+        private Button setSizePenData;
+        private Label label9;
+        private Button setSizePenL;
+        private Label label8;
+        private Button unlockScoreboard;
+        private Button setGrid;
+        private NumericUpDown gridSizeNumeric;
+        private Label label17;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private Button setSizeFace;
+        private Button setColorFace;
+        private Label label18;
+        private Label label19;
+        private GroupBox groupBox3;
+        private Button setSizeFaceL;
+        private Label label20;
+        private Label label21;
+        private Button setColorFaceL;
+        private GroupBox groupBox4;
+        private GroupBox groupBox5;
+        private Button setSizeTimeout;
+        private Label label22;
+        private Label label23;
+        private Button setColorTimeout;
+        private GroupBox groupBox6;
+        private Button setSizeTimeoL;
+        private Label label24;
+        private Label label25;
+        private Button setColorTimeoL;
+        private GroupBox groupBox7;
+        private GroupBox groupBox8;
+        private Button setSizeShShot;
+        private Label label26;
+        private Label label27;
+        private Button setColorShShot;
+        private GroupBox groupBox9;
+        private Button setSizeShL;
+        private Label label28;
+        private Label label29;
+        private Button setColorShL;
+        private GroupBox groupBox10;
+        private Button setLogoSize;
+        private Label label30;
+        private NumericUpDown logoWidthBox;
+        private Label label31;
+        private NumericUpDown logoHeightBox;
     }
 }
 

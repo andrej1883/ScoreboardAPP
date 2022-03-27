@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms.DBForms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.DBForms
 {
     partial class CreateTeamForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -55,7 +58,7 @@
             this.Create.TabIndex = 1;
             this.Create.Text = "Create";
             this.Create.UseVisualStyleBackColor = true;
-            this.Create.Click += new System.EventHandler(this.Create_Click);
+            this.Create.Click += new System.EventHandler(this.CreateClick);
             // 
             // Cancel
             // 
@@ -65,7 +68,7 @@
             this.Cancel.TabIndex = 2;
             this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            this.Cancel.Click += new System.EventHandler(this.CancelClick);
             // 
             // VideoPath
             // 
@@ -82,7 +85,7 @@
             this.SelectPathVideo.TabIndex = 4;
             this.SelectPathVideo.Text = "Path";
             this.SelectPathVideo.UseVisualStyleBackColor = true;
-            this.SelectPathVideo.Click += new System.EventHandler(this.SelectPath_Click);
+            this.SelectPathVideo.Click += new System.EventHandler(this.SelectPathClick);
             // 
             // SelectPathLogo
             // 
@@ -92,7 +95,7 @@
             this.SelectPathLogo.TabIndex = 6;
             this.SelectPathLogo.Text = "Path";
             this.SelectPathLogo.UseVisualStyleBackColor = true;
-            this.SelectPathLogo.Click += new System.EventHandler(this.SelectPathLogo_Click);
+            this.SelectPathLogo.Click += new System.EventHandler(this.SelectPathLogoClick);
             // 
             // LogoPath
             // 
@@ -154,15 +157,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox TeamName;
-        private System.Windows.Forms.Button Create;
-        private System.Windows.Forms.Button Cancel;
-        private System.Windows.Forms.TextBox VideoPath;
-        private System.Windows.Forms.Button SelectPathVideo;
-        private System.Windows.Forms.Button SelectPathLogo;
-        private System.Windows.Forms.TextBox LogoPath;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private TextBox TeamName;
+        private Button Create;
+        private Button Cancel;
+        private TextBox VideoPath;
+        private Button SelectPathVideo;
+        private Button SelectPathLogo;
+        private TextBox LogoPath;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

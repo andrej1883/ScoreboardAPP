@@ -1,4 +1,5 @@
-﻿using Scoreboard.Classes.Database;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Scoreboard.Forms.DBForms
 {
@@ -7,7 +8,7 @@ namespace Scoreboard.Forms.DBForms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -56,7 +57,7 @@ namespace Scoreboard.Forms.DBForms
             this.done.TabIndex = 19;
             this.done.Text = "Done";
             this.done.UseVisualStyleBackColor = true;
-            this.done.Click += new System.EventHandler(this.done_Click);
+            this.done.Click += new System.EventHandler(this.DoneClick);
             // 
             // removeVideo
             // 
@@ -66,7 +67,7 @@ namespace Scoreboard.Forms.DBForms
             this.removeVideo.TabIndex = 17;
             this.removeVideo.Text = "Remove Video";
             this.removeVideo.UseVisualStyleBackColor = true;
-            this.removeVideo.Click += new System.EventHandler(this.removeVideo_Click);
+            this.removeVideo.Click += new System.EventHandler(this.RemoveVideoClick);
             // 
             // addVideo
             // 
@@ -76,7 +77,7 @@ namespace Scoreboard.Forms.DBForms
             this.addVideo.TabIndex = 16;
             this.addVideo.Text = "Add Video";
             this.addVideo.UseVisualStyleBackColor = true;
-            this.addVideo.Click += new System.EventHandler(this.addVideo_Click);
+            this.addVideo.Click += new System.EventHandler(this.AddVideoClick);
             // 
             // teamListBindingSource
             // 
@@ -147,15 +148,15 @@ namespace Scoreboard.Forms.DBForms
 
         #endregion
 
-        private System.Windows.Forms.Button done;
-        private System.Windows.Forms.Button removeVideo;
-        private System.Windows.Forms.Button addVideo;
-        private System.Windows.Forms.BindingSource databaseBindingSource;
-        private System.Windows.Forms.BindingSource teamListBindingSource;
-        private System.Windows.Forms.BindingSource databaseBindingSource1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pathDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource advListBindingSource;
+        private Button done;
+        private Button removeVideo;
+        private Button addVideo;
+        private BindingSource databaseBindingSource;
+        private BindingSource teamListBindingSource;
+        private BindingSource databaseBindingSource1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn pathDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private BindingSource advListBindingSource;
     }
 }

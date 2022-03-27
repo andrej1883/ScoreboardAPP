@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.AppSettings
 {
     partial class SerialPortSettings
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -55,7 +58,7 @@
             this.connectToPort.TabIndex = 1;
             this.connectToPort.Text = "Connect";
             this.connectToPort.UseVisualStyleBackColor = true;
-            this.connectToPort.Click += new System.EventHandler(this.connectToPort_Click);
+            this.connectToPort.Click += new System.EventHandler(this.ConnectToPortClick);
             // 
             // disconnectPort
             // 
@@ -65,7 +68,7 @@
             this.disconnectPort.TabIndex = 2;
             this.disconnectPort.Text = "Disconnect";
             this.disconnectPort.UseVisualStyleBackColor = true;
-            this.disconnectPort.Click += new System.EventHandler(this.disconnectPort_Click);
+            this.disconnectPort.Click += new System.EventHandler(this.DisconnectPortClick);
             // 
             // label1
             // 
@@ -102,7 +105,7 @@
             this.confirmBtn.TabIndex = 7;
             this.confirmBtn.Text = "Confirm";
             this.confirmBtn.UseVisualStyleBackColor = true;
-            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
+            this.confirmBtn.Click += new System.EventHandler(this.ConfirmBtnClick);
             // 
             // cancelBtn
             // 
@@ -112,7 +115,7 @@
             this.cancelBtn.TabIndex = 8;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.cancelBtn.Click += new System.EventHandler(this.CancelBtnClick);
             // 
             // SerialPortSettings
             // 
@@ -131,7 +134,7 @@
             this.Name = "SerialPortSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auxiliary devices settings";
-            this.Load += new System.EventHandler(this.SerialPortSettings_Load);
+            this.Load += new System.EventHandler(this.SerialPortSettingsLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,13 +142,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox activePorts;
-        private System.Windows.Forms.Button connectToPort;
-        private System.Windows.Forms.Button disconnectPort;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label connectStatus;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button confirmBtn;
-        private System.Windows.Forms.Button cancelBtn;
+        private ComboBox activePorts;
+        private Button connectToPort;
+        private Button disconnectPort;
+        private Label label1;
+        private Label connectStatus;
+        private Label label2;
+        private Button confirmBtn;
+        private Button cancelBtn;
     }
 }

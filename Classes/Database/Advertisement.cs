@@ -1,36 +1,25 @@
 ﻿using System;
 
-namespace Scoreboard.Classes.Database
+namespace Scoreboard.Classes.Database;
+
+[Serializable]
+public class Advertisement
 {
-    [Serializable]
-    public class Advertisement
+    private string _name;
+    private string _path;
+
+    public string Path
     {
-        private string _name;
-        private string _path;
-
-        public Advertisement()
+        get => _path;
+        set
         {
+            _path = value;
+            _name = System.IO.Path.GetFileName(value);
         }
+    }
 
-        public string Name
-        {
-            get => _name;
-            set => _name = value;
-        }
-
-        public string Path
-        {
-            get => _path;
-            set
-            {
-                _path = value;
-                _name = System.IO.Path.GetFileName(value);
-            }
-        }
-
-        public override string ToString()
-        {
-            return $"{_name}";
-        }
+    public override string ToString()
+    {
+        return $"{_name}";
     }
 }

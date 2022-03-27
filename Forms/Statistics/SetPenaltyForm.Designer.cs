@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms.Statistics
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.Statistics
 {
     partial class SetPenaltyForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -65,7 +68,7 @@
             this.selectPlayer.Name = "selectPlayer";
             this.selectPlayer.Size = new System.Drawing.Size(121, 21);
             this.selectPlayer.TabIndex = 0;
-            this.selectPlayer.SelectedIndexChanged += new System.EventHandler(this.selectPlayer_SelectedIndexChanged);
+            this.selectPlayer.SelectedIndexChanged += new System.EventHandler(this.SelectPlayerSelectedIndexChanged);
             // 
             // penaltyTimesCombo
             // 
@@ -75,7 +78,7 @@
             this.penaltyTimesCombo.Name = "penaltyTimesCombo";
             this.penaltyTimesCombo.Size = new System.Drawing.Size(121, 21);
             this.penaltyTimesCombo.TabIndex = 1;
-            this.penaltyTimesCombo.SelectedIndexChanged += new System.EventHandler(this.penaltyTimesCombo_SelectedIndexChanged);
+            this.penaltyTimesCombo.SelectedIndexChanged += new System.EventHandler(this.PenaltyTimesComboSelectedIndexChanged);
             // 
             // label1
             // 
@@ -234,7 +237,7 @@
             this.cancelBtn.TabIndex = 91;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.cancelBtn.Click += new System.EventHandler(this.CancelBtnClick);
             // 
             // savePenaltyBtn
             // 
@@ -244,7 +247,7 @@
             this.savePenaltyBtn.TabIndex = 90;
             this.savePenaltyBtn.Text = "Save";
             this.savePenaltyBtn.UseVisualStyleBackColor = true;
-            this.savePenaltyBtn.Click += new System.EventHandler(this.savePenaltyBtn_Click);
+            this.savePenaltyBtn.Click += new System.EventHandler(this.SavePenaltyBtnClick);
             // 
             // SetPenaltyForm
             // 
@@ -278,23 +281,23 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox selectPlayer;
-        private System.Windows.Forms.ComboBox penaltyTimesCombo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown pMinutes;
-        private System.Windows.Forms.NumericUpDown pSeconds;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown playerNumber;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button savePenaltyBtn;
+        private ComboBox selectPlayer;
+        private ComboBox penaltyTimesCombo;
+        private Label label1;
+        private Label label2;
+        private Label label11;
+        private Label label10;
+        private NumericUpDown pMinutes;
+        private NumericUpDown pSeconds;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private GroupBox groupBox3;
+        private GroupBox groupBox4;
+        private GroupBox groupBox6;
+        private Label label3;
+        private NumericUpDown playerNumber;
+        private GroupBox groupBox5;
+        private Button cancelBtn;
+        private Button savePenaltyBtn;
     }
 }

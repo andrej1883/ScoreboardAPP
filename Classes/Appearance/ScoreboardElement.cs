@@ -49,8 +49,4 @@ public class ScoreboardElement
         get => _position;
         set => _position = value;
     }
-
-    public ScoreboardElement()
-    {
-    }
 }

@@ -1,41 +1,30 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Scoreboard.Forms
+namespace Scoreboard.Forms.Statistics;
+
+public partial class ManualEvent : Form
 {
-    public partial class ManualEvent : Form
+    public string EventName { get; private set; }
+
+    public string Description { get; private set; }
+
+    public ManualEvent()
     {
-        private string _eventName;
-        private string _description;
+        InitializeComponent();
+        MaximizeBox = false;
+    }
 
-        public string EventName
-        {
-            get => _eventName;
-            set => _eventName = value;
-        }
-        public string Description
-        {
-            get => _description;
-            set => _description = value;
-        }
+    private void ConfirmBtnClick(object parSender, EventArgs parE)
+    {
+        EventName = eventName.Text;
+        Description = eventDescription.Text;
+        DialogResult = DialogResult.OK;
+        Dispose();
+    }
 
-        public ManualEvent()
-        {
-            InitializeComponent();
-            MaximizeBox = false;
-        }
-
-        private void confirmBtn_Click(object sender, EventArgs e)
-        {
-            _eventName = eventName.Text;
-            _description = eventDescription.Text;
-            DialogResult = DialogResult.OK;
-            Dispose();
-        }
-
-        private void cancelBtn_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
+    private void CancelBtnClick(object parSender, EventArgs parE)
+    {
+        Dispose();
     }
 }

@@ -189,6 +189,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainGameForms\VideoPlayerForm.resx">
       <DependentUpon>VideoPlayerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AppSettings\StatisticsSettings.resx">
       <DependentUpon>StatisticsSettings.cs</DependentUpon>

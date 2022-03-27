@@ -1,188 +1,146 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using Scoreboard.Classes.Database;
 
-namespace Scoreboard.Classes.GameStatistics
+namespace Scoreboard.Classes.GameStatistics;
+
+public class MatchStatistics
 {
-    public class MatchStatistics
+    private Time _actualTime;
+
+    public string ExpoPath { get; set; }
+
+    public bool ExportEvents { get; set; } = true;
+
+        
+
+    public TeamStatistics[] TeamStats { get; }
+
+    public MatchStatistics(string parTeam1Name, string parTeam2Name)
     {
-        private TeamStatistics[] _teamStats;
-        private List<MatchEvent> _matchEvents;
-        private Time _actualTime;
-        private bool _exportEvents = true;
-        private string _expoPath;
+        TeamStats = new TeamStatistics[2];
+        ResetStats(parTeam1Name,parTeam2Name);
+    }
 
-        public string ExpoPath
-        {
-            get => _expoPath;
-            set => _expoPath = value;
-        }
-        public bool ExportEvents
-        {
-            get => _exportEvents;
-            set => _exportEvents = value;
-        }
-        public List<MatchEvent> MatchEvents
-        {
-            get => _matchEvents;
-            set => _matchEvents = value;
-        }
-        public TeamStatistics[] TeamStats
-        {
-            get => _teamStats;
-            set => _teamStats = value;
-        }
+    public void CreateGoalEvent(int parTeam, Player parPlayerG, Player parPlayerA1, Player parPlayerA2, Time parTime)
+    {
+        UpdateTime(parTime);
+        var team = TeamStats[parTeam - 1];
+        var nameEvent = $"{_actualTime} {team.Name} scored!";
+        var infoEvent =
+            $"{parPlayerG.Name} shot a goal with assistance of: {parPlayerA1.Name} {parPlayerA2.Name}";
+        MatchEvent help = new() {EventName = nameEvent, EventInfo = infoEvent};
+        ExportEvent(help);
+    }
 
-        public MatchStatistics(string team1Name, string team2Name)
+    public void CreatePenaltyEvent(int parTeam, Time parPenalLength)
+    {
+        var team = TeamStats[parTeam - 1];
+        var nameEvent = _actualTime.ToString();
+        var infoEvent = $"Player from team: {team.Name} was sent for penalty: {parPenalLength}";
+        MatchEvent help = new() {EventName = nameEvent, EventInfo = infoEvent};
+        ExportEvent(help);
+    }
+
+    public void EndPenaltyEvent(int parPosition)
+    {
+        var team = parPosition is 0 or 1 ? TeamStats[0] : TeamStats[1];
+
+        var nameEvent = _actualTime.ToString();
+        var infoEvent = $"Penalty for team: {team.Name} has ended";
+        MatchEvent help = new() {EventName = nameEvent, EventInfo = infoEvent};
+        ExportEvent(help);
+    }
+
+    public void CreateFaceOffEvent(int parTeam, Time parTime)
+    {
+        UpdateTime(parTime);
+        var team = TeamStats[parTeam - 1];
+        var nameEvent = _actualTime.ToString();
+        var infoEvent = $"{team.Name} won face-off!";
+        MatchEvent help = new() {EventName = nameEvent, EventInfo = infoEvent};
+        ExportEvent(help);
+    }
+
+    public void CreateTimeoutEvent(int parTeam, Time parTime)
+    {
+        UpdateTime(parTime);
+        var team = TeamStats[parTeam - 1];
+        var nameEvent = _actualTime.ToString();
+        var infoEvent = $"{team.Name} took timeout.";
+        MatchEvent help = new() {EventName = nameEvent, EventInfo = infoEvent};
+        ExportEvent(help);
+    }
+
+    public void CreateStartPeriodEvent(int parPeriod)
+    {
+        var score = string.Empty;
+        if (parPeriod > 1)
         {
-            _matchEvents = new List<MatchEvent>();
-            _teamStats = new TeamStatistics[2];
-            ResetStats(team1Name,team2Name);
+            score =
+                $"with score: {TeamStats[0].Name} {TeamStats[0].Goals} : {TeamStats[1].Goals} {TeamStats[1].Name}";
         }
+        var nameEvent = _actualTime.ToString();
+        var infoEvent = $"{parPeriod}. period started {score}";
+        MatchEvent help = new() {EventName = nameEvent, EventInfo = infoEvent};
+        ExportEvent(help);
+    }
 
-        public void CreateGoalEvent(int parTeam, Player parPlayerG, Player parPlayerA1, Player parPlayerA2, Time parTime)
+    public void CreateLastMinuteEvent(int parPeriod)
+    {
+        var score = $"{TeamStats[0].Name} {TeamStats[0].Goals} : {TeamStats[0].Goals} {TeamStats[1].Name}";
+        var nameEvent = _actualTime.ToString();
+        var infoEvent = $"Last minute of {parPeriod}. period with score: {score}";
+        MatchEvent help = new() {EventName = nameEvent, EventInfo = infoEvent};
+        ExportEvent(help);
+    }
+
+    public void CreateEndPeriodEvent(int parPeriod)
+    {
+        var score = $"{TeamStats[0].Name} {TeamStats[0].Goals} : {TeamStats[0].Goals} {TeamStats[1].Name}";
+        var nameEvent = _actualTime.ToString();
+        var infoEvent = $"{parPeriod}.  started with score: {score}";
+        MatchEvent help = new() {EventName = nameEvent, EventInfo = infoEvent};
+        ExportEvent(help);
+    }
+
+    public void CreateManualEvent(string parInfoEvent, string parNameEvent)
+    {
+        MatchEvent help = new() {EventName = parNameEvent, EventInfo = parInfoEvent};
+        ExportEvent(help);
+    }
+
+    private void SetName(int parTeam, string parName)
+    {
+        TeamStats[parTeam-1].Name = parName;
+    }
+
+    private void UpdateTime(Time parTime)
+    {
+        _actualTime = parTime;
+    }
+
+    private void ExportEvent(MatchEvent parEvent)
+    {
+        ExpoPath ??= $"{Environment.CurrentDirectory}\\Events";
+        if (!ExportEvents) return;
+        if (!Directory.Exists(ExpoPath))
         {
-            UpdateTime(parTime);
-            TeamStatistics team = _teamStats[parTeam - 1];
-            string nameEvent = _actualTime.ToString()+ " " + team.Name + " scored!"  ;
-            string infoEvent = parPlayerG.Name + " shot a goal with assistance of: " + parPlayerA1.Name + " " + parPlayerA2.Name;
-            MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
-            _matchEvents.Add(help);
-            ExportEvent(help);
+            Directory.CreateDirectory(ExpoPath);
         }
+        File.WriteAllText(Path.Combine(ExpoPath, $"{parEvent.EventName}.txt"), parEvent.EventInfo);
+    }
 
-        public void CreatePenaltyEvent(int parTeam, Time penalLength)
+    private void ResetStats(string parTeam1Name, string parTeam2Name)
+    {
+        SetName(1,parTeam1Name);
+        SetName(2,parTeam2Name);
+        for (var i = 0; i < TeamStats.Length; i++)
         {
-            TeamStatistics team = _teamStats[parTeam - 1];
-            string nameEvent = _actualTime.ToString();
-            string infoEvent = "Player from team: "+ team.Name + " was sent for penalty: "+ penalLength.ToString();
-            MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
-            _matchEvents.Add(help);
-            ExportEvent(help);
-        }
-
-        public void EndPenaltyEvent(int parPosition)
-        {
-            TeamStatistics team;
-            if (parPosition == 0 || parPosition == 1)
-            {
-                 team = _teamStats[0];
-            }
-            else
-            {
-                 team = _teamStats[1];
-            }
-
-            string nameEvent = _actualTime.ToString();
-            string infoEvent = "Penalty for team: " + team.Name + " has ended";
-            MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
-            _matchEvents.Add(help);
-            ExportEvent(help);
-        }
-
-        public void CreateFaceOffEvent(int parTeam, Time parTime)
-        {
-            UpdateTime(parTime);
-            TeamStatistics team = _teamStats[parTeam - 1];
-            string nameEvent = _actualTime.ToString();
-            string infoEvent = team.Name + " won face-off!"  ;
-            MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
-            _matchEvents.Add(help);
-            ExportEvent(help);
-        }
-
-        public void CreateTimeoutEvent(int parTeam, Time parTime)
-        {
-            UpdateTime(parTime);
-            TeamStatistics team = _teamStats[parTeam - 1];
-            string nameEvent = _actualTime.ToString();
-            string infoEvent = team.Name + " took timeout."  ;
-            MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
-            _matchEvents.Add(help);
-            ExportEvent(help);
-        }
-
-        public void CreateStartPeriodEvent(int parPeriod)
-        {
-            string score = String.Empty;
-            if (parPeriod > 1)
-            {
-                score = "with score: " + _teamStats[0].Name + " " + _teamStats[0].Goals + " : " + _teamStats[1].Goals + " "+ _teamStats[1].Name;
-            }
-            string nameEvent = _actualTime.ToString();
-            string infoEvent = parPeriod + ". period started " + score;
-            MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
-            _matchEvents.Add(help);
-            ExportEvent(help);
-        }
-
-        public void CreateLastMinuteEvent(int parPeriod)
-        {
-            string score = _teamStats[0].Name + " " + _teamStats[0].Goals + " : " + _teamStats[0].Goals + " "+ _teamStats[1].Name;
-            string nameEvent = _actualTime.ToString();
-            string infoEvent = "Last minute of " + parPeriod + ". period with score: " + score;
-            MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
-            _matchEvents.Add(help);
-            ExportEvent(help);
-        }
-
-        public void CreateEndPeriodEvent(int parPeriod)
-        {
-            string score = _teamStats[0].Name + " " + _teamStats[0].Goals + " : " + _teamStats[0].Goals + " "+ _teamStats[1].Name;
-            string nameEvent = _actualTime.ToString();
-            string infoEvent = parPeriod + ".  started with score: " + score;
-            MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = infoEvent};
-            _matchEvents.Add(help);
-            ExportEvent(help);
-        }
-
-        public void CreateManualEvent(string parInfoEvent, string parNameEvent)
-        {
-            string nameEvent = parNameEvent;
-            MatchEvent help = new MatchEvent() {EventName = nameEvent, EventInfo = parInfoEvent};
-            _matchEvents.Add(help);
-            ExportEvent(help);
-        }
-
-        public void SetName(int team, string parName)
-        {
-            _teamStats[team-1].Name = parName;
-        }
-
-        public void UpdateTime(Time parTime)
-        {
-            _actualTime = parTime;
-        }
-
-        private void ExportEvent(MatchEvent parEvent)
-        {
-            if (_expoPath == null)
-            {
-                _expoPath = Environment.CurrentDirectory + "\\Events";
-            }
-            if (_exportEvents)
-            {
-                if (!Directory.Exists(_expoPath))
-                {
-                    Directory.CreateDirectory(_expoPath);
-                }
-                File.WriteAllText(Path.Combine(_expoPath, parEvent.EventName + ".txt"), parEvent.EventInfo);
-            }
-        }
-
-        private void ResetStats(string team1Name, string team2Name)
-        {
-            SetName(1,team1Name);
-            SetName(2,team2Name);
-            Time zero = new Time() {Minutes = 0, Seconds = 0};
-            for (int i = 0; i < _teamStats.Length; i++)
-            {
-                _teamStats[i].Goals = 0;
-                _teamStats[i].Shots = 0;
-                _teamStats[i].FaceOffs = 0;
-                _teamStats[i].Shots = 0;
-            }
+            TeamStats[i].Goals = 0;
+            TeamStats[i].Shots = 0;
+            TeamStats[i].FaceOffs = 0;
+            TeamStats[i].Shots = 0;
         }
     }
 }

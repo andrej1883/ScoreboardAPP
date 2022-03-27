@@ -5,49 +5,48 @@ using Scoreboard.Classes;
 using Scoreboard.Classes.Database;
 using Scoreboard.Classes.GameStatistics;
 
-namespace Scoreboard.Forms.Statistics
+namespace Scoreboard.Forms.Statistics;
+
+public partial class SelectPlayerGoal : Form
 {
-    public partial class SelectPlayerGoal : Form
+    private readonly Time _time;
+    private readonly int _team;
+    private readonly MatchStatistics _stats;
+
+    public SelectPlayerGoal(int parTeam,MatchStatistics parStats,List<Player> parPlayers, Time parTime)
     {
-        private Time _time;
-        private int _team;
-        private MatchStatistics _stats;
-        private List<Player> _players;
-
-        public SelectPlayerGoal(int parTeam,MatchStatistics parStats,List<Player> parPlayers, Time parTime)
-        {
-            _time = parTime;
-            _stats = parStats;
-            _team = parTeam;
-            _players = parPlayers;
-            InitializeComponent();
+        if (parPlayers.Count == 0)
+            throw new ArgumentException(@"Value cannot be an empty collection.", nameof(parPlayers));
+        _time = parTime;
+        _stats = parStats;
+        _team = parTeam;
+        InitializeComponent();
             
-            playerGoal.DataSource = _players;
-            playerA1.BindingContext = new BindingContext();
-            playerA1.DataSource = _players;
-            playerA2.BindingContext = new BindingContext();
-            playerA2.DataSource = _players;
+        playerGoal.DataSource = parPlayers;
+        playerA1.BindingContext = new BindingContext();
+        playerA1.DataSource = parPlayers;
+        playerA2.BindingContext = new BindingContext();
+        playerA2.DataSource = parPlayers;
 
-            MaximizeBox = false;
-            ControlBox = false;
-        }
+        MaximizeBox = false;
+        ControlBox = false;
+    }
 
-        private void saveGoalBtn_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrWhiteSpace(playerGoal.Text)) return;
-            Player pGoal = (Player)playerGoal.SelectedItem;
-            Player pAsist1 = (Player)playerA1.SelectedItem;
-            Player pAsist2 = (Player)playerA2.SelectedItem;
-            if(pGoal.Name == pAsist1.Name || pGoal.Name == pAsist2.Name)return;
-            if (!String.IsNullOrWhiteSpace(pAsist1.Name) && String.Equals(pAsist1.Name, pAsist2.Name)) return;
+    private void SaveGoalBtnClick(object parSender, EventArgs parE)
+    {
+        if (string.IsNullOrWhiteSpace(playerGoal.Text)) return;
+        var pGoal = (Player)playerGoal.SelectedItem;
+        var pAsist1 = (Player)playerA1.SelectedItem;
+        var pAsist2 = (Player)playerA2.SelectedItem;
+        if(pGoal.Name == pAsist1.Name || pGoal.Name == pAsist2.Name)return;
+        if (!string.IsNullOrWhiteSpace(pAsist1.Name) && string.Equals(pAsist1.Name, pAsist2.Name)) return;
             
-            _stats.CreateGoalEvent(_team,pGoal,pAsist1,pAsist2,_time);
-            Dispose();
-        }
+        _stats.CreateGoalEvent(_team,pGoal,pAsist1,pAsist2,_time);
+        Dispose();
+    }
 
-        private void cancelBtn_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
+    private void CancelBtnClick(object parSender, EventArgs parE)
+    {
+        Dispose();
     }
 }

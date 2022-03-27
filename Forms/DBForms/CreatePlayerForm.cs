@@ -2,54 +2,51 @@
 using System.Windows.Forms;
 using Scoreboard.Classes.Database;
 
-namespace Scoreboard.Forms.DBForms
+namespace Scoreboard.Forms.DBForms;
+
+public partial class CreatePlayerForm : Form
 {
-    public partial class CreatePlayerForm : Form
+    private readonly Team _team;
+
+    public CreatePlayerForm(Team parTeam)
     {
-        private Team _team;
+        InitializeComponent();
+        _team = parTeam;
+        MaximizeBox = false;
+    }
 
-        public CreatePlayerForm(Team parTeam)
-        {
-            InitializeComponent();
-            _team = parTeam;
-            MaximizeBox = false;
-        }
+    private void CreatePlayerFormLoad(object parSender, EventArgs parE)
+    {
+        UpdateGv();
+    }
 
-        private void CreatePlayerForm_Load(object sender, EventArgs e)
-        {
-            UpdateGv();
-        }
+    private void UpdateGv()
+    {
+        PLayersGW.DataSource = null;
+        PLayersGW.BindingContext = new BindingContext();
+        PLayersGW.DataSource = _team.Players;
+        PLayersGW.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        PLayersGW.Update();
+    }
 
-        private void UpdateGv()
-        {
-            PLayersGW.DataSource = null;
-            PLayersGW.BindingContext = new BindingContext();
-            PLayersGW.DataSource = _team.Players;
-            PLayersGW.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            PLayersGW.Update();
-        }
+    private void AddPlayerClick(object parSender, EventArgs parE)
+    {
+        Player help = new() {Name = PlayerName.Text, Number = PlayerNumber.Text};
+        _team.Players.Add(help);
+        UpdateGv();
+        PlayerName.Clear();
+        PlayerNumber.Clear();
+    }
 
-        private void AddPlayer_Click(object sender, EventArgs e)
-        {
-            Player help = new Player() {Name = PlayerName.Text, Number = PlayerNumber.Text};
-            _team.Players.Add(help);
-            UpdateGv();
-            PlayerName.Clear();
-            PlayerNumber.Clear();
-        }
+    private void RemovePlayerClick(object parSender, EventArgs parE)
+    {
+        if (PLayersGW.SelectedRows.Count <= 0) return;
+        _team.Players.Remove((Player)PLayersGW.SelectedRows[0].DataBoundItem);
+        UpdateGv();
+    }
 
-        private void RemovePlayer_Click(object sender, EventArgs e)
-        {
-            if (PLayersGW.SelectedRows.Count > 0)
-            {
-                _team.Players.Remove((Player)PLayersGW.SelectedRows[0].DataBoundItem);
-                UpdateGv();
-            }
-        }
-
-        private void OK_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
+    private void OkClick(object parSender, EventArgs parE)
+    {
+        Dispose();
     }
 }

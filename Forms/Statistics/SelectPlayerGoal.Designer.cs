@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms.Statistics
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.Statistics
 {
     partial class SelectPlayerGoal
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -97,7 +100,7 @@
             this.saveGoalBtn.TabIndex = 6;
             this.saveGoalBtn.Text = "Save";
             this.saveGoalBtn.UseVisualStyleBackColor = true;
-            this.saveGoalBtn.Click += new System.EventHandler(this.saveGoalBtn_Click);
+            this.saveGoalBtn.Click += new System.EventHandler(this.SaveGoalBtnClick);
             // 
             // cancelBtn
             // 
@@ -107,7 +110,7 @@
             this.cancelBtn.TabIndex = 7;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.cancelBtn.Click += new System.EventHandler(this.CancelBtnClick);
             // 
             // SelectPlayerGoal
             // 
@@ -133,13 +136,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox playerGoal;
-        private System.Windows.Forms.ComboBox playerA1;
-        private System.Windows.Forms.ComboBox playerA2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button saveGoalBtn;
-        private System.Windows.Forms.Button cancelBtn;
+        private ComboBox playerGoal;
+        private ComboBox playerA1;
+        private ComboBox playerA2;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Button saveGoalBtn;
+        private Button cancelBtn;
     }
 }

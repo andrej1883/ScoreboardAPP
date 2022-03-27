@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms.AppSettings
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.AppSettings
 {
     partial class StatisticsSettings
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -61,7 +64,7 @@
             this.shotsBox.TabIndex = 5;
             this.shotsBox.Text = "Shots on goal";
             this.shotsBox.UseVisualStyleBackColor = true;
-            this.shotsBox.CheckedChanged += new System.EventHandler(this.shotsBox_CheckedChanged);
+            this.shotsBox.CheckedChanged += new System.EventHandler(this.ShotsBoxCheckedChanged);
             // 
             // faceOffsBox
             // 
@@ -75,7 +78,7 @@
             this.faceOffsBox.TabIndex = 4;
             this.faceOffsBox.Text = "Face-offs";
             this.faceOffsBox.UseVisualStyleBackColor = true;
-            this.faceOffsBox.CheckedChanged += new System.EventHandler(this.faceOffsBox_CheckedChanged);
+            this.faceOffsBox.CheckedChanged += new System.EventHandler(this.FaceOffsBoxCheckedChanged);
             // 
             // timeoutsBox
             // 
@@ -89,7 +92,7 @@
             this.timeoutsBox.TabIndex = 3;
             this.timeoutsBox.Text = "Timeouts";
             this.timeoutsBox.UseVisualStyleBackColor = true;
-            this.timeoutsBox.CheckedChanged += new System.EventHandler(this.timeoutsBox_CheckedChanged);
+            this.timeoutsBox.CheckedChanged += new System.EventHandler(this.TimeoutsBoxCheckedChanged);
             // 
             // okBtn
             // 
@@ -99,7 +102,7 @@
             this.okBtn.TabIndex = 93;
             this.okBtn.Text = "Ok";
             this.okBtn.UseVisualStyleBackColor = true;
-            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
+            this.okBtn.Click += new System.EventHandler(this.OkBtnClick);
             // 
             // StatisticsSettings
             // 
@@ -120,10 +123,10 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox shotsBox;
-        private System.Windows.Forms.CheckBox faceOffsBox;
-        private System.Windows.Forms.CheckBox timeoutsBox;
-        private System.Windows.Forms.Button okBtn;
+        private GroupBox groupBox1;
+        private CheckBox shotsBox;
+        private CheckBox faceOffsBox;
+        private CheckBox timeoutsBox;
+        private Button okBtn;
     }
 }

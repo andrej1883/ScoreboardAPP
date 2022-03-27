@@ -1,62 +1,42 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Scoreboard.Forms.AppSettings
+namespace Scoreboard.Forms.AppSettings;
+
+public partial class ExportStatsForm : Form
 {
-    public partial class ExportStatsForm : Form
+    public string Path { get; private set; }
+
+    public bool Export { get; private set; } = true;
+
+    public ExportStatsForm()
     {
-        private string _path;
-        private bool _export = true;
+        InitializeComponent();
+        pathTextBox.Text = $@"{Environment.CurrentDirectory}\Events";
+        MaximizeBox = false;
+    }
 
-        public string Path
-        {
-            get => _path;
-            set => _path = value;
-        }
-        public bool Export
-        {
-            get => _export;
-            set => _export = value;
-        }
+    private void ExportEventsBoxCheckedChanged(object parSender, EventArgs parE)
+    {
+        Export = exportEventsBox.Checked;
+    }
 
-        public ExportStatsForm()
+    private void ConfirmClick(object parSender, EventArgs parE)
+    {
+        if (!string.IsNullOrWhiteSpace(pathTextBox.Text))
         {
-            InitializeComponent();
-            pathTextBox.Text = Environment.CurrentDirectory + "\\Events";
-            MaximizeBox = false;
+            Path = pathTextBox.Text;
         }
+        Hide();
+        DialogResult = DialogResult.OK;
+    }
 
-        private void exportEventsBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (exportEventsBox.Checked)
-            {
-                _export = true;
-            }
-            else
-            {
-                _export = false;
-            }
-        }
-
-        private void confirm_Click(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrWhiteSpace(pathTextBox.Text))
-            {
-                _path = pathTextBox.Text;
-            }
-            Hide();
-            DialogResult = DialogResult.OK;
-        }
-
-        private void selectPath_Click(object sender, EventArgs e)
-        {
-            var browserDialog = new FolderBrowserDialog();
-            DialogResult res = browserDialog.ShowDialog();
-            if (res == DialogResult.OK)
-            {
-                _path = browserDialog.SelectedPath;
-                pathTextBox.Text = _path;
-            }
-        }
+    private void SelectPathClick(object parSender, EventArgs parE)
+    {
+        var browserDialog = new FolderBrowserDialog();
+        var res = browserDialog.ShowDialog();
+        if (res != DialogResult.OK) return;
+        Path = browserDialog.SelectedPath;
+        pathTextBox.Text = Path;
     }
 }

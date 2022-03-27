@@ -4,75 +4,68 @@ using System.Windows.Forms;
 using Scoreboard.Classes.Database;
 using Scoreboard.Forms.AppSettings;
 
-namespace Scoreboard.Forms.Statistics
+namespace Scoreboard.Forms.Statistics;
+
+public partial class SetPenaltyForm : Form
 {
-    public partial class SetPenaltyForm : Form
+    private readonly SetTimes _times;
+    private readonly List<Player> _players;
+
+    public int[] Penalty { get; }
+
+    public SetPenaltyForm(SetTimes parTimes,List<Player> parPlayers )
     {
-        private SetTimes _times;
-        private List<Player> _players;
-        private int[] _penalty;
+        _times = parTimes;
 
-        public int[] Penalty
+        InitializeComponent();
+
+        penaltyTimesCombo.Items.Add("Short penalty");
+        penaltyTimesCombo.Items.Add("Long penalty");
+
+        _players = parPlayers;
+        selectPlayer.DataSource = _players;
+
+
+        Penalty = new int[3];
+
+        MaximizeBox = false;
+        ControlBox = false;
+    }
+
+    private void SavePenaltyBtnClick(object parSender, EventArgs parE)
+    {
+        Penalty[0] = (int)playerNumber.Value;
+        Penalty[1] = (int)pMinutes.Value;
+        Penalty[2] = (int) pSeconds.Value;
+        DialogResult = DialogResult.OK;
+        Dispose();
+    }
+
+    private void CancelBtnClick(object parSender, EventArgs parE)
+    {
+        Dispose();
+    }
+
+    private void PenaltyTimesComboSelectedIndexChanged(object parSender, EventArgs parE)
+    {
+        if(_times == null) return;
+        switch (penaltyTimesCombo.Text)
         {
-            get => _penalty;
-            set => _penalty = value;
-        }
-
-        public SetPenaltyForm(SetTimes parTimes,List<Player> parPlayers )
-        {
-            _times = parTimes;
-
-            InitializeComponent();
-
-            penaltyTimesCombo.Items.Add("Short penalty");
-            penaltyTimesCombo.Items.Add("Long penalty");
-
-            _players = parPlayers;
-            selectPlayer.DataSource = _players;
-
-
-            _penalty = new int[3];
-
-            MaximizeBox = false;
-            ControlBox = false;
-        }
-
-        private void savePenaltyBtn_Click(object sender, EventArgs e)
-        {
-            _penalty[0] = (int)playerNumber.Value;
-            _penalty[1] = (int)pMinutes.Value;
-            _penalty[2] = (int) pSeconds.Value;
-            DialogResult = DialogResult.OK;
-            Dispose();
-        }
-
-        private void cancelBtn_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
-
-        private void penaltyTimesCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(_times == null) return;
-            if (penaltyTimesCombo.Text == "Short penalty")
-            {
+            case @"Short penalty":
                 pMinutes.Value = _times.ShortPenaltyLength.Minutes;
                 pSeconds.Value = _times.ShortPenaltyLength.Seconds;
-            } else if (penaltyTimesCombo.Text == "Long penalty")
-            {
+                break;
+            case @"Long penalty":
                 pMinutes.Value = _times.LongPenaltyLength.Minutes;
                 pSeconds.Value = _times.LongPenaltyLength.Seconds;
-            }
+                break;
         }
+    }
 
-        private void selectPlayer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (_players == null) return;
-            var help = (Player) selectPlayer.SelectedItem;
-            if (String.IsNullOrWhiteSpace(selectPlayer.Text))   
-                playerNumber.Value = 1;
-            else
-                playerNumber.Value = Decimal.Parse(help.Number);
-        }
+    private void SelectPlayerSelectedIndexChanged(object parSender, EventArgs parE)
+    {
+        if (_players == null) return;
+        var help = (Player) selectPlayer.SelectedItem;
+        playerNumber.Value = string.IsNullOrWhiteSpace(selectPlayer.Text) ? 1 : decimal.Parse(help.Number);
     }
 }

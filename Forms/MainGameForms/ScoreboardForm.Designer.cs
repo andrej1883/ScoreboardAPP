@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms.MainGameForms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.MainGameForms
 {
     partial class ScoreboardForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -97,8 +100,8 @@
             this.t1Lbl.Text = "Team1";
             this.t1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.t1Lbl, "Team 1 EventName");
-            this.t1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.t1Lbl_MouseDown);
-            this.t1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.t1Lbl_MouseMove);
+            this.t1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.T1LblMouseDown);
+            this.t1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.T1LblMouseMove);
             // 
             // t2Lbl
             // 
@@ -112,8 +115,8 @@
             this.t2Lbl.Text = "Team2";
             this.t2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.t2Lbl, "Team 2 EventName");
-            this.t2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.t2Lbl_MouseDown);
-            this.t2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.t2Lbl_MouseMove);
+            this.t2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.T2LblMouseDown);
+            this.t2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.T2LblMouseMove);
             // 
             // scoreT1Lbl
             // 
@@ -127,8 +130,8 @@
             this.scoreT1Lbl.Text = "00";
             this.scoreT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.scoreT1Lbl, "Score Team1");
-            this.scoreT1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.scoreT1Lbl_MouseDown);
-            this.scoreT1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.scoreT1Lbl_MouseMove);
+            this.scoreT1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ScoreT1LblMouseDown);
+            this.scoreT1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ScoreT1LblMouseMove);
             // 
             // scoreT2Lbl
             // 
@@ -142,8 +145,8 @@
             this.scoreT2Lbl.Text = "00";
             this.scoreT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.scoreT2Lbl, "Score Team2");
-            this.scoreT2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.scoreT2Lbl_MouseDown);
-            this.scoreT2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.scoreT2Lbl_MouseMove);
+            this.scoreT2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ScoreT2LblMouseDown);
+            this.scoreT2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ScoreT2LblMouseMove);
             // 
             // scoreParseLblb
             // 
@@ -157,8 +160,8 @@
             this.scoreParseLblb.Text = "-";
             this.scoreParseLblb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.scoreParseLblb, "Score separator");
-            this.scoreParseLblb.MouseDown += new System.Windows.Forms.MouseEventHandler(this.scoreParseLblb_MouseDown);
-            this.scoreParseLblb.MouseMove += new System.Windows.Forms.MouseEventHandler(this.scoreParseLblb_MouseMove);
+            this.scoreParseLblb.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ScoreParseLblbMouseDown);
+            this.scoreParseLblb.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ScoreParseLblbMouseMove);
             // 
             // periodLbl
             // 
@@ -170,8 +173,8 @@
             this.periodLbl.TabIndex = 7;
             this.periodLbl.Text = "Period";
             this.periodLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.periodLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.periodLbl_MouseDown);
-            this.periodLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.periodLbl_MouseMove);
+            this.periodLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PeriodLblMouseDown);
+            this.periodLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PeriodLblMouseMove);
             // 
             // timeMinutesLbl
             // 
@@ -185,8 +188,8 @@
             this.timeMinutesLbl.Text = "00";
             this.timeMinutesLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeMinutesLbl, "Time minutes");
-            this.timeMinutesLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeMinutesLbl_MouseDown);
-            this.timeMinutesLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeMinutesLbl_MouseMove);
+            this.timeMinutesLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TimeMinutesLblMouseDown);
+            this.timeMinutesLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TimeMinutesLblMouseMove);
             // 
             // timeParseLbl
             // 
@@ -200,8 +203,8 @@
             this.timeParseLbl.Text = ":";
             this.timeParseLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeParseLbl, "Time separator");
-            this.timeParseLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeParseLbl_MouseDown);
-            this.timeParseLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeParseLbl_MouseMove);
+            this.timeParseLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TimeParseLblMouseDown);
+            this.timeParseLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TimeParseLblMouseMove);
             // 
             // timeSecondsLbl
             // 
@@ -215,8 +218,8 @@
             this.timeSecondsLbl.Text = "00";
             this.timeSecondsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeSecondsLbl, "Time seconds");
-            this.timeSecondsLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeSecondsLbl_MouseDown);
-            this.timeSecondsLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeSecondsLbl_MouseMove);
+            this.timeSecondsLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TimeSecondsLblMouseDown);
+            this.timeSecondsLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TimeSecondsLblMouseMove);
             // 
             // actualPeriodLbl
             // 
@@ -230,7 +233,7 @@
             this.actualPeriodLbl.Text = "00";
             this.actualPeriodLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.actualPeriodLbl, "Period Number");
-            this.actualPeriodLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.actualPeriodLbl_MouseMove);
+            this.actualPeriodLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ActualPeriodLblMouseMove);
             // 
             // timeLbl
             // 
@@ -243,8 +246,8 @@
             this.timeLbl.TabIndex = 12;
             this.timeLbl.Text = "Time";
             this.timeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.timeLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeLbl_MouseDown);
-            this.timeLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeLbl_MouseMove);
+            this.timeLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TimeLblMouseDown);
+            this.timeLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TimeLblMouseMove);
             // 
             // penaltyT1Lbl
             // 
@@ -257,8 +260,8 @@
             this.penaltyT1Lbl.TabIndex = 14;
             this.penaltyT1Lbl.Text = "Penalty";
             this.penaltyT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.penaltyT1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.penaltyT1Lbl_MouseDown);
-            this.penaltyT1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.penaltyT1Lbl_MouseMove);
+            this.penaltyT1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PenaltyT1LblMouseDown);
+            this.penaltyT1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PenaltyT1LblMouseMove);
             // 
             // penaltyT1PlayerLbl
             // 
@@ -270,8 +273,8 @@
             this.penaltyT1PlayerLbl.TabIndex = 15;
             this.penaltyT1PlayerLbl.Text = "Player";
             this.penaltyT1PlayerLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.penaltyT1PlayerLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.penaltyT1PlayerLbl_MouseDown);
-            this.penaltyT1PlayerLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.penaltyT1PlayerLbl_MouseMove);
+            this.penaltyT1PlayerLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PenaltyT1PlayerLblMouseDown);
+            this.penaltyT1PlayerLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PenaltyT1PlayerLblMouseMove);
             // 
             // penaltyT1TimeLbl
             // 
@@ -283,8 +286,8 @@
             this.penaltyT1TimeLbl.TabIndex = 16;
             this.penaltyT1TimeLbl.Text = "Time";
             this.penaltyT1TimeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.penaltyT1TimeLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.penaltyT1TimeLbl_MouseDown);
-            this.penaltyT1TimeLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.penaltyT1TimeLbl_MouseMove);
+            this.penaltyT1TimeLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PenaltyT1TimeLblMouseDown);
+            this.penaltyT1TimeLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PenaltyT1TimeLblMouseMove);
             // 
             // penaltyT2TimeLbl
             // 
@@ -296,8 +299,8 @@
             this.penaltyT2TimeLbl.TabIndex = 19;
             this.penaltyT2TimeLbl.Text = "Time";
             this.penaltyT2TimeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.penaltyT2TimeLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.penaltyT2TimeLbl_MouseDown);
-            this.penaltyT2TimeLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.penaltyT2TimeLbl_MouseMove);
+            this.penaltyT2TimeLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PenaltyT2TimeLblMouseDown);
+            this.penaltyT2TimeLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PenaltyT2TimeLblMouseMove);
             // 
             // penaltyT2PlayerLbl
             // 
@@ -309,8 +312,8 @@
             this.penaltyT2PlayerLbl.TabIndex = 18;
             this.penaltyT2PlayerLbl.Text = "Player";
             this.penaltyT2PlayerLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.penaltyT2PlayerLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.penaltyT2PlayerLbl_MouseDown);
-            this.penaltyT2PlayerLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.penaltyT2PlayerLbl_MouseMove);
+            this.penaltyT2PlayerLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PenaltyT2PlayerLblMouseDown);
+            this.penaltyT2PlayerLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PenaltyT2PlayerLblMouseMove);
             // 
             // penaltyT2Lbl
             // 
@@ -323,8 +326,8 @@
             this.penaltyT2Lbl.TabIndex = 17;
             this.penaltyT2Lbl.Text = "Penalty";
             this.penaltyT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.penaltyT2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.penaltyT2Lbl_MouseDown);
-            this.penaltyT2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.penaltyT2Lbl_MouseMove);
+            this.penaltyT2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PenaltyT2LblMouseDown);
+            this.penaltyT2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PenaltyT2LblMouseMove);
             // 
             // playerNumber1T1lbl
             // 
@@ -338,8 +341,8 @@
             this.playerNumber1T1lbl.Text = "00";
             this.playerNumber1T1lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.playerNumber1T1lbl, "Team 1 Player 1 number");
-            this.playerNumber1T1lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.playerNumber1T1lbl_MouseDown);
-            this.playerNumber1T1lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.playerNumber1T1lbl_MouseMove);
+            this.playerNumber1T1lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlayerNumber1T1LblMouseDown);
+            this.playerNumber1T1lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PlayerNumber1T1LblMouseMove);
             // 
             // playerNumber1T2lbl
             // 
@@ -353,8 +356,8 @@
             this.playerNumber1T2lbl.Text = "00";
             this.playerNumber1T2lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.playerNumber1T2lbl, "Team 2 Player 1 number");
-            this.playerNumber1T2lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.playerNumber1T2lbl_MouseDown);
-            this.playerNumber1T2lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.playerNumber1T2lbl_MouseMove);
+            this.playerNumber1T2lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlayerNumber1T2LblMouseDown);
+            this.playerNumber1T2lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PlayerNumber1T2LblMouseMove);
             // 
             // playerNumber2T1lbl
             // 
@@ -368,8 +371,8 @@
             this.playerNumber2T1lbl.Text = "00";
             this.playerNumber2T1lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.playerNumber2T1lbl, "Team 1 Player 2 number");
-            this.playerNumber2T1lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.playerNumber2T1lbl_MouseDown);
-            this.playerNumber2T1lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.playerNumber2T1lbl_MouseMove);
+            this.playerNumber2T1lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlayerNumber2T1LblMouseDown);
+            this.playerNumber2T1lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PlayerNumber2T1LblMouseMove);
             // 
             // playerNumber2T2lbl
             // 
@@ -383,8 +386,8 @@
             this.playerNumber2T2lbl.Text = "00";
             this.playerNumber2T2lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.playerNumber2T2lbl, "Team 2 Player 2 number");
-            this.playerNumber2T2lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.playerNumber2T2lbl_MouseDown);
-            this.playerNumber2T2lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.playerNumber2T2lbl_MouseMove);
+            this.playerNumber2T2lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlayerNumber2T2LblMouseDown);
+            this.playerNumber2T2lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PlayerNumber2T2LblMouseMove);
             // 
             // minutesT1P1Lbl
             // 
@@ -398,8 +401,8 @@
             this.minutesT1P1Lbl.Text = "00";
             this.minutesT1P1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.minutesT1P1Lbl, "Team 1 Player 1 minutes");
-            this.minutesT1P1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.minutesT1P1Lbl_MouseDown);
-            this.minutesT1P1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.minutesT1P1Lbl_MouseMove);
+            this.minutesT1P1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MinutesT1P1LblMouseDown);
+            this.minutesT1P1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MinutesT1P1LblMouseMove);
             // 
             // secondsT1P1Lbl
             // 
@@ -413,8 +416,8 @@
             this.secondsT1P1Lbl.Text = "00";
             this.secondsT1P1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.secondsT1P1Lbl, "Team 1 Player 1 seconds");
-            this.secondsT1P1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.secondsT1P1Lbl_MouseDown);
-            this.secondsT1P1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.secondsT1P1Lbl_MouseMove);
+            this.secondsT1P1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SecondsT1P1LblMouseDown);
+            this.secondsT1P1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SecondsT1P1LblMouseMove);
             // 
             // timeT1P1ParseLbl
             // 
@@ -428,8 +431,8 @@
             this.timeT1P1ParseLbl.Text = ":";
             this.timeT1P1ParseLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeT1P1ParseLbl, "Team 1 Player 1 separator");
-            this.timeT1P1ParseLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeT1P1ParseLbl_MouseDown);
-            this.timeT1P1ParseLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeT1P1ParseLbl_MouseMove);
+            this.timeT1P1ParseLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TimeT1P1ParseLblMouseDown);
+            this.timeT1P1ParseLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TimeT1P1ParseLblMouseMove);
             // 
             // timeT1P2ParseLbl
             // 
@@ -443,8 +446,8 @@
             this.timeT1P2ParseLbl.Text = ":";
             this.timeT1P2ParseLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeT1P2ParseLbl, "Team 1 Player 2 separator");
-            this.timeT1P2ParseLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeT1P2ParseLbl_MouseDown);
-            this.timeT1P2ParseLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeT1P2ParseLbl_MouseMove);
+            this.timeT1P2ParseLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TimeT1P2ParseLblMouseDown);
+            this.timeT1P2ParseLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TimeT1P2ParseLblMouseMove);
             // 
             // secondsT1P2Lbl
             // 
@@ -458,8 +461,8 @@
             this.secondsT1P2Lbl.Text = "00";
             this.secondsT1P2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.secondsT1P2Lbl, "Team 1 Player 2 seconds");
-            this.secondsT1P2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.secondsT1P2Lbl_MouseDown);
-            this.secondsT1P2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.secondsT1P2Lbl_MouseMove);
+            this.secondsT1P2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SecondsT1P2LblMouseDown);
+            this.secondsT1P2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SecondsT1P2LblMouseMove);
             // 
             // minutesT1P2Lbl
             // 
@@ -473,8 +476,8 @@
             this.minutesT1P2Lbl.Text = "00";
             this.minutesT1P2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.minutesT1P2Lbl, "Team 1 Player 2 minutes");
-            this.minutesT1P2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.minutesT1P2Lbl_MouseDown);
-            this.minutesT1P2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.minutesT1P2Lbl_MouseMove);
+            this.minutesT1P2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MinutesT1P2LblMouseDown);
+            this.minutesT1P2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MinutesT1P2LblMouseMove);
             // 
             // timeT2P1ParseLbl
             // 
@@ -488,8 +491,8 @@
             this.timeT2P1ParseLbl.Text = ":";
             this.timeT2P1ParseLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeT2P1ParseLbl, "Team 2 Player 1 separator");
-            this.timeT2P1ParseLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeT2P1ParseLbl_MouseDown);
-            this.timeT2P1ParseLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeT2P1ParseLbl_MouseMove);
+            this.timeT2P1ParseLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TimeT2P1ParseLblMouseDown);
+            this.timeT2P1ParseLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TimeT2P1ParseLblMouseMove);
             // 
             // secondsT2P1Lbl
             // 
@@ -503,8 +506,8 @@
             this.secondsT2P1Lbl.Text = "00";
             this.secondsT2P1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.secondsT2P1Lbl, "Team 2 Player 1 seconds");
-            this.secondsT2P1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.secondsT2P1Lbl_MouseDown);
-            this.secondsT2P1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.secondsT2P1Lbl_MouseMove);
+            this.secondsT2P1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SecondsT2P1LblMouseDown);
+            this.secondsT2P1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SecondsT2P1LblMouseMove);
             // 
             // minutesT2P1Lbl
             // 
@@ -518,8 +521,8 @@
             this.minutesT2P1Lbl.Text = "00";
             this.minutesT2P1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.minutesT2P1Lbl, "Team 2 Player 1 minutes");
-            this.minutesT2P1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.minutesT2P1Lbl_MouseDown);
-            this.minutesT2P1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.minutesT2P1Lbl_MouseMove);
+            this.minutesT2P1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MinutesT2P1LblMouseDown);
+            this.minutesT2P1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MinutesT2P1LblMouseMove);
             // 
             // timeT2P2ParseLbl
             // 
@@ -533,8 +536,8 @@
             this.timeT2P2ParseLbl.Text = ":";
             this.timeT2P2ParseLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeT2P2ParseLbl, "Team 2 Player 2 separator");
-            this.timeT2P2ParseLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeT2P2ParseLbl_MouseDown);
-            this.timeT2P2ParseLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeT2P2ParseLbl_MouseMove);
+            this.timeT2P2ParseLbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TimeT2P2ParseLblMouseDown);
+            this.timeT2P2ParseLbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TimeT2P2ParseLblMouseMove);
             // 
             // secondsT2P2Lbl
             // 
@@ -548,8 +551,8 @@
             this.secondsT2P2Lbl.Text = "00";
             this.secondsT2P2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.secondsT2P2Lbl, "Team 2 Player 2 seconds");
-            this.secondsT2P2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.secondsT2P2Lbl_MouseDown);
-            this.secondsT2P2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.secondsT2P2Lbl_MouseMove);
+            this.secondsT2P2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SecondsT2P2LblMouseDown);
+            this.secondsT2P2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SecondsT2P2LblMouseMove);
             // 
             // minutesT2P2Lbl
             // 
@@ -563,8 +566,8 @@
             this.minutesT2P2Lbl.Text = "00";
             this.minutesT2P2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.minutesT2P2Lbl, "Team 2 Player 2 minutes");
-            this.minutesT2P2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.minutesT2P2Lbl_MouseDown);
-            this.minutesT2P2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.minutesT2P2Lbl_MouseMove);
+            this.minutesT2P2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MinutesT2P2LblMouseDown);
+            this.minutesT2P2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MinutesT2P2LblMouseMove);
             // 
             // team1Logo
             // 
@@ -575,8 +578,8 @@
             this.team1Logo.TabIndex = 49;
             this.team1Logo.TabStop = false;
             this.toolTip1.SetToolTip(this.team1Logo, "Team 1 logo");
-            this.team1Logo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.team1Logo_MouseDown);
-            this.team1Logo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.team1Logo_MouseMove);
+            this.team1Logo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Team1LogoMouseDown);
+            this.team1Logo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Team1LogoMouseMove);
             // 
             // team2Logo
             // 
@@ -587,8 +590,8 @@
             this.team2Logo.TabIndex = 50;
             this.team2Logo.TabStop = false;
             this.toolTip1.SetToolTip(this.team2Logo, "Team 2 logo");
-            this.team2Logo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.team2Logo_MouseDown);
-            this.team2Logo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.team2Logo_MouseMove);
+            this.team2Logo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Team2LogoMouseDown);
+            this.team2Logo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Team2LogoMouseMove);
             // 
             // timeoutL2
             // 
@@ -599,8 +602,8 @@
             this.timeoutL2.TabIndex = 51;
             this.timeoutL2.Text = "Timeout:";
             this.timeoutL2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.timeoutL2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeoutL2_MouseDown);
-            this.timeoutL2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeoutL2_MouseMove);
+            this.timeoutL2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TimeoutL2MouseDown);
+            this.timeoutL2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TimeoutL2MouseMove);
             // 
             // timeoutL1
             // 
@@ -611,8 +614,8 @@
             this.timeoutL1.TabIndex = 52;
             this.timeoutL1.Text = "Timeout:";
             this.timeoutL1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.timeoutL1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeoutL1_MouseDown);
-            this.timeoutL1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeoutL1_MouseMove);
+            this.timeoutL1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TimeoutL1MouseDown);
+            this.timeoutL1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TimeoutL1MouseMove);
             // 
             // timeout2Parse
             // 
@@ -626,8 +629,8 @@
             this.timeout2Parse.Text = ":";
             this.timeout2Parse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeout2Parse, "Team 2 Timeout Separator");
-            this.timeout2Parse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label3_MouseDown);
-            this.timeout2Parse.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label3_MouseMove);
+            this.timeout2Parse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label3MouseDown);
+            this.timeout2Parse.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label3MouseMove);
             // 
             // timeout2Sec
             // 
@@ -641,8 +644,8 @@
             this.timeout2Sec.Text = "00";
             this.timeout2Sec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeout2Sec, "Team 2 Timeout Seconds");
-            this.timeout2Sec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeout2Sec_MouseDown);
-            this.timeout2Sec.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeout2Sec_MouseMove);
+            this.timeout2Sec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Timeout2SecMouseDown);
+            this.timeout2Sec.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Timeout2SecMouseMove);
             // 
             // timeout2Min
             // 
@@ -656,8 +659,8 @@
             this.timeout2Min.Text = "00";
             this.timeout2Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeout2Min, "Team 2 Timeout Minutes");
-            this.timeout2Min.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeout2Min_MouseDown);
-            this.timeout2Min.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeout2Min_MouseMove);
+            this.timeout2Min.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Timeout2MinMouseDown);
+            this.timeout2Min.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Timeout2MinMouseMove);
             // 
             // timeout1Parse
             // 
@@ -671,8 +674,8 @@
             this.timeout1Parse.Text = ":";
             this.timeout1Parse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeout1Parse, "Team 1 Timeout Separator");
-            this.timeout1Parse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label6_MouseDown);
-            this.timeout1Parse.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label6_MouseMove);
+            this.timeout1Parse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label6MouseDown);
+            this.timeout1Parse.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label6MouseMove);
             // 
             // timeout1Sec
             // 
@@ -686,8 +689,8 @@
             this.timeout1Sec.Text = "00";
             this.timeout1Sec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeout1Sec, "Team 1 Timeout Seconds");
-            this.timeout1Sec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeout1Sec_MouseDown);
-            this.timeout1Sec.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeout1Sec_MouseMove);
+            this.timeout1Sec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Timeout1SecMouseDown);
+            this.timeout1Sec.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Timeout1SecMouseMove);
             // 
             // timeout1Min
             // 
@@ -701,8 +704,8 @@
             this.timeout1Min.Text = "00";
             this.timeout1Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.timeout1Min, "Team 1 Timeout Minutes");
-            this.timeout1Min.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timeout1Min_MouseDown);
-            this.timeout1Min.MouseMove += new System.Windows.Forms.MouseEventHandler(this.timeout1Min_MouseMove);
+            this.timeout1Min.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Timeout1MinMouseDown);
+            this.timeout1Min.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Timeout1MinMouseMove);
             // 
             // faceOffsT1Lbl
             // 
@@ -714,8 +717,8 @@
             this.faceOffsT1Lbl.TabIndex = 59;
             this.faceOffsT1Lbl.Text = "Face-offs";
             this.faceOffsT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.faceOffsT1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.faceOffsT1Lbl_MouseDown);
-            this.faceOffsT1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.faceOffsT1Lbl_MouseMove);
+            this.faceOffsT1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FaceOffsT1LblMouseDown);
+            this.faceOffsT1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FaceOffsT1LblMouseMove);
             // 
             // faceOffsT2Lbl
             // 
@@ -727,8 +730,8 @@
             this.faceOffsT2Lbl.TabIndex = 60;
             this.faceOffsT2Lbl.Text = "Face-offs";
             this.faceOffsT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.faceOffsT2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.faceOffsT2Lbl_MouseDown);
-            this.faceOffsT2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.faceOffsT2Lbl_MouseMove);
+            this.faceOffsT2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FaceOffsT2LblMouseDown);
+            this.faceOffsT2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FaceOffsT2LblMouseMove);
             // 
             // faceOffsT1
             // 
@@ -742,8 +745,8 @@
             this.faceOffsT1.Text = "00";
             this.faceOffsT1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.faceOffsT1, "Team 1 FaceOffs");
-            this.faceOffsT1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.faceOffsT1_MouseDown);
-            this.faceOffsT1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.faceOffsT1_MouseMove);
+            this.faceOffsT1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FaceOffsT1MouseDown);
+            this.faceOffsT1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FaceOffsT1MouseMove);
             // 
             // faceOffsT2
             // 
@@ -757,8 +760,8 @@
             this.faceOffsT2.Text = "00";
             this.faceOffsT2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.faceOffsT2, "Team 2 FaceOffs");
-            this.faceOffsT2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.faceOffsT2_MouseDown);
-            this.faceOffsT2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.faceOffsT2_MouseMove);
+            this.faceOffsT2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FaceOffsT2MouseDown);
+            this.faceOffsT2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FaceOffsT2MouseMove);
             // 
             // shotsT1
             // 
@@ -772,8 +775,8 @@
             this.shotsT1.Text = "00";
             this.shotsT1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.shotsT1, "Team 1 Shots");
-            this.shotsT1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shotsT1_MouseDown);
-            this.shotsT1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.shotsT1_MouseMove);
+            this.shotsT1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShotsT1MouseDown);
+            this.shotsT1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShotsT1MouseMove);
             // 
             // shotsT1Lbl
             // 
@@ -785,8 +788,8 @@
             this.shotsT1Lbl.TabIndex = 63;
             this.shotsT1Lbl.Text = "Shots on goal";
             this.shotsT1Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.shotsT1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shotsT1Lbl_MouseDown);
-            this.shotsT1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.shotsT1Lbl_MouseMove);
+            this.shotsT1Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShotsT1LblMouseDown);
+            this.shotsT1Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShotsT1LblMouseMove);
             // 
             // shotsT2
             // 
@@ -800,8 +803,8 @@
             this.shotsT2.Text = "00";
             this.shotsT2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.shotsT2, "Team 2 Shots");
-            this.shotsT2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shotsT2_MouseDown);
-            this.shotsT2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.shotsT2_MouseMove);
+            this.shotsT2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShotsT2MouseDown);
+            this.shotsT2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShotsT2MouseMove);
             // 
             // shotsT2Lbl
             // 
@@ -813,8 +816,8 @@
             this.shotsT2Lbl.TabIndex = 65;
             this.shotsT2Lbl.Text = "Shots on goal";
             this.shotsT2Lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.shotsT2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shotsT2Lbl_MouseDown);
-            this.shotsT2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.shotsT2Lbl_MouseMove);
+            this.shotsT2Lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShotsT2LblMouseDown);
+            this.shotsT2Lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShotsT2LblMouseMove);
             // 
             // ScoreboardForm
             // 
@@ -882,57 +885,57 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label t1Lbl;
-        private System.Windows.Forms.Label t2Lbl;
-        private System.Windows.Forms.Label scoreT1Lbl;
-        private System.Windows.Forms.Label scoreT2Lbl;
-        private System.Windows.Forms.Label scoreParseLblb;
-        private System.Windows.Forms.Label periodLbl;
-        private System.Windows.Forms.Label timeMinutesLbl;
-        private System.Windows.Forms.Label timeParseLbl;
-        private System.Windows.Forms.Label timeSecondsLbl;
-        private System.Windows.Forms.Label actualPeriodLbl;
-        private System.Windows.Forms.Label timeLbl;
-        private System.Windows.Forms.Label penaltyT1Lbl;
-        private System.Windows.Forms.Label penaltyT1PlayerLbl;
-        private System.Windows.Forms.Label penaltyT1TimeLbl;
-        private System.Windows.Forms.Label penaltyT2TimeLbl;
-        private System.Windows.Forms.Label penaltyT2PlayerLbl;
-        private System.Windows.Forms.Label penaltyT2Lbl;
-        private System.Windows.Forms.Label playerNumber1T1lbl;
-        private System.Windows.Forms.Label playerNumber1T2lbl;
-        private System.Windows.Forms.Label playerNumber2T1lbl;
-        private System.Windows.Forms.Label playerNumber2T2lbl;
-        private System.Windows.Forms.Label minutesT1P1Lbl;
-        private System.Windows.Forms.Label secondsT1P1Lbl;
-        private System.Windows.Forms.Label timeT1P1ParseLbl;
-        private System.Windows.Forms.Label timeT1P2ParseLbl;
-        private System.Windows.Forms.Label secondsT1P2Lbl;
-        private System.Windows.Forms.Label minutesT1P2Lbl;
-        private System.Windows.Forms.Label timeT2P1ParseLbl;
-        private System.Windows.Forms.Label secondsT2P1Lbl;
-        private System.Windows.Forms.Label minutesT2P1Lbl;
-        private System.Windows.Forms.Label timeT2P2ParseLbl;
-        private System.Windows.Forms.Label secondsT2P2Lbl;
-        private System.Windows.Forms.Label minutesT2P2Lbl;
-        private System.Windows.Forms.PictureBox team1Logo;
-        private System.Windows.Forms.PictureBox team2Logo;
-        private System.Windows.Forms.Label timeoutL2;
-        private System.Windows.Forms.Label timeoutL1;
-        private System.Windows.Forms.Label timeout2Parse;
-        private System.Windows.Forms.Label timeout2Sec;
-        private System.Windows.Forms.Label timeout2Min;
-        private System.Windows.Forms.Label timeout1Parse;
-        private System.Windows.Forms.Label timeout1Sec;
-        private System.Windows.Forms.Label timeout1Min;
-        private System.Windows.Forms.Label faceOffsT1Lbl;
-        private System.Windows.Forms.Label faceOffsT2Lbl;
-        private System.Windows.Forms.Label faceOffsT1;
-        private System.Windows.Forms.Label faceOffsT2;
-        private System.Windows.Forms.Label shotsT1;
-        private System.Windows.Forms.Label shotsT1Lbl;
-        private System.Windows.Forms.Label shotsT2;
-        private System.Windows.Forms.Label shotsT2Lbl;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private Label t1Lbl;
+        private Label t2Lbl;
+        private Label scoreT1Lbl;
+        private Label scoreT2Lbl;
+        private Label scoreParseLblb;
+        private Label periodLbl;
+        private Label timeMinutesLbl;
+        private Label timeParseLbl;
+        private Label timeSecondsLbl;
+        private Label actualPeriodLbl;
+        private Label timeLbl;
+        private Label penaltyT1Lbl;
+        private Label penaltyT1PlayerLbl;
+        private Label penaltyT1TimeLbl;
+        private Label penaltyT2TimeLbl;
+        private Label penaltyT2PlayerLbl;
+        private Label penaltyT2Lbl;
+        private Label playerNumber1T1lbl;
+        private Label playerNumber1T2lbl;
+        private Label playerNumber2T1lbl;
+        private Label playerNumber2T2lbl;
+        private Label minutesT1P1Lbl;
+        private Label secondsT1P1Lbl;
+        private Label timeT1P1ParseLbl;
+        private Label timeT1P2ParseLbl;
+        private Label secondsT1P2Lbl;
+        private Label minutesT1P2Lbl;
+        private Label timeT2P1ParseLbl;
+        private Label secondsT2P1Lbl;
+        private Label minutesT2P1Lbl;
+        private Label timeT2P2ParseLbl;
+        private Label secondsT2P2Lbl;
+        private Label minutesT2P2Lbl;
+        private PictureBox team1Logo;
+        private PictureBox team2Logo;
+        private Label timeoutL2;
+        private Label timeoutL1;
+        private Label timeout2Parse;
+        private Label timeout2Sec;
+        private Label timeout2Min;
+        private Label timeout1Parse;
+        private Label timeout1Sec;
+        private Label timeout1Min;
+        private Label faceOffsT1Lbl;
+        private Label faceOffsT2Lbl;
+        private Label faceOffsT1;
+        private Label faceOffsT2;
+        private Label shotsT1;
+        private Label shotsT1Lbl;
+        private Label shotsT2;
+        private Label shotsT2Lbl;
+        private ToolTip toolTip1;
     }
 }

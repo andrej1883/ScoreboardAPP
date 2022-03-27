@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms.AppSettings
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.AppSettings
 {
     partial class ExportStatsForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -47,7 +50,7 @@
             this.exportEventsBox.TabIndex = 0;
             this.exportEventsBox.Text = "Export events minute by minute";
             this.exportEventsBox.UseVisualStyleBackColor = true;
-            this.exportEventsBox.CheckedChanged += new System.EventHandler(this.exportEventsBox_CheckedChanged);
+            this.exportEventsBox.CheckedChanged += new System.EventHandler(this.ExportEventsBoxCheckedChanged);
             // 
             // label1
             // 
@@ -74,7 +77,7 @@
             this.confirm.TabIndex = 3;
             this.confirm.Text = "Ok";
             this.confirm.UseVisualStyleBackColor = true;
-            this.confirm.Click += new System.EventHandler(this.confirm_Click);
+            this.confirm.Click += new System.EventHandler(this.ConfirmClick);
             // 
             // selectPath
             // 
@@ -84,7 +87,7 @@
             this.selectPath.TabIndex = 4;
             this.selectPath.Text = "Select path";
             this.selectPath.UseVisualStyleBackColor = true;
-            this.selectPath.Click += new System.EventHandler(this.selectPath_Click);
+            this.selectPath.Click += new System.EventHandler(this.SelectPathClick);
             // 
             // ExportStatsForm
             // 
@@ -107,10 +110,10 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox exportEventsBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox pathTextBox;
-        private System.Windows.Forms.Button confirm;
-        private System.Windows.Forms.Button selectPath;
+        private CheckBox exportEventsBox;
+        private Label label1;
+        private TextBox pathTextBox;
+        private Button confirm;
+        private Button selectPath;
     }
 }

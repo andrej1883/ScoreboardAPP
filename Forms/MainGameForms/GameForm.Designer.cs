@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms.MainGameForms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.MainGameForms
 {
     partial class GameForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -266,7 +269,7 @@
             this.startTime.TabIndex = 1;
             this.startTime.Text = "Start";
             this.startTime.UseVisualStyleBackColor = true;
-            this.startTime.Click += new System.EventHandler(this.startTime_Click);
+            this.startTime.Click += new System.EventHandler(this.StartTimeClick);
             // 
             // stopTime
             // 
@@ -278,7 +281,7 @@
             this.stopTime.TabIndex = 2;
             this.stopTime.Text = "Stop";
             this.stopTime.UseVisualStyleBackColor = true;
-            this.stopTime.Click += new System.EventHandler(this.stopTime_Click);
+            this.stopTime.Click += new System.EventHandler(this.StopTimeClick);
             // 
             // resetTime
             // 
@@ -290,7 +293,7 @@
             this.resetTime.TabIndex = 3;
             this.resetTime.Text = "Reset";
             this.resetTime.UseVisualStyleBackColor = true;
-            this.resetTime.Click += new System.EventHandler(this.resetTime_Click);
+            this.resetTime.Click += new System.EventHandler(this.ResetTimeClick);
             // 
             // goalsTeam2
             // 
@@ -313,7 +316,7 @@
             this.minusGoal2.TabIndex = 5;
             this.minusGoal2.Text = "-";
             this.minusGoal2.UseVisualStyleBackColor = true;
-            this.minusGoal2.Click += new System.EventHandler(this.minusGoal2_Click);
+            this.minusGoal2.Click += new System.EventHandler(this.MinusGoal2Click);
             // 
             // plusGoal2
             // 
@@ -325,7 +328,7 @@
             this.plusGoal2.TabIndex = 6;
             this.plusGoal2.Text = "+";
             this.plusGoal2.UseVisualStyleBackColor = true;
-            this.plusGoal2.Click += new System.EventHandler(this.plusGoal2_Click);
+            this.plusGoal2.Click += new System.EventHandler(this.PlusGoal2Click);
             // 
             // plusGoal1
             // 
@@ -337,7 +340,7 @@
             this.plusGoal1.TabIndex = 9;
             this.plusGoal1.Text = "+";
             this.plusGoal1.UseVisualStyleBackColor = true;
-            this.plusGoal1.Click += new System.EventHandler(this.plusGoal1_Click);
+            this.plusGoal1.Click += new System.EventHandler(this.PlusGoal1Click);
             // 
             // minusGoal1
             // 
@@ -349,7 +352,7 @@
             this.minusGoal1.TabIndex = 8;
             this.minusGoal1.Text = "-";
             this.minusGoal1.UseVisualStyleBackColor = true;
-            this.minusGoal1.Click += new System.EventHandler(this.minusGoal1_Click);
+            this.minusGoal1.Click += new System.EventHandler(this.MinusGoal1Click);
             // 
             // goalsTeam1
             // 
@@ -383,7 +386,7 @@
             this.periodMinus.TabIndex = 11;
             this.periodMinus.Text = "-";
             this.periodMinus.UseVisualStyleBackColor = true;
-            this.periodMinus.Click += new System.EventHandler(this.periodMinus_Click);
+            this.periodMinus.Click += new System.EventHandler(this.PeriodMinusClick);
             // 
             // periodPlus
             // 
@@ -395,7 +398,7 @@
             this.periodPlus.TabIndex = 12;
             this.periodPlus.Text = "+";
             this.periodPlus.UseVisualStyleBackColor = true;
-            this.periodPlus.Click += new System.EventHandler(this.periodPlus_Click);
+            this.periodPlus.Click += new System.EventHandler(this.PeriodPlusClick);
             // 
             // p1T1ShowPenalty
             // 
@@ -407,7 +410,7 @@
             this.p1T1ShowPenalty.TabIndex = 16;
             this.p1T1ShowPenalty.Text = "Show";
             this.p1T1ShowPenalty.UseVisualStyleBackColor = true;
-            this.p1T1ShowPenalty.Click += new System.EventHandler(this.p1T1ShowPenalty_Click);
+            this.p1T1ShowPenalty.Click += new System.EventHandler(this.P1T1ShowPenaltyClick);
             // 
             // p1T1HidePenalty
             // 
@@ -419,7 +422,7 @@
             this.p1T1HidePenalty.TabIndex = 17;
             this.p1T1HidePenalty.Text = "Hide";
             this.p1T1HidePenalty.UseVisualStyleBackColor = true;
-            this.p1T1HidePenalty.Click += new System.EventHandler(this.p1T1HidePenalty_Click);
+            this.p1T1HidePenalty.Click += new System.EventHandler(this.P1T1HidePenaltyClick);
             // 
             // p2T1HidePenalty
             // 
@@ -431,7 +434,7 @@
             this.p2T1HidePenalty.TabIndex = 37;
             this.p2T1HidePenalty.Text = "Hide";
             this.p2T1HidePenalty.UseVisualStyleBackColor = true;
-            this.p2T1HidePenalty.Click += new System.EventHandler(this.p2T1HidePenalty_Click);
+            this.p2T1HidePenalty.Click += new System.EventHandler(this.P2T1HidePenaltyClick);
             // 
             // p2T1ShowPenalty
             // 
@@ -443,7 +446,7 @@
             this.p2T1ShowPenalty.TabIndex = 36;
             this.p2T1ShowPenalty.Text = "Show";
             this.p2T1ShowPenalty.UseVisualStyleBackColor = true;
-            this.p2T1ShowPenalty.Click += new System.EventHandler(this.p2T1ShowPenalty_Click);
+            this.p2T1ShowPenalty.Click += new System.EventHandler(this.P2T1ShowPenaltyClick);
             // 
             // p1T2HidePenalty
             // 
@@ -455,7 +458,7 @@
             this.p1T2HidePenalty.TabIndex = 39;
             this.p1T2HidePenalty.Text = "Hide";
             this.p1T2HidePenalty.UseVisualStyleBackColor = true;
-            this.p1T2HidePenalty.Click += new System.EventHandler(this.p1T2HidePenalty_Click);
+            this.p1T2HidePenalty.Click += new System.EventHandler(this.P1T2HidePenaltyClick);
             // 
             // p1T2ShowPenalty
             // 
@@ -467,7 +470,7 @@
             this.p1T2ShowPenalty.TabIndex = 38;
             this.p1T2ShowPenalty.Text = "Show";
             this.p1T2ShowPenalty.UseVisualStyleBackColor = true;
-            this.p1T2ShowPenalty.Click += new System.EventHandler(this.p1T2ShowPenalty_Click);
+            this.p1T2ShowPenalty.Click += new System.EventHandler(this.P1T2ShowPenaltyClick);
             // 
             // p2T2HidePenalty
             // 
@@ -479,7 +482,7 @@
             this.p2T2HidePenalty.TabIndex = 41;
             this.p2T2HidePenalty.Text = "Hide";
             this.p2T2HidePenalty.UseVisualStyleBackColor = true;
-            this.p2T2HidePenalty.Click += new System.EventHandler(this.p2T2HidePenalty_Click);
+            this.p2T2HidePenalty.Click += new System.EventHandler(this.P2T2HidePenaltyClick);
             // 
             // p2T2ShowPenalty
             // 
@@ -491,7 +494,7 @@
             this.p2T2ShowPenalty.TabIndex = 40;
             this.p2T2ShowPenalty.Text = "Show";
             this.p2T2ShowPenalty.UseVisualStyleBackColor = true;
-            this.p2T2ShowPenalty.Click += new System.EventHandler(this.p2T2ShowPenalty_Click);
+            this.p2T2ShowPenalty.Click += new System.EventHandler(this.P2T2ShowPenaltyClick);
             // 
             // label2
             // 
@@ -522,7 +525,7 @@
             this.setTeam1Name.TabIndex = 46;
             this.setTeam1Name.Text = "Set";
             this.setTeam1Name.UseVisualStyleBackColor = true;
-            this.setTeam1Name.Click += new System.EventHandler(this.setTeam1Name_Click);
+            this.setTeam1Name.Click += new System.EventHandler(this.SetTeam1NameClick);
             // 
             // label4
             // 
@@ -545,7 +548,7 @@
             this.uploadLogoT1.TabIndex = 51;
             this.uploadLogoT1.Text = "Upload";
             this.uploadLogoT1.UseVisualStyleBackColor = true;
-            this.uploadLogoT1.Click += new System.EventHandler(this.uploadLogoT1_Click);
+            this.uploadLogoT1.Click += new System.EventHandler(this.UploadLogoT1Click);
             // 
             // logo1
             // 
@@ -576,7 +579,7 @@
             this.hideT1Logo.TabIndex = 56;
             this.hideT1Logo.Text = "Hide";
             this.hideT1Logo.UseVisualStyleBackColor = true;
-            this.hideT1Logo.Click += new System.EventHandler(this.hideT1Logo_Click);
+            this.hideT1Logo.Click += new System.EventHandler(this.HideT1LogoClick);
             // 
             // showT1Logo
             // 
@@ -588,7 +591,7 @@
             this.showT1Logo.TabIndex = 57;
             this.showT1Logo.Text = "Show";
             this.showT1Logo.UseVisualStyleBackColor = true;
-            this.showT1Logo.Click += new System.EventHandler(this.showT1Logo_Click);
+            this.showT1Logo.Click += new System.EventHandler(this.ShowT1LogoClick);
             // 
             // showT2Logo
             // 
@@ -600,7 +603,7 @@
             this.showT2Logo.TabIndex = 66;
             this.showT2Logo.Text = "Show";
             this.showT2Logo.UseVisualStyleBackColor = true;
-            this.showT2Logo.Click += new System.EventHandler(this.showT2Logo_Click);
+            this.showT2Logo.Click += new System.EventHandler(this.ShowT2LogoClick);
             // 
             // hideT2Logo
             // 
@@ -612,7 +615,7 @@
             this.hideT2Logo.TabIndex = 65;
             this.hideT2Logo.Text = "Hide";
             this.hideT2Logo.UseVisualStyleBackColor = true;
-            this.hideT2Logo.Click += new System.EventHandler(this.hideT2Logo_Click);
+            this.hideT2Logo.Click += new System.EventHandler(this.HideT2LogoClick);
             // 
             // logo2Path
             // 
@@ -643,7 +646,7 @@
             this.uploadLogoT2.TabIndex = 62;
             this.uploadLogoT2.Text = "Upload";
             this.uploadLogoT2.UseVisualStyleBackColor = true;
-            this.uploadLogoT2.Click += new System.EventHandler(this.uploadLogoT2_Click);
+            this.uploadLogoT2.Click += new System.EventHandler(this.UploadLogoT2Click);
             // 
             // label3
             // 
@@ -666,7 +669,7 @@
             this.setTeam2Name.TabIndex = 60;
             this.setTeam2Name.Text = "Set";
             this.setTeam2Name.UseVisualStyleBackColor = true;
-            this.setTeam2Name.Click += new System.EventHandler(this.setTeam2Name_Click_1);
+            this.setTeam2Name.Click += new System.EventHandler(this.SetTeam2NameClick1);
             // 
             // team2NameBox
             // 
@@ -697,7 +700,7 @@
             this.resetT1P1.TabIndex = 67;
             this.resetT1P1.Text = "Reset";
             this.resetT1P1.UseVisualStyleBackColor = true;
-            this.resetT1P1.Click += new System.EventHandler(this.resetT1P1_Click);
+            this.resetT1P1.Click += new System.EventHandler(this.ResetT1P1Click);
             // 
             // resetT1P2
             // 
@@ -709,7 +712,7 @@
             this.resetT1P2.TabIndex = 68;
             this.resetT1P2.Text = "Reset";
             this.resetT1P2.UseVisualStyleBackColor = true;
-            this.resetT1P2.Click += new System.EventHandler(this.resetT1P2_Click);
+            this.resetT1P2.Click += new System.EventHandler(this.ResetT1P2Click);
             // 
             // resetT2P1
             // 
@@ -721,7 +724,7 @@
             this.resetT2P1.TabIndex = 69;
             this.resetT2P1.Text = "Reset";
             this.resetT2P1.UseVisualStyleBackColor = true;
-            this.resetT2P1.Click += new System.EventHandler(this.resetT2P1_Click);
+            this.resetT2P1.Click += new System.EventHandler(this.ResetT2P1Click);
             // 
             // resetT2P2
             // 
@@ -733,7 +736,7 @@
             this.resetT2P2.TabIndex = 70;
             this.resetT2P2.Text = "Reset";
             this.resetT2P2.UseVisualStyleBackColor = true;
-            this.resetT2P2.Click += new System.EventHandler(this.resetT2P2_Click);
+            this.resetT2P2.Click += new System.EventHandler(this.ResetT2P2Click);
             // 
             // menuStrip1
             // 
@@ -766,14 +769,14 @@
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
             this.timeToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.timeToolStripMenuItem.Text = "Time";
-            this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
+            this.timeToolStripMenuItem.Click += new System.EventHandler(this.TimeToolStripMenuItemClick);
             // 
             // appearanceToolStripMenuItem
             // 
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
             this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.appearanceToolStripMenuItem.Text = "Appearance";
-            this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
+            this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.AppearanceToolStripMenuItemClick);
             // 
             // statisticsToolStripMenuItem
             // 
@@ -789,28 +792,28 @@
             this.selectStatisticsToolStripMenuItem.Name = "selectStatisticsToolStripMenuItem";
             this.selectStatisticsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.selectStatisticsToolStripMenuItem.Text = "Select Statistics";
-            this.selectStatisticsToolStripMenuItem.Click += new System.EventHandler(this.selectStatisticsToolStripMenuItem_Click);
+            this.selectStatisticsToolStripMenuItem.Click += new System.EventHandler(this.SelectStatisticsToolStripMenuItemClick);
             // 
             // exportSettingsToolStripMenuItem
             // 
             this.exportSettingsToolStripMenuItem.Name = "exportSettingsToolStripMenuItem";
             this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.exportSettingsToolStripMenuItem.Text = "Export settings";
-            this.exportSettingsToolStripMenuItem.Click += new System.EventHandler(this.exportSettingsToolStripMenuItem_Click);
+            this.exportSettingsToolStripMenuItem.Click += new System.EventHandler(this.ExportSettingsToolStripMenuItemClick);
             // 
             // auxiliaryDevicesToolStripMenuItem
             // 
             this.auxiliaryDevicesToolStripMenuItem.Name = "auxiliaryDevicesToolStripMenuItem";
             this.auxiliaryDevicesToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.auxiliaryDevicesToolStripMenuItem.Text = "Auxiliary devices";
-            this.auxiliaryDevicesToolStripMenuItem.Click += new System.EventHandler(this.auxiliaryDevicesToolStripMenuItem_Click);
+            this.auxiliaryDevicesToolStripMenuItem.Click += new System.EventHandler(this.AuxiliaryDevicesToolStripMenuItemClick);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
             // 
             // videosToolStripMenuItem
             // 
@@ -825,7 +828,7 @@
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             this.loadToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.loadToolStripMenuItem.Text = "Edit";
-            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItemClick);
             // 
             // teamsToolStripMenuItem
             // 
@@ -840,7 +843,7 @@
             this.editTeamTS.Name = "editTeamTS";
             this.editTeamTS.Size = new System.Drawing.Size(94, 22);
             this.editTeamTS.Text = "Edit";
-            this.editTeamTS.Click += new System.EventHandler(this.editTeamTS_Click);
+            this.editTeamTS.Click += new System.EventHandler(this.EditTeamTsClick);
             // 
             // databaseToolStripMenuItem
             // 
@@ -857,28 +860,28 @@
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
             this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem.Text = "Import";
-            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.ImportToolStripMenuItemClick);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.exportToolStripMenuItem.Text = "Export";
-            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.ExportToolStripMenuItemClick);
             // 
             // dropToolStripMenuItem
             // 
             this.dropToolStripMenuItem.Name = "dropToolStripMenuItem";
             this.dropToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.dropToolStripMenuItem.Text = "Drop";
-            this.dropToolStripMenuItem.Click += new System.EventHandler(this.dropToolStripMenuItem_Click);
+            this.dropToolStripMenuItem.Click += new System.EventHandler(this.DropToolStripMenuItemClick);
             // 
             // customEventToolStripMenuItem
             // 
             this.customEventToolStripMenuItem.Name = "customEventToolStripMenuItem";
             this.customEventToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.customEventToolStripMenuItem.Text = "Custom event";
-            this.customEventToolStripMenuItem.Click += new System.EventHandler(this.customEventToolStripMenuItem_Click);
+            this.customEventToolStripMenuItem.Click += new System.EventHandler(this.CustomEventToolStripMenuItemClick);
             // 
             // createBtn
             // 
@@ -890,7 +893,7 @@
             this.createBtn.TabIndex = 72;
             this.createBtn.Text = "Show ScoreBoard";
             this.createBtn.UseVisualStyleBackColor = true;
-            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
+            this.createBtn.Click += new System.EventHandler(this.CreateBtnClick);
             // 
             // closeScoreboardBtn
             // 
@@ -902,7 +905,7 @@
             this.closeScoreboardBtn.TabIndex = 73;
             this.closeScoreboardBtn.Text = "Close Scoreboard";
             this.closeScoreboardBtn.UseVisualStyleBackColor = true;
-            this.closeScoreboardBtn.Click += new System.EventHandler(this.closeScoreboardBtn_Click);
+            this.closeScoreboardBtn.Click += new System.EventHandler(this.CloseScoreboardBtnClick);
             // 
             // label1
             // 
@@ -1041,7 +1044,7 @@
             this.setPT1P2.TabIndex = 83;
             this.setPT1P2.Text = "Set";
             this.setPT1P2.UseVisualStyleBackColor = true;
-            this.setPT1P2.Click += new System.EventHandler(this.setPT1P2_Click);
+            this.setPT1P2.Click += new System.EventHandler(this.SetPt1P2Click);
             // 
             // setPT1P1
             // 
@@ -1053,7 +1056,7 @@
             this.setPT1P1.TabIndex = 82;
             this.setPT1P1.Text = "Set";
             this.setPT1P1.UseVisualStyleBackColor = true;
-            this.setPT1P1.Click += new System.EventHandler(this.setPT1P1_Click);
+            this.setPT1P1.Click += new System.EventHandler(this.SetPt1P1Click);
             // 
             // label11
             // 
@@ -1159,7 +1162,7 @@
             this.setT2P2.TabIndex = 85;
             this.setT2P2.Text = "Set";
             this.setT2P2.UseVisualStyleBackColor = true;
-            this.setT2P2.Click += new System.EventHandler(this.setT2P2_Click);
+            this.setT2P2.Click += new System.EventHandler(this.SetT2P2Click);
             // 
             // penMinP2T2
             // 
@@ -1204,7 +1207,7 @@
             this.setT2P1.TabIndex = 84;
             this.setT2P1.Text = "Set";
             this.setT2P1.UseVisualStyleBackColor = true;
-            this.setT2P1.Click += new System.EventHandler(this.setT2P1_Click);
+            this.setT2P1.Click += new System.EventHandler(this.SetT2P1Click);
             // 
             // label14
             // 
@@ -1290,7 +1293,7 @@
             this.cancelLogo2.TabIndex = 96;
             this.cancelLogo2.Text = "X";
             this.cancelLogo2.UseVisualStyleBackColor = true;
-            this.cancelLogo2.Click += new System.EventHandler(this.cancelLogo2_Click);
+            this.cancelLogo2.Click += new System.EventHandler(this.CancelLogo2Click);
             // 
             // label26
             // 
@@ -1324,7 +1327,7 @@
             this.plusFaceoffsT2.TabIndex = 101;
             this.plusFaceoffsT2.Text = "+";
             this.plusFaceoffsT2.UseVisualStyleBackColor = true;
-            this.plusFaceoffsT2.Click += new System.EventHandler(this.plusFaceoffsT2_Click);
+            this.plusFaceoffsT2.Click += new System.EventHandler(this.PlusFaceoffsT2Click);
             // 
             // cancelVideo2
             // 
@@ -1336,7 +1339,7 @@
             this.cancelVideo2.TabIndex = 90;
             this.cancelVideo2.Text = "Cancel";
             this.cancelVideo2.UseVisualStyleBackColor = true;
-            this.cancelVideo2.Click += new System.EventHandler(this.cancelVideo2_Click);
+            this.cancelVideo2.Click += new System.EventHandler(this.CancelVideo2Click);
             // 
             // minusFaceoffsT2
             // 
@@ -1349,7 +1352,7 @@
             this.minusFaceoffsT2.TabIndex = 100;
             this.minusFaceoffsT2.Text = "-";
             this.minusFaceoffsT2.UseVisualStyleBackColor = true;
-            this.minusFaceoffsT2.Click += new System.EventHandler(this.minusFaceoffsT2_Click);
+            this.minusFaceoffsT2.Click += new System.EventHandler(this.MinusFaceoffsT2Click);
             // 
             // TeamsDBT2
             // 
@@ -1382,7 +1385,7 @@
             this.playVideo2.TabIndex = 89;
             this.playVideo2.Text = "Play";
             this.playVideo2.UseVisualStyleBackColor = true;
-            this.playVideo2.Click += new System.EventHandler(this.playVideo2_Click);
+            this.playVideo2.Click += new System.EventHandler(this.PlayVideo2Click);
             // 
             // label28
             // 
@@ -1405,7 +1408,7 @@
             this.SetFromDBT2.TabIndex = 81;
             this.SetFromDBT2.Text = "Load from DB";
             this.SetFromDBT2.UseVisualStyleBackColor = true;
-            this.SetFromDBT2.Click += new System.EventHandler(this.SetFromDBT2_Click);
+            this.SetFromDBT2.Click += new System.EventHandler(this.SetFromDbt2Click);
             // 
             // videoPath2
             // 
@@ -1414,7 +1417,7 @@
             this.videoPath2.Name = "videoPath2";
             this.videoPath2.Size = new System.Drawing.Size(100, 20);
             this.videoPath2.TabIndex = 88;
-            this.videoPath2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.videoPath2_MouseDoubleClick);
+            this.videoPath2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.VideoPath2MouseDoubleClick);
             // 
             // cancelTimeoutT2
             // 
@@ -1426,7 +1429,7 @@
             this.cancelTimeoutT2.TabIndex = 83;
             this.cancelTimeoutT2.Text = "Cancel";
             this.cancelTimeoutT2.UseVisualStyleBackColor = true;
-            this.cancelTimeoutT2.Click += new System.EventHandler(this.cancelTimeoutT2_Click);
+            this.cancelTimeoutT2.Click += new System.EventHandler(this.CancelTimeoutT2Click);
             // 
             // plusShotsT2
             // 
@@ -1438,7 +1441,7 @@
             this.plusShotsT2.TabIndex = 97;
             this.plusShotsT2.Text = "+";
             this.plusShotsT2.UseVisualStyleBackColor = true;
-            this.plusShotsT2.Click += new System.EventHandler(this.plusShotsT2_Click);
+            this.plusShotsT2.Click += new System.EventHandler(this.PlusShotsT2Click);
             // 
             // uploadVideoT2
             // 
@@ -1450,7 +1453,7 @@
             this.uploadVideoT2.TabIndex = 87;
             this.uploadVideoT2.Text = "Upload";
             this.uploadVideoT2.UseVisualStyleBackColor = true;
-            this.uploadVideoT2.Click += new System.EventHandler(this.uploadVideoT2_Click);
+            this.uploadVideoT2.Click += new System.EventHandler(this.UploadVideoT2Click);
             // 
             // minusShotsT2
             // 
@@ -1462,7 +1465,7 @@
             this.minusShotsT2.TabIndex = 96;
             this.minusShotsT2.Text = "-";
             this.minusShotsT2.UseVisualStyleBackColor = true;
-            this.minusShotsT2.Click += new System.EventHandler(this.minusShotsT2_Click);
+            this.minusShotsT2.Click += new System.EventHandler(this.MinusShotsT2Click);
             // 
             // label17
             // 
@@ -1496,7 +1499,7 @@
             this.startTimeoutT2.TabIndex = 82;
             this.startTimeoutT2.Text = "Start";
             this.startTimeoutT2.UseVisualStyleBackColor = true;
-            this.startTimeoutT2.Click += new System.EventHandler(this.startTimeoutT2_Click);
+            this.startTimeoutT2.Click += new System.EventHandler(this.StartTimeoutT2Click);
             // 
             // groupBox7
             // 
@@ -1592,7 +1595,7 @@
             this.cancelLogo1.TabIndex = 95;
             this.cancelLogo1.Text = "X";
             this.cancelLogo1.UseVisualStyleBackColor = true;
-            this.cancelLogo1.Click += new System.EventHandler(this.cancelLogo1_Click);
+            this.cancelLogo1.Click += new System.EventHandler(this.CancelLogo1Click);
             // 
             // label24
             // 
@@ -1626,7 +1629,7 @@
             this.plusShotsT1.TabIndex = 89;
             this.plusShotsT1.Text = "+";
             this.plusShotsT1.UseVisualStyleBackColor = true;
-            this.plusShotsT1.Click += new System.EventHandler(this.plusShotsT1_Click);
+            this.plusShotsT1.Click += new System.EventHandler(this.PlusShotsT1Click);
             // 
             // plusFaceoffsT1
             // 
@@ -1638,7 +1641,7 @@
             this.plusFaceoffsT1.TabIndex = 93;
             this.plusFaceoffsT1.Text = "+";
             this.plusFaceoffsT1.UseVisualStyleBackColor = true;
-            this.plusFaceoffsT1.Click += new System.EventHandler(this.plusFaceoffsT1_Click);
+            this.plusFaceoffsT1.Click += new System.EventHandler(this.PlusFaceoffsT1Click);
             // 
             // minusFaceoffsT1
             // 
@@ -1650,7 +1653,7 @@
             this.minusFaceoffsT1.TabIndex = 92;
             this.minusFaceoffsT1.Text = "-";
             this.minusFaceoffsT1.UseVisualStyleBackColor = true;
-            this.minusFaceoffsT1.Click += new System.EventHandler(this.minusFaceoffsT1_Click);
+            this.minusFaceoffsT1.Click += new System.EventHandler(this.MinusFaceoffsT1Click);
             // 
             // minusShotsT1
             // 
@@ -1662,7 +1665,7 @@
             this.minusShotsT1.TabIndex = 88;
             this.minusShotsT1.Text = "-";
             this.minusShotsT1.UseVisualStyleBackColor = true;
-            this.minusShotsT1.Click += new System.EventHandler(this.minusShotsT1_Click);
+            this.minusShotsT1.Click += new System.EventHandler(this.MinusShotsT1Click);
             // 
             // shotsT1
             // 
@@ -1707,7 +1710,7 @@
             this.cancelVideo1.TabIndex = 85;
             this.cancelVideo1.Text = "Cancel";
             this.cancelVideo1.UseVisualStyleBackColor = true;
-            this.cancelVideo1.Click += new System.EventHandler(this.cancelVideo1_Click);
+            this.cancelVideo1.Click += new System.EventHandler(this.CancelVideo1Click);
             // 
             // playVideo1
             // 
@@ -1719,7 +1722,7 @@
             this.playVideo1.TabIndex = 84;
             this.playVideo1.Text = "Play";
             this.playVideo1.UseVisualStyleBackColor = true;
-            this.playVideo1.Click += new System.EventHandler(this.playVideo1_Click);
+            this.playVideo1.Click += new System.EventHandler(this.PlayVideo1Click);
             // 
             // videoPath1
             // 
@@ -1728,7 +1731,7 @@
             this.videoPath1.Name = "videoPath1";
             this.videoPath1.Size = new System.Drawing.Size(100, 20);
             this.videoPath1.TabIndex = 83;
-            this.videoPath1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.videoPath1_MouseDoubleClick);
+            this.videoPath1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.VideoPath1MouseDoubleClick);
             // 
             // uploadVideoT1
             // 
@@ -1740,7 +1743,7 @@
             this.uploadVideoT1.TabIndex = 82;
             this.uploadVideoT1.Text = "Upload";
             this.uploadVideoT1.UseVisualStyleBackColor = true;
-            this.uploadVideoT1.Click += new System.EventHandler(this.uploadVideoT1_Click);
+            this.uploadVideoT1.Click += new System.EventHandler(this.UploadVideoT1Click);
             // 
             // label15
             // 
@@ -1773,7 +1776,7 @@
             this.SetFromDBT1.TabIndex = 79;
             this.SetFromDBT1.Text = "Load from DB";
             this.SetFromDBT1.UseVisualStyleBackColor = true;
-            this.SetFromDBT1.Click += new System.EventHandler(this.SetFromDBT1_Click);
+            this.SetFromDBT1.Click += new System.EventHandler(this.SetFromDbt1Click);
             // 
             // cancelTimeoutT1
             // 
@@ -1785,7 +1788,7 @@
             this.cancelTimeoutT1.TabIndex = 78;
             this.cancelTimeoutT1.Text = "Cancel";
             this.cancelTimeoutT1.UseVisualStyleBackColor = true;
-            this.cancelTimeoutT1.Click += new System.EventHandler(this.cancelTimeoutT1_Click);
+            this.cancelTimeoutT1.Click += new System.EventHandler(this.CancelTimeoutT1Click);
             // 
             // startTimeoutT1
             // 
@@ -1797,7 +1800,7 @@
             this.startTimeoutT1.TabIndex = 77;
             this.startTimeoutT1.Text = "Start";
             this.startTimeoutT1.UseVisualStyleBackColor = true;
-            this.startTimeoutT1.Click += new System.EventHandler(this.startTimeoutT1_Click);
+            this.startTimeoutT1.Click += new System.EventHandler(this.StartTimeoutT1Click);
             // 
             // groupBox6
             // 
@@ -1852,7 +1855,7 @@
             this.startBreak.TabIndex = 81;
             this.startBreak.Text = "Start break";
             this.startBreak.UseVisualStyleBackColor = true;
-            this.startBreak.Click += new System.EventHandler(this.startBreak_Click);
+            this.startBreak.Click += new System.EventHandler(this.StartBreakClick);
             // 
             // cancelBreak
             // 
@@ -1864,7 +1867,7 @@
             this.cancelBreak.TabIndex = 79;
             this.cancelBreak.Text = "Cancel";
             this.cancelBreak.UseVisualStyleBackColor = true;
-            this.cancelBreak.Click += new System.EventHandler(this.cancelBreak_Click);
+            this.cancelBreak.Click += new System.EventHandler(this.CancelBreakClick);
             // 
             // playAd
             // 
@@ -1876,7 +1879,7 @@
             this.playAd.TabIndex = 83;
             this.playAd.Text = "Play";
             this.playAd.UseVisualStyleBackColor = true;
-            this.playAd.Click += new System.EventHandler(this.button2_Click);
+            this.playAd.Click += new System.EventHandler(this.Button2Click);
             // 
             // cancelAd
             // 
@@ -1888,7 +1891,7 @@
             this.cancelAd.TabIndex = 84;
             this.cancelAd.Text = "Cancel";
             this.cancelAd.UseVisualStyleBackColor = true;
-            this.cancelAd.Click += new System.EventHandler(this.button3_Click);
+            this.cancelAd.Click += new System.EventHandler(this.Button3Click);
             // 
             // adsDBV
             // 
@@ -1934,7 +1937,7 @@
             this.preMatchCount.TabIndex = 82;
             this.preMatchCount.Text = "Pre match countdown";
             this.preMatchCount.UseVisualStyleBackColor = true;
-            this.preMatchCount.Click += new System.EventHandler(this.preMatchCount_Click);
+            this.preMatchCount.Click += new System.EventHandler(this.PreMatchCountClick);
             // 
             // groupBox9
             // 
@@ -1975,7 +1978,7 @@
             this.shootoutBtn.TabIndex = 91;
             this.shootoutBtn.Text = "Start shootout";
             this.shootoutBtn.UseVisualStyleBackColor = true;
-            this.shootoutBtn.Click += new System.EventHandler(this.shootoutBtn_Click);
+            this.shootoutBtn.Click += new System.EventHandler(this.ShootoutBtnClick);
             // 
             // overT1
             // 
@@ -1987,7 +1990,7 @@
             this.overT1.TabIndex = 92;
             this.overT1.Text = "Overtime 1";
             this.overT1.UseVisualStyleBackColor = true;
-            this.overT1.Click += new System.EventHandler(this.overT1_Click);
+            this.overT1.Click += new System.EventHandler(this.OverT1Click);
             // 
             // overT2
             // 
@@ -1999,7 +2002,7 @@
             this.overT2.TabIndex = 93;
             this.overT2.Text = "Overtime 2";
             this.overT2.UseVisualStyleBackColor = true;
-            this.overT2.Click += new System.EventHandler(this.overT2_Click);
+            this.overT2.Click += new System.EventHandler(this.OverT2Click);
             // 
             // overTBreak
             // 
@@ -2011,7 +2014,7 @@
             this.overTBreak.TabIndex = 94;
             this.overTBreak.Text = "Overtime break";
             this.overTBreak.UseVisualStyleBackColor = true;
-            this.overTBreak.Click += new System.EventHandler(this.overTBreak_Click);
+            this.overTBreak.Click += new System.EventHandler(this.OverTBreakClick);
             // 
             // groupBox11
             // 
@@ -2107,7 +2110,7 @@
             this.MinimumSize = new System.Drawing.Size(1280, 1024);
             this.Name = "GameForm";
             this.Text = "Game control board";
-            this.Load += new System.EventHandler(this.GameForm_Load);
+            this.Load += new System.EventHandler(this.GameFormLoad);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
@@ -2144,165 +2147,165 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label minutesTime;
-        private System.Windows.Forms.Button startTime;
-        private System.Windows.Forms.Button stopTime;
-        private System.Windows.Forms.Button resetTime;
-        private System.Windows.Forms.Label goalsTeam2;
-        private System.Windows.Forms.Button minusGoal2;
-        private System.Windows.Forms.Button plusGoal2;
-        private System.Windows.Forms.Button plusGoal1;
-        private System.Windows.Forms.Button minusGoal1;
-        private System.Windows.Forms.Label goalsTeam1;
-        private System.Windows.Forms.Label period;
-        private System.Windows.Forms.Button periodMinus;
-        private System.Windows.Forms.Button periodPlus;
-        private System.Windows.Forms.Label secondsTime;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button p1T1ShowPenalty;
-        private System.Windows.Forms.Button p1T1HidePenalty;
-        private System.Windows.Forms.Button p2T1HidePenalty;
-        private System.Windows.Forms.Button p2T1ShowPenalty;
-        private System.Windows.Forms.Button p1T2HidePenalty;
-        private System.Windows.Forms.Button p1T2ShowPenalty;
-        private System.Windows.Forms.Button p2T2HidePenalty;
-        private System.Windows.Forms.Button p2T2ShowPenalty;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox team1NameBox;
-        private System.Windows.Forms.Button setTeam1Name;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button uploadLogoT1;
-        private System.Windows.Forms.PictureBox logo1;
-        private System.Windows.Forms.TextBox logo1Path;
-        private System.Windows.Forms.Button hideT1Logo;
-        private System.Windows.Forms.Button showT1Logo;
-        private System.Windows.Forms.Button showT2Logo;
-        private System.Windows.Forms.Button hideT2Logo;
-        private System.Windows.Forms.TextBox logo2Path;
-        private System.Windows.Forms.PictureBox logo2;
-        private System.Windows.Forms.Button uploadLogoT2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button setTeam2Name;
-        private System.Windows.Forms.TextBox team2NameBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button resetT1P1;
-        private System.Windows.Forms.Button resetT1P2;
-        private System.Windows.Forms.Button resetT2P1;
-        private System.Windows.Forms.Button resetT2P2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem timeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem appearanceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem videosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem teamsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editTeamTS;
-        private System.Windows.Forms.Button createBtn;
-        private System.Windows.Forms.Button closeScoreboardBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button cancelTimeoutT2;
-        private System.Windows.Forms.Button startTimeoutT2;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label timeoutT2S;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label timeoutT2M;
-        private System.Windows.Forms.Button cancelTimeoutT1;
-        private System.Windows.Forms.Button startTimeoutT1;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label timeoutT1S;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label timeoutT1M;
-        private System.Windows.Forms.Button startBreak;
-        private System.Windows.Forms.Button cancelBreak;
-        private System.Windows.Forms.Button SetFromDBT1;
-        private System.Windows.Forms.ComboBox TeamsDBT1;
-        private System.Windows.Forms.ComboBox TeamsDBT2;
-        private System.Windows.Forms.Button SetFromDBT2;
-        private System.Windows.Forms.Button playAd;
-        private System.Windows.Forms.Button cancelAd;
-        private System.Windows.Forms.Button cancelVideo1;
-        private System.Windows.Forms.Button playVideo1;
-        private System.Windows.Forms.TextBox videoPath1;
-        private System.Windows.Forms.Button uploadVideoT1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button cancelVideo2;
-        private System.Windows.Forms.Button playVideo2;
-        private System.Windows.Forms.TextBox videoPath2;
-        private System.Windows.Forms.Button uploadVideoT2;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dropToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
-        private System.Windows.Forms.ComboBox adsDBV;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button plusFaceoffsT1;
-        private System.Windows.Forms.Button minusFaceoffsT1;
-        private System.Windows.Forms.Label faceoffsT1;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button plusShotsT1;
-        private System.Windows.Forms.Button minusShotsT1;
-        private System.Windows.Forms.Label shotsT1;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button plusFaceoffsT2;
-        private System.Windows.Forms.Button minusFaceoffsT2;
-        private System.Windows.Forms.Label faceoffsT2;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Button plusShotsT2;
-        private System.Windows.Forms.Button minusShotsT2;
-        private System.Windows.Forms.Label shotsT2;
-        private System.Windows.Forms.Button setPT1P1;
-        private System.Windows.Forms.Button setPT1P2;
-        private System.Windows.Forms.Button setT2P2;
-        private System.Windows.Forms.Button setT2P1;
-        private System.Windows.Forms.Label penP2T1;
-        private System.Windows.Forms.Label penP1T1;
-        private System.Windows.Forms.Label penMinP2T1;
-        private System.Windows.Forms.Label penMinP1T1;
-        private System.Windows.Forms.Label penP2T2;
-        private System.Windows.Forms.Label penP1T2;
-        private System.Windows.Forms.Label penSecP2T1;
-        private System.Windows.Forms.Label penSecP1T1;
-        private System.Windows.Forms.Label penSecP2T2;
-        private System.Windows.Forms.Label penSecP1T2;
-        private System.Windows.Forms.Label penMinP2T2;
-        private System.Windows.Forms.Label penMinP1T2;
-        private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem selectStatisticsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportSettingsToolStripMenuItem;
-        private System.Windows.Forms.Button shootoutBtn;
-        private System.Windows.Forms.Button preMatchCount;
-        private System.Windows.Forms.Button overT1;
-        private System.Windows.Forms.Button overT2;
-        private System.Windows.Forms.Button overTBreak;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.ToolStripMenuItem customEventToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem auxiliaryDevicesToolStripMenuItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button cancelLogo2;
-        private System.Windows.Forms.Button cancelLogo1;
+        private GroupBox groupBox1;
+        private Label minutesTime;
+        private Button startTime;
+        private Button stopTime;
+        private Button resetTime;
+        private Label goalsTeam2;
+        private Button minusGoal2;
+        private Button plusGoal2;
+        private Button plusGoal1;
+        private Button minusGoal1;
+        private Label goalsTeam1;
+        private Label period;
+        private Button periodMinus;
+        private Button periodPlus;
+        private Label secondsTime;
+        private Label label5;
+        private Button p1T1ShowPenalty;
+        private Button p1T1HidePenalty;
+        private Button p2T1HidePenalty;
+        private Button p2T1ShowPenalty;
+        private Button p1T2HidePenalty;
+        private Button p1T2ShowPenalty;
+        private Button p2T2HidePenalty;
+        private Button p2T2ShowPenalty;
+        private Label label2;
+        private TextBox team1NameBox;
+        private Button setTeam1Name;
+        private Label label4;
+        private Button uploadLogoT1;
+        private PictureBox logo1;
+        private TextBox logo1Path;
+        private Button hideT1Logo;
+        private Button showT1Logo;
+        private Button showT2Logo;
+        private Button hideT2Logo;
+        private TextBox logo2Path;
+        private PictureBox logo2;
+        private Button uploadLogoT2;
+        private Label label3;
+        private Button setTeam2Name;
+        private TextBox team2NameBox;
+        private Label label7;
+        private Button resetT1P1;
+        private Button resetT1P2;
+        private Button resetT2P1;
+        private Button resetT2P2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem settingsToolStripMenuItem;
+        private ToolStripMenuItem timeToolStripMenuItem;
+        private ToolStripMenuItem appearanceToolStripMenuItem;
+        private ToolStripMenuItem videosToolStripMenuItem;
+        private ToolStripMenuItem teamsToolStripMenuItem;
+        private ToolStripMenuItem editTeamTS;
+        private Button createBtn;
+        private Button closeScoreboardBtn;
+        private Label label1;
+        private Label label6;
+        private Label label8;
+        private GroupBox groupBox2;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private GroupBox groupBox3;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private GroupBox groupBox4;
+        private GroupBox groupBox5;
+        private Button cancelTimeoutT2;
+        private Button startTimeoutT2;
+        private GroupBox groupBox7;
+        private Label timeoutT2S;
+        private Label label19;
+        private Label timeoutT2M;
+        private Button cancelTimeoutT1;
+        private Button startTimeoutT1;
+        private GroupBox groupBox6;
+        private Label timeoutT1S;
+        private Label label16;
+        private Label timeoutT1M;
+        private Button startBreak;
+        private Button cancelBreak;
+        private Button SetFromDBT1;
+        private ComboBox TeamsDBT1;
+        private ComboBox TeamsDBT2;
+        private Button SetFromDBT2;
+        private Button playAd;
+        private Button cancelAd;
+        private Button cancelVideo1;
+        private Button playVideo1;
+        private TextBox videoPath1;
+        private Button uploadVideoT1;
+        private Label label15;
+        private Button cancelVideo2;
+        private Button playVideo2;
+        private TextBox videoPath2;
+        private Button uploadVideoT2;
+        private Label label17;
+        private ToolStripMenuItem databaseToolStripMenuItem;
+        private ToolStripMenuItem importToolStripMenuItem;
+        private ToolStripMenuItem exportToolStripMenuItem;
+        private ToolStripMenuItem dropToolStripMenuItem;
+        private ToolStripMenuItem loadToolStripMenuItem;
+        private ComboBox adsDBV;
+        private Label label20;
+        private Label label18;
+        private Label label21;
+        private GroupBox groupBox8;
+        private GroupBox groupBox9;
+        private GroupBox groupBox10;
+        private Label label24;
+        private Button plusFaceoffsT1;
+        private Button minusFaceoffsT1;
+        private Label faceoffsT1;
+        private Label label22;
+        private Button plusShotsT1;
+        private Button minusShotsT1;
+        private Label shotsT1;
+        private Label label26;
+        private Button plusFaceoffsT2;
+        private Button minusFaceoffsT2;
+        private Label faceoffsT2;
+        private Label label28;
+        private Button plusShotsT2;
+        private Button minusShotsT2;
+        private Label shotsT2;
+        private Button setPT1P1;
+        private Button setPT1P2;
+        private Button setT2P2;
+        private Button setT2P1;
+        private Label penP2T1;
+        private Label penP1T1;
+        private Label penMinP2T1;
+        private Label penMinP1T1;
+        private Label penP2T2;
+        private Label penP1T2;
+        private Label penSecP2T1;
+        private Label penSecP1T1;
+        private Label penSecP2T2;
+        private Label penSecP1T2;
+        private Label penMinP2T2;
+        private Label penMinP1T2;
+        private ToolStripMenuItem statisticsToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem selectStatisticsToolStripMenuItem;
+        private ToolStripMenuItem exportSettingsToolStripMenuItem;
+        private Button shootoutBtn;
+        private Button preMatchCount;
+        private Button overT1;
+        private Button overT2;
+        private Button overTBreak;
+        private GroupBox groupBox11;
+        private GroupBox groupBox12;
+        private GroupBox groupBox13;
+        private ToolStripMenuItem customEventToolStripMenuItem;
+        private ToolStripMenuItem auxiliaryDevicesToolStripMenuItem;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel1;
+        private Button cancelLogo2;
+        private Button cancelLogo1;
     }
 }

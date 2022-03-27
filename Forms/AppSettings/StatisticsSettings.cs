@@ -1,70 +1,63 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Scoreboard.Forms.AppSettings
+namespace Scoreboard.Forms.AppSettings;
+
+public partial class StatisticsSettings : Form
 {
-    public partial class StatisticsSettings : Form
+    public bool[] ActiveStatistics { get; }
+
+    public StatisticsSettings()
     {
-        private bool[] _activeStatistics;
-
-        public bool[] ActiveStatistics
+        ActiveStatistics = new bool[3];
+        for (var i = 0; i < ActiveStatistics.Length; i++)
         {
-            get => _activeStatistics;
-            set => _activeStatistics = value;
+            ActiveStatistics[i] = true;
         }
+        InitializeComponent();
+        MaximizeBox = false;
+        ControlBox = false;
+    }
 
-        public StatisticsSettings()
+    private void TimeoutsBoxCheckedChanged(object parSender, EventArgs parE)
+    {
+        if (!timeoutsBox.Checked)
         {
-            _activeStatistics = new bool[3];
-            for (int i = 0; i < _activeStatistics.Length; i++)
-            {
-                _activeStatistics[i] = true;
-            }
-            InitializeComponent();
-            MaximizeBox = false;
-            ControlBox = false;
+            ActiveStatistics[0] = false;
         }
+        else
+        {
+            ActiveStatistics[0] = true;
+        }
+    }
 
-        private void timeoutsBox_CheckedChanged(object sender, EventArgs e)
+    private void FaceOffsBoxCheckedChanged(object parSender, EventArgs parE)
+    {
+        if (!faceOffsBox.Checked)
         {
-            if (!timeoutsBox.Checked)
-            {
-                _activeStatistics[0] = false;
-            }
-            else
-            {
-                _activeStatistics[0] = true;
-            }
+            ActiveStatistics[1] = false;
         }
+        else
+        {
+            ActiveStatistics[1] = true;
+        }
+    }
 
-        private void faceOffsBox_CheckedChanged(object sender, EventArgs e)
+    private void ShotsBoxCheckedChanged(object parSender, EventArgs parE)
+    {
+        if (!shotsBox.Checked)
         {
-            if (!faceOffsBox.Checked)
-            {
-                _activeStatistics[1] = false;
-            }
-            else
-            {
-                _activeStatistics[1] = true;
-            }
+            ActiveStatistics[2] = false;
         }
+        else
+        {
+            ActiveStatistics[2] = true;
+        }
+    }
 
-        private void shotsBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!shotsBox.Checked)
-            {
-                _activeStatistics[2] = false;
-            }
-            else
-            {
-                _activeStatistics[2] = true;
-            }
-        }
-
-        private void okBtn_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-            Hide();
-        }
+    private void OkBtnClick(object parSender, EventArgs parE)
+    {
+        DialogResult = DialogResult.OK;
+        Hide();
     }
 }

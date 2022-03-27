@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.Statistics
 {
     partial class ManualEvent
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -59,7 +62,7 @@
             this.confirmBtn.TabIndex = 2;
             this.confirmBtn.Text = "Send event";
             this.confirmBtn.UseVisualStyleBackColor = true;
-            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
+            this.confirmBtn.Click += new System.EventHandler(this.ConfirmBtnClick);
             // 
             // cancelBtn
             // 
@@ -69,7 +72,7 @@
             this.cancelBtn.TabIndex = 3;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.cancelBtn.Click += new System.EventHandler(this.CancelBtnClick);
             // 
             // label1
             // 
@@ -111,11 +114,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox eventName;
-        private System.Windows.Forms.TextBox eventDescription;
-        private System.Windows.Forms.Button confirmBtn;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private TextBox eventName;
+        private TextBox eventDescription;
+        private Button confirmBtn;
+        private Button cancelBtn;
+        private Label label1;
+        private Label label2;
     }
 }

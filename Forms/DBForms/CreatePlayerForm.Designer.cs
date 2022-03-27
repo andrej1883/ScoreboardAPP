@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms.DBForms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.DBForms
 {
     partial class CreatePlayerForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -56,7 +59,7 @@
             this.RemovePlayer.TabIndex = 11;
             this.RemovePlayer.Text = "Remove Player";
             this.RemovePlayer.UseVisualStyleBackColor = true;
-            this.RemovePlayer.Click += new System.EventHandler(this.RemovePlayer_Click);
+            this.RemovePlayer.Click += new System.EventHandler(this.RemovePlayerClick);
             // 
             // AddPlayer
             // 
@@ -66,7 +69,7 @@
             this.AddPlayer.TabIndex = 10;
             this.AddPlayer.Text = "Add Player";
             this.AddPlayer.UseVisualStyleBackColor = true;
-            this.AddPlayer.Click += new System.EventHandler(this.AddPlayer_Click);
+            this.AddPlayer.Click += new System.EventHandler(this.AddPlayerClick);
             // 
             // PLayersGW
             // 
@@ -152,7 +155,7 @@
             this.OK.TabIndex = 13;
             this.OK.Text = "Done";
             this.OK.UseVisualStyleBackColor = true;
-            this.OK.Click += new System.EventHandler(this.OK_Click);
+            this.OK.Click += new System.EventHandler(this.OkClick);
             // 
             // playerBindingSource
             // 
@@ -171,7 +174,7 @@
             this.Name = "CreatePlayerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create player";
-            this.Load += new System.EventHandler(this.CreatePlayerForm_Load);
+            this.Load += new System.EventHandler(this.CreatePlayerFormLoad);
             ((System.ComponentModel.ISupportInitialize)(this.PLayersGW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -182,18 +185,18 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button RemovePlayer;
-        private System.Windows.Forms.Button AddPlayer;
-        private System.Windows.Forms.DataGridView PLayersGW;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox PlayerNumber;
-        private System.Windows.Forms.TextBox PlayerName;
-        private System.Windows.Forms.Button OK;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource playerBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource playerBindingSource1;
+        private Button RemovePlayer;
+        private Button AddPlayer;
+        private DataGridView PLayersGW;
+        private GroupBox groupBox1;
+        private TextBox PlayerNumber;
+        private TextBox PlayerName;
+        private Button OK;
+        private Label label2;
+        private Label label1;
+        private BindingSource playerBindingSource;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private BindingSource playerBindingSource1;
     }
 }

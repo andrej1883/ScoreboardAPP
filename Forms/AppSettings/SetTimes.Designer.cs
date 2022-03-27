@@ -1,11 +1,14 @@
-﻿namespace Scoreboard.Forms.AppSettings
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Scoreboard.Forms.AppSettings
 {
     partial class SetTimes
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -214,7 +217,7 @@
             this.saveTimes.TabIndex = 12;
             this.saveTimes.Text = "Save";
             this.saveTimes.UseVisualStyleBackColor = true;
-            this.saveTimes.Click += new System.EventHandler(this.saveTimes_Click);
+            this.saveTimes.Click += new System.EventHandler(this.SaveTimesClick);
             // 
             // cancelEditTimes
             // 
@@ -224,7 +227,7 @@
             this.cancelEditTimes.TabIndex = 13;
             this.cancelEditTimes.Text = "Cancel";
             this.cancelEditTimes.UseVisualStyleBackColor = true;
-            this.cancelEditTimes.Click += new System.EventHandler(this.cancelEditTimes_Click);
+            this.cancelEditTimes.Click += new System.EventHandler(this.CancelEditTimesClick);
             // 
             // longPenaltyInputS
             // 
@@ -479,7 +482,7 @@
             this.Name = "SetTimes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Time settings";
-            this.Load += new System.EventHandler(this.SetTimes_Load);
+            this.Load += new System.EventHandler(this.SetTimesLoad);
             ((System.ComponentModel.ISupportInitialize)(this.preMatchInputM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodLInputM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.breakLInputM)).EndInit();
@@ -503,39 +506,39 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown preMatchInputM;
-        private System.Windows.Forms.NumericUpDown periodLInputM;
-        private System.Windows.Forms.NumericUpDown breakLInputM;
-        private System.Windows.Forms.NumericUpDown timeoutLInputM;
-        private System.Windows.Forms.NumericUpDown shortPenaltyInputM;
-        private System.Windows.Forms.NumericUpDown longPenaltyInputM;
-        private System.Windows.Forms.Button saveTimes;
-        private System.Windows.Forms.Button cancelEditTimes;
-        private System.Windows.Forms.NumericUpDown longPenaltyInputS;
-        private System.Windows.Forms.NumericUpDown shortPenaltyInputS;
-        private System.Windows.Forms.NumericUpDown timeoutLInputS;
-        private System.Windows.Forms.NumericUpDown breakLInputS;
-        private System.Windows.Forms.NumericUpDown periodLInputS;
-        private System.Windows.Forms.NumericUpDown preMatchInputS;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown overBreakLS;
-        private System.Windows.Forms.NumericUpDown overPeriodLS;
-        private System.Windows.Forms.NumericUpDown overBreakLM;
-        private System.Windows.Forms.NumericUpDown overPeriodLM;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private NumericUpDown preMatchInputM;
+        private NumericUpDown periodLInputM;
+        private NumericUpDown breakLInputM;
+        private NumericUpDown timeoutLInputM;
+        private NumericUpDown shortPenaltyInputM;
+        private NumericUpDown longPenaltyInputM;
+        private Button saveTimes;
+        private Button cancelEditTimes;
+        private NumericUpDown longPenaltyInputS;
+        private NumericUpDown shortPenaltyInputS;
+        private NumericUpDown timeoutLInputS;
+        private NumericUpDown breakLInputS;
+        private NumericUpDown periodLInputS;
+        private NumericUpDown preMatchInputS;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private Label label14;
+        private NumericUpDown overBreakLS;
+        private NumericUpDown overPeriodLS;
+        private NumericUpDown overBreakLM;
+        private NumericUpDown overPeriodLM;
+        private Label label15;
+        private Label label16;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Scoreboard.Classes.Database;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Scoreboard.Forms.DBForms
 {
@@ -7,7 +8,7 @@ namespace Scoreboard.Forms.DBForms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -98,7 +99,7 @@ namespace Scoreboard.Forms.DBForms
             this.AddTeam.TabIndex = 4;
             this.AddTeam.Text = "Add Team";
             this.AddTeam.UseVisualStyleBackColor = true;
-            this.AddTeam.Click += new System.EventHandler(this.AddTeam_Click);
+            this.AddTeam.Click += new System.EventHandler(this.AddTeamClick);
             // 
             // RemoveTeam
             // 
@@ -108,7 +109,7 @@ namespace Scoreboard.Forms.DBForms
             this.RemoveTeam.TabIndex = 5;
             this.RemoveTeam.Text = "Remove Team";
             this.RemoveTeam.UseVisualStyleBackColor = true;
-            this.RemoveTeam.Click += new System.EventHandler(this.RemoveTeam_Click);
+            this.RemoveTeam.Click += new System.EventHandler(this.RemoveTeamClick);
             // 
             // EditTeamPlayers
             // 
@@ -118,7 +119,7 @@ namespace Scoreboard.Forms.DBForms
             this.EditTeamPlayers.TabIndex = 6;
             this.EditTeamPlayers.Text = "Edit Players";
             this.EditTeamPlayers.UseVisualStyleBackColor = true;
-            this.EditTeamPlayers.Click += new System.EventHandler(this.EditTeamPlayers_Click);
+            this.EditTeamPlayers.Click += new System.EventHandler(this.EditTeamPlayersClick);
             // 
             // OK
             // 
@@ -128,7 +129,7 @@ namespace Scoreboard.Forms.DBForms
             this.OK.TabIndex = 14;
             this.OK.Text = "Done";
             this.OK.UseVisualStyleBackColor = true;
-            this.OK.Click += new System.EventHandler(this.OK_Click);
+            this.OK.Click += new System.EventHandler(this.OkClick);
             // 
             // LoadTeamDataForm
             // 
@@ -155,15 +156,15 @@ namespace Scoreboard.Forms.DBForms
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button AddTeam;
-        private System.Windows.Forms.Button RemoveTeam;
-        private System.Windows.Forms.BindingSource teamListBindingSource;
-        private System.Windows.Forms.BindingSource databaseBindingSource;
-        private System.Windows.Forms.Button EditTeamPlayers;
-        private System.Windows.Forms.Button OK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn videoPathDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LogoPath;
+        private DataGridView dataGridView1;
+        private Button AddTeam;
+        private Button RemoveTeam;
+        private BindingSource teamListBindingSource;
+        private BindingSource databaseBindingSource;
+        private Button EditTeamPlayers;
+        private Button OK;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn videoPathDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn LogoPath;
     }
 }

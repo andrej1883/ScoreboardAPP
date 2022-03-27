@@ -3,68 +3,55 @@ using System.Windows.Forms;
 using Scoreboard.Classes.Database;
 using Scoreboard.Forms.MainGameForms;
 
-namespace Scoreboard.Forms.DBForms
+namespace Scoreboard.Forms.DBForms;
+
+public partial class LoadAds : Form
 {
-    public partial class LoadAds : Form
+    private readonly GameForm _pareGameForm;
+
+    public Database Database { get; }
+
+    public LoadAds(GameForm parGameForm)
     {
-        private Database _database;
-        private GameForm _pareGameForm;
-
-        public Database Database
-        {
-            get => _database;
-            set => _database = value;
-        }
-
-        public LoadAds(GameForm parGameForm)
-        {
-            _pareGameForm = parGameForm;
-            _database = _pareGameForm.DatabaseGame;
-            InitializeComponent();
-            if (_database == null)
-            {
-                _database = new Database();
-            }
-            UpdateGv();
-            MaximizeBox = false;
-        }
+        _pareGameForm = parGameForm;
+        Database = _pareGameForm.DatabaseGame;
+        InitializeComponent();
+        Database ??= new Database();
+        UpdateGv();
+        MaximizeBox = false;
+    }
         
-        private void addVideo_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Video Files(*.mp4)|*.mp4";  
-            open.InitialDirectory = Environment.CurrentDirectory+ "\\Videos\\Ads";
-            if (open.ShowDialog() == DialogResult.OK) 
-            {
-                string path = open.FileName;
-                var help = new Advertisement() {Path = path};
-                _database.AddAdv(help);
-                UpdateGv();
-            }
-        }
+    private void AddVideoClick(object parSender, EventArgs parE)
+    {
+        OpenFileDialog open = new();
+        open.Filter = @"Video Files(*.mp4)|*.mp4";  
+        open.InitialDirectory = $"{Environment.CurrentDirectory}\\Videos\\Ads";
+        if (open.ShowDialog() != DialogResult.OK) return;
+        var path = open.FileName;
+        var help = new Advertisement {Path = path};
+        Database.AddAdv(help);
+        UpdateGv();
+    }
 
-        private void removeVideo_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                _database.RemoveAdv((Advertisement)dataGridView1.SelectedRows[0].DataBoundItem);
-                UpdateGv();
-            }
-        }
+    private void RemoveVideoClick(object parSender, EventArgs parE)
+    {
+        if (dataGridView1.SelectedRows.Count <= 0) return;
+        Database.RemoveAdv((Advertisement)dataGridView1.SelectedRows[0].DataBoundItem);
+        UpdateGv();
+    }
 
-        private void done_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
+    private void DoneClick(object parSender, EventArgs parE)
+    {
+        Dispose();
+    }
 
-        private void UpdateGv()
-        {
-            dataGridView1.DataSource = null;
-            dataGridView1.BindingContext = new BindingContext();
-            dataGridView1.DataSource = _database.AdvList;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Update();
-            _pareGameForm.UpdateAds(_database);
-        }
+    private void UpdateGv()
+    {
+        dataGridView1.DataSource = null;
+        dataGridView1.BindingContext = new BindingContext();
+        dataGridView1.DataSource = Database.AdvList;
+        dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        dataGridView1.Update();
+        _pareGameForm.UpdateAds(Database);
     }
 }

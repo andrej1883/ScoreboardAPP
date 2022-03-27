@@ -1,100 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Scoreboard.Forms.MainGameForms;
 
-namespace Scoreboard.Classes.Appearance
+namespace Scoreboard.Classes.Appearance;
+
+[Serializable]
+public class ScoreboardSettings
 {
-    [Serializable]
-    public class ScoreboardSettings
+    private List<ScoreboardElement> _elements;
+    private int _backgrColor;
+    private Size _boardSize;
+
+    public List<ScoreboardElement> Elements
     {
-        private List<ScoreboardElement> _elements;
-        private int _backgrColor;
-        private Size _boardSize;
+        get => _elements;
+        set => _elements = value;
+    }
 
-        public int BackgrColor
-        {
-            get => _backgrColor;
-            set => _backgrColor = value;
-        }
+    public ScoreboardSettings()
+    {
+        _elements = new List<ScoreboardElement>();
+    }
 
-        public Size BoardSize
+    public void AddElements(ScoreboardForm parForm)
+    {
+        foreach (Control ctrl in parForm.Controls)
         {
-            get => _boardSize;
-            set => _boardSize = value;
-        }
-
-        public List<ScoreboardElement> Elements
-        {
-            get => _elements;
-            set => _elements = value;
-        }
-
-        public ScoreboardSettings()
-        {
-            _elements = new List<ScoreboardElement>();
-        }
-
-        public void AddElements(ScoreboardForm parForm)
-        {
-            foreach (Control ctrl in parForm.Controls)
+            var help = new ScoreboardElement {Color = ctrl.ForeColor.ToArgb(), ElementName = ctrl.Name, Position = ctrl.Location};
+            switch (ctrl)
             {
-                var help = new ScoreboardElement()
-                    {Color = ctrl.ForeColor.ToArgb(), ElementName = ctrl.Name, Position = ctrl.Location};
-                if (ctrl is Label)
-                {
-                    help = new ScoreboardElement()
-                        {Color = ctrl.ForeColor.ToArgb(), ElementName = ctrl.Name, Position = ctrl.Location, Size = ctrl.Font.Size, Font = ctrl.Font.Name};
-                }
-                else if (ctrl is PictureBox)
-                {
-                    help = new ScoreboardElement()
-                        {ElementName = ctrl.Name, Position = ctrl.Location, LogoSize = ctrl.Size};
-                }
-
-                _elements.Add(help);
+                case Label:
+                    help = new ScoreboardElement {Color = ctrl.ForeColor.ToArgb(), ElementName = ctrl.Name, Position = ctrl.Location, Size = ctrl.Font.Size, Font = ctrl.Font.Name};
+                    break;
+                case PictureBox:
+                    help = new ScoreboardElement {ElementName = ctrl.Name, Position = ctrl.Location, LogoSize = ctrl.Size};
+                    break;
             }
 
-            _backgrColor = parForm.BackgrColor.ToArgb();
-            _boardSize = parForm.Size;
+            _elements.Add(help);
         }
 
-        public void SetElements(ScoreboardForm parForm)
+        _backgrColor = parForm.BackgrColor.ToArgb();
+        _boardSize = parForm.Size;
+    }
+
+    public void SetElements(ScoreboardForm parForm)
+    {
+        foreach (Control ctrl in parForm.Controls)
         {
-            foreach (Control ctrl in parForm.Controls)
+            var help = FindByName(ctrl.Name);
+            if (help != null)
             {
-                var help = FindByName(ctrl.Name);
-                if (help != null)
+                ctrl.Name = help.ElementName;
+                ctrl.ForeColor = Color.FromArgb(help.Color);
+                ctrl.Location = help.Position;
+                switch (ctrl)
                 {
-                    ctrl.Name = help.ElementName;
-                    ctrl.ForeColor = Color.FromArgb(help.Color);
-                    ctrl.Location = help.Position;
-                    if (ctrl is Label)
-                    {
+                    case Label:
                         ctrl.Font = new Font(help.Font,help.Size);
-                    }
-                    else if (ctrl is PictureBox)
-                    {
+                        break;
+                    case PictureBox:
                         ctrl.Size = help.LogoSize;
-                    }
+                        break;
                 }
             }
-            parForm.Size = _boardSize;
-            parForm.BackgrColor = Color.FromArgb(_backgrColor);
         }
+        parForm.Size = _boardSize;
+        parForm.BackgrColor = Color.FromArgb(_backgrColor);
+    }
 
-        private ScoreboardElement FindByName(string parName)
-        {
-            foreach (ScoreboardElement element in Elements)
-            {
-                if (element.ElementName == parName)
-                {
-                    return element;
-                }
-            }
-            return null;
-        }
+    private ScoreboardElement FindByName(string parName)
+    {
+        return Elements.FirstOrDefault(parElement => parElement.ElementName == parName);
     }
 }
-
