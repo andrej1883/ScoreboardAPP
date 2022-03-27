@@ -196,7 +196,7 @@ public partial class GameForm : Form
         _formScoreBoard.SetGoal(true,_matchStats.TeamStats[0].Goals);
         goalsTeam1.Text = _matchStats.TeamStats[0].Goals.ToString();
         GoalSelectPlayer(1);
-        _serialDevices.SirenStart(SirenType.Long);
+        _serialDevices.SirenStart(SirenType.Disrupted);
     }
 
     private void MinusGoal2Click(object parSender, EventArgs parE)
@@ -214,7 +214,7 @@ public partial class GameForm : Form
         _formScoreBoard.SetGoal(false,_matchStats.TeamStats[1].Goals);
         goalsTeam2.Text = _matchStats.TeamStats[1].Goals.ToString();
         GoalSelectPlayer(2);
-        _serialDevices.SirenStart(SirenType.Long);
+        _serialDevices.SirenStart(SirenType.Disrupted);
     }
 
     private void P1T1ShowPenaltyClick(object parSender, EventArgs parE)
@@ -398,7 +398,6 @@ public partial class GameForm : Form
             _periodStarted = true;
         }
         StartPenalty();
-        _serialDevices.SirenStart(SirenType.Normal);
     }
 
     private void StartTimeClick(object parSender, EventArgs parE)
@@ -684,6 +683,7 @@ public partial class GameForm : Form
                 break;
         }
         MessageBox.Show(@"Timeout ended" , @"Timer stopped", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        _serialDevices.SirenStart(SirenType.Short);
     }
 
     private void DisplayTimeTimeout1(object parMyObject, EventArgs parMyEventArgs)
