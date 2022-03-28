@@ -1894,7 +1894,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.cancelAd.TabIndex = 84;
             this.cancelAd.Text = "Cancel";
             this.cancelAd.UseVisualStyleBackColor = true;
-            this.cancelAd.Click += new System.EventHandler(this.Button3Click);
+            this.cancelAd.Click += new System.EventHandler(this.CancelAdClick);
             // 
             // adsDBV
             // 

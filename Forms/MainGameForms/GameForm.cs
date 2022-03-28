@@ -868,7 +868,7 @@ public partial class GameForm : Form
         }
     }
 
-    private void Button3Click(object parSender, EventArgs parE)
+    private void CancelAdClick(object parSender, EventArgs parE)
     {
         StopVideo();
     }
