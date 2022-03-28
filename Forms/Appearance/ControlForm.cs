@@ -241,8 +241,8 @@ public partial class ControlForm : Form
     // setting of colors or sizes via color / font dialogs
     private void BackGrColorClick(object parSender, EventArgs parE)
     {
-        _colorDial.Color = _formScoreBoard.BackgrColor;
-        if (_colorDial.ShowDialog() == DialogResult.OK) _formScoreBoard.BackgrColor = _colorDial.Color;
+        _colorDial.Color = _formScoreBoard.BackGrColor;
+        if (_colorDial.ShowDialog() == DialogResult.OK) _formScoreBoard.BackGrColor = _colorDial.Color;
     }
 
     private void SetColorSlClick(object parSender, EventArgs parE)

@@ -6,19 +6,9 @@ namespace Scoreboard.Forms.Statistics;
 // form used for creating manual event for more info check classes -> GameStatistics -> MatchStatistics
 public partial class ManualEvent : Form
 {
-    private string _eventName;
-    private string _description;
+    public string EventName { get; private set; }
 
-    public string EventName
-    {
-        get => _eventName;
-        set => _eventName = value;
-    }
-    public string Description
-    {
-        get => _description;
-        set => _description = value;
-    }
+    public string Description { get; private set; }
 
     public ManualEvent()
     {
@@ -26,15 +16,15 @@ public partial class ManualEvent : Form
         MaximizeBox = false;
     }
 
-    private void ConfirmBtnClick(object sender, EventArgs e)
+    private void ConfirmBtnClick(object parSender, EventArgs parE)
     {
-        _eventName = eventName.Text;
-        _description = eventDescription.Text;
+        EventName = eventName.Text;
+        Description = eventDescription.Text;
         DialogResult = DialogResult.OK;
         Dispose();
     }
 
-    private void CancelBtnClick(object sender, EventArgs e)
+    private void CancelBtnClick(object parSender, EventArgs parE)
     {
         Dispose();
     }

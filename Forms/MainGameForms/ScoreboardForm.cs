@@ -6,6 +6,10 @@ using System.Windows.Forms;
 
 namespace Scoreboard.Forms.MainGameForms;
 
+// scoreboard is form used for displaying score and all statistics about match on seconds display 
+// scoreboard is responsible mostly for displaying data on it, not for app logic
+// it has setters and getters for colors and fonts displayed
+// scoreboard is singleton
 public partial class ScoreboardForm : Form
 {
     private bool _isLocked = true;
@@ -165,7 +169,7 @@ public partial class ScoreboardForm : Form
         }
     }
 
-    public Color BackgrColor
+    public Color BackGrColor
     {
         get => BackColor;
         set
@@ -349,7 +353,7 @@ public partial class ScoreboardForm : Form
         {
             foreach (Control ctr in Controls)
             {
-                ctr.BackColor = value ? BackgrColor : Color.Red;
+                ctr.BackColor = value ? BackGrColor : Color.Red;
             }
             _isLocked = value;
         }
@@ -357,12 +361,11 @@ public partial class ScoreboardForm : Form
 
     public int GridSize { get; set; } = 50;
 
+    // creates instance of scoreboard
     internal static ScoreboardForm GetInstance()
     {
         if (_instance != null) return _instance;
-#pragma warning disable IDE0017 // Simplify object initialization
         _instance = new ScoreboardForm();
-#pragma warning restore IDE0017 // Simplify object initialization
         _instance.FormBorderStyle = FormBorderStyle.None;
         _instance.MinimizeBox = false;
         _instance.MaximizeBox = false;
@@ -383,6 +386,7 @@ public partial class ScoreboardForm : Form
     {
         _instance = null;
     }
+
 
     public void SetTimeout(int parTeam1, Time parTime)
     {
@@ -581,7 +585,7 @@ public partial class ScoreboardForm : Form
     public override string ToString()
     {
         return
-            $"{BackgrColor}|{PenaltyDColor.ToArgb()}|{PenaltyLColor.ToArgb()}|{PeriodColor.ToArgb()}|{PeriodLColor.ToArgb()}|{TimeLColor.ToArgb()}|{ScoLColor.ToArgb()}|{ScoSColor.ToArgb()}|{TimeCColor.ToArgb()}|{PenaltyDFont.Size}|{PenaltyLFont.Size}|{PeriodLFont.Size}|{PeriodPFont.Size}|{TimeLFont.Size}|{ScoLFont.Size}|{ScoSFont.Size}|{TimeCFont.Size}|{Width}|{Height}";
+            $"{BackGrColor}|{PenaltyDColor.ToArgb()}|{PenaltyLColor.ToArgb()}|{PeriodColor.ToArgb()}|{PeriodLColor.ToArgb()}|{TimeLColor.ToArgb()}|{ScoLColor.ToArgb()}|{ScoSColor.ToArgb()}|{TimeCColor.ToArgb()}|{PenaltyDFont.Size}|{PenaltyLFont.Size}|{PeriodLFont.Size}|{PeriodPFont.Size}|{TimeLFont.Size}|{ScoLFont.Size}|{ScoSFont.Size}|{TimeCFont.Size}|{Width}|{Height}";
     }
 
     private static string CheckZero(int parNumber)
@@ -589,25 +593,7 @@ public partial class ScoreboardForm : Form
         return parNumber < 10 ? $"0{parNumber}" : parNumber.ToString();
     }
 
-    private void SaveMouseLocation(MouseEventArgs parE)
-    {
-        if (parE.Button == MouseButtons.Left && !_isLocked)
-        {
-            _mouseClick = parE.Location;
-        }
-    }
-
-    private void ReplaceObject(MouseEventArgs parE, Control parToBeMoved)
-    {
-        if (parE.Button != MouseButtons.Left || _isLocked) return;
-        var y = parE.Y - _mouseClick.X;
-        y -= y % GridSize;
-        parToBeMoved.Top += y;
-        var x = parE.X - _mouseClick.X;
-        x -= x % GridSize;
-        parToBeMoved.Left += x;
-    }
-
+    // shows active stats
     public void SelectStats(bool[] parOptions)
     {
         if (!parOptions[0])
@@ -664,6 +650,7 @@ public partial class ScoreboardForm : Form
         }
     }
 
+    // moves scoreboard elements when scoreboard is resized
     public void MoveComponents()
     {
         foreach (Control ctr in Controls)
@@ -679,7 +666,27 @@ public partial class ScoreboardForm : Form
         }
     }
 
+    // functions to move specific elements on scoreboard by mouse
+    // unlock in control form must be active
 
+    private void SaveMouseLocation(MouseEventArgs parE)
+    {
+        if (parE.Button == MouseButtons.Left && !_isLocked)
+        {
+            _mouseClick = parE.Location;
+        }
+    }
+
+    private void ReplaceObject(MouseEventArgs parE, Control parToBeMoved)
+    {
+        if (parE.Button != MouseButtons.Left || _isLocked) return;
+        var y = parE.Y - _mouseClick.X;
+        y -= y % GridSize;
+        parToBeMoved.Top += y;
+        var x = parE.X - _mouseClick.X;
+        x -= x % GridSize;
+        parToBeMoved.Left += x;
+    }
 
     private void Team1LogoMouseDown(object parSender, MouseEventArgs parE)
     {

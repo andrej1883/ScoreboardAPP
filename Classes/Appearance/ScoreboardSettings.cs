@@ -44,7 +44,7 @@ public class ScoreboardSettings
             _elements.Add(help);
         }
 
-        _backGrColor = parForm.BackgrColor.ToArgb();
+        _backGrColor = parForm.BackGrColor.ToArgb();
         _boardSize = parForm.Size;
     }
 
@@ -70,7 +70,7 @@ public class ScoreboardSettings
             }
         }
         parForm.Size = _boardSize;
-        parForm.BackgrColor = Color.FromArgb(_backGrColor);
+        parForm.BackGrColor = Color.FromArgb(_backGrColor);
     }
 
     private ScoreboardElement FindByName(string parName)

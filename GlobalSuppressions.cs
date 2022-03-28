@@ -6,5 +6,5 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:Scoreboard.Forms.Appearance.ControlForm.#ctor(Scoreboard.Forms.MainGameForms.ScoreboardForm)")]
-[assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:Scoreboard.Forms.Appearance.ControlForm.BlackBcgrBtnClick(System.Object,System.EventArgs)")]
 [assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:Scoreboard.Forms.Appearance.ControlForm.BlackBGrBtnClick(System.Object,System.EventArgs)")]
+[assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:Scoreboard.Forms.MainGameForms.ScoreboardForm.GetInstance~Scoreboard.Forms.MainGameForms.ScoreboardForm")]

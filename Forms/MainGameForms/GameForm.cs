@@ -15,10 +15,12 @@ using Scoreboard.Forms.Statistics;
 
 namespace Scoreboard.Forms.MainGameForms;
 
+// form responsible for all logic behind this app stores all other forms, DB and settings
 public partial class GameForm : Form
 {
     private const int MaxPenalties = 4;
     private const int TwoTeams = 2;
+    private const int MinPlayers = 1;
 
     private readonly StatisticsSettings _statSettings;
     private readonly ExportStatsForm _exportSettings;
@@ -98,6 +100,7 @@ public partial class GameForm : Form
         return new Timer { Interval = 1000 };
     }
 
+    // initializes all data displayed on game-form and also on scoreboard
     public void InitBoards()
     {
         period.Text = _period.ToString();
@@ -135,7 +138,6 @@ public partial class GameForm : Form
         _timeouts[parTeam - 1] = parTime;
         _formScoreBoard.SetTimeout(parTeam,parTime);
         UpdateTimeoutGf(parTeam);
-
     }
 
     public void SetTime(Time parTime)
@@ -158,35 +160,36 @@ public partial class GameForm : Form
         }
     }
 
+    // if team is selected and has enough players, shows select player dialog to select assistance and player which scored
+    private void GoalSelectPlayer(int parTeam)
+    {
+        switch (parTeam)
+        {
+            case 1 when _team1 == null || _team1.Players.Count < MinPlayers:
+                return;
+            case 1:
+            {
+                SelectPlayerGoal varGoal = new(1, _matchStats, _team1.Players,_elapsedTime);
+                varGoal.ShowDialog();
+                break;
+            }
+            case 2 when _team2 == null || _team2.Players.Count < MinPlayers:
+                return;
+            case 2:
+            {
+                SelectPlayerGoal varGoal = new(2, _matchStats, _team2.Players,_elapsedTime);
+                varGoal.ShowDialog();
+                break;
+            }
+        }
+    }
+
     private void MinusGoal1Click(object parSender, EventArgs parE)
     {
         if (_matchStats.TeamStats[0].Goals <= 0) return;
         _matchStats.TeamStats[0].Goals --;
         _formScoreBoard.SetGoal(true,_matchStats.TeamStats[0].Goals);
         goalsTeam1.Text = _matchStats.TeamStats[0].Goals.ToString();
-    }
-
-    private void GoalSelectPlayer(int parTeam)
-    {
-        switch (parTeam)
-        {
-            case 1 when _team1 == null || _team1.Players.Count < 1:
-                return;
-            case 1:
-            {
-                SelectPlayerGoal varGoal = new(1, _matchStats, _team1.Players,_elapsedTime);
-                varGoal.Show();
-                break;
-            }
-            case 2 when _team2 == null || _team2.Players.Count < 1:
-                return;
-            case 2:
-            {
-                SelectPlayerGoal varGoal = new(2, _matchStats, _team2.Players,_elapsedTime);
-                varGoal.Show();
-                break;
-            }
-        }
     }
 
     private void PlusGoal1Click(object parSender, EventArgs parE)
@@ -385,6 +388,7 @@ public partial class GameForm : Form
         _formScoreBoard.ShowLogo(false);
     }
 
+    // starts main timer
     private void StartTimer()
     {
         if (_timer.Enabled || _periodEnd || _matchTime.IsZero() || _timeoutTimer.Enabled) return;
@@ -405,6 +409,10 @@ public partial class GameForm : Form
         StartTimer();
     }
 
+    // main timer method which updates times if all conditions are met
+    // it depends on actual period / break
+    // also counts elapsed time (elapsed time is not added if it is specialTime / break like overtime or timeout which would violate elapsed time)
+    // if time is elapsed period is added and properties are re-set
     private void DisplayTimeTimer(object parMyObject, EventArgs parMyEventArgs)
     {
         _matchTime.TickMinus();
@@ -548,6 +556,8 @@ public partial class GameForm : Form
         _timerPenalty.Start();
     }
 
+    // counts penalty time for each penalty if penalty was set 
+    // if elapsed penalty is hidden and event created
     private void DisplayTimePenalty(object parMyObject, EventArgs parMyEventArgs)
     {
         for (var i = 0; i < _penalty.Length; i++)
@@ -664,6 +674,7 @@ public partial class GameForm : Form
         _timerPenalty.Enabled = false;
     }
 
+    // counts timeout for each team
     private void CountTimeout(int parTeam)
     {
         _timeouts[parTeam-1].TickMinus();
@@ -774,6 +785,8 @@ public partial class GameForm : Form
         TeamsDBT2.DataSource = DatabaseGame.TeamList;
     }
 
+    // sets team info about selected team from database to game-board team1 
+    // and loads all data from DB
     private void SetFromDbt1Click(object parSender, EventArgs parE)
     {
         if (DatabaseGame != null && !string.IsNullOrWhiteSpace(TeamsDBT1.Text))
@@ -803,6 +816,8 @@ public partial class GameForm : Form
             
     }
 
+    // sets team info about selected team from database to game-board team2 
+    // and loads all data from DB
     private void SetFromDbt2Click(object parSender, EventArgs parE)
     {
         if (DatabaseGame != null && !string.IsNullOrWhiteSpace(TeamsDBT2.Text))
@@ -830,6 +845,7 @@ public partial class GameForm : Form
         }
     }
 
+    // plays video which path is set from parameter
     private void PlayVideo(string parPath)
     {
         if (File.Exists(parPath))
@@ -855,7 +871,8 @@ public partial class GameForm : Form
         _videoPlayerForm.TopMost = false;
     }
 
-    private void Button2Click(object parSender, EventArgs parE)
+    // plays advertisement, if path is correct and also if advertisement is selected from box
+    private void PlayAdClick(object parSender, EventArgs parE)
     {
         var selected = (Advertisement)adsDBV.SelectedItem;
         if (selected != null && File.Exists(selected.Path))
@@ -913,6 +930,7 @@ public partial class GameForm : Form
         StopVideo();
     }
 
+    // DB import method from xml
     private void ImportToolStripMenuItemClick(object parSender, EventArgs parE)
     {
         TextReader textReader = null;
@@ -949,6 +967,7 @@ public partial class GameForm : Form
         }
     }
 
+    // exports DB to xml
     private void ExportToolStripMenuItemClick(object parSender, EventArgs parE)
     {
         SaveFileDialog saveFileDialog1 = new();
@@ -973,6 +992,7 @@ public partial class GameForm : Form
         }
     }
 
+    // drops all DB stored in DB
     private void DropToolStripMenuItemClick(object parSender, EventArgs parE)
     {
         DatabaseGame = new Database();
@@ -997,6 +1017,7 @@ public partial class GameForm : Form
             
     }
 
+    // shows form to load advertisements to DB
     private void LoadToolStripMenuItemClick(object parSender, EventArgs parE)
     {
         var ads = new LoadAds(this);
@@ -1038,7 +1059,7 @@ public partial class GameForm : Form
         shotsT2.Text = _matchStats.TeamStats[1].Shots.ToString();
     }
 
-    private void PlusFaceoffsT1Click(object parSender, EventArgs parE)
+    private void PlusFaceOffsT1Click(object parSender, EventArgs parE)
     {
         if (_timer.Enabled || _breakRunning) return;
         _matchStats.TeamStats[0].FaceOffs++;
@@ -1049,7 +1070,7 @@ public partial class GameForm : Form
         _matchStats.CreateFaceOffEvent(1,_elapsedTime);
     }
 
-    private void PlusFaceoffsT2Click(object parSender, EventArgs parE)
+    private void PlusFaceOffsT2Click(object parSender, EventArgs parE)
     {
         if (_timer.Enabled || _breakRunning) return;
 
@@ -1069,7 +1090,7 @@ public partial class GameForm : Form
         shotsT1.Text = _matchStats.TeamStats[0].Shots.ToString();
     }
 
-    private void MinusFaceoffsT1Click(object parSender, EventArgs parE)
+    private void MinusFaceOffsT1Click(object parSender, EventArgs parE)
     {
         if (_matchStats.TeamStats[0].FaceOffs <= 0) return;
         _matchStats.TeamStats[0].FaceOffs --;
@@ -1085,7 +1106,7 @@ public partial class GameForm : Form
         shotsT2.Text = _matchStats.TeamStats[1].Shots.ToString();
     }
 
-    private void MinusFaceoffsT2Click(object parSender, EventArgs parE)
+    private void MinusFaceOffsT2Click(object parSender, EventArgs parE)
     {
         if (_matchStats.TeamStats[1].FaceOffs <= 0) return;
         _matchStats.TeamStats[1].FaceOffs --;
@@ -1113,6 +1134,9 @@ public partial class GameForm : Form
         SetPenalty(4);
     }
 
+    // sets penalty for specific player from specific team
+    // team is based on position from parameter
+    // it shows SetPenaltyForm dialog and also after that creates event to minute by minute export
     private void SetPenalty(int parPosition)
     {
         StopTime();
@@ -1175,6 +1199,7 @@ public partial class GameForm : Form
         Dispose();
     }
 
+    // shows / hides statistic controls depending on which are active
     private void SelectStats(bool[] parStats)
     {
         if (parStats.Length == 0) throw new ArgumentException(@"Value cannot be an empty collection.", nameof(parStats));
@@ -1224,6 +1249,7 @@ public partial class GameForm : Form
         }
     }
 
+    // shows dialog to select active statistics
     private void SelectStatisticsToolStripMenuItemClick(object parSender, EventArgs parE)
     {
         if (_formScoreBoard.IsActive)
@@ -1239,6 +1265,7 @@ public partial class GameForm : Form
         }
     }
 
+    // shows settings of minute by minute export
     private void ExportSettingsToolStripMenuItemClick(object parSender, EventArgs parE)
     {
         if (_matchStats == null) return;
@@ -1247,7 +1274,7 @@ public partial class GameForm : Form
         _matchStats.ExportEvents = _exportSettings.Export;
         _matchStats.ExpoPath = _exportSettings.Path;
     }
-
+    // sets special timer settings
     private void ShootoutBtnClick(object parSender, EventArgs parE)
     {
         if (_formScoreBoard.IsActive)
@@ -1345,7 +1372,9 @@ public partial class GameForm : Form
                 MessageBoxIcon.Warning);
         }
     }
+    //
 
+    // shows control form to set appearance of scoreboard
     private void AppearanceToolStripMenuItemClick(object parSender, EventArgs parE)
     {
         if (_formScoreBoard.IsActive)
@@ -1360,6 +1389,7 @@ public partial class GameForm : Form
         }
     }
 
+    // shows serial port communication settings
     private void AuxiliaryDevicesToolStripMenuItemClick(object parSender, EventArgs parE)
     {
         if (_serialDevices == null || _serialDevices.IsDisposed) _serialDevices = new SerialPortSettings();
@@ -1367,6 +1397,7 @@ public partial class GameForm : Form
 
     }
 
+    // shows manual event form
     private void CustomEventToolStripMenuItemClick(object parSender, EventArgs parE)
     {
         var help = new ManualEvent();
@@ -1377,6 +1408,7 @@ public partial class GameForm : Form
         }
     }
 
+    // deletes settings for logos
     private void CancelLogo1Click(object parSender, EventArgs parE)
     {
         logo1.Image = null;
@@ -1388,7 +1420,9 @@ public partial class GameForm : Form
         logo2.Image = null;
         logo2Path.Text = string.Empty;
     }
+    //
 
+    // resets elapsed time, good to use if user made mistake and wants to reset elapsed time without re-opening app
     private void ResetElapsedBtnClick(object parSender, EventArgs parE)
     {
         _elapsedTime = new Time {Minutes = 0, Seconds = 0};

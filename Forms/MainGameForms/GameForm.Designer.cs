@@ -1330,7 +1330,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.plusFaceoffsT2.TabIndex = 101;
             this.plusFaceoffsT2.Text = "+";
             this.plusFaceoffsT2.UseVisualStyleBackColor = true;
-            this.plusFaceoffsT2.Click += new System.EventHandler(this.PlusFaceoffsT2Click);
+            this.plusFaceoffsT2.Click += new System.EventHandler(this.PlusFaceOffsT2Click);
             // 
             // cancelVideo2
             // 
@@ -1355,7 +1355,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.minusFaceoffsT2.TabIndex = 100;
             this.minusFaceoffsT2.Text = "-";
             this.minusFaceoffsT2.UseVisualStyleBackColor = true;
-            this.minusFaceoffsT2.Click += new System.EventHandler(this.MinusFaceoffsT2Click);
+            this.minusFaceoffsT2.Click += new System.EventHandler(this.MinusFaceOffsT2Click);
             // 
             // TeamsDBT2
             // 
@@ -1644,7 +1644,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.plusFaceoffsT1.TabIndex = 93;
             this.plusFaceoffsT1.Text = "+";
             this.plusFaceoffsT1.UseVisualStyleBackColor = true;
-            this.plusFaceoffsT1.Click += new System.EventHandler(this.PlusFaceoffsT1Click);
+            this.plusFaceoffsT1.Click += new System.EventHandler(this.PlusFaceOffsT1Click);
             // 
             // minusFaceoffsT1
             // 
@@ -1656,7 +1656,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.minusFaceoffsT1.TabIndex = 92;
             this.minusFaceoffsT1.Text = "-";
             this.minusFaceoffsT1.UseVisualStyleBackColor = true;
-            this.minusFaceoffsT1.Click += new System.EventHandler(this.MinusFaceoffsT1Click);
+            this.minusFaceoffsT1.Click += new System.EventHandler(this.MinusFaceOffsT1Click);
             // 
             // minusShotsT1
             // 
@@ -1882,7 +1882,7 @@ namespace Scoreboard.Forms.MainGameForms
             this.playAd.TabIndex = 83;
             this.playAd.Text = "Play";
             this.playAd.UseVisualStyleBackColor = true;
-            this.playAd.Click += new System.EventHandler(this.Button2Click);
+            this.playAd.Click += new System.EventHandler(this.PlayAdClick);
             // 
             // cancelAd
             // 
