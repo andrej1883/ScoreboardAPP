@@ -145,6 +145,7 @@
     <Compile Include="Forms\AppSettings\StatisticsSettings.Designer.cs">
       <DependentUpon>StatisticsSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\MainGameForms\ScoreboardForm.cs">
       <SubType>Form</SubType>

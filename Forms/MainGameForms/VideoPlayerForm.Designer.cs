@@ -3,7 +3,7 @@ using AxWMPLib;
 
 namespace Scoreboard.Forms.MainGameForms
 {
-    partial class VideoPlayerForm
+   partial class VideoPlayerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,33 +32,35 @@ namespace Scoreboard.Forms.MainGameForms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoPlayerForm));
-            this.MediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
-            ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).BeginInit();
+            this.mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // mediaPlayer
             // 
-            this.MediaPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MediaPlayer.Enabled = true;
-            this.MediaPlayer.Location = new System.Drawing.Point(0, 0);
-            this.MediaPlayer.Name = "MediaPlayer";
-            this.MediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mediaPlayer.OcxState")));
-            this.MediaPlayer.Size = new System.Drawing.Size(800, 450);
-            this.MediaPlayer.TabIndex = 0;
+            this.mediaPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mediaPlayer.Enabled = true;
+            this.mediaPlayer.Location = new System.Drawing.Point(0, 0);
+            this.mediaPlayer.Name = "mediaPlayer";
+            this.mediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mediaPlayer.OcxState")));
+            this.mediaPlayer.Size = new System.Drawing.Size(800, 450);
+            this.mediaPlayer.TabIndex = 0;
             // 
             // VideoPlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.MediaPlayer);
+            this.Controls.Add(this.mediaPlayer);
             this.Name = "VideoPlayerForm";
             this.Text = "VideoPlayerForm";
-            ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private AxWMPLib.AxWindowsMediaPlayer mediaPlayer;
     }
 }

@@ -7,6 +7,8 @@ using static System.IO.Ports.SerialPort;
 
 namespace Scoreboard.Forms.AppSettings;
 
+// form responsible for serial port connection and also sending of messages over connected port
+// siren controlling is already implemented
 public partial class SerialPortSettings : Form
 {
     private const byte Stx = 2;
@@ -31,9 +33,6 @@ public partial class SerialPortSettings : Form
         foreach (var port in ports)
             activePorts.Items.Add(port);
         disconnectPort.Enabled = false;
-            
-
-            
     }
 
     private void ConnectToPortClick(object parSender, EventArgs parE)

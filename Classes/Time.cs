@@ -1,5 +1,6 @@
 ﻿namespace Scoreboard.Classes;
 
+// struct which holds time with tick +/- method for adding or subtracting second from this time
 public struct Time
 {
     public int Minutes { get; set; }

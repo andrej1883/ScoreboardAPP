@@ -616,7 +616,7 @@ public partial class GameForm : Form
         _formScoreBoard.ResetInstance();
         _formScoreBoard.IsActive = false;
         if(_controlForm == null) return;
-        if (_controlForm.BlackActive) _controlForm.BlacForm.Dispose();
+        if (_controlForm.BlackActive) _controlForm.BlackForm.Dispose();
     }
 
     private void CloseScoreboardBtnClick(object parSender, EventArgs parE)

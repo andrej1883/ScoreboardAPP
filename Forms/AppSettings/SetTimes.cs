@@ -6,6 +6,7 @@ using Scoreboard.Forms.MainGameForms;
 
 namespace Scoreboard.Forms.AppSettings;
 
+// form responsible for setting and storing specific match times 
 public partial class SetTimes : Form
 {
     private Time _periodLength = new() {Minutes = 3, Seconds = 0};

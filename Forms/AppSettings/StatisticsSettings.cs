@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace Scoreboard.Forms.AppSettings;
 
+// form which saves active statistics of match
+// if statistic is not checked, it is inactive
+// inactivate statistic is removed from scoreboard and also controls from game-board are removed which cause also that statistic is not exported
 public partial class StatisticsSettings : Form
 {
     public bool[] ActiveStatistics { get; }

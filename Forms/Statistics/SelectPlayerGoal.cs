@@ -7,6 +7,7 @@ using Scoreboard.Classes.GameStatistics;
 
 namespace Scoreboard.Forms.Statistics;
 
+// form used for selecting player and his assistance after goal was shot
 public partial class SelectPlayerGoal : Form
 {
     private readonly Time _time;

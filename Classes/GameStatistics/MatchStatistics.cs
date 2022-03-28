@@ -4,6 +4,7 @@ using Scoreboard.Classes.Database;
 
 namespace Scoreboard.Classes.GameStatistics;
 
+// creates specific events for minute by minute export and also holds match statistics for each team
 public class MatchStatistics
 {
 
@@ -95,17 +96,20 @@ public class MatchStatistics
         ExportEvent(help);
     }
 
+    // option for game board operator to create custom event with custom name and body
     public void CreateManualEvent(string parInfoEvent, string parNameEvent)
     {
         MatchEvent help = new() {EventName = parNameEvent, EventInfo = parInfoEvent};
         ExportEvent(help);
     }
 
+    // sets name of team from parameter
     private void SetName(int parTeam, string parName)
     {
         TeamStats[parTeam-1].Name = parName;
     }
 
+    // exports events to txt file to specified or selected folder for minute by minute export 
     private void ExportEvent(MatchEvent parEvent)
     {
         ExpoPath ??= $"{Environment.CurrentDirectory}\\Events";

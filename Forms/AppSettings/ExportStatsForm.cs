@@ -3,6 +3,8 @@ using System.Windows.Forms;
 
 namespace Scoreboard.Forms.AppSettings;
 
+// form which stores information if minute by minute export is active
+// user can also specify folder where minute by minute export is exported with browserDialog
 public partial class ExportStatsForm : Form
 {
     public string Path { get; private set; }

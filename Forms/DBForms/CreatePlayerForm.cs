@@ -4,6 +4,9 @@ using Scoreboard.Classes.Database;
 
 namespace Scoreboard.Forms.DBForms;
 
+// form used for creating or editing players of team 
+// shows all players in team in grid view
+// user can remove / add / edit players in team
 public partial class CreatePlayerForm : Form
 {
     private readonly Team _team;

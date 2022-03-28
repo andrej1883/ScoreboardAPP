@@ -6,6 +6,7 @@ using System.Windows.Forms;
 namespace Scoreboard.Classes.Database;
 
 [Serializable]
+// stores all information about team which is stored in database,  with basic operations like add / remove player
 public class Team
 {
     private string _name;
@@ -65,6 +66,7 @@ public class Team
         }
     }
 
+    // checks if current team contains player with name and number sent in parameter 
     private bool ContainsPlayer(string parNumber, string parName)
     {
         return _players.Any(parT => parT.Name == parName && parT.Number == parNumber);

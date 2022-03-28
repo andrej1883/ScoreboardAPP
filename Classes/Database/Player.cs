@@ -3,6 +3,7 @@
 namespace Scoreboard.Classes.Database;
 
 [Serializable]
+// stores all information about player which is stored in team in database
 public class Player
 {
     private string _name;

@@ -5,6 +5,10 @@ using Scoreboard.Forms.MainGameForms;
 
 namespace Scoreboard.Forms.DBForms;
 
+// form for editing advertisements in DB 
+// add / remove operations are included by buttons
+// add button shows dialog to select video file and saves path to video in DB
+// edit is possible in grid view in which are data displayed
 public partial class LoadAds : Form
 {
     private readonly GameForm _pareGameForm;

@@ -6,6 +6,8 @@ using Scoreboard.Forms.AppSettings;
 
 namespace Scoreboard.Forms.Statistics;
 
+// form used for setting up penalty for player with options of pre-set time and player from database
+// also custom time and custom player number options are included
 public partial class SetPenaltyForm : Form
 {
     private readonly SetTimes _times;

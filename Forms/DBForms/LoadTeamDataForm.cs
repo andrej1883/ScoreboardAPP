@@ -5,6 +5,10 @@ using Scoreboard.Forms.MainGameForms;
 
 namespace Scoreboard.Forms.DBForms;
 
+// form used for editing teams in DB 
+// teams can be added / removed / deleted / edited
+// user can also edit players in teams, after selecting team and clicking edit players form with players is displayed 
+// team data is displayed in Grid view and also can be edited there
 public partial class LoadTeamDataForm : Form
 {
     private readonly GameForm _pareGameForm;

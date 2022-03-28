@@ -3,6 +3,7 @@
 namespace Scoreboard.Classes.Database;
 
 [Serializable]
+// class for storing information about advertisement in database
 public class Advertisement
 {
     private string _name;

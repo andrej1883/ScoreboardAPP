@@ -207,7 +207,7 @@ namespace Scoreboard.Forms.Appearance
             this.blackBcgrBtn.TabIndex = 3;
             this.blackBcgrBtn.Text = "Black bacground";
             this.blackBcgrBtn.UseVisualStyleBackColor = true;
-            this.blackBcgrBtn.Click += new System.EventHandler(this.BlackBcgrBtnClick);
+            this.blackBcgrBtn.Click += new System.EventHandler(this.BlackBGrBtnClick);
             // 
             // widthLbl
             // 
@@ -897,7 +897,7 @@ namespace Scoreboard.Forms.Appearance
             this.backgrColor.TabIndex = 17;
             this.backgrColor.Text = "Set Color";
             this.backgrColor.UseVisualStyleBackColor = true;
-            this.backgrColor.Click += new System.EventHandler(this.BackgrColorClick);
+            this.backgrColor.Click += new System.EventHandler(this.BackGrColorClick);
             // 
             // importSettings
             // 

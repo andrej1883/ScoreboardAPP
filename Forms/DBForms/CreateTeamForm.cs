@@ -4,6 +4,8 @@ using Scoreboard.Classes.Database;
 
 namespace Scoreboard.Forms.DBForms;
 
+// form used for creating team
+// team name is needed to create team
 public partial class CreateTeamForm : Form
 {
     public Team Team { get; private set; }

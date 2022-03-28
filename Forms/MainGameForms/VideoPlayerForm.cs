@@ -3,9 +3,10 @@ using AxWMPLib;
 
 namespace Scoreboard.Forms.MainGameForms;
 
+// form used for playing videos - advertisement spots or team intros 
 public partial class VideoPlayerForm : Form
 {
-    public AxWindowsMediaPlayer MediaPlayer { get; private set; }
+    public AxWindowsMediaPlayer MediaPlayer => mediaPlayer;
 
     public string VideoPath { get; set; }
 
@@ -25,7 +26,7 @@ public partial class VideoPlayerForm : Form
     public void PlayVideo()
     {
         if (VideoPath == null) return;
-        MediaPlayer.URL = VideoPath;
-        MediaPlayer.Ctlcontrols.play();
+        mediaPlayer.URL = VideoPath;
+        mediaPlayer.Ctlcontrols.play();
     }
 }

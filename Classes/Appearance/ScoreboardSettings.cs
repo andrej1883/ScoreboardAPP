@@ -8,10 +8,11 @@ using Scoreboard.Forms.MainGameForms;
 namespace Scoreboard.Classes.Appearance;
 
 [Serializable]
+// class responsible for setting elements of scoreboard and also for size and background color of scoreboard. Class is used when exporting / importing appearance settings of scoreboard
 public class ScoreboardSettings
 {
     private List<ScoreboardElement> _elements;
-    private int _backgrColor;
+    private int _backGrColor;
     private Size _boardSize;
 
     public List<ScoreboardElement> Elements
@@ -43,7 +44,7 @@ public class ScoreboardSettings
             _elements.Add(help);
         }
 
-        _backgrColor = parForm.BackgrColor.ToArgb();
+        _backGrColor = parForm.BackgrColor.ToArgb();
         _boardSize = parForm.Size;
     }
 
@@ -69,7 +70,7 @@ public class ScoreboardSettings
             }
         }
         parForm.Size = _boardSize;
-        parForm.BackgrColor = Color.FromArgb(_backgrColor);
+        parForm.BackgrColor = Color.FromArgb(_backGrColor);
     }
 
     private ScoreboardElement FindByName(string parName)

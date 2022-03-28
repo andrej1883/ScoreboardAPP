@@ -6,6 +6,7 @@ using System.Windows.Forms;
 namespace Scoreboard.Classes.Database;
 
 [Serializable]
+// database which stores all information about teams and advertisements with basic operations like add / remove
 public class Database
 {
     private List<Team> _teamList;
@@ -40,6 +41,7 @@ public class Database
         return _advList.FirstOrDefault(parA => parA.Path.Equals(parAdvPath));
     }
 
+    // sorts loaded teams after load
     public void OrderAfterLoad()
     {
         var teamCount = _teamList.Count;

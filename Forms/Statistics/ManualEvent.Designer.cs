@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace Scoreboard.Forms.Statistics
 {
-    partial class ManualEvent
+   partial class ManualEvent
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -104,7 +104,7 @@ namespace Scoreboard.Forms.Statistics
             this.Controls.Add(this.eventDescription);
             this.Controls.Add(this.eventName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.EventName = "ManualEvent";
+            this.Name = "ManualEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create custom event";
             this.ResumeLayout(false);
@@ -114,11 +114,11 @@ namespace Scoreboard.Forms.Statistics
 
         #endregion
 
-        private TextBox eventName;
-        private TextBox eventDescription;
-        private Button confirmBtn;
-        private Button cancelBtn;
-        private Label label1;
-        private Label label2;
+        private System.Windows.Forms.TextBox eventName;
+        private System.Windows.Forms.TextBox eventDescription;
+        private System.Windows.Forms.Button confirmBtn;
+        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

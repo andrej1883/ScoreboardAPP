@@ -8,6 +8,7 @@ using Scoreboard.Forms.MainGameForms;
 
 namespace Scoreboard.Forms.Appearance;
 
+// form used for setting up scoreboard appearance
 public partial class ControlForm : Form
 {
     private readonly ColorDialog _colorDial;
@@ -20,9 +21,7 @@ public partial class ControlForm : Form
     public ControlForm(ScoreboardForm parForm)
     {
         _formScoreBoard = parForm;
-#pragma warning disable IDE0017 // Simplify object initialization
         _colorDial = new ColorDialog();
-#pragma warning restore IDE0017 // Simplify object initialization
         _colorDial.AllowFullOpen = true;
         _colorDial.AnyColor = true;
         _colorDial.SolidColorOnly = false;
@@ -31,9 +30,9 @@ public partial class ControlForm : Form
     }
 
     public bool BlackActive { get; private set; }
+    public Form BlackForm { get; private set; }
 
-    public Form BlacForm { get; private set; }
-
+    // initializes controls with actual values
     private void InitDropdowns()
     {
         if (!_formScoreBoard.IsActive) return;
@@ -70,31 +69,30 @@ public partial class ControlForm : Form
         _formScoreBoard.MoveComponents();
     }
 
-    private void BlackBcgrBtnClick(object parSender, EventArgs parE)
+    // enables or disables black background behind scoreboard
+    private void BlackBGrBtnClick(object parSender, EventArgs parE)
     {
         if (!BlackActive)
         {
-#pragma warning disable IDE0017 // Simplify object initialization
-            BlacForm = new Form();
-#pragma warning restore IDE0017 // Simplify object initialization
-            BlacForm.MinimizeBox = false;
-            BlacForm.MaximizeBox = false;
-            BlacForm.ControlBox = false;
-            BlacForm.FormBorderStyle = FormBorderStyle.None;
+            BlackForm = new Form();
+            BlackForm.MinimizeBox = false;
+            BlackForm.MaximizeBox = false;
+            BlackForm.ControlBox = false;
+            BlackForm.FormBorderStyle = FormBorderStyle.None;
             Text = string.Empty;
-            BlacForm.Size = Size;
-            BlacForm.BackColor = Color.Black;
+            BlackForm.Size = Size;
+            BlackForm.BackColor = Color.Black;
             var screens = Screen.AllScreens;
             var bounds = screens[1].Bounds;
-            BlacForm.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
-            BlacForm.StartPosition = FormStartPosition.Manual;
-            BlacForm.Show();
+            BlackForm.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
+            BlackForm.StartPosition = FormStartPosition.Manual;
+            BlackForm.Show();
             BlackActive = true;
             blackBcgrBtn.ForeColor = Color.DarkRed;
         }
         else
         {
-            BlacForm.Dispose();
+            BlackForm.Dispose();
             BlackActive = false;
             blackBcgrBtn.ForeColor = DefaultForeColor;
         }
@@ -125,6 +123,7 @@ public partial class ControlForm : Form
         SelectPosition(4);
     }
 
+    // controls responsible for scoreboard position
     private void SelectPosition(int parPosition)
     {
         if (_formScoreBoard == null) return;
@@ -158,7 +157,8 @@ public partial class ControlForm : Form
         InitDropdowns();
     }
 
-    private void ControlImport()
+    // imports appearance settings from xml file
+    private void ImportSettingsClick(object parSender, EventArgs parE)
     {
         ScoreboardSettings set = new();
         TextReader textReader = null;
@@ -184,12 +184,8 @@ public partial class ControlForm : Form
         }
     }
 
-    private void ImportSettingsClick(object parSender, EventArgs parE)
-    {
-        ControlImport();
-    }
-
-    private void ControlExport()
+    // exports appearance to xml file
+    private void ExportSettingsClick(object parSender, EventArgs parE)
     {
         SaveFileDialog saveFileDialog1 = new();
         saveFileDialog1.Filter = @"xml files (*.xml)|*.xml";
@@ -214,12 +210,36 @@ public partial class ControlForm : Form
         }
     }
 
-    private void ExportSettingsClick(object parSender, EventArgs parE)
+    // unlocks scoreboard for moving specified elements by mouse click drag and drop like
+    private void UnlockScoreboardClick(object parSender, EventArgs parE)
     {
-        ControlExport();
+        for (var i = 1; i < 5; i++) _formScoreBoard.ShowPenalty(i);
+
+
+        if (_formScoreBoard.IsLocked)
+        {
+            _formScoreBoard.IsLocked = false;
+            unlockScoreboard.ForeColor = Color.DarkRed;
+            unlockScoreboard.Text = @"Lock";
+        }
+        else
+        {
+            _formScoreBoard.IsLocked = true;
+            unlockScoreboard.ForeColor = DefaultForeColor;
+            unlockScoreboard.Text = @"Unlock";
+        }
     }
 
-    private void BackgrColorClick(object parSender, EventArgs parE)
+    // sets grid size
+    // grid is used for snapping elements when they are replaced by mouse
+    private void SetGridClick(object parSender, EventArgs parE)
+    {
+        _formScoreBoard.GridSize = (int) gridSizeNumeric.Value;
+    }
+
+
+    // setting of colors or sizes via color / font dialogs
+    private void BackGrColorClick(object parSender, EventArgs parE)
     {
         _colorDial.Color = _formScoreBoard.BackgrColor;
         if (_colorDial.ShowDialog() == DialogResult.OK) _formScoreBoard.BackgrColor = _colorDial.Color;
@@ -321,30 +341,6 @@ public partial class ControlForm : Form
         _fontDial.Font = _formScoreBoard.PenaltyDFont;
         if (_fontDial.ShowDialog() == DialogResult.OK) _formScoreBoard.PenaltyDFont = _fontDial.Font;
         for (var i = 1; i < 5; i++) _formScoreBoard.ShowPenalty(i);
-    }
-
-    private void UnlockScoreboardClick(object parSender, EventArgs parE)
-    {
-        for (var i = 1; i < 5; i++) _formScoreBoard.ShowPenalty(i);
-
-
-        if (_formScoreBoard.IsLocked)
-        {
-            _formScoreBoard.IsLocked = false;
-            unlockScoreboard.ForeColor = Color.DarkRed;
-            unlockScoreboard.Text = @"Lock";
-        }
-        else
-        {
-            _formScoreBoard.IsLocked = true;
-            unlockScoreboard.ForeColor = DefaultForeColor;
-            unlockScoreboard.Text = @"Unlock";
-        }
-    }
-
-    private void SetGridClick(object parSender, EventArgs parE)
-    {
-        _formScoreBoard.GridSize = (int) gridSizeNumeric.Value;
     }
 
     private void SetLogoSizeClick(object parSender, EventArgs parE)
