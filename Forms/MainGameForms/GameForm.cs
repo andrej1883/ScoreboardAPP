@@ -56,7 +56,7 @@ public partial class GameForm : Form
 
     public GameForm(ScoreboardForm parFormScoreBoard)
     {
-        _videoPlayerForm = new VideoPlayerForm();
+        if (Screen.AllScreens.Length >= 2) _videoPlayerForm = new VideoPlayerForm();
         DatabaseGame = new Database();
         _gameTimes = new SetTimes(this);
         _matchStats = new MatchStatistics("Team1", "Team2");
@@ -616,7 +616,15 @@ public partial class GameForm : Form
 
     private void CreateBtnClick(object parSender, EventArgs parE)
     {
-        ShowScoreBoard();
+        if (Screen.AllScreens.Length >= 2)
+        {
+            ShowScoreBoard();
+        }
+        else
+        {
+            MessageBox.Show(@"Connect second screen to your computer", @"Screen not found", MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+        }
     }
 
     private void CloseScoreBoard()
@@ -874,6 +882,12 @@ public partial class GameForm : Form
     // plays advertisement, if path is correct and also if advertisement is selected from box
     private void PlayAdClick(object parSender, EventArgs parE)
     {
+        if (_videoPlayerForm == null)
+        {
+            MessageBox.Show(@"Please connect second screen to your computer and restart application. And try again." , @"Second screen not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
         var selected = (Advertisement)adsDBV.SelectedItem;
         if (selected != null && File.Exists(selected.Path))
         {
@@ -892,6 +906,11 @@ public partial class GameForm : Form
 
     private void PlayVideo1Click(object parSender, EventArgs parE)
     {
+        if (_videoPlayerForm == null)
+        {
+            MessageBox.Show(@"Please connect second screen to your computer and restart application. And try again." , @"Second screen not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
         PlayVideo(videoPath1.Text);
     }
 
@@ -922,6 +941,11 @@ public partial class GameForm : Form
 
     private void PlayVideo2Click(object parSender, EventArgs parE)
     {
+        if (_videoPlayerForm == null)
+        {
+            MessageBox.Show(@"Please connect second screen to your computer and restart application. And try again." , @"Second screen not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
         PlayVideo(videoPath2.Text);
     }
 
