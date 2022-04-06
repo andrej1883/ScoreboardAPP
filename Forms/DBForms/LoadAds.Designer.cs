@@ -38,12 +38,15 @@ namespace Scoreboard.Forms.DBForms
             this.teamListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.advListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.advListBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advListBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +91,8 @@ namespace Scoreboard.Forms.DBForms
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pathDataGridViewTextBoxColumn});
+            this.pathDataGridViewTextBoxColumn,
+            this.Column1});
             this.dataGridView1.DataSource = this.advListBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(20, 12);
             this.dataGridView1.Name = "dataGridView1";
@@ -99,6 +103,11 @@ namespace Scoreboard.Forms.DBForms
             // 
             this.advListBindingSource.DataMember = "AdvList";
             this.advListBindingSource.DataSource = this.databaseBindingSource;
+            // 
+            // advListBindingSource1
+            // 
+            this.advListBindingSource1.DataMember = "AdvList";
+            this.advListBindingSource1.DataSource = this.databaseBindingSource;
             // 
             // databaseBindingSource
             // 
@@ -113,7 +122,14 @@ namespace Scoreboard.Forms.DBForms
             this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
             this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
             this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.Width = 600;
+            this.pathDataGridViewTextBoxColumn.Width = 400;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Name";
+            this.Column1.HeaderText = "Name";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 200;
             // 
             // LoadAds
             // 
@@ -131,6 +147,7 @@ namespace Scoreboard.Forms.DBForms
             ((System.ComponentModel.ISupportInitialize)(this.teamListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advListBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -147,6 +164,8 @@ namespace Scoreboard.Forms.DBForms
         private BindingSource databaseBindingSource1;
         private DataGridView dataGridView1;
         private BindingSource advListBindingSource;
+        private BindingSource advListBindingSource1;
         private DataGridViewTextBoxColumn pathDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Column1;
     }
 }

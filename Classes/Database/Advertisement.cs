@@ -9,6 +9,12 @@ public class Advertisement
     private string _name;
     private string _path;
 
+    public string Name
+    {
+        get => _name;
+        set => _name = value;
+    }
+
     public string Path
     {
         get => _path;
@@ -21,6 +27,6 @@ public class Advertisement
 
     public override string ToString()
     {
-        return $"{_name}";
+        return $"{Name}";
     }
 }
