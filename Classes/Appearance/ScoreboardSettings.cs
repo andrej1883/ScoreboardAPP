@@ -18,6 +18,18 @@ public class ScoreboardSettings
     private int _backGrColor;
     private Size _boardSize;
 
+    public int BackGrColor
+    {
+        get => _backGrColor;
+        set => _backGrColor = value;
+    }
+
+    public Size BoardSize
+    {
+        get => _boardSize;
+        set => _boardSize = value;
+    }
+
     public List<ScoreboardElement> Elements
     {
         get => _elements;
@@ -47,8 +59,8 @@ public class ScoreboardSettings
             _elements.Add(help);
         }
 
-        _backGrColor = parForm.BackGrColor.ToArgb();
-        _boardSize = parForm.Size;
+        BackGrColor = parForm.BackGrColor.ToArgb();
+        BoardSize = parForm.Size;
     }
 
     public void SetElements(ScoreboardForm parForm)
@@ -72,8 +84,8 @@ public class ScoreboardSettings
                 }
             }
         }
-        parForm.Size = _boardSize;
-        parForm.BackGrColor = Color.FromArgb(_backGrColor);
+        parForm.Size = BoardSize;
+        parForm.BackGrColor = Color.FromArgb(BackGrColor);
     }
 
     private ScoreboardElement FindByName(string parName)

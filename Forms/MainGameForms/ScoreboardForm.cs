@@ -180,7 +180,7 @@ public partial class ScoreboardForm : Form
         get => BackColor;
         set
         {
-            if (value != Color.Transparent) BackColor = value;
+            if (value.ToArgb() != 0) BackColor = value;
             foreach (var lbl in _instance.Controls.OfType<Label>())
             {
                 lbl.BackColor = value;

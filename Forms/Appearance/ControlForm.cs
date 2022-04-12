@@ -186,6 +186,7 @@ public partial class ControlForm : Form
         {
             textReader?.Close();
             set?.SetElements(_formScoreBoard);
+            InitDropdowns();
         }
     }
 
