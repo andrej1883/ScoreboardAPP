@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Scoreboard.Classes.Appearance.ScoreboardElement">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIgAAgAAEAAAAAEACAAAAAAQIAgAICAAA=</HashCode>
+      <FileName>Classes\Appearance\ScoreboardElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Classes.Appearance.ScoreboardSettings">
+    <Position X="2.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAFAAAAAAAgAAQAIAAAAAAAAAAAAAAAAICAAA=</HashCode>
+      <FileName>Classes\Appearance\ScoreboardSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Classes.Database.Advertisement">
+    <Position X="7" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAACAAIEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Database\Advertisement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Classes.Database.Player">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAEAEAAAAQAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Classes\Database\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Classes.Database.Team">
+    <Position X="2.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAEAAAAAAGABAAAAQAABAgBAAAABgAAAAAQAA=</HashCode>
+      <FileName>Classes\Database\Team.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Classes.Database.Database">
+    <Position X="4.5" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAADEACAAEAAAAACAAAAACAAIAgABA=</HashCode>
+      <FileName>Classes\Database\Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Classes.GameStatistics.MatchStatistics">
+    <Position X="4.25" Y="12" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QIAQAAEAAEAEIAAAQAAAAAAAgACAAAAIABAAQCAAAAA=</HashCode>
+      <FileName>Classes\GameStatistics\MatchStatistics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Classes.Program">
+    <Position X="0.5" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Classes\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.Appearance.ControlForm">
+    <Position X="0.5" Y="21" Width="2.75" />
+    <Members>
+      <Field Name="backgrColor" Hidden="true" />
+      <Field Name="backgroundColorLbl" Hidden="true" />
+      <Field Name="blackBcgrBtn" Hidden="true" />
+      <Field Name="centerScoreBtn" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="exportSettings" Hidden="true" />
+      <Field Name="gridSizeNumeric" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Field Name="groupBox10" Hidden="true" />
+      <Field Name="groupBox2" Hidden="true" />
+      <Field Name="groupBox3" Hidden="true" />
+      <Field Name="groupBox4" Hidden="true" />
+      <Field Name="groupBox5" Hidden="true" />
+      <Field Name="groupBox6" Hidden="true" />
+      <Field Name="groupBox7" Hidden="true" />
+      <Field Name="groupBox8" Hidden="true" />
+      <Field Name="groupBox9" Hidden="true" />
+      <Field Name="hghtLbl" Hidden="true" />
+      <Field Name="importSettings" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="kv1Btn" Hidden="true" />
+      <Field Name="kv2Btn" Hidden="true" />
+      <Field Name="kv3Btn" Hidden="true" />
+      <Field Name="kv4Btn" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label12" Hidden="true" />
+      <Field Name="label13" Hidden="true" />
+      <Field Name="label14" Hidden="true" />
+      <Field Name="label15" Hidden="true" />
+      <Field Name="label16" Hidden="true" />
+      <Field Name="label17" Hidden="true" />
+      <Field Name="label18" Hidden="true" />
+      <Field Name="label19" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label20" Hidden="true" />
+      <Field Name="label21" Hidden="true" />
+      <Field Name="label22" Hidden="true" />
+      <Field Name="label23" Hidden="true" />
+      <Field Name="label24" Hidden="true" />
+      <Field Name="label25" Hidden="true" />
+      <Field Name="label26" Hidden="true" />
+      <Field Name="label27" Hidden="true" />
+      <Field Name="label28" Hidden="true" />
+      <Field Name="label29" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label30" Hidden="true" />
+      <Field Name="label31" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="logoHeightBox" Hidden="true" />
+      <Field Name="logoWidthBox" Hidden="true" />
+      <Field Name="penaltyGBLabels" Hidden="true" />
+      <Field Name="penaltyGBPenaltyData" Hidden="true" />
+      <Field Name="penaltySettingsBox" Hidden="true" />
+      <Field Name="periodGBLabel" Hidden="true" />
+      <Field Name="periodGBPeriod" Hidden="true" />
+      <Field Name="periodSettingsBox" Hidden="true" />
+      <Field Name="scoreBHeight" Hidden="true" />
+      <Field Name="scoreBoardSettingsBox" Hidden="true" />
+      <Field Name="scoreBWidth" Hidden="true" />
+      <Field Name="scoreGBLabels" Hidden="true" />
+      <Field Name="scoreGBScore" Hidden="true" />
+      <Field Name="scoreSettingBox" Hidden="true" />
+      <Field Name="setColorFace" Hidden="true" />
+      <Field Name="setColorFaceL" Hidden="true" />
+      <Field Name="setColorPenData" Hidden="true" />
+      <Field Name="setColorPenL" Hidden="true" />
+      <Field Name="setColorPL" Hidden="true" />
+      <Field Name="setColorPP" Hidden="true" />
+      <Field Name="setColorShL" Hidden="true" />
+      <Field Name="setColorShShot" Hidden="true" />
+      <Field Name="setColorSL" Hidden="true" />
+      <Field Name="setColorSS" Hidden="true" />
+      <Field Name="setColorTC" Hidden="true" />
+      <Field Name="setColorTimeoL" Hidden="true" />
+      <Field Name="setColorTimeout" Hidden="true" />
+      <Field Name="setColorTL" Hidden="true" />
+      <Field Name="setGrid" Hidden="true" />
+      <Field Name="setLogoSize" Hidden="true" />
+      <Field Name="setSizeFace" Hidden="true" />
+      <Field Name="setSizeFaceL" Hidden="true" />
+      <Field Name="setSizePenData" Hidden="true" />
+      <Field Name="setSizePenL" Hidden="true" />
+      <Field Name="setSizePL" Hidden="true" />
+      <Field Name="setSizePP" Hidden="true" />
+      <Field Name="setSizeShL" Hidden="true" />
+      <Field Name="setSizeShShot" Hidden="true" />
+      <Field Name="setSizeSL" Hidden="true" />
+      <Field Name="setSizeSS" Hidden="true" />
+      <Field Name="setSizeTC" Hidden="true" />
+      <Field Name="setSizeTimeoL" Hidden="true" />
+      <Field Name="setSizeTimeout" Hidden="true" />
+      <Field Name="setSizeTL" Hidden="true" />
+      <Field Name="timeGBClock" Hidden="true" />
+      <Field Name="timeGBLabels" Hidden="true" />
+      <Field Name="timeSettingsBox" Hidden="true" />
+      <Field Name="unlockScoreboard" Hidden="true" />
+      <Field Name="widthLbl" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>/+HAg2SwCGQmkDhguAWhBAOqCESRBUESvKWTBTYREL4=</HashCode>
+      <FileName>Forms\Appearance\ControlForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.AppSettings.ExportStatsForm">
+    <Position X="0.5" Y="33.75" Width="3" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Field Name="confirm" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="exportEventsBox" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="pathTextBox" Hidden="true" />
+      <Field Name="selectPath" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAASBIAEACBBAACQAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\AppSettings\ExportStatsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.AppSettings.SerialPortSettings">
+    <Position X="3.75" Y="33.75" Width="2.25" />
+    <Members>
+      <Field Name="activePorts" Hidden="true" />
+      <Field Name="cancelBtn" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="confirmBtn" Hidden="true" />
+      <Field Name="connectStatus" Hidden="true" />
+      <Field Name="connectToPort" Hidden="true" />
+      <Field Name="disconnectPort" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>sAAAgABIACAAABEAECiCAAQCIAAACBABAAAAAQgAQAA=</HashCode>
+      <FileName>Forms\AppSettings\SerialPortSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.AppSettings.SetTimes">
+    <Position X="6.25" Y="33.75" Width="2.75" />
+    <Members>
+      <Field Name="breakLInputM" Hidden="true" />
+      <Field Name="breakLInputS" Hidden="true" />
+      <Field Name="cancelEditTimes" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label12" Hidden="true" />
+      <Field Name="label13" Hidden="true" />
+      <Field Name="label14" Hidden="true" />
+      <Field Name="label15" Hidden="true" />
+      <Field Name="label16" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="longPenaltyInputM" Hidden="true" />
+      <Field Name="longPenaltyInputS" Hidden="true" />
+      <Field Name="overBreakLM" Hidden="true" />
+      <Field Name="overBreakLS" Hidden="true" />
+      <Field Name="overPeriodLM" Hidden="true" />
+      <Field Name="overPeriodLS" Hidden="true" />
+      <Field Name="periodLInputM" Hidden="true" />
+      <Field Name="periodLInputS" Hidden="true" />
+      <Field Name="preMatchInputM" Hidden="true" />
+      <Field Name="preMatchInputS" Hidden="true" />
+      <Field Name="saveTimes" Hidden="true" />
+      <Field Name="shortPenaltyInputM" Hidden="true" />
+      <Field Name="shortPenaltyInputS" Hidden="true" />
+      <Field Name="timeoutLInputM" Hidden="true" />
+      <Field Name="timeoutLInputS" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>9wAAAABEECABADACgJCAUgADCCIAQAIAANMEAAABCSI=</HashCode>
+      <FileName>Forms\AppSettings\SetTimes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.AppSettings.StatisticsSettings">
+    <Position X="9.25" Y="33.75" Width="2.75" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="faceOffsBox" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="okBtn" Hidden="true" />
+      <Field Name="shotsBox" Hidden="true" />
+      <Field Name="timeoutsBox" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAACAAQAICAAAgAAAACAAAACAQAAAAAAAjAAAEAAAAE=</HashCode>
+      <FileName>Forms\AppSettings\StatisticsSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.DBForms.CreatePlayerForm">
+    <Position X="0.5" Y="40.5" Width="2.25" />
+    <Members>
+      <Field Name="AddPlayer" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="numberDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="OK" Hidden="true" />
+      <Field Name="playerBindingSource" Hidden="true" />
+      <Field Name="playerBindingSource1" Hidden="true" />
+      <Field Name="PlayerName" Hidden="true" />
+      <Field Name="PlayerNumber" Hidden="true" />
+      <Field Name="PLayersGW" Hidden="true" />
+      <Field Name="PlayersName" Hidden="true" />
+      <Field Name="RemovePlayer" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAEAAiACACEAChAAABSAQAACAQAAAAAAACgBACACAAA=</HashCode>
+      <FileName>Forms\DBForms\CreatePlayerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.DBForms.CreateTeamForm">
+    <Position X="3" Y="40.5" Width="2.25" />
+    <Members>
+      <Field Name="Cancel" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="Create" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="LogoPath" Hidden="true" />
+      <Field Name="SelectPathLogo" Hidden="true" />
+      <Field Name="SelectPathVideo" Hidden="true" />
+      <Field Name="TeamName" Hidden="true" />
+      <Field Name="VideoPath" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CBAAAAAAQCAAABAAAACAAAADCgAAAEAAEBAAGAAAQAA=</HashCode>
+      <FileName>Forms\DBForms\CreateTeamForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.DBForms.LoadAds">
+    <Position X="5.5" Y="40.5" Width="2.25" />
+    <Members>
+      <Field Name="addVideo" Hidden="true" />
+      <Field Name="advListBindingSource" Hidden="true" />
+      <Field Name="advListBindingSource1" Hidden="true" />
+      <Field Name="Column1" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="databaseBindingSource" Hidden="true" />
+      <Field Name="databaseBindingSource1" Hidden="true" />
+      <Field Name="dataGridView1" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="done" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="pathDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="removeVideo" Hidden="true" />
+      <Field Name="teamListBindingSource" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ICAAAAhAQGAAAgAAAASAEAJCAAhgAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Forms\DBForms\LoadAds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.DBForms.LoadTeamDataForm">
+    <Position X="8" Y="40.5" Width="2.25" />
+    <Members>
+      <Field Name="AddTeam" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="databaseBindingSource" Hidden="true" />
+      <Field Name="dataGridView1" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="EditTeamPlayers" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="LogoPath" Hidden="true" />
+      <Field Name="OK" Hidden="true" />
+      <Field Name="RemoveTeam" Hidden="true" />
+      <Field Name="teamListBindingSource" Hidden="true" />
+      <Field Name="TeamName" Hidden="true" />
+      <Field Name="videoPathDataGridViewTextBoxColumn" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gAAAAAgAAGAAAgAAAACCEAFDAQkAIAABABABAAAgAAA=</HashCode>
+      <FileName>Forms\DBForms\LoadTeamDataForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.MainGameForms.GameForm">
+    <Position X="0.5" Y="45.5" Width="3.25" />
+    <Members>
+      <Field Name="adsDBV" Hidden="true" />
+      <Field Name="appearanceToolStripMenuItem" Hidden="true" />
+      <Field Name="auxiliaryDevicesToolStripMenuItem" Hidden="true" />
+      <Field Name="cancelAd" Hidden="true" />
+      <Field Name="cancelBreak" Hidden="true" />
+      <Field Name="cancelLogo1" Hidden="true" />
+      <Field Name="cancelLogo2" Hidden="true" />
+      <Field Name="cancelTimeoutT1" Hidden="true" />
+      <Field Name="cancelTimeoutT2" Hidden="true" />
+      <Field Name="cancelVideo1" Hidden="true" />
+      <Field Name="cancelVideo2" Hidden="true" />
+      <Field Name="closeScoreboardBtn" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="createBtn" Hidden="true" />
+      <Field Name="customEventToolStripMenuItem" Hidden="true" />
+      <Field Name="databaseToolStripMenuItem" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="dropToolStripMenuItem" Hidden="true" />
+      <Field Name="editTeamTS" Hidden="true" />
+      <Field Name="exitToolStripMenuItem" Hidden="true" />
+      <Field Name="exportSettingsToolStripMenuItem" Hidden="true" />
+      <Field Name="exportToolStripMenuItem" Hidden="true" />
+      <Field Name="faceoffsT1" Hidden="true" />
+      <Field Name="faceoffsT2" Hidden="true" />
+      <Field Name="goalsTeam1" Hidden="true" />
+      <Field Name="goalsTeam2" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Field Name="groupBox10" Hidden="true" />
+      <Field Name="groupBox11" Hidden="true" />
+      <Field Name="groupBox12" Hidden="true" />
+      <Field Name="groupBox13" Hidden="true" />
+      <Field Name="groupBox14" Hidden="true" />
+      <Field Name="groupBox2" Hidden="true" />
+      <Field Name="groupBox3" Hidden="true" />
+      <Field Name="groupBox4" Hidden="true" />
+      <Field Name="groupBox5" Hidden="true" />
+      <Field Name="groupBox6" Hidden="true" />
+      <Field Name="groupBox7" Hidden="true" />
+      <Field Name="groupBox8" Hidden="true" />
+      <Field Name="groupBox9" Hidden="true" />
+      <Field Name="hideT1Logo" Hidden="true" />
+      <Field Name="hideT2Logo" Hidden="true" />
+      <Field Name="importToolStripMenuItem" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label12" Hidden="true" />
+      <Field Name="label13" Hidden="true" />
+      <Field Name="label14" Hidden="true" />
+      <Field Name="label15" Hidden="true" />
+      <Field Name="label16" Hidden="true" />
+      <Field Name="label17" Hidden="true" />
+      <Field Name="label18" Hidden="true" />
+      <Field Name="label19" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label20" Hidden="true" />
+      <Field Name="label21" Hidden="true" />
+      <Field Name="label22" Hidden="true" />
+      <Field Name="label24" Hidden="true" />
+      <Field Name="label26" Hidden="true" />
+      <Field Name="label28" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="loadToolStripMenuItem" Hidden="true" />
+      <Field Name="logo1" Hidden="true" />
+      <Field Name="logo1Path" Hidden="true" />
+      <Field Name="logo2" Hidden="true" />
+      <Field Name="logo2Path" Hidden="true" />
+      <Field Name="menuStrip1" Hidden="true" />
+      <Field Name="minusFaceoffsT1" Hidden="true" />
+      <Field Name="minusFaceoffsT2" Hidden="true" />
+      <Field Name="minusGoal1" Hidden="true" />
+      <Field Name="minusGoal2" Hidden="true" />
+      <Field Name="minusShotsT1" Hidden="true" />
+      <Field Name="minusShotsT2" Hidden="true" />
+      <Field Name="minutesTime" Hidden="true" />
+      <Field Name="overT1" Hidden="true" />
+      <Field Name="overT2" Hidden="true" />
+      <Field Name="overTBreak" Hidden="true" />
+      <Field Name="p1T1HidePenalty" Hidden="true" />
+      <Field Name="p1T1ShowPenalty" Hidden="true" />
+      <Field Name="p1T2HidePenalty" Hidden="true" />
+      <Field Name="p1T2ShowPenalty" Hidden="true" />
+      <Field Name="p2T1HidePenalty" Hidden="true" />
+      <Field Name="p2T1ShowPenalty" Hidden="true" />
+      <Field Name="p2T2HidePenalty" Hidden="true" />
+      <Field Name="p2T2ShowPenalty" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="penMinP1T1" Hidden="true" />
+      <Field Name="penMinP1T2" Hidden="true" />
+      <Field Name="penMinP2T1" Hidden="true" />
+      <Field Name="penMinP2T2" Hidden="true" />
+      <Field Name="penP1T1" Hidden="true" />
+      <Field Name="penP1T2" Hidden="true" />
+      <Field Name="penP2T1" Hidden="true" />
+      <Field Name="penP2T2" Hidden="true" />
+      <Field Name="penSecP1T1" Hidden="true" />
+      <Field Name="penSecP1T2" Hidden="true" />
+      <Field Name="penSecP2T1" Hidden="true" />
+      <Field Name="penSecP2T2" Hidden="true" />
+      <Field Name="period" Hidden="true" />
+      <Field Name="periodMinus" Hidden="true" />
+      <Field Name="periodPlus" Hidden="true" />
+      <Field Name="playAd" Hidden="true" />
+      <Field Name="playVideo1" Hidden="true" />
+      <Field Name="playVideo2" Hidden="true" />
+      <Field Name="plusFaceoffsT1" Hidden="true" />
+      <Field Name="plusFaceoffsT2" Hidden="true" />
+      <Field Name="plusGoal1" Hidden="true" />
+      <Field Name="plusGoal2" Hidden="true" />
+      <Field Name="plusShotsT1" Hidden="true" />
+      <Field Name="plusShotsT2" Hidden="true" />
+      <Field Name="preMatchCount" Hidden="true" />
+      <Field Name="ResetElapsedBtn" Hidden="true" />
+      <Field Name="resetT1P1" Hidden="true" />
+      <Field Name="resetT1P2" Hidden="true" />
+      <Field Name="resetT2P1" Hidden="true" />
+      <Field Name="resetT2P2" Hidden="true" />
+      <Field Name="resetTime" Hidden="true" />
+      <Field Name="secondsTime" Hidden="true" />
+      <Field Name="selectStatisticsToolStripMenuItem" Hidden="true" />
+      <Field Name="SetFromDBT1" Hidden="true" />
+      <Field Name="SetFromDBT2" Hidden="true" />
+      <Field Name="setPT1P1" Hidden="true" />
+      <Field Name="setPT1P2" Hidden="true" />
+      <Field Name="setT2P1" Hidden="true" />
+      <Field Name="setT2P2" Hidden="true" />
+      <Field Name="setTeam1Name" Hidden="true" />
+      <Field Name="setTeam2Name" Hidden="true" />
+      <Field Name="settingsToolStripMenuItem" Hidden="true" />
+      <Field Name="shootoutBtn" Hidden="true" />
+      <Field Name="shotsT1" Hidden="true" />
+      <Field Name="shotsT2" Hidden="true" />
+      <Field Name="showT1Logo" Hidden="true" />
+      <Field Name="showT2Logo" Hidden="true" />
+      <Field Name="startBreak" Hidden="true" />
+      <Field Name="startTime" Hidden="true" />
+      <Field Name="startTimeoutT1" Hidden="true" />
+      <Field Name="startTimeoutT2" Hidden="true" />
+      <Field Name="statisticsToolStripMenuItem" Hidden="true" />
+      <Field Name="stopTime" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="team1NameBox" Hidden="true" />
+      <Field Name="team2NameBox" Hidden="true" />
+      <Field Name="TeamsDBT1" Hidden="true" />
+      <Field Name="TeamsDBT2" Hidden="true" />
+      <Field Name="teamsToolStripMenuItem" Hidden="true" />
+      <Field Name="timeoutT1M" Hidden="true" />
+      <Field Name="timeoutT1S" Hidden="true" />
+      <Field Name="timeoutT2M" Hidden="true" />
+      <Field Name="timeoutT2S" Hidden="true" />
+      <Field Name="timeToolStripMenuItem" Hidden="true" />
+      <Field Name="uploadLogoT1" Hidden="true" />
+      <Field Name="uploadLogoT2" Hidden="true" />
+      <Field Name="uploadVideoT1" Hidden="true" />
+      <Field Name="uploadVideoT2" Hidden="true" />
+      <Field Name="videoPath1" Hidden="true" />
+      <Field Name="videoPath2" Hidden="true" />
+      <Field Name="videosToolStripMenuItem" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>/7vAjl4WpX/xt57LJtv/I/PPFdHPtibpn/7Ex6ut0/I=</HashCode>
+      <FileName>Forms\MainGameForms\GameForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.MainGameForms.ScoreboardForm">
+    <Position X="4" Y="45.5" Width="3" />
+    <Members>
+      <Field Name="actualPeriodLbl" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="faceOffsT1" Hidden="true" />
+      <Field Name="faceOffsT1Lbl" Hidden="true" />
+      <Field Name="faceOffsT2" Hidden="true" />
+      <Field Name="faceOffsT2Lbl" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="minutesT1P1Lbl" Hidden="true" />
+      <Field Name="minutesT1P2Lbl" Hidden="true" />
+      <Field Name="minutesT2P1Lbl" Hidden="true" />
+      <Field Name="minutesT2P2Lbl" Hidden="true" />
+      <Field Name="penaltyT1Lbl" Hidden="true" />
+      <Field Name="penaltyT1PlayerLbl" Hidden="true" />
+      <Field Name="penaltyT1TimeLbl" Hidden="true" />
+      <Field Name="penaltyT2Lbl" Hidden="true" />
+      <Field Name="penaltyT2PlayerLbl" Hidden="true" />
+      <Field Name="penaltyT2TimeLbl" Hidden="true" />
+      <Field Name="periodLbl" Hidden="true" />
+      <Field Name="playerNumber1T1lbl" Hidden="true" />
+      <Field Name="playerNumber1T2lbl" Hidden="true" />
+      <Field Name="playerNumber2T1lbl" Hidden="true" />
+      <Field Name="playerNumber2T2lbl" Hidden="true" />
+      <Field Name="scoreParseLblb" Hidden="true" />
+      <Field Name="scoreT1Lbl" Hidden="true" />
+      <Field Name="scoreT2Lbl" Hidden="true" />
+      <Field Name="secondsT1P1Lbl" Hidden="true" />
+      <Field Name="secondsT1P2Lbl" Hidden="true" />
+      <Field Name="secondsT2P1Lbl" Hidden="true" />
+      <Field Name="secondsT2P2Lbl" Hidden="true" />
+      <Field Name="shotsT1" Hidden="true" />
+      <Field Name="shotsT1Lbl" Hidden="true" />
+      <Field Name="shotsT2" Hidden="true" />
+      <Field Name="shotsT2Lbl" Hidden="true" />
+      <Field Name="t1Lbl" Hidden="true" />
+      <Field Name="t2Lbl" Hidden="true" />
+      <Field Name="team1Logo" Hidden="true" />
+      <Field Name="team2Logo" Hidden="true" />
+      <Field Name="timeLbl" Hidden="true" />
+      <Field Name="timeMinutesLbl" Hidden="true" />
+      <Field Name="timeout1Min" Hidden="true" />
+      <Field Name="timeout1Parse" Hidden="true" />
+      <Field Name="timeout1Sec" Hidden="true" />
+      <Field Name="timeout2Min" Hidden="true" />
+      <Field Name="timeout2Parse" Hidden="true" />
+      <Field Name="timeout2Sec" Hidden="true" />
+      <Field Name="timeoutL1" Hidden="true" />
+      <Field Name="timeoutL2" Hidden="true" />
+      <Field Name="timeParseLbl" Hidden="true" />
+      <Field Name="timeSecondsLbl" Hidden="true" />
+      <Field Name="timeT1P1ParseLbl" Hidden="true" />
+      <Field Name="timeT1P2ParseLbl" Hidden="true" />
+      <Field Name="timeT2P1ParseLbl" Hidden="true" />
+      <Field Name="timeT2P2ParseLbl" Hidden="true" />
+      <Field Name="toolTip1" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>wlifD/TRA76arXN+EQuDkjGz/NzwGVJdJk8insOcUDQ=</HashCode>
+      <FileName>Forms\MainGameForms\ScoreboardForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.MainGameForms.VideoPlayerForm">
+    <Position X="7.25" Y="45.5" Width="2.75" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="mediaPlayer" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACAAAAAAAACAAAACAAAABAAAAAAAAAAAQEA=</HashCode>
+      <FileName>Forms\MainGameForms\VideoPlayerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.Statistics.ManualEvent">
+    <Position X="0.5" Y="81.5" Width="2" />
+    <Members>
+      <Field Name="cancelBtn" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="confirmBtn" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="eventDescription" Hidden="true" />
+      <Field Name="eventName" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAgABEAAACCAAACAIAAAACAAAAAAQAAAAI=</HashCode>
+      <FileName>Forms\Statistics\ManualEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.Statistics.SelectPlayerGoal">
+    <Position X="2.75" Y="81.5" Width="2" />
+    <Members>
+      <Field Name="cancelBtn" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="playerA1" Hidden="true" />
+      <Field Name="playerA2" Hidden="true" />
+      <Field Name="playerGoal" Hidden="true" />
+      <Field Name="saveGoalBtn" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgggAAACAgAhEAAACACAACAAAABAAgAAAAQAAAAAA=</HashCode>
+      <FileName>Forms\Statistics\SelectPlayerGoal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scoreboard.Forms.Statistics.SetPenaltyForm">
+    <Position X="5" Y="81.5" Width="3.5" />
+    <Members>
+      <Field Name="cancelBtn" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Field Name="groupBox2" Hidden="true" />
+      <Field Name="groupBox3" Hidden="true" />
+      <Field Name="groupBox4" Hidden="true" />
+      <Field Name="groupBox5" Hidden="true" />
+      <Field Name="groupBox6" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="penaltyTimesCombo" Hidden="true" />
+      <Field Name="playerNumber" Hidden="true" />
+      <Field Name="pMinutes" Hidden="true" />
+      <Field Name="pSeconds" Hidden="true" />
+      <Field Name="savePenaltyBtn" Hidden="true" />
+      <Field Name="selectPlayer" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>MBCAkAAAACAgQBEAAACAAgACABAAgAAAADAAEAAAAAA=</HashCode>
+      <FileName>Forms\Statistics\SetPenaltyForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Scoreboard.Classes.GameStatistics.MatchEvent">
+    <Position X="0.5" Y="12" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Classes\GameStatistics\MatchEvent.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Scoreboard.Classes.GameStatistics.TeamStatistics">
+    <Position X="2.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAEAAAQAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Classes\GameStatistics\TeamStatistics.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Scoreboard.Classes.Time">
+    <Position X="2.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEABAAAAAAAAAAEQAAAAAAAAAAAAAAAAAABAAAAACA=</HashCode>
+      <FileName>Classes\Time.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Scoreboard.Classes.AuxiliaryDevices.SirenType">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAACAAAAAAAAAAAAIIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\AuxiliaryDevices\SirenType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

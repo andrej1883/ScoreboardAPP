@@ -4,7 +4,10 @@ using System.Drawing;
 namespace Scoreboard.Classes.Appearance;
 
 [Serializable]
-// class used for exporting scoreboard appearance to xml file. Elements are scoreboard items like logos or labels
+// class used for serialization of scoreboard elements
+// xml serialization is used for importing and exporting of appearance settings
+// elements are added to list of elements in ScoreboardSettings
+// Elements are scoreboard items like logos or labels
 public class ScoreboardElement
 {
     private string _elementName;

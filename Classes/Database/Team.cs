@@ -7,6 +7,7 @@ namespace Scoreboard.Classes.Database;
 
 [Serializable]
 // stores all information about team which is stored in database,  with basic operations like add / remove player
+// it is serializable because we can save Database class and all its content to xml
 public class Team
 {
     private string _name;

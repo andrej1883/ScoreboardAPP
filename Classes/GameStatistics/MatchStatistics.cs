@@ -5,9 +5,11 @@ using Scoreboard.Classes.Database;
 namespace Scoreboard.Classes.GameStatistics;
 
 // creates specific events for minute by minute export and also holds match statistics for each team
+// this class is used in GameBoard where create event methods are called after specific actions 
+// inside each method is called export event 
+// this class holds all statistics for specific match in GameBoard
 public class MatchStatistics
 {
-
     public string ExpoPath { get; set; }
     public bool ExportEvents { get; set; } = true;
     public TeamStatistics[] TeamStats { get; }

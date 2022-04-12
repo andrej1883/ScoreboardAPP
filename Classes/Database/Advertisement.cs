@@ -4,6 +4,7 @@ namespace Scoreboard.Classes.Database;
 
 [Serializable]
 // class for storing information about advertisement in database
+// it is serializable because we can save Database class and all its content to xml
 public class Advertisement
 {
     private string _name;

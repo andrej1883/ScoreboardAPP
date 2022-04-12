@@ -4,6 +4,7 @@ namespace Scoreboard.Classes.Database;
 
 [Serializable]
 // stores all information about player which is stored in team in database
+// it is serializable because we can save Database class and all its content to xml
 public class Player
 {
     private string _name;

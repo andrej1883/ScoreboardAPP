@@ -6,6 +6,7 @@ namespace Scoreboard.Forms.DBForms;
 
 // form used for creating team
 // team name is needed to create team
+// if team name is not set dialog window will be shown to user
 public partial class CreateTeamForm : Form
 {
     public Team Team { get; private set; }

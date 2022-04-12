@@ -6,15 +6,19 @@ using Scoreboard.Forms.MainGameForms;
 
 namespace Scoreboard.Forms.AppSettings;
 
-// form responsible for setting and storing specific match times 
+// form responsible for setting and storing specific match times
+// times are pre set for hockey event
+// this form is called from GameForm settings menu 
+// user can re-set times in it
+// these times are used in GameForm in specific counters
 public partial class SetTimes : Form
 {
-    private Time _periodLength = new() {Minutes = 3, Seconds = 0};
-    private Time _breakLength = new() {Minutes = 0, Seconds = 15};
-    private Time _timeoutLength = new() {Minutes = 0, Seconds = 10};
+    private Time _periodLength = new() {Minutes = 20, Seconds = 0};
+    private Time _breakLength = new() {Minutes = 10, Seconds = 0};
+    private Time _timeoutLength = new() {Minutes = 1, Seconds = 0};
     private Time _shortPenaltyLength = new() {Minutes = 2, Seconds = 0};
     private Time _longPenaltyLength = new() {Minutes = 5, Seconds = 0};
-    private Time _preMatchTime = new() {Minutes = 0, Seconds = 5};
+    private Time _preMatchTime = new() {Minutes = 10, Seconds = 0};
     private Time _periodOvertLength = new() {Minutes = 10, Seconds = 0};
     private Time _breakOvertLength = new() {Minutes = 5, Seconds = 0};
     private readonly GameForm _parentForm;

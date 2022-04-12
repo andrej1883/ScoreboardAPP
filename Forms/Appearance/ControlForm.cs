@@ -9,6 +9,11 @@ using Scoreboard.Forms.MainGameForms;
 namespace Scoreboard.Forms.Appearance;
 
 // form used for setting up scoreboard appearance
+// it is contained in GameForm in menu file settings
+// for creating this form Scoreboard is needed so user can set it up
+// it contains also blackForm which is black background which can be displayed behind scoreboard
+// for setting up specific elements of Scoreboard color and font dialogs are used
+// it supports also export or import of appearance settings
 public partial class ControlForm : Form
 {
     private readonly ColorDialog _colorDial;

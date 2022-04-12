@@ -9,6 +9,7 @@ namespace Scoreboard.Forms.AppSettings;
 
 // form responsible for serial port connection and also sending of messages over connected port
 // siren controlling is already implemented
+// stx, etx and checksum are pre set for specific communication protocol
 public partial class SerialPortSettings : Form
 {
     private const byte Stx = 2;

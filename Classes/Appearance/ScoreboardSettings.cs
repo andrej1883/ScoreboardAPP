@@ -8,7 +8,10 @@ using Scoreboard.Forms.MainGameForms;
 namespace Scoreboard.Classes.Appearance;
 
 [Serializable]
-// class responsible for setting elements of scoreboard and also for size and background color of scoreboard. Class is used when exporting / importing appearance settings of scoreboard
+// class responsible for setting elements of scoreboard and also for size and background color of scoreboard.
+// Class is used when exporting / importing appearance settings of scoreboard
+// AddElements is used when exporting _elements to xml
+// SetElements is used when loading appearance from xml file for setting specific elements on scoreboard
 public class ScoreboardSettings
 {
     private List<ScoreboardElement> _elements;

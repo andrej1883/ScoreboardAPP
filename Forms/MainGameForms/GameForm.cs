@@ -15,7 +15,16 @@ using Scoreboard.Forms.Statistics;
 
 namespace Scoreboard.Forms.MainGameForms;
 
-// form responsible for all logic behind this app stores all other forms, DB and settings
+// this is main form of our application 
+// it is displayed right after application start
+// contains menu with all of its options for users
+// some of these form are created right after this form is created, others are created only locally in specific methods and functions
+// also team statistics, times and timers are part of this form
+// database is also stored as class property
+// all of data displayed on GameForm are mirrored on scoreboard so user can easily see all of data displayed on Scoreboard
+// it holds all of controls which are needed to control this app
+// creating minute by minute export are done form specific methods here, like when goal plus was clicked, face offs plus clicked,...
+// siren activation with specific sounds are also called from after specific actions occur in this class
 public partial class GameForm : Form
 {
     private const int MaxPenalties = 4;
@@ -1446,7 +1455,8 @@ public partial class GameForm : Form
     }
     //
 
-    // resets elapsed time, good to use if user made mistake and wants to reset elapsed time without re-opening app
+    // resets elapsed time, is good to use if user made mistake and wants to reset elapsed time without re-opening app
+    // elapsed time is used for exporting data minute by minute when time is always a name of text file
     private void ResetElapsedBtnClick(object parSender, EventArgs parE)
     {
         _elapsedTime = new Time {Minutes = 0, Seconds = 0};

@@ -4,6 +4,8 @@ using AxWMPLib;
 namespace Scoreboard.Forms.MainGameForms;
 
 // form used for playing videos - advertisement spots or team intros 
+// windows media player is used as a video player
+// implements play method which plays video which is stored on VideoPath
 public partial class VideoPlayerForm : Form
 {
     public AxWindowsMediaPlayer MediaPlayer => mediaPlayer;

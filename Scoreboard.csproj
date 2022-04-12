@@ -208,6 +208,7 @@
     <EmbeddedResource Include="Forms\MainGameForms\ScoreboardForm.resx">
       <DependentUpon>ScoreboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagrams.cd" />
     <None Include="Properties\DataSources\Scoreboard.Classes.Database.datasource" />
     <None Include="Properties\DataSources\Scoreboard.Classes.Database.Player.datasource" />
     <None Include="Properties\Settings.settings">

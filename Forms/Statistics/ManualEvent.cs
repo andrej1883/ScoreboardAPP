@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Scoreboard.Forms.Statistics;
 
-// form used for creating manual event for more info check classes -> GameStatistics -> MatchStatistics
+// form used for creating manual event for more info check // classes -> GameStatistics -> MatchStatistics
 public partial class ManualEvent : Form
 {
     public string EventName { get; private set; }

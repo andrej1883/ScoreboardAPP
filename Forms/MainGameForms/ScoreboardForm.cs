@@ -10,6 +10,12 @@ namespace Scoreboard.Forms.MainGameForms;
 // scoreboard is responsible mostly for displaying data on it, not for app logic
 // it has setters and getters for colors and fonts displayed
 // scoreboard is singleton
+// it contains listeners for each element of scoreboard if it was clicked or moved
+// these listeners are used for moving listeners along scoreboard
+// it also has grid which elements can be snapped on. Its size can be set
+// it also can be resized or relocated
+// after resize method MoveComponents is used, to move elements back to application window
+// it also contains setters for specific values of elements displayed on scoreboard
 public partial class ScoreboardForm : Form
 {
     private bool _isLocked = true;

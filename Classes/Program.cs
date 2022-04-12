@@ -4,7 +4,7 @@ using Scoreboard.Forms.MainGameForms;
 
 namespace Scoreboard.Classes;
 
-// main class
+// main class of our application
 internal static class Program
 {
     /// <summary>

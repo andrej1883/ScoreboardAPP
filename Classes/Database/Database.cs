@@ -7,6 +7,8 @@ namespace Scoreboard.Classes.Database;
 
 [Serializable]
 // database which stores all information about teams and advertisements with basic operations like add / remove
+// this class is our apps database which stores all of application data
+// this database is xml serializable, to store and load all its content in xml files
 public class Database
 {
     private List<Team> _teamList;
